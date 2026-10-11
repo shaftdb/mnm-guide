@@ -4,10 +4,10 @@ section: home
 desc: Shaman-focused Monsters & Memories reference
 sources: Wiki: Shaman|https://monstersandmemories.miraheze.org/wiki/Shaman; Patch notes (0.30.2.8, Oct 11 2026)|https://account.monstersandmemories.com/community/patch_notes; Official Shaman deep dive|https://monstersandmemories.com/class-shaman-deep-dive
 ---
-<div class="hero"><span class="lvl">12</span><h2 style="margin:0;background:none;border:0;padding:0">Brewsham (Human Shaman) — level 12 → next steps</h2><p style="margin:.3em 0 0">Healer, slower and buffer. Chain armor, blunt/piercing weapons, WIS first. Current focus: slow + DoT soloing to 16, then the big level-16 spell batch.</p></div>
+<div class="hero"><span class="lvl">13</span><h2 style="margin:0;background:none;border:0;padding:0">Brewsham (Human Shaman) — level 13 → next steps</h2><p style="margin:.3em 0 0">Healer, slower and buffer. Chain armor, blunt/piercing weapons, WIS first. Current focus: slow + DoT soloing to 16, then the big level-16 spell batch.</p></div>
 
 :::facts My characters
-Shaman: Brewsham · Human · 12
+Shaman: Brewsham · Human · 13
 Shadow Knight: Brewologist · Goblin · ~4
 SK faction: Disdained (not KOS) with Night Harbor
 Role: Guild officer
@@ -15,12 +15,12 @@ Game version: 0.30.2.8 (Oct 11, 2026)
 :::
 
 <div class="dashboard">
-<div class="dash"><h3>Right now (level 12)</h3><ul>
-<li>Buy your <strong>level 12</strong> spells: Consume, Consuming Pact, Omen of Enfeeblement, Root, Cure Disease, Dispel Magic, Enduring Breath. <a href="shaman/spells.html#lvl-12">table</a></li>
-<li>Make sure you have the <strong>level 8</strong> batch. <strong>Pact of Renewal moved to level 8</strong> in patch 0.30.2.1. Ghostly Blight, Pact of Haste, Spirit Mending, Speed of the Wild are also level 8.</li>
-<li>Solo loop: Omen of Lethargy → Ghostly Blight + Malady → Pact of Renewal on yourself → melee or wait. Use Consume only when safe (45 s cooldown).</li>
+<div class="dash"><h3>Right now (level 13)</h3><ul>
+<li>Confirm you have your <strong>level 12</strong> spells: Consume, Consuming Pact, Omen of Enfeeblement, Root, Cure Disease, Dispel Magic, Enduring Breath. <a href="shaman/spells.html#lvl-12">table</a></li>
+<li>Make sure you still have the <strong>level 8</strong> batch (Pact of Renewal, Ghostly Blight, Pact of Haste, Spirit Mending, Speed of the Wild).</li>
+<li>Solo loop: Omen of Lethargy → Ghostly Blight + Malady → Pact of Renewal on yourself → melee or wait. Use Consume only when safe (45 s cooldown). Push toward 16 for the next big spell batch.</li>
 </ul></div>
-<div class="dash"><h3>Where to level 12–16</h3><ul>
+<div class="dash"><h3>Where to level 13–16</h3><ul>
 <li><a href="zones/night-harbor.html">Night Harbor</a>: wiki lists diseased bats (10), cracked/diseased beetles (12–14) and decrepit→cackling skeletons (12–15).</li>
 <li><a href="zones/infested-crypt.html">Infested Crypt</a> (wiki 8–16) or <a href="zones/tel-ekir.html">Tel Ekir</a> (wiki 10–35).</li>
 <li>From an Underdocks start: <a href="zones/underdocks.html">wererats</a> (10–12).</li>
@@ -39,7 +39,7 @@ Game version: 0.30.2.8 (Oct 11, 2026)
 </div>
 
 ## Quick links
-- **Shaman:** [Overview](/shaman/index.html) · [Spells by level](/shaman/spells.html) · [Leveling 12→60](/shaman/leveling.html) · [Playbook and hotbars](/shaman/playbook.html) · [Quests](/shaman/quests.html) · [Tradeskills](/shaman/tradeskills.html)
+- **Shaman:** [Overview](/shaman/index.html) · [Spells by level](/shaman/spells.html) · [Leveling 13→60](/shaman/leveling.html) · [Playbook and hotbars](/shaman/playbook.html) · [Quests](/shaman/quests.html) · [Tradeskills](/shaman/tradeskills.html)
 - **Gear:** [By level and class](/gear/index.html) · [Shaman easy BiS](/gear/shaman.html) · [Weapons](/gear/weapons.html) · [Crafted sets](/gear/crafted-sets.html)
 - **World:** [Zones and maps](/zones/index.html) · [Leveling by band (all classes)](/leveling.html) · [Farming](/farming.html) · [Economy and trade routes](/economy.html) · [Factions](/factions.html) · [Quests](/quests.html)
 - **Other characters:** [Shadow Knight](/classes/shadow-knight.html) · [All classes](/classes/index.html)

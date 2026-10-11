@@ -8,7 +8,7 @@ sources: Wiki item pages|https://monstersandmemories.miraheze.org/wiki/Category:
 Armor: Chain (and anything lighter)
 Weapons: Blunt, piercing, shields
 Stats: WIS > STA > DEX (wiki)
-Current band: 11–15 (level 12)
+Current band: 11–15 (level 13)
 :::
 
 :::strategy Ranking method

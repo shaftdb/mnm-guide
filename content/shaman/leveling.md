@@ -1,11 +1,11 @@
 ---
-title: Shaman leveling 12→60
+title: Shaman leveling 13→60
 section: shaman
 desc: Shaman leveling route by level band with camps
 sources: Wiki zone pages (NPC tables, levels)|https://monstersandmemories.miraheze.org/wiki/Zones; Wiki: Shaman Guides (solo routine)|https://monstersandmemories.miraheze.org/wiki/Shaman_Guides; Patch 0.30.2.8 (Night Harbor reunited)|https://account.monstersandmemories.com/community/patch_notes/59
 ---
 :::facts Route at a glance
-Now: 12
+Now: 13
 Next spell batch: 16 (big one)
 Solo loop: Slow → DoTs → HoT self → melee
 Group role: Slow, HoT tank, buff

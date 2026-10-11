@@ -11,13 +11,13 @@ L1–5 total (Sep 30): 4sp 5cp for all scrolls in range (before the Oct 7 cut)
 Current prices: UNCONFIRMED. Check the vendor
 :::
 
-## Buy priority, from level 12 on
+## Buy priority, from level 13 on
 STRATEGY This is a priority order for when money is tight. Spell levels and effects are from the wiki tables below.
 
 | Level | Must-buy | Nice-to-have | Skip / later |
 |---|---|---|---|
 | 8 (check you have these) | Pact of Renewal, Ghostly Blight, Pact of Haste, Spirit Mending | Speed of the Wild, Invisibility vs Undead, Spirit Bane III | Minor Regeneration, Minor Communion of Regeneration, Ancestor's Eye, Purge, Summon Food |
-| 12 (now) | Consume, Omen of Enfeeblement, Root | Cure Disease, Dispel Magic | Consuming Pact (heals on you are reduced for 2 min), Enduring Breath |
+| 12 (have these) | Consume, Omen of Enfeeblement, Root | Cure Disease, Dispel Magic | Consuming Pact (heals on you are reduced for 2 min), Enduring Breath |
 | 16 | Greater Omen of Lethargy, Greater Pact of Renewal, Greater Pact of Haste, Sickness | Greater Ghostly Blight, Invisibility, Omen of Susceptibility, Berserker Rage, Ancestral Wisdom II | Tribal Rage (needs talismans), Blind (60 s cooldown), protections |
 | 20 | Greater Spirit Mending, Lesser Rite of Mending | Spirit Blight, Shrink, Lesser Regeneration | Holy Protection, Lesser Communion |
 | 24 | Pact of Restoration, Consume II, Curing Ritual | Ghostly Miasma, Greater Sickness, Greater Omens, Speed of the Predator | Lurching Impairment |
