@@ -1,0 +1,3500 @@
+{
+ "archer": {
+  "url": "https://monstersandmemories.com/class-archer-deep-dive",
+  "overview": [
+   "It’s time for another deep dive! This time we’ll be covering the Archer.",
+   "Like the Wizard and Spellblade, we’ve been testing out their new kit internally, fixing issues, and getting things in a solid state before it hits Beta. But as always, expect iteration as time goes on.",
+   "With that out of the way, let’s review some of the previously mentioned characteristics and see how they've evolved:"
+  ],
+  "sections": [
+   {
+    "title": "Notes",
+    "paras": [
+     "This one didn’t entirely pan out with the way our combat system works, but the new Strafing Barrage line allows you to fire multiple shots while moving, and the kit continues to have a number of instant-cast options.",
+     "This generated a lot of questions. Obviously it affects the theme of abilities, such as Smoke Bomb Arrow and Immobilizing Trap, but we’ve also decided to focus this into a unique way of acquiring abilities rather than an inventory space obligation. More on this below.",
+     "As mentioned above, the Strafing Barrage ability fulfills this item. It’s available early on in the toolkit and has multiple upgrades as you level.",
+     "Disengagement, a pre-existing ability, remains unchanged, though we'll evaluate the threat reduction portion as the kit gets more public playtesting. There’s also some polish work to do on the movement and network side of this ability.",
+     "Archers get a version of Hide called Sniper’s Blind After hiding for a few seconds, the flat damage portion of their Quick Shot gets a substantial increase. This feels pretty good as an opener if you have time to hide during the pull.",
+     "Now, let’s go over the changes themselves."
+    ],
+    "entries": [
+     {
+      "name": "“Can fire at a reduced speed while moving”",
+      "desc": ""
+     },
+     {
+      "name": "“Has access to specialty arrowheads, including explosive tips, entangling nets, concealing smoke, and more (key abilities require specific arrowheads, so what you carry matters)”",
+      "desc": ""
+     },
+     {
+      "name": "“Utilizes tinkered traps including caltrops, nets, and bombs; their tools feel crafted and mechanical, rather than foraged like a Ranger”",
+      "desc": ""
+     },
+     {
+      "name": "“Can fire a quick volley while repositioning”",
+      "desc": ""
+     },
+     {
+      "name": "“Can leap backward when enemies close in”",
+      "desc": ""
+     },
+     {
+      "name": "“Can temporarily conceal themselves to empower their first shot upon reemerging”",
+      "desc": ""
+     }
+    ]
+   },
+   {
+    "title": "Traps",
+    "paras": [
+     "Outside of Caltrops, Archer traps are now learned through Tinkering. You’ll find schematics (recipes) on your spell merchant. Once the trap has been made, you can right-click it to learn the corresponding ability.",
+     "Trap abilities require a trap in your inventory as a reagent, but it only has a 5% chance of being consumed, so you don’t need to carry around stacks of them.",
+     "Since this is the first bit of Tinkering to make it in-game, you should probably expect these recipes to get some iteration as the tradeskill develops. The schematics are Archer-only and don’t require significant investment into Tinkering.",
+     "This trap continues to be learned through an ability scroll. It sees its duration increased and now deals damage over time to enemies within the area. We’ll watch for feedback on this one to see if players would rather lose the damage component to make it more group-friendly as a snare.",
+     "This ability has changed significantly. It's no longer consumed by an enemy stepping on it, and no longer has an interaction with Illuminating Shot (which has been removed). Now you set it up and explode it with Flare, which has additional uses beyond just light.",
+     "This ability remains largely unchanged, but we've reduced its chance to be broken by damage so that it's more in line with other roots.",
+     "This is a new trap with a simple purpose: to notify you when something, or someone, has entered its area and triggered it. It doesn't cause damage or threat, so you might consider using this to keep track of repops, roamers, or other forms of danger.",
+     "Another new trap. This one detonates when stepped on, poisoning enemies in a tight area around it."
+    ],
+    "entries": [
+     {
+      "name": "Caltrops",
+      "desc": "Scatter caltrops around yourself, decreasing the Movement Speed of targets within the affected area and dealing Physical Damage to them every few seconds."
+     },
+     {
+      "name": "Oil Trap",
+      "desc": "Place an oil trap at your feet, dealing Fire Damage to nearby targets when detonated with Flare."
+     },
+     {
+      "name": "Immobilizing Trap",
+      "desc": "Place a trap at your feet, immobilizing the first target that triggers it."
+     },
+     {
+      "name": "Alarm Trap",
+      "desc": "Place an alarm trap at your feet, notifying you of targets that enter the affected area."
+     },
+     {
+      "name": "Poison Gas Trap",
+      "desc": "Place a poison gas trap at your feet, dealing Poison Damage every few seconds to nearby targets when triggered."
+     }
+    ]
+   },
+   {
+    "title": "Stances",
+    "paras": [
+     "The former stance Deadeye has been changed to a cooldown. Archers now have two combat stances in its place.",
+     "This is your go-to stance when soloing, and it's the first you’ll get while leveling.",
+     "You’ll get this one a bit later and find it works better when stationary."
+    ],
+    "entries": [
+     {
+      "name": "Skirmisher",
+      "desc": "Adopt the role of a skirmisher, slightly increasing your Movement Speed, reducing the cooldown of Strafing Barrage, and reducing the cast time of all abilities."
+     },
+     {
+      "name": "Marksman",
+      "desc": "Adopt the role of a marksman, increasing the damage of your Piercing Shot and Splintering Shot, and granting your ranged attacks and abilities a chance to land Critical Hits."
+     }
+    ]
+   },
+   {
+    "title": "Stealth and Mobility",
+    "paras": [
+     "This is one of the big focuses around the Archer update. You won’t get Rogue-level stealth, but instead a bit of utility to reinforce the theme of a repositioning “sniper.\" Disengagement remains a useful mobility and threat reduction option.",
+     "A short combination of Sprint and Stealth that allows you to bypass an enemy pack or two, or perhaps set up a surprise attack in PVP.",
+     "Channel multiple shots while on the move. You still have to face your target, but you can use this while moving backwards or, as the name implies, strafing to stay aimed at the target.",
+     "This isn't actually an ability, but a trait instead. It gives you a small advantage when you can find a perch to shoot from. Currently you start with it, but that may change in a future revision to our Traits system."
+    ],
+    "entries": [
+     {
+      "name": "Sniper's Blind",
+      "desc": "Conceal your position, rendering you virtually undetectable. Additionally, your Quick Shot deals increased damage while concealed by Sniper's Blind."
+     },
+     {
+      "name": "Relocate",
+      "desc": "Retreat into the shadows and relocate to a more advantageous position, increasing your Movement Speed and briefly rendering you virtually undetectable."
+     },
+     {
+      "name": "Strafing Barrage",
+      "desc": "Barrage your target with arrows, dealing Weapon Ratio Damage four times. This ability can be used while moving."
+     },
+     {
+      "name": "High Ground",
+      "desc": "Your damage dealt with a bow is increased when above your target."
+     }
+    ]
+   },
+   {
+    "title": "Damage and Debuffs",
+    "paras": [
+     "The core abilities are staying, though some have been renamed. Aimed Shot is now Piercing Shot, and Multishot is now Splintering Shot (and has had its damage improved). Quick Shot remains a core damage dealer, but can now be used in conjunction with Sniper's Blind. Pinning Shot is now Net Shot, has no minimum range, and the temporarily disabled condition that required the target to hit a wall is gone for good.",
+     "Smoke Bomb Arrow, Flare, and Net Shot now require specialty arrows. These are crafted with Fletching, can be placed in your quiver, and can be used without equipping them in your ammo slot. They aren’t overly punishing to create, but do require a little preparation.",
+     "New archers start with this now and pick up Quick Shot shortly into their progression. This is a lower damage, instant cast shot with no minimum range.",
+     "Another instant shot that shares a cooldown with Quick Shot and Point Blank. Though it deals less damage up front, it causes your target to bleed, which is stackable up to 3 times. With good timing, you can weave this in between Quick Shots (or more easily, Point Blank) to keep the bleed stacks up. Bleeds will have some inter-class mechanics in later updates.",
+     "This is a crafted arrowhead that blinds enemies near your target."
+    ],
+    "entries": [
+     {
+      "name": "Point Blank",
+      "desc": "Fire a point-blank shot at your target, dealing Weapon Ratio Damage plus Physical Damage."
+     },
+     {
+      "name": "Barbed Arrow",
+      "desc": "Fire a barbed arrow at your target, dealing Weapon Ratio Damage plus Bleed Damage every few seconds."
+     },
+     {
+      "name": "Smoke Bomb Arrow",
+      "desc": "Fire a smoke bomb at your target, blinding them and nearby targets. This ability requires a bow and Smoke Bomb Arrow."
+     }
+    ]
+   },
+   {
+    "title": "Cooldowns",
+    "paras": [
+     "This is now received a bit later on, but better matches its name by working as a tertiary haste. It also resets the other new shots in the trio.",
+     "This is now received later in your progression, and is dodge-based instead of parry.",
+     "This is now a late-game cooldown."
+    ],
+    "entries": [
+     {
+      "name": "Flurry of Arrows",
+      "desc": "Prepare yourself to unleash a flurry of arrows, instantly resetting the cooldown of your Barbed Arrow, Point Blank, and Quick Shot abilities, and increasing your Ranged Attack Speed."
+     },
+     {
+      "name": "This ability is considered a tertiary haste.",
+      "desc": ""
+     },
+     {
+      "name": "This ability resets the cooldown of Barbed Arrow, Point Blank, and Quick Shot a second time when it ends.",
+      "desc": ""
+     },
+     {
+      "name": "Anticipate",
+      "desc": "Anticipate enemy aggression, granting you a 100% chance to dodge incoming melee attacks."
+     },
+     {
+      "name": "Deadeye",
+      "desc": "Lock onto targets with deadly precision, temporarily increasing all Ranged Damage dealt."
+     }
+    ]
+   },
+   {
+    "title": "Removed Abilities",
+    "paras": [
+     "Distracting Shot, Purging Arrow, Scatter Shot, and Illuminating Shot have been removed due to being off-theme or not complementing the new kit."
+    ],
+    "entries": []
+   }
+  ]
+ },
+ "bard": {
+  "url": "https://monstersandmemories.com/class-bard-deep-dive",
+  "overview": [
+   "A common question after the initial Bard direction post seemed to be, “What exactly is the Bard’s role?” So, let’s begin by clearing that up. Bard is a versatile support class who focuses on supplying buffs that stack with other classes' signature buffs, crowd control, and pulling. The design of the bard forces them to choose just a few of the support facets they can provide at any one time, via their memorized songs, the songs they are actively maintaining, and the instrument they have equipped (and therefore the played songs that get amplified).",
+   "This update focuses on easing the amount of work required just to maintain buffs, increasing the variety of songs they have access to, and giving them a means to add damage to a group without maintaining a charmed pet. While instrument swapping is not directly addressed, the new casting mechanic and wielding style will hopefully reduce how often you feel obligated to do so, and this may see further iteration in the future."
+  ],
+  "sections": [
+   {
+    "title": "Stat Changes",
+    "paras": [
+     "Charisma is now used to determine bard mana, as well as damage bonuses on songs. It would apply to healing as well, but Bards currently lack any such spell. Hymn of Restoration is a Health Regeneration stat buff, not an actual heal."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Skill and Wielding Changes",
+    "paras": [
+     "Bards no longer have access to the Dual Wield skill. While visually and thematically we tend to think of bards as capable of wielding a pair of fast weapons, the mechanics of the class are better suited to wielding a single weapon with an instrument in their off hand. Bards now gain the Double Attack skill at the same levels and caps they previously had Dual Wield.",
+     "Bards have lost the Channeling skill. This did nothing for them anyway, as their songs can only be interrupted via a stun.",
+     "Bards have also lost the Meditation skill. The vast majority of their spell lineup requires zero or minimal mana, and few Bards have the time to sit and do nothing anyway. With the changes to their casting mechanic, there’s a bit more incentive (or at least time) to use their Shout abilities, and these will need to applied strategically to make the best use of their mana."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Casting Mechanics",
+    "paras": [
+     "Bard songs which buff themselves or the group will now remain active after casting them and auto refresh after casting a new song. This has always worked this way for the most recent song, but bards are now able to maintain multiple. Initially, bards will play in “Cut Time” and maintain a 3 song Measure. At level 30, bards unlock the “Common Time” trait, adding a song to their Measure allowing them to maintain 4.",
+     "When you play another beneficial song and are already at capacity, the oldest song will stop being maintained and fade off quickly after. Alternatively, you can stop one of the active songs by using that ability, and start a new one without pushing the oldest out.",
+     "Your actively maintained songs are shown on the Ability Bar, with the most recently cast song highlighted in white.",
+     "When you cast a targeted or detrimental song, you’ll push a song out of your queue, and only the most recent song will be refreshed automatically. You’ll need to twist (sequentially recast the songs) to maintain multiple detrimental songs, or a combination of buffs and detrimental songs.",
+     "When not needing to actively recast songs to maintain buffs, you should have a bit more time to use the new melee ability, or your Shouts, which can be used while the songs in your Measure stay active."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Instruments",
+    "paras": [
+     "Instruments have been greatly increased in strength, with basic store-bought versions now adding a 50% bonus to applicable songs. All existing instruments have had their bonus value reviewed and set on this new scale. Healing Hymn and Hymn of Inspiration have had their base values adjusted as a result of the new scale for instrument bonuses. The instrument types for some songs has changed in this rework.",
+     "We hope to see more spells impacted by instrument quality in future patches."
+    ],
+    "entries": [
+     {
+      "name": "Instrument bonuses currently apply to the following spell types:",
+      "desc": "Stat bonuses other than Haste (including Movement Speed and Health Regeneration)"
+     },
+     {
+      "name": "Damage Absorption Effects",
+      "desc": ""
+     },
+     {
+      "name": "Mana over Time (Hymn of Inspiration)",
+      "desc": ""
+     },
+     {
+      "name": "Damage and Damage Over Time (DOT)",
+      "desc": ""
+     }
+    ]
+   },
+   {
+    "title": "Melee Ability",
+    "paras": [
+     "Bards gain a single melee ability, Whistling Blade. This attack does modest damage, but applies a Strength buff. At higher tiers, this buff adds Armor Class and Haste (Primary). While this has no casting time, it does apply a short global cooldown and isn’t best used when frantically twisting your songs."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Shouts",
+    "paras": [
+     "Shouts are mana-consuming instant cast abilities Bards can use while maintaining songs, or between songs they are twisting. You cannot use a Shout during the 3 second cast time of a song."
+    ],
+    "entries": [
+     {
+      "name": "Bards retain all their current shouts:",
+      "desc": "The Screaming Vocalization DD line"
+     },
+     {
+      "name": "Repel, an area effect de-taunt",
+      "desc": ""
+     },
+     {
+      "name": "Frightful Screech, the targeted fear",
+      "desc": ""
+     },
+     {
+      "name": "The Mesmerizing Whisper line of short duration mezzes",
+      "desc": ""
+     },
+     {
+      "name": "They gain one additional shout:",
+      "desc": "Paralyzing Shriek - Release a paralyzing shriek, stunning foes around you for 3 seconds"
+     }
+    ]
+   },
+   {
+    "title": "Songs",
+    "paras": [
+     "Songs are the bread and butter of the Bard toolkit, and are either twisted or multiple songs can be maintained in a set of active songs called a Measure. In this rework, some songs may have changed their Instrument type. Each Instrument type has at least one song that scales numerically with the quality of the instrument."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Charm",
+    "paras": [],
+    "entries": [
+     {
+      "name": "The Siren’s Call line of Bard Charm songs has received a few changes:",
+      "desc": "Only Beasts and Humanoids can now be charmed"
+     },
+     {
+      "name": "Charms no longer have a chance to break when damaged",
+      "desc": ""
+     },
+     {
+      "name": "The Damage of Charmed NPCs is now reduced to be on-par with the damage of a dedicated pet class’ pet.",
+      "desc": ""
+     }
+    ]
+   },
+   {
+    "title": "Mesmerization",
+    "paras": [
+     "Somniferous Serenade is now a Wind instrument song, but is otherwise unchanged. Mesmerization songs now handle overwrites based on duration, making it easier to work with an Enchanter to replace short lasting Bard mezzes with longer lasting Enchanter versions."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Damage over Time songs",
+    "paras": [
+     "The Dissonant Riffs line has been removed. This line included 5 songs that stacked, but it wasn’t obvious to all players that they could be used together and stack, and were often misinterpreted as upgrades that had the numbers or descriptions set wrong.",
+     "The new Vellicosa’s Fanfare line features two Brass-based magic DoTs that specifically call out in their description that they stack together. The higher level one, Vellicosa’s Tantara, adds bonus damage when the target is already affected by Vellicosa’s Fanfare. The total damage of these two songs is an upgrade over the total of the previous 5 DoTs - this is strictly an upgrade."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Haste Songs",
+    "paras": [
+     "These songs have been renamed to be more easily understandable by players that are not real life musicians, but are otherwise unchanged. In addition to their Primary Haste songs, Bards continue to offer top-tier Secondary Haste, allowing them to further buff groups that already contain an Enchanter or Shaman."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Resist Songs",
+    "paras": [
+     "Resistance buffs are an area the now Bard excels at. The previous two Magic Resistance songs that mimicked resistance buffs other classes get have been replaced with 4 scaling buffs that can be further improved based on your equipped Percussion instrument:",
+     "Bard resistance songs stack with resistance buffs provided by other classes."
+    ],
+    "entries": [
+     {
+      "name": "Chant of Magic Protection - provides 5 to 10 Magic Resistance before the instrument bonus",
+      "desc": ""
+     },
+     {
+      "name": "Chant of Purity - provides 5 to 10 Poison and Disease Resistance before the instrument bonus",
+      "desc": ""
+     },
+     {
+      "name": "Chant of the Elements - provides 5 to 10 Fire, Cold, and Electric Resistance before the instrument bonus",
+      "desc": ""
+     },
+     {
+      "name": "Chant of Neutrality - provides 5 to 10 Holy and Corruption Resistance before the instrument bonus",
+      "desc": ""
+     }
+    ]
+   },
+   {
+    "title": "Other songs",
+    "paras": [
+     "While versatility is a defining aspect of the Bard, the existing songbook was rather sparse, and this rework beefs that out with some new song types. Expect to see a few more show up in the future."
+    ],
+    "entries": [
+     {
+      "name": "Beats of Battle - Beats of War has been moved to a higher level and the low level version replaced with this more modestly named version. Beats of War is an upgrade to Beats of Battle.",
+      "desc": ""
+     },
+     {
+      "name": "Aristam’s Steady Tread - Not every situation allows for the full speed of Bard’s Song of Travel, and Steady Tread fills the gap when a Bard finds themselves deep in a dungeon. The song offers a modest base run speed increase and the option to push that a bit further with an equipped drum.",
+      "desc": ""
+     },
+     {
+      "name": "Disenchanting Blare - A targeted Brass song to remove harmful effects from your party members.",
+      "desc": ""
+     },
+     {
+      "name": "Discordant Purge - The complementary song to Disenchanting Blare, this song dispels beneficial effects on your targeted foe.",
+      "desc": ""
+     },
+     {
+      "name": "Tembror’s Booming Bravado - Amplifies the voices of your groupmates, giving them a chance to fully resist Silence effects",
+      "desc": ""
+     },
+     {
+      "name": "Aristam’s Aerial Aria - This airy tune slows the descent of your group. While not making them immune to gravity or falling damage, it will decrease the rate at which they fall. Expect a pass on these levitate effects in the future to make them a bit safer, and use with caution for now.",
+      "desc": ""
+     },
+     {
+      "name": "Aristam’s Voluminous Voyage - This high level Percussion song combines the effects of Song of Travel, Sonnet of the Unseen, and Aerial Aria for the ultimate in bard travel.",
+      "desc": ""
+     },
+     {
+      "name": "Faedawyn's Piping of Protection - Weave a mail of musical protection around your group, increasing their Armor Class and absorbing incoming damage.",
+      "desc": ""
+     },
+     {
+      "name": "Anthem of Restoration - This high level upgrade song combines the effects of Healing Hymn and Hymn of Inspiration.",
+      "desc": ""
+     }
+    ]
+   },
+   {
+    "title": "Retained Songs",
+    "paras": [
+     "Bards retain the following songs that haven’t been previously mentioned:"
+    ],
+    "entries": [
+     {
+      "name": "Healing Hymn",
+      "desc": ""
+     },
+     {
+      "name": "Traveler's March",
+      "desc": ""
+     },
+     {
+      "name": "Selstie's Aeolian Aria",
+      "desc": ""
+     },
+     {
+      "name": "Hymn of Inspiration",
+      "desc": ""
+     },
+     {
+      "name": "Sonnet of the Unseen",
+      "desc": ""
+     },
+     {
+      "name": "Harmony of Visions",
+      "desc": ""
+     }
+    ]
+   },
+   {
+    "title": "Cooldowns",
+    "paras": [],
+    "entries": [
+     {
+      "name": "Bards gain one new long cooldown ability:",
+      "desc": "Crescendo - Raise your song in a mighty crescendo, increasing your Instrument bonus with all Instruments, as well as Singing."
+     }
+    ]
+   },
+   {
+    "title": "Closing",
+    "paras": [
+     "That wraps it up for this Bard update. We’re looking forward to seeing all you future Bards when Early Access opens up!"
+    ],
+    "entries": []
+   }
+  ]
+ },
+ "beastmaster": {
+  "url": "https://monstersandmemories.com/class-beastmaster-deep-dive",
+  "overview": [
+   "Beastmaster is getting a fairly large rework, shifting from a Shaman-based hybrid to a beast-taming berserker theme. The spellbook is going away, but mana as a resource is staying. Mana now represents the shared bond with your chosen beast and, for the most part, is only used for abilities that interact with them. New melee abilities and pet-focused utility are replacing the shared Shaman spells.",
+   "Let’s jump right into this deep dive with the reason most of you are playing a Beastmaster - the pets!"
+  ],
+  "sections": [
+   {
+    "title": "Pets",
+    "paras": [
+     "Beastmaster pets are still obtained through the use of Bestial Bond, leveled up through an experience system, and fed based on a specific diet. This update lowers the experience needed to level your pets, making it easier to maintain multiple and supporting the practice of swapping between them via the Kennel Master.",
+     "Sharks are currently still tameable, but this will be going away soon and made unlockable via a quest during Early Access. The ability to tame more mythical beasts is likewise planned as a future quest unlock."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Pet Roles",
+    "paras": [
+     "Beasts are now split into DPS, Tank, and Balanced roles, and have variations in their stats to support this. Expect some iteration on the exact stat variations as we go from this patch into the next. DPS pets deal increased damage, and Tank pets have increased AC and health. Balanced pets deal slightly more damage and have slightly increased health.",
+     "We know that pet damage and survivability are key issues for players, so we’re working hard to nail the tuning on those. We’ll share the goals we're working toward, even if the rework patch (0.26.0) doesn’t quite get the pets into their final state.",
+     "We want Beastmaster to be a competitive DPS class, with their damage coming from both their own abilities and their pet’s. Expect to deal comparable damage to other DPS classes when using a DPS pet, with your pet making up a little less than half of your total damage. When using a Tank pet and the Guardian Spirit buff, expect your pet to be able to tank for solo and small group encounters."
+    ],
+    "entries": [
+     {
+      "name": "DPS - Jackal, Snake, Wasp, Wolf",
+      "desc": ""
+     },
+     {
+      "name": "Tank - Bear, Beetle, Crocodile",
+      "desc": ""
+     },
+     {
+      "name": "Balanced - Bat, Rat, Spider",
+      "desc": ""
+     }
+    ]
+   },
+   {
+    "title": "Pet Abilities",
+    "paras": [
+     "Your choice of pet should matter more than just a skin and a few stat points. In this rework, each pet family will be getting a unique, utility-focused ability. For example, Spider pets will be able to root opponents in place with a web. We’ll save the details of the rest so you can discover them once you get your hands on the update."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Pet Buffs and Heals",
+    "paras": [
+     "Many abilities that previously required your pet to be targeted, such as the Spirit buffs or the Patch Companion line, no longer have this requirement, making them easier to use."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Swarm Pets",
+    "paras": [
+     "As mentioned in the initial update post, Swarm pets as they existed are going away. For the most part, you’ll be adventuring with a single companion, but new Kinship abilities will let you call upon the services of other animals for more specific situations.",
+     "Kinship: Bat is a placeholder until a proper bird model exists in the game. This ability briefly summons a bat pet to blind your target, without impacting your primary pet.",
+     "Kinship: Rat is a planned future ability that summons a controllable stealthy rat for scouting. Sadly it didn't make it into the initial rework patch, but we hope to make it available soon.",
+     "As the world grows and new beasts are added, you may find more to recruit into your service in this manner."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Abilities",
+    "paras": [],
+    "entries": []
+   },
+   {
+    "title": "Companion-Focused Abilities",
+    "paras": [
+     "The update sees several new and improved abilities to help the Beastmaster support their pet."
+    ],
+    "entries": [
+     {
+      "name": "Bestial Bond - Appeal to the senses of a target beast, bonding it to your side.",
+      "desc": ""
+     },
+     {
+      "name": "Revive Companion - Rally your pet, returning it to life.",
+      "desc": ""
+     },
+     {
+      "name": "Mend Companion (changed) - Mend your pet, restoring Health over 12 seconds. (This spell line is now a heal over time and significantly more powerful, though at the cost of more mana. You won’t be spamming heals on your pet anymore, freeing you up to deal more damage yourself.)",
+      "desc": ""
+     },
+     {
+      "name": "Shrink Companion - Shrink your pet, reducing their overall size.",
+      "desc": ""
+     },
+     {
+      "name": "Cleanse Companion (new)- Cleanse your pet, removing Disease and Poison effects.",
+      "desc": ""
+     },
+     {
+      "name": "Invigorate Companion (new) - Reinvigorate the bond with your pet, instantly resetting their abilities and your Command: Kill and Command: Protect abilities.",
+      "desc": ""
+     },
+     {
+      "name": "Savage Spirit - Awaken a savage spirit within your pet, increasing their Attack Speed, Agility, and granting them a chance to activate Rip on melee attacks. (This is your offensive “Spirit” buff. Pets can only have one Spirit buff at a time.)",
+      "desc": ""
+     },
+     {
+      "name": "Guardian Spirit (new)- Invoke your pet's guardian spirit, reducing their Physical Damage received and the cooldown of their Provoke ability. (This is your defensive “Spirit” buff.)",
+      "desc": ""
+     },
+     {
+      "name": "Command: Kill - Command your pet into action, calling on them to perform a devastating attack. (“Command” abilities share a cooldown.)",
+      "desc": ""
+     },
+     {
+      "name": "Command: Protect (formerly Resource Guarding) - Command your pet to protect you, reducing all damage received while transferring some of it to your pet.",
+      "desc": ""
+     }
+    ]
+   },
+   {
+    "title": "Auras",
+    "paras": [
+     "Beastmasters retain their group buffing aura, albeit with a slight rename, and gain another useful group buff. Though they've lost Speed of the Wild, Prowler’s Instinct offers a unique alternative with the advantage of being usable indoors."
+    ],
+    "entries": [
+     {
+      "name": "Predatory Instinct (formerly Pack of the Predator) - Awaken a predatory instinct in your group, increasing their Offense and Agility.",
+      "desc": ""
+     },
+     {
+      "name": "Prowler’s Instinct (new) - Awaken the prowler's instinct in your group, increasing their Movement Speed and rendering them undetectable to targets while behind them. (This ability grants the benefits of Sneak while increasing your movement speed, enabling a cautious group to skirt around some encounters they’d rather not engage in.)",
+      "desc": ""
+     },
+     {
+      "name": "Buffs",
+      "desc": "Sight of the Beast (new) - Imbue your sight with bestial clarity, enhancing your vision in darkness. (This ability grants you an Infravision equivalent.) Sight of the Predator (new) - Imbue your sight with predatory clarity, greatly enhancing your vision in darkness while reducing it in bright light. (This ability grants you an Ultravision equivalent.) Hunter’s Chase (formerly Speed of the Predator) - Embody a predator in relentless pursuit, briefly increasing your Movement Speed. Aquatic Affinity (new) - Attune yourself to aquatic beasts, increasing your Swimming skill and greatly decreasing your air consumption."
+     }
+    ]
+   },
+   {
+    "title": "Melee Abilities",
+    "paras": [
+     "Strike has been replaced with several new attacks, most of which have a bias toward slower, two-handed weapons. For the claw / dual wield enthusiasts, Maul is a solid option."
+    ],
+    "entries": [
+     {
+      "name": "Enraging Strike (new) - Strike your target in a furious rage, dealing Weapon Ratio Damage and increasing the Strength, Dexterity, and Agility of both you and your pet. This ability shares a cooldown with other Might abilities.",
+      "desc": ""
+     },
+     {
+      "name": "Savage Strike (new) - Savagely strike your target, dealing Weapon Ratio Damage plus Physical Damage. Additionally, this ability gains a damage bonus if the target is bleeding. This ability shares a cooldown with other Might abilities. (Bleed effects can be applied by your pet when buffed with Savage Spirit, or by Rogues and Archers.)",
+      "desc": ""
+     },
+     {
+      "name": "Chop (new) - Viciously chop your target, dealing Weapon Ratio Damage plus Physical Damage, and creating an opening that causes your pet to land Critical Hits. This ability requires a two-handed weapon, and shares a cooldown with other Martial abilities.",
+      "desc": ""
+     },
+     {
+      "name": "Maul (new) - Violently maul your target, dealing Weapon Ratio Damage per equipped weapon and decreasing their Physical Damage dealt. This ability shares a cooldown with other Martial abilities.",
+      "desc": ""
+     },
+     {
+      "name": "Mangle (new) - Mangle your target, dealing Weapon Ratio Damage and reducing incoming healing effects. This ability requires a two-handed weapon and shares a cooldown with other Martial abilities.",
+      "desc": ""
+     },
+     {
+      "name": "Other Abilities",
+      "desc": "Pounce (new) - Leap toward your target, dealing Weapon Ratio Damage and increasing the Movement Speed of your pet. (The movement speed component here helps your pet keep up with you.) Howl of Dominance (new) - Exert dominance over your target, decreasing their Physical Damage dealt and increasing yours by the same amount. Call of the Faithful (new) - Call out to your stowed pets from a great distance, summoning one to replace your current pet. (This is a late game utility that allows you to change your current pet without visiting a Kennel Master.) Bestial Glimpse (new) - Bind your vision to that of a target beast, granting you the ability to see through their eyes. Lick Wounds (new) - Pause to mend your wounds, restoring Health at the cost of Mana every second. This ability is channeled. (This self-heal is best used out of combat to quickly get you back in action after a difficult fight.) Beastmasters also share the Lull Beast and Preservation (mount resurrection) line of spells with the Druid."
+     }
+    ]
+   }
+  ]
+ },
+ "cleric": {
+  "url": "https://monstersandmemories.com/class-cleric-deep-dive",
+  "overview": [
+   "Clerics are the premier healer: a versatile, faith-powered support class built to keep their group alive, while still bringing holy damage and utility to the table. With this update, we've given Clerics an entirely unique toolkit (several of their core spells used to be shared with other classes), rounded them out with a few new spells, and added some polish to existing spells.",
+   "Overall, Clerics remain close to their current form as a strong group healer with useful utility (cures, dispels, resurrection), a damage kit that leans into holy and anti-undead themes, and a few unique and valuable buffs. We've expanded several existing spell lines with more ranks to make the pace of upgrades more consistent, added new spell lines to fill in gaps, and removed a few spells that felt redundant or underused.",
+   "Clerics have also picked up a new starting trait: “Blessed.” As a class so tightly bound to their faith, Clerics enjoy a favored status, and thus may occasionally receive divine help on their adventures."
+  ],
+  "sections": [
+   {
+    "title": "Defensive Upgrade",
+    "paras": [
+     "We've changed the way our armor class system works to provide more defense to heavier armor types. This means that plate armor is more effective at reducing incoming damage than it was before.",
+     "We've also given Clerics the Block skill as part of their Prayer of the Faithful self-buff. This increases the defensive benefits you get from shields by reducing incoming damage when you block a hit."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Heals",
+    "paras": [
+     "Healing is what Clerics do best, and they now have Cleric-specific versions of their core heals rather than sharing generic spells with other classes."
+    ],
+    "entries": [
+     {
+      "name": "Heal",
+      "desc": "Heal your target, restoring Health. (This is your bread-and-butter single-target heal, with a moderate cast time and heal amount.)"
+     },
+     {
+      "name": "Circle of Healing",
+      "desc": "Heal your group, restoring Health. (This is a strong emergency group heal on a cooldown.)"
+     },
+     {
+      "name": "Healing Light",
+      "desc": "Shine a healing light on targets in a frontal cone, restoring Health. (This is a great way to top off a group when multiple people are hurt. It now has a cast time, so it's a deliberate choice rather than a free upgrade over your single-target heal.)"
+     },
+     {
+      "name": "Promise of Mending",
+      "desc": "Bestow a promise of mending on your target, restoring Health after a few seconds. (This is a delayed heal, handy for topping someone off ahead of an incoming hit. This spell line was renamed from Impart Blessing; the spell itself works the same way it always has.)"
+     },
+     {
+      "name": "Blessed Barrier",
+      "desc": "Shield your target with a blessed barrier, absorbing damage received. (This is best applied before damage lands, rather than after. The barrier only lasts a short while, and any unused absorption is lost once it expires. Its mana cost per point of damage mitigated is roughly equivalent to a standard heal, so you’ll want to weigh its instant cast time against the risk of wasted absorption.)"
+     }
+    ]
+   },
+   {
+    "title": "Damage",
+    "paras": [
+     "Clerics aren't a DPS class, but their holy magic gives them real teeth, especially against the undead."
+    ],
+    "entries": [
+     {
+      "name": "Rebuke",
+      "desc": "Strike your target with divine energy, dealing Holy Damage. (This is your standard nuke that works on all target types. Formerly the Shock line.)"
+     },
+     {
+      "name": "Smite the Dead",
+      "desc": "Smite a target undead with holy light, dealing Holy Damage. (This hits noticeably harder than Rebuke, both per-cast and over a sustained fight, but it only works against undead targets. It was renamed from Repel the Dead and its damage has been improved.)"
+     },
+     {
+      "name": "Holy Strike",
+      "desc": "Strike down your target with holy energy, dealing Weapon Ratio Damage plus Holy Damage. (This is a melee-based attack learned at level 1, giving you something to do in combat besides casting. It also has a small chance to channel the wrath of your faith.)"
+     }
+    ]
+   },
+   {
+    "title": "Buffs",
+    "paras": [],
+    "entries": [
+     {
+      "name": "Holy Fortitude",
+      "desc": "Bestow holy fortitude upon your target, increasing their maximum Health. (This spell is largely unchanged, but it now automatically heals your target for the amount of health gained, so you don’t need to top them up after casting it.)"
+     },
+     {
+      "name": "Hymn of Fortitude",
+      "desc": "This is a group-wide version of Holy Fortitude. It requires a reagent to cast."
+     },
+     {
+      "name": "Blessing of Devotion",
+      "desc": "Bestow your target a blessing of devotion, increasing their maximum Health. Additionally, if your target falls to low Health while the blessing is active, it restores Health and the blessing fades. (This buff also increases maximum Health and stacks with Holy Fortitude. It provides an emergency heal when things get dicey, but requires a reagent to cast.)"
+     },
+     {
+      "name": "Prayer of the Faithful",
+      "desc": "Call upon your faith, increasing your Strength, Mana Regeneration, Secondary Mana Regeneration, and Block, granting you a chance to activate Fulfillment on melee attacks and the ability to see magical effects when considering targets. (This is the Cleric's signature self-buff, rolling several older spells, including the old Supplication line, into one long-lasting package.)"
+     },
+     {
+      "name": "Divine Aegis",
+      "desc": "Surround yourself with a divine aegis, granting you immunity to all incoming damage for 15 seconds. (This is your emergency panic button.)"
+     },
+     {
+      "name": "Inhibit Pain",
+      "desc": "Inhibit pain in your target, reducing all damage received for a few seconds."
+     }
+    ]
+   },
+   {
+    "title": "Retained Spell Lines",
+    "paras": [
+     "Most of the Cleric's utility was carried over from the current version of the class. Some of these have picked up fresh Cleric-specific names and a few extra ranks along the way, but their core functionality hasn't changed."
+    ],
+    "entries": [
+     {
+      "name": "Atonement",
+      "desc": ""
+     },
+     {
+      "name": "Blind",
+      "desc": ""
+     },
+     {
+      "name": "Corruption / Disease / Poison Protection",
+      "desc": ""
+     },
+     {
+      "name": "Cure Disease & Cure Poison",
+      "desc": ""
+     },
+     {
+      "name": "Dispel Magic",
+      "desc": ""
+     },
+     {
+      "name": "Fear the Dead",
+      "desc": ""
+     },
+     {
+      "name": "Gate",
+      "desc": ""
+     },
+     {
+      "name": "Invisibility versus Undead",
+      "desc": ""
+     },
+     {
+      "name": "Pacify (renamed from Placate; now limited to a single target at a time, rather than several at once)",
+      "desc": ""
+     },
+     {
+      "name": "Polar Alignment: North",
+      "desc": ""
+     },
+     {
+      "name": "Redemption (renamed from Resuscitation; your resurrection spells)",
+      "desc": ""
+     },
+     {
+      "name": "Shackle (renamed from Root)",
+      "desc": ""
+     },
+     {
+      "name": "Soulbind",
+      "desc": ""
+     },
+     {
+      "name": "Stun",
+      "desc": ""
+     },
+     {
+      "name": "Summon Food and Drink",
+      "desc": ""
+     },
+     {
+      "name": "Summon Hammer",
+      "desc": ""
+     }
+    ]
+   },
+   {
+    "title": "Removed Spell Lines",
+    "paras": [],
+    "entries": [
+     {
+      "name": "We tightened up a few areas of overlap while working on this update:",
+      "desc": "Supplication - This spell's effects were rolled into Prayer of the Faithful. Oath of Protection - Clerics already carry plenty of cooldown-gated defensive tools between Divine Aegis, Inhibit Pain, and Blessed Barrier. Oath of Freedom - Though there was no direct replacement to this spell, Clerics instead gained Circle of Healing, which felt like a more useful cooldown overall. Snare the Dead - Clerics already carry a dedicated anti-undead nuke and fear, and can fall back on their normal root against undead targets. Cure Blindness - This spell is being removed across all classes as we revisit them. Blind effects are typically short and low-threat, so a dedicated cure spell wasn't pulling its weight."
+     }
+    ]
+   }
+  ]
+ },
+ "druid": {
+  "url": "https://monstersandmemories.com/class-druid-deep-dive",
+  "overview": [
+   "Druids are a well-rounded class that can provide healing, DPS, and support. They often feel okay in these roles, but never particularly great at any one of them. With the class update, we’re adding the concept of “Seasons” to Druids, allowing them to temporarily specialize in healing, damage, or a hybrid of both.",
+   "Overall, Druids have not shifted far from their current incarnation on the Beta server. They’re strong soloers, capable healers who can still deal damage, and have a broad set of utilities that make them both self-reliant and valuable to groups. We’ve added some depth and scaling to some of their existing spell lines, but tried to refine rather than change the class.",
+   "Now, let’s dive into the new Druid feature we’ve added: Seasons."
+  ],
+  "sections": [
+   {
+    "title": "Seasons",
+    "paras": [
+     "Seasons are a simple idea: the Druid gets a buff based on the season they're currently in. Summer is great for life and healing, Winter is for wrath and damage, and Spring and Autumn are a bit more well-rounded.",
+     "All four seasons should be equally valuable depending on the situation or play style of the Druid. Summer and Winter are the specialist seasons, whereas Autumn and Spring are the balanced Druid's domain. Note that seasons are completely independent of the in-game calendar, and each Druid in a group can be in different seasons at the same time."
+    ],
+    "entries": [
+     {
+      "name": "Summer - Lush and full of life, Summer is the season of growth and prosperity. While in Summer, the Druid gets a 20% bonus to healing and regeneration effectiveness. They also get access to a unique healing spell line, starting with Summer’s Warmth at level 8.",
+      "desc": ""
+     },
+     {
+      "name": "Autumn - Moving out of Summer, Autumn is the bountiful season of the harvest. While in Autumn, the Druid gets a 10% bonus to healing and regeneration effectiveness, as well as extra mana regeneration.",
+      "desc": ""
+     },
+     {
+      "name": "Winter - Cold and dark, Winter is the season of survival. While in Winter, the Druid gets a 20% bonus to damage spells and DoTs. They also get access to a unique damage spell line, starting with Winter’s Chill at level 8.",
+      "desc": ""
+     },
+     {
+      "name": "Spring - Hints of life come to the lands, but in Spring, the chill of winter still lingers. While in Spring, the Druid gets a 10% bonus to damage spells and DoTs, as well as extra mana regeneration.",
+      "desc": ""
+     }
+    ]
+   },
+   {
+    "title": "Seasonal Exclusive Spells",
+    "paras": [
+     "Summer and Winter have a unique, season-exclusive spell. If you’re the main healer for a group, you’ll want to spend most of your time in Summer. If you’re filling the role of a damage dealer, Winter is your best bet. Here’s what the seasonal spells do:",
+     "This is a mana-efficient, fast-casting heal. It typically heals for a smaller amount than something like Greater Heal, but when used alongside the Touch of Nature line, it gains a substantial boost.",
+     "This is a mana-efficient direct-damage spell that deals cold damage. When paired with the Embers DoT line, the damage is enhanced, making it a valuable tool in the offensive Druid’s arsenal."
+    ],
+    "entries": [
+     {
+      "name": "Summer’s Warmth",
+      "desc": "Bless your target with the warmth of summer, restoring Health. Additionally, if the target is under the effect of any spell in the Touch line, this spell gains a healing bonus."
+     },
+     {
+      "name": "Winter’s Chill",
+      "desc": "Freeze your target with winter's chill, dealing Cold Damage and decreasing their Movement Speed. Additionally, if the target is under the effect of any spell in the Embers line, this spell gains a damage bonus."
+     }
+    ]
+   },
+   {
+    "title": "Mantle of Summer and Mantle of Winter",
+    "paras": [
+     "These two new buffs are essential to the Season system. They allow the Druid to pick a starting season for their play session, or quickly jump to another season when needed. Mantles are on a shared 20 minute cooldown and last one hour."
+    ],
+    "entries": [
+     {
+      "name": "Mantle of Summer",
+      "desc": "Wrap yourself in a mantle of summer, reducing the Mana cost of your Alteration spells, increasing your Armor Class, and granting you a Damage Shield that deals damage when hit. Additionally, this spell sets your current season to Summer."
+     },
+     {
+      "name": "Mantle of Winter",
+      "desc": "Wrap yourself in a mantle of winter, reducing the Mana cost of your Evocation spells, increasing your Armor Class, and granting you a Damage Shield that deals damage when hit. Additionally, this spell sets your current season to Winter."
+     }
+    ]
+   },
+   {
+    "title": "How Seasons Change",
+    "paras": [
+     "The Druid's current season is driven entirely by what spells they cast. By casting spells associated with the current season (e.g. healing spells in Summer), they remain anchored there. If they cast spells of the opposite type, they’re pushed toward the next season.",
+     "Each season is represented by a buff, which can stack up to a maximum of 10 (having more stacks does not increase the intensity of the buff, however). As you cast spells associated with the current season, you add to these stacks. Casting spells of the opposite type removes these stacks. When the season’s buff counter hits zero, the season ends and you transition into the next one. You start each new season with six stacks of the seasonal buff.",
+     "A dedicated main healer can stay in Summer as long as they focus on healing, while a dedicated DPS can anchor in Winter the same way. A Druid who leans toward one role but wants to weave in some of the other should aim to anchor in Autumn or Spring. The system rewards short-term commitment to a role without locking anyone out of switching.",
+     "We’ve found it to be a pretty intuitive system once you play with it. Since the seasons shift based on what you’re casting, you tend to automatically gravitate toward a season that matches your current play style; and every 20 minutes, you can reset your Season by casting one of the Mantle spells."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Druid Spell Lines",
+    "paras": [
+     "Now that we’ve gone over seasons, let’s take a look at the updated spell lines for Druids."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Damage",
+    "paras": [
+     "Druids aren't typically a dedicated DPS class, but that doesn’t mean they don’t have the tools to be one. They have access to powerful direct damage spells, multiple DoT lines of varying elements, and an AoE option for outdoor encounters.",
+     "This replaces the Moonfire spell line.",
+     "This spell line no longer stacks up to three times, but it does provide extra damage when used with the Winter’s Chill line. We’ve also tweaked the damage values a bit.",
+     "Gust of Wind doubles as an interrupt, which gives it value beyond raw damage in fights.",
+     "While this is the only AoE in the Druid's kit, it’s a strong one at the higher ranks."
+    ],
+    "entries": [
+     {
+      "name": "Ray of Sun",
+      "desc": "Expose your target to a ray of sun, dealing Fire Damage."
+     },
+     {
+      "name": "Swarm of Gnats",
+      "desc": "Engulf your target in a swarm of gnats, dealing Poison Damage every few seconds."
+     },
+     {
+      "name": "Burning Embers",
+      "desc": "Ignite your target with burning embers, dealing Fire Damage every few seconds and decreasing their Armor Class. This spell requires a Fire Beetle Eye."
+     },
+     {
+      "name": "Gust of Wind",
+      "desc": "Buffet your target with a gust of wind, dealing Magic Damage and interrupting their casting."
+     },
+     {
+      "name": "Lightning Strike",
+      "desc": "Strike your target and those around it with lightning, dealing Electric Damage. This spell can only be used outdoors."
+     }
+    ]
+   },
+   {
+    "title": "Heals",
+    "paras": [
+     "Druids are a healing class first. They have a strong range of spells for keeping their party alive, covering everything from fast spot heals to long-duration regeneration.",
+     "This is your standard heal. Nothing fancy, but it's reliable and available in all seasons.",
+     "The Touch line’s healing is split between an initial burst and a short heal-over-time. It’s good for targets who need help now, but aren't in any immediate risk of dying.",
+     "This is a long-duration regen that keeps ticking between pulls and during fights."
+    ],
+    "entries": [
+     {
+      "name": "Heal",
+      "desc": "Heal your target, restoring Health."
+     },
+     {
+      "name": "Touch of Nature",
+      "desc": "Bestow the touch of nature upon your target, restoring Health and additional Health every few seconds."
+     },
+     {
+      "name": "Regeneration",
+      "desc": "Regenerate your target, increasing their Health Regeneration."
+     }
+    ]
+   },
+   {
+    "title": "Retained Spell Lines",
+    "paras": [
+     "Many of the Druid’s buff and utility spells were retained through the update, and their general functionality remains unchanged. That said, you may see some changes to their values and their lines expanded with additional tiers."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Here’s a (not so) short list of them:",
+    "paras": [],
+    "entries": [
+     {
+      "name": "Utility",
+      "desc": "Soulbind"
+     },
+     {
+      "name": "Enduring Breath",
+      "desc": ""
+     },
+     {
+      "name": "Camouflage line",
+      "desc": ""
+     },
+     {
+      "name": "See Invisibility",
+      "desc": ""
+     },
+     {
+      "name": "Sense Magic",
+      "desc": ""
+     },
+     {
+      "name": "Speed of the Wild",
+      "desc": ""
+     },
+     {
+      "name": "Pack Speed",
+      "desc": ""
+     },
+     {
+      "name": "Wolf & Jackal Form",
+      "desc": ""
+     },
+     {
+      "name": "Speed of the Predator",
+      "desc": ""
+     },
+     {
+      "name": "Polar Alignment: North",
+      "desc": ""
+     },
+     {
+      "name": "Buffs",
+      "desc": "Woodskin line"
+     },
+     {
+      "name": "Brambly Barrier line",
+      "desc": ""
+     },
+     {
+      "name": "Cold Protection & Resistance",
+      "desc": ""
+     },
+     {
+      "name": "Fire Protection & Resistance",
+      "desc": ""
+     },
+     {
+      "name": "Poison Protection & Resistance",
+      "desc": ""
+     },
+     {
+      "name": "Debuffs",
+      "desc": "Element Break line"
+     },
+     {
+      "name": "Cures and Dispels",
+      "desc": "Dispel & Abolish Magic"
+     },
+     {
+      "name": "Cure & Cleanse Disease",
+      "desc": ""
+     },
+     {
+      "name": "Cure & Cleanse Poison",
+      "desc": ""
+     },
+     {
+      "name": "Snares and Roots",
+      "desc": "Snare & Ensnare"
+     },
+     {
+      "name": "Snaring & Ensnaring Vines",
+      "desc": ""
+     },
+     {
+      "name": "Twisting & Encircling Roots",
+      "desc": ""
+     },
+     {
+      "name": "Grip of Nature",
+      "desc": ""
+     },
+     {
+      "name": "Escapes and Teleports",
+      "desc": "Gate (Self)"
+     },
+     {
+      "name": "Ring of Evershade Weald & Sungreet Strand (Self)",
+      "desc": ""
+     },
+     {
+      "name": "Circle of Evershade Weald & Sungreet Strand (Group)",
+      "desc": ""
+     },
+     {
+      "name": "Exodus & Sanctuary (Self)",
+      "desc": ""
+     },
+     {
+      "name": "Sanctuary: Evershade Weald & Sungreet Strand (Group)",
+      "desc": ""
+     },
+     {
+      "name": "Beast Spells",
+      "desc": "Lull Beasts (This has been expanded into a line of spells) Nature's Calm line (This replaces Unity and has been expanded into a line of spells)"
+     },
+     {
+      "name": "Charm Beasts line",
+      "desc": ""
+     },
+     {
+      "name": "Fear Beasts",
+      "desc": ""
+     },
+     {
+      "name": "Invisibility versus Beasts",
+      "desc": ""
+     },
+     {
+      "name": "Preservation (Revive a target beast corpse, returning it to life)",
+      "desc": ""
+     }
+    ]
+   },
+   {
+    "title": "Removed Spell Lines",
+    "paras": [
+     "Druids had a lot going on. While working on this update, we wanted to focus on keeping them strong and familiar, but thin down some areas that felt unnecessary. Here are the main things that were removed with the update:",
+     "Thanks for taking the time to look this over, and for your participation in our ongoing Beta. We look forward to getting the Druid update launched very soon for you to try out!"
+    ],
+    "entries": [
+     {
+      "name": "Whispers of Eth-es - We’ve added mana cost reductions to the new Mantle spells and faster mana regeneration with two of the seasons. We’ve also tuned spell costs for sustained play. With these changes, we felt that Whispers of Eth-es wasn’t really needed anymore.",
+      "desc": ""
+     },
+     {
+      "name": "Nature’s Respite - As an instant heal on a five-minute cooldown, this spell felt out of character for the Druid—like a leafy Lay on Hands. With the addition of the Summer’s Warmth line and the seasonal buffs, Druids will be more than effective healers without this in their toolbox.",
+      "desc": ""
+     },
+     {
+      "name": "AoE Lull, Irresistible Lull - We talked about this in a recent update, but generally speaking, lulls have been overly-powerful and diminish the danger we’d like to see in the game. Druids still keep a strong outdoor lull and a beast-specific lull, though.",
+      "desc": ""
+     },
+     {
+      "name": "Tree Form - We’ll be adding this back in the future as a quested spell. It’s a cool and thematic ability for Druids, but we’d like to do more with it than just sell it on a vendor.",
+      "desc": ""
+     },
+     {
+      "name": "Bear Pet - Somewhere along the way, we ended up with more pets than we ever intended. Ultimately, this didn’t feel like a key part of the Druid class, but we may still revisit it in the future as we know players love pets.",
+      "desc": ""
+     },
+     {
+      "name": "Beast Speech, Strength Buff, Summon Cureberries/Food/Drink, turning other players into animals - These didn’t make the cut as Druids already had a broad spell selection.",
+      "desc": ""
+     },
+     {
+      "name": "Brambly Tunic - This line of self-only damage shield buffs was merged into the Mantles, so the separate versions were removed.",
+      "desc": ""
+     },
+     {
+      "name": "Cure Blindness - We’ll be removing this from other classes as well. Blind spells are often short in duration and don’t pose a great threat. We’ll reconsider this in the future if we decide to add a dungeon full of blinding creatures. Say, that’s an interesting idea…",
+      "desc": ""
+     }
+    ]
+   }
+  ]
+ },
+ "elementalist": {
+  "url": "https://monstersandmemories.com/class-elementalist-deep-dive",
+  "overview": [
+   "Elementalists command the forces of fire, water, earth, and air, channeling that power both into direct magic and into a living elemental servant that fights at their side. This update leans harder into that partnership: your companion isn't just backup anymore, it's a real part of how your own spells work.",
+   "Two new signature spells put that partnership front and center. One is a strike your companion delivers on your command. The other is your new primary nuke, that hits harder and gains a bonus effect based on the elemental companion you have summoned. Beyond those two, your companion's summon matches your level rather than falling behind, and the buffs and heals that keep your companion fighting have grown alongside everything else.",
+   "As MnM's most pet-focused class, you'll want to rely on the Companion Strike as your main damage dealer. It is the biggest hit for the mana cost, and upgrades more often than your classic-style Blast nuke. The Blast is still helpful, both for damage and the extra elemental utility effects it causes, but we wanted to increase the connection between you and your elemental pet as your main damage source.",
+   "One thing we'd planned on in the original class overview, but decided against as we worked on the update:"
+  ],
+  "sections": [
+   {
+    "title": "Notes",
+    "paras": [],
+    "entries": [
+     {
+      "name": "\"Less: generic convenience conjurations\" didn't happen. Food, Drink, Bandages, Manastones, and the elemental weapon-summon lines all carried through essentially unchanged. When talking with elementalist players, it was clear that they valued these spells and the utility they bring to a party and did not want to lose them. The one genuinely new elemental-themed conjuration is a Ring of Waterbreathing.",
+      "desc": ""
+     },
+     {
+      "name": "Companion Strike",
+      "desc": "Command your companion into a devastating attack. You spend the mana and your companion delivers the hit. The strike carries your companion's own element and does extra damage against elemental creatures. The damage on this strike increases based on your pet's intelligence, which enables it to channel your will more effectively."
+     },
+     {
+      "name": "Elemental Blast",
+      "desc": "Blast your target with arcane energy, dealing Magic Damage. If you have an elemental companion summoned, this spell also deals damage in your companion's element, along with a bonus effect matched to that element. This is your primary nuke, and it always does a solid hit of Magic Damage on its own. Summon an elemental companion and the spell grows a second half in that element, along with a themed side effect - a burn, a chill, a snare, or a casting slow, depending on which companion you brought."
+     },
+     {
+      "name": "Elemental Empowerment",
+      "desc": "Infuse your companion with elemental power, increasing their Attack Speed, sharing a portion of your own Intelligence, and restoring their Health over time. This spell gives your pet a hefty burst of stacking haste, an intelligence buff that scales with your own intelligence, and a solid amount of regeneration. However, this spell is also mana intensive so keeping it active on your pet is an investment. It's up to you to decide how to split your mana between Strikes, Blasts, and Empowerments - but they all have real value. This stacks with your normal long-duration 'Elemental Fury' line of pet buffs."
+     },
+     {
+      "name": "Elemental Resurgence",
+      "desc": "Infuse yourself with elemental resurgence, letting your next companion-summoning spell resolve in a fraction of its normal time and for less mana. Handy after your companion falls in a hard fight, or any time you need to swap companions without eating the usual downtime."
+     },
+     {
+      "name": "Speedy Companion",
+      "desc": "Infuse your companion with elemental speed, increasing their Movement Speed."
+     },
+     {
+      "name": "Summoning Your Companion",
+      "desc": "Your four elemental servants - Water, Earth, Fire, and Air - summon and play the same way they always have. What's changed is the pace: your companion now stays in sync with your own level when summoned, up to the maximum for that summoning spell. You'll no longer get pet upgrade ranks for all four pets every four levels. Instead you'll unlock all pet types by level 12, and get a new rank every 16th level. However, each rank grows with you so your rank 1 Water Pet summon will give you a pet from level 1-15, based on your own level when summoning. There's no gap, as you'll get rank 2 when you hit level 16, which will summon Water Pets from level 16 - 31."
+     },
+     {
+      "name": "Elemental Spellshield",
+      "desc": "Surround yourself with elemental power, increasing your Health, Armor Class, and Magic Resistance, plus your Cold and Fire Resistance, and granting you the ability to see magical effects when considering targets. Attackers who strike you are chilled and slowed. Your core self-buff, now merging the original Spellshield, Water Shield, and Sense Magic lines into a single self-buff."
+     },
+     {
+      "name": "Ring of Water Breathing",
+      "desc": "Summon a temporary ring that grants Enduring Breath when worn - adding additional elemental-themed utility for you and your party."
+     },
+     {
+      "name": "Fount of Mana",
+      "desc": "One benefit of your Water Pet is their Fount of Mana spell. This is a mana regen aura that benefits your party when you have a Water Pet summoned. We’ve updated this spell to now stack with Primary Mana Regeneration spells, so it’s additional mana regen that works with other buffs."
+     }
+    ]
+   },
+   {
+    "title": "Retained Spell Lines",
+    "paras": [
+     "Thanks for taking the time to look this over, and for your participation in our ongoing Beta. We look forward to getting your feedback after you try out the Elementalist update"
+    ],
+    "entries": [
+     {
+      "name": "Pet-themed",
+      "desc": "Heal the Elements Elemental Fury (Attack speed and Strength buff)"
+     },
+     {
+      "name": "Damage",
+      "desc": "Flameburst (your level 1 nuke - this is replaced by the Elemental Flash line in later levels) Element Break"
+     },
+     {
+      "name": "Defense",
+      "desc": "Cold and Fire Protection/Resistance"
+     },
+     {
+      "name": "Utility",
+      "desc": "Gate"
+     },
+     {
+      "name": "Soulbind",
+      "desc": ""
+     },
+     {
+      "name": "See Invisibility and Sense Magic (also folded into Elemental Spellshield)",
+      "desc": ""
+     },
+     {
+      "name": "Polar Alignment: North",
+      "desc": ""
+     },
+     {
+      "name": "Reclaim Essence",
+      "desc": ""
+     },
+     {
+      "name": "Dispel Magic",
+      "desc": ""
+     },
+     {
+      "name": "Summon Companion",
+      "desc": ""
+     },
+     {
+      "name": "Charm, Fear, and Lull the Elements",
+      "desc": ""
+     },
+     {
+      "name": "Master of Elements",
+      "desc": ""
+     },
+     {
+      "name": "Conjuration",
+      "desc": "Summon Food and Drink"
+     },
+     {
+      "name": "Summon Bandages",
+      "desc": ""
+     },
+     {
+      "name": "Summon Manastones",
+      "desc": ""
+     },
+     {
+      "name": "Elemental weapon summons (Earth Mallet, Fire Staff, Water Trident, Wind Blade)",
+      "desc": ""
+     },
+     {
+      "name": "Removed Spell Lines",
+      "desc": "Fireburst through Fires of Eth - the old escalating Fire-nuke chain. Elemental Blast is now your primary nuke. Repel the Elements through Devastate the Elements - This got merged into the Strike and Blast spell lines, rather than having a separate spell. You still do more damage to summoned creatures, it just happens as a bonus on your normal damage spells. Invisibility versus Elementals - narrow, low-usage utility spell."
+     }
+    ]
+   }
+  ]
+ },
+ "enchanter": {
+  "url": "https://monstersandmemories.com/class-enchanter-deep-dive",
+  "overview": [
+   "Enchanters are one of our strongest and most unique classes, with high group utility and desirability. The Enchanter update was fairly light, focused on some quality of life changes where needed, but also a key adjustment to Charm to bring it more in line the intended power of the class.",
+   "Enchanters are primarily a group-focused class, which lines up with their unique and powerful kit of buffs, debuffs, and crowd control abilities. Mesmerize, charm, and stun give you more ways to take an enemy out of a fight than any other class, and a buff suite built on mana regeneration, haste, and mental stats makes you worth bringing along even when crowd control is not required.",
+   "Your mental buffs (Intelligence, Wisdom, and Charisma) consolidate into a combo buff, your core self-buff bundles a variety of effects into a strong package, your Shadowkin pet has less upgrade ranks but always summons at your own level, and two of your signature buffs now have a group-wide version for when you'd rather just cast it once. Charisma also pulls more weight than it used to, contributing to your damage spells, your runeskin, as well as Charm and Lull.",
+   "One key topic to talk about up front: Charmed NPC damage has been reduced from its previous level. While charmed NPCs are certainly weaker, they are still a strong source of extra damage in a group situation, and Enchanters are still able to solo by buffing their charmed pet, and debuffing their target NPCs. Certainly with weaker charmed pets, soloing will not be as efficient and fast as it was previously, but it is still viable.",
+   "This is a topic we've received lots of feedback on during Beta, and not everyone will agree with this change. In the past, charmed pet damage often exceeded the amount of damage you could get by adding 2-3 more DPS classes to a group, and was unquestionably the highest damage spell in the game by a wide margin. This change will be good for game balance, and allow us to tune difficulty to be more reasonable for diverse groups.",
+   "While we're highlighting this change in the Enchanter Deep Dive, this does affect the Charm spells of Elementalists, Druids, Bards, and Necromancers as well."
+  ],
+  "sections": [
+   {
+    "title": "Crowd Control",
+    "paras": [
+     "Mesmerize, Charm, and your point-blank stun all work exactly as they always have - your CC suite was already the deepest in the game, and it didn't need reinventing. This is a unique and powerful kit that is the core strength of Enchanters.",
+     "One small tightening: your pacify line, which lulls enemies and makes it easier to split groups, now works on only one target at a time instead of several at once - similar to the changes we've made in previous class updates."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Charisma and Power",
+    "paras": [
+     "Charisma now has additional value for more of your kit. Your mental-affliction damage line, your channeled damage-over-time spell, and your rune shield all scale up further the more Charisma you have. Additionally, Charisma is still a key stat for Charm and Lull spells.",
+     "Three previously single-stat buffs - Charisma, Intelligence, and Wisdom - are now merged into a combined buff."
+    ],
+    "entries": [
+     {
+      "name": "Sagacity",
+      "desc": "Inspire your target, increasing their Charisma, Intelligence, and Wisdom."
+     }
+    ]
+   },
+   {
+    "title": "Vespyra's Veil",
+    "paras": [
+     "Your core self-buff lasts an hour and combines many helpful effects you'd always want active. This replaces your spellshield line",
+     "It’s mentioned above, but enemies have a chance to be dazed briefly if they hit you, getting you a few precious seconds to get them under control or make your escape."
+    ],
+    "entries": [
+     {
+      "name": "Vespyra's Veil",
+      "desc": "Encircle yourself with a magical shield, increasing your maximum Health, Armor Class, and Magic Resistance. You also gain the ability to see invisible entities and sense magical effects, and attackers have a chance to be dazed when they hit you."
+     }
+    ]
+   },
+   {
+    "title": "Group Support",
+    "paras": [
+     "Two of your signature buffs now have a group-wide version. Cast once, and your whole party gets the same benefit you'd otherwise be handing out one ally at a time. Both of these require a reagent, and are available to purchase on your spell vendor."
+    ],
+    "entries": [
+     {
+      "name": "Group Sagacity",
+      "desc": "Inspire your party, increasing their Charisma, Intelligence, and Wisdom."
+     },
+     {
+      "name": "Group Enlightenment",
+      "desc": "Enlighten your party's minds, increasing their Mana Regeneration."
+     }
+    ]
+   },
+   {
+    "title": "Your Pet",
+    "paras": [
+     "Your pet is still a solid source of damage, though it has been reduced some to differentiate it from the dedicated pet casters: Elementalist and Necromancer. Your Shadowkin now summons at your own level as you grow, instead of falling behind between upgrades."
+    ],
+    "entries": [
+     {
+      "name": "Shadowkin Defender",
+      "desc": "Invoke the mirror realm, manifesting a friendly shadowkin to fight alongside you."
+     }
+    ]
+   },
+   {
+    "title": "Retained Spell Lines",
+    "paras": [
+     "Thanks for taking the time to look this over, and for your participation in our ongoing Beta. We look forward to getting your feedback after you try out the Enchanter update!"
+    ],
+    "entries": [
+     {
+      "name": "Utility",
+      "desc": "Root"
+     },
+     {
+      "name": "Shrink",
+      "desc": ""
+     },
+     {
+      "name": "Reclaim Essence",
+      "desc": ""
+     },
+     {
+      "name": "Recharge Item",
+      "desc": ""
+     },
+     {
+      "name": "Bind Vision",
+      "desc": ""
+     },
+     {
+      "name": "Enduring Breath",
+      "desc": ""
+     },
+     {
+      "name": "Dispel Magic",
+      "desc": ""
+     },
+     {
+      "name": "Soulbind",
+      "desc": ""
+     },
+     {
+      "name": "Gate",
+      "desc": ""
+     },
+     {
+      "name": "Polar Alignment: North",
+      "desc": ""
+     },
+     {
+      "name": "Enchant (metal bar line)",
+      "desc": ""
+     },
+     {
+      "name": "Detection",
+      "desc": "Unveil (Merges Sense Magic and See Invisible)"
+     },
+     {
+      "name": "Invisibility",
+      "desc": ""
+     },
+     {
+      "name": "Invisibility versus Undead",
+      "desc": ""
+     },
+     {
+      "name": "Illusions",
+      "desc": "Every racial illusion Minor Illusion (the inconspicuous object)"
+     },
+     {
+      "name": "Buffs",
+      "desc": "Haste"
+     },
+     {
+      "name": "Strength",
+      "desc": ""
+     },
+     {
+      "name": "Clarity (mana regeneration)",
+      "desc": ""
+     },
+     {
+      "name": "Runeskin",
+      "desc": ""
+     },
+     {
+      "name": "Damage",
+      "desc": "Torment (Direct damage with a mental debuff) Mindshackle (Channeled damage that also snares your target - renamed from Psionic Hemorrhage)"
+     },
+     {
+      "name": "Debuffs",
+      "desc": "Fracture Magic (Resist debuff)"
+     },
+     {
+      "name": "Vertigo (Physical stats debuff - renamed from Enfeeblement)",
+      "desc": ""
+     },
+     {
+      "name": "Exhaustion (Melee slow)",
+      "desc": ""
+     },
+     {
+      "name": "Removed Spell Lines",
+      "desc": "Enchant Ally - We've removed this for now but intend to revisit it in the future. While it's a interesting ability, it needed some more time and implementation polish to work reliably, and it didn't feel critical to the core Enchanter toolkit. Amnesia - Enchanters have a few ways to blur the memories of their foes, didn't need quite as many variations Greater Invisibility - We'd like to keep some risk in stealthy travel, and leave the most reliable version as a defining trait of the Rogue. Enchanters retain their Invisibility spell, and all casters are losing Greater Invisibility."
+     }
+    ]
+   }
+  ]
+ },
+ "fighter": {
+  "url": "https://monstersandmemories.com/class-fighter-deep-dive",
+  "overview": [
+   "Fighters are among the classes with the fewest abilities, so much of this update is additive and focused on filling out their toolkit with satisfying upgrade paths. We’re introducing retaliation abilities and the Vengeance mechanic to their kit, allowing Fighters to continue dealing damage while solo or tanking for a group. Most of their current abilities remain intact, but expect some balancing adjustments as we tune numbers between classes. To set your expectations, we’re aiming for Fighters to do more DPS than most tanks, but less than a DPS-centric class like Ranger or Monk.",
+   "As a “master of arms”-themed class, Fighters now have a number of abilities requiring a specific weapon type. You’ll want to choose a loadout based on your weapons, or alternatively, bring multiple weapons and swap based on the encounter.",
+   "There’s also been a shake-up in regards to cooldowns. All Shouts are now on a shared cooldown, while Taunt no longer shares a cooldown with Unnerving Shout. Shield Bash is now on a cooldown with Shield Block instead of Frenzy."
+  ],
+  "sections": [
+   {
+    "title": "Retaliation / Vengeance",
+    "paras": [
+     "This is a new mechanic specific to Fighters, granted automatically while in any of their three stances. When taking damage, you’ll have a chance to generate a stack of the Vengeance buff, which you can spend on a few abilities:"
+    ],
+    "entries": [
+     {
+      "name": "Frenzy - Eviscerate your target with a frenzy of attacks, dealing Weapon Ratio Damage up to five times and increasing your Attack Speed. (This ability consumes all your Vengeance, performing a weapon strike for each stack consumed. It has a higher baseline damage than before, so the hits should feel a bit more satisfying.)",
+      "desc": ""
+     },
+     {
+      "name": "Cleave - Cleave through targets in a frontal cone, dealing Weapon Ratio Damage plus Physical Damage. (This 2H-based ability consumes one stack of Vengeance to hit up to three targets.)",
+      "desc": ""
+     },
+     {
+      "name": "Second Wind - Catch a second wind, restoring Health every few seconds. (This ability consumes one stack of Vengeance in return for a short-term regen. Vengeance stacks fade relatively quickly, so using this after a fight is a good way to burn any leftover stacks. The amount healed scales with your Stamina stat.)",
+      "desc": ""
+     }
+    ]
+   },
+   {
+    "title": "Stances",
+    "paras": [
+     "Fighters retain their Offensive and Defensive stances, while gaining a third:"
+    ],
+    "entries": [
+     {
+      "name": "Tactician Stance - Shift into a tactician's stance, increasing your resistance to Root, Stun, and Incapacitate effects. (This stance is useful for pulling, specific encounters, and likely PvP.)",
+      "desc": ""
+     }
+    ]
+   },
+   {
+    "title": "Melee Abilities",
+    "paras": [],
+    "entries": [
+     {
+      "name": "Some existing abilities have been slightly adjusted:",
+      "desc": "Rend - Now has a chance to reset Cleave and Feint in addition to Frenzy and Shield Bash. Shield Bash - Now interrupts spell casting."
+     },
+     {
+      "name": "In addition to Rend, Kick, and Clobber, Fighters gain:",
+      "desc": "Cross Cut - Cut through your target with dual weapons, dealing Weapon Ratio Damage plus Physical Damage per equipped weapon. (This is a DW-based attack on the same cooldown as Rend. It deals more raw damage than Rend, while lacking the ability to reset your cooldowns.) Feint - Outmaneuver your target with a feint, dealing Weapon Ratio Damage plus Physical Damage, decreasing their Agility, and knocking them off balance. (Since this attack is on the same cooldown as Frenzy and Cleave, it's best used when you don’t have Vengeance available to fuel other attacks. Monks can also take advantage of this “off-balance” state to empower some of their abilities.)"
+     },
+     {
+      "name": "In addition to Disarm and Armor Break, Fighters now have:",
+      "desc": "Kneebreaker - Smash the knees of your target, decreasing their Movement Speed."
+     },
+     {
+      "name": "Ranged",
+      "desc": "Challenging Arrow - Fire an arrow of challenge at your target, dealing Weapon Ratio Damage plus Physical Damage, and increasing your Threat against them. (This is a high-threat pulling option, dealing marginally more damage than the base Shoot ability.)"
+     },
+     {
+      "name": "Other Abilities",
+      "desc": "Shield Block - Raise your shield in defense, temporarily absorbing damage received. (As implied, this ability requires a shield.) Juggernaut - Charge at your target like a juggernaut, immobilizing them. Additionally, your Threat generation is temporarily increased and all damage received is reduced. (This is a high-level alternative to Charge.) Vanguard - Impede enemy aggression toward your target, decreasing their Threat generation. (This helps you prevent a group member from pulling aggro off of you.)"
+     }
+    ]
+   }
+  ]
+ },
+ "inquisitor": {
+  "url": "https://monstersandmemories.com/class-inquisitor-deep-dive",
+  "overview": [
+   "Inquisitors are a specialized tank class with a myriad of tools for neutralizing casters. They’ve always served this role well, so in this rework, we’ve focused on smoothing out the rough edges for that experience.",
+   "The fundamental role, theme, and broad strokes of the Inquisitor kit are staying the same. Overall damage is slightly increasing, particularly against casters. Several of the shared spell lines with Enchanters have been tweaked to be unique to the Inquisitor, and a few new tools have been added."
+  ],
+  "sections": [
+   {
+    "title": "Abilities",
+    "paras": [],
+    "entries": [
+     {
+      "name": "Melee Abilities",
+      "desc": "Censuring Strike - Censure your target with a violent strike, dealing Weapon Ratio Damage plus Physical Damage, and decreasing their Casting Speed. (This ability combines Slam and the Mind Exhaustion spell line. Given its lack of mana cost, the Casting Speed reduction has been slightly rebalanced.) Purifying Blow - Unleash a purifying blow upon your target, dealing Weapon Ratio Damage plus Magic Damage, increasing your Threat against them, and granting you a chance to remove one beneficial effect from them. Additionally, if the target is afflicted by any spell in the Distress line, the purge effect is guaranteed. (This ability has a longer cooldown, but deals more damage than Censuring Strike. It’s now tiered with slightly higher damage scaling, and the purge effect can occur even without the debuff.)"
+     },
+     {
+      "name": "Spell Lines",
+      "desc": "Distress - Distress your target, dealing Magic Damage, increasing your Threat against them, and decreasing their Magic Resistance. (This line combines a couple of spells, formerly shared with Enchanters, into a single one. When applied to your target, it guarantees the purge effect of Purifying Blow.) Pillage Mana - Pillage the mind of your target, draining Mana and distributing a percentage of the amount drained to each group member. Additionally, when this spell successfully lands on the target, its Mana cost is refunded. (This line replaces the Incinerate Mana line. It now has a 60-second cooldown.)"
+     }
+    ]
+   },
+   {
+    "title": "Auras",
+    "paras": [
+     "We’re making a few trades between previous spell lines and Inquisitor auras. Aura of the Inquisitive is being removed in favor of a new perk on the Pillage Mana line (see above), while the Haste spell line is being removed in favor of Aura of Rapidity. Weapon Shield has been removed, but Aura of Resistance remains."
+    ],
+    "entries": [
+     {
+      "name": "Aura of Rapidity - Envelop your group in an aura of rapidity, increasing their Attack Speed. (This effect is considered a Primary Haste, but includes a smaller Secondary Haste component that stacks with hastes from Enchanters and Shamans.)",
+      "desc": ""
+     },
+     {
+      "name": "Aura of Resistance - Envelop your group in a warding aura, reducing their Spell Damage received and increasing their Cold, Fire, Corruption, Holy, and Magic Resistance.",
+      "desc": ""
+     }
+    ]
+   },
+   {
+    "title": "Defense and Cooldowns",
+    "paras": [
+     "Inquisitor cooldowns are mostly unchanged, but a few have been pruned. They continue to have access to Arcane Aegis, Arcane Protection, Dominate the Mind, and Magic Disruption Shell, while Deflect and Focused Concentration have been removed.",
+     "Though Inquisitors typically prefer dealing with spell-casting opponents, we’ve added a defensive option to help them survive against difficult melee opponents, albeit at a mana cost."
+    ],
+    "entries": [
+     {
+      "name": "Ward of Suspicion - Encase yourself in a ward of suspicion, absorbing damage received. Additionally, when an attacker breaks the ward, their Attack Speed is decreased.",
+      "desc": ""
+     }
+    ]
+   },
+   {
+    "title": "Crowd Control and Interrupts",
+    "paras": [
+     "Inquisitors are retaining their existing options for Stun and Silence effects. The Mesmerize line has been slightly branched from the Enchanter’s version, and Kick has been replaced with a Shield-based interrupt."
+    ],
+    "entries": [
+     {
+      "name": "Interdiction - Condemn your target, increasing your Threat against them and incapacitating them. (This spell adds threat to the mesmerized target, rather than “mem-blurring” them.)",
+      "desc": ""
+     },
+     {
+      "name": "Reflecting Bash - Fiercely bash your target with a shield, interrupting their casting, dealing Magic Damage equal to the Mana cost of the interrupted spell, and preventing them from casting spells from the same school of magic.",
+      "desc": ""
+     }
+    ]
+   },
+   {
+    "title": "Buffs",
+    "paras": [
+     "Quite a few buffs have been bundled into other abilities. The Haste line has been converted to an aura (see above), while the Strength and targetable Magic Resistance buffs have been merged into Arcane Tyrant.",
+     "The Holy Resistance buffs were off-theme, so they’ve been replaced with self-only buffs for Electric and Fire.",
+     "Inquisitors continue to have access to the Spellshield line, increasing Health, Armor Class, and Magic Resistance."
+    ],
+    "entries": [
+     {
+      "name": "Arcane Tyrant - Embody tyranny over the arcane, increasing your Strength and Magic Resistance, and granting you the ability to see invisible entities and magical effects when considering targets.",
+      "desc": ""
+     }
+    ]
+   },
+   {
+    "title": "Other",
+    "paras": [
+     "Psychic Choke has received a small damage increase to account for the lost melee damage while it's being channeled.",
+     "Mana Burn, Invisibility, Purge, Dispel Magic, and Memory Fog remain unchanged."
+    ],
+    "entries": []
+   }
+  ]
+ },
+ "monk": {
+  "url": "https://monstersandmemories.com/class-monk-deep-dive",
+  "overview": [
+   "As mentioned in the initial class update post, one of the biggest change to Monks is thematic. They're pivoting away from the elemental theme toward a more traditional spiritual one. Most of the original Monk kit remains intact with the exception of Way of the Water, which has been removed with its associated group heal."
+  ],
+  "sections": [
+   {
+    "title": "Styles",
+    "paras": [],
+    "entries": [
+     {
+      "name": "The four “Way of”-stances have been remapped to three styles:",
+      "desc": "Sun Style - Assume a sun-based fighting style, increasing your Offense. Additionally, Celestial Strike reverberates through to your target's soul, dealing Magic Damage after a few seconds. Moon Style - Assume a moon-based fighting style, increasing your Dodge and Block. Additionally, Celestial Fury further increases your Block and reduces your Physical Damage received for its duration. Wind Style - Assume a wind-based fighting style, increasing your Movement Speed. Additionally, Celestial Fury grants you a chance to strike your target a second time on melee attacks."
+     }
+    ]
+   },
+   {
+    "title": "Feign Death and Pulling",
+    "paras": [
+     "In this patch, we fixed a long-standing bug that prevented any chance of re-aggroing mobs after standing up from a feign. Though re-aggro after a feign is now possible, the chances of it occurring have been massively reduced to allow Monks time to adapt. Considering how long this bug has been present, it'll probably take a bit of tuning to dial this chance in.",
+     "We’ve also introduced a new change to how NPCs loiter after a successful feign. NPCs that have been damaged will loiter much longer than untouched ones, giving you a little more control over the timing when they reset. Maximum loiter times have been reduced overall as well.",
+     "Furthermore, Monks are gaining a couple abilities that should assist them with pulling and splitting packs of mobs:"
+    ],
+    "entries": [
+     {
+      "name": "Pinning Throw - Throw a weapon at your target, dealing Weapon Ratio Damage and immobilizing them. (This is an upgraded version of Throw that briefly pins the target in place, allowing you to stagger one of the pack a bit behind the rest.)",
+      "desc": ""
+     },
+     {
+      "name": "Double-Handed Strike - Strike your target with both hands, knocking them back and decreasing their Movement Speed.",
+      "desc": ""
+     }
+    ]
+   },
+   {
+    "title": "Mobility",
+    "paras": [],
+    "entries": [
+     {
+      "name": "Monks gain a couple mobility tools beyond their Wind Style buff:",
+      "desc": "Flying Kick - Leap toward your target to deliver a devastating flying kick, dealing Physical Damage. This ability scales with your Dexterity. (This is your gap closer.) Fleet of Foot - Hasten your steps, increasing your Movement Speed. (This is a short-duration speed boost.)"
+     },
+     {
+      "name": "Melee Attacks",
+      "desc": "Round Kick - Deliver a crushing round kick to your target, dealing Physical Damage and granting you a chance to reset the cooldown of your Celestial Strike and Hundred Fist abilities. This ability scales with your Dexterity. Celestial Strike - Squarely strike your target, dealing Weapon Ratio Damage plus Physical Damage, granting Celestial Fury, and granting you a chance to activate Celestial Vitality. This ability can be enhanced by your active Style. (This ability is mostly unchanged, but now also procs Celestial Vitality if your opponent’s Chakra is fractured. See Quivering Palm.) Hundred Fists - Pummel your target in rapid succession, dealing Weapon Ratio Damage four times. Additionally, if your target is off balance, you have a chance to stun them. (This attack shares a cooldown with Celestial Strike and can be reset by the Round Kick ability. The stun component can be triggered by Quivering Palm or a Fighter’s Feint ability.) Quivering Palm - Strike through your target and into their soul, inflicting increasingly debilitating effects with each strike. One strike knocks them off balance. Two strikes block their Chi, reducing their Physical Damage dealt. Three strikes fracture their Chakra, increasing their Physical Damage received. (This ancient and mysterious technique layers debuffs on your opponent, several of which amplify your other abilities.) Disarming Strike - Strike the wrist of your target, temporarily removing their weapon and reducing their Physical Damage dealt. Sweeping Kick - Trip nearby targets with a sweeping kick, stunning them. (This ability now also knocks your opponents off balance.)"
+     }
+    ]
+   },
+   {
+    "title": "Body Mastery",
+    "paras": [
+     "Monk training hones both the body and spirit, giving them a number of disciplines they can choose from. However, you can only have one body alteration ability active at a time:"
+    ],
+    "entries": [
+     {
+      "name": "Spirit Sustenance - Suppress the need for sustenance, decreasing your food and drink consumption.",
+      "desc": ""
+     },
+     {
+      "name": "Slow Breathing - Slow your breathing, decreasing your air consumption while underwater.",
+      "desc": ""
+     },
+     {
+      "name": "Falling Petal - Move with the grace of a falling petal, reducing the effect of gravity on your body. (This ability compounds with your Safe Fall skill.)",
+      "desc": ""
+     },
+     {
+      "name": "Ascendant Body - Ascend your body to a state of perfection, simultaneously decreasing your food, drink, and air consumption, and reducing the effect of gravity on your body. (At the highest levels of mastery, Monks can command all of the body disciplines at once.)",
+      "desc": ""
+     }
+    ]
+   },
+   {
+    "title": "Defense and Cooldowns",
+    "paras": [
+     "Monks keep their existing Mend and Stone Stance cooldowns, while gaining:"
+    ],
+    "entries": [
+     {
+      "name": "Perfect Focus - Perfect your strikes through deep focus, causing melee attacks to temporarily land as Critical Hits.",
+      "desc": ""
+     },
+     {
+      "name": "Cyclone Staff - Spin your staff rapidly to deflect incoming blows, greatly increasing your Block chance and dealing Weapon Ratio Damage with each successful block. (This is a channeled ability that requires a two-handed staff.)",
+      "desc": ""
+     },
+     {
+      "name": "Iron Fists - Forge your fists into iron, temporarily nullifying the effects of Damage Shields.",
+      "desc": ""
+     },
+     {
+      "name": "Ethereal Body - Become nigh ethereal, increasing your Agility and Dodge chance.",
+      "desc": ""
+     }
+    ]
+   }
+  ]
+ },
+ "necromancer": {
+  "url": "https://monstersandmemories.com/class-necromancer-deep-dive",
+  "overview": [
+   "The Necromancer's fantasy is the Master of Death: a pet-focused caster who works from range while an undead minion holds the front line. It wears enemies down with corruption and decay, and takes life, strength, and power from everything you kill.",
+   "This update delivers more of that fantasy by trimming generic caster utility and deepening the things the class already owns.",
+   "Your damage-over-time spells are sharper, and they now hit undead targets for bonus damage up-front. Your minion scales with your level between spell ranks, so you'll always summon a pet of your own level. A new family of Pacts lets you pay with your own health for a stronger pet, faster afflictions, and your shield can now bind your minion to you when you're in trouble. Around the edges, several utility spells moved to new levels, a handful of redundant ranks were consolidated, and a few narrow spells were retired.",
+   "Two things we promised in the original Necromancer preview are not in this update: collectable pet types found through world exploration, and the ability to temporarily raise fallen enemies as additional pets. Both are still on our list, but we couldn't get to them before Early Access launch - and collectible pets in particular will roll out over time as we continue to add new zones and content to the game. Burning Bones is available as a quest reward, and is a great example of future collectible pets. The pets you have today (the skeleton, zombie, and ghoul lines) are the foundation we intend to build that collection on going forward."
+  ],
+  "sections": [
+   {
+    "title": "Death's Toll: Damage Over Time",
+    "paras": [
+     "Corruption and decay are still your primary damage, and the three big damage-over-time lines are still the core of what you cast.",
+     "Bonus damage against undead. Deluge, Shadows, and Rot now deal bonus damage when they land on an undead target. The spell ticks as normal, and also hits immediately for a little extra. This replaces the old undead-only blast spells (Repel the Dead through Assail the Dead), which are gone. You no longer need a separate spell for undead. Your ordinary damage-over-time does the job now.",
+     "Pact of Eldritch Quickening makes all of these tick faster. See the Pacts section below."
+    ],
+    "entries": [
+     {
+      "name": "Deluge - a burst of poison damage followed by a lingering poison.",
+      "desc": ""
+     },
+     {
+      "name": "Shadows - Corruption damage over time that also snares your target. Each rank hits harder and lasts longer.",
+      "desc": ""
+     },
+     {
+      "name": "Rot - your disease line, now Rot Flesh, Rot Bones, and Rot Soul. Pure damage over time with no burst, and the most mana-efficient of your damage spells over a full duration.",
+      "desc": ""
+     }
+    ]
+   },
+   {
+    "title": "Life Drain and Transfer",
+    "paras": [
+     "Everything the Necromancer takes from a victim goes somewhere: back into yourself, your pet, or into an ally."
+    ],
+    "entries": [
+     {
+      "name": "Life Drain - instant Corruption damage that heals you for the same amount. The line was cleaned up into a smoother climb across ranks.",
+      "desc": ""
+     },
+     {
+      "name": "Leech Lifeforce - the ticking version. It drains over time and heals you for what it takes.",
+      "desc": ""
+     },
+     {
+      "name": "Dark Embrace, Sacrificial Embrace, Corporeal Embrace - pay your own health to heal an ally in one burst.",
+      "desc": ""
+     },
+     {
+      "name": "Covenant of Life, Darkness, and Shadow - pay your own health to heal an ally over time.",
+      "desc": ""
+     },
+     {
+      "name": "Steal Strength (Lesser, regular, Greater, Superior) - take Strength from an enemy and add it to your own for a while. Transfer Strength does the reverse, giving your own Strength to an ally.",
+      "desc": ""
+     },
+     {
+      "name": "Mind Surge, Mana Surge, Mental Surge - gift mana to an ally. They now restore more, and cost more of your own mana to cast. These have a cooldown now, so they can come in handy in an emergency, but transferring your own valuable mana is not a constant activity.",
+      "desc": ""
+     },
+     {
+      "name": "Summon Lifestones - unchanged. A consumable heal you can conjure for yourself or a friend.",
+      "desc": ""
+     }
+    ]
+   },
+   {
+    "title": "The Pacts and the Red Line of Danger",
+    "paras": [
+     "The Necromancer lives on the red line, trading vitality for power and knowing exactly how far to push it. The Pact family is the clearest expression of that. Every Pact costs you a slice of your own health and gives you something in return.",
+     "Two of the Pacts are old friends. Four are new.",
+     "A pet tank that keeps up with hard fights, paid for out of your own health.",
+     "A minion that feeds your group.",
+     "A smaller trade for a smaller gift. Useful in dark places.",
+     "The most direct \"spend your body for damage\" spell in the class. Instead of ticking every 6th second, your DoTs now tick every 5th second - getting their damage out a bit faster."
+    ],
+    "entries": [
+     {
+      "name": "Pact of Deathly Enduring",
+      "desc": "Bind your vitality to your pet, reducing your maximum Health and making them tougher: more Armor Class, more Health Regeneration and more maximum Health."
+     },
+     {
+      "name": "Pact of Vampirism",
+      "desc": "Bind your life force to your pet, reducing your maximum Health and giving your pet a chance to drain life with its melee attacks, healing your group with what it takes."
+     },
+     {
+      "name": "Pact of Coldlight",
+      "desc": "Bind your warmth to your pet, reducing your maximum Health and causing it to shed a cold, pale light over its surroundings."
+     },
+     {
+      "name": "Pact of Eldritch Quickening",
+      "desc": "Quicken your afflictions, reducing your maximum Health. While active, your poison, corruption, disease and life-draining damage-over-time spells deal their damage faster."
+     }
+    ]
+   },
+   {
+    "title": "Blood Pact, Death Pact, and the Lich chain",
+    "paras": [
+     "Your mana regeneration line follows the same curve it always has: Blood Pact, Death Pact, Shed Bones, Shed Flesh, Lich, and Arch Lich. Each trades your health every few seconds for faster mana regeneration, and each step up takes more health and gives more mana. The line lost one intermediate step (Demi Lich) and some ranks moved to new levels, but the trade is the same as it always was. Lich Spirit, the short high-cost burst at the top, is unchanged."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Unliving Shield",
+    "paras": [
+     "Your defensive buff, formerly Spellshield, lasts an hour and now bundles a few things you'd always want active. It raises your maximum Health, Armor Class, Magic Resistance, and now Holy Resistance, and it lets you sense magical effects while it lasts.",
+     "It also carries a new safety net, Soul Tether. If your Health falls low, your shield binds your minion to you for a short time, and your pet takes a share of the damage you would have taken. It can't trigger again for a while afterward, so treat it as an emergency measure rather than part of a defensive rotation. Your pet pays the price for your survival."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Emergency exits",
+    "paras": [
+     "Unholy Bulwark (a short window of immunity to all damage, usable even while stunned or feared) and Feign Death are unchanged. When the red line gets too red, these are how you step back."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Your Minion",
+    "paras": [
+     "Your minion is still the heart of the class, holding the front line while you work from range. The three main pet lines (Skeleton, Zombie, and Ghoul) are now short ladders of ranks instead of long lists of individual spells, and between upgrades your pet scales with your level, so it no longer falls behind while you wait for the next rank.",
+     "The three lines are different flavors of the same job, and each fights with its own abilities: skeletons use Strike, ghouls use Ghoul Tendrils, zombies use Zombie Drain, and all three use Provoke. These unlock at various levels, so you'll get your skeleton pet earlier than the rest.",
+     "The Pacts above are the other half of the bond with your pet, and the biggest change to how it plays."
+    ],
+    "entries": [
+     {
+      "name": "Summon Skeleton, Summon Zombie, Summon Ghoul",
+      "desc": "Reanimate the dead to fight alongside you. Each requires a reagent: bone chips for skeletons, zombie skin for zombies and ghoul skin for ghouls."
+     },
+     {
+      "name": "Spectre Minion",
+      "desc": "Reanimate death incarnate. Your spectre is immune to Fear effects, and fights with Spectre Drain and Provoke."
+     },
+     {
+      "name": "Burning Bones",
+      "desc": "Reanimate bone, conjuring a burning skeleton to serve you. Rank 1 of this pet is available as a quest reward for adventurous necromancers."
+     },
+     {
+      "name": "Mend the Dead",
+      "desc": "Restore your pet's health. The line now has five ranks instead of three, so your pet heals keep pace with your pet across more of the game."
+     },
+     {
+      "name": "Fury of Death",
+      "desc": "Stoke the fury of death within your pet, increasing their Attack Speed and Strength. Formerly Unrelenting Dead, and the first rank now arrives a little earlier."
+     },
+     {
+      "name": "Summon Companion, Reclaim Essence",
+      "desc": "Unchanged. Summon Companion pulls your pet to your side, and Reclaim Essence destroys it and converts some of its health into mana."
+     },
+     {
+      "name": "Dominion Over the Dead",
+      "desc": "Command the Dead and Dominate the Dead - take control of an undead target for a limited time and have it fight for you. Renamed from Charm, Beguile, Coax and Persuade the Dead. Restrain the Dead - incapacitate a single undead target. Now four ranks instead of one, so it stays useful as you level. Terrify the Dead - make an undead target flee. Formerly Fear the Dead. Lull the Dead - shrink an undead target's aggro radius. This can only affect one target at a time. Invisibility versus Undead - unchanged."
+     },
+     {
+      "name": "Control and Escape",
+      "desc": "Fear and Deathly Howl - make one target, or everything near you, flee. Unchanged in function, and moved to new levels. Grasp of the Dead - hold a target in place. Ranamed from Root - Unchanged in function. Swirling Shadows and its ranks - your snare rides on this damage line (see Death's Toll). Feign Death - play dead and drop the threat of aggressive targets."
+     }
+    ]
+   },
+   {
+    "title": "Retained Spell Lines",
+    "paras": [
+     "Several of these moved to new unlock levels as part of a full level-schedule pass.",
+     "Thanks for taking the time to look this over, and for your participation in our Beta. We look forward to getting your feedback after you try out the Necromancer update during Early Access!"
+    ],
+    "entries": [
+     {
+      "name": "Damage",
+      "desc": "Deluge (poison burst with a lingering tick)"
+     },
+     {
+      "name": "Shadows (Corruption over time with a snare)",
+      "desc": ""
+     },
+     {
+      "name": "Rot (disease over time) - renamed from Malady, Infectious Disease, Shuddering Sickness, Afflicting Ailment, Irking Illness and Virulent Virus",
+      "desc": ""
+     },
+     {
+      "name": "Life Drain (instant Corruption damage that heals you) - higher ranks renamed from Life Sap, Life Siphon, Life Tap, Life Guzzle, Life Duct and Life Flume (now Life Drain II through VII)",
+      "desc": ""
+     },
+     {
+      "name": "Leech Lifeforce (Corruption over time that heals you) - higher ranks renamed from Leech Essence, Leech Spirit, Leech Soul and Leech Anima (now Leech Lifeforce II through V)",
+      "desc": ""
+     },
+     {
+      "name": "Pet",
+      "desc": "Summon Skeleton"
+     },
+     {
+      "name": "Summon Zombie",
+      "desc": ""
+     },
+     {
+      "name": "Summon Ghoul",
+      "desc": ""
+     },
+     {
+      "name": "Spectre Minion",
+      "desc": ""
+     },
+     {
+      "name": "Burning Bones",
+      "desc": ""
+     },
+     {
+      "name": "Mend the Dead",
+      "desc": ""
+     },
+     {
+      "name": "Fury of Death - renamed from Unrelenting Dead spell line",
+      "desc": ""
+     },
+     {
+      "name": "Summon Companion",
+      "desc": ""
+     },
+     {
+      "name": "Reclaim Essence",
+      "desc": ""
+     },
+     {
+      "name": "Buffs",
+      "desc": "Unliving Shield - renamed from Spellshield"
+     },
+     {
+      "name": "Aspect of Vampirism",
+      "desc": ""
+     },
+     {
+      "name": "Blood Pact and the Lich chain",
+      "desc": ""
+     },
+     {
+      "name": "Cold Protection, Cold Resistance, Holy Protection and Holy Resistance",
+      "desc": ""
+     },
+     {
+      "name": "Healing and Transfer",
+      "desc": "Dark Embrace line"
+     },
+     {
+      "name": "Covenant line",
+      "desc": ""
+     },
+     {
+      "name": "Mind Surge line",
+      "desc": ""
+     },
+     {
+      "name": "Steal Strength line and Transfer Strength",
+      "desc": ""
+     },
+     {
+      "name": "Debuffs and Control",
+      "desc": "Spirit Splinter line (resist debuff)"
+     },
+     {
+      "name": "Dispel Magic and Abolish Magic",
+      "desc": ""
+     },
+     {
+      "name": "Fear, Deathly Howl, Grasp of the Dead (was Root), Lull the Dead",
+      "desc": ""
+     },
+     {
+      "name": "Command the Dead and Dominate the Dead - renamed from Charm the Dead spell line",
+      "desc": ""
+     },
+     {
+      "name": "Restrain the Dead",
+      "desc": ""
+     },
+     {
+      "name": "Terrify the Dead - renamed from Fear the Dead",
+      "desc": ""
+     },
+     {
+      "name": "Utility",
+      "desc": "Gate"
+     },
+     {
+      "name": "Soulbind",
+      "desc": ""
+     },
+     {
+      "name": "Polar Alignment: North",
+      "desc": ""
+     },
+     {
+      "name": "Locate Corpse",
+      "desc": ""
+     },
+     {
+      "name": "Summon Corpse",
+      "desc": ""
+     },
+     {
+      "name": "Summon Lifestone line",
+      "desc": ""
+     },
+     {
+      "name": "Invisibility, Invisibility versus Undead",
+      "desc": ""
+     },
+     {
+      "name": "Eye of the Underworld (formerly See Invisibility, now also senses magical effects)",
+      "desc": ""
+     },
+     {
+      "name": "Unholy Bulwark, Feign Death",
+      "desc": ""
+     },
+     {
+      "name": "Removed Spell Lines",
+      "desc": "Repel the Dead, Beset the Dead, Rebuff the Dead, Beleaguer the Dead, Assail the Dead - your undead-only blast spells. Their job now belongs to your damage-over-time spells, which hit undead harder. Sense Magic - folded into Unliving Shield and Eye of the Underworld rather than taking a slot of its own. A handful of intermediate ranks on the Life Drain, Mind Surge, resist debuff and mana regeneration lines that only existed to fill a level slot."
+     }
+    ]
+   }
+  ]
+ },
+ "paladin": {
+  "url": "https://monstersandmemories.com/class-paladin-deep-dive",
+  "overview": [
+   "With Paladin, we originally sought to create more distance from Cleric - leaning more into its melee and close quarters abilities. Paladin was already a complete class, but needed more flavor and excitement to complete its theme and make it more appealing to players. However, as the Cleric rework progressed and the miracles and blessings attached to their Holy Strike were well received, we walked back on this a bit. We’re still making more of their current kit distinct from their healer brethren, but brought the miraculous smites Cleric players have been enjoying over to their tank counterparts.",
+   "Paladins are losing Deflect, Weapon Shield, and Focused Concentration, as well as seeing Kick replaced with Shield Slam. These are changes going in for all the Knights.",
+   "Additionally, the Paladin Pet ability Ancient Guardian, has been removed due to being odd, off-theme, and generally too powerful.",
+   "Consecrations are a major new mechanic for Paladins to interact with, and offer a combination of offensive and defensive benefits. The Auras granted by Paladin have shifted around somewhat. Two new Oath abilities offer a way for the Paladin to defend a groupmate through sacrifice.",
+   "There’s some fun stuff to investigate, so let’s dig in."
+  ],
+  "sections": [
+   {
+    "title": "Supplication and Fulfillment",
+    "paras": [
+     "Supplication has been removed from the Paladin ability list. The Strength and Mana Regeneration it provided have been moved into the Conviction buff, and the Fulfillment stacks are no longer consumed by Restorative Smite. The haste from fully stacking fulfillment has been pulled into the Fervor buff you may rarely receive from Crusader Strike."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Damage Abilities",
+    "paras": [],
+    "entries": [
+     {
+      "name": "Crusader Strike",
+      "desc": "This is the Paladin’s basic attack, replacing Slam. Mechanically very similar to Holy Strike from the cleric line, but with a higher base damage and multiple tiers for more fine tuning across level ranges. This attack deals Weapon Ratio damage plus Holy Damage, with scaling bonus Threat. Like Holy Strike, it has a small chance to channel the wrath of your faith or filling you with Fervor, a small haste buff."
+     },
+     {
+      "name": "Restorative Smite",
+      "desc": "Restorative Smite is a longer cooldown attack that shares a cooldown with its more damage-focused sibling, Vengeful Smite. Restorative Smite no longer requires a stack of Fulfillment to trigger its healing and can be used for consistent, if small, group healing. The damage has been reduced, but the ability maintains its bonus Threat. The healing is significantly amplified when standing upon consecrated ground - blessed by one of your two beneficial Consecration abilities."
+     },
+     {
+      "name": "Vengeful Smite",
+      "desc": "This is the damage focused alternative to Restorative Smite. It deals Weapon Ratio Physical Damage plus Holy Damage, along with bonus Threat. Like Restorative Smite, when standing upon consecrated ground the Holy Damage you generate will be greatly increased."
+     },
+     {
+      "name": "Hammer of Light",
+      "desc": "This is a new DD ability that can be used on targets dead and living, dealing Holy Damage and a bit of Threat. It is primarily a tool for pulling."
+     }
+    ]
+   },
+   {
+    "title": "Shield Abilities",
+    "paras": [],
+    "entries": [
+     {
+      "name": "Shield Slam",
+      "desc": "Shield Slam is a spell interrupt and school lockout that replaces the Kick ability in the old list."
+     },
+     {
+      "name": "Warding Slam",
+      "desc": "An upgrade to Shield Slam, this ability gains damage based on the AC of the shield, and increases your Block % for a short duration after the ability is used. You do not need to interrupt a spell in order to benefit from the damage and block increase."
+     },
+     {
+      "name": "Shield Toss",
+      "desc": "Shield Toss has been slightly changed from an AE to an actual bounce effect that chains between nearby targets, interrupting each target hit. This ability was always useful but fell a little flat on fun factor without any visuals, but now has VFX that shows the bouncing shield."
+     }
+    ]
+   },
+   {
+    "title": "Auras",
+    "paras": [
+     "Paladins have two auras to choose from, each offering unique bonuses for their group."
+    ],
+    "entries": [
+     {
+      "name": "Aura of Courage",
+      "desc": "A defensive aura granting you and your group Armor Class as well as a small chance to fully resist Fear effects. While in this Aura, you’ll also receive a bonus to all your generated Threat."
+     },
+     {
+      "name": "Aura of Piety",
+      "desc": "This aura grants a bonus to all healing received by members of your group."
+     }
+    ]
+   },
+   {
+    "title": "Consecrations",
+    "paras": [
+     "Consecrations are ground based abilities that bless the ground upon which the Paladin stands - offering protections to those that stand within, or purifying the area from enemies. Consecrations remain where they were invoked for 30 seconds."
+    ],
+    "entries": [
+     {
+      "name": "Hallowed Ground",
+      "desc": "This simple blessing offers Corruption resistance to groupmates that stand within, while increasing the effectiveness of your Smite abilities."
+     },
+     {
+      "name": "Blessing of Sanctuary",
+      "desc": "Formerly a targeted ability with a blocking buff to prevent reuse, Sanctuary will now protect those who stand within, reducing melee damage received."
+     },
+     {
+      "name": "Exorcism",
+      "desc": "Sanctifies the ground under your feet, causing Undead within it to be snared and feared, and damaging any that defy you or return over time for the duration."
+     }
+    ]
+   },
+   {
+    "title": "Oaths",
+    "paras": [
+     "A Paladin has vowed to protect their allies, which they express through two Oath abilities."
+    ],
+    "entries": [
+     {
+      "name": "Oath of Vigilance",
+      "desc": "A minor oath that absorbs 5% of the damage intended for a groupmate and redirects half of that damage to you. This is a long duration buff you can keep on an target."
+     },
+     {
+      "name": "Oath of Sacrifice",
+      "desc": "A major oath that absorbs 75% of the damage intended for a groupmate and redirects half of that damage to you. This is a short duration buff on a longer cooldown."
+     }
+    ]
+   },
+   {
+    "title": "Buffs",
+    "paras": [],
+    "entries": [
+     {
+      "name": "Conviction",
+      "desc": "Conviction replaces the short term Supplication buff, granting you Strength, Wisdom, and Stamina as well as minor Mana Regeneration."
+     },
+     {
+      "name": "Poison and Disease",
+      "desc": "Paladins have two tiers of self-only resistance buffs against Poison and Disease"
+     },
+     {
+      "name": "Divine Spark",
+      "desc": "Paladins retain the Divine Spark hit point buff, which stacks with the Cleric line. They have lost access to Holy Fortitude and the other cleric hp buffs."
+     }
+    ]
+   },
+   {
+    "title": "Heals and Resurrection",
+    "paras": [],
+    "entries": [
+     {
+      "name": "Healing Touch",
+      "desc": "This spell replaces the existing healing line for Paladins. It is a short range, fast casting heal with a moderate cooldown time. It’s not the most efficient healing spell around, and due to the cooldown time, you’ll likely want to use Restorative Smite with it when playing as a temporary or secondary healer."
+     },
+     {
+      "name": "Resurrection",
+      "desc": "Paladins now receive a full line of Resurrection spells one tier behind Clerics, starting at level 16 and ending with Revival, the 75% experience resurrection at level 56."
+     },
+     {
+      "name": "Retained Spell Lines",
+      "desc": "Lull - these have been updated to use the current Cleric lineup of Pacify spells, which affect a single target at a time."
+     },
+     {
+      "name": "Ward the Dead - the full line of damage versus Undead.",
+      "desc": ""
+     },
+     {
+      "name": "Stun",
+      "desc": ""
+     },
+     {
+      "name": "Blind",
+      "desc": ""
+     },
+     {
+      "name": "Root",
+      "desc": ""
+     },
+     {
+      "name": "Cleanse Disease / Poison",
+      "desc": ""
+     },
+     {
+      "name": "Divine Aegis",
+      "desc": ""
+     },
+     {
+      "name": "Invis vs Undead",
+      "desc": ""
+     },
+     {
+      "name": "Taunt",
+      "desc": ""
+     },
+     {
+      "name": "Unleash the Light",
+      "desc": ""
+     },
+     {
+      "name": "Mark of the Crusader",
+      "desc": ""
+     },
+     {
+      "name": "Abolish Magic",
+      "desc": ""
+     },
+     {
+      "name": "Lay on Hands",
+      "desc": ""
+     },
+     {
+      "name": "Removed Spell Lines",
+      "desc": "Weapon Shield"
+     },
+     {
+      "name": "Focused Concentration",
+      "desc": ""
+     },
+     {
+      "name": "Holy Fortitude",
+      "desc": ""
+     },
+     {
+      "name": "Ancient Guardian",
+      "desc": ""
+     },
+     {
+      "name": "Deflect",
+      "desc": ""
+     },
+     {
+      "name": "Corruption Resistance (targeted)",
+      "desc": ""
+     }
+    ]
+   }
+  ]
+ },
+ "ranger": {
+  "url": "https://monstersandmemories.com/class-ranger-deep-dive",
+  "overview": [
+   "The Ranger's fantasy is the Wilderness Veteran: blades up close, a bow at range, and a lifetime of fieldcraft that mixes a deep knowledge of the wild with some light woodland magic. Before this update, the class had drifted into something closer to a half-Druid, casting fire and borrowed nature spells between swings. This update pulls it back: the fire nukes, the fire and insect damage-over-time spells, and the elemental weapon and arrow enchantments are gone.",
+   "In their place is a fast martial kit built around your two weapons, four stances that change how that kit behaves, practical wound care, and a campfire ability that speeds your group's recovery between fights a few times an hour. What you were already good at stays: moving a group across open country, slipping past danger outdoors, calming beasts, and tracking your quarry.",
+   "You also live off the land, now foraging food, drink, and cureberries from the wild."
+  ],
+  "sections": [
+   {
+    "title": "Swordplay and Marksmanship",
+    "paras": [
+     "Your combat abilities come in two sets, swordplay and marksmanship, and each set has an opener: Opening Strike for melee and Leading Shot for the bow. The two openers share a cooldown, so each time they're ready you pick one, melee or ranged.",
+     "Using an opener unlocks the follow-up abilities, then you can use one of them.",
+     "So the rhythm is: opener, one follow-up, opener again. And the choice each time is which follow-up the fight calls for.",
+     "Leading Shot and the marksmanship abilities need a bow, arrows, and a little distance between you and your target.",
+     "Your bleeds are your own, so two Rangers can bleed the same target without getting in each other's way.",
+     "For the pack that's closing in, or the group that's trying to run.",
+     "Formerly Truestrike. Only the name changed."
+    ],
+    "entries": [
+     {
+      "name": "Swordplay Abilities",
+      "desc": "Finishing Blow - Strike with both blades at once. Needs a weapon in each hand."
+     },
+     {
+      "name": "Hamstring Slice - Cut at the target's legs and slow its movement.",
+      "desc": ""
+     },
+     {
+      "name": "Rending Cut - A cut that keeps bleeding after you hit. Landing it again before it wears off deepens the wound.",
+      "desc": ""
+     },
+     {
+      "name": "Marksmanship Abilities",
+      "desc": "Swift Shot - A hard-hitting, well-placed shot. Maiming Shot - A crippling shot that lowers the target's Dexterity, making its attacks less accurate. Barbed Shot - An arrow that leaves a bleeding wound. Repeat hits deepen it, the same way they do with Rending Cut."
+     },
+     {
+      "name": "Tanglefoot",
+      "desc": "Snare several enemies in front of you at once. It only catches enemies, never your group."
+     },
+     {
+      "name": "Apex Predator",
+      "desc": "A short burst of accuracy and damage you save for the right moment."
+     }
+    ]
+   },
+   {
+    "title": "Stances",
+    "paras": [
+     "The old Imbue Weapon and Imbue Arrows spells wrapped your attacks in fire, ice, nature, and lightning. They're gone with the rest of the elemental kit. Four new stances take their place: instead of enchanting your weapons, you change how you fight with them.",
+     "Three of the stances change what some of your swordplay and marksmanship abilities do.",
+     "Hit them with a Barbed Shot on the way in, and every Rending Cut you land keeps that arrow wound open.",
+     "The mirror of Warden. Cut them on the way past, step back with your bow, and keep the blade wound bleeding from range.",
+     "In both stances, the refresh only extends a wound you've already opened. It doesn't deepen the wound, and it does nothing if your other bleed isn't on the target.",
+     "Work both your ranged and melee attacks and you can keep both bleeds running far longer than either would last alone.",
+     "For the fight that has one enemy too many.",
+     "This is the off-tank stance. With Survivor up, plus Taunt and Kick, you can hold an enemy in a pinch. Aggro control is still limited compared to a dedicated tank, so it's a way to hold the line for a while, not a replacement for the classes built to do it."
+    ],
+    "entries": [
+     {
+      "name": "Warden Stance - Melee DPS",
+      "desc": "Your melee attacks hit harder. Hamstring Slice also opens a gap in the target's armor for a few seconds, lowering its armor class. If your Barbed Shot is bleeding on the target, Rending Cut refreshes that bleed to its full duration."
+     },
+     {
+      "name": "Marksman Stance - Ranged DPS",
+      "desc": "Your bow attacks hit harder."
+     },
+     {
+      "name": "Maiming Shot also snares the target for a few seconds.",
+      "desc": ""
+     },
+     {
+      "name": "If your Rending Cut is bleeding on the target, Barbed Shot refreshes that bleed to its full duration.",
+      "desc": ""
+     },
+     {
+      "name": "Survivor Stance - Off-Tanking",
+      "desc": "Increases your parry and armor class. Hamstring Slice also slows the target's attacks."
+     },
+     {
+      "name": "Longstrider Stance",
+      "desc": "Shift to this stance and your group runs faster outdoors, as long as they stay near you. A member who takes damage slows back down for a while, so it's for covering ground, not for fighting."
+     }
+    ]
+   },
+   {
+    "title": "Wound Care",
+    "paras": [
+     "You carry herbs, bandages, and poultices, and have the know-how to use them. It's based in woodsman's craft, but your healing spells require mana to apply.",
+     "Formerly the Weak Heal through Greater Heal line. The poultices now run from Weak Healing Poultice up to Superior Healing Poultice.",
+     "Formerly the Prickly, Bristly, Brambly, Spiky, and Thorny Tunic line."
+    ],
+    "entries": [
+     {
+      "name": "Healing Poultice",
+      "desc": "Press a poultice to an ally's wound. It heals them straight away and keeps mending them for a short while after. You have to be at their side to apply it. Each poultice has a chance to draw out a poison and a disease, and the better poultices do it more reliably. For the times a poultice doesn't take, carry cureberries (see Foraging below)."
+     },
+     {
+      "name": "Regeneration and Pack Regeneration",
+      "desc": "Slowly restore health over time to one ally or to the whole group. Both lines arrive earlier now and each gains a new top rank: Exceptional Regeneration and Exceptional Pack Regeneration."
+     },
+     {
+      "name": "Mantle of the Hunter",
+      "desc": "Your personal protection: more armor class, a thorny damage shield that hurts whatever hits you, and now more Wisdom. It also lets you sense magical effects on what you consider. The whole line starts much earlier than it used to."
+     },
+     {
+      "name": "Barriers",
+      "desc": "Put a thorny damage shield on someone else. The Prickly through Thorny Barrier line arrives earlier now, and Jagged Barrier is a new top rank."
+     }
+    ]
+   },
+   {
+    "title": "The Campfire",
+    "paras": [
+     "Between pulls the group gathers around the fire, gets its health and mana back, refreshes buffs, and enjoys a bit of downtime together.",
+     "Recuperate has a long cooldown, so you won't call a rest after every fight. When you do, it cuts the wait before the next pull. The cooldown also lines up well with buff durations, so the rest break is a natural time to re-apply them.",
+     "A group can only benefit from Recuperate every so often, regardless of how many Rangers are in the party. Once you've rested, you'll need to wait a while before another rest does you any good.",
+     "With a Hearth, you never have to go looking for a fire to rest at."
+    ],
+    "entries": [
+     {
+      "name": "Recuperate",
+      "desc": "When the fight's done, gather your group around the fire. Everyone recovers health and mana quickly for a short while. You need the warmth of a campfire to call a rest - any campfire will do, including your own Hearth. You can't fight while you recuperate. Your blows land weakly and you're easier to hurt, so this is for after the pull, never during it. If you're attacked unexpectedly while recuperating, you can click off the buff."
+     },
+     {
+      "name": "Hearth of the Ranger",
+      "desc": "Build your own campfire. It burns longer than a normal one, and each log you feed it keeps it going longer too."
+     }
+    ]
+   },
+   {
+    "title": "The Wilds",
+    "paras": [
+     "Open country is where you're most at home. This is the part of your kit for finding your quarry, feeding yourself, covering ground, and getting past what you'd rather not fight.",
+     "Your pack is never empty for long.",
+     "Speed of the Hunter was formerly Speed of the Predator."
+    ],
+    "entries": [
+     {
+      "name": "Tracking",
+      "desc": "Unchanged. Tracking is still a skill you train at your guild, and it grows as you level. The more skilled you are, the further away you can pick out a creature and follow it."
+     },
+     {
+      "name": "Foraging",
+      "desc": "Gather food and drink from the wild. What you find is trail food, and eating or drinking it gives you a light resistance to disease or poison. You can also forage cureberries, which cure poison and disease. They used to come from a summoning spell; now you find them yourself."
+     },
+     {
+      "name": "Speed of the Wild, Speed of the Pack, Speed of the Hunter",
+      "desc": "Outdoor run speed for one ally or the whole group, and a short outdoor sprint for yourself."
+     },
+     {
+      "name": "Shroud, Camouflage, and Invisibility versus Beasts",
+      "desc": "Outdoor concealment for yourself (Shroud) or a party member (Camouflage), and invisibility to beasts for a party member. Sneak - Move unseen by anything you're behind."
+     },
+     {
+      "name": "Lull Beasts and Nature's Calm",
+      "desc": "Lull Beasts calms a beast so you can walk closer without drawing it in. It's now a four-rank line, Lull Minor Beasts through Lull Greater Beasts, and each rank can calm tougher beasts than the last. Nature's Calm calms a creature outdoors for a short time. It's also four ranks (Nature's Calm, Nature's Lull, Nature's Peace and Nature's Serenity), and it's rebuilt from the old Unity spell. Terrify Beasts sends a beast running. Formerly Fear Beasts."
+     },
+     {
+      "name": "And the rest of the kit…",
+      "desc": "Twisting Roots holds a target in place. Beast Speech lets you talk with animals. Salvage Arrows recovers spent arrows. Enduring Breath lets you breathe underwater. All unchanged."
+     }
+    ]
+   },
+   {
+    "title": "Group Support",
+    "paras": [
+     "Formerly Truestrike Aura. The armor it grants replaces the old Woodskin line."
+    ],
+    "entries": [
+     {
+      "name": "Hunter's Focus",
+      "desc": "Sharpen your group's weapon skills and Dexterity, and harden their armor. It's now a group buff you cast instead of an always-on aura."
+     },
+     {
+      "name": "Protection and Resistance",
+      "desc": "Poison Protection and Poison Resistance, Corruption Protection and Corruption Resistance, and See Invisibility are all still here."
+     }
+    ]
+   },
+   {
+    "title": "Retained Spell Lines",
+    "paras": [
+     "Several of these moved to new unlock levels as part of a full level-schedule pass.",
+     "Thanks for taking the time to look this over, and for your participation in our Beta. We look forward to getting your feedback after you try out the Ranger update during Early Access!"
+    ],
+    "entries": [
+     {
+      "name": "Combat",
+      "desc": "Opening Strike - Renamed from Strike"
+     },
+     {
+      "name": "Leading Shot - Renamed from Whistling Shot",
+      "desc": ""
+     },
+     {
+      "name": "Apex Predator - Renamed from Truestrike",
+      "desc": ""
+     },
+     {
+      "name": "Taunt, Kick, Throw",
+      "desc": ""
+     },
+     {
+      "name": "Twisting Roots",
+      "desc": ""
+     },
+     {
+      "name": "Wound Care and Protection",
+      "desc": "Healing Poultice line - Rebuilt from Weak Heal, Minor Heal, Lesser Heal, Heal, and Greater Heal"
+     },
+     {
+      "name": "Regeneration line",
+      "desc": ""
+     },
+     {
+      "name": "Pack Regeneration line",
+      "desc": ""
+     },
+     {
+      "name": "Mantle of the Hunter line - Renamed from Prickly, Bristly, Brambly, Spiky, and Thorny Tunic",
+      "desc": ""
+     },
+     {
+      "name": "Prickly, Bristly, Brambly, Spiky, and Thorny Barrier",
+      "desc": ""
+     },
+     {
+      "name": "Poison Protection, Poison Resistance, Corruption Protection, Corruption Resistance",
+      "desc": ""
+     },
+     {
+      "name": "Group",
+      "desc": "Hunter's Focus - Renamed from Truestrike Aura"
+     },
+     {
+      "name": "Travel and Concealment",
+      "desc": "Speed of the Wild, Speed of the Pack"
+     },
+     {
+      "name": "Speed of the Hunter - Renamed from Speed of the Predator",
+      "desc": ""
+     },
+     {
+      "name": "Shroud, Camouflage, Sneak",
+      "desc": ""
+     },
+     {
+      "name": "Invisibility versus Beasts, See Invisibility",
+      "desc": ""
+     },
+     {
+      "name": "Enduring Breath",
+      "desc": ""
+     },
+     {
+      "name": "Beasts and Calm",
+      "desc": "Lull Beasts line - Rebuilt from Lull Exceptional Beasts"
+     },
+     {
+      "name": "Nature's Calm line - Rebuilt from Unity",
+      "desc": ""
+     },
+     {
+      "name": "Terrify Beasts - Renamed from Fear Beasts",
+      "desc": ""
+     },
+     {
+      "name": "Beast Speech",
+      "desc": ""
+     },
+     {
+      "name": "Utility",
+      "desc": "Tracking"
+     },
+     {
+      "name": "Hearth of the Ranger",
+      "desc": ""
+     },
+     {
+      "name": "Salvage Arrows",
+      "desc": ""
+     },
+     {
+      "name": "Polar Alignment: North",
+      "desc": ""
+     },
+     {
+      "name": "Removed Spell Lines",
+      "desc": "Burning Embers Line and Insect Swarm Line - The fire and insect damage-over-time lines borrowed from the Druid. Your bleeds do this job now."
+     },
+     {
+      "name": "Fireburst - The fire nuke line.",
+      "desc": ""
+     },
+     {
+      "name": "Imbue Arrows and Imbue Weapon (Fire, Ice, Nature and Lightning) - Replaced by the stances.",
+      "desc": ""
+     },
+     {
+      "name": "Woodskin, Stoneskin, Steelskin, and Diamondskin and the Union line - The armor buffs. The group version's armor now lives on Hunter's Focus.",
+      "desc": ""
+     },
+     {
+      "name": "Snare and Ensnare - Replaced by Hamstring Slice, Tanglefoot, and Marksman Stance's Maiming Shot.",
+      "desc": ""
+     },
+     {
+      "name": "Sense Magic - Folded into Mantle of the Hunter for yourself.",
+      "desc": ""
+     },
+     {
+      "name": "Cure Disease - Your poultices can now draw out disease.",
+      "desc": ""
+     },
+     {
+      "name": "Summon Cureberries - You forage cureberries now instead.",
+      "desc": ""
+     },
+     {
+      "name": "Unification, Strength of Eth-el, Bind Vision, Death's Demise, Jackal Form, Wolf Form, Greater Shroud, Greater Camouflage, and Fire Protection, Fire Resistance, Cold Protection, and Cold Resistance.",
+      "desc": ""
+     }
+    ]
+   }
+  ]
+ },
+ "rogue": {
+  "url": "https://monstersandmemories.com/class-rogue-deep-dive",
+  "overview": [
+   "Rogue is one of the classes getting fewer fundamental changes to gameplay and abilities in their update. It will continue to play similarly to how it has in the past, but with some notable changes. For example, poisons have been fleshed out and made available across more of the level ranges, there’s been a slight reduction in the number of interrupt and stun abilities, and Ambush has been rolled into Backstab in a way that streamlines the application of two very similar abilities.",
+   "We found that needing to Stealth mid-fight to use an ability wasn’t very satisfying gameplay. You either macro it together so you don’t think about it, or it’s just an extra keypress. We’d rather save those keypresses for something more impactful, and have made some adjustments to try to mitigate that."
+  ],
+  "sections": [
+   {
+    "title": "Stealth Changes",
+    "paras": [
+     "In the update patch, we're relaxing the ability for NPCs to see through Stealth based on their level. We want to make it a bit easier to play in areas slightly above your level, and more obvious when you're at risk.",
+     "NPCs that con yellow no longer have any chance to see through Stealth (though some NPCs can always see through it, so caution is still advised). You’ll need to be careful around anything that's a red con, but this gives you two more levels of safety before the aggro range gradually returns in their front arc.",
+     "Additionally, See Invisibility no longer sees through Stealth for NPCs or players. The ability to negate Stealth is currently limited to the Archer’s Flare ability and the Beastmaster's Bat pets. In PVP, players will be able to see you in their front arc if they outlevel you, and within one meter at any time.",
+     "Vial of Smoke has been fixed and now provides the intended 5 second window where you will not reaggro regardless of the level difference, giving you a chance to get out of the NPC’s vision arc."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Poison Updates",
+    "paras": [
+     "Poisons now start much earlier. You gain access to the first Snaring Poison at level 4, and continue to get new types and tiers of poisons through the levels.",
+     "There are 3 types of poisons you can learn from the Poison Maker NPCs, and each has 4 tiers with increasing effects:",
+     "Poison recipes start by extracting toxins from venom glands, venom sacs, and poison ducts—drops from venomous animals of a level appropriate to the poison tier. You’ll combine these in a vial with one of the activating agents:",
+     "We’ll also be adding some experimental poisons over time that won’t show up as a recipe on the vendor. Those will be up to you to discover."
+    ],
+    "entries": [
+     {
+      "name": "Snaring Poison - Slows the movement speed of the target.",
+      "desc": ""
+     },
+     {
+      "name": "Weakening Poison - Slows the attack speed of the target.",
+      "desc": ""
+     },
+     {
+      "name": "Dulling Poison - Slows the casting speed of the target.",
+      "desc": ""
+     },
+     {
+      "name": "Soporific Agent - Snaring",
+      "desc": ""
+     },
+     {
+      "name": "Torporific Agent - Weakening",
+      "desc": ""
+     },
+     {
+      "name": "Deliriant Agent - Dulling",
+      "desc": ""
+     }
+    ]
+   },
+   {
+    "title": "Backstab and Ambush",
+    "paras": [
+     "Backstab is the core ability for the class and Ambush as a secondary backstab detracted from it, so we've removed Ambush and partially merged its functionality into Stab. Likewise, Double Backstab at 50 has been removed. All the abilities across the classes with this sudden double damage mechanic are being updated similarly.",
+     "By removing the mechanic, we can instead roll that power into higher overall damage and gain greater control over the ramp up throughout the level range.",
+     "If you’ve been in Stealth for at least 3 seconds, the weapon-based portion of your Backstab damage will be doubled. The intent here is to provide a strong initial attack when beginning a fight in Stealth, and discourage rapidly entering Stealth just for the damage bonus.",
+     "At level 35, you’ll unlock the Assassin Trait, which grants you the ability to critically hit on Stab and Backstab.",
+     "And finally, the weapon damage scaling on Backstab has been nearly doubled."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Swift Strikes",
+    "paras": [
+     "This ability is now toggleable (on the Aura Bar) and has been set as a Tertiary Haste effect, allowing it to stack with most other forms of haste."
+    ],
+    "entries": []
+   },
+   {
+    "title": "New Abilities",
+    "paras": [
+     "Beyond the tiering of Stab and the updated Poison repertoire, Rogues will get several other new abilities in this patch."
+    ],
+    "entries": [
+     {
+      "name": "Slice - Deeply slice your target, dealing Weapon Ratio Damage plus Bleed Damage. This ability shares a cooldown with other Might abilities and stacks up to two times.",
+      "desc": ""
+     },
+     {
+      "name": "Twin Blades - Deftly strike your target with twin blades, dealing Weapon Ratio Damage per equipped weapon. This ability shares a cooldown with other Might abilities.",
+      "desc": ""
+     },
+     {
+      "name": "Rain of Steel - Shower your target with throwing knives, dealing Weapon Ratio Damage three times. This ability can be used while moving, has no minimum range, and is channeled.",
+      "desc": ""
+     },
+     {
+      "name": "Poison Tolerance / Desensitization - Develop a tolerance to poison, increasing your Poison Resistance. (Your time working with poisons has given you a slight immunity to them, which you can activate with this self only resistance buff.)",
+      "desc": ""
+     },
+     {
+      "name": "Deadly Throw - Skillfully throw a weapon at your target, dealing Weapon Ratio Damage. Additionally, if your target is below 20% Health, this ability's damage is doubled. (This is an improved version of Throw, proving the Rogue's mastery compared to other classes.)",
+      "desc": ""
+     },
+     {
+      "name": "Escape Artist - Become elusive, removing all Root and Snare effects and briefly granting you immunity to them.",
+      "desc": ""
+     },
+     {
+      "name": "Gambit - Execute a daring gambit, resetting the cooldown of your Uppercut, Stab, and Vial of Shadow abilities if hit within a short period.",
+      "desc": ""
+     }
+    ]
+   },
+   {
+    "title": "Moved/Removed Abilities",
+    "paras": [
+     "Avoidance, Incapacitate, and Low Blow have been removed.",
+     "Nimble Evasion and Fury of the Assassin are now obtained at levels 20 and 40, respectively."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Soloability",
+    "paras": [
+     "As a positional damage class, we’re aware that Rogues have a tougher time than most other classes when it comes to soloing. While Monsters and Memories is a group-focused game, we’d like to give you at least some ability to play solo while looking for a group. We hope that the new ranged abilities, as well as the cooldown resets from Gambit, make this a bit more achievable if you choose your targets well."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Pick Pocket, Lockpicking, and Disarm Traps",
+    "paras": [
+     "A rogue is more than a combat machine, and these abilities are important to the feel of the archetype.",
+     "In the patch after the ability rework, Pick Pocket will be changing to no longer pull from the mob’s actual loot table, and instead from a pick pocket specific table. This should open up some quest opportunities in addition to being a bit more desirable in group settings.",
+     "Lockpicking and Disarm Traps require a bit more work in the world and content before they can come online - the abilities themselves do very little without doors to pick and dangerous traps to disarm. You won’t be seeing these in the next patch, but they are still planned and will make their way in when the content to support them exists."
+    ],
+    "entries": []
+   }
+  ]
+ },
+ "shadow-knight": {
+  "url": "https://monstersandmemories.com/class-shadow-knight-deep-dive",
+  "overview": [
+   "The Shadow Knight embodies the anti-hero fantasy of a dark and brooding knight, bending souls to their will and learning more dark magic from the study of monstrous creatures. Shadow Knights use drains and debilitations of the body and soul to gain an edge over their adversaries, and in combat use their life draining abilities to supplement a combat style more focused on offense than defense.",
+   "In this update, we’ve tried to separate the Shadow Knight from the Necromancer class without sacrificing the most important parts of the class mechanics. There’s some subtle theme switching: command over souls and corruption in place of undead reanimation, as well as custom versions of spell lines that make a bit more sense on a class that spends the majority of their time taking hits in combat. The future Profane Study (monster hunting) system will unlock a unique and flavorful way for these dark knights to acquire new types of power."
+  ],
+  "sections": [
+   {
+    "title": "Pets",
+    "paras": [
+     "The three spell lines of pets shared with the Necromancer have been replaced with a singular pet - a lost soul bound to the service of the Shadow Knight. This Soul Servant is now summoned using a Soul Remnant reagent you’ll siphon from enemies, rather than buying bone chips in a market.",
+     "The summoning spells themselves are set up in 4 ranks, creating pets that scale with your level (if a bit behind compared to more dedicated pet classes).",
+     "You’ll retain the ability to sacrifice the pet to form a Sacrificial Barrier, and additionally be able to sacrifice them for a damage shield via Wreath of Souls."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Melee Abilities",
+    "paras": [
+     "Shadow Strike replaces Slam as the basic Shadow Knight melee ability, making room for Siphoning Slash and Reave as the more powerful and longer cooldown abilities.",
+     "Shadow Strike - This attack extends the duration of any of your Shadows dot spells on the target by 6 seconds.",
+     "Siphoning Slash - A slightly stronger attack that heals you for 50% of the damage inflicted. Hitting an enemy with this within the last 10% of its life will siphon a remnant of it’s soul, allowing you to bind it to your will as a pet. This ability shares a cooldown with Reave.",
+     "Reave - This dedicated 2H weapon attack requires a brief wind up but hits hard with no additional frills.",
+     "Goading Bash - This shield ability shares a cooldown with Kick. In addition to interrupting a spell being cast, you’ll generate bonus threat on targets you block for a brief time afterward.",
+     "Kick - This basic spell interrupt is usable without a shield, but locks casters out of recasting for less time than a shield bash."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Offensive Spells",
+    "paras": [
+     "Soulrend - The lifetap abilities shared with Necromancer have been slightly tweaked into the Soulrend line. These lifetaps cast quickly, but have a shorter range than the Life Drain line had.",
+     "Palpitation - This new DOT replaces the Poison line shared with Necromancers and is a combination agility debuff and damage spell. The damage on this spell ramps up over 4 ticks, but deals its full damage faster than the Poison line. The lack of front-loaded damage and ramp up compensate for the fast cast time on the line.",
+     "Smothering Shadows - A new line of Shadow spells replaces the shared Necromancer version. These cast faster than the previous versions, but have a shorter duration as well.",
+     "Theft of Vigor - A combination Strength and Stamina drain that replaces the previous Drain Strength line of spells.",
+     "Grip of Shadow - This ability is used to grab an enemy from afar and pull them to you, interrupting them should they be casting at the time. While this is not a new ability, the range on it has increased from 15m to 20m."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Grip of Agony",
+    "paras": [
+     "Grip of Agony has had a substantial bump in its base damage, and now has an additional Stamina based scaling component. Additionally, when under an Unholy Pact from your Aura of the Unholy, Grip of Agony will heal you for 50% of the damage done."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Auras",
+    "paras": [
+     "Shadow Knights continue to have the two Auras: Vampirism and Unholy. These two had significant overlap in that they both increased the group’s damage with a health regaining component. Additionally, Unholy was a bit off-theme for Shadow Knight, which shouldn’t be buffing regeneration outright to their group.",
+     "Aura of Vampirism - This Aura is unchanged, and provides each member of the group a chance to cast a lifedrain attack on a melee hit",
+     "Aura of the Unholy - This ability has been completely reworked and is now a more tank-centric aura. This aura provides a modest Holy resistance buff to your group, while increasing your generated Threat and Parry Chance. Additionally, when your health falls below 25% of it's maximum, call upon an Unholy Pact to protect you. This pact will reduce incoming damage, empower your Soulrend with additional healing, and grant Grip of Agony a lifesteal for half the damage dealt."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Buffs",
+    "paras": [
+     "Lord of Shadows - This self only buff replaces the Spellshield line, granting you increased Intelligence, Armor Class, Hit Points, and Mana Regeneration. Your physical stat buffs will come via your Theft of Vigor drain spell.",
+     "Wreath of Souls - A new ability and way to use your pet. Sacrifice your pet to place a whirling wreath of souls around you, damaging those who attack you.",
+     "Holy and Cold Resistance - These abilities are retained but are now self-only buffs. Note that Aura of the Unholy can provide some Holy resistance to your group."
+    ],
+    "entries": []
+   },
+   {
+    "title": "Retained Spell Lines",
+    "paras": [
+     "The following spell lines weren’t specifically mentioned as they are preexisting, but continue to be available after this update."
+    ],
+    "entries": [
+     {
+      "name": "Locate Corpse",
+      "desc": ""
+     },
+     {
+      "name": "Polar Alignment: North",
+      "desc": ""
+     },
+     {
+      "name": "Invisibility versus Undead",
+      "desc": ""
+     },
+     {
+      "name": "Lull the Dead",
+      "desc": ""
+     },
+     {
+      "name": "Terror in the Shadows",
+      "desc": ""
+     },
+     {
+      "name": "Feign Death",
+      "desc": ""
+     },
+     {
+      "name": "Spirit Break",
+      "desc": ""
+     },
+     {
+      "name": "Grip of Shadow",
+      "desc": ""
+     },
+     {
+      "name": "Repel the Dead",
+      "desc": ""
+     },
+     {
+      "name": "Summon Corpse",
+      "desc": ""
+     },
+     {
+      "name": "Dark Embrace",
+      "desc": ""
+     },
+     {
+      "name": "Summon Companion",
+      "desc": ""
+     },
+     {
+      "name": "Fear",
+      "desc": ""
+     },
+     {
+      "name": "Fear the Dead",
+      "desc": ""
+     },
+     {
+      "name": "Unholy Bulwark",
+      "desc": ""
+     },
+     {
+      "name": "Removed Spell Lines",
+      "desc": "Skeleton, Zombie, and Ghoul pet (this is now Soul Servant)"
+     },
+     {
+      "name": "Burning Bones",
+      "desc": ""
+     },
+     {
+      "name": "Slam",
+      "desc": ""
+     },
+     {
+      "name": "Weapon Shield",
+      "desc": ""
+     },
+     {
+      "name": "Focused Concentration",
+      "desc": ""
+     },
+     {
+      "name": "Deflect",
+      "desc": ""
+     },
+     {
+      "name": "Life Drain (this is now Soulrend)",
+      "desc": ""
+     },
+     {
+      "name": "Spellshield",
+      "desc": ""
+     },
+     {
+      "name": "Noxious Deluge (replaced by Palpitation line)",
+      "desc": ""
+     },
+     {
+      "name": "Swirling Shadows (replaced by Smothering Shadows line)",
+      "desc": ""
+     }
+    ]
+   },
+   {
+    "title": "Profane Study",
+    "paras": [
+     "A new theme and mechanic being layered onto the Shadow Knight is the hunting of corrupt entities to empower the knight. This is a planned future system that will be entering the game in a later patch and is not implemented as of the Early Access launch.",
+     "Shadow Knights will get a new skill, ‘Profane Study.’ It is used to study, understand, and control the unnatural forces granting power to the most heinous creatures of Eth-ur. By tracking down these abominations, slaying them, and studying their corpse with your Profane Study skill, you’ll be able to improve your existing abilities, or even uncover new forms of power."
+    ],
+    "entries": []
+   }
+  ]
+ },
+ "shaman": {
+  "url": "https://monstersandmemories.com/class-shaman-deep-dive",
+  "overview": [
+   "Shamans draw their power from the spirit realm: ancestors, old forces, and ghosts of the past. They listen to that power rather than command it, and this update shifts their abilities to match the spiritual theme.",
+   "We also wanted to focus on their role as enhancers and debilitators. They make everyone around them better at their job and break down opponents to limit their danger, all while keeping their party topped up with health."
+  ],
+  "sections": [
+   {
+    "title": "Heals",
+    "paras": [],
+    "entries": [
+     {
+      "name": "Pact of Renewal",
+      "desc": "Form a pact of renewal with your target, restoring Health every few seconds. (This is your main healing tool. It works best when cast ahead of the damage, rather than after it. The line dropped its old “spores\" theme, and receives upgrades at more regular intervals.)"
+     },
+     {
+      "name": "Rite of Mending",
+      "desc": "Perform a rite of mending on your group, restoring Health every few seconds. (This is a party-wide version of Pact of Renewal on a long cooldown. Save it for a fight you expect to go badly.)"
+     },
+     {
+      "name": "Communion of Regeneration",
+      "desc": "Regenerate your group, increasing their Health Regeneration. (This party-wide regenerate is obtained through research.)"
+     },
+     {
+      "name": "Spirit Mending",
+      "desc": "Mend your target, restoring Health. (This is your standard heal with a short cast time. It now has an additional rank at higher levels.)"
+     }
+    ]
+   },
+   {
+    "title": "Damage",
+    "paras": [
+     "Shamans aren’t known for their DPS, but they can bring real damage to longer fights. They have two DoT lines with different durations, plus a single direct damage line. Using their resistance debuffs (see below), they can make all of these land harder. Furthermore, their DoTs now stack with those from other Shamans, making multiple Shamans more viable in groups."
+    ],
+    "entries": [
+     {
+      "name": "Ghostly Blight",
+      "desc": "Engulf your target in ghostly blight, dealing Magic Damage plus additional damage every few seconds. (This is your main DoT line, rebuilt from the old poison line.)"
+     },
+     {
+      "name": "Malady",
+      "desc": "Infect your target with a malady, dealing Disease Damage every few seconds. (This line was retained, gaining two new ranks.)"
+     },
+     {
+      "name": "Spirit Bane",
+      "desc": "Rend the spirit of your target, dealing Magic Damage. (This is your only direct damage line, rebuilt from the old frost spells.)"
+     }
+    ]
+   },
+   {
+    "title": "Debuffs",
+    "paras": [
+     "Debuffs are as critical to the Shaman's role as healing. There are three lines: one slows an enemy's attacks, one drains its physical stats, and one strips its resistances."
+    ],
+    "entries": [
+     {
+      "name": "Omen of Lethargy",
+      "desc": "Afflict your target with lethargy, decreasing their Attack Speed. (This is your signature slow, and often the most useful thing you'll do in a hard fight.)"
+     },
+     {
+      "name": "Omen of Enfeeblement",
+      "desc": "Enfeeble your target, decreasing their Strength, Dexterity, and Agility. (This is a great companion spell to Omen of Lethargy, making enemies weaker, less accurate, and less evasive.)"
+     },
+     {
+      "name": "Omen of Susceptibility",
+      "desc": "Make your target more susceptible to harm, decreasing their Disease, Holy, and Magic Resistance. (This line opens a target up to everything that follows -- your own spirit and disease magic included. One further change is that it now weakens Holy Resistance where it used to weaken Poison.)"
+     }
+    ]
+   },
+   {
+    "title": "Buffs and Utility",
+    "paras": [
+     "No other class buffs physical power the way a Shaman does. Between the berserker lines, hastes, and resistance wards, Shamans simply make their group hit harder and take hits better.",
+     "This spell requires a Ritual Talisman. (This is a group version of the Berserker Spirit line. It’s obtained through spell research rather than a merchant, and each cast consumes a Ritual Talisman reagent.)"
+    ],
+    "entries": [
+     {
+      "name": "Tribal Spirit",
+      "desc": "Make your group go berserk, increasing their Strength, Stamina, Dexterity, and Agility."
+     },
+     {
+      "name": "Ancestral Wisdom",
+      "desc": "Invoke ancestral wisdom, increasing your Wisdom and Health Regeneration, and granting you the ability to see invisible entities and magical effects when considering targets. (This is a self-buff.)"
+     },
+     {
+      "name": "Ancestor's Eye",
+      "desc": "Bestow your target ancestral sight, granting them the ability to see invisible entities and magical effects when considering targets. (This provides both See Invisibility and Sense Magic in a single buff.)"
+     },
+     {
+      "name": "Aspect of the Bear",
+      "desc": "Shapeshift into a bear, increasing your Wisdom and Health Regeneration, and granting you the ability to see invisible entities and magical effects when considering targets. (This provides the same stats and benefits as Ancestral Wisdom, but with added bonus of looking like a bear. It will be rewarded from a Shaman quest during Early Access.)"
+     },
+     {
+      "name": "Consume",
+      "desc": "Consume an offering of your own flesh, restoring Mana at the cost of Health. (Trading health for mana is a defining trait of the class, and a large part of why you can keep going long after your mana should have run out.. This spell line remains a valuable source of mana regeneration; however, after looking at how powerful the pre-update effects of Consume were, we've added a 45 second cooldown to the spell line. It’s still tremendously mana efficient and provides a large boost in mana regen per minute, but it was honestly over-tuned previously and needed an update.)"
+     },
+     {
+      "name": "Curing Ritual",
+      "desc": "Cure your group, removing one Disease effect from each member."
+     },
+     {
+      "name": "Ritual of Escape",
+      "desc": "Cross your group over into the spirit realm, clearing all Threat from aggressive targets and preventing new aggression, rendering them unseen by both the living and undead, granting them the ability to see invisible entities, and restoring Health and Mana every few seconds. (This allows your party to slip away from an encounter to recover. It has a longer cooldown, but can save the day when things go wrong.)"
+     }
+    ]
+   },
+   {
+    "title": "Retained Spell Lines",
+    "paras": [],
+    "entries": [
+     {
+      "name": "Healing",
+      "desc": "Regeneration"
+     },
+     {
+      "name": "Buffs",
+      "desc": "Berserker Spirit"
+     },
+     {
+      "name": "Disease, Magic, and Holy Protection",
+      "desc": ""
+     },
+     {
+      "name": "Haste (now called Pact of Haste)",
+      "desc": ""
+     },
+     {
+      "name": "Utility",
+      "desc": "Cure Disease, Poison"
+     },
+     {
+      "name": "Dispel Magic",
+      "desc": ""
+     },
+     {
+      "name": "Enduring Breath",
+      "desc": ""
+     },
+     {
+      "name": "Gate",
+      "desc": ""
+     },
+     {
+      "name": "Polar Alignment: North",
+      "desc": ""
+     },
+     {
+      "name": "Purge",
+      "desc": ""
+     },
+     {
+      "name": "Shrink",
+      "desc": ""
+     },
+     {
+      "name": "Soulbind",
+      "desc": ""
+     },
+     {
+      "name": "Speed of the Predator",
+      "desc": ""
+     },
+     {
+      "name": "Speed of the Wild and Speed of the Pack",
+      "desc": ""
+     },
+     {
+      "name": "Summon Food and Summon Drink",
+      "desc": ""
+     },
+     {
+      "name": "Stealth",
+      "desc": "Invisibility (which now grants See Invisible as well) Invisibility versus Undead"
+     },
+     {
+      "name": "Crowd Control",
+      "desc": "Blind"
+     },
+     {
+      "name": "Lurching Impairment",
+      "desc": ""
+     },
+     {
+      "name": "Root",
+      "desc": ""
+     },
+     {
+      "name": "Removed Spell Lines",
+      "desc": "Cure Blindness - We're removing this from every class as we work through them. Blind effects are short and rarely dangerous enough to earn a spell slot. Electric Protection and Poison Protection - These have been replaced with Holy Protection and Magic Protection. Flameburst - Fire spells never really suited Shamans, and they fit even less now that everything else you cast involves spirits and sickness. Invisibility versus Beasts - This seemed redundant with Invisibility available. Spirit Wolf and Summon Companion - As we mentioned in an earlier update, combat pets are leaving the classes that aren't built around them. Spreading pets across so many classes blurred the differences between them, and the Shaman has plenty of identity without one. Spiritual Armor - This seemed fairly useless with the Berserker Spirit line available."
+     }
+    ]
+   },
+   {
+    "title": "Research and Quest Spells",
+    "paras": [
+     "As you may have noticed in some of the spell footnotes, not everything will be available on a spell merchant.",
+     "Keep this in mind when testing out the update. As always, thank you for reading and for your participation in our ongoing Beta. We look forward to hearing your feedback after you try it out!"
+    ],
+    "entries": [
+     {
+      "name": "Communion of Regeneration and the higher Tribal Spirit tiers come from spell research.",
+      "desc": ""
+     },
+     {
+      "name": "The Aspect of the Bear line arrives as a Shaman quest during Early Access.",
+      "desc": ""
+     }
+    ]
+   }
+  ]
+ },
+ "spellblade": {
+  "url": "https://monstersandmemories.com/class-spellblade-deep-dive",
+  "overview": [
+   "Welcome to the first deep dive into our ongoing class updates!",
+   "In these posts, we’ll take an in-depth look at the mechanics, skills, and abilities that are changing for one of our classes. As a class finishes its design pass and is being implemented, internally tested, and tuned, we’ll post an additional update similar to this one. This means there’s a high probability that some aspects will change before they reach the beta servers. Nonetheless, these deep dives should hopefully answer some of the more nitty-gritty questions regarding each class.",
+   "First up: the Spellblade.",
+   "This class has received a thorough rework and a slight re-theming. The core fantasy of a magic-imbued duelist was compelling, but the previous iterations either relied too much on RNG/luck to get procs, or added flat damage to every attack that was heavily biased toward fast weapons.",
+   "Historically, there were also few decisions to be made by the player, with limited ways to express skill or shape the outcome of a battle. The Unstable Barrier ability created some interesting play, but anchored a large part of your DPS on stealing hits from the tank. These are the main issues we’ve tried to address in the class update.",
+   "Before we get started, make sure you’ve read the original update overview.",
+   "Now, let’s take a look at some of the major abilities in the new Spellblade kit!"
+  ],
+  "sections": [
+   {
+    "title": "Infusions",
+    "paras": [
+     "Infusions are stance-like buffs that activate procs and can be “conducted” via the Conduit ability to provide more powerful or useful effects. Infusion procs activate frequently to inflict damage, while having a less frequent chance to apply an additional effect.",
+     "Conduit offers you some burst/utility at the cost of a cooldown, making infusion management an important strategic decision."
+    ],
+    "entries": [
+     {
+      "name": "Arcane Infusion",
+      "desc": "Infuse your weapon with arcane energy, granting you a chance to deal Magic Damage on melee attacks and a lesser chance to activate Arcane Frailty. Arcane Frailty: Strip your target's arcane defenses, decreasing their Magic Resistance. While this infusion is active, the Mana cost of Arcane Spear is reduced. Conduct this infusion to detonate arcane energy upon your target, dealing Magic Damage."
+     },
+     {
+      "name": "Electric Infusion",
+      "desc": "Infuse your weapon with electric energy, granting you a chance to deal Electric Damage on melee attacks and a lesser chance to stun them. While this infusion is active, the Mana cost of Discharge is reduced. Conduct this infusion to arc electric energy through your target, dealing Electric Damage and stunning them before arcing to another target."
+     },
+     {
+      "name": "Telekinetic Infusion",
+      "desc": "Infuse your weapon with telekinetic energy, granting you a chance to deal Physical Damage on melee attacks and a lesser chance to activate Kinetic Siphon. Kinetic Siphon: Siphon the kinetic energy of your target, decreasing their Movement Speed and Agility while increasing yours by the same amount. While this infusion is active, the Mana cost of Kinetic Ward is reduced. Conduct this infusion to blast your target with telekinetic force, knocking them back and immobilizing them."
+     },
+     {
+      "name": "Conduit",
+      "desc": "Conduct your current infusion, channeling it into a unique spell of the same type. Activating this ability places your current infusion on a long cooldown, and all other infusions on a short one."
+     }
+    ]
+   },
+   {
+    "title": "Offensive Abilities",
+    "paras": [
+     "This is your standard attack.",
+     "This is a ranged ability that’s useful for pulling, but can also serve as a staple attack when Arcane Infusion makes it more economical.",
+     "This is a short range damage spell.",
+     "This is a high level offensive cooldown."
+    ],
+    "entries": [
+     {
+      "name": "Infused Slash",
+      "desc": "Slash your target with an infused blade, dealing Weapon Ratio Damage plus additional damage based on your current infusion."
+     },
+     {
+      "name": "Arcane Spear",
+      "desc": "Hurl a spear of arcane energy at your target, dealing Magic Damage. While Arcane Infusion is active, the Mana cost of this spell is reduced."
+     },
+     {
+      "name": "Discharge",
+      "desc": "Electrocute your target with a powerful discharge, dealing Electric Damage. While Electric Infusion is active, the Mana cost of this spell is reduced."
+     },
+     {
+      "name": "Maelstrom",
+      "desc": "Become a maelstrom of magical energy, increasing your Attack Speed and chance to activate infusion effects."
+     }
+    ]
+   },
+   {
+    "title": "Defensive Abilities",
+    "paras": [
+     "This was formerly Unstable Barrier. The offensive bonus has been removed, making it a purely defensive option.",
+     "This is a defensive cooldown that also offers some potential burst damage."
+    ],
+    "entries": [
+     {
+      "name": "Kinetic Ward",
+      "desc": "Construct a kinetic ward, increasing your Armor Class and absorbing damage received. While Telekinetic Infusion is active, the Mana cost of this spell is reduced. This spell scales with your Intelligence."
+     },
+     {
+      "name": "Deflection",
+      "desc": "Take a deflective stance, greatly increasing your Parry chance. While Deflection is active, each parried attack will trigger your current infusion effect."
+     }
+    ]
+   },
+   {
+    "title": "Damage Fields",
+    "paras": [],
+    "entries": [
+     {
+      "name": "Implosion",
+      "desc": "Create a crushing vacuum around your target, decreasing their Block, Dodge, and Parry chance. When this spell expires, the vacuum implodes, dealing Physical Damage to your target and those around it."
+     },
+     {
+      "name": "Static Field",
+      "desc": "Place a static field at your feet, periodically dealing Electric Damage to targets within the affected area."
+     }
+    ]
+   },
+   {
+    "title": "Mobility",
+    "paras": [
+     "This is a gap closer.",
+     "This is a melee-range ability."
+    ],
+    "entries": [
+     {
+      "name": "Phase Strike",
+      "desc": "Instantly teleport behind your target, dealing Weapon Ratio Damage, activating your current infusion effect, and removing all stun and immobilize effects. This ability can be used while stunned or immobilized."
+     },
+     {
+      "name": "Seclusion",
+      "desc": "Seclude your target, reducing your Threat against them, immobilizing them, and teleporting yourself a short distance away."
+     }
+    ]
+   },
+   {
+    "title": "Aura/Buffs",
+    "paras": [],
+    "entries": [
+     {
+      "name": "Aura of the Arcane",
+      "desc": "Envelop your group in an arcane aura, increasing their Intelligence and Spell Damage dealt."
+     }
+    ]
+   },
+   {
+    "title": "How Does It Play?",
+    "paras": [
+     "With this new toolkit, Spellblades can make important decisions during combat, or even before it, if a pull doesn’t go to plan.",
+     "For example, they could Phase Strike ahead to an incoming enemy and push it back by conducting their Telekinetic Infusion. Or they could use Seclusion to lock the mob down before it gets to the group, while teleporting back to safety. Maybe before heading back to the group, they drop a Static Field on the foe while it’s locked in place.",
+     "When fighting alone, Spellblades will likely want to soften up their opponent with a few Arcane Spears before committing to a melee fight. But do they lock them down with one of their kinetic-based roots first, or do they start the fight in melee with Telekinetic Infusion and hope for some Kinetic Siphon procs to do a little kiting? Maybe they hope their Kinetic Ward can mitigate the damage and get right to business.",
+     "In steady group play, Spellblades still rely on procs for a significant portion of their damage while making regular use of Infused Slash. But to deal optimal damage, they’ll need to weave in Arcane Spear, Discharge, or conduct Arcane Infusion.",
+     "There’s a few more abilities in the initial kit rollout, so hopefully some fun surprises remain for those who choose this path."
+    ],
+    "entries": []
+   },
+   {
+    "title": "How would YOU play the Spellblade? Let us know!",
+    "paras": [],
+    "entries": []
+   }
+  ]
+ },
+ "wizard": {
+  "url": "https://monstersandmemories.com/class-wizard-deep-dive",
+  "overview": [
+   "Welcome to our second class deep dive! We’re making great progress on the first four classes in our update queue, so keep an eye out for more of these posts in the near future.",
+   "Today we’ll be looking at the Wizard. We’ve already completed the work and are testing their new kit internally. We’re trying to iron out any bugs and oddities before bringing it to the beta servers, but even then, it’s inevitable that we’ll learn something new when it gets into the hands of thousands of players. Expect a bit of iteration as time goes on.",
+   "Our plan is to complete a solid first pass on all 18 classes, which involves getting the right abilities in place and making sure each class has its intended toolkit. While this phase does involve some tuning, we’ll certainly need to revisit each class afterward to ensure everything works well and they feel relatively balanced.",
+   "Once a set of changes reaches beta, expect further tweaks and tuning if anything turns out to be majorly wrong. There should be a quick turnaround if something’s outright broken, but otherwise, we'll move on to the next class in line with the goal of bringing all 18 to beta as quickly as we reasonably can.",
+   "Now, onto the Wizard.",
+   "There are a couple of items we mentioned in the initial Wizard class update post that have shifted somewhat."
+  ],
+  "sections": [
+   {
+    "title": "Abilities",
+    "paras": [
+     "While Wizards can definitely teleport allies, we didn’t add any new summoned items in this round. Wizards still summon a short-duration light source, but that’s all for now. Once we finish more updates, we’d like to revisit summoned items across the board, particularly when it comes to the Elementalist.",
+     "This was an existing Wizard ability that we got a lot of feedback on—most of it negative. A common concern was that it felt too random or difficult to get a killing blow, particularly in group situations. Additionally, since the amount of mana returned was tied to damage done, crits and resists felt especially bad.",
+     "As a result, we’ve decided to move away from this mechanic and instead give Wizards a different way to gain bonus mana that feels within their control. Wizards still get some mana regeneration via a self-buff and from Arcane Invocation every few minutes, but now they’ll also be able to consume Mark of Magic stacks for an immediate mana return. We’ll tune this through playtesting, and look forward to your feedback after you get a chance to try it out.",
+     "As we worked through this one, we decided we want to include research as a broader crafting feature for multiple classes. Wizards will get research, but not as a class exclusive. Also, after including a total of 16 damage spell lines for the Wizard, we’re not sure there’s a lot of need to customize spells further. We can revisit this one if necessary in the future.",
+     "This one we kept, and you can learn more about it in the Incantations section further down the page.",
+     "Let’s go over the major spell lines Wizards will have after this update.",
+     "Seal of Magic, Reclaim Magic, and Arcane Acceleration",
+     "Seal of Magic is a key part of the Wizard’s arsenal, giving an immediate damage buff for you and your group. With the update, we’re also adding new ways to consume Marks of Magic in return for helpful effects.",
+     "Seal of Magic and Reclaim Magic form the core mana regeneration loop. Seal of Magic rewards you for stacking a debuff on the enemy; Reclaim Magic converts that investment into mana, offsetting the mana cost of your spells. When used with the Volley line, Wizards can do a bit of damage while simultaneously restoring mana.",
+     "This is Reclaim Magic's aggressive counterpart. Instead of converting stacks into mana, you convert them into a group-wide spell haste, granting your group mates a valuable buff without straying from your regular damage cycle. Note that this is replacing the previous single-target spell haste buff."
+    ],
+    "entries": [
+     {
+      "name": "We said:",
+      "desc": "“Can summon useful items and teleport allies”"
+     },
+     {
+      "name": "“Receives a portion of mana spent when delivering a killing blow with a spell”",
+      "desc": ""
+     },
+     {
+      "name": "“Out of combat, Wizards can research and customize spells”",
+      "desc": ""
+     },
+     {
+      "name": "“In combat, they can combine magical elements on the fly to adapt to the situation”",
+      "desc": ""
+     },
+     {
+      "name": "Seal of Magic",
+      "desc": "Invoke a magical seal, causing Evocation spells to activate Mark of Magic. Mark of Magic: Mark your target with magic, increasing all Spell Damage dealt to them. This effect stacks up to five times."
+     },
+     {
+      "name": "Reclaim Magic",
+      "desc": "Reclaim Marks of Magic from your target, converting each reclaimed stack into Mana."
+     },
+     {
+      "name": "Arcane Acceleration",
+      "desc": "Burn Marks of Magic from your target, increasing the Casting Speed of your group and converting each burned stack into additional duration."
+     }
+    ]
+   },
+   {
+    "title": "Damage Spells",
+    "paras": [
+     "Wizards are masters of magic, so it's only right that they get a tool for every situation. Many of their spells have a secondary effect in addition to dealing damage; for example, ice spells snare the target briefly, lightning spells interrupt casting, and arcane spells decrease the target’s casting speed. We kept a good mix of magic, fire, cold, and electric spells, since every Wizard needs a Fireball.",
+     "When designing the spell lines, we tried to give each a strong identity, with tradeoffs between damage, cast time, and mana efficiency. These are likely to see continued adjustments in the future as we get more class updates done, so we can ensure that Wizards are the major damage dealers they should be.",
+     "This is your fastest direct damage spell line. It's useful for pulling, kiting, and filling gaps when your longer casts aren't safe, but isn’t quite as mana efficient.",
+     "These are your highest damage spells with a longer cast time. They make good openers when soloing, or big hits when your group needs to burn something down fast. Wizards get their first Iceblast early on; they can't cast a lot of them before running out of mana, but they sure hit hard!",
+     "Volleys are the fastest way to stack Marks of Magic on a target. Marks give increased damage to your evocation spells, or you can consume them for mana or a spell haste buff.",
+     "These are your workhorse single-target spells that are efficient enough to sustain through long fights.",
+     "These are a great choice when you're facing high-resistance enemies.",
+     "Novas are your fastest AoE spells, though they do a bit less damage than Burst spells and radiate out from the caster’s position (PBAoE).",
+     "These are targeted AoE spells, so you can hit things further away than you can with Nova spells. The cast times are longer to account for the greater range.",
+     "These are also targeted AoEs, but deal damage over time rather than one big hit like Bursts. This means they are a better choice if you're worried about pulling aggro."
+    ],
+    "entries": [
+     {
+      "name": "Flash of Ice, Flash of Lightning",
+      "desc": "Assault your target with a flash of ice, dealing Cold Damage and decreasing their Movement Speed. Assault your target with a flash of lightning, dealing Electric Damage and interrupting their casting."
+     },
+     {
+      "name": "Iceblast, Fireball",
+      "desc": "Blast your target with ice, dealing Cold Damage and decreasing their Movement Speed. Hurl a blazing fireball at your target, dealing Fire Damage."
+     },
+     {
+      "name": "Arcane Volley, Fire Volley",
+      "desc": "Launch an arcane volley at your target, dealing Magic Damage X times. Launch a flaming volley at your target, dealing Fire Damage X times. This spell is channeled."
+     },
+     {
+      "name": "Arcane Surge, Lightning Surge",
+      "desc": "Overwhelm your target with a surge of arcane energy, dealing Magic Damage and decreasing their Casting Speed. Overwhelm your target with a surge of lightning, dealing Electric Damage and interrupting their casting."
+     },
+     {
+      "name": "Fire Spike, Ice Spike",
+      "desc": "Lance your target with a fiery spike, dealing Fire Damage. Lance your target with an icy spike, dealing Cold Damage and decreasing their Movement Speed. This spell is difficult to resist."
+     },
+     {
+      "name": "Arcane Nova, Lightning Nova",
+      "desc": "Unleash an arcane nova upon nearby targets, dealing Arcane Damage and decreasing their Casting Speed. Unleash a lightning nova upon nearby targets, dealing Electric Damage and interrupting their casting."
+     },
+     {
+      "name": "Burst of Lightning, Burst of Magic",
+      "desc": "Strike your target and those around it with a burst of lightning, dealing Electric Damage and interrupting their casting. Strike your target and those around it with a burst of magic, dealing Magic Damage and decreasing their Casting Speed."
+     },
+     {
+      "name": "Firestorm, Icestorm",
+      "desc": "Call forth a fire storm, dealing Fire Damage to targets within the affected area. Call forth an ice storm, dealing Cold Damage to targets within the affected area."
+     }
+    ]
+   },
+   {
+    "title": "Crowd Control & Debuffs",
+    "paras": [],
+    "entries": [
+     {
+      "name": "Root",
+      "desc": "Root your target to the ground, immobilizing them."
+     },
+     {
+      "name": "Telekinetic Knockback",
+      "desc": "Blast your target with telekinetic force, knocking them back and stunning them."
+     },
+     {
+      "name": "Arcane Bonds",
+      "desc": "Encumber your target and those around it with arcane bonds, decreasing their Movement Speed."
+     },
+     {
+      "name": "Wall of Force",
+      "desc": "Summon a wall of force, immobilizing targets that attempt to pass through the affected area."
+     }
+    ]
+   },
+   {
+    "title": "Dispels",
+    "paras": [],
+    "entries": [
+     {
+      "name": "Dispel Magic, Abolish Magic",
+      "desc": "Dispel magic from your target, removing one harmful effect. Abolish magic from your target, removing two harmful effects."
+     },
+     {
+      "name": "Purge",
+      "desc": "Purge your target, removing one beneficial effect and one song."
+     }
+    ]
+   },
+   {
+    "title": "Resistance Buffs & Debuffs",
+    "paras": [
+     "Cold Protection, Electric Protection, Fire Protection, Magic Protection",
+     "The Insidious line gives Wizards a meaningful debuff to a target’s resists, boosting spell damage for themselves and group mates."
+    ],
+    "entries": [
+     {
+      "name": "Ward your target against frost, increasing their Cold Resistance.",
+      "desc": ""
+     },
+     {
+      "name": "Ward your target against shock, increasing their Electric Resistance.",
+      "desc": ""
+     },
+     {
+      "name": "Ward your target against heat, increasing their Fire Resistance.",
+      "desc": ""
+     },
+     {
+      "name": "Ward your target against the arcane, increasing their Magic Resistance.",
+      "desc": ""
+     },
+     {
+      "name": "Insidious Fire, Insidious Ice, Insidious Lightning, Insidious Magic",
+      "desc": "Distort the defenses of your target, decreasing their Fire Resistance. Distort the defenses of your target, decreasing their Cold Resistance. Distort the defenses of your target, decreasing their Electric Resistance. Distort the defenses of your target, decreasing their Magic Resistance."
+     }
+    ]
+   },
+   {
+    "title": "Self Buffs",
+    "paras": [
+     "Two defensive layers starting at a low level. Wizards aren't built to take hits, but these offer some survivability when something goes wrong.",
+     "This is a self-only spell that bundles a few helpful effects into an hour-long buff."
+    ],
+    "entries": [
+     {
+      "name": "Spellshield",
+      "desc": "Encircle yourself with a magical shield, increasing your maximum Health, Armor Class, and Magic Resistance."
+     },
+     {
+      "name": "Eldritch Ward",
+      "desc": "Weave an eldritch ward, increasing your Armor Class and absorbing incoming damage."
+     },
+     {
+      "name": "Sorcerous Mind",
+      "desc": "Infuse your mind with sorcery, increasing your Mana Regeneration and Casting Speed, and granting you the ability to see invisible entities and magical effects when considering targets."
+     },
+     {
+      "name": "Arcane Invocation",
+      "desc": "Invoke the arcane, restoring Mana. This spell is channeled."
+     }
+    ]
+   },
+   {
+    "title": "Mobility & Transportation",
+    "paras": [
+     "Wizards aren't melee fighters, so Blink gives them an escape tool even when they're locked down.",
+     "Transportation spells are the most visible group utility Wizards bring outside of combat. Portals, Translocate, and Evacuation each cover a different kind of “we need to get out of here\" situation."
+    ],
+    "entries": [
+     {
+      "name": "Blink",
+      "desc": "Vanish in a blink, reappearing a short distance forward and removing all stun and immobilize effects."
+     },
+     {
+      "name": "Evacuation, Exodus",
+      "desc": "Evacuate your group, relocating them to a safe location in the current zone. Seek exodus, relocating yourself to a safe location in the current zone."
+     },
+     {
+      "name": "Zone Portals & Gates",
+      "desc": "Teleport your group, relocating them to Shaded Dunes, Glass Flats, or Vale of Zintar. Teleport yourself, relocating to Shaded Dunes, Glass Flats, or Vale of Zintar."
+     },
+     {
+      "name": "Translocate",
+      "desc": "Translocate a target group member, returning them to their bind location."
+     }
+    ]
+   },
+   {
+    "title": "Utility",
+    "paras": [],
+    "entries": [
+     {
+      "name": "Sense Magic",
+      "desc": "Glaze the eyes of your target with a magical coating, granting them the ability to see magical effects when considering targets."
+     },
+     {
+      "name": "Summon Mage Light",
+      "desc": "Summon a flickering mage light, granting you a light source."
+     },
+     {
+      "name": "Bind Vision",
+      "desc": "Bind your vision to that of your target, granting you the ability to see through their eyes."
+     },
+     {
+      "name": "Shroud of the Magi",
+      "desc": "Shroud a target group member in a cloak of invisibility, rendering them unseen by the living and granting them the ability to see invisible entities."
+     }
+    ]
+   },
+   {
+    "title": "New System: Incantations",
+    "paras": [
+     "Before we wrap things up, there's one more piece of the Wizard kit worth knowing about: the Wizard-exclusive Incantation system. This was the part we referenced earlier:",
+     "Every casting class in Monsters & Memories has ten spell slots available. A Wizard using the Incantation system can access 36 different spells using just five of those slots—four glyphs and the catalyst that fires them. This gives you access to all 16 damage spell lines at any time, along with 20 other utility spells.",
+     "That's the pitch.",
+     "If you like the fantasy of a Wizard who’s genuinely mastered their craft and always has the right spell for the moment, then this system was built for you. It does come with some effort though, as recalling which glyphs you need for the right incantation can take time and experience as a player. A damage spell is always a combination of two glyphs, but that’s still 16 incantations to recall.",
+     "We don’t want to over or under sell this feature. We hope many Wizards will enjoy it, but it's not going to please everyone, and that's okay. Please consider Incantations an optional mastery system. If it doesn’t grab you, every Wizard spell is also available as a traditional scroll you can scribe, memorize, and cast from your bar the traditional way. You can still play Wizard at a high level without ever touching a glyph.",
+     "The system unlocks gradually. Wizards get their first glyph at level 8 with only a handful of combinations to learn. A second arrives at 16, a third at 24, and the fourth at 32. By the time all 36 incantations are available, most of the recipe logic should already feel familiar; each element follows consistent patterns, so you're building on rules you've already learned rather than memorizing a table from scratch.",
+     "If you’re already a high level Wizard, this system may be a little more challenging to learn all at once compared to ramping up gradually throughout the leveling journey. Please keep that in mind when trying it out.",
+     "And a little lore side note: the name of each glyph is based on a language we're developing for an ancient civilization… but you’ll learn more about that as the game grows."
+    ],
+    "entries": [
+     {
+      "name": "“In combat, they can combine magical elements on the fly to adapt to the situation.”",
+      "desc": ""
+     },
+     {
+      "name": "For those who do want to learn it, here's how it works:",
+      "desc": "Glyphs are the building blocks. There are four of them, with one for each element: Glyph: Mun (Arcane), Glyph: Hil (Ice), Glyph: Nas (Lightning), and Glyph: Dur (Fire). They have no mana cost and don't trigger the global cooldown. Incantations are recipes you build by casting glyphs in sequence. The first glyph you cast sets your foundation; i.e., the spell type you're building toward. Any glyphs you cast after are enhancements that shape the final spell. You can add one enhancement up to two times before activating your incantation. Spell Catalyst activates the incantation, triggering whichever spell your combination maps to at the highest rank you're capable of."
+     }
+    ]
+   },
+   {
+    "title": "—",
+    "paras": [
+     "That wraps up our Wizard deep dive. If you've made it this far, thanks for reading. We’ll keep an eye out for feedback and initial impressions, and we really look forward to seeing what you think after you’ve tried this out on the beta server in a couple weeks."
+    ],
+    "entries": []
+   }
+  ]
+ }
+}

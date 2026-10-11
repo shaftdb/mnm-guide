@@ -1,0 +1,5654 @@
+{
+ "Ancient Corroded Wyrmsbane Plate": {
+  "name": "Ancient Corroded Wyrmsbane Plate",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Ancient_Corroded_Wyrmsbane_Plate",
+  "crafted": false,
+  "rows": [],
+  "wiki_ts": "2026-10-01"
+ },
+ "Ancient Eroded Wyrmsbane Chain": {
+  "name": "Ancient Eroded Wyrmsbane Chain",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Ancient_Eroded_Wyrmsbane_Chain",
+  "crafted": false,
+  "rows": [],
+  "wiki_ts": "2026-10-01"
+ },
+ "Ancient Rotting Wyrmsbane Leather": {
+  "name": "Ancient Rotting Wyrmsbane Leather",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Ancient_Rotting_Wyrmsbane_Leather",
+  "crafted": false,
+  "rows": [],
+  "wiki_ts": "2026-10-01"
+ },
+ "Ancient Tattered Wyrmsbane Cloth": {
+  "name": "Ancient Tattered Wyrmsbane Cloth",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Ancient_Tattered_Wyrmsbane_Cloth",
+  "crafted": false,
+  "rows": [],
+  "wiki_ts": "2026-10-01"
+ },
+ "Battleforged Plate": {
+  "name": "Battleforged Plate",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Battleforged_Plate",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Battleforged Plate Belt",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "4",
+    "stats": "2 STR, 2 STA, 15 HP",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Battleforged Vambrace",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "19",
+    "stats": "4 STR, 1 STA, 4 DEX",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Placeholder",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "?",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Placeholder",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "?",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Placeholder",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "?",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Placeholder",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "?",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Placeholder",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "?",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Placeholder",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "?",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Placeholder",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "?",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Placeholder",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "?",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Placeholder",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "?",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   }
+  ],
+  "wiki_ts": "2026-08-02"
+ },
+ "Bronze Chain": {
+  "name": "Bronze Chain",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Bronze_Chain",
+  "crafted": true,
+  "rows": [
+   {
+    "name": "Bronze Chain Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "BRD CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "12",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Bronze Chain Cloak",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "BRD CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Bronze Chain Coif",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "BRD CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "14",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Bronze Chain Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "BRD CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "13",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Bronze Chain Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "BRD CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Bronze Chain Leggings",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "BRD CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "20",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Bronze Chain Mask",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "BRD CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Bronze Chain Shoulderguards",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "BRD CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "15",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Bronze Chain Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "BRD CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "18",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Bronze Chain Waistguard",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "BRD CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Bronze Chain Wristguard",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "BRD CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   }
+  ],
+  "wiki_ts": "2026-09-05"
+ },
+ "Bronze Weapons": {
+  "name": "Bronze Weapons",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Bronze_Weapons",
+  "crafted": false,
+  "rows": [],
+  "wiki_ts": "2026-04-12"
+ },
+ "Copper Chain": {
+  "name": "Copper Chain",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Copper_Chain",
+  "crafted": true,
+  "rows": [
+   {
+    "name": "Copper Chain Coif",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "BRD CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "9",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Copper Chain Mask",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "BRD CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Copper Chain Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "BRD CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Copper Chain Shoulderguards",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "BRD CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "10",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Copper Chain Cloak",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "BRD CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Copper Chain Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "BRD CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "12",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Copper Chain Wristguard",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "BRD CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "6",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Copper Chain Leggings",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "BRD CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "11",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Copper Chain Waistguard",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "BRD CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Copper Chain Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "BRD CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "9",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Copper Chain Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "BRD CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   }
+  ],
+  "wiki_ts": "2026-04-16"
+ },
+ "Copper Plate Armor": {
+  "name": "Copper Plate Armor",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Copper_Plate_Armor",
+  "crafted": true,
+  "rows": [
+   {
+    "name": "Copper Plate Helm",
+    "slot": "Head",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "12",
+    "stats": "-",
+    "vendor price": "Unknown",
+    "dropped": "-",
+    "player made": "Yes"
+   },
+   {
+    "name": "Copper Plate Visor",
+    "slot": "Face",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "Unknown",
+    "dropped": "-",
+    "player made": "Yes"
+   },
+   {
+    "name": "Copper Plate Collar",
+    "slot": "Neck",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "Unknown",
+    "dropped": "-",
+    "player made": "Yes"
+   },
+   {
+    "name": "Copper Plate Pauldrons",
+    "slot": "Shoulders",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "13",
+    "stats": "-",
+    "vendor price": "Unknown",
+    "dropped": "-",
+    "player made": "Yes"
+   },
+   {
+    "name": "Copper Plate Cloak",
+    "slot": "Back",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "Unknown",
+    "dropped": "-",
+    "player made": "Yes"
+   },
+   {
+    "name": "Copper Plate Breastplate",
+    "slot": "Chest",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "15",
+    "stats": "-",
+    "vendor price": "Unknown",
+    "dropped": "-",
+    "player made": "Yes"
+   },
+   {
+    "name": "Copper Plate Bracer",
+    "slot": "Wrist",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "9",
+    "stats": "-",
+    "vendor price": "Unknown",
+    "dropped": "-",
+    "player made": "Yes"
+   },
+   {
+    "name": "Copper Plate Greaves",
+    "slot": "Legs",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "14",
+    "stats": "-",
+    "vendor price": "Unknown",
+    "dropped": "-",
+    "player made": "Yes"
+   },
+   {
+    "name": "Copper Plate Girdle",
+    "slot": "Waist",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "Unknown",
+    "dropped": "-",
+    "player made": "Yes"
+   },
+   {
+    "name": "Copper Plate Gauntlets",
+    "slot": "Hands",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "11",
+    "stats": "-",
+    "vendor price": "Unknown",
+    "dropped": "-",
+    "player made": "Yes"
+   },
+   {
+    "name": "Copper Plate Boots",
+    "slot": "Feet",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "10",
+    "stats": "-",
+    "vendor price": "Unknown",
+    "dropped": "-",
+    "player made": "Yes"
+   }
+  ],
+  "wiki_ts": "2026-05-17"
+ },
+ "Copper Weapons": {
+  "name": "Copper Weapons",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Copper_Weapons",
+  "crafted": false,
+  "rows": [],
+  "wiki_ts": "2026-04-12"
+ },
+ "Corroded Bronze Chain": {
+  "name": "Corroded Bronze Chain",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Corroded_Bronze_Chain",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Corroded Bronze Chain Coif",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "7",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corroded Bronze Chain Mask",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corroded Bronze Chain Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corroded Bronze Chain Shoulderguards",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corroded Bronze Chain Cloak",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corroded Bronze Chain Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "9",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corroded Bronze Chain Wristguard",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corroded Bronze Chain Leggings",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corroded Bronze Chain Waistguard",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corroded Bronze Chain Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "7",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corroded Bronze Chain Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   }
+  ],
+  "wiki_ts": "2026-08-24"
+ },
+ "Corroded Bronze Plate": {
+  "name": "Corroded Bronze Plate",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Corroded_Bronze_Plate",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Corroded Bronze Plate Helm",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "9",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corroded Bronze Plate Visor",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "7",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corroded Bronze Plate Collar",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "7",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corroded Bronze Plate Pauldrons",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "1s - 63cp",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corroded Bronze Plate Cloak",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "6",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corroded Bronze Plate Breastplate",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "20",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corroded Bronze Plate Bracer",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "7",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corroded Bronze Plate Greaves",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "13",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corroded Bronze Plate Girdle",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corroded Bronze Plate Gauntlets",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "9",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corroded Bronze Plate Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "9",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   }
+  ],
+  "wiki_ts": "2026-04-25"
+ },
+ "Corroded Bronze Weapons": {
+  "name": "Corroded Bronze Weapons",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Corroded_Bronze_Weapons",
+  "crafted": false,
+  "rows": [],
+  "wiki_ts": "2026-04-12"
+ },
+ "Corroded Mithril Kite Shield": {
+  "name": "Corroded Mithril Kite Shield",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Corroded_Mithril_Kite_Shield",
+  "crafted": false,
+  "rows": [],
+  "wiki_ts": "2026-07-25"
+ },
+ "Corroded Mithril Plate Visor": {
+  "name": "Corroded Mithril Plate Visor",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Corroded_Mithril_Plate_Visor",
+  "crafted": false,
+  "rows": [],
+  "wiki_ts": "2026-07-12"
+ },
+ "Corroded Mithril Weapons": {
+  "name": "Corroded Mithril Weapons",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Corroded_Mithril_Weapons",
+  "crafted": false,
+  "rows": [],
+  "wiki_ts": "2026-07-25"
+ },
+ "Corrupted Leather": {
+  "name": "Corrupted Leather",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Corrupted_Leather",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Corrupted Leather Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "11",
+    "stats": "INT +5, Mana +5, SV Corruption -5",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corrupted Leather Mask",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "4",
+    "stats": "CHA +4, HP: +5 Mana +5, SV Corruption -5",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corrupted Leather Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "4",
+    "stats": "WIS +4, HP: +5, Mana +5, SV Corruption -5",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corrupted Leather Shoulderpads",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "13",
+    "stats": "STR +5, HP +5, SV Corruption -5",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corrupted Leather Cloak",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "4",
+    "stats": "AGI: +4, HP: +10, SV Corruption -5",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corrupted Leather Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "11",
+    "stats": "WIS +5, Mana +5, SV Corruption -5",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corrupted Leather Robe",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ELE ENC NEZ WIZ",
+    "ac": "10",
+    "stats": "STR: +5, Mana +5, SV Corruption -5",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corrupted Leather Bracer",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corrupted Leather Leggings",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "14",
+    "stats": "STR: +5, STA: +1, SV Corruption -5",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corrupted Leather Belt",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "4",
+    "stats": "STA +5, HP +5, SV Corruption -5",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corrupted Leather Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "10",
+    "stats": "STR: +5, AGI: +1, SV Corruption -5",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Corrupted Leather Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "9",
+    "stats": "DEX: +5, HP: +5, SV Corruption -5",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   }
+  ],
+  "wiki_ts": "2026-05-31"
+ },
+ "Enchanted Cloth Set": {
+  "name": "Enchanted Cloth Set",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Enchanted_Cloth_Set",
+  "crafted": true,
+  "rows": [
+   {
+    "name": "Enchanted Cloth Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "6",
+    "stats": "STA: +2 INT: +2 MANA: +10",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Enchanted Cloth Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "8",
+    "stats": "STA: +2 INT: +2 HP: +5 Mana +5",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Enchanted Cloth Pants",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "8",
+    "stats": "INT: +2 CHA: +2 HP +5",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   }
+  ],
+  "wiki_ts": "2026-07-11"
+ },
+ "Enchanted Hide Set": {
+  "name": "Enchanted Hide Set",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Enchanted_Hide_Set",
+  "crafted": true,
+  "rows": [
+   {
+    "name": "Enchanted Hide Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "13",
+    "stats": "INT: +3 WIS: +3 MANA: +10",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Enchanted Hide Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "17",
+    "stats": "STR: +3 DEX: +3 HP: +10",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Enchanted Hide Leggings",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "16",
+    "stats": "STR: +3 STA: +4 HP +5",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   }
+  ],
+  "wiki_ts": "2026-07-14"
+ },
+ "Enchanted Rawhide Set": {
+  "name": "Enchanted Rawhide Set",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Enchanted_Rawhide_Set",
+  "crafted": true,
+  "rows": [
+   {
+    "name": "Enchanted Rawhide Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "7",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Enchanted Rawhide Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "9",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Enchanted Rawhide Leggings",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   }
+  ],
+  "wiki_ts": "2026-07-14"
+ },
+ "Enchanted Steel Chain Armor": {
+  "name": "Enchanted Steel Chain Armor",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Enchanted_Steel_Chain_Armor",
+  "crafted": true,
+  "rows": [
+   {
+    "name": "Enchanted Steel Chain Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "37",
+    "stats": "5 STR, 5 DEX, 10 HP",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Enchanted Steel Chain Leggings",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "33",
+    "stats": "5 STR, 4 CHA, 7 HP, 2 Mana",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Enchanted Steel Chain Coif",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "28",
+    "stats": "4 STA, 5 WIS, 15 Mana",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   }
+  ],
+  "wiki_ts": "2026-08-03"
+ },
+ "Enchanted Steel Plate Armor": {
+  "name": "Enchanted Steel Plate Armor",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Enchanted_Steel_Plate_Armor",
+  "crafted": true,
+  "rows": [
+   {
+    "name": "Enchanted Steel Plate Breastplate",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "47",
+    "stats": "5 STR, 5 STA, 15 HP",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Enchanted Steel Plate Greaves",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "41",
+    "stats": "5 STA, 5 WIS, 2 HP, 2 Mana",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Enchanted Steel Plate Helmet",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "35",
+    "stats": "4 STA, 5 INT, 15 Mana",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   }
+  ],
+  "wiki_ts": "2026-08-03"
+ },
+ "Enchanted Wool Set": {
+  "name": "Enchanted Wool Set",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Enchanted_Wool_Set",
+  "crafted": true,
+  "rows": [
+   {
+    "name": "Enchanted Wool Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "9",
+    "stats": "STA: +3 INT: +3 MANA: +10",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Enchanted Wool Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "11",
+    "stats": "STA: +3 INT: +3 HP: +2 Mana +2",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Enchanted Wool Pants",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "10",
+    "stats": "INT: +3 CHA: +3 HP +7",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   }
+  ],
+  "wiki_ts": "2026-07-15"
+ },
+ "Fine Cloth Set": {
+  "name": "Fine Cloth Set",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Fine_Cloth_Set",
+  "crafted": true,
+  "rows": [
+   {
+    "name": "Fine Cloth Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Fine Cloth Veil",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Fine Cloth Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Fine Cloth Mantle",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Fine Cloth Cape",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Fine Cloth Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "6",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Fine Cloth Robe",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ELE ENC NEC WIZ",
+    "ac": "6",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Fine Cloth Bracer",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Fine Cloth Pants",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "6",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Fine Cloth Belt",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Fine Cloth Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Fine Cloth Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   }
+  ],
+  "wiki_ts": "2026-04-23"
+ },
+ "Fine Silk Cloth": {
+  "name": "Fine Silk Cloth",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Fine_Silk_Cloth",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Example",
+    "armor slot": "Example",
+    "race": "Example",
+    "class": "Example",
+    "ac": "Example",
+    "stats": "Example",
+    "vendor price": "Example",
+    "dropped": "Example",
+    "player made": "Example"
+   },
+   {
+    "name": "Example",
+    "armor slot": "Example",
+    "race": "Example",
+    "class": "Example",
+    "ac": "Example",
+    "stats": "Example",
+    "vendor price": "Example",
+    "dropped": "Example",
+    "player made": "Example"
+   }
+  ],
+  "wiki_ts": "2024-07-01"
+ },
+ "Fine Wool Set": {
+  "name": "Fine Wool Set",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Fine_Wool_Set",
+  "crafted": true,
+  "rows": [
+   {
+    "name": "Fine Wool Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Fine Wool Veil",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Fine Wool Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Fine Wool Mantle",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Fine Wool Cape",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Fine Wool Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "10",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Fine Wool Robe",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ELE ENC NEC WIZ",
+    "ac": "10",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Fine Wool Bracer",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Fine Wool Pants",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Fine Wool Belt",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Fine Wool Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Fine Wool Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   }
+  ],
+  "wiki_ts": "2026-04-12"
+ },
+ "Iron Weapons": {
+  "name": "Iron Weapons",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Iron_Weapons",
+  "crafted": false,
+  "rows": [],
+  "wiki_ts": "2026-04-12"
+ },
+ "Lunar Festival Armor Set": {
+  "name": "Lunar Festival Armor Set",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Lunar_Festival_Armor_Set",
+  "crafted": false,
+  "rows": [
+   {
+    "item": "Lunar Festival Wrappings",
+    "slot": "Chest",
+    "ac": "19",
+    "stats": "STR: +5 ; STA: +3",
+    "hp": "+10",
+    "mana": "+15",
+    "saves": "SV Magic: +6",
+    "notes": "MAGIC ; Weight: 1.1 ; Size: MEDIUM ; Class: ALL"
+   },
+   {
+    "item": "Lunar Festival Trousers",
+    "slot": "Legs",
+    "ac": "17",
+    "stats": "STA: +5 ; INT: +3",
+    "hp": "+15",
+    "mana": "+10",
+    "saves": "SV Magic: +5",
+    "notes": "MAGIC ; Weight: 0.85 ; Size: MEDIUM ; Class: ALL"
+   },
+   {
+    "item": "Lunar Festival Perones",
+    "slot": "Feet",
+    "ac": "12",
+    "stats": "INT: +5",
+    "hp": "+20",
+    "mana": "+5",
+    "saves": "SV Magic: +3",
+    "notes": "MAGIC ; Weight: 0.25 ; Size: MEDIUM ; Class: ALL"
+   }
+  ],
+  "wiki_ts": "2026-07-02"
+ },
+ "Mithril Weapons": {
+  "name": "Mithril Weapons",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Mithril_Weapons",
+  "crafted": false,
+  "rows": [],
+  "wiki_ts": "2026-04-12"
+ },
+ "Patched Cloth": {
+  "name": "Patched Cloth",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Patched_Cloth",
+  "crafted": true,
+  "rows": [
+   {
+    "name": "Patched Cloth Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Cloth Veil",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Cloth Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Cloth Mantle",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Cloth Cape",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Cloth Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Cloth Robe",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Cloth Bracer",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Cloth Pantaloons",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Cloth Belt",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Cloth Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Cloth Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   }
+  ],
+  "wiki_ts": "2026-04-12"
+ },
+ "Patched Cotton": {
+  "name": "Patched Cotton",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Patched_Cotton",
+  "crafted": true,
+  "rows": [
+   {
+    "name": "Patched Cotton Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "6",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Cotton Veil",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "6",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Cotton Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "6",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Cotton Mantle",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "6",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Cotton Cape",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "6",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Cotton Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "12",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Cotton Robe",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ELE ENC NEC WIZ",
+    "ac": "12",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Cotton Bracer",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "6",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Cotton Pantaloons",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "9",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Cotton Belt",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "6",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Cotton Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "6",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Cotton Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "6",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   }
+  ],
+  "wiki_ts": "2026-04-12"
+ },
+ "Patched Hide": {
+  "name": "Patched Hide",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Patched_Hide",
+  "crafted": true,
+  "rows": [
+   {
+    "name": "Patched Hide Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Hide Mask",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "9",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Hide Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Hide Shoulderpads",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Hide Cloak",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Hide Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Hide Bracelet",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Hide Leggings",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Hide Belt",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "6",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Hide Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Hide Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   }
+  ],
+  "wiki_ts": "2026-04-25"
+ },
+ "Patched Leather": {
+  "name": "Patched Leather",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Patched_Leather",
+  "crafted": true,
+  "rows": [
+   {
+    "name": "Patched Leather Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "12",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Leather Mask",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Leather Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Leather Shoulderpads",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "12",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Leather Cloak",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Leather Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "19",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Leather Bracelet",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Leather Leggings",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "13",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Leather Belt",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Leather Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Leather Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   }
+  ],
+  "wiki_ts": "2026-04-12"
+ },
+ "Patched Rawhide": {
+  "name": "Patched Rawhide",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Patched_Rawhide",
+  "crafted": true,
+  "rows": [
+   {
+    "name": "Patched Rawhide Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "43cp",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Rawhide Mask",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "43cp",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Rawhide Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "43cp",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Rawhide Shoulderpads",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "43cp",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Rawhide Cloak",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "43cp",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Rawhide Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "6",
+    "stats": "-",
+    "vendor price": "43cp",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Rawhide Bracelet",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "43cp",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Rawhide Leggings",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "43cp",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Rawhide Belt",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "43cp",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Rawhide Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "43cp",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Rawhide Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "43cp",
+    "dropped": "No",
+    "player made": "Yes"
+   }
+  ],
+  "wiki_ts": "2026-04-12"
+ },
+ "Patched Wool": {
+  "name": "Patched Wool",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Patched_Wool",
+  "crafted": true,
+  "rows": [
+   {
+    "name": "Patched Wool Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Wool Veil",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Wool Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Wool Mantle",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Wool Cape",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Wool Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "9",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Wool Robe",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "9",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Wool Bracer",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Wool Pantaloons",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Wool Belt",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Wool Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Patched Wool Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   }
+  ],
+  "wiki_ts": "2026-05-11"
+ },
+ "Rawhide Armor": {
+  "name": "Rawhide Armor",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Rawhide_Armor",
+  "crafted": true,
+  "rows": [
+   {
+    "name": "Rawhide Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "7",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Rawhide Mask",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Rawhide Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Rawhide Shoulderpads",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Rawhide Cloak",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Rawhide Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "9",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Rawhide Bracelet",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Rawhide Leggings",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Rawhide Belt",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Rawhide Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Rawhide Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   }
+  ],
+  "wiki_ts": "2026-09-01"
+ },
+ "Rawhide Set": {
+  "name": "Rawhide Set",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Rawhide_Set",
+  "crafted": true,
+  "rows": [
+   {
+    "name": "Rawhide Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "7",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Rawhide Mask",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Rawhide Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Rawhide Shoulderpads",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Rawhide Cloak",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Rawhide Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "9",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Rawhide Bracelet",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Rawhide Leggings",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Rawhide Belt",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Rawhide Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Rawhide Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   }
+  ],
+  "wiki_ts": "2026-09-02"
+ },
+ "Rugged Spider Silk Cap": {
+  "name": "Rugged Spider Silk Cap",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Rugged_Spider_Silk_Cap",
+  "crafted": false,
+  "rows": [],
+  "wiki_ts": "2026-07-27"
+ },
+ "Rugged Spider Silk Cape": {
+  "name": "Rugged Spider Silk Cape",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Rugged_Spider_Silk_Cape",
+  "crafted": false,
+  "rows": [],
+  "wiki_ts": "2026-08-23"
+ },
+ "Rusty Iron Chain": {
+  "name": "Rusty Iron Chain",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Rusty_Iron_Chain",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Rusty Iron Chain Coif",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "14",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Iron Chain Mask",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Iron Chain Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "10",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Iron Chain Shoulderguards",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "13",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Iron Chain Cloak",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Iron Chain Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "15",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Iron Chain Wristguard",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "9",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Iron Chain Leggings",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "17",
+    "stats": "-",
+    "vendor price": "1s 30c",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Iron Chain Waistguard",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "9",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Iron Chain Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "11",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Iron Chain Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "10",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   }
+  ],
+  "wiki_ts": "2026-06-22"
+ },
+ "Rusty Iron Plate": {
+  "name": "Rusty Iron Plate",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Rusty_Iron_Plate",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Rusty Iron Plate Helm",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "15",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Iron Plate Visor",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "12",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Iron Plate Collar",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Iron Plate Pauldrons",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "16",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Iron Plate Cloak",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "1s 30c",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Iron Plate Breastplate",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "20",
+    "stats": "-",
+    "vendor price": "2s 11c",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Iron Plate Arming Doublet",
+    "armor slot": "Shirt",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Iron Plate Bracer",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "12",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Iron Plate Greaves",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "17",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Iron Plate Girdle",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "12",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Iron Plate Gauntlets",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "13",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Iron Plate Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "13",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   }
+  ],
+  "wiki_ts": "2026-07-05"
+ },
+ "Rusty Iron Weapons": {
+  "name": "Rusty Iron Weapons",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Rusty_Iron_Weapons",
+  "crafted": false,
+  "rows": [],
+  "wiki_ts": "2026-04-12"
+ },
+ "Rusty Steel Armor": {
+  "name": "Rusty Steel Armor",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Rusty_Steel_Armor",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Rusty Steel Plate Helm",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "9",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Steel Plate Visor",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "10",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Steel Plate Collar",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "10",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Steel Plate Pauldrons",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "11",
+    "stats": "-",
+    "vendor price": "1s - 63cp",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Steel Plate Cloak",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "10",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Steel Plate Breastplate",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "24",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Steel Plate Bracer",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "12",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Steel Plate Greaves",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "17",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Steel Plate Girdle",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Steel Plate Gauntlets",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "12",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Rusty Steel Plate Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "12",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   }
+  ],
+  "wiki_ts": "2026-07-26"
+ },
+ "Rusty Steel Weapons": {
+  "name": "Rusty Steel Weapons",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Rusty_Steel_Weapons",
+  "crafted": false,
+  "rows": [],
+  "wiki_ts": "2026-07-26"
+ },
+ "Rusty Weapons": {
+  "name": "Rusty Weapons",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Rusty_Weapons",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Cracked Staff",
+    "damage": "6",
+    "delay": "33",
+    "ratio": "0.1818",
+    "type": "1h Bludgeoning",
+    "size": "Large",
+    "weight": "6.0"
+   },
+   {
+    "name": "Rusty Axe",
+    "damage": "6",
+    "delay": "42",
+    "ratio": "0.1429",
+    "type": "1h Slashing",
+    "size": "Medium",
+    "weight": "6.0"
+   },
+   {
+    "name": "Rusty Battle Axe",
+    "damage": "10",
+    "delay": "54",
+    "ratio": "0.1852",
+    "type": "2h Slashing",
+    "size": "Large",
+    "weight": "13.0"
+   },
+   {
+    "name": "Rusty Dagger",
+    "damage": "4",
+    "delay": "24",
+    "ratio": "0.1667",
+    "type": "1h Stabbing",
+    "size": "Small",
+    "weight": "3.0"
+   },
+   {
+    "name": "Rusty Great Scythe",
+    "damage": "8",
+    "delay": "46",
+    "ratio": "0.1739",
+    "type": "2h Bludgeoning",
+    "size": "Large",
+    "weight": "13.0"
+   },
+   {
+    "name": "Rusty Greatsword",
+    "damage": "9",
+    "delay": "50",
+    "ratio": "0.18",
+    "type": "2h Slashing",
+    "size": "Large",
+    "weight": "13.0"
+   },
+   {
+    "name": "Rusty Long Sword",
+    "damage": "6",
+    "delay": "38",
+    "ratio": "0.1579",
+    "type": "1h Slashing",
+    "size": "Medium",
+    "weight": "7.0"
+   },
+   {
+    "name": "Rusty Mace",
+    "damage": "6",
+    "delay": "40",
+    "ratio": "0.15",
+    "type": "1h Bludgeoning",
+    "size": "Large",
+    "weight": "7.0"
+   },
+   {
+    "name": "Rusty Maul",
+    "damage": "10",
+    "delay": "52",
+    "ratio": "0.1923",
+    "type": "2h Bludgeoning",
+    "size": "Large",
+    "weight": "13.0"
+   },
+   {
+    "name": "Rusty Scimitar",
+    "damage": "5",
+    "delay": "36",
+    "ratio": "0.1389",
+    "type": "1h Slashing",
+    "size": "Medium",
+    "weight": "7.0"
+   },
+   {
+    "name": "Rusty Scythe",
+    "damage": "4",
+    "delay": "28",
+    "ratio": "0.1429",
+    "type": "1h Slashing",
+    "size": "Medium",
+    "weight": "5.0"
+   },
+   {
+    "name": "Rusty Short Sword",
+    "damage": "4",
+    "delay": "26",
+    "ratio": "0.1538",
+    "type": "1h Slashing",
+    "size": "Medium",
+    "weight": "5.0"
+   },
+   {
+    "name": "Rusty Spear",
+    "damage": "5",
+    "delay": "34",
+    "ratio": "0.147",
+    "type": "1h Stabbing",
+    "size": "Large",
+    "weight": "7.0"
+   },
+   {
+    "name": "Rusty Trident",
+    "damage": "5",
+    "delay": "32",
+    "ratio": "0.1563",
+    "type": "1h Stabbing",
+    "size": "Large",
+    "weight": "7.0"
+   },
+   {
+    "name": "Rusty War Lance",
+    "damage": "9",
+    "delay": "48",
+    "ratio": "0.1875",
+    "type": "2h Piercing",
+    "size": "Large",
+    "weight": "13.0"
+   },
+   {
+    "name": "Rusty Warhammer",
+    "damage": "4",
+    "delay": "30",
+    "ratio": "0.1333",
+    "type": "1h Bludgeoning",
+    "size": "Large",
+    "weight": "7.0"
+   },
+   {
+    "name": "Worn Great Staff",
+    "damage": "10",
+    "delay": "39",
+    "ratio": "0.2564",
+    "type": "2h Bludgeoning",
+    "size": "Large",
+    "weight": "9.0"
+   }
+  ],
+  "wiki_ts": "2026-10-01"
+ },
+ "Scarab Armor": {
+  "name": "Scarab Armor",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Scarab_Armor",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Scarab Breastplate",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "5",
+    "stats": "+10 HP",
+    "vendor price": "Unknown",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Scarab Greaves",
+    "armor slot": "Legs",
+    "race": "|ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "2",
+    "stats": "+10 HP",
+    "vendor price": "Unknown",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Scarab Helm",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "2",
+    "stats": "+10 HP",
+    "vendor price": "Unknown",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Scarab Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "2",
+    "stats": "+10 HP",
+    "vendor price": "Unknown",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Scarab Shell Shield",
+    "armor slot": "Secondary",
+    "race": "ALL",
+    "class": "BST CLR DRU FTR INQ PAL SHD SHM SPB",
+    "ac": "5",
+    "stats": "+15 HP",
+    "vendor price": "Unknown",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   }
+  ],
+  "wiki_ts": "2026-05-11"
+ },
+ "Spider Silk Armor": {
+  "name": "Spider Silk Armor",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Spider_Silk_Armor",
+  "crafted": true,
+  "rows": [
+   {
+    "name": "Spider Silk Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "4",
+    "stats": "SV Poison +2",
+    "vendor price": "23c",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Spider Silk Mantle",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "4",
+    "stats": "SV Poison +2",
+    "vendor price": "?",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Spider Silk Cape",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "1",
+    "stats": "SV Poison +2",
+    "vendor price": "20c",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Spider Silk Pantaloons",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "5",
+    "stats": "SV Poison +4",
+    "vendor price": "28c",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Spider Silk Robe",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "2",
+    "stats": "SV Poison +4",
+    "vendor price": "37c",
+    "dropped": "No",
+    "player made": "Yes"
+   }
+  ],
+  "wiki_ts": "2026-10-05"
+ },
+ "Steel Weapons": {
+  "name": "Steel Weapons",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Steel_Weapons",
+  "crafted": false,
+  "rows": [],
+  "wiki_ts": "2026-06-23"
+ },
+ "Tarnished Bronze Chain": {
+  "name": "Tarnished Bronze Chain",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Tarnished_Bronze_Chain",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Tarnished Bronze Chain Coif",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "12",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Bronze Chain Mask",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Bronze Chain Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Bronze Chain Shoulderguards",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "10",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Bronze Chain Cloak",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "9",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Bronze Chain Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "11",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Bronze Chain Wristguard",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "7",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Bronze Chain Leggings",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "10",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Bronze Chain Waistguard",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Bronze Chain Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Bronze Chain Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   }
+  ],
+  "wiki_ts": "2026-04-12"
+ },
+ "Tarnished Bronze Plate": {
+  "name": "Tarnished Bronze Plate",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Tarnished_Bronze_Plate",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Tarnished Bronze Plate Helm",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "11",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Bronze Plate Visor",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Bronze Plate Collar",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Bronze Plate Pauldrons",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "9",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Bronze Plate Cloak",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "7",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Bronze Plate Breastplate",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "21",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Bronze Plate Bracer",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Bronze Plate Greaves",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "14",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Bronze Plate Girdle",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "9",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Bronze Plate Gauntlets",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "10",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Bronze Plate Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "10",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   }
+  ],
+  "wiki_ts": "2026-04-25"
+ },
+ "Tarnished Bronze Weapons": {
+  "name": "Tarnished Bronze Weapons",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Tarnished_Bronze_Weapons",
+  "crafted": false,
+  "rows": [],
+  "wiki_ts": "2026-04-12"
+ },
+ "Tarnished Iron Chain": {
+  "name": "Tarnished Iron Chain",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Tarnished_Iron_Chain",
+  "crafted": true,
+  "rows": [
+   {
+    "name": "Tarnished Iron Chain Coif",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "15",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Iron Chain Mask",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "10",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Iron Chain Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "11",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Iron Chain Shoulderguards",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "15",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Iron Chain Cloak",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "10",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Iron Chain Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "26",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Iron Chain Wristguard",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "10",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Iron Chain Leggings",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "18",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Iron Chain Waistguard",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "10",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Iron Chain Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "11",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Iron Chain Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL RNG ROG SHD SHM",
+    "ac": "11",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "No",
+    "player made": "Yes"
+   }
+  ],
+  "wiki_ts": "2026-04-12"
+ },
+ "Tarnished Iron Plate": {
+  "name": "Tarnished Iron Plate",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Tarnished_Iron_Plate",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Tarnished Iron Plate Helm",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "16",
+    "stats": "-",
+    "vendor price": "2s 63c",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Iron Plate Visor",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "13",
+    "stats": "-",
+    "vendor price": "2s 36c",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Iron Plate Collar",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "2s 36c",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Iron Plate Pauldrons",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "16",
+    "stats": "-",
+    "vendor price": "2s 78c",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Iron Plate Cloak",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "6",
+    "stats": "-",
+    "vendor price": "2s 36c",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Iron Plate Breastplate",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "33",
+    "stats": "-",
+    "vendor price": "3s 68c",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Iron Plate Bracer",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "13",
+    "stats": "-",
+    "vendor price": "2s 36c",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Iron Plate Greaves",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "18",
+    "stats": "-",
+    "vendor price": "3s 5c",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Iron Plate Girdle",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "13",
+    "stats": "-",
+    "vendor price": "2s 36c",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Iron Plate Gauntlets",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "15",
+    "stats": "-",
+    "vendor price": "2s 36c",
+    "dropped": "No",
+    "player made": "Yes"
+   },
+   {
+    "name": "Tarnished Iron Plate Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "14",
+    "stats": "-",
+    "vendor price": "2s 36c",
+    "dropped": "No",
+    "player made": "Yes"
+   }
+  ],
+  "wiki_ts": "2026-07-04"
+ },
+ "Tarnished Iron Weapons": {
+  "name": "Tarnished Iron Weapons",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Tarnished_Iron_Weapons",
+  "crafted": false,
+  "rows": [],
+  "wiki_ts": "2026-07-04"
+ },
+ "Tarnished Weapons": {
+  "name": "Tarnished Weapons",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Tarnished_Weapons",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Tarnished Axe",
+    "damage": "6",
+    "delay": "40",
+    "ratio": "0.15",
+    "type": "1h Slashing",
+    "size": "Medium",
+    "weight": "6.0"
+   },
+   {
+    "name": "Tarnished Battle Axe",
+    "damage": "11",
+    "delay": "52",
+    "ratio": "0.2215",
+    "type": "2h Slashing",
+    "size": "Large",
+    "weight": "13.0"
+   },
+   {
+    "name": "Tarnished Dagger",
+    "damage": "4",
+    "delay": "22",
+    "ratio": "0.1818",
+    "type": "1h Piercing",
+    "size": "Small",
+    "weight": "3.0"
+   },
+   {
+    "name": "Tarnished Great Scythe",
+    "damage": "8",
+    "delay": "44",
+    "ratio": "0.1818",
+    "type": "2h Slashing",
+    "size": "Large",
+    "weight": "13.0"
+   },
+   {
+    "name": "Tarnished Great Sword",
+    "damage": "9",
+    "delay": "48",
+    "ratio": "0.1875",
+    "type": "2h Slashing",
+    "size": "Large",
+    "weight": "13.0"
+   },
+   {
+    "name": "Tarnished Long Sword",
+    "damage": "6",
+    "delay": "36",
+    "ratio": "0.1667",
+    "type": "1h Slashing",
+    "size": "Medium",
+    "weight": "7.0"
+   },
+   {
+    "name": "Tarnished Mace",
+    "damage": "6",
+    "delay": "38",
+    "ratio": "0.1579",
+    "type": "1h Bludgeoning",
+    "size": "Large",
+    "weight": "7.0"
+   },
+   {
+    "name": "Tarnished Maul",
+    "damage": "10",
+    "delay": "50",
+    "ratio": "0.2",
+    "type": "2h Bludgeoning",
+    "size": "Large",
+    "weight": "13.0"
+   },
+   {
+    "name": "Tarnished Scimitar",
+    "damage": "5",
+    "delay": "34",
+    "ratio": "0.1471",
+    "type": "1h Slashing",
+    "size": "Medium",
+    "weight": "7.0"
+   },
+   {
+    "name": "Tarnished Scythe",
+    "damage": "4",
+    "delay": "26",
+    "ratio": "0.1538",
+    "type": "1h Slashing",
+    "size": "Medium",
+    "weight": "5.0"
+   },
+   {
+    "name": "Tarnished Short Sword",
+    "damage": "4",
+    "delay": "24",
+    "ratio": "0.1667",
+    "type": "1h Slashing",
+    "size": "Medium",
+    "weight": "5.0"
+   },
+   {
+    "name": "Tarnished Spear",
+    "damage": "5",
+    "delay": "32",
+    "ratio": "0.1563",
+    "type": "1h Piercing",
+    "size": "Large",
+    "weight": "7.0"
+   },
+   {
+    "name": "Tarnished Trident",
+    "damage": "5",
+    "delay": "30",
+    "ratio": "0.1667",
+    "type": "1h Piercing",
+    "size": "Large",
+    "weight": "7.0"
+   },
+   {
+    "name": "Tarnished Warhammer",
+    "damage": "4",
+    "delay": "28",
+    "ratio": "0.1429",
+    "type": "1h Bludgeoning",
+    "size": "Large",
+    "weight": "7.0"
+   }
+  ],
+  "wiki_ts": "2026-09-25"
+ },
+ "Tattered Cloth": {
+  "name": "Tattered Cloth",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Tattered_Cloth",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Tattered Cloth Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "1",
+    "stats": "-",
+    "vendor price": "25cp",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Cloth Veil",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "1",
+    "stats": "-",
+    "vendor price": "25cp",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Cloth Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "1",
+    "stats": "-",
+    "vendor price": "25cp",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Cloth Mantle",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "1",
+    "stats": "-",
+    "vendor price": "25cp",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Cloth Cape",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "1",
+    "stats": "-",
+    "vendor price": "25cp",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Cloth Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "25cp",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Cloth Robe",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ELE ENC NEC WIZ",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "25cp",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Cloth Bracer",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "1",
+    "stats": "-",
+    "vendor price": "25cp",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Cloth Pantaloons",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "1",
+    "stats": "-",
+    "vendor price": "25cp",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Cloth Belt",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "1",
+    "stats": "-",
+    "vendor price": "25cp",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Cloth Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "1",
+    "stats": "-",
+    "vendor price": "25cp",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Cloth Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "1",
+    "stats": "-",
+    "vendor price": "25cp",
+    "dropped": "Yes",
+    "player made": "No"
+   }
+  ],
+  "wiki_ts": "2026-05-13"
+ },
+ "Tattered Cotton": {
+  "name": "Tattered Cotton",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Tattered_Cotton",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Tattered Cotton Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "52c",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Cotton Veil",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "52c",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Cotton Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "52c",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Cotton Mantle",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "6",
+    "stats": "-",
+    "vendor price": "65c",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Cotton Cape",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "52c",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Cotton Shirt",
+    "armor slot": "Shirt",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Cotton Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "11",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Cotton Robe",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ELE ENC NEC WIZ",
+    "ac": "11",
+    "stats": "-",
+    "vendor price": "97c",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Cotton Bracer",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "52c",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Cotton Pantaloons",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "75c",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Cotton Belt",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "52c",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Cotton Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "52c",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Cotton Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "52c",
+    "dropped": "Yes",
+    "player made": "No"
+   }
+  ],
+  "wiki_ts": "2026-06-22"
+ },
+ "Tattered Hide": {
+  "name": "Tattered Hide",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Tattered_Hide",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Tattered Hide Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "3s 30c",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Hide Mask",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "3s",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Hide Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "3s",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Hide Shoulderpads",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "6",
+    "stats": "-",
+    "vendor price": "3s 50c",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Hide Cloak",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "3s",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Hide Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "7",
+    "stats": "-",
+    "vendor price": "4s 50c",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Hide Bracer",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "3s",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Hide Leggings",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "6",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Hide Belt",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "3s",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Hide Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "3s",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Hide Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "3s",
+    "dropped": "Yes",
+    "player made": "No"
+   }
+  ],
+  "wiki_ts": "2026-04-25"
+ },
+ "Tattered Leather": {
+  "name": "Tattered Leather",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Tattered_Leather",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Tattered Leather Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "11",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Leather Mask",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "7",
+    "stats": "-",
+    "vendor price": "97c",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Leather Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "7",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Leather Shoulderpads",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "11",
+    "stats": "-",
+    "vendor price": "1s 14c",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Leather Cloak",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Leather Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "18",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Leather Bracer",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "7",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Leather Leggings",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "12",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Leather Belt",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "7",
+    "stats": "-",
+    "vendor price": "97c",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Leather Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "7",
+    "stats": "-",
+    "vendor price": "97c",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Leather Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "7",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   }
+  ],
+  "wiki_ts": "2026-07-20"
+ },
+ "Tattered Padded Leather": {
+  "name": "Tattered Padded Leather",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Tattered_Padded_Leather",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Tattered Padded Leather Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Padded Leather Mask",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Padded Leather Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "5",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Padded Leather Shoulderpads",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "13",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Padded Leather Cloak",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "4",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Padded Leather Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "15",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Padded Leather Bracer",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "9",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Padded Leather Leggings",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "14",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Padded Leather Belt",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Padded Leather Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Padded Leather Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "10",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   }
+  ],
+  "wiki_ts": "2026-07-21"
+ },
+ "Tattered Rawhide": {
+  "name": "Tattered Rawhide",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Tattered_Rawhide",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Tattered Rawhide Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "41cp",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Rawhide Mask",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "1",
+    "stats": "-",
+    "vendor price": "41cp",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Rawhide Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "1",
+    "stats": "-",
+    "vendor price": "41cp",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Rawhide Shoulderpads",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "41cp",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Rawhide Cloak",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "1",
+    "stats": "-",
+    "vendor price": "41cp",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Rawhide Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "41cp",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Rawhide Bracer",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "41cp",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Rawhide Leggings",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "41cp",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Rawhide Belt",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "1",
+    "stats": "-",
+    "vendor price": "41cp",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Rawhide Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "41cp",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Rawhide Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "2",
+    "stats": "-",
+    "vendor price": "41cp",
+    "dropped": "Yes",
+    "player made": "No"
+   }
+  ],
+  "wiki_ts": "2026-08-23"
+ },
+ "Tattered Silk": {
+  "name": "Tattered Silk",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Tattered_Silk",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Tattered Silk Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Silk Veil",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Silk Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Silk Mantle",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Silk Cape",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Silk Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Silk Robe",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ELE ENC NEC WIZ",
+    "ac": "13",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Silk Bracer",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Silk Pantaloons",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "12",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Silk Belt",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Silk Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Silk Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   }
+  ],
+  "wiki_ts": "2026-07-25"
+ },
+ "Tattered Thick Leather": {
+  "name": "Tattered Thick Leather",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Tattered_Thick_Leather",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Tattered Thick Leather Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Thick Leather Mask",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Thick Leather Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Thick Leather Shoulderpads",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "17",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Thick Leather Cloak",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "7",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Thick Leather Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "20",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Thick Leather Bracer",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "12",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Thick Leather Leggings",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Thick Leather Belt",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "-",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Thick Leather Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "14",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Thick Leather Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
+    "ac": "13",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   }
+  ],
+  "wiki_ts": "2026-07-25"
+ },
+ "Tattered Wool": {
+  "name": "Tattered Wool",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Tattered_Wool",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Tattered Wool Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Wool Veil",
+    "armor slot": "Face",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "25c",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Wool Gorget",
+    "armor slot": "Neck",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Wool Mantle",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "32c",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Wool Cape",
+    "armor slot": "Back",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Wool Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "8",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Wool Robe",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ELE ENC NEC WIZ",
+    "ac": "7",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Wool Bracer",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "25c",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Wool Pantaloons",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "6",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Wool Belt",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Wool Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   },
+   {
+    "name": "Tattered Wool Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "ALL",
+    "ac": "3",
+    "stats": "-",
+    "vendor price": "-",
+    "dropped": "Yes",
+    "player made": "No"
+   }
+  ],
+  "wiki_ts": "2026-04-25"
+ },
+ "Wyrmsbane Chain": {
+  "name": "Wyrmsbane Chain",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Wyrmsbane_Chain",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Wyrmsbane Chain Coif",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "BRD RNG ROG SHM",
+    "ac": "13",
+    "stats": "STR +1, STA +2, AGI +1, DEX +1, WIS +2, HP +5, Mana +5",
+    "vendor price": "Ancient Eroded Wyrmsbane Coif + Chipped Amber x3",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Chain Shoulderguards",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "BRD RNG ROG SHM",
+    "ac": "15",
+    "stats": "STR +2, STA +1, AGI +1, DEX +1, WIS +1, CHA +1, HP +5, Mana +5",
+    "vendor price": "Ancient Eroded Wyrmsbane Shoulderguards + Chipped Amber x3",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Chain Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "BRD RNG ROG SHM",
+    "ac": "18",
+    "stats": "STR +3, STA +2, AGI +1, DEX +2, WIS +3, HP +12, Mana +8",
+    "vendor price": "Ancient Eroded Wyrmsbane Tunic + Chipped Amber x5",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Chain Wristguard",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "BRD RNG ROG SHM",
+    "ac": "10",
+    "stats": "STR +1, STA +1, AGI +2, DEX +1, WIS: +1, CHA: +1, HP +5, Mana +5",
+    "vendor price": "Ancient Eroded Wyrmsbane Wristguard + Chipped Amber x1",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Chain Leggings",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "BRD RNG ROG SHM",
+    "ac": "16",
+    "stats": "STR +1, STA +2, AGI +1, DEX+1, WIS +3, HP +8, Mana +7",
+    "vendor price": "Ancient Eroded Wyrmsbane Leggings + Chipped Amber x4",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Chain Waistguard",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "BRD RNG ROG SHM",
+    "ac": "3",
+    "stats": "STR +1, STA +1, AGI +1, DEX +2, WIS +1, CHA: +2, HP +5, Mana +5",
+    "vendor price": "Ancient Eroded Wyrmsbane Waistguard + Chipped Amber x1",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Chain Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "BRD RNG ROG SHM",
+    "ac": "12",
+    "stats": "STR +1, STA +1, AGI +2, DEX +1, WIS +1, CHA: +2, HP +5, Mana +5",
+    "vendor price": "Ancient Eroded Wyrmsbane Gloves + Chipped Amber x2",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Chain Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "BRD RNG ROG SHM",
+    "ac": "11",
+    "stats": "STR +1, STA +1, AGI +1, DEX +2, CHA +1, HP +5, Mana +5",
+    "vendor price": "Ancient Eroded Wyrmsbane Boots + Chipped Amber x2",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   }
+  ],
+  "wiki_ts": "2026-10-01"
+ },
+ "Wyrmsbane Cloth": {
+  "name": "Wyrmsbane Cloth",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Wyrmsbane_Cloth",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Wyrmsbane Cloth Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ELE ENC NEC WIZ",
+    "ac": "7",
+    "stats": "STR +1, STA +2, AGI +1, INT +2, CHA +1, HP +2, Mana +8",
+    "vendor price": "Ancient Tattered Wyrmsbane Cap + Chipped Star Rose Quartz x3",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Cloth Mantle",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "ELE ENC NEC WIZ",
+    "ac": "7",
+    "stats": "STR +1, STA +1, AGI +2, INT +2, CHA +1, HP +2, Mana +8",
+    "vendor price": "Ancient Tattered Wyrmsbane Mantle + Chipped Star Rose Quartz x3",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Cloth Robe",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ELE ENC NEC WIZ",
+    "ac": "9",
+    "stats": "STR +1, STA +2, AGI +2, INT +3, CHA +3, HP +5, Mana +15",
+    "vendor price": "Ancient Tattered Wyrmsbane Robe + Chipped Star Rose Quartz x5",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Cloth Bracer",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "ELE ENC NEC WIZ",
+    "ac": "5",
+    "stats": "STR +1, STA +1, AGI +1, INT +1, CHA +2, HP +2, Mana +8",
+    "vendor price": "Ancient Tattered Wyrmsbane Bracer + Chipped Star Rose Quartz x1",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Cloth Pantaloons",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ELE ENC NEC WIZ",
+    "ac": "8",
+    "stats": "STR +1, STA +2, AGI +1, INT +3, CHA +1, HP +5, Mana +10",
+    "vendor price": "Ancient Tattered Wyrmsbane Pantaloons + Chipped Star Rose Quartz x4",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Cloth Belt",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "ELE ENC NEC WIZ",
+    "ac": "3",
+    "stats": "STR +2, STA +1, AGI +1, INT +1, CHA +1, HP +2, Mana +8",
+    "vendor price": "Ancient Tattered Wyrmsbane Belt + Chipped Star Rose Quartz x1",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Cloth Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "ELE ENC NEC WIZ",
+    "ac": "6",
+    "stats": "STR +1, STA +1, AGI +1, INT +1, CHA +2, HP +2, Mana +8",
+    "vendor price": "Ancient Tattered Wyrmsbane Gloves + Chipped Star Rose Quartz x2",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Cloth Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "ELE ENC NEC WIZ",
+    "ac": "6",
+    "stats": "STR +2, STA +1, AGI +1, INT +1, CHA +1, HP +2, Mana +8",
+    "vendor price": "Ancient Tattered Wyrmsbane Boots + Chipped Star Rose Quartz x2",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Total",
+    "armor slot": "",
+    "race": "",
+    "class": "",
+    "ac": "51",
+    "stats": "STR +10, STA +11, AGI +10, INT +14, CHA +12, HP +22, Mana +73",
+    "vendor price": "",
+    "dropped": "",
+    "location": ""
+   }
+  ],
+  "wiki_ts": "2026-10-01"
+ },
+ "Wyrmsbane Leather": {
+  "name": "Wyrmsbane Leather",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Wyrmsbane_Leather",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Wyrmsbane Leather Cap",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "ARC BST DRU MNK SPB",
+    "ac": "10",
+    "stats": "STR: +2 STA: +2 AGI: +1 DEX: +1 INT: +1 ; HP: +5 Mana: +5",
+    "vendor price": "Ancient Rotting Wyrmsbane Cap ; Chipped Jasper x3",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Leather Shoulders",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "ARC BST DRU MNK SPB",
+    "ac": "11",
+    "stats": "STR: +1 STA: +2 INT: +1 WIS: +1 CHA: +1 ; HP: +5 Mana: +5",
+    "vendor price": "Ancient Rotting Wyrmsbane Shoulders ; Chipped Jasper x3",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Leather Tunic",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "ARC BST DRU MNK SPB",
+    "ac": "13",
+    "stats": "STR: +2 STA: +1 AGI: +2 DEX: +3 WIS: +3 ; HP: +8 Mana: +12",
+    "vendor price": "Ancient Rotting Wyrmsbane Tunic ; Chipped Jasper x5",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Leather Bracelet",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "ARC BST DRU MNK SPB",
+    "ac": "8",
+    "stats": "STR: +1 STA: +1 AGI: +1 WIS: +2 CHA: +1 ; HP: +5 Mana: +5",
+    "vendor price": "Ancient Rotting Wyrmsbane Bracelet ; Chipped Jasper x1",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Leather Leggings",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "ARC BST DRU MNK SPB",
+    "ac": "12",
+    "stats": "STR: +1 AGI: +2 DEX: +1 INT: +1 WIS: +3 ; HP: +7 Mana: +8",
+    "vendor price": "Ancient Rotting Wyrmsbane Leggings ; Chipped Jasper x4",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Leather Belt",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "ARC BST DRU MNK SPB",
+    "ac": "3",
+    "stats": "STR: +1 DEX: +2 INT: +1 WIS: +1 CHA: +1 ; HP: +5 Mana: +5",
+    "vendor price": "Ancient Rotting Wyrmsbane Belt ; Chipped Jasper x1",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Leather Gloves",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "ARC BST DRU MNK SPB",
+    "ac": "9",
+    "stats": "STR: +1 STA: +1 AGI: +1 DEX: +1 CHA: +2 ; HP: +5 Mana: +5",
+    "vendor price": "Ancient Rotting Wyrmsbane Gloves ; Chipped Jasper x2",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Leather Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "ARC BST DRU MNK SPB",
+    "ac": "8",
+    "stats": "STR: +1 STA: +1 INT: +2 WIS: +1 CHA: +1 ; HP: +5 Mana: +5",
+    "vendor price": "Ancient Rotting Wyrmsbane Boots ; Chipped Jasper x2",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   }
+  ],
+  "wiki_ts": "2026-10-01"
+ },
+ "Wyrmsbane Plate": {
+  "name": "Wyrmsbane Plate",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Wyrmsbane_Plate",
+  "crafted": false,
+  "rows": [
+   {
+    "name": "Wyrmsbane Plate Helm",
+    "armor slot": "Head",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "17",
+    "stats": "STA +1, INT +2, WIS +1, CHA +2, HP +5, Mana +5",
+    "vendor price": "Ancient Corroded Wyrmsbane Helm + Chipped Fire Opal x3",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Plate Pauldrons",
+    "armor slot": "Shoulders",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "11",
+    "stats": "STR +1, STA +1, AGI +1, DEX +1, INT +1, WIS +1, HP +5, Mana +5",
+    "vendor price": "Ancient Corroded Wyrmsbane Pauldrons + Chipped Fire Opal x3",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Plate Breastplate",
+    "armor slot": "Chest",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "22",
+    "stats": "STR +2, STA +3, INT +2, WIS +3, CHA +1, HP +15, Mana +5",
+    "vendor price": "Ancient Corroded Wyrmsbane Breastplate + Chipped Fire Opal x5",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Plate Bracer",
+    "armor slot": "Wrist",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "11",
+    "stats": "STR +1, STA +1, AGI +1, DEX +1, INT +1, WIS +1, HP +5, Mana +5",
+    "vendor price": "Ancient Corroded Wyrmsbane Bracer + Chipped Fire Opal x1",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Plate Greaves",
+    "armor slot": "Legs",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "20",
+    "stats": "STR +1, STA +3, AGI +1, INT +1, WIS +2, HP +10, Mana +5",
+    "vendor price": "Ancient Corroded Wyrmsbane Greaves + Chipped Fire Opal x4",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Plate Girdle",
+    "armor slot": "Waist",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "10",
+    "stats": "STR +1, STA +1, AGI +1, DEX +1, INT +1, WIS +1, HP +5, Mana +5",
+    "vendor price": "Ancient Corroded Wyrmsbane Girdle + Chipped Fire Opal x1",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Plate Gauntlets",
+    "armor slot": "Hands",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "15",
+    "stats": "STR +2, STA +2, HP +5, Mana +5",
+    "vendor price": "Ancient Corroded Wyrmsbane Gauntlets + Chipped Fire Opal x2",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   },
+   {
+    "name": "Wyrmsbane Plate Boots",
+    "armor slot": "Feet",
+    "race": "ALL",
+    "class": "CLR FTR INQ PAL SHD",
+    "ac": "14",
+    "stats": "STR +1, STA +2, AGI +1, DEX +1, INT +1, WIS +1, HP +5, Mana +5",
+    "vendor price": "Ancient Corroded Wyrmsbane Boots + Chipped Fire Opal x2",
+    "dropped": "Quest",
+    "location": "Night Harbor"
+   }
+  ],
+  "wiki_ts": "2026-10-01"
+ }
+}

@@ -1,0 +1,239 @@
+{
+ "Night Harbor": {
+  "region": "Szuur",
+  "type": "Starting city (Human/Goblin/others), hub",
+  "maps": [
+   "Night_harbor_V5.jpg",
+   "NightHarbor1.jpg"
+  ],
+  "notes": ":::note Patch note — Oct 11, 2026\nPatch 0.30.2.8 (Module 1 Patch 11): **\"Night Harbor has been reunited into one big zone\"** (it had been split into East/West since 0.30.0.1). Older notes that mention NH East/West zone lines are out of date.\n:::\n\n**For a Shaman:** the Shaman guild is the **Seekers of the Lost Eye** in Saltbreeze Park (below the Great Guild Hall) — starter quest giver Errol Shrewtender (see [[wiki:Shaman Starter Quest (Night Harbor)]]). The **Crypt** (day = beetles/bats, night = skeletons, mobs 10–16) is the classic level 10–16 camp for slow + DoT play."
+ },
+ "Night Harbor Sewers": {
+  "region": "Szuur",
+  "type": "Under-city tunnels",
+  "maps": [
+   "Night_Harbor_Sewers_Entrance.png"
+  ]
+ },
+ "Underdocks": {
+  "region": "The Deep",
+  "type": "Starting city (Deep races, some neutral/evil combos)",
+  "maps": [
+   "Underdocks_map.png",
+   "UnderdocksBottomFloorCity.png",
+   "UDcitadel1.jpg"
+  ],
+  "notes": "Patch 0.30.2.4 (Oct 4) added fishing volumes and foraging tables here; 0.30.2.5 (Oct 7) re-enabled Delilah and a friendly undercap after reward fixes and added HC/Solo/Self-Found NPCs."
+ },
+ "Tomb of the Last Wyrmsbane": {
+  "region": "Szuur",
+  "type": "Dungeon (west of NH newbie yard)",
+  "maps": [
+   "WyrmsbaneCombined_v0.91.png",
+   "TombOfTheLastWyrmsbaneIsometric.jpg",
+   "Wyrmsbane_Tomb.png",
+   "Wyrmsbane.png"
+  ]
+ },
+ "Shaded Dunes": {
+  "region": "Szuur",
+  "type": "Outdoor desert",
+  "maps": [
+   "Shaded_Dunes_Map.jpg",
+   "Shaded_Dunes.png"
+  ]
+ },
+ "Sungreet Strand": {
+  "region": "Szuur",
+  "type": "Outdoor coast/farms",
+  "maps": [
+   "Sungreet_Strand_v4.jpg",
+   "Sungreetstrand.png"
+  ]
+ },
+ "Tel Ekir": {
+  "region": "Szuur",
+  "type": "Ashira sanctuary (outdoor/ruins)",
+  "maps": [
+   "Tel-ekir-isometric.jpg",
+   "Telekir.png"
+  ]
+ },
+ "Glass Flats": {
+  "region": "Szuur",
+  "type": "Outdoor",
+  "maps": [
+   "Glass_Flats_Map.png",
+   "Glass_flats.png"
+  ]
+ },
+ "Fallen Pass": {
+  "region": "Szuur",
+  "type": "Outdoor",
+  "maps": [
+   "Fallen_pass_v1.jpg",
+   "Screenshot_2025-08-20_201810.png"
+  ]
+ },
+ "Fallen Watch": {
+  "region": "Szuur",
+  "type": "Outdoor/fortress",
+  "maps": [
+   "Fallen_watch_map_by_skoop.png",
+   "Fallen_Watch.png"
+  ]
+ },
+ "Shallow Shoals": {
+  "region": "Szuur / Calafrey (wiki: straddles both)",
+  "type": "Archipelago",
+  "maps": [
+   "Shallowshoalseg.png",
+   "BadShallowShoalMap.png",
+   "Shallow_shoals.png"
+  ]
+ },
+ "Vale of Zintar": {
+  "region": "Szuur",
+  "type": "Coastal desert",
+  "maps": [
+   "Vale_of_Zintar_Map.png",
+   "Valeofzintareg.png",
+   "Zintarwithnumbers.jpg",
+   "Vale_of_Zintar.png"
+  ]
+ },
+ "Ancient Crypt": {
+  "region": "Szuur",
+  "type": "Dungeon (off Shaded Dunes)",
+  "maps": [
+   "Ancient_Crypt_Map.png",
+   "Entrance_to_Ancient_Crypt.png"
+  ]
+ },
+ "Infested Crypt": {
+  "region": "Szuur",
+  "type": "Dungeon (off Shaded Dunes)",
+  "maps": [
+   "Infested_Crypt_Map.png",
+   "Infested-crypt-isometric.jpg",
+   "256_Infested_Crypt.png"
+  ]
+ },
+ "Grain Cellar": {
+  "region": "Szuur",
+  "type": "Dungeon (off Sungreet Strand)",
+  "maps": [
+   "Graincellar.png",
+   "Grain_Cellar_Isometric.jpg",
+   "Graincellarentrance.png"
+  ]
+ },
+ "Evershade Weald": {
+  "region": "Calafrey",
+  "type": "Starting zone (Wood Elf/Halfling)",
+  "maps": [
+   "Evershade_Weald_june_26.jpg",
+   "Evershade_Weald.png"
+  ],
+  "notes": "Patch 0.30.2.4 economy note: the devs' data showed **Evershade Weald offers the most income** of the four starts, slightly ahead of Night Harbor and Underdocks."
+ },
+ "Faelindral": {
+  "region": "Calafrey",
+  "type": "City in the trees (Wood Elf/Halfling start)",
+  "maps": [
+   "Faelindral_V2.jpg",
+   "Faelindral.png"
+  ]
+ },
+ "Keeper's Bight": {
+  "region": "Calafrey",
+  "type": "Coastal forest plateau",
+  "maps": [
+   "Keepersbighteg.png",
+   "Keepers_Bight.png"
+  ]
+ },
+ "Blacktide Bay": {
+  "region": "Calafrey",
+  "type": "Outdoor coast (orcs)",
+  "maps": [
+   "Blacktide_Bay.jpg"
+  ]
+ },
+ "Scarwood": {
+  "region": "Calafrey",
+  "type": "Outdoor forest",
+  "maps": [
+   "Scarwood.png",
+   "Screenshot_20260327_202004.png"
+  ]
+ },
+ "Sunken Resort": {
+  "region": "Calafrey",
+  "type": "Dungeon (in Scarwood lake)",
+  "maps": [
+   "Sunken_resort.png"
+  ]
+ },
+ "Glinting Hollow": {
+  "region": "Calafrey",
+  "type": "Keyed zone (off Evershade Weald)",
+  "maps": [
+   "Glinting_hollow_pinecone.png"
+  ]
+ },
+ "Grimtide Sanctum": {
+  "region": "Szuur / Calafrey (under a Shallow Shoals atoll)",
+  "type": "Dungeon",
+  "maps": [
+   "MAP_GrimtideSanctum.png",
+   "Clan_Grimtide.png"
+  ]
+ },
+ "The Hidden Grotto": {
+  "region": "Shallow Shoals (underwater)",
+  "type": "Dungeon",
+  "maps": []
+ },
+ "Caves of Irem": {
+  "region": "The Deep",
+  "type": "Caves (formerly 'Deep Dunes' on the wiki)",
+  "maps": [
+   "Irem.png",
+   "Caves_of_Irem1stDraft.jpg",
+   "Deep_Dunes_Map.png",
+   "Deep_Dunes_screenshot.png"
+  ],
+  "notes": ":::warn Wiki staleness\nThe wiki says this page is outdated from when the zone was called \"Deep Dunes\". Treat mob levels/locations here as UNCONFIRMED. Patch 0.30.2.5 (Oct 7): \"Some poisonous creatures now have stronger poison.\"\n:::"
+ },
+ "Great Cavern Sea": {
+  "region": "The Deep",
+  "type": "Outdoor (underground sea)",
+  "maps": []
+ },
+ "Rothold": {
+  "region": "The Deep",
+  "type": "Zone off Great Cavern Sea",
+  "maps": [
+   "Rothold_map_by_skoop.png"
+  ]
+ },
+ "Blind Midden": {
+  "region": "The Deep",
+  "type": "Dungeon (off Ail'Vorith)",
+  "maps": [
+   "Blind_Midden_-_Ground_Floor.png",
+   "Blind_Midden_-_Basement.png"
+  ],
+  "notes": "Added to EA in patch 0.30.2.0 (Sep 25: \"Initial zone and spawning\"); still marked as in progress in 0.30.2.1."
+ },
+ "Ail'Vorith": {
+  "region": "The Deep",
+  "type": "Deep Elf capital / starting city",
+  "maps": [
+   "Ailvorith_foreignquarters2.jpg",
+   "Ailvorith.jpg"
+  ],
+  "notes": "Patch 0.30.2.4: devs called Ail'Vorith \"a harder starting experience\"; Shadowless Deep Elves get worse prices in the Foreign Quarter."
+ }
+}

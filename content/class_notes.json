@@ -1,0 +1,163 @@
+{
+ "Archer": {
+  "role": "Ranged DPS",
+  "armor": "Leather (wiki: 'typically wear leather')",
+  "weapons": "All ranged + most melee (wiki)",
+  "stat": "UNCONFIRMED (wiki has no bonus-point advice)",
+  "family": "leather",
+  "solo": "Wiki: archers 'find it difficult to adventure alone' at times; deep dive adds traps, stances and backward leap for kiting.",
+  "group": "Ranged damage with situational utility (traps, debuffs)."
+ },
+ "Bard": {
+  "role": "Support / jack of all trades",
+  "armor": "Most armor types (wiki); Wyrmsbane Chain set lists BRD",
+  "weapons": "Nearly all weapons + instruments (wiki)",
+  "stat": "CHA (wiki: songs scale with Charisma)",
+  "family": "chain",
+  "solo": "Wiki: 'a clever Bard can find success' solo using its wide kit.",
+  "group": "Songs (haste, resists, mana), mez/charm, melee."
+ },
+ "Beastmaster": {
+  "role": "Melee DPS + pet",
+  "armor": "Leather (wiki class page)",
+  "weapons": "Two-handed or paired claws; Dual Wield trained at 10 (wiki)",
+  "stat": "STR (wiki category)",
+  "family": "leather",
+  "solo": "Pet tanks with Guardian Spirit for solo/small group (deep dive).",
+  "group": "Melee + pet damage; pet roles DPS / Tank / Balanced."
+ },
+ "Cleric": {
+  "role": "Main healer (plate)",
+  "armor": "Plate (wiki: 'typically seen in heavy plate')",
+  "weapons": "Prefers blunt (wiki)",
+  "stat": "WIS, then STA (wiki)",
+  "family": "plate",
+  "solo": "Wiki: may find difficulty alone except vs. undead.",
+  "group": "Premier healer: heals, cures, dispels, resurrection, Hymn/Blessing of Smiting group buff (L4, patch 0.30.2.1)."
+ },
+ "Druid": {
+  "role": "Healer / nature caster",
+  "armor": "Leather (wiki)",
+  "weapons": "Blunt, sickles, scimitars (wiki)",
+  "stat": "WIS (wiki)",
+  "family": "leather",
+  "solo": "UNCONFIRMED. Wiki notes druid rings / wyrd gates for teleporting.",
+  "group": "Secondary healer, damage, ports, Seasons system (deep dive)."
+ },
+ "Elementalist": {
+  "role": "Pet caster / DPS",
+  "armor": "Cloth (wiki)",
+  "weapons": "Staves, wands, daggers (wiki)",
+  "stat": "INT, then STA (wiki)",
+  "family": "cloth",
+  "solo": "Four elemental pets by L12 (wiki note since Beta 0.29); pets need Crushed Malachite reagent.",
+  "group": "Ranged damage + pet."
+ },
+ "Enchanter": {
+  "role": "Crowd control / buffer",
+  "armor": "Cloth (wiki)",
+  "weapons": "Staves, wands, daggers (wiki)",
+  "stat": "INT, then CHA (wiki)",
+  "family": "cloth",
+  "solo": "Wiki: 'may encounter some difficulty' alone; charm damage was reduced in 0.30.0.0.",
+  "group": "Mez, Sagacity (mana), slows, charm (charm levels 4/12/24/36/48 as of 0.30.2.1)."
+ },
+ "Fighter": {
+  "role": "Main tank",
+  "armor": "All armor types (wiki)",
+  "weapons": "All weapons (wiki)",
+  "stat": "UNCONFIRMED (wiki has no advice)",
+  "family": "plate",
+  "solo": "Wiki: most comfortable in a group.",
+  "group": "Premier tank: stances, Retaliation/Vengeance (deep dive). Kick & Shield Bash share a cooldown (0.30.2.1)."
+ },
+ "Inquisitor": {
+  "role": "Anti-mage tank",
+  "armor": "Plate (wiki)",
+  "weapons": "Most weapons (wiki)",
+  "stat": "UNCONFIRMED",
+  "family": "plate",
+  "solo": "Wiki: some difficulty alone.",
+  "group": "Protector / off-tank with caster disruption; Kick back at L3 (0.30.2.1)."
+ },
+ "Monk": {
+  "role": "Melee DPS / puller",
+  "armor": "Leather (wiki)",
+  "weapons": "Fists or staves (wiki)",
+  "stat": "UNCONFIRMED",
+  "family": "leather",
+  "solo": "Wiki: some find solo difficult; Feign Death helps pulling.",
+  "group": "Melee damage, pulling with Feign Death (deep dive)."
+ },
+ "Necromancer": {
+  "role": "DoT caster + undead pet",
+  "armor": "Cloth (wiki)",
+  "weapons": "Staves, wands, scythes, daggers (wiki)",
+  "stat": "INT, then STA (wiki)",
+  "family": "cloth",
+  "solo": "Wiki: success 'both within adventuring parties and while adventuring alone'.",
+  "group": "DoTs, life-tap, pet; Locate Corpse at L1 (0.30.2.3)."
+ },
+ "Paladin": {
+  "role": "Holy tank / healer",
+  "armor": "Plate (wiki)",
+  "weapons": "Most melee (wiki)",
+  "stat": "UNCONFIRMED",
+  "family": "plate",
+  "solo": "UNCONFIRMED",
+  "group": "Tank with heals/consecrations; Kick back at L3 and Crusader Strike bonus threat (0.30.2.1)."
+ },
+ "Ranger": {
+  "role": "Hybrid melee/ranged + campcraft",
+  "armor": "Wyrmsbane Chain set lists RNG",
+  "weapons": "Swords + bows (deep dive: Swordplay & Marksmanship)",
+  "stat": "UNCONFIRMED",
+  "family": "chain",
+  "solo": "Recuperate is for between fights; 0.30.2.3 added restrictions while it is active.",
+  "group": "Damage, Wound Care, campfire downtime reduction (deep dive)."
+ },
+ "Rogue": {
+  "role": "Melee DPS / stealth",
+  "armor": "'Prefer lighter armor' (wiki); Wyrmsbane Chain set lists ROG",
+  "weapons": "Most melee (wiki)",
+  "stat": "UNCONFIRMED",
+  "family": "chain",
+  "solo": "Deep dive has a 'Soloability' section; poisons via Poison Making (Rogue-only).",
+  "group": "Backstab damage, pick pocket, lockpicking, disarm traps."
+ },
+ "Shadow Knight": {
+  "role": "Dark tank",
+  "armor": "Plate (Wyrmsbane Plate set lists SHD)",
+  "weapons": "Prefers two-handers, can use all (wiki)",
+  "stat": "UNCONFIRMED",
+  "family": "plate",
+  "solo": "Wiki: some success solo through clever magic use.",
+  "group": "Tank: auras, life-drain, Grip of Agony, Feign Death pulls.",
+  "extra_md": "\n:::note Your Shadow Knight \u2014 current status\n**Brewologist**, Goblin Shadow Knight, level ~4. Faction: **Disdained but not KOS** with Night Harbor (your in-game status). What Disdained changes in practice (merchant prices, which NPCs will deal with you) is UNCONFIRMED on the wiki. Check it in game.\n- Patch 0.30.2.0 (Sep 25, 2026): \"Night Harbor factions should now be easier to gain.\" Per-kill faction amounts are UNCONFIRMED.\n- Faction-friendly early work from your old notes: [[wiki:Laundry Day Quest]] (raises Citizens/Merchants of Night Harbor), [[wiki:Ashira Tails Quest]] turn-in at the Tannery, and the Underdocks quest chain (Find Delilah's Pet, Mushroom Farmers Bounty Quest, Mining Picks for Hull). Delilah and the friendly undercap were re-enabled in patch 0.30.2.5 (Oct 7).\n- See the [[zone:Underdocks]] and [[zone:Night Harbor]] pages for camps by level, and [Factions](/factions.html) for how the city factions fit together.\n:::\n"
+ },
+ "Shaman": {
+  "role": "Healer / buffer / debuffer",
+  "armor": "Chain (wiki)",
+  "weapons": "Blunt + piercing (wiki)",
+  "stat": "WIS, then STA, then DEX (wiki)",
+  "family": "chain"
+ },
+ "Spellblade": {
+  "role": "Melee DPS w/ arcane infusions",
+  "armor": "Leather (wiki)",
+  "weapons": "Staves, daggers, scythes, swords (wiki)",
+  "stat": "UNCONFIRMED",
+  "family": "leather",
+  "solo": "UNCONFIRMED",
+  "group": "Infusions, damage fields (deep dive); Kick back at L3 (0.30.2.1)."
+ },
+ "Wizard": {
+  "role": "Nuker / porter",
+  "armor": "Cloth (wiki)",
+  "weapons": "Staves, swords, daggers (wiki)",
+  "stat": "INT, then DEX (wiki)",
+  "family": "cloth",
+  "solo": "Wiki: some find solo difficult.",
+  "group": "Burst damage; Volley + Reclaim Magic mana loop and Spark of Magic (0.30.2.1); ports."
+ }
+}
