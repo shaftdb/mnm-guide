@@ -50,7 +50,7 @@ Under the Necromancer section, the patch says: "The Malady spell line no longer 
 
 The wiki stat advice: max **WIS** (healing strength and mana), then **STA** (HP and some stun resistance, and room to Consume), then one point of **DEX** (hit rate and proc chance).
 
-Your Shaman's race is UNCONFIRMED here. Set it in `content/profile.json` and on this page.
+Your Shaman, **Brewsham**, is a **Human**. See the Human row in the table above for starting stats.
 
 === Research & quest spells
 ## Research and quest spells

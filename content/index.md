@@ -4,10 +4,10 @@ section: home
 desc: Shaman-focused Monsters & Memories reference
 sources: Wiki: Shaman|https://monstersandmemories.miraheze.org/wiki/Shaman; Patch notes (0.30.2.8, Oct 11 2026)|https://account.monstersandmemories.com/community/patch_notes; Official Shaman deep dive|https://monstersandmemories.com/class-shaman-deep-dive
 ---
-<div class="hero"><span class="lvl">12</span><h2 style="margin:0;background:none;border:0;padding:0">My Shaman — level 12 → next steps</h2><p style="margin:.3em 0 0">Healer, slower and buffer. Chain armor, blunt/piercing weapons, WIS first. Current focus: slow + DoT soloing to 16, then the big level-16 spell batch.</p></div>
+<div class="hero"><span class="lvl">12</span><h2 style="margin:0;background:none;border:0;padding:0">Brewsham (Human Shaman) — level 12 → next steps</h2><p style="margin:.3em 0 0">Healer, slower and buffer. Chain armor, blunt/piercing weapons, WIS first. Current focus: slow + DoT soloing to 16, then the big level-16 spell batch.</p></div>
 
 :::facts My characters
-Shaman: level 12 · race UNCONFIRMED
+Shaman: Brewsham · Human · 12
 Shadow Knight: Brewologist · Goblin · ~4
 SK faction: Disdained (not KOS) with Night Harbor
 Role: Guild officer

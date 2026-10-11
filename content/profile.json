@@ -2,7 +2,19 @@
  "player": "Brewologist",
  "guild_role": "Guild officer",
  "characters": [
-  {"name": "Shaman (name UNCONFIRMED — planned name was Brewsham)", "class": "Shaman", "level": 12, "race": "UNCONFIRMED", "notes": "Main focus. Update level/race in content/profile.json + home page."},
-  {"name": "Brewologist", "class": "Shadow Knight", "race": "Goblin", "level": 4, "notes": "Disdained (not KOS) with Night Harbor."}
+  {
+   "name": "Brewsham",
+   "class": "Shaman",
+   "level": 12,
+   "race": "Human",
+   "notes": "Main focus."
+  },
+  {
+   "name": "Brewologist",
+   "class": "Shadow Knight",
+   "race": "Goblin",
+   "level": 4,
+   "notes": "Disdained (not KOS) with Night Harbor."
+  }
  ]
 }
