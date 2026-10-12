@@ -91,3 +91,20 @@ details.set{background:#17130e;border:1px solid var(--line);border-radius:5px;ma
 .foot{text-align:center;color:var(--dim);font-size:.8rem;padding:20px;border-top:1px solid var(--line)}
 @media (max-width:1150px){.wrap{grid-template-columns:200px minmax(0,1fr)}.right{grid-column:1/-1;position:static;max-height:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}.right .box{margin:0}}
 @media (max-width:800px){.wrap{grid-template-columns:1fr;padding:0 8px}.left{position:static;max-height:none;order:3}.main{padding:12px}.burger{display:block}.mainnav{display:none}body.navopen .mainnav{display:flex;flex-direction:column}.topin{flex-wrap:wrap}.search{order:3;max-width:none;flex-basis:100%}.crumbs .ver{float:none;display:block}h1{font-size:1.5rem}.filterbar{position:static}}
+
+/* Level-range selector */
+.rangebar{background:#1a140e;border-top:1px solid var(--line);border-bottom:1px solid var(--gold)}
+.rangebar[hidden]{display:none!important}
+.rangebar-in{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;max-width:1500px;margin:auto;padding:8px 16px}
+.range-lab{font-family:Georgia,serif;color:var(--gold2);font-size:.95rem;font-weight:700}
+.rangebar select{background:#0d0b08;color:var(--ink);border:1px solid var(--gold);border-radius:4px;padding:5px 10px;font-size:.95rem;min-width:7.5rem}
+.range-qi{font-size:.9rem;padding:4px 10px;border:1px solid var(--gold);border-radius:4px;color:var(--parch);background:#2a2116}
+.range-qi:hover{background:var(--gold);color:#1b140b;text-decoration:none}
+.range-hint{font-size:.78rem;color:var(--dim)}
+.quickinfo{margin:1em 0 1.4em;padding:14px 16px;background:linear-gradient(#2a2116,#1a150f);border:1px solid var(--gold);border-radius:8px}
+.quickinfo .qi-head h2{margin-top:0;border:0;background:none;padding:0;font-size:1.45rem}
+.quickinfo h2{font-size:1.2rem;margin:1.1em 0 .35em}
+.quickinfo h2:first-of-type{margin-top:.4em}
+.quickinfo ul{margin:.3em 0 .6em;padding-left:1.2em}
+.quickinfo .dashboard{margin-top:.6em}
+@media (max-width:800px){.range-hint{display:none}.rangebar-in{padding:8px}}

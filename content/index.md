@@ -4,47 +4,23 @@ section: home
 desc: Shaman-focused Monsters & Memories reference
 sources: Wiki: Shaman|https://monstersandmemories.miraheze.org/wiki/Shaman; Patch notes (0.30.2.8, Oct 11 2026)|https://account.monstersandmemories.com/community/patch_notes; Official Shaman deep dive|https://monstersandmemories.com/class-shaman-deep-dive
 ---
-<div class="hero"><span class="lvl">13</span><h2 style="margin:0;background:none;border:0;padding:0">Brewsham (Human Shaman) — level 13 → next steps</h2><p style="margin:.3em 0 0">Healer, slower and buffer. Chain armor, blunt/piercing weapons, WIS first. Current focus: slow + DoT soloing to 16, then the big level-16 spell batch. Profession: <strong>gather only</strong> (Mining / Lumberjacking / Smelting) — feed guild crafters.</p></div>
+<div class="hero"><h2 style="margin:0;background:none;border:0;padding:0">Brewsham (Human Shaman)</h2><p style="margin:.3em 0 0">Healer, slower and buffer. Chain armor, blunt/piercing weapons, WIS first. Profession: <strong>gather only</strong> (Mining / Lumberjacking / Smelting) — feed guild crafters. Pick a <strong>level band</strong> in the header to load Quick info for that range.</p></div>
 
 :::facts My characters
-Shaman: Brewsham · Human · 13
-Shadow Knight: Brewologist · Goblin · ~4
+Shaman: Brewsham · Human
+Shadow Knight: Brewologist · Goblin
 SK faction: Disdained (not KOS) with Night Harbor
 Role: Guild officer
-Profession: Gatherer (Mining, Lumberjacking, Smelting) — no crafting grind
+Profession: Gatherer (no crafting grind on Brewsham)
 Game version: 0.30.2.8 (Oct 11, 2026)
 :::
 
-<div class="dashboard">
-<div class="dash"><h3>Right now (level 13)</h3><ul>
-<li>Confirm you have your <strong>level 12</strong> spells: Consume, Consuming Pact, Omen of Enfeeblement, Root, Cure Disease, Dispel Magic, Enduring Breath. <a href="shaman/spells.html#lvl-12">table</a></li>
-<li>Make sure you still have the <strong>level 8</strong> batch (Pact of Renewal, Ghostly Blight, Pact of Haste, Spirit Mending, Speed of the Wild).</li>
-<li>Solo loop: Omen of Lethargy → Ghostly Blight + Malady → Pact of Renewal on yourself → melee or wait. Use Consume only when safe (45 s cooldown). Push toward 16 for the next big spell batch.</li>
-<li>While leveling outdoors: <strong>Speed of the Wild</strong> on, pick up Copper/Wood nodes; smelt ore into bars for the guild. <a href="shaman/guild-mats.html">Mats list →</a></li>
-</ul></div>
-<div class="dash"><h3>Where to level 13–16</h3><ul>
-<li><a href="zones/night-harbor.html">Night Harbor</a>: wiki lists diseased bats (10), cracked/diseased beetles (12–14) and decrepit→cackling skeletons (12–15).</li>
-<li><a href="zones/infested-crypt.html">Infested Crypt</a> (wiki 8–16) or <a href="zones/tel-ekir.html">Tel Ekir</a> (wiki 10–35).</li>
-<li>From an Underdocks start: <a href="zones/underdocks.html">wererats</a> (10–12).</li>
-<li><a href="shaman/leveling.html">Full Shaman route →</a></li>
-</ul></div>
-<div class="dash"><h3>Level 16 is a big upgrade</h3><ul>
-<li>Greater Omen of Lethargy (20% slow), Greater Pact of Renewal, Greater Pact of Haste, Sickness, Greater Ghostly Blight</li>
-<li>Invisibility, Omen of Susceptibility, Berserker Rage / Tribal Rage (needs a Ritual Talisman, sold by <em>a shaman scribe</em> in the Seekers of the Lost Eye)</li>
-<li>Save coin for these. Scroll prices were cut on Oct 7.</li>
-</ul></div>
-<div class="dash"><h3>Gather &amp; guild crafts</h3><ul>
-<li><strong>No crafting on Brewsham.</strong> Mine, chop, smelt bars; hand mats to guild for free crafts.</li>
-<li>Travel: keep <strong>Speed of the Wild</strong> up outdoors between nodes. <a href="shaman/tradeskills.html">Gathering routes →</a></li>
-<li><a href="shaman/guild-mats.html">Mats to give guild crafters</a> — what to stockpile and exact craft quantities (Copper Chain, mace, Jade jewelry).</li>
-<li>Gear still from drops/nameds too: <a href="gear/shaman.html">Shaman easy-BiS →</a></li>
-</ul></div>
-</div>
+<div id="mnm-quickinfo" class="quickinfo" data-mnm-quick="full"></div>
 
 ## Quick links
-- **Shaman:** [Overview](/shaman/index.html) · [Spells by level](/shaman/spells.html) · [Leveling 13→60](/shaman/leveling.html) · [Playbook and hotbars](/shaman/playbook.html) · [Quests](/shaman/quests.html) · [Gathering](/shaman/tradeskills.html) · [Guild mats](/shaman/guild-mats.html)
+- **Shaman:** [Overview](/shaman/index.html) · [Spells by level](/shaman/spells.html) · [Leveling](/shaman/leveling.html) · [Playbook and hotbars](/shaman/playbook.html) · [Quests](/shaman/quests.html) · [Gathering](/shaman/tradeskills.html) · [Guild mats](/shaman/guild-mats.html) · [Quick info (band)](/shaman/quickinfo.html)
 - **Gear:** [By level and class](/gear/index.html) · [Shaman easy BiS](/gear/shaman.html) · [Weapons](/gear/weapons.html) · [Crafted sets](/gear/crafted-sets.html)
-- **World:** [Zones and maps](/zones/index.html) · [Leveling by band (all classes)](/leveling.html) · [Farming](/farming.html) · [Economy and trade routes](/economy.html) · [Tradeskills](/tradeskills.html) · [Factions](/factions.html) · [Quests](/quests.html)
+- **World:** [Zones and maps](/zones/index.html) · [Leveling by band (all classes)](/leveling.html) · [Farming](/farming.html) · [Economy and trade routes](/economy.html) · [Factions](/factions.html) · [Quests](/quests.html) · [Tradeskills](/tradeskills.html)
 - **Other characters:** [Shadow Knight](/classes/shadow-knight.html) · [All classes](/classes/index.html)
 
 ## What changed recently (game patches)
@@ -56,5 +32,5 @@ Game version: 0.30.2.8 (Oct 11, 2026)
 Full list: [Patch & changelog](/changelog.html).
 
 :::tip How to use this site
-Press the / key to search. Hover any colored item name to see its wiki stats. Click table headers to sort them. Gear tables have a class filter. Anything tagged UNCONFIRMED hasn't been verified in a source. STRATEGY marks my recommendations, which aren't game facts.
+Press the / key to search. Use the <strong>Brewsham band</strong> selector in the header (Home and Shaman pages) — it remembers your last choice in this browser. Hover any colored item name to see its wiki stats. Click table headers to sort them. Anything tagged UNCONFIRMED / UNVERIFIED hasn't been verified in a source. STRATEGY marks my recommendations, which aren't game facts.
 :::

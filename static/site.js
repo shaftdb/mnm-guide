@@ -42,3 +42,53 @@ if(t&&r.textContent.toLowerCase().indexOf(t)<0)ok=false;r.style.display=ok?'':'n
 document.querySelectorAll('.clsfilter,.kindfilter,.textfilter').forEach(function(el){el.addEventListener('input',applyFilters);el.addEventListener('change',applyFilters)});
 if(document.querySelector('.clsfilter'))applyFilters();
 })();
+
+// ---------- Brewsham level-range selector (embedded data; no fetch; file:// OK)
+(function(){
+var R=window.MNM_RANGES; if(!R||!R.order) return;
+var KEY='mnm-brewsham-range';
+var root=document.documentElement.getAttribute('data-root')||'';
+var bar=document.getElementById('mnm-rangebar');
+var sel=document.getElementById('mnm-range');
+var qiLink=document.getElementById('mnm-range-qi');
+var mount=document.getElementById('mnm-quickinfo');
+var showBar=document.body.classList.contains('sec-home')||document.body.classList.contains('sec-shaman');
+if(bar&&showBar) bar.hidden=false; else if(bar) bar.hidden=true;
+function fixRoot(html){
+  // Rewrite root-absolute href/src for Pages subpath and file:// relative roots
+  return String(html).replace(/(href|src)="\/(?!\/)/g, '$1="'+root);
+}
+function readStored(){
+  try{var v=localStorage.getItem(KEY); if(v&&R.panels[v]) return v;}catch(e){}
+  return R.default||'11-15';
+}
+function writeStored(k){ try{localStorage.setItem(KEY,k);}catch(e){} }
+function fillSelect(cur){
+  if(!sel) return;
+  sel.innerHTML=R.order.map(function(k){
+    var lab=(R.panels[k]&&R.panels[k].label)||k;
+    return '<option value="'+k+'"'+(k===cur?' selected':'')+'>'+lab+'</option>';
+  }).join('');
+}
+function render(k){
+  var p=R.panels[k]; if(!p) return;
+  if(qiLink) qiLink.href=root+'shaman/quickinfo.html';
+  if(!mount) return;
+  var head='<div class="qi-head"><h2 style="margin-top:0">Quick info · '+p.label+'</h2>'+
+    '<p class="dim" style="margin:.2em 0 .8em">Brewsham · Human Shaman · band '+p.label+
+    ' · <a href="'+root+'shaman/leveling.html">Full leveling</a> · <a href="'+root+'shaman/guild-mats.html">Guild mats</a></p></div>';
+  mount.setAttribute('data-seed', k);
+  mount.innerHTML=head+fixRoot(p.html);
+}
+var cur=readStored();
+fillSelect(cur);
+if(sel){
+  sel.value=cur;
+  sel.addEventListener('change', function(){
+    cur=sel.value; writeStored(cur); render(cur);
+  });
+}
+if(qiLink) qiLink.href=root+'shaman/quickinfo.html';
+// Always sync mount to stored band (overrides build-time 11-15 seed when needed)
+if(mount) render(cur);
+})();

@@ -8,7 +8,7 @@ sources: Wiki item pages|https://monstersandmemories.miraheze.org/wiki/Category:
 Armor: Chain (and anything lighter)
 Weapons: Blunt, piercing, shields
 Stats: WIS > STA > DEX (wiki)
-Current band: 11–15 (level 13)
+Bands: Use the Home / Shaman level-range selector
 :::
 
 :::strategy Ranking method
@@ -20,7 +20,7 @@ This is a heuristic, not a game formula. Each item scores AC×1 + WIS×3 + STA×
 {{gen:classfilter SHM}}
 
 :::tabs
-=== 11–15 (now)
+=== 11–15
 {{gen:gear_band SHM,11,15}}
 === 16–20
 {{gen:gear_band SHM,16,20}}

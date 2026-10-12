@@ -1,12 +1,12 @@
 ---
-title: Shaman leveling 13→60
+title: Shaman leveling
 section: shaman
 desc: Shaman leveling route by level band with camps
 sources: Wiki zone pages (NPC tables, levels)|https://monstersandmemories.miraheze.org/wiki/Zones; Wiki: Shaman Guides (solo routine)|https://monstersandmemories.miraheze.org/wiki/Shaman_Guides; Patch 0.30.2.8 (Night Harbor reunited)|https://account.monstersandmemories.com/community/patch_notes/59
 ---
 :::facts Route at a glance
-Now: 13
-Next spell batch: 16 (big one)
+Bands: Use the header level-range selector
+Next big spell batch: 16
 Solo loop: Slow → DoTs → HoT self → melee
 Group role: Slow, HoT tank, buff
 Data: Wiki NPC levels, pulled at build time
@@ -15,7 +15,7 @@ Data: Wiki NPC levels, pulled at build time
 STRATEGY The band notes are my recommendations. The camp lists under each band are **generated** from the wiki zone NPC tables: every mob whose listed level overlaps the band. Many wiki mobs have no level and don't show up. Camps marked ★ are named. Always /consider before pulling.
 
 :::tabs
-=== 11–15 (now)
+=== 11–15
 ## 11–15: get your level-12 kit working
 - **Spells:** Consume, Omen of Enfeeblement and Root (12). Keep Omen of Lethargy (10%) and Pact of Renewal (8) current.
 - **Solo pattern (wiki Shaman Guides):** slow, Malady, keep a HoT up, melee. Use Root to make space if a fight goes wrong.

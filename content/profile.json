@@ -5,15 +5,13 @@
   {
    "name": "Brewsham",
    "class": "Shaman",
-   "level": 13,
    "race": "Human",
-   "notes": "Main focus. Gather-only: Mining, Lumberjacking, Smelting; guild crafts with his mats."
+   "notes": "Main. Gather-only: Mining, Lumberjacking, Smelting; guild crafts with mats. Use site level-range selector."
   },
   {
    "name": "Brewologist",
    "class": "Shadow Knight",
    "race": "Goblin",
-   "level": 4,
    "notes": "Disdained (not KOS) with Night Harbor."
   }
  ]

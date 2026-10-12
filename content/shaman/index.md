@@ -62,9 +62,10 @@ Your Shaman, **Brewsham**, is a **Human**. See the Human row in the table above 
 
 ## Where next
 - [Spells by level](/shaman/spells.html): what to buy and when
-- [Leveling route 13→60](/shaman/leveling.html): zones, camps and nameds per band
+- [Leveling route](/shaman/leveling.html): zones, camps and nameds per band
 - [Gathering for Brewsham](/shaman/tradeskills.html): Mining / Lumber / Smelting, Speed of the Wild loops (no crafting grind)
 - [Mats to give guild crafters](/shaman/guild-mats.html): stockpile list + what to have crafted with exact quantities
+- [Quick info by level band](/shaman/quickinfo.html): zones, spells, gear, gathering for the selected range
 - [Playbook](/shaman/playbook.html): solo and group routines, buff and debuff order, hotbars and macros
 - [Easy-BiS gear by band](/gear/shaman.html)
 - [Shaman quests](/shaman/quests.html) · [Tradeskills that suit a Shaman](/shaman/tradeskills.html)

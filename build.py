@@ -581,6 +581,57 @@ def g_families(arg, ctx):
 
 GENS = {k[2:]: v for k, v in globals().items() if k.startswith('g_')}
 
+
+# ------------------------------------------------------------------ level-range quick info
+RANGE_ORDER = ['1-5', '6-10', '11-15', '16-20', '21-25', '26-30', '31-40', '41-60']
+RANGE_DEFAULT = '11-15'
+RANGES_CACHE = {}
+
+def load_ranges():
+    """Compile content/ranges/*.md into HTML panels for embedding in range-data.js (no fetch; works on file://)."""
+    out = {}
+    rdir = os.path.join(CONTENT, 'ranges')
+    for key in RANGE_ORDER:
+        fp = os.path.join(rdir, key + '.md')
+        if not os.path.exists(fp):
+            out[key] = {'label': key.replace('-', '\u2013'), 'html': '<p><span class="badge unc">unverified</span> No quick-info file for this band yet.</p>', 'title': key}
+            continue
+        raw = open(fp, encoding='utf8').read()
+        meta, body = {}, raw
+        if raw.startswith('---'):
+            parts = raw.split('---', 2)
+            if len(parts) >= 3:
+                for line in parts[1].splitlines():
+                    if ':' in line:
+                        k, v = line.split(':', 1)
+                        meta[k.strip()] = v.strip()
+                body = parts[2]
+        ctx = {}
+        html_body = md(body, ctx)
+        label = meta.get('label') or key.replace('-', '\u2013')
+        out[key] = {'label': label, 'html': html_body, 'title': meta.get('title') or ('Quick info ' + label)}
+    return out
+
+def write_range_data(ranges):
+    payload = {
+        'order': RANGE_ORDER,
+        'default': RANGE_DEFAULT,
+        'character': 'Brewsham',
+        'panels': {k: {'label': v['label'], 'title': v.get('title', v['label']), 'html': v['html']} for k, v in ranges.items()},
+    }
+    js = 'window.MNM_RANGES=' + json.dumps(payload, ensure_ascii=False, separators=(',', ':')) + ';'
+    open(os.path.join(OUT, 'assets', 'range-data.js'), 'w', encoding='utf8').write(js)
+
+RANGEBAR_HTML = (
+    '<div class="rangebar" id="mnm-rangebar" hidden>'
+    '<div class="rangebar-in">'
+    '<span class="range-lab">Brewsham band</span>'
+    '<select id="mnm-range" aria-label="Brewsham Shaman level range"></select>'
+    '<a class="range-qi" id="mnm-range-qi" href="#">Quick info</a>'
+    '<span class="range-hint">Remembers your last pick in this browser</span>'
+    '</div></div>'
+)
+
 # ------------------------------------------------------------------ layout
 NAV = [('Home', '/index.html', 'home'), ('Shaman', '/shaman/index.html', 'shaman'), ('Classes', '/classes/index.html', 'classes'),
        ('Gear', '/gear/index.html', 'gear'), ('Zones', '/zones/index.html', 'zones'), ('Leveling', '/leveling.html', 'leveling'),
@@ -598,10 +649,10 @@ def left_nav(section):
         return ul('Gear', GEAR_NAV)
     if section == 'zones':
         return ul('Zones', [('All zones & world map', '/zones/index.html')] + [(z, zone_url(z)) for z in sorted(ZONES)])
-    return ul('Shaman quick links', SHAMAN_NAV[:8]) + ul('Reference', [('Gear by level', '/gear/index.html'), ('Zones', '/zones/index.html'), ('Quests', '/quests.html'), ('Sources', '/sources.html')])
+    return ul('Shaman quick links', SHAMAN_NAV) + ul('Reference', [('Gear by level', '/gear/index.html'), ('Zones', '/zones/index.html'), ('Quests', '/quests.html'), ('Sources', '/sources.html')])
 
-SHAMAN_NAV = [('Overview', '/shaman/index.html'), ('Spells by level', '/shaman/spells.html'), ('Leveling 13→60', '/shaman/leveling.html'),
-              ('Gear (easy BiS)', '/gear/shaman.html'), ('Playbook: solo, group, hotbar', '/shaman/playbook.html'), ('Quests', '/shaman/quests.html'), ('Gathering (no craft)', '/shaman/tradeskills.html'), ('Mats for guild crafters', '/shaman/guild-mats.html')]
+SHAMAN_NAV = [('Overview', '/shaman/index.html'), ('Spells by level', '/shaman/spells.html'), ('Leveling', '/shaman/leveling.html'),
+              ('Gear (easy BiS)', '/gear/shaman.html'), ('Playbook: solo, group, hotbar', '/shaman/playbook.html'), ('Quests', '/shaman/quests.html'), ('Gathering (no craft)', '/shaman/tradeskills.html'), ('Mats for guild crafters', '/shaman/guild-mats.html'), ('Quick info by band', '/shaman/quickinfo.html')]
 GEAR_NAV = [('Gear overview', '/gear/index.html'), ('Shaman easy BiS', '/gear/shaman.html'), ('Cloth casters', '/gear/cloth.html'), ('Leather wearers', '/gear/leather.html'),
             ('Chain hybrids', '/gear/chain.html'), ('Plate tanks & healers', '/gear/plate.html'), ('Weapons & shields', '/gear/weapons.html'),
             ('All-class jewelry & cloaks', '/gear/all-class.html'), ('Vendor & crafted (any level)', '/gear/vendor-crafted.html'), ('Crafted armor sets', '/gear/crafted-sets.html')]
@@ -625,6 +676,7 @@ TEMPLATE = '''<!doctype html>
     <button class="burger" aria-label="Menu" onclick="document.body.classList.toggle('navopen')">&#9776;</button>
   </div>
   <nav class="mainnav">{nav}</nav>
+  {rangebar}
 </header>
 <div class="crumbs">{crumbs}<span class="ver">Content verified: {verified}</span></div>
 <div class="wrap">
@@ -638,6 +690,7 @@ TEMPLATE = '''<!doctype html>
 <div id="tip" class="tip" hidden></div>
 <script src="{root}assets/search-index.js"></script>
 <script src="{root}assets/item-tips.js"></script>
+<script src="{root}assets/range-data.js"></script>
 <script src="{root}assets/site.js"></script>
 </body>
 </html>
@@ -674,6 +727,8 @@ def render_all():
     os.makedirs(os.path.join(OUT, 'assets'), exist_ok=True)
     for f in glob.glob(os.path.join(ROOT, 'static', '*')):
         shutil.copy(f, os.path.join(OUT, 'assets'))
+    RANGES_CACHE = load_ranges()
+    write_range_data(RANGES_CACHE)
     index = []
     for p in PAGES:
         depth = p['path'].count('/')
@@ -691,9 +746,18 @@ def render_all():
                 else:
                     lis.append('<li>%s</li>' % inline(s))
             src = '<section class="sources"><h2 id="sources">Sources for this page</h2><ul>%s</ul></section>' % ''.join(lis)
+        show_range = p['section'] in ('home', 'shaman')
+        rb = RANGEBAR_HTML if show_range else ''
+        body_html = p['body']
+        if show_range and 'id="mnm-quickinfo"' in body_html and RANGE_DEFAULT in RANGES_CACHE:
+            seed = RANGES_CACHE[RANGE_DEFAULT]['html']
+            body_html = body_html.replace(
+                '<div id="mnm-quickinfo" class="quickinfo" data-mnm-quick="full"></div>',
+                '<div id="mnm-quickinfo" class="quickinfo" data-mnm-quick="full" data-seed="%s"><div class="qi-head"><h2 style="margin-top:0">Quick info · %s</h2><p class="dim" style="margin:.2em 0 .8em">Default band — change anytime in the header selector.</p></div>%s</div>' % (
+                    RANGE_DEFAULT, esc(RANGES_CACHE[RANGE_DEFAULT]['label']), seed))
         h = TEMPLATE.format(root=root, title=esc(p['title']), site=esc(SITE_NAME), desc=esc(p['desc']), section=p['section'], nav=nav,
-                            crumbs=crumbs_for(p), verified=esc(p['verified']), left=left_nav(p['section']), h1=inline(p['h1']), body=p['body'],
-                            sources=src, facts=p['ctx'].get('facts', ''), toc=toch, built=BUILD_DATE)
+                            crumbs=crumbs_for(p), verified=esc(p['verified']), left=left_nav(p['section']), h1=inline(p['h1']), body=body_html,
+                            sources=src, facts=p['ctx'].get('facts', ''), toc=toch, built=BUILD_DATE, rangebar=rb)
         h = relink(h, depth)
         fp = os.path.join(OUT, p['path']); os.makedirs(os.path.dirname(fp), exist_ok=True)
         open(fp, 'w', encoding='utf8').write(h)
@@ -730,7 +794,7 @@ def build_content():
     # hand-written markdown pages
     for f in sorted(glob.glob(os.path.join(CONTENT, '**', '*.md'), recursive=True)):
         rel = os.path.relpath(f, CONTENT).replace('\\', '/')
-        if rel.startswith('_'): continue
+        if rel.startswith('_') or rel.startswith('ranges/') or rel.startswith('ranges\\'): continue
         meta, t = read_md(f)
         path = rel[:-3] + '.html'
         add_page(path, meta.get('title', rel), t, meta.get('section', path.split('/')[0] if '/' in path else 'home'), meta, desc=meta.get('desc'))

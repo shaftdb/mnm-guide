@@ -32,11 +32,11 @@ Utility skills that are not a crafting career (Bind Wound, Survival bandages, Ri
 
 **Speed of the Wild** (Shaman L8): +40% movement at L8 up to +60% at L60, **outdoors only**, 60 minutes (wiki spell page; Shaman class table also lists ~35 min — treat duration as UNVERIFIED if they disagree). Same role as classic "Spirit of Wolf." Keep it up between nodes. **Speed of the Pack** (L32) is the group version.
 
-## Mining nodes near level 13–20 areas
+## Mining nodes for mid bands (≈11–20)
 
 Wiki vein chart (min skill → trivial). Focus on copper/limestone now; tin/silver as skill and zone access allow.
 
-| Vein | Min → Trivial | Zones (wiki) | Notes for L13–20 |
+| Vein | Min → Trivial | Zones (wiki) | Notes (≈11–20) |
 |---|---|---|---|
 | Copper / Rich Copper | 1 → 50 / 65 | Night Harbor (West/North Gate), Shaded Dunes, Evershade Weald, Keeper's Bight | Primary loop. Wiki tip: West Gate + Shaded Dunes cliffs for early skill-ups |
 | Limestone / Rich Limestone | 35 → 75 / 90 | Fallen Pass (cliffs), Shaded Dunes (cliffs toward Tel Ekir), Sungreet Strand (canyon), Scarwood | Feeds Tanning (guild). Rich confirmed minable at 45 |
@@ -46,7 +46,7 @@ Wiki vein chart (min skill → trivial). Focus on copper/limestone now; tin/silv
 
 Trainer: Miner Falmud, Sojourner's Camp (Night Harbor). Tool: Mining Pick. Vendor next to Falmud buys excess ore/stone/gems.
 
-## Lumberjacking nodes near 13–20
+## Lumberjacking nodes (≈11–20)
 
 Wiki node chart (Closed Beta note on wiki — locations may shift; treat as best available).
 
@@ -77,7 +77,7 @@ Tool: Lumberjack Axe. Right-click wood piles. Raw wood/resin go to guild Woodwor
 - Scrap→bar and bar→scrap recipes exist (wiki); guild fletchers often want **metal scraps** for arrowheads — ask before you scrap bars.
 - Vendors do **not** sell copper ore (Blacksmithing wiki). Your mining is the copper supply.
 
-## Suggested SoW gathering loops (L13–20) STRATEGY
+## Suggested SoW gathering loops (≈11–20) STRATEGY
 
 1. **Buff outdoors** with Speed of the Wild, carry Mining Pick + Lumberjack Axe + empty bag space.
 2. **Night Harbor gates ↔ Shaded Dunes cliffs:** Copper veins + Wood piles while moving between NH camps (bats/beetles/skeletons). Limestone on dunes cliffs toward Tel Ekir when Mining ≥35.
