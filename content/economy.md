@@ -21,5 +21,11 @@ See [Farming](/farming.html). Evershade Weald has the highest income per hour of
 ## Trade routes
 UNCONFIRMED Neither the wiki nor the patch notes document cross-city price differences. Shadowless Deep Elves "are exploited by the merchants in the foreign quarter" in Ail'Vorith (Oct 4 patch note), so prices clearly vary by race and faction. Any specific arbitrage route would be a guess, so this section stays empty until someone measures one in game.
 
+## Guild crafting pipeline (Brewsham) STRATEGY
+Brewsham gathers and smelts; guild crafters finish gear for free with his mats. That is the trade route that matters for this character — not vendor arbitrage.
+- Hand-in list and exact craft quantities: [Mats to give guild crafters](/shaman/guild-mats.html)
+- Node routes: [Gathering for Brewsham](/shaman/tradeskills.html)
+- Copper is player-gated (vendors do not sell copper ore — Blacksmithing wiki). Bars are the main currency you bring the guild.
+
 ## Merchants (wiki)
 {{gen:merchants}}

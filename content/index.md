@@ -4,13 +4,14 @@ section: home
 desc: Shaman-focused Monsters & Memories reference
 sources: Wiki: Shaman|https://monstersandmemories.miraheze.org/wiki/Shaman; Patch notes (0.30.2.8, Oct 11 2026)|https://account.monstersandmemories.com/community/patch_notes; Official Shaman deep dive|https://monstersandmemories.com/class-shaman-deep-dive
 ---
-<div class="hero"><span class="lvl">13</span><h2 style="margin:0;background:none;border:0;padding:0">Brewsham (Human Shaman) — level 13 → next steps</h2><p style="margin:.3em 0 0">Healer, slower and buffer. Chain armor, blunt/piercing weapons, WIS first. Current focus: slow + DoT soloing to 16, then the big level-16 spell batch.</p></div>
+<div class="hero"><span class="lvl">13</span><h2 style="margin:0;background:none;border:0;padding:0">Brewsham (Human Shaman) — level 13 → next steps</h2><p style="margin:.3em 0 0">Healer, slower and buffer. Chain armor, blunt/piercing weapons, WIS first. Current focus: slow + DoT soloing to 16, then the big level-16 spell batch. Profession: <strong>gather only</strong> (Mining / Lumberjacking / Smelting) — feed guild crafters.</p></div>
 
 :::facts My characters
 Shaman: Brewsham · Human · 13
 Shadow Knight: Brewologist · Goblin · ~4
 SK faction: Disdained (not KOS) with Night Harbor
 Role: Guild officer
+Profession: Gatherer (Mining, Lumberjacking, Smelting) — no crafting grind
 Game version: 0.30.2.8 (Oct 11, 2026)
 :::
 
@@ -19,6 +20,7 @@ Game version: 0.30.2.8 (Oct 11, 2026)
 <li>Confirm you have your <strong>level 12</strong> spells: Consume, Consuming Pact, Omen of Enfeeblement, Root, Cure Disease, Dispel Magic, Enduring Breath. <a href="shaman/spells.html#lvl-12">table</a></li>
 <li>Make sure you still have the <strong>level 8</strong> batch (Pact of Renewal, Ghostly Blight, Pact of Haste, Spirit Mending, Speed of the Wild).</li>
 <li>Solo loop: Omen of Lethargy → Ghostly Blight + Malady → Pact of Renewal on yourself → melee or wait. Use Consume only when safe (45 s cooldown). Push toward 16 for the next big spell batch.</li>
+<li>While leveling outdoors: <strong>Speed of the Wild</strong> on, pick up Copper/Wood nodes; smelt ore into bars for the guild. <a href="shaman/guild-mats.html">Mats list →</a></li>
 </ul></div>
 <div class="dash"><h3>Where to level 13–16</h3><ul>
 <li><a href="zones/night-harbor.html">Night Harbor</a>: wiki lists diseased bats (10), cracked/diseased beetles (12–14) and decrepit→cackling skeletons (12–15).</li>
@@ -31,17 +33,18 @@ Game version: 0.30.2.8 (Oct 11, 2026)
 <li>Invisibility, Omen of Susceptibility, Berserker Rage / Tribal Rage (needs a Ritual Talisman, sold by <em>a shaman scribe</em> in the Seekers of the Lost Eye)</li>
 <li>Save coin for these. Scroll prices were cut on Oct 7.</li>
 </ul></div>
-<div class="dash"><h3>Gear for 11–20</h3><ul>
-<li><a href="gear/shaman.html">Shaman easy-BiS by level band →</a></li>
-<li>All-class jewelry from early nameds, like Spitemaw's Ring (Dhajr Spitemaw, Shaded Dunes, 8+).</li>
-<li>Chain: the Bronze/Copper chain sets are craftable. See <a href="gear/crafted-sets.html">crafted sets</a>.</li>
+<div class="dash"><h3>Gather &amp; guild crafts</h3><ul>
+<li><strong>No crafting on Brewsham.</strong> Mine, chop, smelt bars; hand mats to guild for free crafts.</li>
+<li>Travel: keep <strong>Speed of the Wild</strong> up outdoors between nodes. <a href="shaman/tradeskills.html">Gathering routes →</a></li>
+<li><a href="shaman/guild-mats.html">Mats to give guild crafters</a> — what to stockpile and exact craft quantities (Copper Chain, mace, Jade jewelry).</li>
+<li>Gear still from drops/nameds too: <a href="gear/shaman.html">Shaman easy-BiS →</a></li>
 </ul></div>
 </div>
 
 ## Quick links
-- **Shaman:** [Overview](/shaman/index.html) · [Spells by level](/shaman/spells.html) · [Leveling 13→60](/shaman/leveling.html) · [Playbook and hotbars](/shaman/playbook.html) · [Quests](/shaman/quests.html) · [Tradeskills](/shaman/tradeskills.html)
+- **Shaman:** [Overview](/shaman/index.html) · [Spells by level](/shaman/spells.html) · [Leveling 13→60](/shaman/leveling.html) · [Playbook and hotbars](/shaman/playbook.html) · [Quests](/shaman/quests.html) · [Gathering](/shaman/tradeskills.html) · [Guild mats](/shaman/guild-mats.html)
 - **Gear:** [By level and class](/gear/index.html) · [Shaman easy BiS](/gear/shaman.html) · [Weapons](/gear/weapons.html) · [Crafted sets](/gear/crafted-sets.html)
-- **World:** [Zones and maps](/zones/index.html) · [Leveling by band (all classes)](/leveling.html) · [Farming](/farming.html) · [Economy and trade routes](/economy.html) · [Factions](/factions.html) · [Quests](/quests.html)
+- **World:** [Zones and maps](/zones/index.html) · [Leveling by band (all classes)](/leveling.html) · [Farming](/farming.html) · [Economy and trade routes](/economy.html) · [Tradeskills](/tradeskills.html) · [Factions](/factions.html) · [Quests](/quests.html)
 - **Other characters:** [Shadow Knight](/classes/shadow-knight.html) · [All classes](/classes/index.html)
 
 ## What changed recently (game patches)

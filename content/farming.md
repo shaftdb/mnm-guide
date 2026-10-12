@@ -2,7 +2,7 @@
 title: Farming
 section: farming
 desc: Farming notes - what is known about income
-sources: Patch 0.30.2.4 (income by city, Deep Beetle Eyes)|https://account.monstersandmemories.com/community/patch_notes/55; Patch 0.30.2.3 (low-level drops removed)|https://account.monstersandmemories.com/community/patch_notes/54; Patch 0.30.2.5 (disenchant change)|https://account.monstersandmemories.com/community/patch_notes/56; Wiki merchants|https://monstersandmemories.miraheze.org/wiki/Category:Merchant
+sources: Patch 0.30.2.4 (income by city, Deep Beetle Eyes)|https://account.monstersandmemories.com/community/patch_notes/55; Patch 0.30.2.3 (low-level drops removed)|https://account.monstersandmemories.com/community/patch_notes/54; Patch 0.30.2.5 (disenchant change)|https://account.monstersandmemories.com/community/patch_notes/56; Wiki merchants|https://monstersandmemories.miraheze.org/wiki/Category:Merchant; Wiki: Skill Mining|https://monstersandmemories.miraheze.org/wiki/Skill_Mining; Wiki: Skill Lumberjacking|https://monstersandmemories.miraheze.org/wiki/Skill_Lumberjacking
 ---
 :::unconfirmed Drop rates and prices
 The wiki has almost no merchant sell values or drop rates for Early Access yet. Nothing on this page gives a coin/hour number, and I won't make one up.
@@ -18,5 +18,6 @@ The wiki has almost no merchant sell values or drop rates for Early Access yet. 
 ## Practical farming (STRATEGY)
 - Level and earn at the same time. The devs say characters who "engage in a variety of activities" can afford their abilities.
 - Night Harbor diseased bats and beetles drop *Chunk of Diseased Meat* (wiki NPC notes). Its sale value is UNCONFIRMED.
-- Gathering skills like Fishing, Herbalism and Mining feed crafters. A guild that pools materials gets more out of them.
+- **Brewsham gatherer loop:** outdoors leveling with Speed of the Wild — hit Copper / Wood nodes between camps, smelt bars in NH, bank for guild crafters. Details: [Gathering for Brewsham](/shaman/tradeskills.html) and [Mats to give guild crafters](/shaman/guild-mats.html).
+- Do **not** vendor Copper Ore/Bars, Wood, Resin, LQ pelts, Rawhide Scraps, or Jade/Emerald gems without checking the mats list first.
 - Item drop sources are on each [zone page](/zones/index.html) and in item tooltips.

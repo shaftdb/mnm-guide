@@ -597,10 +597,10 @@ def left_nav(section):
         return ul('Gear', GEAR_NAV)
     if section == 'zones':
         return ul('Zones', [('All zones & world map', '/zones/index.html')] + [(z, zone_url(z)) for z in sorted(ZONES)])
-    return ul('Shaman quick links', SHAMAN_NAV[:6]) + ul('Reference', [('Gear by level', '/gear/index.html'), ('Zones', '/zones/index.html'), ('Quests', '/quests.html'), ('Sources', '/sources.html')])
+    return ul('Shaman quick links', SHAMAN_NAV[:8]) + ul('Reference', [('Gear by level', '/gear/index.html'), ('Zones', '/zones/index.html'), ('Quests', '/quests.html'), ('Sources', '/sources.html')])
 
 SHAMAN_NAV = [('Overview', '/shaman/index.html'), ('Spells by level', '/shaman/spells.html'), ('Leveling 13→60', '/shaman/leveling.html'),
-              ('Gear (easy BiS)', '/gear/shaman.html'), ('Playbook: solo, group, hotbar', '/shaman/playbook.html'), ('Quests', '/shaman/quests.html'), ('Tradeskills for Shaman', '/shaman/tradeskills.html')]
+              ('Gear (easy BiS)', '/gear/shaman.html'), ('Playbook: solo, group, hotbar', '/shaman/playbook.html'), ('Quests', '/shaman/quests.html'), ('Gathering (no craft)', '/shaman/tradeskills.html'), ('Mats for guild crafters', '/shaman/guild-mats.html')]
 GEAR_NAV = [('Gear overview', '/gear/index.html'), ('Shaman easy BiS', '/gear/shaman.html'), ('Cloth casters', '/gear/cloth.html'), ('Leather wearers', '/gear/leather.html'),
             ('Chain hybrids', '/gear/chain.html'), ('Plate tanks & healers', '/gear/plate.html'), ('Weapons & shields', '/gear/weapons.html'),
             ('All-class jewelry & cloaks', '/gear/all-class.html'), ('Vendor & crafted (any level)', '/gear/vendor-crafted.html'), ('Crafted armor sets', '/gear/crafted-sets.html')]
