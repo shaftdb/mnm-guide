@@ -88,6 +88,7 @@ def inline(s):
         return '<a href="%s"%s>%s</a>' % (esc(u), ' class="ext" target="_blank" rel="noopener"' if ext else '', t)
     s = re.sub(r'!\[([^\]]*)\]\(([^)]+)\)', lambda m: '<img src="%s" alt="%s" loading="lazy">' % (esc(html.unescape(m.group(2))), m.group(1)), s)
     s = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', lk, s)
+    s = s.replace('UNVERIFIED', '<span class="badge unc">unverified</span>')
     s = s.replace('UNCONFIRMED', '<span class="badge unc">unconfirmed</span>')
     s = s.replace('STRATEGY', '<span class="badge strat">strategy</span>')
     s = s.replace('VERIFIED', '<span class="badge ok">verified</span>')
@@ -631,7 +632,7 @@ TEMPLATE = '''<!doctype html>
   <main class="main"><h1>{h1}</h1>{body}
   {sources}
   </main>
-  <aside class="right">{facts}{toc}<div class="box"><h3>Legend</h3><p><span class="badge unc">unconfirmed</span> not verified in a source<br><span class="badge strat">strategy</span> my recommendation, not a game fact<br><span class="itm q-magic">Magic item</span> hover for wiki stats</p></div></aside>
+  <aside class="right">{facts}{toc}<div class="box"><h3>Legend</h3><p><span class="badge unc">unconfirmed</span> / <span class="badge unc">unverified</span> not verified in a source<br><span class="badge strat">strategy</span> my recommendation, not a game fact<br><span class="itm q-magic">Magic item</span> hover for wiki stats</p></div></aside>
 </div>
 <footer class="foot">Private reference for Brewologist · built {built} · Facts from the <a href="https://monstersandmemories.miraheze.org/" target="_blank" rel="noopener">M&amp;M Wiki</a> (CC BY-SA 4.0) and <a href="https://monstersandmemories.com/" target="_blank" rel="noopener">monstersandmemories.com</a>. Not affiliated with the Monsters &amp; Memories developers. · <a href="{root}sources.html">Sources</a></footer>
 <div id="tip" class="tip" hidden></div>
