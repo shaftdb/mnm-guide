@@ -14,7 +14,7 @@ sources: Monsters & Memories Wiki|https://monstersandmemories.miraheze.org/; Off
 
 ## Accuracy rules used on this site
 - Nothing is invented. If a number, name, location, rate or price isn't in a source, the page says **UNCONFIRMED** or leaves it out.
-- **STRATEGY** marks my opinions and recommendations.
+- **STRATEGY** marks opinions and recommendations.
 - Item levels in the gear tables are **inferred** from the quest minimum level or the dropping mob's wiki level. Vendor and crafted gear has no level requirement in the data.
 - The wiki is community-edited and Early Access changes fast. When in doubt, check in game.
 

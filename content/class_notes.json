@@ -41,7 +41,7 @@
   "weapons": "Blunt, sickles, scimitars (wiki)",
   "stat": "WIS (wiki)",
   "family": "leather",
-  "solo": "UNCONFIRMED. Wiki notes druid rings / wyrd gates for teleporting.",
+  "solo": "Official class page: 'One of the strongest solo classes'; excels solo through control over animals and self-sufficiency.",
   "group": "Secondary healer, damage, ports, Seasons system (deep dive)."
  },
  "Elementalist": {
@@ -50,7 +50,7 @@
   "weapons": "Staves, wands, daggers (wiki)",
   "stat": "INT, then STA (wiki)",
   "family": "cloth",
-  "solo": "Four elemental pets by L12 (wiki note since Beta 0.29); pets need Crushed Malachite reagent.",
+  "solo": "Official class page: performs well solo, pet tanks while you cast from afar. Wiki: four elemental pets by L12; pets need Crushed Malachite reagent.",
   "group": "Ranged damage + pet."
  },
  "Enchanter": {
@@ -86,7 +86,7 @@
   "weapons": "Fists or staves (wiki)",
   "stat": "UNCONFIRMED",
   "family": "leather",
-  "solo": "Wiki: some find solo difficult; Feign Death helps pulling.",
+  "solo": "Official class page: capable of soloing thanks to self-reliance and self-healing. Feign Death helps pulling.",
   "group": "Melee damage, pulling with Feign Death (deep dive)."
  },
  "Necromancer": {
@@ -95,7 +95,7 @@
   "weapons": "Staves, wands, scythes, daggers (wiki)",
   "stat": "INT, then STA (wiki)",
   "family": "cloth",
-  "solo": "Wiki: success 'both within adventuring parties and while adventuring alone'.",
+  "solo": "Official class page: 'One of the strongest solo classes in the roster'; undead pet holds the front line.",
   "group": "DoTs, life-tap, pet; Locate Corpse at L1 (0.30.2.3)."
  },
  "Paladin": {
@@ -128,12 +128,12 @@
  "Shadow Knight": {
   "role": "Dark tank",
   "armor": "Plate (Wyrmsbane Plate set lists SHD)",
-  "weapons": "Prefers two-handers, can use all (wiki)",
+  "weapons": "Prefers a two-handed weapon, can use a shield if needed (official class page)",
   "stat": "UNCONFIRMED",
   "family": "plate",
-  "solo": "Wiki: some success solo through clever magic use.",
-  "group": "Tank: auras, life-drain, Grip of Agony, Feign Death pulls.",
-  "extra_md": "\n:::note Your Shadow Knight \u2014 current status\n**Brewologist**, Goblin Shadow Knight, level ~4. Faction: **Disdained but not KOS** with Night Harbor (your in-game status). What Disdained changes in practice (merchant prices, which NPCs will deal with you) is UNCONFIRMED on the wiki. Check it in game.\n- Patch 0.30.2.0 (Sep 25, 2026): \"Night Harbor factions should now be easier to gain.\" Per-kill faction amounts are UNCONFIRMED.\n- Faction-friendly early work from your old notes: [[wiki:Laundry Day Quest]] (raises Citizens/Merchants of Night Harbor), [[wiki:Ashira Tails Quest]] turn-in at the Tannery, and the Underdocks quest chain (Find Delilah's Pet, Mushroom Farmers Bounty Quest, Mining Picks for Hull). Delilah and the friendly undercap were re-enabled in patch 0.30.2.5 (Oct 7).\n- See the [[zone:Underdocks]] and [[zone:Night Harbor]] pages for camps by level, and [Factions](/factions.html) for how the city factions fit together.\n:::\n"
+  "solo": "Wiki: some success solo through clever magic use. Official: dedicated pets are being cut, so do not plan around a pet.",
+  "group": "Tank with higher damage than a Paladin and less mitigation than a Fighter; life/strength drains shared to self or party; fast short-range abilities (official class page).",
+  "extra_md": "\n:::note Shadow Knight rework (official class page)\nFACT The official class page says the Shadow Knight is moving to an **antihero monster hunter** identity: collectable abilities learned from monsters (monster lore system), drains and transfers stay central, fast short-range knight abilities are being added, and the **dedicated pet and ability sharing with the Necromancer are being cut**. The wiki spell list below is the current live kit and may change as the rework lands.\n:::\n\n## Duo pairings STRATEGY\n| Partner | Why | Your job |\n|---|---|---|\n| Another tank (Inquisitor / SK) | Steady schedule, safe pulls | Agree who main-tanks; the other uses a 2H for damage or a shield to off-tank |\n| Spellblade | Burst damage while you hold aggro | Main tank, use drains |\n| Necromancer / Elementalist | Pet pressure | Main tank |\n| Druid / Shaman | Heal-over-time, slow, ports | Main tank; less greedy with life taps |\n| Cleric / Enchanter | Classic heals / mez | Main tank; let them pace pulls |\n"
  },
  "Shaman": {
   "role": "Healer / buffer / debuffer",

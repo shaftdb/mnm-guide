@@ -2,7 +2,7 @@
 title: Shaman
 section: shaman
 desc: Shaman class overview
-sources: Wiki: Shaman (rev 79831)|https://monstersandmemories.miraheze.org/wiki/Shaman; Wiki: Shaman Guides|https://monstersandmemories.miraheze.org/wiki/Shaman_Guides; Official: Shaman deep dive|https://monstersandmemories.com/class-shaman-deep-dive; Patch 0.30.2.1 (Sep 30, 2026)|https://account.monstersandmemories.com/community/patch_notes/52; Patch 0.30.0.0 (Sep 19, 2026)|https://account.monstersandmemories.com/community/patch_notes/46
+sources: Wiki: Shaman (rev 80920)|https://monstersandmemories.miraheze.org/wiki/Shaman; Wiki: Shaman Guides|https://monstersandmemories.miraheze.org/wiki/Shaman_Guides; Official: Shaman deep dive|https://monstersandmemories.com/class-shaman-deep-dive; Patch 0.30.2.1 (Sep 30, 2026)|https://account.monstersandmemories.com/community/patch_notes/52; Patch 0.30.0.0 (Sep 19, 2026)|https://account.monstersandmemories.com/community/patch_notes/46
 ---
 :::facts Shaman — Quick Facts
 Role: Healer (HoT), slower, physical buffer, DoT
@@ -11,7 +11,7 @@ Weapons: Blunt and piercing
 Stats: WIS > STA > DEX
 Class mod: +1 STR, +2 STA, +1 DEX, +4 WIS
 Pet: None (removed in the class rework)
-Races (wiki): Deep Gnome, Goblin, Human, Ogre, Troll, Wood Elf
+Races (official): Deep Gnome, Goblin, Human, Ogre, Troll, Var'nai, Wood Elf
 Guild (NH): Seekers of the Lost Eye, Saltbreeze Park
 Trainer (NH): Errol Shrewtender
 Talisman vendor: a shaman scribe (Seekers)
@@ -50,20 +50,20 @@ Under the Necromancer section, the patch says: "The Malady spell line no longer 
 
 The wiki stat advice: max **WIS** (healing strength and mana), then **STA** (HP and some stun resistance, and room to Consume), then one point of **DEX** (hit rate and proc chance).
 
-Your Shaman, **Brewsham**, is a **Human**. See the Human row in the table above for starting stats.
+See the table above for each race's starting stats.
 
 === Research & quest spells
 ## Research and quest spells
 - The deep dive says **Communion of Regeneration** and the higher **Tribal Spirit** ranks come from spell research, and **Aspect of the Bear** comes from a Shaman quest during Early Access.
 - **Patch 0.30.0.0** changed this: "Most group buffs are now available to purchase from spell vendors directly, rather than as research-granted spells." The wiki now lists Tribal Spirit/Rage/Fury and the Communion line as **Vendor** spells.
-- The wiki lists Aspect of the Bear (L28), Savage Bear (L40) and Spirit Bear (L52) as **Research**. How to get them in EA is UNCONFIRMED.
+- The wiki Shaman page (rev 80920, Oct 13) no longer lists the Aspect of the Bear spells at all (it used to list L28/40/52 as Research). How to get them in EA is UNVERIFIED.
 - Talismans: Ritual Talisman, Greater Ritual Talisman and Ancestral Ritual Talisman are sold by **a shaman scribe** in the Seekers of the Lost Eye guild, Night Harbor (wiki merchant page). Prices are UNCONFIRMED.
 :::
 
 ## Where next
 - [Spells by level](/shaman/spells.html): what to buy and when
 - [Leveling route](/shaman/leveling.html): zones, camps and nameds per band
-- [Gathering for Brewsham](/shaman/tradeskills.html): Mining / Lumber / Smelting, Speed of the Wild loops (no crafting grind)
+- [Gathering route](/shaman/tradeskills.html): Mining / Lumber / Smelting with Speed of the Wild loops (optional gather-only plan)
 - [Mats to give guild crafters](/shaman/guild-mats.html): stockpile list + what to have crafted with exact quantities
 - [Quick info by level band](/shaman/quickinfo.html): zones, spells, gear, gathering for the selected range
 - [Playbook](/shaman/playbook.html): solo and group routines, buff and debuff order, hotbars and macros

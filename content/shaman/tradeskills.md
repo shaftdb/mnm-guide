@@ -1,24 +1,24 @@
 ---
-title: Gathering for Brewsham
+title: Gathering route (Shaman)
 section: shaman
-desc: Gatherer-only plan for Human Shaman Brewsham — Mining, Lumberjacking, Smelting, Speed of the Wild routes
+desc: Optional gatherer-only plan for a Shaman — Mining, Lumberjacking, Smelting, Speed of the Wild routes
 sources: Wiki: Skill Mining|https://monstersandmemories.miraheze.org/wiki/Skill_Mining; Wiki: Skill Lumberjacking|https://monstersandmemories.miraheze.org/wiki/Skill_Lumberjacking; Wiki: Skill Smelting|https://monstersandmemories.miraheze.org/wiki/Skill_Smelting; Wiki: Speed of the Wild|https://monstersandmemories.miraheze.org/wiki/Speed_of_the_Wild; Wiki: Tradeskills|https://monstersandmemories.miraheze.org/wiki/Tradeskills; Patch 0.30.2.4 (tradeskills expensive to start)|https://account.monstersandmemories.com/community/patch_notes/55
 ---
-:::facts Brewsham plan
+:::facts Gather-only plan
 Role: Gather only (no crafting leveling)
 Has now: Mining, Lumberjacking, Smelting (ore → bars)
 Travel: Speed of the Wild (L8, outdoors, +40%→60% move)
-Goal: All gathering skills over time; feed guild crafters for free crafts
+Goal: All gathering skills over time; feed a crafter friend or guild
 Mats list: [Mats to give guild crafters →](/shaman/guild-mats.html)
 :::
 
-:::warn No crafting grind on Brewsham
-Brewsham does **not** level Blacksmithing, Jewelcrafting, Woodworking, Carpentry, Fletching, Leatherworking, or Tailoring. Spells and leveling come first. Hand mats to guild crafters; they craft for free with your materials. Patch 0.30.2.4: tradeskills are expensive to start — skip that tax on the main. STRATEGY
+:::warn No crafting grind on a Shaman
+The Shaman does **not** level Blacksmithing, Jewelcrafting, Woodworking, Carpentry, Fletching, Leatherworking, or Tailoring. Spells and leveling come first. Hand mats to a crafter friend or guild who crafts with your materials. Patch 0.30.2.4: tradeskills are expensive to start — skip that cost if a friend crafts for you. STRATEGY
 :::
 
-## What Brewsham does vs skips STRATEGY
+## What the Shaman does vs skips STRATEGY
 
-| Do (gather / refine) | Skip on Brewsham |
+| Do (gather / refine) | Skip on a Shaman |
 |---|---|
 | **Mining** — ores, stone, gems | Blacksmithing, Jewelcrafting |
 | **Lumberjacking** — wood, resin | Woodworking, Carpentry, Fletching |

@@ -13,7 +13,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(ROOT, 'docs')
 CONTENT = os.path.join(ROOT, 'content')
 DATA = os.path.join(ROOT, 'data')
-SITE_NAME = "Brew's M&M Codex"
+SITE_NAME = "M&M Quick Codex"
 BUILD_DATE = datetime.date.today().isoformat()
 
 def J(name):
@@ -22,7 +22,7 @@ def J(name):
 ZONES = J('zones'); ITEMS = J('items'); QUESTS = J('quests'); MERCH = J('merchants')
 CLASSES = J('classes'); DD = J('deepdives'); IMAGES = J('images'); SETS = J('armor_sets')
 FACTIONS = J('factions'); TRADES = J('tradeskills')
-PROFILE = json.load(open(os.path.join(CONTENT, 'profile.json'), encoding='utf8'))
+
 ZEXTRA = json.load(open(os.path.join(CONTENT, 'zones_extra.json'), encoding='utf8'))
 CLASS_NOTES = json.load(open(os.path.join(CONTENT, 'class_notes.json'), encoding='utf8'))
 
@@ -613,27 +613,176 @@ def load_ranges():
     return out
 
 def write_range_data(ranges):
+    panels = {}
+    for cls in CLASS_LIST:
+        for key in RANGE_ORDER:
+            lo, hi = [int(x) for x in key.split('-')]
+            sh = ranges[key]['html'] if cls == 'Shaman' else None
+            panels[cls + '|' + key] = class_quick(cls, lo, hi, sh)
     payload = {
-        'order': RANGE_ORDER,
-        'default': RANGE_DEFAULT,
-        'character': 'Brewsham',
-        'panels': {k: {'label': v['label'], 'title': v.get('title', v['label']), 'html': v['html']} for k, v in ranges.items()},
+        'order': RANGE_ORDER, 'default': RANGE_DEFAULT, 'classes': CLASS_LIST, 'defaultClass': 'Fighter',
+        'labels': {k: ranges[k]['label'] for k in RANGE_ORDER},
+        'urls': {c: class_url(c) for c in CLASS_LIST},
+        'panels': panels,
     }
-    js = 'window.MNM_RANGES=' + json.dumps(payload, ensure_ascii=False, separators=(',', ':')) + ';'
-    open(os.path.join(OUT, 'assets', 'range-data.js'), 'w', encoding='utf8').write(js)
+    js = 'window.MNM_QUICK=' + json.dumps(payload, ensure_ascii=False, separators=(',', ':')) + ';'
+    open(os.path.join(OUT, 'assets', 'quick-data.js'), 'w', encoding='utf8').write(js)
+    meta = {'order': RANGE_ORDER, 'default': RANGE_DEFAULT, 'classes': CLASS_LIST, 'defaultClass': 'Fighter',
+            'labels': {k: ranges[k]['label'] for k in RANGE_ORDER}, 'urls': {c: class_url(c) for c in CLASS_LIST}}
+    open(os.path.join(OUT, 'assets', 'range-data.js'), 'w', encoding='utf8').write('window.MNM_RANGES=' + json.dumps(meta, separators=(',', ':')) + ';')
+    return panels
+
+# ------------------------------------------------------------------ per-class quick info (generated for every class x band)
+OFFICIAL = J('official_classes')
+LARGE_RACES = ('Ogre', 'Troll')
+BAND_LIST = [tuple(int(x) for x in k.split('-')) for k in RANGE_ORDER]
+ROLE_PARTNERS = {
+    # STRATEGY: duo partner by role gap (tank needs heals, healer needs a tank/pet, dps needs a tank or healer)
+    'tank': ['Cleric', 'Shaman', 'Druid'],
+    'healer': ['Shadow Knight', 'Fighter', 'Paladin', 'Necromancer', 'Beastmaster'],
+    'pet': ['Cleric', 'Shaman', 'Druid'],
+    'dps': ['Fighter', 'Shadow Knight', 'Paladin', 'Shaman'],
+    'support': ['Shadow Knight', 'Fighter', 'Necromancer', 'Beastmaster'],
+}
+def _strip(s): return re.sub(r'<[^>]+>', '', s or '')
+def class_glance(cls):
+    O = OFFICIAL.get(cls, {}); n = CLASS_NOTES.get(cls, {}); C = CLASSES[cls]
+    races = [r.strip() for r in (O.get('races') or '').split(',') if r.strip()]
+    rec = [r for r in races if r not in LARGE_RACES]
+    rows = [('Archetype', esc(O.get('archetype') or 'UNVERIFIED')), ('Roles', esc(O.get('roles') or 'UNVERIFIED')),
+            ('Armor', esc(n.get('armor', 'UNVERIFIED'))), ('Weapons', esc(n.get('weapons', 'UNVERIFIED'))),
+            ('Races (official)', esc(', '.join(races) or 'UNVERIFIED')),
+            ('Class stat modifier', esc(C.get('modifier') or 'not stated on wiki')),
+            ('Main stat', esc(n.get('stat', 'UNVERIFIED')))]
+    h = '<div class="qi-sec"><h3>Class at a glance <span class="badge fact">fact</span></h3><table class="kv">%s</table>' % ''.join(
+        '<tr><th>%s</th><td>%s</td></tr>' % (k, v.replace('UNCONFIRMED', '<span class="badge unc">unverified</span>').replace('UNVERIFIED', '<span class="badge unc">unverified</span>')) for k, v in rows)
+    if C.get('bonus_advice'):
+        h += '<details><summary>Bonus-point advice (wiki)</summary><p>%s</p></details>' % esc(C['bonus_advice'])
+    if rec and len(rec) != len(races):
+        h += '<p class="dim"><span class="badge strat">strategy</span> Race picks this guide suggests: %s (large races left out).</p>' % esc(', '.join(rec))
+    return h + '</div>'
+
+def class_spells_band(cls, lo, hi):
+    C = CLASSES[cls]; li = []
+    for s in sorted(C['spells'], key=lambda s: s.get('level') or 0):
+        lv = s.get('level') or 0
+        if lo <= lv <= hi:
+            nm = s.get('spell name') or s.get('ability name') or s.get('name') or ''
+            d = (s.get('spell description') or s.get('description') or '').strip()
+            if len(d) > 110: d = d[:107].rsplit(' ', 1)[0] + '…'
+            loc = s.get('location') or ''
+            li.append('<li><b>L%s %s</b>%s%s</li>' % (lv, esc(nm), (' <span class="dim">(%s)</span>' % esc(loc)) if loc else '', (' — ' + esc(d)) if d else ''))
+    body = '<ul class="tight">%s</ul>' % ''.join(li) if li else '<p class="dim"><span class="badge unc">unverified</span> The wiki lists no %s spells/abilities for levels %d–%d.</p>' % (esc(cls), lo, hi)
+    return '<div class="qi-sec"><h3>Spells &amp; abilities %d–%d <span class="badge fact">fact</span></h3>%s<p class="src">Wiki <a class="ext" target="_blank" rel="noopener" href="%s">%s</a> rev %s. Wiki levels can lag patches.</p></div>' % (lo, hi, body, C['url'], esc(cls), esc(C.get('revid')))
+
+def _best_by_slot(code, cap, floor, weights):
+    best = {}
+    for it, lv, k in easy_items(code):
+        if lv is None or lv > cap or lv < floor: continue
+        if len(class_codes(it)) == 18 and not any(s in ('Ear', 'Neck', 'Finger', 'Back', 'Wrist', 'Waist') for s in slots_of(it)): continue
+        sc = item_score(it, weights)
+        if sc <= 0: continue
+        for s in slots_of(it):
+            if s in ('Ammo', 'Shirt'): continue
+            cur = best.get(s)
+            if not cur or (sc, lv) > (cur[0], cur[1]): best[s] = (sc, lv, it)
+    return best
+
+def class_gear_band(cls, lo, hi):
+    code = CABBR[cls]
+    weights = SHAMAN_W if code == 'SHM' else GENERIC_W
+    now = _best_by_slot(code, lo, max(1, lo - 12), weights)
+    end = _best_by_slot(code, hi, max(1, lo - 12), weights) if hi > lo else {}
+    def fmt(t):
+        _, lv, it = t; acq = acquisitions(it)
+        return '%s <span class="dim">(lvl %s)</span> — %s' % (item_link(it['name']), esc(lv), acq[0][2] if acq else '')
+    li = []
+    for s in ARMOR_SLOTS + WEAPON_SLOTS:
+        a, b = now.get(s), end.get(s)
+        if not a and not b: continue
+        if a and b and a[2]['name'] != b[2]['name']:
+            li.append('<li><b>%s:</b> %s<br><span class="up">by %d →</span> %s</li>' % (esc(s), fmt(a), hi, fmt(b)))
+        elif a:
+            li.append('<li><b>%s:</b> %s</li>' % (esc(s), fmt(a)))
+        else:
+            li.append('<li><b>%s:</b> <span class="up">from lvl %s →</span> %s</li>' % (esc(s), esc(b[1]), fmt(b)))
+    body = '<ul class="tight gearlist">%s</ul>' % ''.join(li) if li else '<p class="dim"><span class="badge unc">unverified</span> No wiki-sourced %s items with a known level for this band. Check the <a href="/gear/index.html">gear pages</a>.</p>' % esc(cls)
+    return ('<div class="qi-sec"><h3>Gear to equip %d–%d <span class="badge fact">items: fact</span> <span class="badge strat">pick: strategy</span></h3>'
+            '<p class="dim">What to wear per slot when you enter the band, and the upgrade to grab by level %d. Items and sources are from the wiki (quest, vendor, craft or drop — no auction needed). Hover an item for its stats.</p>%s</div>') % (lo, hi, hi, body)
+
+def zones_band(lo, hi):
+    zs = sorted(zones_for_band(lo, hi), key=lambda x: -len(x[1]))[:7]
+    if not zs: return '<div class="qi-sec"><h3>Where to level</h3><p class="dim">No wiki mob rows with levels in this band.</p></div>'
+    li = ''.join('<li>%s <span class="dim">(zone lvl %s; %d listed camps in band)</span></li>' % (zlink(z), esc(ZONES[z]['level'] or '?'), len(c)) for z, c in zs)
+    return '<div class="qi-sec"><h3>Where to level %d–%d <span class="badge fact">fact</span></h3><ul class="tight">%s</ul><p class="src">Zones whose wiki mob tables overlap the band. Full camp lists: <a href="/leveling.html">Leveling by band</a>.</p></div>' % (lo, hi, li)
+
+def class_role_keys(cls):
+    r = (OFFICIAL.get(cls, {}).get('roles') or '').lower()
+    keys = []
+    for k in ('tank', 'healer', 'pet', 'support'):
+        if k in r: keys.append(k)
+    if 'dps' in r and not keys: keys.append('dps')
+    return keys or ['dps']
+
+def class_tips(cls):
+    O = OFFICIAL.get(cls, {}); n = CLASS_NOTES.get(cls, {})
+    h = '<div class="qi-sec"><h3>Tips</h3>'
+    if O.get('traits'):
+        h += '<p><span class="badge fact">fact</span> Official class page — defining traits:</p><ul class="tight">%s</ul>' % ''.join('<li>%s</li>' % esc(t) for t in O['traits'])
+    if O.get('changing'):
+        h += '<details><summary>What the devs say is changing</summary>%s%s%s</details>' % (
+            ''.join('<p>%s</p>' % esc(p) for p in O['changing']),
+            ('<p><b>More:</b> %s</p>' % esc('; '.join(O['more']))) if O.get('more') else '',
+            ('<p><b>Less:</b> %s</p>' % esc('; '.join(O['less']))) if O.get('less') else '')
+    for k, lab in (('solo', 'Solo'), ('group', 'Group')):
+        v = n.get(k)
+        if v and 'UNCONFIRMED' not in v:
+            h += '<p><b>%s:</b> %s</p>' % (lab, esc(v))
+    partners = []
+    for k in class_role_keys(cls):
+        for p in ROLE_PARTNERS[k]:
+            if p != cls and p not in partners: partners.append(p)
+    h += '<p><span class="badge strat">strategy</span> <b>Duo partners:</b> %s — chosen to cover what %s lacks (%s).</p>' % (
+        ', '.join('<a href="%s">%s</a>' % (class_url(p), esc(p)) for p in partners[:4]), esc(cls), esc(O.get('roles') or 'role unverified'))
+    h += '<p><a href="%s">Full %s guide →</a></p>' % (class_url(cls), esc(cls))
+    return h + '</div>'
+
+def class_quick(cls, lo, hi, shaman_html=None):
+    parts = [class_glance(cls)]
+    if shaman_html is not None:
+        parts.append('<div class="qi-sec">%s</div>' % shaman_html)
+        parts.append(class_gear_band(cls, lo, hi))
+    else:
+        parts += [class_spells_band(cls, lo, hi), class_gear_band(cls, lo, hi), zones_band(lo, hi)]
+    parts.append(class_tips(cls))
+    return ''.join(parts)
+
+def g_classbands(arg, ctx):
+    cls = arg.strip(); out = [class_glance(cls)]
+    for key in RANGE_ORDER:
+        lo, hi = [int(x) for x in key.split('-')]
+        out.append('<h3 id="band-%s">Levels %d–%d</h3>' % (key, lo, hi) + class_spells_band(cls, lo, hi) + class_gear_band(cls, lo, hi) + zones_band(lo, hi))
+    out.append(class_tips(cls))
+    return ''.join(out)
+
+def g_classquick(arg, ctx):
+    cls, lo, hi = [a.strip() for a in arg.split(',')]
+    return class_quick(cls, int(lo), int(hi))
+
+GENS.update(classquick=g_classquick, classbands=g_classbands)
 
 RANGEBAR_HTML = (
-    '<div class="rangebar" id="mnm-rangebar" hidden>'
+    '<div class="rangebar" id="mnm-rangebar">'
     '<div class="rangebar-in">'
-    '<span class="range-lab">Brewsham band</span>'
-    '<select id="mnm-range" aria-label="Brewsham Shaman level range"></select>'
-    '<a class="range-qi" id="mnm-range-qi" href="#">Quick info</a>'
-    '<span class="range-hint">Remembers your last pick in this browser</span>'
+    '<label class="rb-f"><span class="range-lab">Class</span><select id="mnm-class" aria-label="Class"></select></label>'
+    '<label class="rb-f"><span class="range-lab">Levels</span><select id="mnm-range" aria-label="Level range"></select></label>'
+    '<a class="range-qi" id="mnm-range-qi" href="/index.html#mnm-quickinfo">Quick info</a>'
+    '<input id="mnm-filter" class="pagefilter" type="search" placeholder="Filter this page…" aria-label="Filter this page">'
     '</div></div>'
 )
 
 # ------------------------------------------------------------------ layout
-NAV = [('Home', '/index.html', 'home'), ('Shaman', '/shaman/index.html', 'shaman'), ('Classes', '/classes/index.html', 'classes'),
+NAV = [('Home', '/index.html', 'home'), ('Classes', '/classes/index.html', 'classes'), ('Shaman', '/shaman/index.html', 'shaman'),
        ('Gear', '/gear/index.html', 'gear'), ('Zones', '/zones/index.html', 'zones'), ('Leveling', '/leveling.html', 'leveling'),
        ('Farming', '/farming.html', 'farming'), ('Economy', '/economy.html', 'economy'), ('Tradeskills', '/tradeskills.html', 'tradeskills'),
        ('Factions', '/factions.html', 'factions'), ('Quests', '/quests.html', 'quests'), ('Changelog', '/changelog.html', 'changelog')]
@@ -642,17 +791,17 @@ def left_nav(section):
     def ul(title, items):
         return '<div class="box nav"><h3>%s</h3><ul>%s</ul></div>' % (esc(title), ''.join('<li><a href="%s">%s</a></li>' % (u, esc(t)) for t, u in items))
     if section == 'shaman':
-        return ul('Shaman', SHAMAN_NAV) + ul('My characters', [('Shadow Knight (Goblin)', '/classes/shadow-knight.html')])
+        return ul('Shaman', SHAMAN_NAV) + ul('Other classes', [(c, class_url(c)) for c in CLASS_LIST if c != 'Shaman'])
     if section == 'classes':
         return ul('Classes', [(c, class_url(c)) for c in CLASS_LIST])
     if section == 'gear':
         return ul('Gear', GEAR_NAV)
     if section == 'zones':
         return ul('Zones', [('All zones & world map', '/zones/index.html')] + [(z, zone_url(z)) for z in sorted(ZONES)])
-    return ul('Shaman quick links', SHAMAN_NAV) + ul('Reference', [('Gear by level', '/gear/index.html'), ('Zones', '/zones/index.html'), ('Quests', '/quests.html'), ('Sources', '/sources.html')])
+    return ul('Classes', [(c, class_url(c)) for c in CLASS_LIST]) + ul('Reference', [('Gear by level', '/gear/index.html'), ('Zones', '/zones/index.html'), ('Quests', '/quests.html'), ('Sources', '/sources.html')])
 
 SHAMAN_NAV = [('Overview', '/shaman/index.html'), ('Spells by level', '/shaman/spells.html'), ('Leveling', '/shaman/leveling.html'),
-              ('Gear (easy BiS)', '/gear/shaman.html'), ('Playbook: solo, group, hotbar', '/shaman/playbook.html'), ('Quests', '/shaman/quests.html'), ('Gathering (no craft)', '/shaman/tradeskills.html'), ('Mats for guild crafters', '/shaman/guild-mats.html'), ('Quick info by band', '/shaman/quickinfo.html')]
+              ('Gear (easy BiS)', '/gear/shaman.html'), ('Playbook: solo, group, hotbar', '/shaman/playbook.html'), ('Quests', '/shaman/quests.html'), ('Gathering route', '/shaman/tradeskills.html'), ('Mats for crafters', '/shaman/guild-mats.html'), ('Quick info by band', '/shaman/quickinfo.html')]
 GEAR_NAV = [('Gear overview', '/gear/index.html'), ('Shaman easy BiS', '/gear/shaman.html'), ('Cloth casters', '/gear/cloth.html'), ('Leather wearers', '/gear/leather.html'),
             ('Chain hybrids', '/gear/chain.html'), ('Plate tanks & healers', '/gear/plate.html'), ('Weapons & shields', '/gear/weapons.html'),
             ('All-class jewelry & cloaks', '/gear/all-class.html'), ('Vendor & crafted (any level)', '/gear/vendor-crafted.html'), ('Crafted armor sets', '/gear/crafted-sets.html')]
@@ -684,13 +833,13 @@ TEMPLATE = '''<!doctype html>
   <main class="main"><h1>{h1}</h1>{body}
   {sources}
   </main>
-  <aside class="right">{facts}{toc}<div class="box"><h3>Legend</h3><p><span class="badge unc">unconfirmed</span> / <span class="badge unc">unverified</span> not verified in a source<br><span class="badge strat">strategy</span> my recommendation, not a game fact<br><span class="itm q-magic">Magic item</span> hover for wiki stats</p></div></aside>
+  <aside class="right">{facts}{toc}<div class="box"><h3>Legend</h3><p><span class="badge unc">unconfirmed</span> / <span class="badge unc">unverified</span> not verified in a source<br><span class="badge fact">fact</span> from a cited source<br><span class="badge strat">strategy</span> a recommendation, not a game fact<br><span class="itm q-magic">Magic item</span> hover for wiki stats</p></div></aside>
 </div>
-<footer class="foot">Private reference for Brewologist · built {built} · Facts from the <a href="https://monstersandmemories.miraheze.org/" target="_blank" rel="noopener">M&amp;M Wiki</a> (CC BY-SA 4.0) and <a href="https://monstersandmemories.com/" target="_blank" rel="noopener">monstersandmemories.com</a>. Not affiliated with the Monsters &amp; Memories developers. · <a href="{root}sources.html">Sources</a></footer>
+<footer class="foot">Community quick reference · built {built} · Facts from the <a href="https://monstersandmemories.miraheze.org/" target="_blank" rel="noopener">M&amp;M Wiki</a> (CC BY-SA 4.0) and <a href="https://monstersandmemories.com/" target="_blank" rel="noopener">monstersandmemories.com</a>. Not affiliated with the Monsters &amp; Memories developers. · <a href="{root}sources.html">Sources</a></footer>
 <div id="tip" class="tip" hidden></div>
 <script src="{root}assets/search-index.js"></script>
 <script src="{root}assets/item-tips.js"></script>
-<script src="{root}assets/range-data.js"></script>
+<script src="{root}assets/range-data.js"></script>{quickjs}
 <script src="{root}assets/site.js"></script>
 </body>
 </html>
@@ -728,7 +877,7 @@ def render_all():
     for f in glob.glob(os.path.join(ROOT, 'static', '*')):
         shutil.copy(f, os.path.join(OUT, 'assets'))
     RANGES_CACHE = load_ranges()
-    write_range_data(RANGES_CACHE)
+    PANELS = write_range_data(RANGES_CACHE)
     index = []
     for p in PAGES:
         depth = p['path'].count('/')
@@ -746,18 +895,18 @@ def render_all():
                 else:
                     lis.append('<li>%s</li>' % inline(s))
             src = '<section class="sources"><h2 id="sources">Sources for this page</h2><ul>%s</ul></section>' % ''.join(lis)
-        show_range = p['section'] in ('home', 'shaman')
-        rb = RANGEBAR_HTML if show_range else ''
+        rb = RANGEBAR_HTML
         body_html = p['body']
-        if show_range and 'id="mnm-quickinfo"' in body_html and RANGE_DEFAULT in RANGES_CACHE:
-            seed = RANGES_CACHE[RANGE_DEFAULT]['html']
+        if 'id="mnm-quickinfo"' in body_html:
+            dk = 'Fighter|' + RANGE_DEFAULT
             body_html = body_html.replace(
                 '<div id="mnm-quickinfo" class="quickinfo" data-mnm-quick="full"></div>',
-                '<div id="mnm-quickinfo" class="quickinfo" data-mnm-quick="full" data-seed="%s"><div class="qi-head"><h2 style="margin-top:0">Quick info · %s</h2><p class="dim" style="margin:.2em 0 .8em">Default band — change anytime in the header selector.</p></div>%s</div>' % (
-                    RANGE_DEFAULT, esc(RANGES_CACHE[RANGE_DEFAULT]['label']), seed))
+                '<div id="mnm-quickinfo" class="quickinfo" data-mnm-quick="full"><div class="qi-head"><h2 style="margin-top:0">Quick info · Fighter · %s</h2><p class="dim">Pick your class and level range in the bar at the top (remembered in this browser).</p></div>%s</div>' % (
+                    esc(RANGES_CACHE[RANGE_DEFAULT]['label']), PANELS[dk]))
         h = TEMPLATE.format(root=root, title=esc(p['title']), site=esc(SITE_NAME), desc=esc(p['desc']), section=p['section'], nav=nav,
                             crumbs=crumbs_for(p), verified=esc(p['verified']), left=left_nav(p['section']), h1=inline(p['h1']), body=body_html,
-                            sources=src, facts=p['ctx'].get('facts', ''), toc=toch, built=BUILD_DATE, rangebar=rb)
+                            sources=src, facts=p['ctx'].get('facts', ''), toc=toch, built=BUILD_DATE, rangebar=rb,
+                            quickjs=('<script src="{0}assets/quick-data.js"></script>'.format(root) if 'id="mnm-quickinfo"' in body_html else ''))
         h = relink(h, depth)
         fp = os.path.join(OUT, p['path']); os.makedirs(os.path.dirname(fp), exist_ok=True)
         open(fp, 'w', encoding='utf8').write(h)
@@ -809,7 +958,7 @@ def build_content():
                'WEAPONS': n.get('weapons', 'UNCONFIRMED'), 'STAT': n.get('stat', 'UNCONFIRMED'), 'EXTRA': extra, 'SOLO': n.get('solo', 'UNCONFIRMED'),
                'GROUP': n.get('group', 'UNCONFIRMED'), 'ROUTE': n.get('route', ''), 'FAMILY': n.get('family', ''), 'WIKIURL': CLASSES[c]['url'],
                'DDURL': DD.get(slug(c), {}).get('url', ''), 'MOD': CLASSES[c].get('modifier') or 'UNCONFIRMED', 'BONUS': CLASSES[c].get('bonus_advice') or 'Not stated on the wiki.',
-               'DESC': CLASSES[c].get('description', '')[:900]}
+               'DESC': CLASSES[c].get('description', '')[:900], 'OFFURL': 'https://monstersandmemories.com/class-' + slug(c)}
         for k, v in rep.items(): t = t.replace('%%' + k + '%%', v)
         meta, body = read_md_text(t)
         add_page('classes/%s.html' % slug(c), c, body, 'classes', meta, desc='%s class guide' % c)

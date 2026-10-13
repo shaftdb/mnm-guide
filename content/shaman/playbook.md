@@ -39,7 +39,7 @@ Consuming Pact (L12) restores mana for HP but **greatly reduces incoming healing
 | 8 | Root | Soulbind |
 | 9 | Consume | Summon Food / Drink |
 
-UNCONFIRMED Macro syntax isn't documented on the wiki pages I pulled. Check the in-game macro window before copying chat macros from other games. A useful pattern if supported: an "incoming slow" party announcement bound to the Omen of Lethargy key.
+UNCONFIRMED Macro syntax isn't documented on the wiki pages used here. Check the in-game macro window before copying chat macros from other games. A useful pattern if supported: an "incoming slow" party announcement bound to the Omen of Lethargy key.
 
 === Buff durations
 ## Buff and debuff durations (wiki)

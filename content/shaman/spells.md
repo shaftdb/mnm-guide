@@ -21,7 +21,7 @@ STRATEGY This is a priority order for when money is tight. Spell levels and effe
 | 16 | Greater Omen of Lethargy, Greater Pact of Renewal, Greater Pact of Haste, Sickness | Greater Ghostly Blight, Invisibility, Omen of Susceptibility, Berserker Rage, Ancestral Wisdom II | Tribal Rage (needs talismans), Blind (60 s cooldown), protections |
 | 20 | Greater Spirit Mending, Lesser Rite of Mending | Spirit Blight, Shrink, Lesser Regeneration | Holy Protection, Lesser Communion |
 | 24 | Pact of Restoration, Consume II, Curing Ritual | Ghostly Miasma, Greater Sickness, Greater Omens, Speed of the Predator | Lurching Impairment |
-| 28 | Rite of Mending, Ancestral Wisdom III | Greater Purge | Aspect of the Bear (Research, source UNCONFIRMED) |
+| 28 | Rite of Mending, Ancestral Wisdom III | Greater Purge | Aspect of the Bear: official deep dive says Shaman quest; no longer on the wiki spell list (UNVERIFIED) |
 | 32 | Hex of Lethargy, Greater Pact of Restoration, Rite of Haste, Plague | Speed of the Pack, Berserker Fury, Exceptional Spirit Mending, Greater Ghostly Miasma | Tribal Fury (2 Ritual Talismans) |
 | 36 | Consume III, Greater Rite of Mending | Hex of Susceptibility/Enfeeblement, Cleanse Disease | — |
 | 40 | **Ritual of Escape**, Pact of Revival, Ghostly Contagion | Greater Plague, Ancestral Wisdom IV, resists | — |

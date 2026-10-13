@@ -1,7 +1,7 @@
 ---
 title: %%CLASS%%
 section: classes
-sources: Wiki: %%CLASS%%|%%WIKIURL%%; Official deep dive|%%DDURL%%; Patch notes|https://account.monstersandmemories.com/community/patch_notes
+sources: Wiki: %%CLASS%%|%%WIKIURL%%; Official class page|%%OFFURL%%; Official deep dive|%%DDURL%%; Patch notes|https://account.monstersandmemories.com/community/patch_notes
 ---
 :::facts %%CLASS%% — Quick Facts
 Role: %%ROLE%%
@@ -17,6 +17,11 @@ Gear family: [%%FAMILY%%](/gear/%%FAMILY%%.html)
 %%EXTRA%%
 
 :::tabs
+=== Quick reference by level
+## %%CLASS%% quick reference by level
+FACT spell, item and zone rows come from the wiki and the official class page. STRATEGY marks picks and advice. Gaps are marked unverified.
+
+{{gen:classbands %%CLASS%%}}
 === Overview
 ## Role & strengths
 - **Role:** %%ROLE%%

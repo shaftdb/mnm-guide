@@ -8,7 +8,7 @@ sources: Wiki: Shaman (class quests)|https://monstersandmemories.miraheze.org/wi
 {{gen:starterquests Shaman}}
 
 :::unconfirmed Aspect of the Bear quest
-The official deep dive says Aspect of the Bear "will be rewarded from a Shaman quest during Early Access". The wiki lists it as a level-28 **Research** spell, and I found no wiki quest page for it. Treat both the source and the quest as unconfirmed.
+The official deep dive says Aspect of the Bear "will be rewarded from a Shaman quest during Early Access". The wiki Shaman page no longer lists it (it was a level-28 Research entry before rev 80920), and there is no wiki quest page for it. Treat both the source and the quest as unconfirmed.
 :::
 
 ## Quests for levels 10–30 (all classes)

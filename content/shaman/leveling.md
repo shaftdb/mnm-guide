@@ -12,7 +12,7 @@ Group role: Slow, HoT tank, buff
 Data: Wiki NPC levels, pulled at build time
 :::
 
-STRATEGY The band notes are my recommendations. The camp lists under each band are **generated** from the wiki zone NPC tables: every mob whose listed level overlaps the band. Many wiki mobs have no level and don't show up. Camps marked ★ are named. Always /consider before pulling.
+STRATEGY The band notes are recommendations. The camp lists under each band are **generated** from the wiki zone NPC tables: every mob whose listed level overlaps the band. Many wiki mobs have no level and don't show up. Camps marked ★ are named. Always /consider before pulling.
 
 :::tabs
 === 11–15

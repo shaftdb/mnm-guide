@@ -1,19 +1,19 @@
 ---
-title: Mats to give guild crafters
+title: Mats to hand to crafters
 section: shaman
-desc: Stockpile list and what to have crafted for Brewsham — verified recipes only
+desc: Stockpile list and what to have crafted for the Shaman — verified recipes only
 sources: Wiki: Skill Mining|https://monstersandmemories.miraheze.org/wiki/Skill_Mining; Wiki: Skill Smelting|https://monstersandmemories.miraheze.org/wiki/Skill_Smelting; Wiki: Skill Blacksmithing|https://monstersandmemories.miraheze.org/wiki/Skill_Blacksmithing; Wiki: Skill Lumberjacking|https://monstersandmemories.miraheze.org/wiki/Skill_Lumberjacking; Wiki: Skill Woodworking|https://monstersandmemories.miraheze.org/wiki/Skill_Woodworking; Wiki: Skill Fletching|https://monstersandmemories.miraheze.org/wiki/Skill_Fletching; Wiki: Skill Carpentry|https://monstersandmemories.miraheze.org/wiki/Skill_Carpentry; Wiki: Skill Tanning|https://monstersandmemories.miraheze.org/wiki/Skill_Tanning; Wiki: Skill Leatherworking|https://monstersandmemories.miraheze.org/wiki/Skill_Leatherworking; Wiki: Skill Jewelcrafting|https://monstersandmemories.miraheze.org/wiki/Skill_Jewelcrafting; Wiki: Shaman|https://monstersandmemories.miraheze.org/wiki/Shaman
 ---
 :::facts How this works
 You: Mine, chop, smelt → bank mats
 Guild: Free crafts with your mats
-Brewsham: Chain armor, blunt/piercing, WIS first (wiki)
-Alts noted: Shadow Knight (plate), Druid / Beastmaster (leather) when relevant
+The Shaman: Chain armor, blunt/piercing, WIS first (wiki)
+Other classes noted: Shadow Knight (plate), Druid / Beastmaster (leather) when relevant
 Rule: No invented recipes — UNVERIFIED if not on the wiki tables below
 :::
 
 :::tip Gathering plan
-Brewsham's gather-only route (nodes, SoW loops, smelting): [Gathering for Brewsham](/shaman/tradeskills.html).
+The Shaman's gather-only route (nodes, SoW loops, smelting): [Gathering route (Shaman)](/shaman/tradeskills.html).
 :::
 
 ## Stockpile vs vendor
@@ -36,7 +36,7 @@ Brewsham's gather-only route (nodes, SoW loops, smelting): [Gathering for Brewsh
 
 ## 1) Mining & smelted bars → crafts
 
-| Mat you hand over | Guild skill | Verified products that help Brewsham | Alt notes |
+| Mat you hand over | Guild skill | Verified products that help the Shaman | Alt notes |
 |---|---|---|---|
 | Copper Bars | Blacksmithing | Copper Chain set, Copper Mace (7 bars + Cracked Mace Mold), Copper Warhammer (9 bars), Copper Kite Shield (9 bars + Rawhide Strap), Copper Tower Shield (12 bars + Rawhide Strap) | Copper Plate for SK |
 | Copper Bars | Jewelcrafting | Wire (1 bar), Chain Links (6 bars), jewelry with Jade (WIS) / Emerald (STA) | Same jewelry for any class |
@@ -75,7 +75,7 @@ Bone / silk as named crafting reagents: **UNVERIFIED** on current wiki recipe ta
 
 ---
 
-## What to have crafted (Brewsham)
+## What to have crafted (Shaman)
 
 Ask guild crafters for these. Quantities are from wiki recipe tables. Molds/tools the crafter already owns are noted separately.
 
@@ -168,4 +168,4 @@ Rough Thread / Cloth Padding sources: **UNVERIFIED** exact drop tables here — 
 5. Corroded bronze / tattered rawhide → smith & leatherworker scrap loops  
 6. Fine Wood / Limestone → higher tanning tiers later  
 
-Gathering routes: [Gathering for Brewsham](/shaman/tradeskills.html).
+Gathering routes: [Gathering route (Shaman)](/shaman/tradeskills.html).

@@ -1,0 +1,611 @@
+{
+ "Archer": {
+  "url": "https://monstersandmemories.com/class-archer",
+  "archetype": "High-Mobility Marksman Tinkerer",
+  "roles": "Ranged DPS",
+  "races": "Deep Elf, Goblin, Halfling, High Elf, Human, Ogre, Wood Elf",
+  "identity": [
+   "The Archer is a ranged combatant, focused on debilitating targets with a diverse selection of gadgetry before striking them down with exceptional precision. The bow is their primary weapon, but specialized arrowheads expand their utility. These arrowheads give every shot a purpose, and arrow crafting before an adventure ensures that the Archer is ready for any situation.",
+   "Archers are highly mobile, having the ability to reposition themselves and escape when pressed. They can fire while on the move, create distance in a hurry, and temporarily conceal themselves in order to line up a devastating shot, rewarding patience and timing.",
+   "Where Rangers rely on their fieldcraft, Archers utilize tinkered solutions. Mechanical traps, deployable gadgets, and crafted contraptions give them unmatched control over the battlefield, a strength few would dare to challenge."
+  ],
+  "traits": [
+   "Physical ranged DPS with no magic",
+   "Can fire at a reduced speed while moving",
+   "Has access to specialty arrowheads, including explosive tips, entangling nets, concealing smoke, and more (key abilities require specific arrowheads, so what you carry matters)",
+   "Utilizes tinkered traps including caltrops, nets, and bombs; their tools feel crafted and mechanical, rather than foraged like a Ranger",
+   "Can fire a quick volley while repositioning",
+   "Can leap backward when enemies close in",
+   "Can temporarily conceal themselves to empower their first shot upon reemerging"
+  ],
+  "changing": [
+   "Archer updates are primarily thematic. We’re not overhauling their core abilities, but rather tightening up their focus. You can expect the same ranged DPS role with a stronger emphasis on what makes the class distinct: power from preparation and positioning."
+  ],
+  "more": [
+   "Physical skill and technique as the primary source of power",
+   "Loadout-driven gameplay using specialized arrows and traps",
+   "Emphasis on planning, positioning, and resource management"
+  ],
+  "less": [
+   "Magic and elemental abilities",
+   "Passive or automatic damage"
+  ]
+ },
+ "Bard": {
+  "url": "https://monstersandmemories.com/class-bard",
+  "archetype": "Fast-Moving Song Twister",
+  "roles": "Support, Utility",
+  "races": "Dwarf, Halfling, Human, Wood Elf",
+  "identity": [
+   "The Bard is a constant performer, always moving and weaving music into the flow of battle. Their magic comes from layering multiple songs together, creating shifting waves of support, disruption, and control that follow them wherever they go. The Bard fights in rhythm, striking between verses while carrying the instrument that shapes their style.",
+   "Their range is wide. They can lift allies, weaken enemies, steady the pace of a fight, or turn its momentum with a well‑timed performance. Instruments define their approach, each pushing their music in a different direction and giving them a strong sense of identity.",
+   "A Bard’s mastery comes from keeping their performance alive under pressure: choosing the right blend of songs, maintaining the flow, and adapting their rhythm as the battle changes around them."
+  ],
+  "traits": [
+   "Support‑focused hybrid class with broad access to most spell types, including buffs, debuffs, crowd control, damage‑over‑time, and regeneration",
+   "Songs function as group auras that affect all allies within range",
+   "Songs have short durations and rely on twisting to maintain multiple effects simultaneously",
+   "Songs typically have no mana cost and can be used while moving",
+   "Has access to different families of instruments, including brass, string, wind, and percussion; each providing category‑specific bonuses (and some are required to play specific songs)",
+   "Can temporarily charm enemies as a means of crowd control, but not reliably enough to serve as a rotation option"
+  ],
+  "changing": [
+   "The Bard already has a clear and distinct role, so the update is more about filling gaps. Their current song selection is thin on the damage side, and instruments have functioned more as an optional bonus than a central part of play. Both are changing."
+  ],
+  "more": [
+   "Depth and range in song selection, including a larger and more meaningful damage offering",
+   "Instruments as a normal part of play, including more songs that require a specific instrument type",
+   "Social and non-combat songs, giving the Bard room to contribute outside of fights"
+  ],
+  "less": [
+   "Charm as a sustained playstyle"
+  ]
+ },
+ "Beastmaster": {
+  "url": "https://monstersandmemories.com/class-beastmaster",
+  "archetype": "Animal-Taming Primal Brawler",
+  "roles": "Melee DPS, Pet",
+  "races": "Deep Gnome, Goblin, Halfling, Human, Ogre, Troll, Wood Elf",
+  "identity": [
+   "The Beastmaster is a leather-armored melee brawler who fights without magic, instead choosing to have a bonded beast at their side. Where other classes channel supernatural forces, the Beastmaster draws on something rawer: physical power and a deep connection to the animal world.",
+   "One animal fights alongside them as a persistent combat partner, while others aid them through their toolkit of bestial abilities. The Beastmaster is capable of strengthening both themselves and their companion, emphasizing the bond they share and their reliance on one another.",
+   "Animal-inspired stances shift how the Beastmaster fights, but they aren’t magical; they evoke the instincts of someone who’s spent so much of their life living among animals that they’ve started to become one."
+  ],
+  "traits": [
+   "Wields two-handed weapons or double-fisted claws",
+   "Maintains one persistent animal companion that fights alongside them in melee combat",
+   "Companion must be healed, cared for, and revived if it dies in combat",
+   "Uses a taming mechanic to acquire companions that is distinct from summoning",
+   "Temporarily calls upon hawks, rats, and other creatures in specific abilities",
+   "Has abilities that can buff them, their companion, and party members",
+   "Has bestial-themed stances for different combat (damage, defense) and utility modes (speed, stealth, resistance)",
+   "Has survivalist abilities including self and companion heals"
+  ],
+  "changing": [
+   "The Beastmaster is leaving behind its roots as a Shaman hybrid. The spirit world connection, shamanistic abilities, and swarm pets are going away entirely. What replaces them is a more grounded identity as a primal melee fighter, whose power comes from physical mastery and their bond with animals, not magical tradition."
+  ],
+  "more": [
+   "Two-handed weapons and double-fisted claws as weapon options",
+   "Animal-themed abilities and contextual creatures throughout the toolkit",
+   "Primal stances that buff the Beastmaster, their companion, and the party",
+   "Beastmaster and companion-specific survival abilities"
+  ],
+  "less": [
+   "Shared abilities with Shamans",
+   "Traditional hybrid role, instead becoming a unique class",
+   "Swarm pet mechanics"
+  ]
+ },
+ "Cleric": {
+  "url": "https://monstersandmemories.com/class-cleric",
+  "archetype": "Divine Conduit",
+  "roles": "Healer, Support",
+  "races": "Deep Dwarf, Deep Elf, Dwarf, Gnome, Halfling, High Elf, Human, Var'nai",
+  "identity": [
+   "The Cleric is a servant of their deity, bound by divine law. They look the part of a holy warrior, clad in heavy armor with shield and weapon, but their power flows through their words. Prayers, invocations, and divine commands are how their faith acts in the world: healing the wounded, shielding the faithful, and smiting the unworthy.",
+   "In a group, the Cleric is indispensable. Resurrections, healing, and divine protection make them the gold standard of healers; not flashy, but extraordinarily reliable. Their heavy armor means they can take hits while casting, and they can hold the line as an off-tank when the situation demands it.",
+   "Against the undead and other abominations, the Cleric is particularly formidable. Their deity's authority, channeled through spoken command, can drive the walking dead back or destroy them outright through holy word alone."
+  ],
+  "traits": [
+   "Premier healing class",
+   "Uses prayer-based healing and divine magic",
+   "Wears heavy armor and a shield while bearing blunt melee weaponry",
+   "Capable of off-tanking; their heavy armor lets them absorb hits while casting",
+   "Has access to resurrection spells, powerful heals, and defensive buffs",
+   "Has dedicated anti-undead spells"
+  ],
+  "changing": [
+   "The biggest additions to the Cleric are on the healing side, including a larger toolkit with more situational options instead of more of the same. It’s also receiving a clearer separation from the Paladin; where Clerics channel divine power through word and prayer, Paladins do so through martial devotion. Spells that blurred that line are going away.",
+   "Their heavy armor is also going to play a bigger role. They’ll be able to take hits while casting, and that's being leaned into rather than treated as a footnote."
+  ],
+  "more": [
+   "Situational options in their toolkit of heals",
+   "Durability from their armor, capable of absorbing hits while casting",
+   "Unique utility that separates them from other healers"
+  ],
+  "less": [
+   "Spells and identity shared with the Paladin"
+  ]
+ },
+ "Druid": {
+  "url": "https://monstersandmemories.com/class-druid",
+  "archetype": "Jack-of-All-Trades Caster",
+  "roles": "Healer, Magic DPS, Support",
+  "races": "Deep Gnome, Goblin, Halfling, Human, Troll, Wood Elf",
+  "identity": [
+   "The Druid is nature magic’s broadest practitioner. Though a healer first, they're equally capable of shaping battles through versatility, persistence, and raw elemental force. Their magic draws upon storms, wind, and the living world, giving them tools that reach far beyond simple restoration.",
+   "Their connection to nature extends to movement and protection. They can transport their group across great distances and pull allies out of danger when a fight turns against them. Their protective magic answers every strike with nature’s retaliation, turning aggression back on the attacker.",
+   "The Druid is also exceptionally self‑reliant. Their influence over animals allows them to bend nature to their will, giving them powerful advantages when traveling or fighting alone. Adaptable and resourceful, they move comfortably between supporting a group and thriving independently."
+  ],
+  "traits": [
+   "Specializes in nature magic, ranging from damage‑over‑time and elemental nukes to healing‑over‑time and snares",
+   "Wields teleports, evacuates, damage shields, regeneration, and high‑impact nukes as signature tools",
+   "Functions as a primary healer with strong direct‑damage capabilities at the cost of a lighter buff suite than the Shaman",
+   "Excels at solo play through control over animals and self‑sufficiency",
+   "One of the strongest solo classes"
+  ],
+  "changing": [
+   "The Druid's role isn't changing. They remain a primary healer with genuine damage capabilities and strong solo utility.",
+   "The update focuses on depth over breadth. Key spell lines are getting better upgrades and scaling, giving the class more to work with in the areas it already owns. In exchange, some of the more generic utility is going away, particularly where it overlaps with other priest classes."
+  ],
+  "more": [
+   "Depth in core nature magic lines",
+   "Upgrades and scaling for existing spells",
+   "Unique utilities that feel distinctly Druid"
+  ],
+  "less": [
+   "Elemental spells without a nature theme",
+   "Spells shared with the Ranger"
+  ]
+ },
+ "Elementalist": {
+  "url": "https://monstersandmemories.com/class-elementalist",
+  "archetype": "Elemental Binder",
+  "roles": "Magic DPS, Pet",
+  "races": "Deep Dwarf, Deep Elf, Deep Gnome, Dwarf, Gnome, High Elf, Human, Ogre",
+  "identity": [
+   "The Elementalist commands the classical forces of fire, water, earth, and air, shaping them into both destructive magic and living servants. Their power is rooted in direct elemental expression rather than arcane theory, setting them apart from casters who rely on abstract schools or non‑elemental disciplines. Their magic is forceful, focused, and tied closely to the nature of the element they choose to wield.",
+   "Their elemental servant is the centerpiece of their craft: a manifestation of raw elemental power that fights beside them and responds to their guidance. The Elementalist blends their own spellcasting with the actions of this companion, layering effects, amplifying weaknesses, and creating combinations that reflect the strengths of each element.",
+   "They’re comfortable fighting alone, relying on their servant to hold the front line while they strike from afar. Their bond with elemental forces grants them resistance to the elements they command, and their deep study of elemental behavior produces practical expressions of their mastery."
+  ],
+  "traits": [
+   "Specializes in elemental magic: fire, water, earth, and air",
+   "Functions as a pet‑based summoner with strong direct‑damage nukes",
+   "Commands an elemental servant that can fulfill unique roles based on its element",
+   "Uses spell‑and‑pet synergy to apply elemental debuffs, trigger elemental procs, and stack imbued effects",
+   "Summons elemental weapons and focused utility items",
+   "Performs well solo by relying on their pet to tank while casting from afar",
+   "Benefits from innate elemental resistances tied to their chosen school",
+   "Gains access to thematic elemental utility effects"
+  ],
+  "changing": [
+   "The Elementalist's core is staying intact. The update is about tightening the theme and adding depth where the class currently runs thin.",
+   "Direct damage is getting more variety, as each element currently only has one spell line. Elemental servants are also getting more to do, with deeper interactions between pet abilities and the Elementalist's own spells. On the conjuration side, generic utility items like food and bandages are being replaced with elemental-themed equivalents that better fit the theme."
+  ],
+  "more": [
+   "Elemental servant interactions and spell-and-pet synergy",
+   "Elemental-themed conjurations",
+   "Variety in direct-damage spells across all four elements"
+  ],
+  "less": [
+   "Generic convenience conjurations",
+   "Spells that don't fit the elemental theme"
+  ]
+ },
+ "Enchanter": {
+  "url": "https://monstersandmemories.com/class-enchanter",
+  "archetype": "Masterful Conductor",
+  "roles": "Crowd Control, Support, Utility",
+  "races": "Deep Elf, Deep Gnome, Dwarf, Gnome, Goblin, High Elf, Human, Troll, Var'nai",
+  "identity": [
+   "The Enchanter is a master of mental influence, shaping the flow of battle through sheer force of will. Their magic bends perception, alters behavior, and disrupts enemies in ways no other caster can match. Where the Bard supports through music and presence, the Enchanter supports through focused spellcraft, turning the battlefield into a stage they control.",
+   "Their strength lies in managing threats rather than confronting them directly. They can halt enemies in place, redirect their aggression, or turn them against their own allies. A minor summoned companion adds to their presence, but their true power comes from orchestrating the fight itself.",
+   "Their enhancement magic is highly prized. They can sharpen the minds of casters, accelerate the strikes of melee fighters, shield allies with protective wards, and weaken enemy resistances to amplify the damage of every spellcaster around them. Illusions further define their identity, allowing them to shift appearances in ways that carry real social and practical impact throughout the world.",
+   "The Enchanter demands constant awareness. Their tools are powerful yet fragile, and maintaining control requires attention to every moment of the fight. A good Enchanter elevates the group; a master is irreplaceable."
+  ],
+  "traits": [
+   "Premier crowd-control class",
+   "Relies on Charisma as a primary stat, directly affecting the strength of their spells",
+   "Controls encounters through incapacitates, stuns, and charms, enabling CC‑driven strategies that can manage the most chaotic situation",
+   "Has a suite of powerful buffs, including mana regeneration, melee hastes, and damage absorption",
+   "Has debuffs that reduce enemy resistances and slow their attacks",
+   "Uses illusions to alter appearances for social, factional, and situational utility"
+  ],
+  "changing": [
+   "The Enchanter’s existing toolkit is solid and their identity is clear, so the update focuses on scaling and depth over addition and removal. Charm is being tuned; it's currently stronger than intended and will be brought into better balance, but it remains a core part of how the class plays. Illusions are getting more practical value, expanding their usefulness in social and factional situations."
+  ],
+  "more": [
+   "Scaling and upgrades in core ability lines",
+   "Practical value from illusions"
+  ],
+  "less": [
+   "Generic utility spells that don't reflect the Enchanter's focus on mental influence and control"
+  ]
+ },
+ "Fighter": {
+  "url": "https://monstersandmemories.com/class-fighter",
+  "archetype": "Armored Juggernaut",
+  "roles": "Tank, Melee DPS",
+  "races": "Deep Dwarf, Deep Elf, Dwarf, Gnome, Goblin, Halfling, Human, Ogre, Troll, Var'nai, Wood Elf",
+  "identity": [
+   "The Fighter is the purest expression of physical defense: a front‑line specialist built to withstand punishment and command enemy attention. Their strength comes not from magic or supernatural force, but from discipline, training, and the instinctive understanding of how to survive in the thick of a fight.",
+   "Their approach to battle relies on practiced stances that shift their strengths to match the situation. These aren’t magical transformations, but the refined habits of a veteran who knows how to read a battlefield. Their presence is reinforced by powerful shouts that rally allies or unsettle foes, giving them a small but meaningful layer of utility.",
+   "What sets the Fighter apart is their ability to anticipate danger. They can brace against incoming harm, shrug off threats, and disrupt enemies with crushing physical force. Their strikes can weaken armor, stagger opponents, and create openings that turn the tide of melee engagements.",
+   "In a group, the Fighter is the anchor. No other class holds enemy attention as reliably, and no other front‑liner maintains control with the same consistency. Their combination of durability, pressure, and presence makes them the default choice for any ambitious adventuring party."
+  ],
+  "traits": [
+   "Fights exclusively with melee weapons, utilizing a shield for tanking and dual-wield or two‑handed weapons for damage",
+   "Has a strong toolkit of physical debuffs and preventative counters to incoming damage",
+   "Operates on a shared cooldown pool that forces meaningful choices in each combat cycle, with stances that shift the kit toward offense, defense, or control",
+   "Performs best against melee opponents and gains additional value when defending due to retaliatory mechanics",
+   "Possesses the strongest aggro‑control tools in the roster, enabling unmatched threat generation and stability"
+  ],
+  "changing": [
+   "The Fighter is being reshaped into a dedicated tank rather than one that also competes on damage. They’ll gain a broader aggro and survival toolkit, more ways to counter incoming damage, and a stronger retaliation suite. Overall damage output comes down in exchange."
+  ],
+  "more": [
+   "Taunts and threat-management tools",
+   "Tanking problem solvers",
+   "Retaliation abilities"
+  ],
+  "less": [
+   "Melee DPS, but still competitive"
+  ]
+ },
+ "Inquisitor": {
+  "url": "https://monstersandmemories.com/class-inquisitor",
+  "archetype": "Anti-Magic Tyrant",
+  "roles": "Tank, CC",
+  "races": "Deep Dwarf, Deep Elf, High Elf, Human",
+  "identity": [
+   "The Inquisitor is a plate-armored enforcer built around a single premise: the denial and destruction of magical threats. They’re cold and forbidding, shaped by a philosophy that treats arcane power as something to be broken, drained, and turned against its wielder. Where the Fighter is the answer to physical danger, the Inquisitor is the specialist called in when the enemy wears robes.",
+   "Their toolkit is built on psychological dominance and magical disruption. They interrupt spells mid-cast, strip abilities entirely, and seize brief control of enemy minds to turn them against their own allies. The longer a fight goes on, the worse it gets for spellcasters; their options are shut down and their fates sealed with a blade.",
+   "Stolen magic never goes to waste, as the Inquisitor's deep understanding of magical workings lets them redistribute what they drain to allied casters or use it to enhance their magical abilities. They become a conduit for power rather than a true caster, making them unexpectedly valuable to caster-heavy groups beneath the surface of an otherwise predatory class."
+  ],
+  "traits": [
+   "Plate-wearing melee tank with a focus on mental domination and anti-magic specialization",
+   "Can silence, dispel, mana drain, and produce magical barriers",
+   "Excels against spellcasters while remaining capable against physical opponents",
+   "Employs mind control tools including a brief charm, ability denial, and mental shutdown",
+   "Redistributes stolen mana to allies and can enhance their magical abilities"
+  ],
+  "changing": [
+   "The Inquisitor's identity is being separated from the Enchanter. Both classes use mind control and ability denial, but they’ll feel very different in practice. Inquisitor versions of these tools are being rebuilt around aggression and proximity rather than finesse.",
+   "The grab-bag utility is being cut and consolidated, freeing up ability slots for tools that actually fit the class. Against melee opponents, the Inquisitor now has options, but using them costs mana, which creates a real tradeoff against their primary role."
+  ],
+  "more": [
+   "Fast casting and short-range abilities",
+   "Unique abilities focused on eroding an opponent’s willpower, making them more vulnerable to attack and damaging their psyche",
+   "Consolidation of existing abilities to take up less slots while being more effective",
+   "Differentiation in their tanking style",
+   "Tools to help against melee opponents at the cost of mana"
+  ],
+  "less": [
+   "Shared abilities and identity with the Enchanter",
+   "Broad utility"
+  ]
+ },
+ "Monk": {
+  "url": "https://monstersandmemories.com/class-monk",
+  "archetype": "Perfected Weapon",
+  "roles": "Melee DPS, Puller",
+  "races": "Deep Elf, Human, Ogre, Var'nai",
+  "identity": [
+   "The Monk has trained their body into a perfected weapon, requiring no heavy armor or magic. Their power comes entirely from physical mastery: bare hands, kicks, fist weapons, and staves, making their feats seem superhuman, but every one of them is the product of relentless training.",
+   "In a group, the Monk is the premier puller. Their feign death technique allows them to instantly drop a bad encounter or cleverly split an enemy away from its pack, while fast movement and an indifference to vertical terrain gives them a range that no other class can match. When the group needs a target brought to them cleanly, the Monk is the answer.",
+   "Their durability comes from movement and positioning rather than armor; they avoid punishment by not being where the blow lands. They can hold the line as an off-tank when needed, heal themselves in the field, and apply physical techniques that impair both melee and caster opponents.",
+   "The Monk’s stance system lets them emphasize different aspects of their martial art depending on the situation, while long-cooldown burst windows reward patience and timing. Their damage has a distinct rhythm that's not about big hits, but instead a relentless, flowing storm of rapid strikes."
+  ],
+  "traits": [
+   "Utilizes bare fists, kicks, fist weapons, and staves in combat",
+   "Can feign death as a cornerstone pulling and escape tool",
+   "Can serve as an avoidance-based off-tank via dodges and blocks; limited in taunt toolkit",
+   "Has stances that enhance either damage, avoidance, or speed, with shared cooldowns that create meaningful combat choices",
+   "Has disciplines that provide powerful, long-cooldown bursts of offense or near-invulnerability",
+   "Has physical debuffs to impair melee and caster opponents",
+   "Capable of soloing due to their self-reliance and can mend their own wounds"
+  ],
+  "changing": [
+   "The biggest change involves the Monk’s combat choices. Their current toolkit is lean in a way that flattens moment-to-moment gameplay, so through expansion of the shared cooldown system, players will be able to make genuine decisions during a fight rather than settling into a fixed rotation. Ability scaling and upgrades are also being fleshed out across the full level range.",
+   "The other change is thematic. The elemental theme in their current abilities is being replaced with lore and aesthetics that belong specifically to the Monk. The class earns its identity through what it does, not through buffs it hands to others, and the ability design is being brought in line with that."
+  ],
+  "more": [
+   "Meaningful combat choices through expanded shared cooldowns",
+   "Depth, scaling, and upgrades across the full level range",
+   "Monk-specific lore and thematic identity in ability design",
+   "Tools to assist with scouting and pulling",
+   "Self-reliance"
+  ],
+  "less": [
+   "Generic elemental themes",
+   "Buffs for other players"
+  ]
+ },
+ "Necromancer": {
+  "url": "https://monstersandmemories.com/class-necromancer",
+  "archetype": "Master of Death",
+  "roles": "Magic DPS, Pet, Utility",
+  "races": "Deep Dwarf, Deep Elf, Deep Gnome, Gnome, Goblin, Human, Troll, Var'nai",
+  "identity": [
+   "The Necromancer channels power through death rather than wielding it directly. Their undead minion holds the front line while they work from afar, and much of their impact flows through that bond, empowering their pet and casting in concert with it.",
+   "They wear enemies down through corruption and decay, constantly stealing their life force and redirecting it toward themselves or their next spell. Each victim provides value to the Necromancer in some shape or form, whether by bestowing life, granting power, or becoming their next servant.",
+   "The dead answer to the Necromancer in ways they refuse everyone else, and that dominion shapes both how they fight and what they can survive. They live on the red line, perpetually trading vitality for more power, and those who know exactly how far they can push it are the ones who reap the greatest rewards."
+  ],
+  "traits": [
+   "Pet-focused magic DPS",
+   "Uses corruption and decay as primary damage sources, along with life-drain effects for sustain",
+   "Undead minion functions as a capable tank, holding aggro and absorbing punishment while they cast from afar",
+   "Pet progresses from humble skeletal forms to increasingly dire undead types; unique pet types are collectable through world exploration",
+   "Can temporarily raise fallen enemies as additional pets",
+   "Can control, disempower, and bend undead enemies to their will",
+   "Drains life force, strength, and vitality from enemies and redirects it to themselves, their pet, or their allies",
+   "Has defensive shielding options that offset the health cost of resource mechanics",
+   "Has a variety of CC options including fears, snares, and the ability to drop out of a fight entirely",
+   "One of the strongest solo classes in the roster"
+  ],
+  "changing": [
+   "The Necromancer's fantasy isn't changing. The update is about delivering more of it by pulling away from generic caster utility and expanding on the themes it already owns. The biggest shifts are in spell design; life and death manipulation, corruption, and the bond with their undead minion are all getting more depth and mechanical expression.",
+   "Generic arcane utility that could belong to any caster is going away. The pet system is also expanding with more progression, collectable pet types, and a more distinct interaction tempo that separates the Necromancer from the Elementalist despite both being pet-heavy classes.",
+   "Health and resource management are getting a risk/reward mechanic that makes the red line feel like a genuine playstyle rather than a hazard to avoid."
+  ],
+  "more": [
+   "Unique utility tied to death, corruption, and life drain",
+   "Pet collection and expanded pet progression",
+   "Resource tap and transfer abilities",
+   "Risk/reward mechanics around health and resource management"
+  ],
+  "less": [
+   "Generic magical utilities that don't fit the death theme"
+  ]
+ },
+ "Paladin": {
+  "url": "https://monstersandmemories.com/class-paladin",
+  "archetype": "Warrior of Faith",
+  "roles": "Tank, Healer",
+  "races": "Deep Dwarf, Deep Elf, Dwarf, Gnome, Halfling, High Elf, Human",
+  "identity": [
+   "The Paladin is a protector bound by oath to their deity. They’re front-line fighters whose divine power flows not through words or spells, but through their body, their weapon, and their will. With heavy armor and shield raised, they deliver divine fervor in every strike.",
+   "Their healing reflects that same physicality. It comes through touch and force of devotion rather than incantation: a direct transfer of divine energy that can pull an ally back from the edge in an instant. They can also turn that devotion inward, absorbing harm that would otherwise fall upon someone else.",
+   "Their faith radiates outward even when they aren't acting on it. Allies fight better in their company, and the Paladin can shape the ground they fight on, creating zones of divine power that extend their influence beyond their own strikes.",
+   "Against the undead and other abominations, the Paladin is relentless. Where the Cleric smites the dead through holy word, the Paladin drives them back through direct combat and sheer divine presence."
+  ],
+  "traits": [
+   "Wears plate armor and a shield for tanking, or wields a two-handed weapon for DPS",
+   "Divine power is expressed through melee strikes and physical contact rather than spellcasting",
+   "Fast-casting emergency healer at a high mana cost, excelling at the last-second save rather than sustained output",
+   "Can absorb harm intended for allies, sacrificing their own resources or health in service of others",
+   "Can consecrate the ground with distinct properties, giving them terrain control that feels physical rather than arcane",
+   "Has a passive divine aura that provides ongoing benefits to nearby allies",
+   "Has a strong anti-undead toolkit expressed through combat and presence",
+   "Has a distinct tanking style built around divine resilience and protection"
+  ],
+  "changing": [
+   "The Paladin is gaining some distance from the Cleric. Both serve the divine protector fantasy, but they’re being separated at the mechanical level so they feel nothing alike in practice. Thematically, the Cleric works through prayer and incantation, whereas the Paladin works through physical action, touch, and presence. Abilities that blurred these lines are being removed or reconfigured.",
+   "The other shift is in healing. The Paladin is becoming more distinct by using fast, mana-intensive heals as last-second saves rather than providing sustained healing. The ability to take damage on behalf of their allies reinforces this theme.",
+   "Auras and consecrated ground are becoming the primary vehicle for party utility, replacing more generic buff and spell options."
+  ],
+  "more": [
+   "Physical expression of divine power through strikes, touch, and presence",
+   "Auras and consecrated ground as primary party utility",
+   "Fast, mana-intensive emergency healing",
+   "Sacrifice mechanics that absorb harm on behalf of allies",
+   "Distinct tanking identity separate from other tank classes"
+  ],
+  "less": [
+   "Abilities shared with or derived from the Cleric",
+   "Traditional spellcasting and incantation",
+   "Generic utility"
+  ]
+ },
+ "Ranger": {
+  "url": "https://monstersandmemories.com/class-ranger",
+  "archetype": "Wilderness Veteran",
+  "roles": "Melee + Ranged DPS, Utility",
+  "races": "Deep Elf, Dwarf, Goblin, Halfling, Human, Ogre, Wood Elf",
+  "identity": [
+   "The Ranger is a chain-wearing martial class whose identity is rooted in the wild. Their skills have been honed by a lifetime spent living off the land, not by channeling nature as a magical force like the Druid. What seems like magic to others is accumulated fieldcraft: old wisdom, remembered paths, and skills refined through years of necessity.",
+   "In combat, they move fluidly between bow and blade depending on what the situation demands, and are capable of holding the line in a pinch. Outside of combat, however, is where the Ranger's full value emerges. They’re masters of travel, moving themselves and their group across terrain with ease. Their affinity with the land runs deepest in outdoor zones, where they can track down what others would miss, move through dangerous territory unseen, and live off the land unabated.",
+   "Between fights, practical knowledge replaces spells. Wounds are dressed, ailments treated, and downtime cut short through their fieldcraft. The Ranger's skills turn a simple camp into something more—the group recovers better, and the wilderness provides in ways it wouldn't for anyone else."
+  ],
+  "traits": [
+   "Proficient with a bow and dual-wielded blades",
+   "Capable as an off-tank with limited aggro control",
+   "Can track nearby creatures",
+   "Master of snares and movement impairment effects",
+   "Has travel and escape abilities that benefit their party outdoors",
+   "Can draw food and unique supplies from the natural environment",
+   "Can enhance campfires to provide a suite of beneficial rest effects for the group",
+   "Offers out-of-combat healing and curing through natural remedies",
+   "Strongest in outdoor zones"
+  ],
+  "changing": [
+   "The Ranger is moving away from its druidic inspiration and toward a distinct identity as a wilderness veteran. The core remains familiar: sword, bow, and deep knowledge of the natural world, but the toolkit is shifting to match that theme. Generic magical utility and elemental abilities are going away, replaced with tools that feel physical rather than conjured.",
+   "The fieldcraft side of the class is getting more room. Campfire enhancement and natural remedy healing are new additions that give the Ranger an out-of-combat utility role. Travel and escape abilities are expanding, reinforcing mastery of outdoor movement as a class identity rather than a footnote. Snares and movement impairment effects are becoming genuine areas of depth rather than incidental tools."
+  ],
+  "more": [
+   "Distinct identity from Druids and other hybrid classes",
+   "Depth in snares and movement impairment effects",
+   "Campfire enhancement and natural remedy healing as out-of-combat utilities"
+  ],
+  "less": [
+   "Shared Druid abilities",
+   "Generic magical utility and elemental-themed abilities"
+  ]
+ },
+ "Rogue": {
+  "url": "https://monstersandmemories.com/class-rogue",
+  "archetype": "Opportunistic Striker",
+  "roles": "Melee DPS",
+  "races": "Deep Elf, Deep Gnome, Dwarf, Gnome, Goblin, Halfling, Human, Troll, Wood Elf",
+  "identity": [
+   "The Rogue is a purely martial class built around stealth, daggers, and the art of striking before being seen. They use no magic, only exceptional physical skill, a pair of blades, and a collection of debilitating poisons. Other classes may pass through the shadows, but the Rogue lives there.",
+   "Where the Archer brings specialized arrowheads to control a situation, the Rogue brings poisons. Poisons are an essential part of their toolkit, applying debilitating effects, persistent damage, and physical impairments that compound over the duration of a fight. Preparation matters, and a Rogue never travels far without the right toolkit of vials at their disposal.",
+   "Outside of combat, their stealth opens parts of the world that are simply impassable to anyone else. They can scout ahead, slip past dangers, and set up a fight on terms entirely of their own choosing. In combat, that same mastery becomes an escape and re-engagement tool. They can disappear from a fight and return from the shadows when the moment suits them, making the Rogue as hard to pin down as they are dangerous to ignore."
+  ],
+  "traits": [
+   "Melee dagger specialist",
+   "Master of thrown weapons, capable of landing critical hits with them",
+   "Primarily deals damage with backstabs, requiring careful positioning",
+   "Utilizes alchemical poisons, from which they can choose a variety of different effects, including debuffs, damage over time, and physical impairments",
+   "Can incapacitate an unsuspecting target without breaking stealth",
+   "Has the most powerful form of invisibility in the roster, capable of traversing areas impassable to other classes",
+   "Can break engagement by jumping into stealth mid-fight",
+   "Has more escape and evasion tools than any other class"
+  ],
+  "changing": [
+   "Poisons are the biggest focus. The update expands the poison suite into a genuine preparation system with more options, more meaningful choices between them, and better scaling across the level range.",
+   "The combat ability selection is also getting fleshed out. The current rotation offers limited room for skill expression or meaningful choices. That's being addressed with a broader damage ability kit that gives experienced players more to work with without complicating the core."
+  ],
+  "more": [
+   "Options for poisons and meaningful pre-combat choices",
+   "Depth and variety in combat abilities",
+   "Ability scaling and upgrades across the full level range"
+  ],
+  "less": []
+ },
+ "Shadow Knight": {
+  "url": "https://monstersandmemories.com/class-shadow-knight",
+  "archetype": "Antihero Monster Hunter",
+  "roles": "Tank, Melee DPS",
+  "races": "Deep Dwarf, Deep Elf, Goblin, Human, Ogre, Troll",
+  "identity": [
+   "The Shadow Knight is a plate-armored tank who wields the power of darkness not in service of evil, but against it. Where the Paladin draws strength from devotion to a faith, the Shadow Knight has learned that fighting monsters often requires becoming something like one.",
+   "They’re relentless, morally gray hunters, and a career spent hunting monsters leaves marks. The Shadow Knight studies what they fight, adapting techniques and methods from a diverse range of enemies. They’re formidable combatants in any encounter, but against monsters they know, they wield an invaluable edge.",
+   "In fights that would exhaust a more conventional tank, the Shadow Knight is sustained through force: life steals and ability drains replenish their strength at the expense of their foes. They’re built for aggression as much as they are endurance, and that shapes every choice they make at the front line."
+  ],
+  "traits": [
+   "Wears plate armor and prefers a two-handed weapon, but is capable of using a shield if needed",
+   "Has higher damage output than the Paladin, but less pure mitigation than the Fighter",
+   "Uses life and strength drains which can be distributed to themselves or the party",
+   "Casts fast, short-ranged abilities suitable for tanking under pressure",
+   "Can collect monster-hunting abilities from past encounters",
+   "Thematically distinct from the Necromancer: no pets, no death magic, and the undead are just another monster to them"
+  ],
+  "changing": [
+   "The Shadow Knight is stepping away from necromancy as its driving lore and toward the monster hunter antihero fantasy. The sinister tone stays; the undead trappings don't.",
+   "The biggest addition is the monster lore system. Collectable abilities learned from specific monsters give the Shadow Knight a customization layer that rewards experience and planning. Drains and transfers remain central, but the ability suite around them is getting more depth and scaling across the full level range.",
+   "The class is also gaining the same fast-casting, short-range abilities as other knight classes. It retains its role as the high-damage tank with the dark edge, but the dedicated pet and ability sharing with the Necromancer are being cut."
+  ],
+  "more": [
+   "Monster hunter antihero identity and lore",
+   "Drains, transfers, and debilitating effects",
+   "Collectable abilities from monster encounters",
+   "Depth, upgrades, and scaling across the level range",
+   "Fast-casting, short-range abilities"
+  ],
+  "less": [
+   "Necromantic lore and strictly undead theming",
+   "Dedicated pets",
+   "Generic magical utility"
+  ]
+ },
+ "Shaman": {
+  "url": "https://monstersandmemories.com/class-shaman",
+  "archetype": "Spirit Caller",
+  "roles": "Healer, Magic DPS, Support",
+  "races": "Deep Gnome, Goblin, Human, Ogre, Troll, Var'nai, Wood Elf",
+  "identity": [
+   "The Shaman draws power from the spirit realm: ancestors, ancient forces, and the wisdom of those who’ve passed on. It’s a reverent relationship, distinct from the Cleric's divine law and the Druid's communion with the living world. Where others command or petition their power source, the Shaman listens, channels, and gives it form.",
+   "In a group, the Shaman's most defining contribution is enhancement. Powerful physical buffs make companions stronger, faster, and more durable, and their heals offer sustained recovery rather than short-lived bursts. On the other side of the battlefield, devastating debuffs sap the enemy’s strength and blunt their ability to threaten the party. A skilled Shaman doesn’t merely support; they reshape the terms of every fight.",
+   "The spirit realm bleeds into everything they do. Ancestral forces take visible form in their spells, not with companions or pets, but with vivid expressions of the power they channel, giving the Shaman's magic a presence that other casters lack."
+  ],
+  "traits": [
+   "Specializes in spiritual magic built around physical buffs, debuffs, healing over time, and damage over time",
+   "Has the strongest physical buff suite in the roster, capable of enhancing strength, speed, and endurance",
+   "Has signature melee slow and stat drain debuffs",
+   "Healing is built around sustained recovery",
+   "Can cannibalize themselves as a self-sustaining mana ability",
+   "Damage is focused on persistent DoTs with limited direct damage options",
+   "Manifests spirit animals as expressions of ancestral force in their spells, but not as pets",
+   "Has utilities tied to spiritual influence, including party escape and recovery tools"
+  ],
+  "changing": [
+   "The Shaman remains a strong healer, buffer, and debuffer with genuine damage potential. The update is about thematic focus and separation from classes they've drifted too close to.",
+   "The biggest shift is in lore and ability theming. Nature and cold magic are going away, replaced with expressions of the spirit realm. Generic magical utility is being cut and replaced with abilities that feel distinctly ancestral. The damage lineup is being focused more heavily on DoTs, and new spiritual utilities are being added with a focus around party escape and recovery.",
+   "Healing is also getting a pass to sharpen the distinction between the Shaman, Cleric, and Druid. Each healer should feel like a different tool for a different situation and, for the Shaman, that means leaning into their self-sustaining character."
+  ],
+  "more": [
+   "Spirit realm lore and ability theming throughout the toolkit",
+   "DoT focus in the damage lineup",
+   "Utilities tied to spiritual influence, including escape and recovery",
+   "Distinction as a healer from the Cleric and Druid"
+  ],
+  "less": [
+   "Nature and cold themes",
+   "Generic magical utility",
+   "Animal transformations and pets",
+   "Overlap with Druid utility"
+  ]
+ },
+ "Spellblade": {
+  "url": "https://monstersandmemories.com/class-spellblade",
+  "archetype": "Highly-Mobile Magic Swordsman",
+  "roles": "Melee DPS",
+  "races": "Deep Dwarf, Deep Elf, Dwarf, Gnome, High Elf, Human",
+  "identity": [
+   "The Spellblade is a melee fighter who channels arcane force through their weapon rather than directly. Telekinetic, electric, and pure arcane energy flow into their strikes, making them the most caster-like of the hybrid classes without pulling away from the front line.",
+   "Their combat has a rhythm built on choice. The nature of their attacks shifts depending on their magical infusions, and knowing when to hold that energy versus when to spend it defines how well a Spellblade performs. The fight rewards attention and timing rather than a fixed rotation.",
+   "Telekinesis makes them uniquely mobile: repositioning enemies, blinking behind targets, or freezing them in place to escape when pressed. They also shape the battlefield around them, creating zones that punish enemies who crowd too close and giving them control over the space they occupy, even in the middle of a melee."
+  ],
+  "traits": [
+   "Light-armored melee DPS",
+   "Harnesses magical force across telekinetic, electric, and arcane schools",
+   "Shifts between different weapon infusions, each with its own damage type and proc effects",
+   "Manages infusion cooldowns as a primary combat cycle",
+   "Conduit discharges the active infusion for a powerful burst at the cost of a cooldown",
+   "Can place stationary arcane fields and explosive zones that damage enemies within range",
+   "Can teleport behind a target and strike, or blink away from melee range when pressed",
+   "Uses telekinetic effects including knockback, root, and enemy repositioning"
+  ],
+  "changing": [
+   "Updates to the Spellblade are about focus and depth: fewer schools of magic, more expression within the ones that remain. Elemental magic is going away in favor of arcane, telekinetic, and electric schools that fit the class more naturally, and the one-off pet is being removed.",
+   "The infusion and conduit system is the heart of the combat experience, and the ability suite around it is being built out to give the Spellblade a more interesting and varied damage rotation. Spell lines are getting better progression and scaling across the full level range, and teleportation is being treated as a genuine combat mechanic rather than a utility footnote."
+  ],
+  "more": [
+   "Focus on the infusion and conduit system as the core combat cycle",
+   "Teleportation as a central combat mechanic",
+   "Arcane field and damage zone tools",
+   "Depth and scaling across the full level range"
+  ],
+  "less": [
+   "Elemental magic",
+   "Off-tank focus",
+   "Generic caster utility"
+  ]
+ },
+ "Wizard": {
+  "url": "https://monstersandmemories.com/class-wizard",
+  "archetype": "Arcane Artillery",
+  "roles": "Magic DPS",
+  "races": "Deep Elf, Deep Gnome, Dwarf, Gnome, High Elf, Human",
+  "identity": [
+   "The Wizard is the ultimate master of magic, using deep arcane knowledge to unleash devastating assaults on their foes. Though they wield most schools of magic in some capacity, their strength lies in manipulating its rawest forms: arcane, telekinetic, and electric. Where the Spellblade uses these schools physically, the Wizard handles them directly in their spells.",
+   "The Wizard’s toolkit is varied, capable of striking one target or many. They’re masters of the kill shot; when a powerful spell lands a killing blow, they can recuperate some of their mana as a reward for their precision and aggression.",
+   "Spellcrafting adds a creative dimension beyond choosing which nuke to cast. Out of combat, Wizards can research and customize spells. In combat, they can combine magical elements on the fly to adapt to the situation.",
+   "As the classic glass cannon of the roster, Wizards are fragile and mana-hungry, but if handled skillfully, none can compare to their sheer destructive power."
+  ],
+  "traits": [
+   "Ranged magical DPS, primarily using arcane, telekinetic, and electric schools of magic, though they’ll keep some signature elemental spells",
+   "Fragile and mana-hungry, requiring precision and careful target selection",
+   "Has the highest damage single-target nukes and AoE spells in the roster",
+   "Receives a portion of mana spent when delivering a killing blow with a spell",
+   "Utilizes spellcrafting, which offers out-of-combat spell research and customization, and in-combat spell mixing for unique casts",
+   "Has a ranged interrupt and arcane barrier as defensive and utility tools",
+   "Can buff allied casters with spell haste",
+   "Can summon useful items and teleport allies"
+  ],
+  "changing": [
+   "The Wizard is pulling their spell schools away from the Elementalist’s territory. Elemental magic is being reduced in their arsenal to sharpen the distinction between the two classes. Their damage cycle is getting more variety, with better spell scaling and upgrades across the full level range. Spellcrafting is the main addition; research and in-combat customization give the Wizard a creative dimension that no other damage class has.",
+   "Their core identity stays intact. They’ve still got the biggest nukes, the most raw magical damage, and the high ceiling that rewards players who put in the work."
+  ],
+  "more": [
+   "DPS cycle variety",
+   "Upgrades and spell scaling across the full level range",
+   "Spellcrafting as a research and customization system"
+  ],
+  "less": [
+   "Elemental magic",
+   "Sword and staff mechanics"
+  ]
+ }
+}

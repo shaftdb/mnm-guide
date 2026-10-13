@@ -43,52 +43,42 @@ document.querySelectorAll('.clsfilter,.kindfilter,.textfilter').forEach(function
 if(document.querySelector('.clsfilter'))applyFilters();
 })();
 
-// ---------- Brewsham level-range selector (embedded data; no fetch; file:// OK)
+// ---------- Class + level-range selector (sticky bar on every page) + page filter
 (function(){
 var R=window.MNM_RANGES; if(!R||!R.order) return;
-var KEY='mnm-brewsham-range';
+var KR='mnm-range', KC='mnm-class';
 var root=document.documentElement.getAttribute('data-root')||'';
-var bar=document.getElementById('mnm-rangebar');
-var sel=document.getElementById('mnm-range');
-var qiLink=document.getElementById('mnm-range-qi');
-var mount=document.getElementById('mnm-quickinfo');
-var showBar=document.body.classList.contains('sec-home')||document.body.classList.contains('sec-shaman');
-if(bar&&showBar) bar.hidden=false; else if(bar) bar.hidden=true;
-function fixRoot(html){
-  // Rewrite root-absolute href/src for Pages subpath and file:// relative roots
-  return String(html).replace(/(href|src)="\/(?!\/)/g, '$1="'+root);
+var selR=document.getElementById('mnm-range'), selC=document.getElementById('mnm-class');
+var qiLink=document.getElementById('mnm-range-qi'), mount=document.getElementById('mnm-quickinfo');
+function get(k,ok,d){try{var v=localStorage.getItem(k);if(v&&ok(v))return v;}catch(e){}return d;}
+function put(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+var cur=get(KR,function(v){return R.order.indexOf(v)>=0},R.default);
+var cls=get(KC,function(v){return R.classes.indexOf(v)>=0},R.defaultClass||R.classes[0]);
+function fix(h){return String(h).replace(/(href|src)="\/(?!\/)/g,'$1="'+root);}
+if(selR) selR.innerHTML=R.order.map(function(k){return '<option value="'+k+'"'+(k===cur?' selected':'')+'>'+(R.labels[k]||k)+'</option>'}).join('');
+if(selC) selC.innerHTML=R.classes.map(function(c){return '<option'+(c===cls?' selected':'')+'>'+c+'</option>'}).join('');
+function render(){
+  if(qiLink) qiLink.href=mount?'#mnm-quickinfo':root+'index.html#mnm-quickinfo';
+  var Q=window.MNM_QUICK; if(!mount||!Q) return;
+  var p=Q.panels[cls+'|'+cur]; if(!p) return;
+  mount.innerHTML='<div class="qi-head"><h2 style="margin-top:0">Quick info · '+cls+' · '+(R.labels[cur]||cur)+'</h2>'+
+   '<p class="dim">Change class or levels in the bar at the top (remembered in this browser). <a href="'+fix(R.urls[cls])+'">Full '+cls+' guide</a></p></div>'+fix(p);
+  var f=document.getElementById('mnm-filter'); if(f&&f.value) f.dispatchEvent(new Event('input'));
 }
-function readStored(){
-  try{var v=localStorage.getItem(KEY); if(v&&R.panels[v]) return v;}catch(e){}
-  return R.default||'11-15';
-}
-function writeStored(k){ try{localStorage.setItem(KEY,k);}catch(e){} }
-function fillSelect(cur){
-  if(!sel) return;
-  sel.innerHTML=R.order.map(function(k){
-    var lab=(R.panels[k]&&R.panels[k].label)||k;
-    return '<option value="'+k+'"'+(k===cur?' selected':'')+'>'+lab+'</option>';
-  }).join('');
-}
-function render(k){
-  var p=R.panels[k]; if(!p) return;
-  if(qiLink) qiLink.href=root+'shaman/quickinfo.html';
-  if(!mount) return;
-  var head='<div class="qi-head"><h2 style="margin-top:0">Quick info · '+p.label+'</h2>'+
-    '<p class="dim" style="margin:.2em 0 .8em">Brewsham · Human Shaman · band '+p.label+
-    ' · <a href="'+root+'shaman/leveling.html">Full leveling</a> · <a href="'+root+'shaman/guild-mats.html">Guild mats</a></p></div>';
-  mount.setAttribute('data-seed', k);
-  mount.innerHTML=head+fixRoot(p.html);
-}
-var cur=readStored();
-fillSelect(cur);
-if(sel){
-  sel.value=cur;
-  sel.addEventListener('change', function(){
-    cur=sel.value; writeStored(cur); render(cur);
+if(selR) selR.addEventListener('change',function(){cur=selR.value;put(KR,cur);render();});
+if(selC) selC.addEventListener('change',function(){cls=selC.value;put(KC,cls);render();});
+render();
+// page filter: hides list items, table rows, paragraphs and blocks that don't match
+var f=document.getElementById('mnm-filter'), main=document.querySelector('main.main');
+if(f&&main){f.addEventListener('input',function(){
+  var t=f.value.trim().toLowerCase();
+  main.querySelectorAll('li,tbody tr,p,.camp,details,.call,.qi-sec').forEach(function(el){
+    if(!t){el.classList.remove('fhide');return;}
+    el.classList.toggle('fhide',el.textContent.toLowerCase().indexOf(t)<0);
   });
-}
-if(qiLink) qiLink.href=root+'shaman/quickinfo.html';
-// Always sync mount to stored band (overrides build-time 11-15 seed when needed)
-if(mount) render(cur);
+  // keep containers visible if any child matches
+  if(t) main.querySelectorAll('.qi-sec,details,.call,.camp').forEach(function(el){
+    if(el.querySelector('li:not(.fhide),tbody tr:not(.fhide),p:not(.fhide)')) el.classList.remove('fhide');
+  });
+});}
 })();

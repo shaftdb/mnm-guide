@@ -4109,7 +4109,7 @@
  "Druid": {
   "name": "Druid",
   "url": "https://monstersandmemories.miraheze.org/wiki/Druid",
-  "revid": 79066,
+  "revid": 80348,
   "description": "Druids are protectors of the natural balance of Eth-ur. They are primarily spellcasters. Druids are adept healers, skillful augmenters, and competent wielders of nature’s destructive powers. Druidic magic on Eth-ur primarily employs elements from nature, but may harness astral powers as well. Offensively, these powers reflect nature’s most destructive elements. Situationally, the Druid truly shines: they may also erode a foe’s resistances to spells, provide various magical enhancements to allies, summon the aid of natural beings, and even harness their connection to other planes to facilitate teleportation. A Druid’s diverse capabilities allow them to fulfill many different roles amongst adventuring parties. And through clever use of their magic, they are often seen braving the wilds of Eth-ur alone. ; ; Long ago wood elven druids learned to see into the veins between the planes known as the wyrding. By traveling through druid rings or wyrd gates druids can move through the wyrding to teleport between locations1. ; ; Druids prefer to wear leather armor while wielding blunt weaponry or specialized blades, such as sickles and scimitars. ; ; 1: https://youtu.be/YOnTUusgDnE?t=2844",
   "modifier": "+2 AGI, +4 WIS, +2 CHA.",
   "bonus_advice": "Listed below is the recommended allocation of bonus points by race. Since Wisdom is a Druid’s main attribute, you should focus on maximizing it whenever possible. Wisdom is directly tied to your healing spells effectiveness and total mana. After that, prioritize Charisma. It helps with the Druid's charm line of spells, along with a few other spell lines. Finally, put a point into Dexterity if you have any left. It affects hit rate across the board and increases your proc chance. Goblin: +1 Dexterity, +6 Wisdom, and +3 Charisma Halfling: +3 Dexterity, +3 Wisdom, and +4 Charisma Human: +2 Dexterity, +7 Wisdom, and +1 Charisma Wood Elf: +1 Dexterity, +7 Wisdom, and +2 Charisma",
@@ -4696,7 +4696,7 @@
     "spell description": "Teleport your group, relocating them to Evershade Weald. This spell has no effect on encumbered targets.",
     "class": "Alt",
     "location": "Vendor",
-    "mana": "0",
+    "mana": "300",
     "level": 24,
     "section": "Level 24"
    },
@@ -4705,7 +4705,7 @@
     "spell description": "Teleport your group, relocating them to Sungreet Strand. This spell has no effect on encumbered targets.",
     "class": "Alt",
     "location": "Vendor",
-    "mana": "0",
+    "mana": "300",
     "level": 24,
     "section": "Level 24"
    },
@@ -4723,7 +4723,7 @@
     "spell description": "Ensnare your target with clinging roots, decreasing their Movement Speed by 50% for 5 minutes.",
     "class": "Alt",
     "location": "Vendor",
-    "mana": "0",
+    "mana": "40",
     "level": 24,
     "section": "Level 24"
    },
@@ -4954,10 +4954,10 @@
    },
    {
     "spell name": "Coax Beasts",
-    "spell description": "Charm a target beast, forcing them to fight alongside you for 5 (L1) to 30 (L60) minutes. This spell has a very strong chance to end early.",
+    "spell description": "Charm a target beast, forcing them to fight alongside you for 5 (L1) to 20 (L60) minutes. This spell has a very strong chance to end early. Max target 47.",
     "class": "Alt",
     "location": "Vendor",
-    "mana": "0",
+    "mana": "175",
     "level": 36,
     "section": "Level 36"
    },
@@ -4998,11 +4998,20 @@
     "section": "Level 36"
    },
    {
-    "spell name": "Regeneration",
-    "spell description": "Moderately regenerate your target, increasing their Health Regeneration by 7 for 48 minutes.",
+    "spell name": "Spark of Harmony",
+    "spell description": "Gift your target a spark of harmony, restoring 181 Health.",
     "class": "Alt",
     "location": "Vendor",
-    "mana": "0",
+    "mana": "127",
+    "level": 36,
+    "section": "Level 36"
+   },
+   {
+    "spell name": "Communion of Regeneration",
+    "spell description": "Moderately regenerate your party, increasing their Health Regeneration by 7 for 35 minutes.",
+    "class": "Alt",
+    "location": "Vendor",
+    "mana": "250",
     "level": 36,
     "section": "Level 36"
    },
@@ -7114,7 +7123,7 @@
  "Enchanter": {
   "name": "Enchanter",
   "url": "https://monstersandmemories.miraheze.org/wiki/Enchanter",
-  "revid": 79233,
+  "revid": 81186,
   "description": "Enchanters are subtle spellcasters who focus their study on magic which affects the mind and manipulates the ephemeral. Above all else, the Enchanter specializes in control and subterfuge. An Enchanter’s spellbook is diverse and situational. It is here, in those unique situations that the application of their magics is most powerful. Their greatest strength in battle is their ability to assault the minds of their foes causing them harm, incapacitating them momentarily, or turning them against their allies. Enchanters are also capable of imbuing their allies' weapons with magical effects, causing them to inflict greater harm with their blows. An Enchanter is most at home when adventuring with others, and their role within adventuring parties is primarily that of one who controls the battlefield. When adventuring alone an Enchanter may encounter some difficulty, but clever application of their unique magic may ease that burden. ; ; Enchanters typically wear cloth armor and tend to wield staves, wands, and daggers.",
   "modifier": "+4 INT, + 4 CHA.",
   "bonus_advice": "Below is the recommended allocation of bonus points by race. Since Intelligence is a Enchanter’s main attribute, you should focus on maximizing it whenever possible. Your spell damage and mana total is directly tied to it. Very close behind it is Charisma. As an Enchanter you are the best crowd controller in the game, and both your Charm and Mesmerize line of skills rely on this stat. Dwarf: +5 Intelligence and +5 Charisma Gnome: +5 Intelligence and +5 Charisma Goblin: +5 Intelligence and +5 Charisma Human: +7 Intelligence and +3 Charisma",
@@ -7122,7 +7131,7 @@
   "spells": [
    {
     "spell name": "Enchant Copper Bar",
-    "spell description": "Transmutes one copper bar to enchanted copper bar.",
+    "spell description": "Enchants a Copper Bar , transmuting it into an Enchanted Copper Bar . Requires Enchanted Powder .",
     "class": "Alt",
     "location": "Vendor",
     "mana": "5",
@@ -7131,7 +7140,7 @@
    },
    {
     "spell name": "Invisibility",
-    "spell description": "Shrouds your target with invisibility.",
+    "spell description": "Shrouds a target party member in a cloak of invisibility, rendering them unseen by the living for 10 minutes. Has a moderate chance to end early.",
     "class": "Div",
     "location": "Vendor",
     "mana": "20",
@@ -7140,7 +7149,7 @@
    },
    {
     "spell name": "Invisibility versus Undead",
-    "spell description": "Shrouds your target with invisibility versus undead.",
+    "spell description": "Shrouds a target party member in darkness, rendering them unseen by undead for 10 minutes. Has a moderate chance to end early.",
     "class": "Div",
     "location": "Vendor",
     "mana": "10",
@@ -7167,7 +7176,7 @@
    },
    {
     "spell name": "Minor Illusion",
-    "spell description": "Veil yourself in the guise of an object for 1 hour.",
+    "spell description": "Veil yourself in the guise of an inconspicuous and motionless object, transforming your appearance for 1 hour.",
     "class": "Alt",
     "location": "Vendor",
     "mana": "15",
@@ -7221,7 +7230,7 @@
    },
    {
     "spell name": "Dispel Magic",
-    "spell description": "Removes a harmful magical effect from your current target.",
+    "spell description": "Dispel magic from your target, removing one harmful effect.",
     "class": "Alt",
     "location": "Vendor",
     "mana": "50",
@@ -7230,7 +7239,7 @@
    },
    {
     "spell name": "Gate",
-    "spell description": "Teleport yourself to your bind location.",
+    "spell description": "Conjure a magical gate, returning you to your bind location. This spell has a slight chance to fail. No effect if caster is encumbered.",
     "class": "Alt",
     "location": "Vendor",
     "mana": "55",
@@ -7239,16 +7248,16 @@
    },
    {
     "spell name": "Haste",
-    "spell description": "Haste your target, increasing their Melee and Ranged Attack Speed by 10% (L4) to 15% (L16) for 1h.",
+    "spell description": "Hasten your target, increasing their Melee and Ranged Attack Speed by 10% (L4) to 15% (L16) for 35 minutes.",
     "class": "Alt",
     "location": "Vendor",
-    "mana": "10",
+    "mana": "5",
     "level": 4,
     "section": "Level 4"
    },
    {
     "spell name": "Illusion: Human",
-    "spell description": "Self Only Morph to Human",
+    "spell description": "Veil yourself in the guise of a Human, transforming your appearance for 1 hour.",
     "class": "Div",
     "location": "Vendor",
     "mana": "10",
@@ -7275,7 +7284,7 @@
    },
    {
     "spell name": "Lesser Fracture Magic",
-    "spell description": "Fracture the arcane defenses of your target, decreasing their Magic resistance by 1 (L4) to 4 (L11) for 5 minutes",
+    "spell description": "Fracture the arcane defenses of your target, decreasing their Magic Resistance by 1 (L4) to 4 (L11) for 5 minutes. Cannot be resisted except by Magic immune targets.",
     "class": "Alt",
     "location": "Vendor",
     "mana": "10",
@@ -7302,7 +7311,7 @@
    },
    {
     "spell name": "Shadowkin Defender I",
-    "spell description": "Invoke the mirror realm, manifesting a friendly shadowkin to fight alongside you. Requires Ethereal Dagger.",
+    "spell description": "Invoke the mirror realm, manifesting a friendly shadowkin to fight alongside you. Requires Ethereal Dagger .",
     "class": "Con",
     "location": "Vendor",
     "mana": "10",
@@ -7314,16 +7323,16 @@
     "spell description": "Set a New Home Point for Target",
     "class": "Alt",
     "location": "Vendor",
-    "mana": "75",
+    "mana": "50",
     "level": 4,
     "section": "Level 4"
    },
    {
     "spell name": "Torment II",
-    "spell description": "Direct Damage spell",
+    "spell description": "Torment the mental state of your target, dealing 9 (L4) to 14 (L11) Magic Damage and decreasing their Intelligence, Wisdom, Charisma, and Mana Regen by 3 for 1 minute. Deals additional Magic Damage based on Charisma.",
     "class": "Alt",
     "location": "Vendor",
-    "mana": "?",
+    "mana": "16",
     "level": 4,
     "section": "Level 4"
    },
@@ -7374,7 +7383,7 @@
    },
    {
     "spell name": "Lesser Vespyra's Veil",
-    "spell description": "Self Only HP, MR, and AC Buff",
+    "spell description": "Encircle yourself with a magical shield, increasing your maximum Health by 25, Armor Class by 10, and Magic Resistance by 10 for 1 hour. You also gain the ability to see invisible entities and sense magical auras, and attackers have a chance to be dazed.",
     "class": "Abj",
     "location": "Vendor",
     "mana": "25",
@@ -7383,7 +7392,7 @@
    },
    {
     "spell name": "Magic Protection",
-    "spell description": "Protects target from magic for a time.",
+    "spell description": "Ward your target against the arcane, increasing their Magic Resistance by 5 for 35 minutes.",
     "class": "Alt",
     "location": "Vendor",
     "mana": "?",
@@ -7392,10 +7401,10 @@
    },
    {
     "spell name": "Minor Strength",
-    "spell description": "Increases targets strength for a time.",
+    "spell description": "Empower your target, increasing their Strength by 2 for 35 minutes.",
     "class": "Alt",
     "location": "Vendor",
-    "mana": "?",
+    "mana": "",
     "level": 8,
     "section": "Level 8"
    },
@@ -7437,7 +7446,7 @@
    },
    {
     "spell name": "Charm",
-    "spell description": "Charm your target, forcing them to fight alongside you for 5 (L1) to 20 (L60) minutes.",
+    "spell description": "Charms your target, forcing them to fight alongside you for 5 (L1) to 20 (L60) minutes.",
     "class": "Alt",
     "location": "Vendor",
     "mana": "60",
@@ -7446,7 +7455,7 @@
    },
    {
     "spell name": "Enchant Bronze Bar",
-    "spell description": "Transmutes one Bronze bar to enchanted Bronze bar.",
+    "spell description": "Transmutes one Bronze Bar to an Enchanted Bronze Bar . Requires Enchanting Powder .",
     "class": "Alt",
     "location": "Vendor",
     "mana": "15",
@@ -7455,7 +7464,7 @@
    },
    {
     "spell name": "Enduring Breath",
-    "spell description": "Grants your target the ability to breath underwater.",
+    "spell description": "Grants your target the ability to breathe underwater.",
     "class": "Alt",
     "location": "Vendor",
     "mana": "30",
@@ -7500,34 +7509,34 @@
    },
    {
     "spell name": "Lesser Vertigo",
-    "spell description": "Debuff target",
+    "spell description": "Enfeeble your target, decreasing their Strength, Dexterity, and Agility by 6 for 2 minutes.",
     "class": "Alt",
     "location": "Vendor",
-    "mana": "",
+    "mana": "15",
     "level": 12,
     "section": "Level 12"
    },
    {
     "spell name": "Lull",
-    "spell description": "Lower target's aggro range",
+    "spell description": "Appease your target, reducing their Aggro Radius for 3 minutes. This spell has a very slight chance to end early. This ability has additional effects in PvP.",
     "class": "Alt",
     "location": "Vendor",
-    "mana": "",
+    "mana": "25",
     "level": 12,
     "section": "Level 12"
    },
    {
     "spell name": "Mind Surge",
-    "spell description": "Infuse the mind of your target with a ming surge, restoring 33 mana.",
+    "spell description": "Infuse the mind of your target with a mind surge, restoring 33 mana.",
     "class": "Alt",
     "location": "Vendor",
-    "mana": "",
+    "mana": "52",
     "level": 12,
     "section": "Level 12"
    },
    {
     "spell name": "Summon Companion",
-    "spell description": "Summon your pet, relocating it to your position",
+    "spell description": "Summon your pet, relocating it to your position.",
     "class": "Alt",
     "location": "Vendor",
     "mana": "",
@@ -7539,13 +7548,13 @@
     "spell description": "Torment your target's mental state, causing 49 Magic Damage and decreasing their Intelligence, Wisdom, Charisma, and Mana Regeneration by 5 for 30 seconds. This spell deals up to 24 additional Magic Damage based on your Charisma, reching its maximum bonus at 150 Charisma.",
     "class": "Alt",
     "location": "Vendor",
-    "mana": "",
+    "mana": "58",
     "level": 12,
     "section": "Level 12"
    },
    {
     "spell name": "Adrenaline",
-    "spell description": "Haste your target, increasing their Melee and ranged Attack Speed by 20% (L16) to 25% (L32).",
+    "spell description": "Haste your target, increasing their Melee and ranged Attack Speed by 20% (L16) to 25% (L32) for 35 minutes.",
     "class": "Alt",
     "location": "Vendor",
     "mana": "75",
@@ -7581,7 +7590,7 @@
    },
    {
     "spell name": "Lesser Sagacity",
-    "spell description": "Single target Charisma, Intelligence, and Wisdom Buff",
+    "spell description": "Increases Charisma, Intelligence, and Wisdom by 5 for 35 minutes.",
     "class": "Alt",
     "location": "Vendor",
     "mana": "",
@@ -7590,7 +7599,7 @@
    },
    {
     "spell name": "Lesser Strength",
-    "spell description": "Single Target Strength buff",
+    "spell description": "Increases the Strength of a friendly target by 5 for 35 minutes.",
     "class": "Alt",
     "location": "Vendor",
     "mana": "30",
@@ -8589,7 +8598,7 @@
  "Fighter": {
   "name": "Fighter",
   "url": "https://monstersandmemories.miraheze.org/wiki/Fighter",
-  "revid": 79990,
+  "revid": 80191,
   "description": "Fighters are those who strive to become masters of the multitude of arms and armor that one may find through their travels. They excel at being at the heart of combat, taking blows for their allies and striking back in kind. Fighters are found in nearly every culture one may encounter while travelling across the continent of Aêthoril. A unifying link between all Fighters is the courage to stand toe-to-toe with even the greatest monsters of Eth-ur. As such, their commanding presence in battle can control the flow of the chaos by directing attention onto themselves. Most often a Fighter’s equipment is chosen based on what situations they may find themselves in, meaning that veteran Fighters often aim to have a diverse arsenal at their disposal. However, in terms of weaponry, many Fighters prefer to enter combat with a weapon in each hand, should the situation allow. While adventuring a Fighter should find themselves most comfortable when in the company of others. The world of Eth-ur is a dangerous place, and skill in battle alone can only get you so far when adventuring by yourself. Besides, without a group of companions in tow, who will carry their ale? ; ; Fighters may wear all armor types and are capable of wielding all weapons.",
   "modifier": "+4 STR, +3 STA, +1 AGI.",
   "bonus_advice": null,
@@ -8894,7 +8903,7 @@
    },
    {
     "spell name": "Rend IV",
-    "spell description": "Savagely rend your target, dealing xxx% Weapon Ratio Damage plus xx (Lxx) to xx (Lxx) Physical Damage, increasing your Threat against them by xxx (Lxx) to xxx (Lxx), and granting you a chance to reset the cooldown of your Cleave, Feint, Frenzy and Shield Bash abilities.",
+    "spell description": "Savagely rend your target, dealing 140% Weapon Ratio Damage plus 20 (L30) to 25 (L40) Physical Damage, increasing your Threat against them by 100 (L30) to 150 (L40), and granting you a chance to reset the cooldown of your Cleave, Feint, Frenzy and Shield Bash abilities.",
     "class": "Mig",
     "location": "Vendor",
     "mana": "Innate",
@@ -8912,7 +8921,7 @@
    },
    {
     "spell name": "Cross Cut III",
-    "spell description": "Cut through your target with dual weapons, dealing xx% Weapon Ratio Damage plus xx (Lxx) to xx (Lxx) Physical Damage per equipped weapon. This ability requires dual-wilded weapons. This ability shares a cooldown with other Might abilities.",
+    "spell description": "Cut through your target with dual weapons, dealing 80% Weapon Ratio Damage plus 15 (L31) to 20 (L41) Physical Damage per equipped weapon. This ability requires dual-wilded weapons. This ability shares a cooldown with other Might abilities.",
     "class": "Mig",
     "location": "Vendor",
     "mana": "Innate",
@@ -8930,7 +8939,7 @@
    },
    {
     "spell name": "Frenzy III",
-    "spell description": "Eviscerate your target with a frenzy of attacks, dealing xx% Weapon Ratio Damage up to five times and increasing your Attack Speed by 10% for 1 minute. This ability consumes one stack of Vengeance per strike. This ability shares a cooldown with Cleave and Feint.",
+    "spell description": "Eviscerate your target with a frenzy of attacks, dealing 100% Weapon Ratio Damage up to five times and increasing your Attack Speed by 10% for 1 minute. This ability consumes one stack of Vengeance per strike. This ability shares a cooldown with Cleave and Feint.",
     "class": "",
     "location": "Vendor",
     "mana": "Innate",
@@ -14528,8 +14537,8 @@
  "Rogue": {
   "name": "Rogue",
   "url": "https://monstersandmemories.miraheze.org/wiki/Rogue",
-  "revid": 75408,
-  "description": "Rogue’s are deft combatants who devote themselves to mastering the use of stealth, poisons, and all manner of tricks. All across the land of Aêthoril, wherever you find a shady back alley, a run down tavern, crowded marketplace, or gathering of distracted nobles… you'll also find Rogues. They are also known as skilled informants, thieves, and even assassins. Rogues bring a plethora of skills into combat. The use of poisons to harm or debilitate their foes. Or the use of a well placed strike may catch an opponent off guard, temporarily taking them out of the fight. In tough situations a skilled Rogue may quickly vanish from sight, allowing them a chance at a surprise attack or the option to leave the battle altogether. However, they are at their best when their foes are distracted by others, as to turn your back on a Rogue is to invite a pointed outcome. In adventuring parties a Rogue's role is that of melee combat, focusing on the destruction of their enemies. While adventuring alone they may find it hard to take down stronger enemies, but through stealth and the picking of pockets it’s feasible that they can at least afford a beer or two. ; ; Rogues prefer lighter armor, but can wield most melee weaponry. ; ; For assistance completing your rogue starter quest, see Rogue Initiation Quest, Rogue Starter Quest (Faelindral), or Rogue Start Quest (Underdocks).",
+  "revid": 81079,
+  "description": "Rogue’s are deft combatants who devote themselves to mastering the use of stealth, poisons, and all manner of tricks. All across the land of Aêthoril, wherever you find a shady back alley, a run down tavern, crowded marketplace, or gathering of distracted nobles… you'll also find Rogues. They are also known as skilled informants, thieves, and even assassins. Rogues bring a plethora of skills into combat. The use of poisons to harm or debilitate their foes. Or the use of a well placed strike may catch an opponent off guard, temporarily taking them out of the fight. In tough situations a skilled Rogue may quickly vanish from sight, allowing them a chance at a surprise attack or the option to leave the battle altogether. However, they are at their best when their foes are distracted by others, as to turn your back on a Rogue is to invite a pointed outcome. In adventuring parties a Rogue's role is that of melee combat, focusing on the destruction of their enemies. While adventuring alone they may find it hard to take down stronger enemies, but through stealth and the picking of pockets it’s feasible that they can at least afford a beer or two. ; ; Rogues prefer lighter armor, but can wield most melee weaponry. ; ; For assistance completing your rogue starter quest, see Rogue Initiation Quest, Rogue Starter Quest (Faelindral), or Rogue Starter Quest (Underdocks).",
   "modifier": "+4 DEX, +4 AGI.",
   "bonus_advice": null,
   "armor": null,
@@ -15216,7 +15225,8 @@
   ],
   "class_quests": [
    "Rogue Starter Quest (Faelindral)",
-   "Rogue Starter Quest (Night Harbor)"
+   "Rogue Starter Quest (Night Harbor)",
+   "Rogue Starter Quest (Underdocks)"
   ]
  },
  "Shadow Knight": {
@@ -16236,7 +16246,7 @@
  "Shaman": {
   "name": "Shaman",
   "url": "https://monstersandmemories.miraheze.org/wiki/Shaman",
-  "revid": 79831,
+  "revid": 80920,
   "description": "Shamans are animistic spellcasters who study and commune with spirits, souls, and nature. For many cultures across Aêthoril, and Eth-ur more broadly, Shamans serve as spiritual leaders and moral guides. Within these cultures the Shaman often takes on the role of mediator between ancestor spirits and descendants, allowing communication between the two parties. The Shaman often walks along the edge of many realities. Shamans are powerful healers with access to many regenerative spells. They also have access to a wide range of spells which may enhance an ally’s combat prowess or debilitate and destroy their enemies. Experienced Shamans may summon beastial spirits to aid them in combat. Though most powerful when casting spells, they are also capable melee combatants when the need arises. Within an adventuring party a Shaman most often takes on a supporting role. When adventuring alone they may find some success through clever use of their abilities. ; ; Shamans may wear chain armor as well as wield blunt and piercing weaponry.",
   "modifier": "+1 STR, +2 STA, +1 DEX, +4 WIS.",
   "bonus_advice": "Listed below is the recommended allocation of bonus points by race. Since Wisdom is a Shaman’s main attribute, you should focus on maximizing it whenever possible. Wisdom is directly tied to your healing spells effectiveness and total mana. After that, prioritize Stamina. It gives you extra HP and a bit of stun resistance. Finally, put a point into Dexterity if you have any left. It affects hit rate across the board and increases your proc chance. Goblin: +4 Stamina and +6 Wisdom Human: +2 Stamina, +1 Dexterity, and +7 Wisdom Ogre: +2 Dexterity and +8 Wisdom Wood Elf: +3 Stamina and +7 Wisdom",
@@ -16821,18 +16831,9 @@
    {
     "spell name": "Ancestral Wisdom III",
     "spell description": "Invoke ancestral wisdom, increasing your Wisdom by 8(L28) to 10(L39) and Health Regeneration by 3(L28) to 4(L39), and granting you the ability to see invisible entities and magical effects when considering targets for 1 hour.",
-    "class": "Alt",
+    "class": "Div",
     "location": "Vendor",
     "mana": "45",
-    "level": 28,
-    "section": "Level 28"
-   },
-   {
-    "spell name": "Aspect of the Bear",
-    "spell description": "Shapeshift into a bear, increasing your Wisdom by 8(L28) to 10(L39) and Health Regeneration by 3 to 4, and granting you the ability to see invisible entities and magical effects when considering targets for 1 hour.",
-    "class": "Alt",
-    "location": "Research",
-    "mana": "50",
     "level": 28,
     "section": "Level 28"
    },
@@ -17013,15 +17014,6 @@
     "class": "Alt",
     "location": "Vendor",
     "mana": "60",
-    "level": 40,
-    "section": "Level 40"
-   },
-   {
-    "spell name": "Aspect of the Savage Bear",
-    "spell description": "Shapeshift into a savage bear, increasing your Wisdom by 10(L40) to 13(L51) and Health Regeneration by 4 to 5, and granting you the ability to see invisible entities and magical effects when considering targets for 1 hour.",
-    "class": "Alt",
-    "location": "Research",
-    "mana": "100",
     "level": 40,
     "section": "Level 40"
    },
@@ -17255,15 +17247,6 @@
     "spell description": "Invoke ancestral wisdom, increasing your Wisdom by 13(L52) to 15(L60) and Health Regeneration by 5(L52) to 6(L60), and granting you the ability to see invisible entities and magical effects when considering targets for 1 hour.",
     "class": "Alt",
     "location": "Vendor",
-    "mana": "",
-    "level": 52,
-    "section": "Level 52"
-   },
-   {
-    "spell name": "Aspect of the Spirit Bear",
-    "spell description": "Shapeshift into a savage bear, increasing your Wisdom by 13(L52) to 15(L60) and Health Regeneration by 5 to 6, and granting you the ability to see invisible entities and magical effects when considering targets for 1 hour.",
-    "class": "Alt",
-    "location": "Research",
     "mana": "",
     "level": 52,
     "section": "Level 52"
@@ -18486,7 +18469,7 @@
  "Wizard": {
   "name": "Wizard",
   "url": "https://monstersandmemories.miraheze.org/wiki/Wizard",
-  "revid": 80079,
+  "revid": 80822,
   "description": "Wizards are dedicated scholars of the magical arts. A Wizard seeks to become a master of magic through study and practice. As the forerunners of magical knowledge and resource, they hold the ability to cast the most complex and dangerous spells available to mortals. Wizards excel at bringing battles to a swift end from afar with correctly chosen and deliberately timed spells. Should they become too depleted to use their spells, they are able to enter melee, delivering magically enhanced blows that reinvigorate themselves. Wizards are also capable of making foes more vulnerable to magic, enhancing allies' blows with extra effects, and manipulating the fabric of reality with teleportation focused magic. Within adventuring parties a Wizard's role is focused on violence of action; to deal as much harm as possible, as quickly as possible. Some Wizards may find adventuring alone to be difficult, but clever use of spells could prove otherwise. ; ; Wizards may wear cloth armor as well as wield staves, swords, and daggers.",
   "modifier": "+3 STR, +1 DEX, +4 INT.",
   "bonus_advice": "Below is the recommended allocation of bonus points by race. Since Intelligence is a Wizard’s main attribute, you should focus on maximizing it whenever possible. Your spell damage and mana total is directly tied to it. After that, prioritize Dexterity. It affects hit rate across the board and increases your proc chance. Finally, put some points into Stamina for extra HP and a bit of stun resistance. Dwarf: +1 Stamina, +2 Dexterity, and +7 Intelligence Gnome: +3 Stamina, +2 Dexterity, and +5 Intelligence Human: +1 Stamina, +2 Dexterity, and +7 Intelligence",
@@ -18548,7 +18531,7 @@
    },
    {
     "spell name": "Reclaim Magic",
-    "spell description": "Reclaim Marks of Magic from your target, converting each reclaimed stack into 5 (L4) to 25 (L60) Mana and granting your party Arcane Acceleration. Arcane Acceleration: Magically accelerate your thoughts, increasing your Casting Speed by 10% (L4) to 30% (L60) and converting each reclaimed stack of Mark of Magic into an additional 2 minutes of duration.",
+    "spell description": "Reclaim your Sparks of Magic from your target, converting them into Mana and granting your party Arcane Acceleration if you don't already have it.",
     "class": "n/a",
     "location": "",
     "mana": "n/a",
