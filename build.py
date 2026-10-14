@@ -981,6 +981,37 @@ def spells_page():
             '[m,b].forEach(function(e){e.addEventListener("change",go)});document.getElementById("mnm-class").addEventListener("change",function(){setTimeout(go,0)});document.getElementById("mnm-range").addEventListener("change",function(){setTimeout(go,0)});})();</script>') % (len(rows), ''.join(r[3] for r in rows))
 
 GENS.update(classquick=g_classquick, classbands=g_classbands)
+# ------------------------------------------------------------------ zone guide finder + dangers
+def _zone_named_sorted(Z):
+    return sorted([e for e in Z['named'] if e['name'] not in ('Raid Named', 'Example Item')], key=lambda e: lvl_num(e['level']) or 0)
+def zone_dangers(z):
+    Z = ZONES[z]; lo, hi, src = _lvl_range(z); out = []
+    nm = [e for e in _zone_named_sorted(Z) if lvl_num(e['level'])]
+    if nm:
+        top = nm[-3:][::-1]
+        out.append('<li><span class="badge fact">fact</span> Highest-level named on the wiki list: %s.</li>' % ', '.join('%s (%s)' % (esc(e['name']), esc(e['level'])) for e in top))
+    if Z.get('monster_types'): out.append('<li><span class="badge fact">fact</span> Monster types (wiki): %s.</li>' % esc(Z['monster_types']))
+    if lo and hi and hi - lo >= 15:
+        out.append('<li><span class="badge strat">strategy</span> The zone spans levels %s–%s, so higher mobs share the map with low ones; check con colors before pulling near the named above.</li>' % (lo, hi))
+    if not out: out.append('<li><span class="badge unc">unverified</span> No danger info on the wiki page yet.</li>')
+    return '<h2 id="dangers">Dangers</h2><ul class="tight">%s</ul>' % ''.join(out)
+def zone_travel(z):
+    Z = ZONES[z]; t = [x.strip(' ;') for x in Z.get('travel', []) if x.strip(' ;')]
+    if not t: return ''
+    return '<h2 id="travel-wiki">Travel (wiki)</h2><ul class="tight">%s</ul><p class="dim"><span class="badge fact">fact</span> Listed in the wiki zone infobox; boat and portal stops are as written there.</p>' % ''.join('<li>%s</li>' % (zlink(x) if x in ZONES else esc(x)) for x in t)
+def g_zoneguide(arg, ctx):
+    rows = []
+    for z in sorted(ZONES, key=lambda z: (_lvl_range(z)[0] or 99, z)):
+        Z = ZONES[z]; lo, hi, src = _lvl_range(z)
+        nm = [e for e in _zone_named_sorted(Z) if lvl_num(e['level'])]
+        lv = esc(Z['level']) if Z['level'] else ('%s–%s <span class="badge unc">from mob levels</span>' % (lo, hi) if lo else '<span class="badge unc">unknown</span>')
+        rows.append('<tr data-lo="%s" data-hi="%s"><td><a href="%s"><strong>%s</strong></a><br><span class="dim">%s</span></td><td>%s</td><td>%s</td><td>%s</td></tr>' % (
+            lo or '', hi or '', zone_url(z), esc(z), esc(ZEXTRA.get(z, {}).get('type', '')), lv, ', '.join(zlink(a) for a in Z['adjacent']) or '—',
+            esc(', '.join('%s (%s)' % (e['name'], e['level']) for e in nm[:4])) or '—'))
+    return ('<h2 id="zone-finder">Zone finder</h2><p><span class="badge fact">fact</span> Level, connections and named camps from each wiki zone page. Rows overlapping your level range (top bar) are outlined. Open a zone for its full named list, dangers, travel and map.</p>'
+            '<div class="tw"><table class="grid sortable zfind"><thead><tr><th>Zone</th><th>Levels</th><th>Connects to</th><th>Named camps (lvl)</th></tr></thead><tbody>%s</tbody></table></div>') % ''.join(rows)
+GENS['zoneguide'] = g_zoneguide
+
 
 RANGEBAR_HTML = (
     '<div class="rangebar" id="mnm-rangebar">'
@@ -1237,6 +1268,8 @@ def zone_page(z, Z, X):
     if Z.get('merchants'):
         toc.append(('merchants', 'Merchants'))
         o.append('<h2 id="merchants">Merchants (wiki list)</h2><div class="tw"><table class="grid filt-text"><thead><tr><th>Where</th><th>Merchant</th></tr></thead><tbody>%s</tbody></table></div>' % ''.join('<tr><td>%s</td><td>%s</td></tr>' % (esc(m['location']), esc(m['merchant'])) for m in Z['merchants']))
+    toc.append(('dangers', 'Dangers')); o.append(zone_dangers(z))
+    if Z.get('travel'): toc.append(('travel-wiki', 'Travel')); o.append(zone_travel(z))
     if Z.get('travel') or Z['adjacent']:
         toc.append(('travel', 'Connections'))
         o.append('<h2 id="travel">Connections</h2><ul>%s</ul>' % ''.join('<li>%s</li>' % zlink(a) for a in (Z['adjacent'] or Z.get('travel', []))))

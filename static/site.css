@@ -159,3 +159,4 @@ details.patch.clsok,tr.clsok,.zcard.clsok{border-color:var(--gold);box-shadow:0 
 /* spell lookup */
 tr.clsok{box-shadow:inset 3px 0 0 var(--gold)} tr.inband td:nth-child(2){color:var(--gold);font-weight:bold} tr.sphide{display:none}
 .sptools{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0}
+table.zfind tr.inband{box-shadow:inset 3px 0 0 var(--gold)}
