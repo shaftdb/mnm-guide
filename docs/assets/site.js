@@ -65,19 +65,26 @@ function render(){
    '<p class="dim">Change class or levels in the bar at the top (remembered in this browser). <a href="'+fix(R.urls[cls])+'">Full '+cls+' guide</a></p></div>'+fix(p);
   var f=document.getElementById('mnm-filter'); if(f&&f.value) f.dispatchEvent(new Event('input'));
 }
-if(selR) selR.addEventListener('change',function(){cur=selR.value;put(KR,cur);render();});
-if(selC) selC.addEventListener('change',function(){cls=selC.value;put(KC,cls);render();});
+function marks(){
+  var b=cur.split('-').map(Number), code=(R.codes||{})[cls];
+  document.querySelectorAll('[data-lo]').forEach(function(el){var lo=+el.getAttribute('data-lo'),hi=+el.getAttribute('data-hi');
+    el.classList.toggle('inband',!!lo&&lo<=b[1]&&hi>=b[0]);});
+  document.querySelectorAll('table.dloot tbody tr').forEach(function(tr){var c=(tr.getAttribute('data-c')||'').split(' ');tr.classList.toggle('clsok',!!code&&c.indexOf(code)>=0);});
+}
+marks();
+if(selR) selR.addEventListener('change',function(){cur=selR.value;put(KR,cur);render();marks();});
+if(selC) selC.addEventListener('change',function(){cls=selC.value;put(KC,cls);render();marks();});
 render();
 // page filter: hides list items, table rows, paragraphs and blocks that don't match
 var f=document.getElementById('mnm-filter'), main=document.querySelector('main.main');
 if(f&&main){f.addEventListener('input',function(){
   var t=f.value.trim().toLowerCase();
-  main.querySelectorAll('li,tbody tr,p,.camp,details,.call,.qi-sec').forEach(function(el){
+  main.querySelectorAll('li,tbody tr,p,.camp,details,.call,.qi-sec,.dcard').forEach(function(el){
     if(!t){el.classList.remove('fhide');return;}
     el.classList.toggle('fhide',el.textContent.toLowerCase().indexOf(t)<0);
   });
   // keep containers visible if any child matches
-  if(t) main.querySelectorAll('.qi-sec,details,.call,.camp').forEach(function(el){
+  if(t) main.querySelectorAll('.qi-sec,details,.call,.camp,.dcard').forEach(function(el){
     if(el.querySelector('li:not(.fhide),tbody tr:not(.fhide),p:not(.fhide)')) el.classList.remove('fhide');
   });
 });}

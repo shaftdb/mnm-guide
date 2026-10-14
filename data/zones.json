@@ -750,7 +750,7 @@
  "Ancient Crypt": {
   "name": "Ancient Crypt",
   "url": "https://monstersandmemories.miraheze.org/wiki/Ancient_Crypt",
-  "revid": 79143,
+  "revid": 81006,
   "level": "12-22",
   "monster_types": "Skeletons, Ghouls, Elementals, Slimes",
   "adjacent": [
@@ -763,7 +763,8 @@
    "Researcher Harseal",
    "Brahson the Butcher",
    "Commander Mangles",
-   "Skyseer Illya"
+   "Skyseer Illya",
+   "Ghoulish Librarian"
   ],
   "quests": [
    {
@@ -1453,7 +1454,7 @@
  "Blind Midden": {
   "name": "Blind Midden",
   "url": "https://monstersandmemories.miraheze.org/wiki/Blind_Midden",
-  "revid": 80074,
+  "revid": 80955,
   "level": null,
   "monster_types": "Ghosts, Slime Cubes, Evil Eyes, Deep Elves",
   "adjacent": [
@@ -1525,7 +1526,7 @@
     "class": "-",
     "level": "7",
     "location": "Top floor",
-    "loot": "Sethrine's Coat of Supple Strength , Setherine's Skinny Leggings",
+    "loot": "Sethrine's Coat of Supple Strength , Setherine's Skinny Leggings , Vile Veil of the Villain",
     "desc": "Named Mob"
    },
    {
@@ -1614,6 +1615,15 @@
     "race": "Deep Gnome",
     "class": "-",
     "level": "15",
+    "location": "-",
+    "loot": "-",
+    "desc": "Named Mob"
+   },
+   {
+    "name": "Dakkin the Diabolical",
+    "race": "Deep Gnome",
+    "class": "-",
+    "level": "15?",
     "location": "-",
     "loot": "-",
     "desc": "Named Mob"
@@ -2197,6 +2207,15 @@
     "desc": "-"
    },
    {
+    "name": "an ancestral patriarch",
+    "race": "Ogre",
+    "class": "-",
+    "level": "16-18",
+    "location": "-",
+    "loot": "-",
+    "desc": "-"
+   },
+   {
     "name": "a glaring guard",
     "race": "Evil Eye",
     "class": "-",
@@ -2235,11 +2254,11 @@
  "Caves of Irem": {
   "name": "Caves of Irem",
   "url": "https://monstersandmemories.miraheze.org/wiki/Caves_of_Irem",
-  "revid": 80073,
+  "revid": 81181,
   "level": null,
   "monster_types": "Deep Beetles, Bats, Will-o-Wisps, Deep Skeletons",
   "adjacent": [
-   "Shaded Dunes",
+   "Tomb of the Last Wyrmsbane",
    "Underdocks",
    "Great Cavern Sea"
   ],
@@ -2247,6 +2266,13 @@
    "Fungivore"
   ],
   "quests": [
+   {
+    "name": "Example Quest Name",
+    "reward": "Example Reward",
+    "giver": "Example Quest Giver",
+    "min_level": "-",
+    "classes": null
+   },
    {
     "name": "Example Quest Name",
     "reward": "Example Reward",
@@ -2386,7 +2412,7 @@
     "class": "-",
     "level": "37",
     "location": "Roostbound Giants",
-    "loot": "Roostmaster's Culling Hook , Vashkur's Roost Maul",
+    "loot": "Roostmaster's Culling Hook , Vashkur's Roost Maul , Razorwing Pelt Mantle",
     "desc": "Named Mob"
    },
    {
@@ -2405,6 +2431,15 @@
     "level": "-",
     "location": "Pyramid Road",
     "loot": "Keeper's Chain Helm , Caravan Guard's Pauldrons",
+    "desc": "Named Mob"
+   },
+   {
+    "name": "Ashlight",
+    "race": "Wisp",
+    "class": "-",
+    "level": "-",
+    "location": "Pyramid Road",
+    "loot": "Ashlight's Burnt Sleeve",
     "desc": "Named Mob"
    },
    {
@@ -8113,7 +8148,7 @@
  "Glinting Hollow": {
   "name": "Glinting Hollow",
   "url": "https://monstersandmemories.miraheze.org/wiki/Glinting_Hollow",
-  "revid": 74578,
+  "revid": 80626,
   "level": "38+",
   "monster_types": "Nature",
   "adjacent": [
@@ -8207,15 +8242,6 @@
     "level": "46",
     "location": "6th Floor",
     "loot": "Fungal Robe",
-    "desc": "Named Mob"
-   },
-   {
-    "name": "Gazer",
-    "race": "Evil Eye",
-    "class": "Enchanter",
-    "level": "47",
-    "location": "6th Floor",
-    "loot": "Trinket of the Eye , Inquisitive Pendant",
     "desc": "Named Mob"
    },
    {
@@ -8458,11 +8484,11 @@
    "Glinting_hollow_pinecone.png"
   ],
   "travel": [
+   "North - At the base of the ramp leading up to the East firepit. A hollow space in the center of the stone holds a single frozen tear. An inscription reads, 'Only when the world remembers its breath... may the heart be lit.'",
    "South - Next to a ramp between 2 Dryads and a tree. Carved into the surface is a single leaf, half-charred, half-golden. An inscription reads, 'What lingers longest is not life, but the echo of its passing.'",
-   "East - Up a ramp, over the bear cave where Hrask Spawns. The stone is ridden with ice fractures and feels brittle. An inscription reads, 'First bite of winter... sharp, sudden, and sure.'",
    "West - Up a ramp overlooking the center platform. Carved into the stone's face is a sleeping bear coiled in ice. An inscription reads, 'Deep cold does not rage. It waits.'",
-   "Center - On the center platform. The stone is made of a stone gray slate, damp with condensation. An inscription reads, 'Between breath and silence, the veil thins.'",
-   "North - At the base of the ramp leading up to the East firepit. A hollow space in the center of the stone holds a single frozen tear. An inscription reads, 'Only when the world remembers its breath... may the heart be lit.'"
+   "East - Up a ramp, over the bear cave where Hrask Spawns. The stone is ridden with ice fractures and feels brittle. An inscription reads, 'First bite of winter... sharp, sudden, and sure.'",
+   "Center - On the center platform. The stone is made of a stone gray slate, damp with condensation. An inscription reads, 'Between breath and silence, the veil thins.'"
   ],
   "legend": [
    "1. 2."

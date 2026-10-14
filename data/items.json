@@ -14199,7 +14199,10 @@
    },
    {
     "zone": "Caves of Irem",
-    "mob": "Ashlight"
+    "mob": "Ashlight",
+    "level": "-",
+    "named": true,
+    "location": "Pyramid Road"
    },
    {
     "zone": "Caves of Irem",
@@ -103389,10 +103392,7 @@
   "drops": [
    {
     "zone": "Glinting Hollow",
-    "mob": "Gazer",
-    "level": "47",
-    "named": true,
-    "location": "6th Floor"
+    "mob": "Gazer"
    }
   ],
   "quests": [],
@@ -103400,7 +103400,7 @@
   "soldby": [],
   "merchant_value": null,
   "notes": null,
-  "drop_level": 47,
+  "drop_level": null,
   "quest_level": null
  },
  "Interrogator's Clasp": {
@@ -216885,10 +216885,7 @@
   "drops": [
    {
     "zone": "Glinting Hollow",
-    "mob": "Gazer",
-    "level": "47",
-    "named": true,
-    "location": "6th Floor"
+    "mob": "Gazer"
    }
   ],
   "quests": [],
@@ -216896,7 +216893,7 @@
   "soldby": [],
   "merchant_value": null,
   "notes": null,
-  "drop_level": 47,
+  "drop_level": null,
   "quest_level": null
  },
  "Trousers of Shattered Sight": {

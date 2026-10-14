@@ -628,7 +628,7 @@ def write_range_data(ranges):
     js = 'window.MNM_QUICK=' + json.dumps(payload, ensure_ascii=False, separators=(',', ':')) + ';'
     open(os.path.join(OUT, 'assets', 'quick-data.js'), 'w', encoding='utf8').write(js)
     meta = {'order': RANGE_ORDER, 'default': RANGE_DEFAULT, 'classes': CLASS_LIST, 'defaultClass': 'Fighter',
-            'labels': {k: ranges[k]['label'] for k in RANGE_ORDER}, 'urls': {c: class_url(c) for c in CLASS_LIST}}
+            'labels': {k: ranges[k]['label'] for k in RANGE_ORDER}, 'urls': {c: class_url(c) for c in CLASS_LIST}, 'codes': CABBR}
     open(os.path.join(OUT, 'assets', 'range-data.js'), 'w', encoding='utf8').write('window.MNM_RANGES=' + json.dumps(meta, separators=(',', ':')) + ';')
     return panels
 
@@ -768,6 +768,166 @@ def g_classbands(arg, ctx):
 def g_classquick(arg, ctx):
     cls, lo, hi = [a.strip() for a in arg.split(',')]
     return class_quick(cls, int(lo), int(hi))
+# ------------------------------------------------------------------ dungeons section
+DUNGEONS = json.load(open(os.path.join(CONTENT, 'dungeons.json'), encoding='utf8'))
+DUNGEON_ORDER = ['Tomb of the Last Wyrmsbane', 'Infested Crypt', 'Ancient Crypt', 'Sunken Resort', 'Grain Cellar', 'Caves of Irem', 'Glinting Hollow', 'Grimtide Sanctum', 'Blind Midden']
+def dungeon_url(d): return '/dungeons/%s.html' % slug(d)
+
+def _lvl_range(d):
+    Z = ZONES[d]; m = re.findall(r'\d+', Z.get('level') or '')
+    mobs = []
+    for e in Z['npcs'] + Z['named']:
+        for x in re.findall(r'\d+', e.get('level') or ''):
+            if 1 <= int(x) <= 60: mobs.append(int(x))
+    if m:
+        lo = int(m[0]); hi = int(m[1]) if len(m) > 1 else max([lo] + mobs)
+        return lo, hi, 'wiki zone level: %s' % Z['level']
+    if mobs: return min(mobs), max(mobs), 'from wiki mob levels (zone level not stated)'
+    return None, None, 'not stated on the wiki'
+
+def _legend(d):
+    L = ' '.join(ZONES[d].get('legend') or [])
+    if not L.strip() or len(L) < 8: return [], []
+    rooms, feats = (L.split('___') + [''])[:2]
+    r = re.findall(r'(\d+)\.\s*(.*?)(?=\s+\d+\.\s|$)', rooms.strip())
+    f = re.findall(r'\b([A-Z])\.\s*(.*?)(?=\s+[A-Z]\.\s|$)', feats.strip())
+    return [(a, b.strip()) for a, b in r if b.strip()], [(a, b.strip()) for a, b in f if b.strip()]
+
+def _areas(d):
+    """group sourced NPC location strings into top-level areas (floors/regions)"""
+    out = {}
+    for e in ZONES[d]['npcs'] + ZONES[d]['named']:
+        loc = (e.get('location') or '').strip()
+        if loc in ('', '-', 'Location') or loc.lower().startswith('give '): continue
+        top = re.split(r'[,.]', loc)[0].replace('(Presumed) ', '').strip()
+        sub = loc[len(top):].strip(' ,.') if loc.startswith(top) else loc
+        out.setdefault(top, set())
+        if sub: out[top].add(sub[:60])
+    return out
+
+def _wrap(t, n):
+    words, lines, cur = t.split(), [], ''
+    for w in words:
+        if len(cur) + len(w) + 1 > n and cur: lines.append(cur); cur = w
+        else: cur = (cur + ' ' + w).strip()
+    if cur: lines.append(cur)
+    return lines[:3]
+
+def dungeon_svg(d):
+    """Own schematic: boxes for sourced landmarks only. Not to scale; links between boxes are not sourced unless stated."""
+    rooms, feats = _legend(d)
+    W = 440; y = 34; parts = []
+    def box(x, y, w, h, label, sub, cls):
+        ls = _wrap(label, int(w / 6.6))
+        t = ''.join('<tspan x="%d" dy="%d">%s</tspan>' % (x + 6, 14 if i == 0 else 13, esc(l)) for i, l in enumerate(ls))
+        return '<g class="%s"><rect x="%d" y="%d" width="%d" height="%d" rx="5"/><text x="%d" y="%d">%s</text>%s</g>' % (
+            cls, x, y, w, h, x + 6, y + 2, t, ('<text class="sm" x="%d" y="%d">%s</text>' % (x + 6, y + h - 6, esc(sub))) if sub else '')
+    adj = ZONES[d]['adjacent']
+    parts.append(box(10, y, W - 20, 30, 'Entrance / zone lines: ' + (', '.join(adj) or 'not stated'), '', 'ent')); y += 42
+    if rooms or feats:
+        parts.append('<text class="hd" x="10" y="%d">Numbered rooms (wiki map key)</text>' % (y + 4)); y += 12
+        cw = (W - 30) // 2
+        for i, (n, t) in enumerate(rooms):
+            x = 10 + (i % 2) * (cw + 10)
+            parts.append(box(x, y, cw, 46, '%s. %s' % (n, t), '', 'room'))
+            if i % 2 == 1 or i == len(rooms) - 1: y += 54
+        if feats:
+            parts.append('<text class="hd" x="10" y="%d">Features (wiki map key)</text>' % (y + 4)); y += 12
+            for i, (n, t) in enumerate(feats):
+                x = 10 + (i % 2) * (cw + 10)
+                cls = 'trap' if 'trap' in t.lower() else 'feat'
+                parts.append(box(x, y, cw, 46, '%s. %s' % (n, t), '', cls))
+                if i % 2 == 1 or i == len(feats) - 1: y += 54
+        note = 'Key diagram from the wiki map legend. Positions and links are not to scale or sourced.'
+    else:
+        areas = _areas(d)
+        if not areas: return ''
+        def fl(k):
+            m = re.match(r'(\d+)', k); return (0, -int(m.group(1))) if m else (1, k)
+        keys = sorted(areas, key=fl) if any(re.match(r'\d', k) for k in areas) else sorted(areas, key=lambda k: (not k.lower().startswith('top'), k))
+        stacked = any(re.match(r'\d|top floor|basement', k, re.I) for k in keys)
+        for k in keys:
+            subs = sorted(areas[k])[:4]
+            h = 30 + 13 * len(subs)
+            g = box(10, y, W - 20, h, k, '', 'floor' if stacked else 'room')
+            g += ''.join('<text class="sm" x="22" y="%d">· %s</text>' % (y + 30 + 13 * i, esc(s[:62])) for i, s in enumerate(subs))
+            parts.append(g); y += h + 8
+        note = ('Floors stacked top to bottom as named in wiki NPC locations.' if stacked else 'Areas named in wiki NPC locations; arrangement is not sourced.') + ' Not to scale.'
+    y += 4
+    parts.append('<text class="sm" x="10" y="%d">%s</text>' % (y + 8, esc(note)))
+    H = y + 18
+    return ('<figure class="dmap"><svg viewBox="0 0 %d %d" role="img" aria-label="%s schematic" xmlns="http://www.w3.org/2000/svg">'
+            '<text class="hd" x="10" y="20">%s — schematic</text>%s</svg><figcaption>Original schematic drawn for this site from wiki text (CC BY-SA 4.0). '
+            'Not a copy of any map image.</figcaption></figure>') % (W, H, esc(d), esc(d), ''.join(parts))
+
+def _loot_cells(e):
+    items = [x.strip() for x in (e.get('loot') or '').split(',') if x.strip() and x.strip() != '-']
+    return items
+
+def dungeon_loot(d):
+    rows = []
+    for e in ZONES[d]['named']:
+        if e['name'] in ('Raid Named', 'Example Item'): continue
+        items = _loot_cells(e)
+        if not items: continue
+        codes = set()
+        for x in items:
+            if x in ITEMS: codes |= set(class_codes(ITEMS[x]))
+        loc = e.get('location') if e.get('location') not in (None, '-', 'Location') else ''
+        rows.append('<tr data-c="%s"><td><b>%s</b>%s</td><td>%s</td><td>%s</td></tr>' % (
+            ' '.join(sorted(codes)), esc(e['name']), ('<br><span class="dim">%s</span>' % esc(loc)) if loc else '', esc(e.get('level') if e.get('level') not in ('-', None) else '?'),
+            ', '.join(item_link(x) if x in ITEMS else esc(x) for x in items)))
+    if not rows: return '<p class="dim"><span class="badge unc">unverified</span> No loot listed on the wiki.</p>'
+    return ('<p class="dim">Rows with gear your selected class can use are highlighted (class picker in the top bar). Hover an item for stats.</p>'
+            '<div class="tw"><table class="grid sortable dloot"><thead><tr><th>Named (where)</th><th>Lvl</th><th>Known loot (wiki)</th></tr></thead><tbody>%s</tbody></table></div>') % ''.join(rows)
+
+def dungeon_camps(d):
+    rows = [e for e in ZONES[d]['npcs'] if lvl_num(e.get('level')) is not None and e['name'] != 'Example Item']
+    if not rows: return '<p class="dim"><span class="badge unc">unverified</span> No mob levels on the wiki.</p>'
+    rows.sort(key=lambda e: lvl_num(e['level']))
+    return '<ul class="tight">%s</ul>' % ''.join('<li><b>%s</b> (lvl %s)%s</li>' % (esc(e['name']), esc(e['level']), (' — ' + esc(e['location'])) if e.get('location') not in (None, '-', 'Location') else '') for e in rows[:30])
+
+def dungeon_page(d):
+    Z = ZONES[d]; X = DUNGEONS.get(d, {}); lo, hi, lsrc = _lvl_range(d)
+    def lab(s):
+        s = esc(s)
+        for k, c in (('FACT', 'fact'), ('STRATEGY', 'strat'), ('UNVERIFIED', 'unc')):
+            s = s.replace(k + ' ', '<span class="badge %s">%s</span> ' % (c, k.lower()), 1) if s.startswith(k) else s
+        return s
+    rooms, feats = _legend(d)
+    o = ['<div class="dhead" data-lo="%s" data-hi="%s"><table class="kv"><tr><th>Levels</th><td>%s <span class="dim">(%s)</span></td></tr><tr><th>Connects to</th><td>%s</td></tr><tr><th>Named listed</th><td>%d</td></tr></table></div>' % (
+        lo or '', hi or '', ('%s–%s' % (lo, hi)) if lo else '<span class="badge unc">unverified</span>', esc(lsrc), ', '.join(zlink(a) for a in Z['adjacent']) or '—', len([e for e in Z['named'] if e['name'] not in ('Raid Named', 'Example Item')]))]
+    o.append('<div class="call note"><p class="dim" style="margin:0">Zone page with full mob table and wiki maps: %s</p></div>' % zlink(d))
+    o.append('<h2 id="map">Map</h2>' + (dungeon_svg(d) or '<p class="dim">No sourced layout to draw.</p>'))
+    o.append('<h2 id="access">Getting in <span class="badge fact">fact</span></h2><ul class="tight">%s</ul>' % ''.join('<li>%s</li>' % lab(a) for a in X.get('access', [])))
+    dirs = []
+    for n, t in rooms: dirs.append('<li><b>%s</b> — map key %s</li>' % (esc(t), n))
+    for n, t in feats: dirs.append('<li>%s <span class="dim">(key %s)</span></li>' % (esc(t), n))
+    locs = [(e['name'], e['location']) for e in Z['named'] + Z['npcs'] if e.get('location') not in (None, '-', 'Location', '') and not e['location'].lower().startswith('give ')]
+    for nm, l in locs[:25]: dirs.append('<li><b>%s</b>: %s</li>' % (esc(nm), esc(l)))
+    if Z.get('travel') and d == 'Glinting Hollow':
+        dirs += ['<li>%s</li>' % esc(t) for t in Z['travel']]
+    o.append('<h2 id="directions">Directions to key camps <span class="badge fact">fact</span></h2>%s' % (('<ul class="tight">%s</ul><p class="src">From the wiki map legend and NPC location column. Where the wiki gives no location, none is shown.</p>' % ''.join(dirs)) if dirs else '<p class="dim"><span class="badge unc">unverified</span> The wiki gives no camp locations for this dungeon.</p>'))
+    o.append('<h2 id="loot">Notable loot <span class="badge fact">fact</span></h2>' + dungeon_loot(d))
+    o.append('<h2 id="camps">Mobs by level <span class="badge fact">fact</span></h2>' + dungeon_camps(d))
+    o.append('<h2 id="special">Special info</h2><ul class="tight">%s</ul>' % ''.join('<li>%s</li>' % lab(s) for s in X.get('special', [])))
+    if X.get('tips'):
+        o.append('<h2 id="tips">Pathing and pull tips <span class="badge strat">strategy</span></h2><ul class="tight">%s</ul>' % ''.join('<li>%s</li>' % lab(s) for s in X['tips']))
+    src = ['Wiki: %s (rev %s)|%s' % (d, Z.get('revid'), Z['url'])] + X.get('sources', [])
+    ctx = {'toc': [('map', 'Map'), ('access', 'Getting in'), ('directions', 'Directions'), ('loot', 'Loot'), ('camps', 'Mobs'), ('special', 'Special'), ('tips', 'Tips')]}
+    return ''.join(o), src, ctx
+
+def dungeon_index():
+    cards = []
+    for d in DUNGEON_ORDER:
+        lo, hi, _ = _lvl_range(d)
+        nm = [e['name'] for e in ZONES[d]['named'] if e['name'] not in ('Raid Named', 'Example Item')]
+        cards.append('<div class="dcard" data-lo="%s" data-hi="%s"><h3><a href="%s">%s</a> <span class="dim">%s</span></h3><p>%s</p><p class="dim">%d named · %s</p></div>' % (
+            lo or '', hi or '', dungeon_url(d), esc(d), ('%s–%s' % (lo, hi)) if lo else 'levels unverified', esc((ZONES[d].get('intro') or '')[:160]), len(nm), esc(', '.join(nm[:4]))))
+    return ('<p>Dungeons with sourced info, sorted by level. Cards that overlap your level range (top bar) are highlighted. <span class="badge fact">fact</span> = wiki or patch notes; <span class="badge strat">strategy</span> = advice; <span class="badge unc">unverified</span> = not confirmed.</p>'
+            '<div class="dcards">%s</div>'
+            '<h2 id="gaps">Not covered</h2><ul class="tight"><li><b>The Hidden Grotto</b> (Shallow Shoals, underwater): the wiki page only has placeholder rows. <span class="badge unc">unverified</span></li>'
+            '<li><b>Night Harbor Sewers</b>: the wiki says the sewers are closed (dev-confirmed during closed beta, April 2026) with no return date.</li></ul>') % ''.join(cards)
 
 GENS.update(classquick=g_classquick, classbands=g_classbands)
 
@@ -783,7 +943,7 @@ RANGEBAR_HTML = (
 
 # ------------------------------------------------------------------ layout
 NAV = [('Home', '/index.html', 'home'), ('Classes', '/classes/index.html', 'classes'), ('Shaman', '/shaman/index.html', 'shaman'),
-       ('Gear', '/gear/index.html', 'gear'), ('Zones', '/zones/index.html', 'zones'), ('Leveling', '/leveling.html', 'leveling'),
+       ('Gear', '/gear/index.html', 'gear'), ('Dungeons', '/dungeons/index.html', 'dungeons'), ('Zones', '/zones/index.html', 'zones'), ('Leveling', '/leveling.html', 'leveling'),
        ('Farming', '/farming.html', 'farming'), ('Economy', '/economy.html', 'economy'), ('Tradeskills', '/tradeskills.html', 'tradeskills'),
        ('Factions', '/factions.html', 'factions'), ('Quests', '/quests.html', 'quests'), ('Changelog', '/changelog.html', 'changelog')]
 
@@ -796,6 +956,8 @@ def left_nav(section):
         return ul('Classes', [(c, class_url(c)) for c in CLASS_LIST])
     if section == 'gear':
         return ul('Gear', GEAR_NAV)
+    if section == 'dungeons':
+        return ul('Dungeons', [('All dungeons', '/dungeons/index.html')] + [(d, dungeon_url(d)) for d in DUNGEON_ORDER])
     if section == 'zones':
         return ul('Zones', [('All zones & world map', '/zones/index.html')] + [(z, zone_url(z)) for z in sorted(ZONES)])
     return ul('Classes', [(c, class_url(c)) for c in CLASS_LIST]) + ul('Reference', [('Gear by level', '/gear/index.html'), ('Zones', '/zones/index.html'), ('Quests', '/quests.html'), ('Sources', '/sources.html')])
@@ -861,7 +1023,7 @@ def add_page(path, title, body_md=None, section='home', meta=None, body_html=Non
 def crumbs_for(p):
     parts = p['path'].split('/')
     c = ['<a href="/index.html">Home</a>']
-    sec = {'shaman': ('Shaman', '/shaman/index.html'), 'classes': ('Classes', '/classes/index.html'), 'gear': ('Gear', '/gear/index.html'), 'zones': ('Zones', '/zones/index.html')}
+    sec = {'shaman': ('Shaman', '/shaman/index.html'), 'classes': ('Classes', '/classes/index.html'), 'gear': ('Gear', '/gear/index.html'), 'zones': ('Zones', '/zones/index.html'), 'dungeons': ('Dungeons', '/dungeons/index.html')}
     if len(parts) > 1 and parts[0] in sec and parts[1] != 'index.html':
         c.append('<a href="%s">%s</a>' % (sec[parts[0]][1], sec[parts[0]][0]))
     if p['path'] != 'index.html': c.append('<span>%s</span>' % esc(p['title']))
@@ -962,6 +1124,12 @@ def build_content():
         for k, v in rep.items(): t = t.replace('%%' + k + '%%', v)
         meta, body = read_md_text(t)
         add_page('classes/%s.html' % slug(c), c, body, 'classes', meta, desc='%s class guide' % c)
+    # dungeon pages
+    add_page('dungeons/index.html', 'Dungeons', body_html=dungeon_index(), section='dungeons', sources=['Wiki: Category:Dungeons|%sCategory:Dungeons' % WIKI], desc='Dungeon guides')
+    for d in DUNGEON_ORDER:
+        b, src, cx = dungeon_page(d)
+        add_page(dungeon_url(d).lstrip('/'), d, body_html=b, section='dungeons', sources=src, desc='%s dungeon guide' % d)
+        PAGES[-1]['ctx'].update(cx)
     # zone pages
     ztpl = open(os.path.join(CONTENT, '_zone_template.md'), encoding='utf8').read()
     for z, Z in ZONES.items():

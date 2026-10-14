@@ -134,3 +134,16 @@ details summary{cursor:pointer;color:var(--gold)}
  h1{font-size:1.25rem}h2{font-size:1.1rem}
  .hero{padding:8px}
 }
+
+/* ---- dungeons ---- */
+.dcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.dcard{border:1px solid var(--line);border-radius:6px;padding:8px 10px;background:#15110c}
+.dcard h3{margin:0 0 4px;font-size:1.02rem}.dcard p{margin:.2em 0}
+.dcard.inband,.dhead.inband{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset}
+.dhead{border:1px solid var(--line);border-radius:6px;padding:6px 10px;margin-bottom:10px}
+table.dloot tr.clsok td{background:#1f2a18}
+table.dloot tr.clsok td:first-child{box-shadow:3px 0 0 #7fbf5f inset}
+figure.dmap{margin:0 0 10px}figure.dmap svg{width:100%;max-width:560px;height:auto;display:block;background:#0f0c08;border:1px solid var(--line);border-radius:6px}
+.dmap text{fill:#e6dcc6;font:12px system-ui,sans-serif}.dmap text.sm{font-size:10.5px;fill:#b8ab90}.dmap text.hd{font-weight:bold;fill:#e0b85a;font-size:12.5px}
+.dmap rect{fill:#1d170f;stroke:#6b5a3a}.dmap .ent rect{fill:#162418;stroke:#5f9f6a}.dmap .trap rect{fill:#2a1512;stroke:#b3563f}.dmap .feat rect{fill:#151b26;stroke:#5a77a8}.dmap .floor rect{fill:#1a1a12;stroke:#9a8a55}
+figure.dmap figcaption{font-size:.8rem;color:#a99}

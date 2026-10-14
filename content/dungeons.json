@@ -1,0 +1,55 @@
+{
+ "Tomb of the Last Wyrmsbane": {
+  "access": ["FACT Cave on top of the hill in the west newbie yard of West Night Harbor (wiki). Map key A is the Night Harbor zone line."],
+  "special": [
+   "FACT Map key lists pit traps at B, K and N, with recovery points C (for B) and L (for K) (wiki map legend).",
+   "FACT Hidden passage O leads to the Chapel Room (4); hidden zone line M to Ancient Crypt sits above a hallway (wiki map legend).",
+   "FACT Bone Construct (room 5): patch 0.29.0.0 made him despawn if he leaves his arena; 0.29.0.1 says his gate no longer locks until his corpse rots, and all Bone Construct rewards require level 49 to equip.",
+   "FACT I leads to a basement filled with Deep Beetles (wiki map legend)."
+  ],
+  "tips": ["STRATEGY Learn where the pit traps are before you pull through hallways; a fall splits the group.", "STRATEGY Bone Construct loot needs level 49, so low-level groups gain nothing from killing him."],
+  "sources": ["Patch 0.29.0.0|https://account.monstersandmemories.com/community/patch_notes/44", "Patch 0.29.0.1|https://account.monstersandmemories.com/community/patch_notes/45"]
+ },
+ "Infested Crypt": {
+  "access": ["FACT Connects to Shaded Dunes (wiki)."],
+  "special": ["FACT Map key A: spiderweb ladder up to a balcony that wraps around the room; key 1 is a crypt broodmother (wiki map legend)."],
+  "tips": ["STRATEGY Spider dungeon at 8–16; the broodmother (16) is the top named, so bring a full group near the low end of the range."]
+ },
+ "Ancient Crypt": {
+  "access": ["FACT Connects to Shaded Dunes, Tomb of the Last Wyrmsbane and Caves of Irem (wiki)."],
+  "special": ["FACT Zone respawn timer: 8 minutes (wiki).", "FACT False-floor pit trap A drops you among skeletons; C is the recovery from A. Pit trap D drops you into Caves of Irem. B is a ladder up to the Researcher Harseal area (wiki map legend)."],
+  "tips": ["STRATEGY With an 8-minute respawn, clear toward the named you want and don't linger.", "STRATEGY Avoid false floor D unless you mean to go to Caves of Irem."]
+ },
+ "Sunken Resort": {
+  "access": ["FACT The zone line is in the sunken building in the lake near the Sojourner camp in Scarwood (wiki)."],
+  "special": ["FACT Wiki level 29–38, marked 'exact range unknown'. 'a hungering escapee' is listed as placeholder for Echo of the Unfinished (wiki)."],
+  "tips": ["STRATEGY Expect to swim to get in; plan breath and buffs before entering. UNVERIFIED whether underwater breathing is required."]
+ },
+ "Grain Cellar": {
+  "access": ["FACT Entrance: second-to-last building along the river in Sungreet Strand. Enter the courtyard, turn around to face the exit, click the plain wall right of the gate to reveal a secret entrance (wiki).", "FACT The Grain Cellar Key is required for the many gated doors inside (wiki). Zakariah Shriki (31) drops a Grain Cellar Key (wiki NPC table)."],
+  "special": ["FACT Overrun by undead and cultists (wiki)."],
+  "tips": ["STRATEGY Kill Zakariah Shriki early so the group has a key for the gated doors."]
+ },
+ "Grimtide Sanctum": {
+  "access": ["FACT From Shallow Shoals: swim into the tunnel under the wrecked ship (wiki).", "FACT Tidecaller Selka drops a Grimtide Sanctum Key (wiki NPC table)."],
+  "special": ["FACT Cavernous dungeon under a small atoll; mostly goblins plus some undead and beasts (wiki).", "UNVERIFIED The wiki says an encounter uses the Grimtide Odon dropped by the wing bosses, and that it was non-functional as of 07/26. That note predates Early Access."],
+  "tips": ["STRATEGY Level 47–50 mobs and 50 nameds: a full, geared group."]
+ },
+ "Caves of Irem": {
+  "access": ["FACT Connects to Great Cavern Sea and Underdocks (wiki); Ancient Crypt pit trap D drops into it (Ancient Crypt map legend).", "FACT Patch 0.29.0.0: Druids can teleport to Caves of Irem."],
+  "special": ["UNVERIFIED The wiki says this page is outdated from when the zone was called 'Deep Dunes'. Treat levels and locations as unconfirmed.", "FACT Patch 0.30.0.1 fixed Caves of Irem 'forsaken' buffs."],
+  "tips": ["STRATEGY Use the named areas (Pyramid Road → Pyramid Complex → Pyramid Ruins, Green Lake, Roostbound Giants, Skri'Var camp) as camp targets; positions are not sourced."],
+  "sources": ["Patch 0.29.0.0|https://account.monstersandmemories.com/community/patch_notes/44", "Patch 0.30.0.1|https://account.monstersandmemories.com/community/patch_notes/47"]
+ },
+ "Blind Midden": {
+  "access": ["FACT Dungeon just off Ail'Vorith, the Deep Elf starting zone (wiki). It has a main entrance and a back entrance (wiki NPC locations)."],
+  "special": ["FACT Added in patch 0.30.2.0 ('Initial zone and spawning'); still in progress in 0.30.2.1.", "FACT Two levels: Top floor (main entrance, forge, prisons, sentient sewage room, watery hallways) and Basement (main-entrance side and back-entrance side) (wiki NPC locations)."],
+  "tips": ["STRATEGY The wiki gives no level range yet; check mob con colors before pulling. UNVERIFIED level range."],
+  "sources": ["Patch 0.30.2.0|https://account.monstersandmemories.com/community/patch_notes/51"]
+ },
+ "Glinting Hollow": {
+  "access": ["FACT Complete the Glinting Hollow Key Quest first. From the druid portal in Evershade Weald, go up the hill into the cave guarded by Fae Guardians; at the lowest part of the cave, click the pine cone under the dragon skull with the Glowing Fae Scale on your cursor (wiki).", "FACT Inside, areas are keyed; keys stay on your body through death (wiki)."],
+  "special": ["FACT Six floors listed on the wiki NPC table; floor 5 has an Ice ring.", "FACT Five inscribed stones (North, South, West, East, Center) with locations and inscriptions are listed on the wiki."],
+  "tips": ["STRATEGY Level 38+ keyed zone: bring everyone's keys, since each area needs its own."]
+ }
+}
