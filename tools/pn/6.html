@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="VDooJRJ1GAdXF0sKLAkoPTsUADICYix8aCKHqCq76RspaKlMKetZK7V2">
+    <title data-suffix=" · Monsters &amp; Memories">
+      0.21.0.0 - Beta Patch 2
+     · Monsters &amp; Memories</title>
+    <link phx-track-static rel="stylesheet" href="/assets/app-e61ca410f03dadd2d9f880147d301962.css?vsn=d">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    <script defer phx-track-static type="text/javascript" src="/assets/app.js?v=2">
+    </script>
+  </head>
+  <body class="h-full bg-zinc-900 text-zinc-100">
+
+    <div id="timezone-detector" phx-hook="TimezoneDetector" data-timezone="UTC" class="hidden">
+    </div>
+
+
+      <div class="min-h-full">
+        <nav id="site-navbar" class="sticky top-0 z-40 border-b-2 border-zinc-700 bg-zinc-800/80 backdrop-blur-sm">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 justify-between">
+              <div class="flex">
+                <div class="flex shrink-0 items-center">
+                  <a href="/" class="text-xl font-bold text-orange-500 hover:text-orange-400 transition-colors duration-200">
+                    Monsters & Memories
+                  </a>
+
+                </div>
+                <div class="hidden md:-my-px md:ml-6 md:flex md:space-x-8">
+                  <a href="/community" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-zinc-400 hover:border-zinc-600 hover:text-zinc-300 transition-colors duration-200">
+                    Community
+                  </a>
+                  
+                  <a href="/launcher" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-zinc-400 hover:border-zinc-600 hover:text-zinc-300 transition-colors duration-200">
+                    Download Launcher
+                  </a>
+                  
+                </div>
+              </div>
+
+                <div class="hidden gap-3 md:flex md:items-center">
+                  <a href="/accounts/register" id="navbar-register-link" class="game-button game-button-compact">
+                    Register
+                  </a>
+                  <a href="/accounts/log_in" id="navbar-login-link" class="game-button game-button-compact">
+                    Log in
+                  </a>
+                </div>
+
+
+              <div class="-mr-2 flex items-center md:hidden">
+                <button type="button" class="relative inline-flex items-center justify-center rounded-md bg-zinc-800 p-2 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-zinc-800" aria-controls="mobile-menu" phx-click="[[&quot;toggle&quot;,{&quot;to&quot;:&quot;#mobile-menu&quot;}],[&quot;toggle_class&quot;,{&quot;names&quot;:[&quot;overflow-hidden&quot;],&quot;to&quot;:&quot;body&quot;}]]" aria-expanded="false">
+                  <span class="absolute -inset-0.5"></span>
+                  <span class="sr-only">Open main menu</span>
+                  <svg class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:hidden hidden max-h-[calc(100vh-4rem)] overflow-y-auto overscroll-contain" id="mobile-menu">
+            <div class="space-y-1 pb-3 pt-2">
+
+              <a href="/community" class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-zinc-400 hover:border-zinc-600 hover:bg-zinc-700 hover:text-zinc-300">
+                Community
+              </a>
+              
+              <a href="/launcher" class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-zinc-400 hover:border-zinc-600 hover:bg-zinc-700 hover:text-zinc-300">
+                Download Launcher
+              </a>
+              
+
+                <div class="grid grid-cols-2 gap-3 px-3 pt-2">
+                  <a href="/accounts/register" id="mobile-navbar-register-link" class="game-button game-button-compact w-full">
+                    Register
+                  </a>
+                  <a href="/accounts/log_in" id="mobile-navbar-login-link" class="game-button game-button-compact w-full">
+                    Log in
+                  </a>
+                </div>
+
+            </div>
+
+          </div>
+        </nav>
+
+        <main>
+
+            <div id="phx-GN5DN6k0H236pmXk" data-phx-main data-phx-session="SFMyNTY.g2gDaAJhBnQAAAAIdwJpZG0AAAAUcGh4LUdONURONmswSDIzNnBtWGt3B3Nlc3Npb250AAAAAHcEdmlld3chRWxpeGlyLk1ubVdlYi5QYXRjaE5vdGVzTGl2ZS5TaG93dwpwYXJlbnRfcGlkdwNuaWx3BnJvdXRlcncURWxpeGlyLk1ubVdlYi5Sb3V0ZXJ3CHJvb3RfcGlkdwNuaWx3EWxpdmVfc2Vzc2lvbl9uYW1ldxBjb21tdW5pdHlfcHVibGljdwlyb290X3ZpZXd3IUVsaXhpci5Nbm1XZWIuUGF0Y2hOb3Rlc0xpdmUuU2hvd24GABOHKTihAWIAAVGA.8ny5GcPbCtUOMw8iQmAi9byOpGGC3Wvi8asmP4t8WF4" data-phx-static="SFMyNTY.g2gDaAJhBnQAAAADdwJpZG0AAAAUcGh4LUdONURONmswSDIzNnBtWGt3BWZsYXNodAAAAAB3CmFzc2lnbl9uZXdsAAAAA3cMY3VycmVudF9wYXRodw11c2VyX3RpbWV6b25ldw9jdXJyZW50X2FjY291bnRqbgYAE4cpOKEBYgABUYA.h9zz9D8T1B-mbomcoqJ2V4iQb1VlYuJzyOGaRe0n3wo"><div id="flash-group">
+  
+  
+  <div id="client-error" phx-click="[[&quot;push&quot;,{&quot;value&quot;:{&quot;key&quot;:&quot;error&quot;},&quot;event&quot;:&quot;lv:clear-flash&quot;}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#client-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}]]" role="alert" class="fixed top-2 right-2 mr-2 w-80 sm:w-96 z-50 rounded-lg p-3 shadow-lg border bg-zinc-800 border-red-700 text-red-200" hidden phx-connected="[[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#client-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}]]" phx-disconnected="[[&quot;show&quot;,{&quot;time&quot;:300,&quot;to&quot;:&quot;.phx-client-error #client-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-out&quot;,&quot;duration-300&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;]]}]]">
+  <p class="flex items-center gap-1.5 text-sm font-semibold leading-6">
+    
+    <span class="hero-exclamation-circle-mini h-4 w-4"></span>
+    We can&#39;t find the internet
+  </p>
+  <p class="mt-2 text-sm leading-5">
+    Attempting to reconnect
+    <span class="hero-arrow-path ml-1 h-3 w-3 animate-spin"></span>
+  </p>
+  <button type="button" class="group absolute top-1 right-1 p-2" aria-label="close">
+    <span class="hero-x-mark-solid h-5 w-5 opacity-40 group-hover:opacity-70"></span>
+  </button>
+</div>
+
+  <div id="server-error" phx-click="[[&quot;push&quot;,{&quot;value&quot;:{&quot;key&quot;:&quot;error&quot;},&quot;event&quot;:&quot;lv:clear-flash&quot;}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#server-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}]]" role="alert" class="fixed top-2 right-2 mr-2 w-80 sm:w-96 z-50 rounded-lg p-3 shadow-lg border bg-zinc-800 border-red-700 text-red-200" hidden phx-connected="[[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#server-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}]]" phx-disconnected="[[&quot;show&quot;,{&quot;time&quot;:300,&quot;to&quot;:&quot;.phx-server-error #server-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-out&quot;,&quot;duration-300&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;]]}]]">
+  <p class="flex items-center gap-1.5 text-sm font-semibold leading-6">
+    
+    <span class="hero-exclamation-circle-mini h-4 w-4"></span>
+    Something went wrong!
+  </p>
+  <p class="mt-2 text-sm leading-5">
+    Hang in there while we get back on track
+    <span class="hero-arrow-path ml-1 h-3 w-3 animate-spin"></span>
+  </p>
+  <button type="button" class="group absolute top-1 right-1 p-2" aria-label="close">
+    <span class="hero-x-mark-solid h-5 w-5 opacity-40 group-hover:opacity-70"></span>
+  </button>
+</div>
+</div>
+
+  
+  <div class="px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
+    <div class="max-w-4xl mx-auto">
+
+      <div class="mb-6">
+        <a href="/community/patch_notes" data-phx-link="redirect" data-phx-link-state="push" class="game-button">
+          <span class="hero-chevron-left h-5 w-5 mr-1"></span> Back to Patch Notes
+        </a>
+      </div>
+
+      <div id="patch-note-content" class="paper-frame p-10 break-words">
+        <h1 class="text-2xl sm:text-3xl font-bold text-zinc-900 mb-2">
+          0.21.0.0 - Beta Patch 2
+        </h1>
+        <p class="text-sm text-zinc-700 mb-6">
+          March 20, 2026
+        </p>
+
+        <div class="space-y-3">
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-1191" aria-expanded="true" aria-controls="patch-section-1191" phx-click="toggle_section" phx-value-id="1191" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Tech
+                  </h2>
+                </button>
+
+                <div id="patch-section-1191" class="mt-4 space-y-2">
+                  <h3 class="text-lg font-semibold text-zinc-900 mt-3 ml-8">Features</h3><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Temporarily disabled Discord Rich Game Presence</li><li class="text-zinc-800">Lock harvest node for 10s after harvesting it for the first time, it can only be harvested by the same player</li><li class="text-zinc-800">Storage boxes and display boxes now have configurable permissions (Owner only, Group only, Guild only, and Everyone. Inside houses they can be set to Co-owners only)</li><li class="text-zinc-800">Market stalls will now always be public</li><li class="text-zinc-800">Add the ability for certain areas in a house to be marked as always public (such as open patios and rooftops)</li><li class="text-zinc-800">You can now convert a regular house to a guild house</li><li class="text-zinc-800">It will no longer count towards your housing limits</li><li class="text-zinc-800">Each guild may currently own only one house</li><li class="text-zinc-800">Only houses are able to be converted</li><li class="text-zinc-800">The owner of the house will be the guild leader, and everyone else will have coowner privileges</li><li class="text-zinc-800">The conversion costs 1 Platinum and increases upkeep by 50%</li><li class="text-zinc-800">More GM moderation tooling for housing</li><li class="text-zinc-800">Added customs agents to Night Harbor, Evershade Weald, Keepers Bight and Shallow Shoals</li><li class="text-zinc-800">They will recover items lost from destroying furniture storage boxes with inventory inside</li><li class="text-zinc-800">They are region locked</li><li class="text-zinc-800">The UI is temporary: they will stack in one slot and taking one item will reveal the next</li></ul><h3 class="text-lg font-semibold text-zinc-900 mt-3 ml-8">Bug Fixes</h3><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Only harmful debuffs may be resisted from placeable objects (like Caltrops)</li><li class="text-zinc-800">Prevent campfires and other similar objects from bestowing their beneficial buffs to NPCs</li><li class="text-zinc-800">Solve small edge case in trades: Manipulating items inside containers were not updating properly to the other player</li><li class="text-zinc-800">Fix PVP guard aggro checks</li><li class="text-zinc-800">Force a stand if feared while crouching and prevent crouching input while feared</li><li class="text-zinc-800">Prevent walking NPCs from continuing to walk when rooted out of combat</li><li class="text-zinc-800">Some fixes addressing randomly being teleported to safe location</li><li class="text-zinc-800">Movement in plane of meat has been fixed. (Campfire button at character selection)</li><li class="text-zinc-800">Fixed a bug related to the reset UI button in the main menu, thanks Taron!</li><li class="text-zinc-800">Fixed a bug related to the note icon you see in the group finder, you should now be able to click on the note icon and see the classes desired.</li><li class="text-zinc-800">Fix bug with duels, where killing a players pet would declare you as winner of the duel</li><li class="text-zinc-800">Fix minor bug with hide player pet names also hiding npc pet names</li><li class="text-zinc-800">Move harmful buff application PvP check, addresses a bug where buffs that later applied a &quot;harmful&quot; buff would result in players being attacked by guards</li><li class="text-zinc-800">Ensure lightsources are deactivated when sending them to the bank from players inventory</li><li class="text-zinc-800">Don&#39;t signal guard aggro for PvP when dueling players auto attack each other</li><li class="text-zinc-800">Update diminishing returns stacks in edge case where the caster is the same on an additional cast</li><li class="text-zinc-800">Show the crafting expand option for bags where it&#39;s appropriate when calling &#39;open all bags&#39; (via shift + b)</li></ul><h3 class="text-lg font-semibold text-zinc-900 mt-3 ml-8">UI</h3><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Error message when campfire or other similar object is full and we are trying to add more items to it</li><li class="text-zinc-800">Change granularity of weight display on inspect window. Add the hundredth place if required</li><li class="text-zinc-800">Better error messaging for invalid placement of furniture and other objects</li><li class="text-zinc-800">/cast 0 and /cast 10 are now the same thing. They will cast the last spell on the bar</li><li class="text-zinc-800">F10 will now cycle: Hide UI -&gt; Hide UI + Name Plates -&gt; Restore UI</li><li class="text-zinc-800">There is now an initial color blind option available under interface settings</li><li class="text-zinc-800">currently - this only affects health bar color changes for disease, poison, and afflicted (things that can be cured)</li><li class="text-zinc-800">Major change to interactions windows and filters.</li><li class="text-zinc-800">A new mud tab will be added automatically to your existing Main chat.</li><li class="text-zinc-800">This tab by default, has the Mud and MudError filters, under gameplay in the context menu.</li><li class="text-zinc-800">This will filter mud actions AND NPC interactions that you have.</li><li class="text-zinc-800">By default, Mud and MudError will now appear in your Main chat, you can remove these with the filters mentioned above.</li><li class="text-zinc-800">Old settings, related to mud chat fading and disable mud / interactions window - have been removed.</li><li class="text-zinc-800">A new context menu has been added to the guild  window, you can now right click on members to invite to group or send a tell.</li><li class="text-zinc-800">The default location of the States has been moved slightly to the left, so the FPS counter isn&#39;t being blocked by it.</li><li class="text-zinc-800">Updated pivot and anchor for the server announcement, so it doesn&#39;t go off screen while increasing the scale of your UI.</li><li class="text-zinc-800">New key binds introduced for hot bar banks. Set them in your key binds menu in game.</li><li class="text-zinc-800">If you submit a petition, a new glow will appear around the M (main menu button) while the petition is unclaimed, this will stay active. When the petition is claimed, it will turn off. Additionally, the text in the main menu &quot;Petition for a GM&quot; will change to &quot;Pending GM Petition&quot; while your petition remains unclaimed.</li><li class="text-zinc-800">The GM CS chat now populates in the middle left of the screen by default.</li><li class="text-zinc-800">GM CS Chat now respects global chat font size.</li><li class="text-zinc-800">The aura bar no longer shows on your UI unless you have an ability that uses it.</li><li class="text-zinc-800">You can now search for the key bind you would like to set using the search box which will now appear in the Keybinds menu.</li><li class="text-zinc-800">Added a keybind for the self target frame icon. Default was middle mouse button, for those who are middle mouse button challenged.</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-1251" aria-expanded="true" aria-controls="patch-section-1251" phx-click="toggle_section" phx-value-id="1251" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Art
+                  </h2>
+                </button>
+
+                <div id="patch-section-1251" class="mt-4 space-y-2">
+                  <h3 class="text-lg font-semibold text-zinc-900 mt-3 ml-8">Character Art</h3><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Minor visual adjustments to a handful of player weapons &amp; armor</li><li class="text-zinc-800">Ensured NPC halfling foothair was securely velcroed on</li><li class="text-zinc-800">Jackal Form now looks like normal jackals instead of bright white jackals</li></ul><h3 class="text-lg font-semibold text-zinc-900 mt-3 ml-8">Environment Art</h3><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Mining nodes in the Wyrmsbane tunnel are once again accessible</li><li class="text-zinc-800">Texture updates to all of Shallow Shoals</li><li class="text-zinc-800">Additional props added in some areas of Night Harbor</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-1260" aria-expanded="true" aria-controls="patch-section-1260" phx-click="toggle_section" phx-value-id="1260" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Design
+                  </h2>
+                </button>
+
+                <div id="patch-section-1260" class="mt-4 space-y-2">
+                  <h3 class="text-lg font-semibold text-zinc-900 mt-3 ml-8">Tradeskills</h3><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Fixed wooden nightstand to be properly of type Furniture</li><li class="text-zinc-800">Added furniture wrench that you can use to destroy furniture</li><li class="text-zinc-800">Sold at carpenters</li><li class="text-zinc-800">In the future, they will give back the furniture item</li></ul><h3 class="text-lg font-semibold text-zinc-900 mt-3 ml-8">Content</h3><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Harvesting suppliers and trainers (Mining, Lumberjacking, etc.) in Evershade Weald have been moved a central location at the top of the harvester&#39;s mesa, beneath the Ranger&#39;s Rest. Props to follow.</li><li class="text-zinc-800">Additional NPCs added to Faelindral and the surrounding region.</li><li class="text-zinc-800">New Glass Flats Boneyard Mobs</li><li class="text-zinc-800">Various loot table fixes</li><li class="text-zinc-800">Various quest fixes and improvements</li><li class="text-zinc-800">Storage Crate construction abilities removed</li><li class="text-zinc-800">Sandstorm Intensity reduced in Night Harbor</li><li class="text-zinc-800">Carpentry Supplies vendor now sells Furniture Wrench</li></ul><h3 class="text-lg font-semibold text-zinc-900 mt-3 ml-8">Keeper&#39;s Bight</h3><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Added description to Poacher Wilna&#39;s Ring.</li><li class="text-zinc-800">Named NPC&#39;s are restricted from more spell effects.</li><li class="text-zinc-800">Coolwater Basilisks are now charmable.</li><li class="text-zinc-800">Added exterior lighting to the Hanging Garden Inn.</li><li class="text-zinc-800">Added additional props to docks, Penshaw, Farms, Blacktide Bay.</li><li class="text-zinc-800">Added additional orcs to the bay area.</li><li class="text-zinc-800">Random mobs should no longer try to enter Blacktide Bay caves from the outside.</li><li class="text-zinc-800">The northern bridge is now fully guarded.</li><li class="text-zinc-800">Adjusted spawns at Shady Farm.</li></ul><h3 class="text-lg font-semibold text-zinc-900 mt-3 ml-8">Balance</h3><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Player weapon damage caps are no longer static across large level ranges- they now scale every level, factor in weapon delay, and account for 2H &amp; Ranged weapons types.</li><li class="text-zinc-800">Player class is no longer a factor in Weapon damage caps</li><li class="text-zinc-800">A significant issue with spellcasting and physical ability skillup rates has been addressed- these skills will now increase at the expected rates</li><li class="text-zinc-800">Note: Players who were far behind on these skills will skillup significantly faster due to our catchup mechanic kicking in after the fix. Combat skillups will not normally trigger this quickly.</li><li class="text-zinc-800">Enemy NPC health has increased slightly, primarily focused on levels 5 through 45</li><li class="text-zinc-800">Enemy NPC armor class will now scale at a consistent rate from 1-60</li><li class="text-zinc-800">Player health per STA has been increased, while baseline health has been reduced</li><li class="text-zinc-800">Player mana per INT &amp; WIS has been increased, while baseline mana has been reduced</li><li class="text-zinc-800">Player physical damage from STR has been increased, while baseline physical damage has been reduced</li><li class="text-zinc-800">The level-based scaling for physical damage does not impact the early game, so the reduction will not impact those levels</li><li class="text-zinc-800">The small chance to fail a trivial combine has been removed</li><li class="text-zinc-800">The existing Hand to Hand (unarmed) weapons have been switched to Monk only</li><li class="text-zinc-800">Tradeskill difficulty bands (light blue, dark blue, etc) have been scaled down to better represent your chance of success</li><li class="text-zinc-800">The actual chance to fail a combine has not changed, just the presentation of recipes in the UI</li><li class="text-zinc-800">Damage caps math has been changed</li><li class="text-zinc-800">New charm, fear, and pacify break logic, charisma is more important</li><li class="text-zinc-800">Health regeneration now works like mana regeneration and will consider amount of time sitting within a tick</li><li class="text-zinc-800">Shorten sandstorms to only 2-4 hours of in game time (down from 8-16 hours)</li><li class="text-zinc-800">Night harbor sandstorms have been toned down in intensity</li></ul><h3 class="text-lg font-semibold text-zinc-900 mt-3 ml-8">Mounts</h3><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Mount speed at all swiftness tiers has been slightly increased</li><li class="text-zinc-800">Donkey swiftness value has been lowered to compensate for the increased speed</li><li class="text-zinc-800">Fixed an issue where zoning on a mount could leave a copy of a character model at the zoneline</li></ul><h3 class="text-lg font-semibold text-zinc-900 mt-3 ml-8">General Abilities/Skills</h3><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Fixed several Invisibility spells that lost their Invisibility property</li><li class="text-zinc-800">Autoattack will now be enabled for some damaging physical abilities that were previously omitted (ex. Round Kick)</li><li class="text-zinc-800">Fixed discrepancies in melee abilities and melee autoattack range (ex. Round Kick sigh)</li><li class="text-zinc-800">Ability ranges will receive less lag compensation allowance for stationary targets</li><li class="text-zinc-800">Fixed minimum range application being almost completely negated by this lag compensation, allowing abilities with minimum ranges to be used trivially while in melee range</li><li class="text-zinc-800">Safe Fall skillup rates have been increased</li><li class="text-zinc-800">Fixed several instances where a buff would work until you zoned or logged out, and then part of the buff would not work correctly (such as Seal of Magic&#39;s ability portion)</li><li class="text-zinc-800">Fixed the Stealth vfx applying after entities leave stealth/invis</li><li class="text-zinc-800">Stun is no longer considered an Incapacitate and will no longer be removed by Tenacity</li><li class="text-zinc-800">Immunity to a status effect will now only block the status effect, and not the entire buff causing that effect</li><li class="text-zinc-800">Aura abilities will no longer stack with other auras of the same type from other players in the group</li></ul><h3 class="text-lg font-semibold text-zinc-900 mt-3 ml-8">Archer</h3><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Flash Fire Damage Increased</li><li class="text-zinc-800">Most Abilities are now on the Melee Global Cooldown</li><li class="text-zinc-800">Flurry of Arrows now buffs only Ranged damage instead of all Physical damage, matching the intention and tooltip.</li><li class="text-zinc-800">Pinning Shot now applies the root effect only if the target is knocked into a wall or obstacle.</li><li class="text-zinc-800">Made Caltrops placement only be blocked by other Caltrops, with a minimum distance of 3.0</li></ul><h3 class="text-lg font-semibold text-zinc-900 mt-3 ml-8">Beastmaster</h3><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Exhaustion added to Beastmaster Spell Merchant</li><li class="text-zinc-800">Now has access to Minor Regeneration, Lesser Regeneration, Regeneration, and Greater Regeneration</li><li class="text-zinc-800">Bears and beetles / scarabs should always bond with the intended abilities</li><li class="text-zinc-800">Food will last longer on pets, and their stomach size has been doubled</li><li class="text-zinc-800">Removed some odd emote and... other behavior from tamed pets.</li><li class="text-zinc-800">Fixed several issues with buff persistence when pets die or are dismissed.</li><li class="text-zinc-800">You can no longer dismiss dead pets</li></ul><h3 class="text-lg font-semibold text-zinc-900 mt-3 ml-8">Inquisitor</h3><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Purifying Blow now has a passive chance to strike an additional time</li><li class="text-zinc-800">Mana Burn Line</li><li class="text-zinc-800">Replaced Placeholder Mana Values</li><li class="text-zinc-800">Cast Time Increased from 1.5 seconds to 2.0 seconds</li><li class="text-zinc-800">Fixed an issue with Aura of Magic Resistance behaving erratically and turning itself off</li></ul><h3 class="text-lg font-semibold text-zinc-900 mt-3 ml-8">Monk</h3><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Fists of Flame Damage Increased</li><li class="text-zinc-800">Empowered Celestial Vitality now also grants 1 (L1) to 5 (L60) Mana</li><li class="text-zinc-800">Earth Empowered Celestial Fury</li><li class="text-zinc-800">Physical Damage Reduction increased from 5% to 10%</li><li class="text-zinc-800">Now also grants +5 Block skill</li><li class="text-zinc-800">Celestial Strike and Round Kick are now on the Melee Global Cooldown</li><li class="text-zinc-800">Sweeping kick now uses the roundhouse kick animation</li></ul><h3 class="text-lg font-semibold text-zinc-900 mt-3 ml-8">Paladin</h3><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Restorative Smite now has a passive chance to strike an additional time</li></ul><h3 class="text-lg font-semibold text-zinc-900 mt-3 ml-8">Ranger</h3><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Now has access to Minor Regeneration, Lesser Regeneration, Regeneration, and Greater Regeneration</li></ul><h3 class="text-lg font-semibold text-zinc-900 mt-3 ml-8">Shadow Knight</h3><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Shadow Strike now has a passive chance to strike an additional time</li></ul><h3 class="text-lg font-semibold text-zinc-900 mt-3 ml-8">Wizard</h3><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Fixed Wizard Dual Wield not actually performing offhand melee attacks</li><li class="text-zinc-800">Added Ability: Imbue: Arcane Filament (L1), a novice staff imbuement that can unlock your Mana Missiles Line</li><li class="text-zinc-800">Added the Mana Missiles line. These channeled blasts of magic require an enchanted staff and can be used to stack Marks of Magic on enemies</li><li class="text-zinc-800">Mana Orbs (L4)</li><li class="text-zinc-800">Mana Darts (L12)</li><li class="text-zinc-800">Mana Arrows (L20)</li><li class="text-zinc-800">Mana Missiles (L28)</li><li class="text-zinc-800">Mana Volley (L44)</li><li class="text-zinc-800">Mana Barrage (L60)</li><li class="text-zinc-800">Added Ability: Imbue: Projection of Will (L28), a more advanced imbuement granting your staff with the power to drive away foes</li><li class="text-zinc-800">Added Ability: Wall of Force (L40). Summons an ethereal barrier that stops your enemies&#39; pursuit</li><li class="text-zinc-800">Telekinetic Knockback now applies the stun effect only if the target is knocked into a wall or obstacle</li></ul>
+                </div>
+              </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+        </main>
+      </div>
+
+
+
+  </body>
+</html>

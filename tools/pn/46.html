@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="JnogCxhaCndbBWQWZmMoEzsjKDo4QlFbG8GfA1Z6lPVNVTOZlIQnm788">
+    <title data-suffix=" · Monsters &amp; Memories">
+      0.30.0.0 - Early Access Patch + Module 1
+     · Monsters &amp; Memories</title>
+    <link phx-track-static rel="stylesheet" href="/assets/app-e61ca410f03dadd2d9f880147d301962.css?vsn=d">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    <script defer phx-track-static type="text/javascript" src="/assets/app.js?v=2">
+    </script>
+  </head>
+  <body class="h-full bg-zinc-900 text-zinc-100">
+
+    <div id="timezone-detector" phx-hook="TimezoneDetector" data-timezone="UTC" class="hidden">
+    </div>
+
+
+      <div class="min-h-full">
+        <nav id="site-navbar" class="sticky top-0 z-40 border-b-2 border-zinc-700 bg-zinc-800/80 backdrop-blur-sm">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 justify-between">
+              <div class="flex">
+                <div class="flex shrink-0 items-center">
+                  <a href="/" class="text-xl font-bold text-orange-500 hover:text-orange-400 transition-colors duration-200">
+                    Monsters & Memories
+                  </a>
+
+                </div>
+                <div class="hidden md:-my-px md:ml-6 md:flex md:space-x-8">
+                  <a href="/community" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-zinc-400 hover:border-zinc-600 hover:text-zinc-300 transition-colors duration-200">
+                    Community
+                  </a>
+                  
+                  <a href="/launcher" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-zinc-400 hover:border-zinc-600 hover:text-zinc-300 transition-colors duration-200">
+                    Download Launcher
+                  </a>
+                  
+                </div>
+              </div>
+
+                <div class="hidden gap-3 md:flex md:items-center">
+                  <a href="/accounts/register" id="navbar-register-link" class="game-button game-button-compact">
+                    Register
+                  </a>
+                  <a href="/accounts/log_in" id="navbar-login-link" class="game-button game-button-compact">
+                    Log in
+                  </a>
+                </div>
+
+
+              <div class="-mr-2 flex items-center md:hidden">
+                <button type="button" class="relative inline-flex items-center justify-center rounded-md bg-zinc-800 p-2 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-zinc-800" aria-controls="mobile-menu" phx-click="[[&quot;toggle&quot;,{&quot;to&quot;:&quot;#mobile-menu&quot;}],[&quot;toggle_class&quot;,{&quot;names&quot;:[&quot;overflow-hidden&quot;],&quot;to&quot;:&quot;body&quot;}]]" aria-expanded="false">
+                  <span class="absolute -inset-0.5"></span>
+                  <span class="sr-only">Open main menu</span>
+                  <svg class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:hidden hidden max-h-[calc(100vh-4rem)] overflow-y-auto overscroll-contain" id="mobile-menu">
+            <div class="space-y-1 pb-3 pt-2">
+
+              <a href="/community" class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-zinc-400 hover:border-zinc-600 hover:bg-zinc-700 hover:text-zinc-300">
+                Community
+              </a>
+              
+              <a href="/launcher" class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-zinc-400 hover:border-zinc-600 hover:bg-zinc-700 hover:text-zinc-300">
+                Download Launcher
+              </a>
+              
+
+                <div class="grid grid-cols-2 gap-3 px-3 pt-2">
+                  <a href="/accounts/register" id="mobile-navbar-register-link" class="game-button game-button-compact w-full">
+                    Register
+                  </a>
+                  <a href="/accounts/log_in" id="mobile-navbar-login-link" class="game-button game-button-compact w-full">
+                    Log in
+                  </a>
+                </div>
+
+            </div>
+
+          </div>
+        </nav>
+
+        <main>
+
+            <div id="phx-GN5DOEstA03CGwfB" data-phx-main data-phx-session="SFMyNTY.g2gDaAJhBnQAAAAIdwJpZG0AAAAUcGh4LUdONURPRXN0QTAzQ0d3ZkJ3B3Nlc3Npb250AAAAAHcEdmlld3chRWxpeGlyLk1ubVdlYi5QYXRjaE5vdGVzTGl2ZS5TaG93dwpwYXJlbnRfcGlkdwNuaWx3BnJvdXRlcncURWxpeGlyLk1ubVdlYi5Sb3V0ZXJ3CHJvb3RfcGlkdwNuaWx3EWxpdmVfc2Vzc2lvbl9uYW1ldxBjb21tdW5pdHlfcHVibGljdwlyb290X3ZpZXd3IUVsaXhpci5Nbm1XZWIuUGF0Y2hOb3Rlc0xpdmUuU2hvd24GALGRKTihAWIAAVGA._sWaR8PlOHpuiG4w2Q_a9d3nVsem4WM4JG5WUqEQ8Js" data-phx-static="SFMyNTY.g2gDaAJhBnQAAAADdwJpZG0AAAAUcGh4LUdONURPRXN0QTAzQ0d3ZkJ3BWZsYXNodAAAAAB3CmFzc2lnbl9uZXdsAAAAA3cMY3VycmVudF9wYXRodw11c2VyX3RpbWV6b25ldw9jdXJyZW50X2FjY291bnRqbgYAsZEpOKEBYgABUYA.bfCIXKSzO-0i32PWJo3klR85qpAE79K_sJHrCxDngto"><div id="flash-group">
+  
+  
+  <div id="client-error" phx-click="[[&quot;push&quot;,{&quot;value&quot;:{&quot;key&quot;:&quot;error&quot;},&quot;event&quot;:&quot;lv:clear-flash&quot;}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#client-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}]]" role="alert" class="fixed top-2 right-2 mr-2 w-80 sm:w-96 z-50 rounded-lg p-3 shadow-lg border bg-zinc-800 border-red-700 text-red-200" hidden phx-connected="[[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#client-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}]]" phx-disconnected="[[&quot;show&quot;,{&quot;time&quot;:300,&quot;to&quot;:&quot;.phx-client-error #client-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-out&quot;,&quot;duration-300&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;]]}]]">
+  <p class="flex items-center gap-1.5 text-sm font-semibold leading-6">
+    
+    <span class="hero-exclamation-circle-mini h-4 w-4"></span>
+    We can&#39;t find the internet
+  </p>
+  <p class="mt-2 text-sm leading-5">
+    Attempting to reconnect
+    <span class="hero-arrow-path ml-1 h-3 w-3 animate-spin"></span>
+  </p>
+  <button type="button" class="group absolute top-1 right-1 p-2" aria-label="close">
+    <span class="hero-x-mark-solid h-5 w-5 opacity-40 group-hover:opacity-70"></span>
+  </button>
+</div>
+
+  <div id="server-error" phx-click="[[&quot;push&quot;,{&quot;value&quot;:{&quot;key&quot;:&quot;error&quot;},&quot;event&quot;:&quot;lv:clear-flash&quot;}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#server-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}]]" role="alert" class="fixed top-2 right-2 mr-2 w-80 sm:w-96 z-50 rounded-lg p-3 shadow-lg border bg-zinc-800 border-red-700 text-red-200" hidden phx-connected="[[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#server-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}]]" phx-disconnected="[[&quot;show&quot;,{&quot;time&quot;:300,&quot;to&quot;:&quot;.phx-server-error #server-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-out&quot;,&quot;duration-300&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;]]}]]">
+  <p class="flex items-center gap-1.5 text-sm font-semibold leading-6">
+    
+    <span class="hero-exclamation-circle-mini h-4 w-4"></span>
+    Something went wrong!
+  </p>
+  <p class="mt-2 text-sm leading-5">
+    Hang in there while we get back on track
+    <span class="hero-arrow-path ml-1 h-3 w-3 animate-spin"></span>
+  </p>
+  <button type="button" class="group absolute top-1 right-1 p-2" aria-label="close">
+    <span class="hero-x-mark-solid h-5 w-5 opacity-40 group-hover:opacity-70"></span>
+  </button>
+</div>
+</div>
+
+  
+  <div class="px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
+    <div class="max-w-4xl mx-auto">
+
+      <div class="mb-6">
+        <a href="/community/patch_notes" data-phx-link="redirect" data-phx-link-state="push" class="game-button">
+          <span class="hero-chevron-left h-5 w-5 mr-1"></span> Back to Patch Notes
+        </a>
+      </div>
+
+      <div id="patch-note-content" class="paper-frame p-10 break-words">
+        <h1 class="text-2xl sm:text-3xl font-bold text-zinc-900 mb-2">
+          0.30.0.0 - Early Access Patch + Module 1
+        </h1>
+        <p class="text-sm text-zinc-700 mb-6">
+          September 19, 2026
+        </p>
+
+        <div class="space-y-3">
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-3553" aria-expanded="true" aria-controls="patch-section-3553" phx-click="toggle_section" phx-value-id="3553" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    General
+                  </h2>
+                </button>
+
+                <div id="patch-section-3553" class="mt-4 space-y-2">
+                  <ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">Adjusted stealth detection:</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Added a front cone proximity detection range bonus for players detecting stealthed players/npcs.</li></ul><ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">Mesmerization buff overwriting is now determined by spell duration rather than caster level.  A longer lasting Mesmerize will always overwrite a lower duration one.</li><li class="text-zinc-800">Hide is now based on Stealth rather than invisibility.  As such, it will work against Undead, but will have an increasingly larger detection distance from the front of NPCs that con red.</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-3558" aria-expanded="true" aria-controls="patch-section-3558" phx-click="toggle_section" phx-value-id="3558" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Group Buff Availability
+                  </h2>
+                </button>
+
+                <div id="patch-section-3558" class="mt-4 space-y-2">
+                  <ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">Most group buffs are now available to purchase from spell vendors directly, rather than as research-granted spells.</li><li class="text-zinc-800">We do plan to add additional spells and abilities from research in the future.</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-3561" aria-expanded="true" aria-controls="patch-section-3561" phx-click="toggle_section" phx-value-id="3561" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Charm Changes
+                  </h2>
+                </button>
+
+                <div id="patch-section-3561" class="mt-4 space-y-2">
+                  <p class="text-zinc-800 leading-relaxed">Charmed NPC damage has been reduced from its previous level. While charmed NPCs are weaker, they are still a valuable source of extra damage in a group situation and when soloing if you choose to use it. Certainly with weaker charmed pets, soloing will not be as efficient and fast as it was previously, but it is still a viable tactic to increase your damage.</p><p class="text-zinc-800 leading-relaxed">This affects the Charm spells of Enchanters, Elementalists, Druids, Bards, and Necromancers. For classes that have a pet already, the charmed pet damage is an upgrade of at least 25% more than your summoned pet. For classes without a summonable pet, the damage is lower as it&#39;s purely a bonus and does not require you to give up your summoned pet in order to use it.  Inquisitors are not affected by this change, as their Charm ability has both a very long cooldown and a short duration which felt like enough of a limitation to balance the power of their ability.</p><p class="text-zinc-800 leading-relaxed">This is a topic we&#39;ve received lots of feedback on during Beta, and not everyone will agree with this change. In the past, charmed pet damage often exceeded the amount of damage you could get by adding 2-3 more DPS classes to a group, and was unquestionably the highest damage spell in the game by a wide margin. This change will be good for game balance, and allow us to tune difficulty to be more reasonable for diverse groups.</p>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-3565" aria-expanded="true" aria-controls="patch-section-3565" phx-click="toggle_section" phx-value-id="3565" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Fixes
+                  </h2>
+                </button>
+
+                <div id="patch-section-3565" class="mt-4 space-y-2">
+                  <ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">Fixed a bug where Bard&#39;s Aria line was not correctly stacking its secondary Attack Slow with primary slows.</li><li class="text-zinc-800">Fixed a bug where Throwing abilities were not receiving appropriate ranged bonus damage.</li><li class="text-zinc-800">Fixed a bug where stealth/invisibility negation effects (flare, Sonic pulse) were not removing stealth/invisibility buffs.</li><li class="text-zinc-800">Fixed racial Hide and Archer Sniper&#39;s Blind not being revealed by stuns/mezzes/fears.</li><li class="text-zinc-800">Fixed an error that could sometimes occur where self-purchasing a consigned item would not relay the money to the consigner.</li><li class="text-zinc-800">Fixed shapeshifted NPCs not wearing the correct clothes.</li><li class="text-zinc-800">Other players now play climbing animations when climbing ladders.</li><li class="text-zinc-800">You can no longer move saddlebags on your mount while mounted.</li><li class="text-zinc-800">Fixed being able to dismiss a mount.</li><li class="text-zinc-800">Shaded should now appropriately apply to outdoors.</li><li class="text-zinc-800">Pet skills should no longer disappear randomly</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-3577" aria-expanded="true" aria-controls="patch-section-3577" phx-click="toggle_section" phx-value-id="3577" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    UI
+                  </h2>
+                </button>
+
+                <div id="patch-section-3577" class="mt-4 space-y-2">
+                  <ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">Adjusted the page number visibility in the ability book</li><li class="text-zinc-800">The ability book, spellbook view - will change colors with your spellbook color now. Some spellbooks have a default color for their icon still, so this will default to blue.</li><li class="text-zinc-800">Ability titles in the book have been flipped to display below the icon in your skills/innates/spellbook</li><li class="text-zinc-800">Updates have been made to the character creation screen. Adding the available location to the deity selection and a button to confirm your deity.</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">The create button is now persistent, greyed out until all requirements are met.</li><li class="text-zinc-800">The choose location button now updates to your chosen location text.</li><li class="text-zinc-800">You can now view deities before choosing a class, the deity pop out will persist while you are choosing classes if you choose to do this. They will update live while you are selecting a class and default back to agnostic if you choose a class/race combination that does not include that deity.</li><li class="text-zinc-800">If you choose your class before faith/deity, you will see the normal pop out with the description and stats applied for that class/race combination.</li></ul><ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">A new keybind is available for turning the pages of your ability book, defaulting to left and right arrow keys. The keys set for this will block any other bound action while the book is open. If you want to still use the arrow keys to turn in the world, it will still work outside of the ability book view.</li><li class="text-zinc-800">Key binds will now display as red text if you have duplicates assigned. Some key binds, such as turn page and chat page up / down will show as red, because they have multiple functions that do not interfere with each other.</li><li class="text-zinc-800">There is now a button in the HUD editor to lock/unlock all your UI elements at once. The state of this button will reset if you unlock any window, after locking them all.</li><li class="text-zinc-800">Scale window added to House Panel, Trade, and Bags</li><li class="text-zinc-800">The location selection maps have been updated for both surface and the deep.</li><li class="text-zinc-800">You can now inspect items &amp; skills on your hotbar and edito macros on right click.</li><li class="text-zinc-800">Your last spoken language is now saved to your character - if you swap languages, it will persist through your sessions.</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Deep races will now default to Deep Common</li><li class="text-zinc-800">All other races will default to Common Tounge</li><li class="text-zinc-800">To change your spoken language, please right click a chat window and select your option under Languages.</li></ul><ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">An Early Access disclaimer is now shown each time you create a new character.</li><li class="text-zinc-800">Added grip bars to UI panels for repositioning (right-click to change side, auto-hides when movement is locked).</li><li class="text-zinc-800">Inner corners and grip bar corners now follow the selected UI theme.</li><li class="text-zinc-800">TargetView now follows the selected UI theme.</li><li class="text-zinc-800">Fixed an issue where Reset UI, Edit UI cancel, and Load/Import could break buff/state panel sizing.</li><li class="text-zinc-800">Buff and state panels now hide when locked with no active effects, and show when unlocked or effects are active.</li><li class="text-zinc-800">Buff and state panels automatically switch between horizontal and vertical layout based on grip side.</li><li class="text-zinc-800">Added &quot;Max Per Row&quot; option (right-click) for buff and state panels to enable multi-line wrapping.</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-3604" aria-expanded="true" aria-controls="patch-section-3604" phx-click="toggle_section" phx-value-id="3604" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Druid
+                  </h2>
+                </button>
+
+                <div id="patch-section-3604" class="mt-4 space-y-2">
+                  <ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">Fixed the descriptions of the ports to Caves of Irem</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-3606" aria-expanded="true" aria-controls="patch-section-3606" phx-click="toggle_section" phx-value-id="3606" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Wizard
+                  </h2>
+                </button>
+
+                <div id="patch-section-3606" class="mt-4 space-y-2">
+                  <ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">Fixed the descriptions of the ports to Scarwood and Great Cavern Sea</li><li class="text-zinc-800">Fixed the scrolls for Scarwood and Great Cavern Sea</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-3609" aria-expanded="true" aria-controls="patch-section-3609" phx-click="toggle_section" phx-value-id="3609" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Rogue
+                  </h2>
+                </button>
+
+                <div id="patch-section-3609" class="mt-4 space-y-2">
+                  <ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">Adjusted Sap description to indicate it only affects Humanoid targets</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-3611" aria-expanded="true" aria-controls="patch-section-3611" phx-click="toggle_section" phx-value-id="3611" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Beastmaster
+                  </h2>
+                </button>
+
+                <div id="patch-section-3611" class="mt-4 space-y-2">
+                  <ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">Bat Companion:</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Fixed bug with Sonic Pulse counting as an Aura and not removing itself from entities.</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-3614" aria-expanded="true" aria-controls="patch-section-3614" phx-click="toggle_section" phx-value-id="3614" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Inquisitor
+                  </h2>
+                </button>
+
+                <div id="patch-section-3614" class="mt-4 space-y-2">
+                  <ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">Arcane Tyrant now includes the stated Mana Regeneration</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-3616" aria-expanded="true" aria-controls="patch-section-3616" phx-click="toggle_section" phx-value-id="3616" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Paladin
+                  </h2>
+                </button>
+
+                <div id="patch-section-3616" class="mt-4 space-y-2">
+                  <ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">Fixed typos and spell descriptions for the Healing Touch line</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-3618" aria-expanded="true" aria-controls="patch-section-3618" phx-click="toggle_section" phx-value-id="3618" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Rogue
+                  </h2>
+                </button>
+
+                <div id="patch-section-3618" class="mt-4 space-y-2">
+                  <ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">Sale prices of extracted Toxins have been rebalanced to be more appropriate based on their sources</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-3620" aria-expanded="true" aria-controls="patch-section-3620" phx-click="toggle_section" phx-value-id="3620" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Ranger
+                  </h2>
+                </button>
+
+                <div id="patch-section-3620" class="mt-4 space-y-2">
+                  <ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">The Stinging Swarm spell line no longer allows multiple ranks to stack from the same caster.</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-3622" aria-expanded="true" aria-controls="patch-section-3622" phx-click="toggle_section" phx-value-id="3622" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Necromancer
+                  </h2>
+                </button>
+
+                <div id="patch-section-3622" class="mt-4 space-y-2">
+                  <ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">The Leech Lifeforce spell line no longer allows multiple ranks to stack from the same caster.</li><li class="text-zinc-800">The Noxious Deluge spell line no longer allows multiple ranks to stack from the same caster.</li><li class="text-zinc-800">The Swirling Shadows spell line no longer allows multiple ranks to stack from the same caster.</li><li class="text-zinc-800">The Malady spell line no longer allows multiple ranks to stack from the same caster.</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-3627" aria-expanded="true" aria-controls="patch-section-3627" phx-click="toggle_section" phx-value-id="3627" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Encounters
+                  </h2>
+                </button>
+
+                <div id="patch-section-3627" class="mt-4 space-y-2">
+                  <ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">Lord Ga&#39;Duuz will now again despawn shortly after having no targets on his hate list</li><li class="text-zinc-800">Lord Ga&#39;Duuz also will summon more aggressively</li><li class="text-zinc-800">Lord Ga&#39;Duuz&#39;s sandstorm has been reduced in intensity</li><li class="text-zinc-800">Fixed Lord Ga&#39;Duuz world rewards which were being applied inconsistently</li><li class="text-zinc-800">Added more world rewards for killing Lord Ga&#39;Duuz</li><li class="text-zinc-800">The Pustulax fight has been slowed down some and the Spreading Plague mechanic does not spread as aggressively anymore</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-3634" aria-expanded="true" aria-controls="patch-section-3634" phx-click="toggle_section" phx-value-id="3634" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Ail&#39;Vorith
+                  </h2>
+                </button>
+
+                <div id="patch-section-3634" class="mt-4 space-y-2">
+                  <ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">Ail&#39;vorith city population activated</li><li class="text-zinc-800">Added missing trainers to AV Foreign Quarter</li><li class="text-zinc-800">Activated teleporter pads in AV</li><li class="text-zinc-800">Adjusted newbie yard population</li><li class="text-zinc-800">AV starter quests for SHD/ROG implemented</li><li class="text-zinc-800">AV starter quest for SPB/WIZ implemented</li><li class="text-zinc-800">Added fishing volumes to AV</li><li class="text-zinc-800">Added foraging tables to AV</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-3643" aria-expanded="true" aria-controls="patch-section-3643" phx-click="toggle_section" phx-value-id="3643" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Shaded Dunes
+                  </h2>
+                </button>
+
+                <div id="patch-section-3643" class="mt-4 space-y-2">
+                  <ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">Gates to Caves of Irem are now working</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-3645" aria-expanded="true" aria-controls="patch-section-3645" phx-click="toggle_section" phx-value-id="3645" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Tradeskills
+                  </h2>
+                </button>
+
+                <div id="patch-section-3645" class="mt-4 space-y-2">
+                  <ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">Fixed scythe and trident mold names</li><li class="text-zinc-800">Cloth scraps for all tiers have had their drop rates increased</li><li class="text-zinc-800">Leather scraps for all tiers have had their drop rates slightly increased</li><li class="text-zinc-800">Crafting recipe costs reduced slightly</li><li class="text-zinc-800">Adjusted component cost of carpentry recipes, including nails and brackets</li><li class="text-zinc-800">Reduced tanning cost while slightly increasing leather yield</li><li class="text-zinc-800">Common crafted gear is now required for the experimental magic crafted gear (Vipers, Drakescale, Umbral, etc)</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Experimental crafted gear trivial values and stats adjusted to be more in line with respective common quality required piece</li></ul><ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">Additional crafting component cost tweaks, most notably:</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Weapon molds reduced in price</li><li class="text-zinc-800">Thread reduced in price</li></ul><ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">Alchemy elixirs now persist through death</li><li class="text-zinc-800">Added horseshoes and heavy saddles</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-3659" aria-expanded="true" aria-controls="patch-section-3659" phx-click="toggle_section" phx-value-id="3659" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    PvP Bug Fixes
+                  </h2>
+                </button>
+
+                <div id="patch-section-3659" class="mt-4 space-y-2">
+                  <ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">Fixed Reclaim Magic not working on players in PvP</li><li class="text-zinc-800">Fixed a bug where Inquisitor&#39;s Reflecting Bash did 0 damage in PvP.</li><li class="text-zinc-800">Fixed a bug with certain debuffs (roots/stuns/incaps) sometimes causing immunity in PvP when it shouldn&#39;t be, outside of diminishing returns.</li><li class="text-zinc-800">Fixed a bug where Disengagement wasn&#39;t considered a harmful effect, and would allow a player to interrupt casts on Invulnerable targets.</li><li class="text-zinc-800">Fixed a bug where PvP players in the tracking window would sometimes show up both without color, and with their normal name instead of the &quot;{Race} Player&quot; anonymous name.</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-3665" aria-expanded="true" aria-controls="patch-section-3665" phx-click="toggle_section" phx-value-id="3665" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    PvP Balance
+                  </h2>
+                </button>
+
+                <div id="patch-section-3665" class="mt-4 space-y-2">
+                  <ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">Adjusted, added, or removed various DR values for several abilities in PvP.</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Adjusted DR window/immunity from 18 seconds -&gt; 21 seconds</li><li class="text-zinc-800">A lot of abilities that were removed from DR had their durations set low (0.25s - 3s), depending on if it was a hard cast with/without a cooldown, a reactive effect, a proc, or a channel.</li><li class="text-zinc-800">Shorter duration soft CC (such as snares), or ones from pets/procs, had their PvP durations lowered, and are now off the Diminishing Returns list. Long duration snares/hard cc still remain affected by DR.</li><li class="text-zinc-800">Shadows snare/dot line now has its own Diminishing Returns group, instead of no DR.</li><li class="text-zinc-800">Also tried to polish up combat chat notifications for better awareness.</li></ul><ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">Increased Lulling Sight debuff from 15-30% ability range reduction to 20-40%.</li><li class="text-zinc-800">Hide and Sniper&#39;s Blind, like Stealth, can now only be used 10 seconds after an aggressive action in PvP.</li><li class="text-zinc-800">PvP Taunts swapping targets now properly prevent re-targeting for a short duration.</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-3675" aria-expanded="true" aria-controls="patch-section-3675" phx-click="toggle_section" phx-value-id="3675" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    PvP Gameplay
+                  </h2>
+                </button>
+
+                <div id="patch-section-3675" class="mt-4 space-y-2">
+                  <ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">Adjusted PvP nameplate colors:</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Anyone below the minimum level threshold for PvP (Level 4) will show as a blue nameplate to indicate they are out of range, unless they become FFA flagged.</li></ul><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">And anyone above the minimum threshold, while you remain below it, will show as the typical higher level &#39;orangered&#39;.</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Added &#39;cyan/teal-ish&#39; color for guild members not in party.</li><li class="text-zinc-800">Removed pink /roleplay color.</li></ul><ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">Adjusted consider color thresholds:</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Added blue/yellow consider colors to indicate +/- 1-3 level delta difference.</li></ul><ul data-depth="0" class="list-disc list-inside space-y-1 pl-2"><li class="text-zinc-800">Added ruleset option enforcing Soulbind for self and others within PvP Suppression zones only. Current known places with PvP Suppression are city banks, inns, and personal houses.</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">As such, added more a few PvP Suppression volumes at certain points of interest around the world where it made sense.</li><li class="text-zinc-800">The goal of this adjustment is to curb &#39;bind rushing&#39;, getting death looped, and &#39;bind location&#39; fighting in general.</li><li class="text-zinc-800">This also has some secondary benefits of giving houses in certain zones more value as they provide alternate or &#39;better&#39; bind locations.</li></ul><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Note: If you are bound inside your home and you transfer/relinquish it (or it expires), you will automatically re-bind at your starting zone&#39;s safe position.</li></ul>
+                </div>
+              </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+        </main>
+      </div>
+
+
+
+  </body>
+</html>

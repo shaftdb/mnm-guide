@@ -929,6 +929,39 @@ def dungeon_index():
             '<h2 id="gaps">Not covered</h2><ul class="tight"><li><b>The Hidden Grotto</b> (Shallow Shoals, underwater): the wiki page only has placeholder rows. <span class="badge unc">unverified</span></li>'
             '<li><b>Night Harbor Sewers</b>: the wiki says the sewers are closed (dev-confirmed during closed beta, April 2026) with no return date.</li></ul>') % ''.join(cards)
 
+
+# ------------------------------------------------------------------ patch notes digest
+PSUM = json.load(open(os.path.join(CONTENT, 'patch_summaries.json'), encoding='utf8')) if os.path.exists(os.path.join(CONTENT, 'patch_summaries.json')) else {}
+PATCHES = json.load(open(os.path.join(DATA, 'patches.json'), encoding='utf8')) if os.path.exists(os.path.join(DATA, 'patches.json')) else []
+SYSTEMS = [('PvP', r'\bpvp\b'), ('UI', r'\bui\b|hotbar|window|tooltip|chat'), ('Tradeskills', r'tradeskill|crafting|smith|tailor|carpent|brew|fletch|jewel|enchanting|harvest|mining|lumber|fishing'),
+           ('Housing', r'housing|\bhouse\b|plot'), ('Items', r'\bitems?\b|loot|drop'), ('Quests', r'\bquests?\b'), ('Combat', r'threat|aggro|damage|\bheal|resist|\bmana\b|combat'),
+           ('Factions', r'faction'), ('Travel', r'boat|zone ?line|portal|teleport|lift|mount'), ('Economy', r'economy|merchant|vendor|price|coin'),
+           ('Art & sound', r'\bart\b|animation|lighting|vfx|sound|music'), ('Encounters', r'encounter|named|raid|boss'), ('Characters', r'character|race|creation')]
+def _cls_re(c):
+    return re.compile(r'\b%s(s)?\b' % re.escape(c).replace('\\ ', '[ -]?'), re.I)
+CLS_RES = None
+def patch_tags(p):
+    global CLS_RES
+    if CLS_RES is None: CLS_RES = [(c, _cls_re(c)) for c in CLASS_LIST]
+    blob = ' '.join([sec['h'] + ' ' + ' '.join(sec['items']) for sec in p['sections']])
+    cl = [c for c, r in CLS_RES if r.search(blob)]
+    zn = [z for z in sorted(ZONES) if re.search(re.escape(z).replace("\\'", "'?"), blob, re.I)]
+    sy = [n for n, r in SYSTEMS if re.search(r, blob, re.I)]
+    return cl, zn, sy
+def patches_page():
+    o = ['<p>Every official patch, newest first. The change lists are the official text, grouped as published <span class="badge fact">fact</span>. The one-line digest and the tags are worked out automatically from that text by keyword, so a tag can miss or over-match <span class="badge unc">unverified</span>. Our own plain-English summaries, written only from the official wording, cover the latest 10 patches and are marked <span class="badge strat">summary</span>. Patches that mention your selected class (top bar) are highlighted. Use "Filter this page" for a zone, system or spell name.</p>',
+         '<p class="dim">Patch note pages missing from the official site (numbers %s) are not listed.</p>' % ', '.join(str(n) for n in sorted(set(range(1, PATCHES[0]['n'])) - {x['n'] for x in PATCHES})) if PATCHES else '']
+    for p in PATCHES:
+        cl, zn, sy = patch_tags(p)
+        nitems = sum(len(x['items']) for x in p['sections'])
+        big = sorted(p['sections'], key=lambda x: -len(x['items']))[:3]
+        dig = '%d change%s, mostly %s.' % (nitems, '' if nitems == 1 else 's', ', '.join('%s (%d)' % (x['h'].strip('* '), len(x['items'])) for x in big))
+        tags = ''.join('<a class="tag tcls" href="%s">%s</a>' % (class_url(c), esc(c)) for c in cl) + ''.join('<a class="tag tzone" href="%s">%s</a>' % (zone_url(z), esc(z)) for z in zn) + ''.join('<span class="tag tsys">%s</span>' % esc(x) for x in sy)
+        secs = ''.join('<h4>%s</h4><ul class="tight">%s</ul>' % (esc(x['h'].strip('* ')), ''.join('<li>%s</li>' % esc(i) for i in x['items'])) for x in p['sections'])
+        o.append('<details class="patch" id="p%d" data-cls="%s"><summary><b>%s</b> <span class="dim">%s</span><br>%s<span class="pdig">%s</span><span class="ptags">%s</span></summary>%s<p class="dim"><a class="ext" target="_blank" rel="noopener" href="%s">Official patch note</a></p></details>' % (
+            p['n'], esc('|'.join(cl)), esc(p['title']), esc(p['date']), ('<span class="psum"><span class="badge strat">summary</span> %s</span>' % esc(PSUM[str(p['n'])])) if str(p['n']) in PSUM else '', esc(dig), tags, secs, esc(p['url'])))
+    return ''.join(o)
+
 GENS.update(classquick=g_classquick, classbands=g_classbands)
 
 RANGEBAR_HTML = (
@@ -945,7 +978,7 @@ RANGEBAR_HTML = (
 NAV = [('Home', '/index.html', 'home'), ('Classes', '/classes/index.html', 'classes'), ('Shaman', '/shaman/index.html', 'shaman'),
        ('Gear', '/gear/index.html', 'gear'), ('Dungeons', '/dungeons/index.html', 'dungeons'), ('Zones', '/zones/index.html', 'zones'), ('Leveling', '/leveling.html', 'leveling'),
        ('Farming', '/farming.html', 'farming'), ('Economy', '/economy.html', 'economy'), ('Tradeskills', '/tradeskills.html', 'tradeskills'),
-       ('Factions', '/factions.html', 'factions'), ('Quests', '/quests.html', 'quests'), ('Changelog', '/changelog.html', 'changelog')]
+       ('Factions', '/factions.html', 'factions'), ('Quests', '/quests.html', 'quests'), ('Patches', '/patches.html', 'patches'), ('Changelog', '/changelog.html', 'changelog')]
 
 def left_nav(section):
     def ul(title, items):
@@ -1130,6 +1163,7 @@ def build_content():
         b, src, cx = dungeon_page(d)
         add_page(dungeon_url(d).lstrip('/'), d, body_html=b, section='dungeons', sources=src, desc='%s dungeon guide' % d)
         PAGES[-1]['ctx'].update(cx)
+    add_page('patches.html', 'Patch notes digest', body_html=patches_page(), section='patches', sources=['Official patch notes|https://account.monstersandmemories.com/community/patch_notes'], desc='Patch notes digest')
     # zone pages
     ztpl = open(os.path.join(CONTENT, '_zone_template.md'), encoding='utf8').read()
     for z, Z in ZONES.items():
