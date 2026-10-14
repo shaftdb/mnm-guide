@@ -1279,6 +1279,10 @@ def zone_page(z, Z, X):
     src += X.get('sources', [])
     return ''.join(o), src, ctx
 
+# ------------------------------------------------------------------ module plugins (modules/*.py extend the build)
+for _mf in sorted(glob.glob(os.path.join(ROOT, 'modules', '*.py'))):
+    exec(compile(open(_mf, encoding='utf8').read(), _mf, 'exec'), globals())
+
 if __name__ == '__main__':
     build_content()
     render_all()
