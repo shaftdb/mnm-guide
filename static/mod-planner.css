@@ -1,0 +1,2 @@
+.pl-picks{display:flex;flex-wrap:wrap;gap:4px}.pl-b{font-size:.8rem;padding:2px 8px;border:1px solid var(--line);border-radius:12px;background:#15110c;color:inherit;cursor:pointer}
+.pl-b.on{border-color:var(--gold);background:#3a2c12}tr.pl-miss td{color:#e08a7a}
