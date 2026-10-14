@@ -1,0 +1,4 @@
+.tl-row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:6px 0}.tl-row input{max-width:100%}.tl-row label input{width:5.5em}
+.tl-list{list-style:none;padding:0}.tl-list li{padding:4px 6px;border:1px solid var(--line);border-radius:6px;margin:4px 0}
+.tl-left{font-variant-numeric:tabular-nums;color:var(--gold);font-weight:bold}.tl-soon{border-color:#c9a227!important}.tl-done{opacity:.6}
+.tl-note textarea{width:100%;box-sizing:border-box;background:#15110c;color:inherit;border:1px solid var(--line);border-radius:6px}.tl-out{min-height:1.4em}

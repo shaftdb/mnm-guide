@@ -17,6 +17,11 @@ Newest first.
 | Date | Change | Known gaps |
 |---|---|---|
 | Oct 13, 2026 | **Dungeons** expanded: Blacktide Bay, Tel Ekir, Rothold and Fallen Watch added (all in the wiki's Dungeons category), same format as the others | Tel Ekir has a key diagram from the wiki map legend and Rothold a one-area schematic from wiki NPC locations; Blacktide Bay and Fallen Watch have no sourced layout. Blacktide Bay and Tel Ekir entrances, Fallen Watch named levels and most Rothold camps aren't on the wiki |
+| Oct 13, 2026 | **Community tools** added: spell timer, XP per hour calculator and camp notepad | Data is saved only in your own browser, so it doesn't sync between devices or with your group |
+| Oct 13, 2026 | **Events timeline** added: dated list of official patches, news posts and milestones | Updated by hand when we rebuild, so it isn't live. Only official sources |
+| Oct 13, 2026 | **Mob lookup** added: mobs and named by level and zone, with drops linked to the item database | Many wiki mobs have no level yet (listed last) and drop lists can be incomplete |
+| Oct 13, 2026 | **Tradeskills and gathering guide** added: nodes by zone, skill-up paths, trainers, tips and recipe tables | Recipe and node data come from the wiki and are incomplete. Recent patches changed tradeskill costs |
+| Oct 13, 2026 | **Quest helper** added: wiki walkthrough steps with class, armor, spell and access filters | Only quests with wiki walkthroughs. Some steps are unverified |
 | Oct 13, 2026 | **Faction guide** added: where to raise or lower each faction (zones, quests, mobs) and city faction lists, from the wiki faction pages | Only factions with wiki pages are covered. Some values may lag behind patches |
 | Oct 13, 2026 | **Group planner** added: pick 2 to 6 classes to see role coverage, utility spells and zones for your level | Strategy notes are rule-based suggestions, not tested group setups |
 | Oct 13, 2026 | **Item and drop database** added: search items by slot, class, level and source mob or zone, with links to zone and dungeon guides | Only items listed on the wiki. Drop sources can be incomplete |
