@@ -1,0 +1,8 @@
+.mainnav{flex-wrap:nowrap;align-items:stretch}
+.mainnav>a,.ngb{padding:7px 12px;color:var(--parch);font-family:Georgia,serif;font-size:1rem;border:0;border-bottom:3px solid transparent;background:none;cursor:pointer;white-space:nowrap}
+.ng{position:relative}.ng.on>.ngb,.ngb:hover,.ng.open>.ngb{border-bottom-color:var(--gold);background:#2c2215}
+.ngm{display:none;position:absolute;left:0;top:100%;z-index:50;min-width:180px;background:#1d170f;border:1px solid var(--line);border-radius:0 0 6px 6px;box-shadow:0 6px 16px rgba(0,0,0,.5)}
+.ngm a{display:block;padding:7px 12px;border-bottom:0!important;white-space:nowrap}.ngm a.on{color:var(--gold)}
+.ng:hover>.ngm,.ng:focus-within>.ngm,.ng.open>.ngm{display:block}
+@media (max-width:800px){body.navopen .mainnav{flex-direction:column}.ng:hover>.ngm,.ng:focus-within>.ngm{display:none}.ng.open>.ngm{display:block}
+ .ngm{position:static;box-shadow:none;border:0;border-left:2px solid var(--gold);margin-left:12px;border-radius:0}.ngb{width:100%;text-align:left}}
