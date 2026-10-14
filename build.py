@@ -961,6 +961,24 @@ def patches_page():
         o.append('<details class="patch" id="p%d" data-cls="%s"><summary><b>%s</b> <span class="dim">%s</span><br>%s<span class="pdig">%s</span><span class="ptags">%s</span></summary>%s<p class="dim"><a class="ext" target="_blank" rel="noopener" href="%s">Official patch note</a></p></details>' % (
             p['n'], esc('|'.join(cl)), esc(p['title']), esc(p['date']), ('<span class="psum"><span class="badge strat">summary</span> %s</span>' % esc(PSUM[str(p['n'])])) if str(p['n']) in PSUM else '', esc(dig), tags, secs, esc(p['url'])))
     return ''.join(o)
+# ------------------------------------------------------------------ spell lookup
+def spells_page():
+    rows = []
+    for c in CLASS_LIST:
+        page = '/shaman/spells.html' if c == 'Shaman' else class_url(c)
+        for sp in CLASSES[c]['spells']:
+            nm = sp.get('spell name')
+            if not nm: continue
+            lv = sp.get('level') or 0
+            u = page + ('#lvl-%s' % lv if c == 'Shaman' else '')
+            rows.append((c, lv, nm, '<tr data-cls="%s" data-lo="%s" data-hi="%s"><td><strong>%s</strong></td><td>%s</td><td><a href="%s">%s</a></td><td>%s</td><td>%s</td><td>%s</td></tr>' % (
+                esc(c), lv, lv, esc(nm), lv or '?', u, esc(c), esc(sp.get('spell description') or ''), esc(sp.get('mana') or ''), esc(sp.get('location') or ''))))
+    rows.sort(key=lambda r: (r[1] or 0, r[0], r[2]))
+    return ('<p>All %d class spells and abilities listed on the class pages of the community wiki <span class="badge fact">fact</span>, sorted by level. Rows for your selected class are outlined; rows in your level range are marked. Tick "Only my class" to hide the rest, and use "Filter this page" to search by name or effect. The class link opens that class\'s quick reference. Levels and costs can lag behind patches <span class="badge unc">unverified</span>; check the patch digest for recent changes.</p>'
+            '<p class="sptools"><label><input type="checkbox" id="sp-mine"> Only my class</label> <label><input type="checkbox" id="sp-band"> Only my level range</label></p>'
+            '<div class="tw"><table class="grid sortable spelllook"><thead><tr><th>Spell / ability</th><th>Lvl</th><th>Class</th><th>Description (wiki)</th><th>Mana</th><th>Source</th></tr></thead><tbody>%s</tbody></table></div>'
+            '<script>(function(){var m=document.getElementById("sp-mine"),b=document.getElementById("sp-band");function go(){document.querySelectorAll("table.spelllook tbody tr").forEach(function(r){r.classList.toggle("sphide",(m.checked&&!r.classList.contains("clsok"))||(b.checked&&!r.classList.contains("inband")));});}'
+            '[m,b].forEach(function(e){e.addEventListener("change",go)});document.getElementById("mnm-class").addEventListener("change",function(){setTimeout(go,0)});document.getElementById("mnm-range").addEventListener("change",function(){setTimeout(go,0)});})();</script>') % (len(rows), ''.join(r[3] for r in rows))
 
 GENS.update(classquick=g_classquick, classbands=g_classbands)
 
@@ -976,7 +994,7 @@ RANGEBAR_HTML = (
 
 # ------------------------------------------------------------------ layout
 NAV = [('Home', '/index.html', 'home'), ('Classes', '/classes/index.html', 'classes'), ('Shaman', '/shaman/index.html', 'shaman'),
-       ('Gear', '/gear/index.html', 'gear'), ('Dungeons', '/dungeons/index.html', 'dungeons'), ('Zones', '/zones/index.html', 'zones'), ('Leveling', '/leveling.html', 'leveling'),
+       ('Gear', '/gear/index.html', 'gear'), ('Dungeons', '/dungeons/index.html', 'dungeons'), ('Spells', '/spells.html', 'spells'), ('Zones', '/zones/index.html', 'zones'), ('Leveling', '/leveling.html', 'leveling'),
        ('Farming', '/farming.html', 'farming'), ('Economy', '/economy.html', 'economy'), ('Tradeskills', '/tradeskills.html', 'tradeskills'),
        ('Factions', '/factions.html', 'factions'), ('Quests', '/quests.html', 'quests'), ('Patches', '/patches.html', 'patches'), ('Changelog', '/changelog.html', 'changelog')]
 
@@ -1164,6 +1182,7 @@ def build_content():
         add_page(dungeon_url(d).lstrip('/'), d, body_html=b, section='dungeons', sources=src, desc='%s dungeon guide' % d)
         PAGES[-1]['ctx'].update(cx)
     add_page('patches.html', 'Patch notes digest', body_html=patches_page(), section='patches', sources=['Official patch notes|https://account.monstersandmemories.com/community/patch_notes'], desc='Patch notes digest')
+    add_page('spells.html', 'Spell lookup', body_html=spells_page(), section='spells', sources=['Wiki class pages (spell tables)|%sCategory:Classes' % WIKI], desc='Spell lookup by class and level')
     # zone pages
     ztpl = open(os.path.join(CONTENT, '_zone_template.md'), encoding='utf8').read()
     for z, Z in ZONES.items():
