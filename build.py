@@ -789,7 +789,12 @@ def _legend(d):
     L = ' '.join(ZONES[d].get('legend') or [])
     if not L.strip() or len(L) < 8: return [], []
     rooms, feats = (L.split('___') + [''])[:2]
-    r = re.findall(r'(\d+)\.\s*(.*?)(?=\s+\d+\.\s|$)', rooms.strip())
+    # legends split into sides ("Ashira Side 1. ... Bloodynose side 1. ..."): later sides get a letter prefix (B1, B2...)
+    parts = re.split(r"\s*\b([A-Z][\w']*) [Ss]ide\s+", ' ' + rooms.strip())
+    r = re.findall(r'(\d+)\.\s*(.*?)(?=\s+\d+\.\s|$)', parts[0].strip())
+    for i in range(1, len(parts) - 1, 2):
+        pre = '' if (i == 1 and not r) else parts[i][0].upper()
+        r += [(pre + a, b) for a, b in re.findall(r'(\d+)\.\s*(.*?)(?=\s+\d+\.\s|$)', parts[i + 1].strip())]
     f = re.findall(r'\b([A-Z])\.\s*(.*?)(?=\s+[A-Z]\.\s|$)', feats.strip())
     return [(a, b.strip()) for a, b in r if b.strip()], [(a, b.strip()) for a, b in f if b.strip()]
 
