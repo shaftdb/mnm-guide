@@ -11,6 +11,19 @@ Wiki data pulled: 2026-10-11 (MediaWiki API)
 Deep dives fetched: 2026-10-11
 :::
 
+## Site updates
+Newest first.
+
+| Date | Change | Known gaps |
+|---|---|---|
+| Oct 13, 2026 | **Faction guide** added: where to raise or lower each faction (zones, quests, mobs) and city faction lists, from the wiki faction pages | Only factions with wiki pages are covered. Some values may lag behind patches |
+| Oct 13, 2026 | **Group planner** added: pick 2 to 6 classes to see role coverage, utility spells and zones for your level | Strategy notes are rule-based suggestions, not tested group setups |
+| Oct 13, 2026 | **Item and drop database** added: search items by slot, class, level and source mob or zone, with links to zone and dungeon guides | Only items listed on the wiki. Drop sources can be incomplete |
+| Oct 13, 2026 | **Zone guides** updated: zone finder (levels, connections, named camps) plus Dangers and Travel sections on each zone | Camp details come from the wiki and some are unverified |
+| Oct 13, 2026 | **Spell lookup** added: every class spell by level, with class and level-range highlighting | Levels and mana costs can lag behind patches |
+| Oct 13, 2026 | **Patch digest** added: all official patch notes by date with auto tags, plus plain-English summaries of the latest 10 | Tags are keyword-based and can miss. Patch pages missing from the official site aren't listed |
+| Oct 13, 2026 | **Dungeons** launched: 9 dungeons with maps, loot, directions, access and tips | 3 dungeons have no map yet. Hidden Grotto isn't covered (wiki is placeholder only) and Night Harbor Sewers are closed |
+
 ## Game patches since Early Access
 Patch note IDs 46–59 were read in full. IDs 49 and 50 returned 404 when checked.
 

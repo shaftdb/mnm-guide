@@ -147,3 +147,16 @@ figure.dmap{margin:0 0 10px}figure.dmap svg{width:100%;max-width:560px;height:au
 .dmap text{fill:#e6dcc6;font:12px system-ui,sans-serif}.dmap text.sm{font-size:10.5px;fill:#b8ab90}.dmap text.hd{font-weight:bold;fill:#e0b85a;font-size:12.5px}
 .dmap rect{fill:#1d170f;stroke:#6b5a3a}.dmap .ent rect{fill:#162418;stroke:#5f9f6a}.dmap .trap rect{fill:#2a1512;stroke:#b3563f}.dmap .feat rect{fill:#151b26;stroke:#5a77a8}.dmap .floor rect{fill:#1a1a12;stroke:#9a8a55}
 figure.dmap figcaption{font-size:.8rem;color:#a99}
+/* patches / spells / zone guide */
+details.patch{border:1px solid var(--line);border-radius:6px;padding:6px 10px;margin:6px 0;background:#15110c}
+details.patch summary{cursor:pointer}details.patch h4{margin:.6em 0 .2em}
+.pdig{display:block;font-size:.9rem}.ptags{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+.tag{font-size:.72rem;padding:0 6px;border-radius:9px;border:1px solid var(--line);text-decoration:none}
+.tag.tcls{border-color:var(--gold)}.tag.tzone{border-color:#3d7a48}
+details.patch.clsok,tr.clsok,.zcard.clsok{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset}
+.sptools{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}.sptools select,.sptools input{max-width:100%}
+.psum{display:block;margin:4px 0;font-size:.92rem}
+/* spell lookup */
+tr.clsok{box-shadow:inset 3px 0 0 var(--gold)} tr.inband td:nth-child(2){color:var(--gold);font-weight:bold} tr.sphide{display:none}
+.sptools{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0}
+table.zfind tr.inband{box-shadow:inset 3px 0 0 var(--gold)}
