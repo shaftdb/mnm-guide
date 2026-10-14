@@ -16,6 +16,7 @@ Newest first.
 
 | Date | Change | Known gaps |
 |---|---|---|
+| Oct 13, 2026 | **Dungeons** expanded: Blacktide Bay, Tel Ekir, Rothold and Fallen Watch added (all in the wiki's Dungeons category), same format as the others | Tel Ekir has a key diagram from the wiki map legend and Rothold a one-area schematic from wiki NPC locations; Blacktide Bay and Fallen Watch have no sourced layout. Blacktide Bay and Tel Ekir entrances, Fallen Watch named levels and most Rothold camps aren't on the wiki |
 | Oct 13, 2026 | **Faction guide** added: where to raise or lower each faction (zones, quests, mobs) and city faction lists, from the wiki faction pages | Only factions with wiki pages are covered. Some values may lag behind patches |
 | Oct 13, 2026 | **Group planner** added: pick 2 to 6 classes to see role coverage, utility spells and zones for your level | Strategy notes are rule-based suggestions, not tested group setups |
 | Oct 13, 2026 | **Item and drop database** added: search items by slot, class, level and source mob or zone, with links to zone and dungeon guides | Only items listed on the wiki. Drop sources can be incomplete |
