@@ -11,14 +11,14 @@ def _mobs_db():
         for named, lst in ((1, Z['named']), (0, Z['npcs'])):
             for e in lst:
                 n = (e.get('name') or '').strip()
-                if not n or n in ('Raid Named', 'Example Item'): continue
+                if not n or not re.search(r'[A-Za-z]', n) or n in ('Raid Named', 'Example Item'): continue
                 lv = e.get('level') or ''
                 its = set(drops.get((n.lower(), z), set()))
                 wl = [x.strip() for x in (e.get('loot') or '').split(',') if x.strip() and x.strip() != '-']
                 its |= {x for x in wl if x in ITEMS}
                 other = [x for x in wl if x not in ITEMS]
-                rows.append([n, lvl_num(lv) or 0, lv, z, zu, named, ' / '.join(x for x in (e.get('race'), e.get('class')) if x and x != '-'), '' if e.get('location') in (None, '-') else e['location'], sorted(its), other])
-    rows.sort(key=lambda r: (r[1], r[0]))
+                rows.append([n, lvl_num(lv) or 0, '' if lv.strip() == '-' else lv, z, zu, named, ' / '.join(x for x in (e.get('race'), e.get('class')) if x and x != '-'), '' if e.get('location') in (None, '-') else e['location'], sorted(its), other])
+    rows.sort(key=lambda r: (r[1] == 0, r[1], r[0].lower()))
     return rows
 def _mobs_page():
     return ('<link rel="stylesheet" href="/assets/mod-mobs.css">'
