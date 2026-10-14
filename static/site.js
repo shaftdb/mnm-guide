@@ -69,6 +69,7 @@ function marks(){
   var b=cur.split('-').map(Number), code=(R.codes||{})[cls];
   document.querySelectorAll('[data-lo]').forEach(function(el){var lo=+el.getAttribute('data-lo'),hi=+el.getAttribute('data-hi');
     el.classList.toggle('inband',!!lo&&lo<=b[1]&&hi>=b[0]);});
+  document.querySelectorAll('[data-cls]').forEach(function(el){el.classList.toggle('clsok',('|'+el.getAttribute('data-cls')+'|').indexOf('|'+cls+'|')>=0);});
   document.querySelectorAll('table.dloot tbody tr').forEach(function(tr){var c=(tr.getAttribute('data-c')||'').split(' ');tr.classList.toggle('clsok',!!code&&c.indexOf(code)>=0);});
 }
 marks();
@@ -79,12 +80,12 @@ render();
 var f=document.getElementById('mnm-filter'), main=document.querySelector('main.main');
 if(f&&main){f.addEventListener('input',function(){
   var t=f.value.trim().toLowerCase();
-  main.querySelectorAll('li,tbody tr,p,.camp,details,.call,.qi-sec,.dcard').forEach(function(el){
+  main.querySelectorAll('li,tbody tr,p,.camp,details,.call,.qi-sec,.dcard,.zcard').forEach(function(el){
     if(!t){el.classList.remove('fhide');return;}
     el.classList.toggle('fhide',el.textContent.toLowerCase().indexOf(t)<0);
   });
   // keep containers visible if any child matches
-  if(t) main.querySelectorAll('.qi-sec,details,.call,.camp,.dcard').forEach(function(el){
+  if(t) main.querySelectorAll('.qi-sec,details,.call,.camp,.dcard,.zcard').forEach(function(el){
     if(el.querySelector('li:not(.fhide),tbody tr:not(.fhide),p:not(.fhide)')) el.classList.remove('fhide');
   });
 });}

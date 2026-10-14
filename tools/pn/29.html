@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="BBk7MHwFL1hrAwQCUBkXH0NEfSQ5Kh1YQMhoQhL24rcQaoqpqqNBSrGa">
+    <title data-suffix=" · Monsters &amp; Memories">
+      0.25.1.0 - Beta Patch 6 Hotfix 2
+     · Monsters &amp; Memories</title>
+    <link phx-track-static rel="stylesheet" href="/assets/app-e61ca410f03dadd2d9f880147d301962.css?vsn=d">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    <script defer phx-track-static type="text/javascript" src="/assets/app.js?v=2">
+    </script>
+  </head>
+  <body class="h-full bg-zinc-900 text-zinc-100">
+
+    <div id="timezone-detector" phx-hook="TimezoneDetector" data-timezone="UTC" class="hidden">
+    </div>
+
+
+      <div class="min-h-full">
+        <nav id="site-navbar" class="sticky top-0 z-40 border-b-2 border-zinc-700 bg-zinc-800/80 backdrop-blur-sm">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 justify-between">
+              <div class="flex">
+                <div class="flex shrink-0 items-center">
+                  <a href="/" class="text-xl font-bold text-orange-500 hover:text-orange-400 transition-colors duration-200">
+                    Monsters & Memories
+                  </a>
+
+                </div>
+                <div class="hidden md:-my-px md:ml-6 md:flex md:space-x-8">
+                  <a href="/community" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-zinc-400 hover:border-zinc-600 hover:text-zinc-300 transition-colors duration-200">
+                    Community
+                  </a>
+                  
+                  <a href="/launcher" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-zinc-400 hover:border-zinc-600 hover:text-zinc-300 transition-colors duration-200">
+                    Download Launcher
+                  </a>
+                  
+                </div>
+              </div>
+
+                <div class="hidden gap-3 md:flex md:items-center">
+                  <a href="/accounts/register" id="navbar-register-link" class="game-button game-button-compact">
+                    Register
+                  </a>
+                  <a href="/accounts/log_in" id="navbar-login-link" class="game-button game-button-compact">
+                    Log in
+                  </a>
+                </div>
+
+
+              <div class="-mr-2 flex items-center md:hidden">
+                <button type="button" class="relative inline-flex items-center justify-center rounded-md bg-zinc-800 p-2 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-zinc-800" aria-controls="mobile-menu" phx-click="[[&quot;toggle&quot;,{&quot;to&quot;:&quot;#mobile-menu&quot;}],[&quot;toggle_class&quot;,{&quot;names&quot;:[&quot;overflow-hidden&quot;],&quot;to&quot;:&quot;body&quot;}]]" aria-expanded="false">
+                  <span class="absolute -inset-0.5"></span>
+                  <span class="sr-only">Open main menu</span>
+                  <svg class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:hidden hidden max-h-[calc(100vh-4rem)] overflow-y-auto overscroll-contain" id="mobile-menu">
+            <div class="space-y-1 pb-3 pt-2">
+
+              <a href="/community" class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-zinc-400 hover:border-zinc-600 hover:bg-zinc-700 hover:text-zinc-300">
+                Community
+              </a>
+              
+              <a href="/launcher" class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-zinc-400 hover:border-zinc-600 hover:bg-zinc-700 hover:text-zinc-300">
+                Download Launcher
+              </a>
+              
+
+                <div class="grid grid-cols-2 gap-3 px-3 pt-2">
+                  <a href="/accounts/register" id="mobile-navbar-register-link" class="game-button game-button-compact w-full">
+                    Register
+                  </a>
+                  <a href="/accounts/log_in" id="mobile-navbar-login-link" class="game-button game-button-compact w-full">
+                    Log in
+                  </a>
+                </div>
+
+            </div>
+
+          </div>
+        </nav>
+
+        <main>
+
+            <div id="phx-GN5DOAourw0mF3EE" data-phx-main data-phx-session="SFMyNTY.g2gDaAJhBnQAAAAIdwJpZG0AAAAUcGh4LUdONURPQW91cncwbUYzRUV3B3Nlc3Npb250AAAAAHcEdmlld3chRWxpeGlyLk1ubVdlYi5QYXRjaE5vdGVzTGl2ZS5TaG93dwpwYXJlbnRfcGlkdwNuaWx3BnJvdXRlcncURWxpeGlyLk1ubVdlYi5Sb3V0ZXJ3CHJvb3RfcGlkdwNuaWx3EWxpdmVfc2Vzc2lvbl9uYW1ldxBjb21tdW5pdHlfcHVibGljdwlyb290X3ZpZXd3IUVsaXhpci5Nbm1XZWIuUGF0Y2hOb3Rlc0xpdmUuU2hvd24GAHCNKTihAWIAAVGA.Zd4VEiupKv-9ZeVbyQwZw6K_I3nVHDRUOfpL2aqDSjM" data-phx-static="SFMyNTY.g2gDaAJhBnQAAAADdwJpZG0AAAAUcGh4LUdONURPQW91cncwbUYzRUV3BWZsYXNodAAAAAB3CmFzc2lnbl9uZXdsAAAAA3cMY3VycmVudF9wYXRodw11c2VyX3RpbWV6b25ldw9jdXJyZW50X2FjY291bnRqbgYAcI0pOKEBYgABUYA.EJ1sDJibwjZ2mreRLb_1sZxGx1AjaSU3aFF1DxNcgdY"><div id="flash-group">
+  
+  
+  <div id="client-error" phx-click="[[&quot;push&quot;,{&quot;value&quot;:{&quot;key&quot;:&quot;error&quot;},&quot;event&quot;:&quot;lv:clear-flash&quot;}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#client-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}]]" role="alert" class="fixed top-2 right-2 mr-2 w-80 sm:w-96 z-50 rounded-lg p-3 shadow-lg border bg-zinc-800 border-red-700 text-red-200" hidden phx-connected="[[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#client-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}]]" phx-disconnected="[[&quot;show&quot;,{&quot;time&quot;:300,&quot;to&quot;:&quot;.phx-client-error #client-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-out&quot;,&quot;duration-300&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;]]}]]">
+  <p class="flex items-center gap-1.5 text-sm font-semibold leading-6">
+    
+    <span class="hero-exclamation-circle-mini h-4 w-4"></span>
+    We can&#39;t find the internet
+  </p>
+  <p class="mt-2 text-sm leading-5">
+    Attempting to reconnect
+    <span class="hero-arrow-path ml-1 h-3 w-3 animate-spin"></span>
+  </p>
+  <button type="button" class="group absolute top-1 right-1 p-2" aria-label="close">
+    <span class="hero-x-mark-solid h-5 w-5 opacity-40 group-hover:opacity-70"></span>
+  </button>
+</div>
+
+  <div id="server-error" phx-click="[[&quot;push&quot;,{&quot;value&quot;:{&quot;key&quot;:&quot;error&quot;},&quot;event&quot;:&quot;lv:clear-flash&quot;}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#server-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}]]" role="alert" class="fixed top-2 right-2 mr-2 w-80 sm:w-96 z-50 rounded-lg p-3 shadow-lg border bg-zinc-800 border-red-700 text-red-200" hidden phx-connected="[[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#server-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}]]" phx-disconnected="[[&quot;show&quot;,{&quot;time&quot;:300,&quot;to&quot;:&quot;.phx-server-error #server-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-out&quot;,&quot;duration-300&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;]]}]]">
+  <p class="flex items-center gap-1.5 text-sm font-semibold leading-6">
+    
+    <span class="hero-exclamation-circle-mini h-4 w-4"></span>
+    Something went wrong!
+  </p>
+  <p class="mt-2 text-sm leading-5">
+    Hang in there while we get back on track
+    <span class="hero-arrow-path ml-1 h-3 w-3 animate-spin"></span>
+  </p>
+  <button type="button" class="group absolute top-1 right-1 p-2" aria-label="close">
+    <span class="hero-x-mark-solid h-5 w-5 opacity-40 group-hover:opacity-70"></span>
+  </button>
+</div>
+</div>
+
+  
+  <div class="px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
+    <div class="max-w-4xl mx-auto">
+
+      <div class="mb-6">
+        <a href="/community/patch_notes" data-phx-link="redirect" data-phx-link-state="push" class="game-button">
+          <span class="hero-chevron-left h-5 w-5 mr-1"></span> Back to Patch Notes
+        </a>
+      </div>
+
+      <div id="patch-note-content" class="paper-frame p-10 break-words">
+        <h1 class="text-2xl sm:text-3xl font-bold text-zinc-900 mb-2">
+          0.25.1.0 - Beta Patch 6 Hotfix 2
+        </h1>
+        <p class="text-sm text-zinc-700 mb-6">
+          June 17, 2026
+        </p>
+
+        <div class="space-y-3">
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-2090" aria-expanded="true" aria-controls="patch-section-2090" phx-click="toggle_section" phx-value-id="2090" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Things to watch out for
+                  </h2>
+                </button>
+
+                <div id="patch-section-2090" class="mt-4 space-y-2">
+                  <ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">We have reenabled some systems that caused lag when we launched 0.25.0.0. If they cause lag again, we will revert this patch and refix them after grabbing some profiles.</li><li class="text-zinc-800">There have been significant changes done to merchants. Please report any issues.</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-2093" aria-expanded="true" aria-controls="patch-section-2093" phx-click="toggle_section" phx-value-id="2093" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Lag related fixes
+                  </h2>
+                </button>
+
+                <div id="patch-section-2093" class="mt-4 space-y-2">
+                  <ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">The following systems have been fixed and reenabled:</li></ul><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Consignment Containers</li><li class="text-zinc-800">Item links in chat</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-2097" aria-expanded="true" aria-controls="patch-section-2097" phx-click="toggle_section" phx-value-id="2097" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Fixes
+                  </h2>
+                </button>
+
+                <div id="patch-section-2097" class="mt-4 space-y-2">
+                  <ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Charm buff will now be properly removed when camping out</li><li class="text-zinc-800">Charmed pets no longer get aggro stuck when their owner logs out</li><li class="text-zinc-800">Fix duplicate player models when entering stealth, or show stealth VFX when not required</li><li class="text-zinc-800">Spellbooks will now properly turn NO DROP when they contain NO DROP abilities</li><li class="text-zinc-800">Afterimages now fade more quickly</li><li class="text-zinc-800">Fix logic for blink effects, prevents falling through world</li><li class="text-zinc-800">Unequipping items with Shift + Right Click now properly cleans up their stats and effects</li><li class="text-zinc-800">Improved server performance related to merchant interaction</li><li class="text-zinc-800">Frenzy, Psionic Hemorrhage, and other multi attack abilities now show correct damage values in combat log.</li><li class="text-zinc-800">Druid Gust of Wind line now properly stuns/interrupts.</li><li class="text-zinc-800">&quot;Shadows&quot; snare line now counts as a movement dispel tag for various abilities that break snares</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-2109" aria-expanded="true" aria-controls="patch-section-2109" phx-click="toggle_section" phx-value-id="2109" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    UI
+                  </h2>
+                </button>
+
+                <div id="patch-section-2109" class="mt-4 space-y-2">
+                  <ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Click to consider menu clarifications and spelling fixes</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-2111" aria-expanded="true" aria-controls="patch-section-2111" phx-click="toggle_section" phx-value-id="2111" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Consignments
+                  </h2>
+                </button>
+
+                <div id="patch-section-2111" class="mt-4 space-y-2">
+                  <ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">You can no longer drop a consignment item to cancel the consignment. You must now hand it to a customs agent</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-2113" aria-expanded="true" aria-controls="patch-section-2113" phx-click="toggle_section" phx-value-id="2113" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    PvP
+                  </h2>
+                </button>
+
+                <div id="patch-section-2113" class="mt-4 space-y-2">
+                  <ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Guards will now aggro a PvP Aggressor (via PvP Aggro status) on 3 different conditions:</li></ul><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Aggressor is within a guard&#39;s Aggro range</li><li class="text-zinc-800">Defender is within a guard&#39;s Social Range when struck by attack</li><li class="text-zinc-800">A PvP Aggressor gets within a guards aggro radius after attacking a player who is not *factionally* KoS to the guards.</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Note: This means if you have the PvP Aggro status and walk near a guard, you will be treated as Kill on Sight while in that status. Beware!</li><li class="text-zinc-800">PvP Opt In status now requires a manual input.</li></ul><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Typing the command &#39;/pvpoptin&#39; will begin a cast time to flag your character to opt in status.</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Adjusted /who results for alternate /who ruleset option.</li></ul><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">/who no longer acts simply as &#39;disabled.&#39;</li><li class="text-zinc-800">If `/who all` is used, shows total player count online.</li><li class="text-zinc-800">If `/who [all] [lfg/friend/guild]` is used, shows those results.</li><li class="text-zinc-800">Only your own guild results will show.</li><li class="text-zinc-800">Friends will not show up on `/who friend` queries unless both are mutual friends (as per mutual friend ruleset option)</li><li class="text-zinc-800">LFG users should continue to be aware they can use /anonymous or /roleplay to hide their zone result.</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Updated Group Finder window functionality:</li></ul><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">If a player or group leader is anonymous, a zone will no longer be shown for a Group Listing or personal LFG listings.</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Updated Tracking</li></ul><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Slightly lowered Player tracking normalization range to make sure bards get full effect.</li><li class="text-zinc-800">Players now show up as &quot;(Race) Player&quot; instead of their actual character name.</li><li class="text-zinc-800">e.g. &quot;Ogre Player&quot; or &quot;Goblin Player&quot;</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-2134" aria-expanded="true" aria-controls="patch-section-2134" phx-click="toggle_section" phx-value-id="2134" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    PvP Balance
+                  </h2>
+                </button>
+
+                <div id="patch-section-2134" class="mt-4 space-y-2">
+                  <ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Enchanter Mesmerize line now has proper baseline PvP durations</li></ul><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">8/12/16/20 seconds depending on tier of spell</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Increased Bard Song &quot;Somniferous Serenade&quot; baseline PvP duration</li></ul><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">From 10 -&gt; 12 seconds</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Archer&#39;s Smoke Bomb Arrow now has proper baseline PvP duration &amp; diminishing returns</li></ul><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Set to 8 seconds</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Added a small PvP bonus to &quot;Chance To Break On Damage&quot; for various CC abilities.</li><li class="text-zinc-800">Physical/Martial abilities now only provide 25% of their innate hit bonus in PvP.</li></ul><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">This will make it so a lot of the abilities that never missed before will have chances to do so.</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Further adjusted PvP global mitigation values:</li></ul><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Mitigation begins at level 10, instead of 20.</li><li class="text-zinc-800">Auto Attacks/martial abilities: Scale from 10-33% reduction</li><li class="text-zinc-800">Direct Damage abilities/procs: Scale from 10-50% reduction</li><li class="text-zinc-800">Damage Over Time abilities: Scale from 10-33% reduction</li><li class="text-zinc-800">Pets: Scale from 20-40% reduction</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-2150" aria-expanded="true" aria-controls="patch-section-2150" phx-click="toggle_section" phx-value-id="2150" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Bards
+                  </h2>
+                </button>
+
+                <div id="patch-section-2150" class="mt-4 space-y-2">
+                  <ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Allegro and Aria buffs no longer cancel out or are blocked by other hastes and slows. They can be both applied at the same time and only the greater effect is used</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-2152" aria-expanded="true" aria-controls="patch-section-2152" phx-click="toggle_section" phx-value-id="2152" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Wizard
+                  </h2>
+                </button>
+
+                <div id="patch-section-2152" class="mt-4 space-y-2">
+                  <ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Reclaim Magic</li></ul><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">AoE reclaim was causing issues in PvP and made it challenging to use in many areas. With some additional concerns reported from community feedback, we&#39;re going to return this to being a single-target spell.</li><li class="text-zinc-800">After reviewing player feedback and play data, it was clear Reclaim Magic had some concerns. It was challenging to coordinate in multi-wizard groups, and limited options to feel effective using damage spells other than volley.</li><li class="text-zinc-800">Reclaim Magic now has a 30 second cooldown, so you can use it two times each minute. It works the same way, in that it reclaims Marks of Magic from a target NPC and gives mana back for each stack that is consumed.  For wizards using glyphs, there will be a 30 second &#39;Reclaim Magic&#39; buff that appears so you have clear feedback on when your cooldown is completed.</li><li class="text-zinc-800">The 30 second cooldown should make it easier coordinate in multi-wizard groups so more than one wizard can stack Marks quickly, and can take turns reclaiming for mana. This also opens up options to use other spells than volley to stack up Marks while waiting for your cooldown.</li><li class="text-zinc-800">Volley spells are still valuable for stacking Marks quickly in order to get the damage bonus, but it now feels like this is not the overwhelmingly best choice.</li><li class="text-zinc-800">Mana return scales from 5 to 25 mana per Mark consumed, based on the caster&#39;s level. Reclaiming twice per minute will give as much as 250 mana back.</li><li class="text-zinc-800">Please keep in mind that while you&#39;re casting you also benefit from standing mana regeneration, the mana regeneration from Sorcerous Mind, and that Arcane Invocation is available every five minutes.</li><li class="text-zinc-800">It&#39;s important for Wizards to have mana to play effectively, and it&#39;s also true that Wizards have many stacking ways to speed up mana regeneration.</li><li class="text-zinc-800">Please spend some time playing with this change and share your experience with us.</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Quad-kiting</li></ul><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Quad-kiting should be an effective way to play, but should also come with some risks, require skillful play and good gear to be effective, and take a reasonable amount of time to kill four monsters.  Quad-kiting should also be most effective on lower blues - not necessarily light blue, but probably on the low end of dark blue.</li><li class="text-zinc-800">We want to support quad-kiting as a mechanic, but in the past it has been faster and easier than it should be. We don&#39;t want to make it unachievable, but we do intend to make it more challenging than it was pre-update.</li><li class="text-zinc-800">If you find you&#39;re having trouble quad-kiting solo at your level and gear quality, consider grouping up with another person. Another wizard or Druid can quad-kite also. Several classes could toss DoTs on your targets or otherwise contribute damage. Consider getting some buffs or other assistance. At many levels, solo quad-kiting is possible - but it&#39;s even more reliable in duos and small groups if you&#39;re having difficulty.</li><li class="text-zinc-800">With the change to Reclaim Magic, we&#39;ve lowered the cost of the Burst spells slightly to offset the decrease in mana regeneration from Reclaim Magic.</li><li class="text-zinc-800">We&#39;ve tested quad-kiting at a variety of levels and found it is still possible and reasonable to do with the intellect available from common quality gear and jewelcrafted jewelry for many level ranges.</li><li class="text-zinc-800">If you&#39;re finding it challenging at your level while wearing reasonable gear and using good techniques to be mana efficient, we&#39;ll look forward to your feedback.</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Arcane Nova and Lightning Nova spell lines have decreased mana costs</li><li class="text-zinc-800">Fixed a text bug that spammed you with notifications when you cast Arcane Acceleration</li><li class="text-zinc-800">Fixed a variety of damage spells that were a bit too high in mana cost, cast times, or low on mana efficiency relative to other spells in their line</li><li class="text-zinc-800">Seal of Magic - Melee attacks no longer apply Mark of Magic</li><li class="text-zinc-800">Wizards can scribe and cast See Invisible again - this is still also included as part of Shroud of the Magi</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-2175" aria-expanded="true" aria-controls="patch-section-2175" phx-click="toggle_section" phx-value-id="2175" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Druids
+                  </h2>
+                </button>
+
+                <div id="patch-section-2175" class="mt-4 space-y-2">
+                  <ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">We got some great feedback and play data from the Wisdom damage changes on Beta.</li><li class="text-zinc-800">Added Sense Magic to the Mantle of Summer and Mantle of Winter spells</li><li class="text-zinc-800">Some tuning on lower level spells to make them more affordable to cast</li><li class="text-zinc-800">Fixed Druid DoTs to correctly scale with Wisdom for damage</li><li class="text-zinc-800"> Druid Healing Line up:</li></ul><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Summer&#39;s Warmth line - Your big heal</li><li class="text-zinc-800">Touch of Nature line - a mana-efficient heal that does half of its heal immediately, and the other half as a 12-second heal over time</li><li class="text-zinc-800">Spark of Nature - Your quick heal when someone needs healing fast, or the other two healing lines are more than you need.</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Healing spell changes</li></ul><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">When the Shaman and Cleric class update rolls out, the shared Minor Heal line will go away, but with the healing spells listed above + regeneration, Druids should have plenty of options for keeping their party healthy.</li><li class="text-zinc-800">Summer&#39;s Warmth line no longer requires you to be in Season: Summer in order to use it. It does still benefit from the +20% healing bonus from Season: Summer, which is good for bigger heals and mana efficiency.</li><li class="text-zinc-800">Summer&#39;s Warmth no longer heals for more health if the target has a Touch of Nature line spell active.</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Damage Spell Line up:</li></ul><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Based on significant community feedback on theme and intuitiveness, some druid damage spells have been changed to a Winter theme rather than fire theme:</li><li class="text-zinc-800">The Frostbite spell line replaces Embers</li><li class="text-zinc-800">The Blast of Sleet spell line replaces the Ray of Sun spell line</li><li class="text-zinc-800">Blast of Sleet spells are a fast-casting direct damage spell</li><li class="text-zinc-800">Winter&#39;s Chill spells are slower casting, with higher damage</li><li class="text-zinc-800">Frostbite is a cold-based DoT</li><li class="text-zinc-800">Insect Swarms are a poison-based DoT</li><li class="text-zinc-800">Gust of Wind is a ranged interrupt with a 15 second cooldown</li><li class="text-zinc-800">Lightning Strikes are outdoor-only target AoE spells</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Damage spell changes:</li></ul><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Cold-themed damage spells move your season towards Season: Winter when cast</li><li class="text-zinc-800">Insect Swarm DoTs are castable in any season and do not move your season in any way.</li><li class="text-zinc-800">Adjusted damage spells to better suit their roles and progression</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Cure Disease and Cure Poison are available earlier than they were previously</li><li class="text-zinc-800">Insect Swarm DoTs no longer stack -  this was a bug and they were not intended to allow you to stack multiple tiers of the same spell, and Druids should not feel obligated to have multiple Insect Swarm DoTs memorize to maximize DPS. In an upcoming update (not today), we are going to allow multiple characters to apply the same DoT to an NPC without overwriting one another.</li><li class="text-zinc-800">Since you can now cast Summer&#39;s Warmth and Winter&#39;s Bite spells in any season, the bonus healing and damage for Autumn and Spring have been adjusted so that Summer and Winter are still valuable choices :</li></ul><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Season: Autumn&#39;s heal modifier is now +5%, and it still regenerates mana at the same rate it did previously.</li><li class="text-zinc-800">Season: Spring&#39;s damage modifier is now +5%, and it still regenerates mana at the same rate it did previously.</li><li class="text-zinc-800">Season: Summer still gives +20% healing, while Season: Winter gives +20% damage.</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Added a Swarm DoT spell at level 8</li><li class="text-zinc-800">Added Prowl of the Wolves and Wolf Pack at level 20 and 32</li><li class="text-zinc-800">Added Summon Cureberries at level 16 - this will be moving to a Druid and Ranger only forage item in the future, but we didn&#39;t want to remove your ability to get these in the meantime.</li><li class="text-zinc-800">Druids can once again summon food and drink</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-2212" aria-expanded="true" aria-controls="patch-section-2212" phx-click="toggle_section" phx-value-id="2212" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Archer
+                  </h2>
+                </button>
+
+                <div id="patch-section-2212" class="mt-4 space-y-2">
+                  <ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">DoT damage removed from Caltrops, and snare percentage restored to 65%</li><li class="text-zinc-800">Bleed duration from Barbed Arrow line increased to last 20s, giving a 2s window when trying to weave in other attacks</li><li class="text-zinc-800">DoT damage of Barbed Arrow has been reduced to account for it being easier to keep up while weaving in Quick Shots, from 2/8/28/50/65/75 to 2/6/20/40/52/60 per stack</li><li class="text-zinc-800">Illuminating Shot restored as a level 5 ability.  The only function of this ability is now to mark an npc with light</li><li class="text-zinc-800">Relocate movement speed bonus increased from 30% -&gt; 40%</li><li class="text-zinc-800">Oil Trap III recipe changed to require fewer components, so it is now craftable in a Tinkering Kit</li><li class="text-zinc-800">Trap abilities no longer require and consume tinkered traps. Tinkered traps are now only a unique method for gaining your trap abilities. Once crafted, you can &quot;stow the gadget away for use&quot;.</li><li class="text-zinc-800">Some arrowheads will require tinkering in the next major patch (26.0) to maintain the gadgeteer feeling of the Archer, but the resulting arrows will still be stored in the quiver, and the total amount of materials will not change dramatically.</li><li class="text-zinc-800">The damage bonus from Sniper&#39;s Blind is now applied to Piercing Shot instead of Quick Shot.</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-2222" aria-expanded="true" aria-controls="patch-section-2222" phx-click="toggle_section" phx-value-id="2222" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Spellblade
+                  </h2>
+                </button>
+
+                <div id="patch-section-2222" class="mt-4 space-y-2">
+                  <ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Improved logic for determining blink effect locations along hilly and uneven terrain.  This should reduce or eliminate cases where using Phase Strike or Seclusion causes the player to fall through the world.</li><li class="text-zinc-800">Reduced the duration of afterimages in the Phase Strike and Seclusion vfx</li><li class="text-zinc-800">Phase Strike distance from back of target increased from 0.5m -&gt; 1m</li><li class="text-zinc-800">Electricity and Fire Protection/Resistance now apply the buff correctly</li><li class="text-zinc-800">Implosion debuff duration and dmg delay changed from 6s -&gt; 8s</li><li class="text-zinc-800">Implosion casting distance increased from 5m -&gt; 10m</li><li class="text-zinc-800">Infusions no longer share cooldowns, and Conduit no longer places all infusions on cooldown when activated</li></ul>
+                </div>
+              </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+        </main>
+      </div>
+
+
+
+  </body>
+</html>

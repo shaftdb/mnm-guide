@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="XT9bAQ4dbQABImFcOwUMBwd4P2gMQzka2g63iu4Ybo-1VqOn5Of0UwOB">
+    <title data-suffix=" · Monsters &amp; Memories">
+      0.24.0.0 - Beta Patch 5
+     · Monsters &amp; Memories</title>
+    <link phx-track-static rel="stylesheet" href="/assets/app-e61ca410f03dadd2d9f880147d301962.css?vsn=d">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    <script defer phx-track-static type="text/javascript" src="/assets/app.js?v=2">
+    </script>
+  </head>
+  <body class="h-full bg-zinc-900 text-zinc-100">
+
+    <div id="timezone-detector" phx-hook="TimezoneDetector" data-timezone="UTC" class="hidden">
+    </div>
+
+
+      <div class="min-h-full">
+        <nav id="site-navbar" class="sticky top-0 z-40 border-b-2 border-zinc-700 bg-zinc-800/80 backdrop-blur-sm">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 justify-between">
+              <div class="flex">
+                <div class="flex shrink-0 items-center">
+                  <a href="/" class="text-xl font-bold text-orange-500 hover:text-orange-400 transition-colors duration-200">
+                    Monsters & Memories
+                  </a>
+
+                </div>
+                <div class="hidden md:-my-px md:ml-6 md:flex md:space-x-8">
+                  <a href="/community" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-zinc-400 hover:border-zinc-600 hover:text-zinc-300 transition-colors duration-200">
+                    Community
+                  </a>
+                  
+                  <a href="/launcher" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-zinc-400 hover:border-zinc-600 hover:text-zinc-300 transition-colors duration-200">
+                    Download Launcher
+                  </a>
+                  
+                </div>
+              </div>
+
+                <div class="hidden gap-3 md:flex md:items-center">
+                  <a href="/accounts/register" id="navbar-register-link" class="game-button game-button-compact">
+                    Register
+                  </a>
+                  <a href="/accounts/log_in" id="navbar-login-link" class="game-button game-button-compact">
+                    Log in
+                  </a>
+                </div>
+
+
+              <div class="-mr-2 flex items-center md:hidden">
+                <button type="button" class="relative inline-flex items-center justify-center rounded-md bg-zinc-800 p-2 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-zinc-800" aria-controls="mobile-menu" phx-click="[[&quot;toggle&quot;,{&quot;to&quot;:&quot;#mobile-menu&quot;}],[&quot;toggle_class&quot;,{&quot;names&quot;:[&quot;overflow-hidden&quot;],&quot;to&quot;:&quot;body&quot;}]]" aria-expanded="false">
+                  <span class="absolute -inset-0.5"></span>
+                  <span class="sr-only">Open main menu</span>
+                  <svg class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:hidden hidden max-h-[calc(100vh-4rem)] overflow-y-auto overscroll-contain" id="mobile-menu">
+            <div class="space-y-1 pb-3 pt-2">
+
+              <a href="/community" class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-zinc-400 hover:border-zinc-600 hover:bg-zinc-700 hover:text-zinc-300">
+                Community
+              </a>
+              
+              <a href="/launcher" class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-zinc-400 hover:border-zinc-600 hover:bg-zinc-700 hover:text-zinc-300">
+                Download Launcher
+              </a>
+              
+
+                <div class="grid grid-cols-2 gap-3 px-3 pt-2">
+                  <a href="/accounts/register" id="mobile-navbar-register-link" class="game-button game-button-compact w-full">
+                    Register
+                  </a>
+                  <a href="/accounts/log_in" id="mobile-navbar-login-link" class="game-button game-button-compact w-full">
+                    Log in
+                  </a>
+                </div>
+
+            </div>
+
+          </div>
+        </nav>
+
+        <main>
+
+            <div id="phx-GN5DN9LlBwRvYfXB" data-phx-main data-phx-session="SFMyNTY.g2gDaAJhBnQAAAAIdwJpZG0AAAAUcGh4LUdONUROOUxsQndSdllmWEJ3B3Nlc3Npb250AAAAAHcEdmlld3chRWxpeGlyLk1ubVdlYi5QYXRjaE5vdGVzTGl2ZS5TaG93dwpwYXJlbnRfcGlkdwNuaWx3BnJvdXRlcncURWxpeGlyLk1ubVdlYi5Sb3V0ZXJ3CHJvb3RfcGlkdwNuaWx3EWxpdmVfc2Vzc2lvbl9uYW1ldxBjb21tdW5pdHlfcHVibGljdwlyb290X3ZpZXd3IUVsaXhpci5Nbm1XZWIuUGF0Y2hOb3Rlc0xpdmUuU2hvd24GAM6JKTihAWIAAVGA.73OWDkvEIsOoyBlSfNMwJGWBsizvFoPOJeWV05v7OFw" data-phx-static="SFMyNTY.g2gDaAJhBnQAAAADdwJpZG0AAAAUcGh4LUdONUROOUxsQndSdllmWEJ3BWZsYXNodAAAAAB3CmFzc2lnbl9uZXdsAAAAA3cMY3VycmVudF9wYXRodw11c2VyX3RpbWV6b25ldw9jdXJyZW50X2FjY291bnRqbgYAzokpOKEBYgABUYA.IrhlC2UcLJxpc0Zd2zghmJvQRSBGzpR2DfI7MCFdBd0"><div id="flash-group">
+  
+  
+  <div id="client-error" phx-click="[[&quot;push&quot;,{&quot;value&quot;:{&quot;key&quot;:&quot;error&quot;},&quot;event&quot;:&quot;lv:clear-flash&quot;}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#client-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}]]" role="alert" class="fixed top-2 right-2 mr-2 w-80 sm:w-96 z-50 rounded-lg p-3 shadow-lg border bg-zinc-800 border-red-700 text-red-200" hidden phx-connected="[[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#client-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}]]" phx-disconnected="[[&quot;show&quot;,{&quot;time&quot;:300,&quot;to&quot;:&quot;.phx-client-error #client-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-out&quot;,&quot;duration-300&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;]]}]]">
+  <p class="flex items-center gap-1.5 text-sm font-semibold leading-6">
+    
+    <span class="hero-exclamation-circle-mini h-4 w-4"></span>
+    We can&#39;t find the internet
+  </p>
+  <p class="mt-2 text-sm leading-5">
+    Attempting to reconnect
+    <span class="hero-arrow-path ml-1 h-3 w-3 animate-spin"></span>
+  </p>
+  <button type="button" class="group absolute top-1 right-1 p-2" aria-label="close">
+    <span class="hero-x-mark-solid h-5 w-5 opacity-40 group-hover:opacity-70"></span>
+  </button>
+</div>
+
+  <div id="server-error" phx-click="[[&quot;push&quot;,{&quot;value&quot;:{&quot;key&quot;:&quot;error&quot;},&quot;event&quot;:&quot;lv:clear-flash&quot;}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#server-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}]]" role="alert" class="fixed top-2 right-2 mr-2 w-80 sm:w-96 z-50 rounded-lg p-3 shadow-lg border bg-zinc-800 border-red-700 text-red-200" hidden phx-connected="[[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#server-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}]]" phx-disconnected="[[&quot;show&quot;,{&quot;time&quot;:300,&quot;to&quot;:&quot;.phx-server-error #server-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-out&quot;,&quot;duration-300&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;]]}]]">
+  <p class="flex items-center gap-1.5 text-sm font-semibold leading-6">
+    
+    <span class="hero-exclamation-circle-mini h-4 w-4"></span>
+    Something went wrong!
+  </p>
+  <p class="mt-2 text-sm leading-5">
+    Hang in there while we get back on track
+    <span class="hero-arrow-path ml-1 h-3 w-3 animate-spin"></span>
+  </p>
+  <button type="button" class="group absolute top-1 right-1 p-2" aria-label="close">
+    <span class="hero-x-mark-solid h-5 w-5 opacity-40 group-hover:opacity-70"></span>
+  </button>
+</div>
+</div>
+
+  
+  <div class="px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
+    <div class="max-w-4xl mx-auto">
+
+      <div class="mb-6">
+        <a href="/community/patch_notes" data-phx-link="redirect" data-phx-link-state="push" class="game-button">
+          <span class="hero-chevron-left h-5 w-5 mr-1"></span> Back to Patch Notes
+        </a>
+      </div>
+
+      <div id="patch-note-content" class="paper-frame p-10 break-words">
+        <h1 class="text-2xl sm:text-3xl font-bold text-zinc-900 mb-2">
+          0.24.0.0 - Beta Patch 5
+        </h1>
+        <p class="text-sm text-zinc-700 mb-6">
+          May 05, 2026
+        </p>
+
+        <div class="space-y-3">
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-1744" aria-expanded="true" aria-controls="patch-section-1744" phx-click="toggle_section" phx-value-id="1744" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    General
+                  </h2>
+                </button>
+
+                <div id="patch-section-1744" class="mt-4 space-y-2">
+                  <ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Health and Mana regeneration per level has been increased</li><li class="text-zinc-800">Sitting Health regen will now scale with your Stamina</li><li class="text-zinc-800">Sitting Mana regen will now scale with the higher of your Intelligence or Wisdom</li><li class="text-zinc-800">Bind Wound / Bandages are now a 6s channeled ability with significantly increased values.  Once bandaged, a target cannot be bandaged again for one minute.</li><li class="text-zinc-800">Recipes for bandages at all tiers now produce a single bandage instead of two</li><li class="text-zinc-800">Beastmasters may now store their pets with a Kennel Master, allowing them to tame a new pet without losing the previous one.  Seek out Handler Duskglint in Faelindral or Handler Terrem in Night Harbor.</li><li class="text-zinc-800">Ranged autoattacks will try to pull ammo matching what is used in the Ammo slot from an equipped quiver before consuming from the ammo slot.</li><li class="text-zinc-800">Block percentage using the block skill has been increased to be much more generous and to scale with Stamina.</li><li class="text-zinc-800">Adjusted pathing so NPCs should not travel slopes players cannot &amp; aligned settings across zones. Please let us know if you observe NPCs fleeing on slopes or into areas that you cannot access.</li><li class="text-zinc-800">Client performance improvements</li><li class="text-zinc-800">LFG/LFM window was hiding the last row when scrolling down</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-1756" aria-expanded="true" aria-controls="patch-section-1756" phx-click="toggle_section" phx-value-id="1756" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Abilities
+                  </h2>
+                </button>
+
+                <div id="patch-section-1756" class="mt-4 space-y-2">
+                  <ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Salvageable arrows will no longer hold a corpse open until salvaged.  This is a stopgap measure to prevent the corpse spam created by archers and rangers until the ability/mechanic has been redesigned.</li><li class="text-zinc-800">Abilities are no longer put on full cooldown when memorized.  Short cooldown abilities will be on a 5s memorization cooldown, and abilities with cooldowns greater than 30s will be on a 30s cooldown.  Cooldowns will still be tracked when the ability is off the bar, so if you memorize something on cooldown, that will supercede the short memorization cooldown.  The goal with this is to make it more feasible to swap out long cooldown abilities and feel less need to keep the some one on the bar so that it can be used.</li><li class="text-zinc-800">Fixed an issue resurrecting BST pets where a second resurrection was needed.</li><li class="text-zinc-800">Bard songs will no longer &quot;snapshot&quot; instrument bonuses (or lack thereof) if you continue to refresh them and will instead update the value of the buff upon each application of the song.  This should prevent some confusion on the effects of equipping instruments.</li><li class="text-zinc-800">The placeable torch, campfire, and cauldron all no longer cause collision with players - this should stop getting stuck when casting or having them cast on you.</li><li class="text-zinc-800">The cauldron no longer spawns under the player &amp; distances on it, the campfire &amp; torch were adjusted.</li><li class="text-zinc-800">The cauldron also now has an animation when being placed.</li><li class="text-zinc-800">The placeable torch now has the same illumination as a player held torch and the light originates slightly higher.</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-1765" aria-expanded="true" aria-controls="patch-section-1765" phx-click="toggle_section" phx-value-id="1765" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Fixes
+                  </h2>
+                </button>
+
+                <div id="patch-section-1765" class="mt-4 space-y-2">
+                  <ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Hungry/Thirsty debuffs that were set upon login will correctly be cleared without reloading once you have eaten / drank</li><li class="text-zinc-800">Beastmaster pets will no longer dismiss upon zoning</li><li class="text-zinc-800">Fix inn buffs</li><li class="text-zinc-800">Fixes for some situations where you may fall through the ground (while zoning or teleporting)</li><li class="text-zinc-800">Teleport now updates your /unstuck position</li><li class="text-zinc-800">Charmed mobs will no longer despawn if they were a time specific NPCs</li><li class="text-zinc-800">Fixes to leashing edge cases causing NPCs to leash preemptively</li><li class="text-zinc-800">Prevent completing quests that will fail to give you a reward because the reward is Unique</li><li class="text-zinc-800">Mining nodes are now accessible</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-1775" aria-expanded="true" aria-controls="patch-section-1775" phx-click="toggle_section" phx-value-id="1775" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    AI
+                  </h2>
+                </button>
+
+                <div id="patch-section-1775" class="mt-4 space-y-2">
+                  <ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">NPCs will wait a bit before trying to recast on you when they fail to cast due to Line of Sight</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-1777" aria-expanded="true" aria-controls="patch-section-1777" phx-click="toggle_section" phx-value-id="1777" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Housing
+                  </h2>
+                </button>
+
+                <div id="patch-section-1777" class="mt-4 space-y-2">
+                  <ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Upgrades and fixes to guild housing permissions and guild container permissions</li><li class="text-zinc-800">Houses that you own or have privileges in will now stop food/water consumption and give you warmth of the hearth</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-1780" aria-expanded="true" aria-controls="patch-section-1780" phx-click="toggle_section" phx-value-id="1780" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Content
+                  </h2>
+                </button>
+
+                <div id="patch-section-1780" class="mt-4 space-y-2">
+                  <ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Renamed all placeholder NPC names with either actual names (Tailor Bob) or generic names (a tailor)</li><li class="text-zinc-800">Various bug fixes to Glinting Hollow</li><li class="text-zinc-800">Population adjustments to Glinting Hollow</li><li class="text-zinc-800">Finalized itemization in Sunken Resort</li><li class="text-zinc-800">Adjustments to the Ashira faction quest</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-1786" aria-expanded="true" aria-controls="patch-section-1786" phx-click="toggle_section" phx-value-id="1786" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    UI
+                  </h2>
+                </button>
+
+                <div id="patch-section-1786" class="mt-4 space-y-2">
+                  <ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Tabbed Tell Windows</li></ul><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">Tell windows group together in a single window rather than populate multiple windows, by default. They can be dragged out into any other tab container on your screen or recombined back into another tell window. Using the close button on tell windows, only close that specific tell window.</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Tab Opacity</li></ul><ul data-depth="2" class="list-disc list-inside space-y-1 pl-2 ml-16"><li class="text-zinc-800">All chat windows now can be controlled with the chat tab opacity setting. Set your default opacity and hover opacity, just like your normal chat windows - independently from the the chat window itself.</li></ul><ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Minor adjustments to Character Create</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-1792" aria-expanded="true" aria-controls="patch-section-1792" phx-click="toggle_section" phx-value-id="1792" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Audio
+                  </h2>
+                </button>
+
+                <div id="patch-section-1792" class="mt-4 space-y-2">
+                  <ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">New Banker music, titled &quot;Tales of Gold&quot;</li><li class="text-zinc-800">Sawmill Crafting Station now have an Open/Interact SFX and Crafting SFX</li><li class="text-zinc-800">Ability: Bind Wound sound effect</li><li class="text-zinc-800">Crafting sound effects appropriate to each profession have been added to the following combine containers:</li><li class="text-zinc-800">Dark Alchemist&#39;s Bag</li><li class="text-zinc-800">Camp Kitchen</li><li class="text-zinc-800">Ceramic Mixing Bowl</li><li class="text-zinc-800">Mixing Bowl</li><li class="text-zinc-800">Backstrap Loom</li><li class="text-zinc-800">Trainee Research Tome</li><li class="text-zinc-800">Alchemist Bag (including the Trainee version)</li><li class="text-zinc-800">Disenchanting Cube (including the Trainee version)</li><li class="text-zinc-800">Fletching Kit (including the Trainee version)</li><li class="text-zinc-800">Mortar and Pestle (including the Trainee version)</li><li class="text-zinc-800">Leatherworking Kit (including the Trainee version)</li><li class="text-zinc-800">Jewelcrafter Kit (including the Trainee version)</li><li class="text-zinc-800">Poison Making Kit (including the Trainee version)</li><li class="text-zinc-800">Pottery Bowl (including the Trainee version)</li><li class="text-zinc-800">Tailoring Kit (including the Trainee version)</li><li class="text-zinc-800">Tinkering Toolkit (including the Trainee version)</li><li class="text-zinc-800">Tome Of Enchantment (including the Trainee version)</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-1814" aria-expanded="true" aria-controls="patch-section-1814" phx-click="toggle_section" phx-value-id="1814" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    PVP Innate Mitigation
+                  </h2>
+                </button>
+
+                <div id="patch-section-1814" class="mt-4 space-y-2">
+                  <ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">PvP damaging attacks, abilities, and spells are seeing mitigation across the board.</li><li class="text-zinc-800">10-35% reduction in DoTs, 25-50% reduction in attacks, abilities, and other spells</li><li class="text-zinc-800">This is taking shape as a scaling percentage from levels 1-60</li><li class="text-zinc-800">As a note, this is likely to be adjusted based on upcoming class balance changes and other factors.</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-1819" aria-expanded="true" aria-controls="patch-section-1819" phx-click="toggle_section" phx-value-id="1819" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    PVP Level Squashing
+                  </h2>
+                </button>
+
+                <div id="patch-section-1819" class="mt-4 space-y-2">
+                  <ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">PvP attack chance and resist chance are being adjusted on a wider scale now.</li><li class="text-zinc-800">PvP Resists are being frontloaded based on buff/gear resist value.</li><li class="text-zinc-800">Negative resist should scale similarly the opposite direction</li><li class="text-zinc-800">Applies a ~1% resist bonus per level differential</li><li class="text-zinc-800">Flattens the curve out, but clamps at a maximum of 85% chance to resist</li><li class="text-zinc-800">This sets the stage to let PvP land spells on all levels 1-60</li><li class="text-zinc-800">PvP Attacks take existing attack/defense bonuses, and curves out the hit rating and skill bonuses based on level differentials</li><li class="text-zinc-800">Allows low levels to hit high levels, though still at reduced rates.</li><li class="text-zinc-800">Still gives high levels the edge as they should.</li><li class="text-zinc-800">While giving closely matched levels roughly a similar hit chance (~60-70% on average)</li><li class="text-zinc-800">As a note, it&#39;s still quite important to keep skills maxed out.</li></ul>
+                </div>
+              </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+        </main>
+      </div>
+
+
+
+  </body>
+</html>

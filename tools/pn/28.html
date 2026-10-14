@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="HBlkDyU5fBFOZQUsBRQwQz86WjQHRmwuhT4eAh2Uy7rCPrH4vC-lOs5x">
+    <title data-suffix=" · Monsters &amp; Memories">
+      0.25.0.2 - Beta Patch 6 Balance Patch
+     · Monsters &amp; Memories</title>
+    <link phx-track-static rel="stylesheet" href="/assets/app-e61ca410f03dadd2d9f880147d301962.css?vsn=d">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    <script defer phx-track-static type="text/javascript" src="/assets/app.js?v=2">
+    </script>
+  </head>
+  <body class="h-full bg-zinc-900 text-zinc-100">
+
+    <div id="timezone-detector" phx-hook="TimezoneDetector" data-timezone="UTC" class="hidden">
+    </div>
+
+
+      <div class="min-h-full">
+        <nav id="site-navbar" class="sticky top-0 z-40 border-b-2 border-zinc-700 bg-zinc-800/80 backdrop-blur-sm">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 justify-between">
+              <div class="flex">
+                <div class="flex shrink-0 items-center">
+                  <a href="/" class="text-xl font-bold text-orange-500 hover:text-orange-400 transition-colors duration-200">
+                    Monsters & Memories
+                  </a>
+
+                </div>
+                <div class="hidden md:-my-px md:ml-6 md:flex md:space-x-8">
+                  <a href="/community" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-zinc-400 hover:border-zinc-600 hover:text-zinc-300 transition-colors duration-200">
+                    Community
+                  </a>
+                  
+                  <a href="/launcher" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-zinc-400 hover:border-zinc-600 hover:text-zinc-300 transition-colors duration-200">
+                    Download Launcher
+                  </a>
+                  
+                </div>
+              </div>
+
+                <div class="hidden gap-3 md:flex md:items-center">
+                  <a href="/accounts/register" id="navbar-register-link" class="game-button game-button-compact">
+                    Register
+                  </a>
+                  <a href="/accounts/log_in" id="navbar-login-link" class="game-button game-button-compact">
+                    Log in
+                  </a>
+                </div>
+
+
+              <div class="-mr-2 flex items-center md:hidden">
+                <button type="button" class="relative inline-flex items-center justify-center rounded-md bg-zinc-800 p-2 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-zinc-800" aria-controls="mobile-menu" phx-click="[[&quot;toggle&quot;,{&quot;to&quot;:&quot;#mobile-menu&quot;}],[&quot;toggle_class&quot;,{&quot;names&quot;:[&quot;overflow-hidden&quot;],&quot;to&quot;:&quot;body&quot;}]]" aria-expanded="false">
+                  <span class="absolute -inset-0.5"></span>
+                  <span class="sr-only">Open main menu</span>
+                  <svg class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:hidden hidden max-h-[calc(100vh-4rem)] overflow-y-auto overscroll-contain" id="mobile-menu">
+            <div class="space-y-1 pb-3 pt-2">
+
+              <a href="/community" class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-zinc-400 hover:border-zinc-600 hover:bg-zinc-700 hover:text-zinc-300">
+                Community
+              </a>
+              
+              <a href="/launcher" class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-zinc-400 hover:border-zinc-600 hover:bg-zinc-700 hover:text-zinc-300">
+                Download Launcher
+              </a>
+              
+
+                <div class="grid grid-cols-2 gap-3 px-3 pt-2">
+                  <a href="/accounts/register" id="mobile-navbar-register-link" class="game-button game-button-compact w-full">
+                    Register
+                  </a>
+                  <a href="/accounts/log_in" id="mobile-navbar-login-link" class="game-button game-button-compact w-full">
+                    Log in
+                  </a>
+                </div>
+
+            </div>
+
+          </div>
+        </nav>
+
+        <main>
+
+            <div id="phx-GN5DOAdPep2rPsHo" data-phx-main data-phx-session="SFMyNTY.g2gDaAJhBnQAAAAIdwJpZG0AAAAUcGh4LUdONURPQWRQZXAyclBzSG93B3Nlc3Npb250AAAAAHcEdmlld3chRWxpeGlyLk1ubVdlYi5QYXRjaE5vdGVzTGl2ZS5TaG93dwpwYXJlbnRfcGlkdwNuaWx3BnJvdXRlcncURWxpeGlyLk1ubVdlYi5Sb3V0ZXJ3CHJvb3RfcGlkdwNuaWx3EWxpdmVfc2Vzc2lvbl9uYW1ldxBjb21tdW5pdHlfcHVibGljdwlyb290X3ZpZXd3IUVsaXhpci5Nbm1XZWIuUGF0Y2hOb3Rlc0xpdmUuU2hvd24GAD6NKTihAWIAAVGA.FuvOZ0Zo1wtgcDW2lg3NsRKEo35l9jzNpEgw35VXMO0" data-phx-static="SFMyNTY.g2gDaAJhBnQAAAADdwJpZG0AAAAUcGh4LUdONURPQWRQZXAyclBzSG93BWZsYXNodAAAAAB3CmFzc2lnbl9uZXdsAAAAA3cMY3VycmVudF9wYXRodw11c2VyX3RpbWV6b25ldw9jdXJyZW50X2FjY291bnRqbgYAPo0pOKEBYgABUYA.exZoO_o9uEsHUKgD5chuOnGUkj52qFBQYFDGeyvVMGo"><div id="flash-group">
+  
+  
+  <div id="client-error" phx-click="[[&quot;push&quot;,{&quot;value&quot;:{&quot;key&quot;:&quot;error&quot;},&quot;event&quot;:&quot;lv:clear-flash&quot;}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#client-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}]]" role="alert" class="fixed top-2 right-2 mr-2 w-80 sm:w-96 z-50 rounded-lg p-3 shadow-lg border bg-zinc-800 border-red-700 text-red-200" hidden phx-connected="[[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#client-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}]]" phx-disconnected="[[&quot;show&quot;,{&quot;time&quot;:300,&quot;to&quot;:&quot;.phx-client-error #client-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-out&quot;,&quot;duration-300&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;]]}]]">
+  <p class="flex items-center gap-1.5 text-sm font-semibold leading-6">
+    
+    <span class="hero-exclamation-circle-mini h-4 w-4"></span>
+    We can&#39;t find the internet
+  </p>
+  <p class="mt-2 text-sm leading-5">
+    Attempting to reconnect
+    <span class="hero-arrow-path ml-1 h-3 w-3 animate-spin"></span>
+  </p>
+  <button type="button" class="group absolute top-1 right-1 p-2" aria-label="close">
+    <span class="hero-x-mark-solid h-5 w-5 opacity-40 group-hover:opacity-70"></span>
+  </button>
+</div>
+
+  <div id="server-error" phx-click="[[&quot;push&quot;,{&quot;value&quot;:{&quot;key&quot;:&quot;error&quot;},&quot;event&quot;:&quot;lv:clear-flash&quot;}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#server-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}]]" role="alert" class="fixed top-2 right-2 mr-2 w-80 sm:w-96 z-50 rounded-lg p-3 shadow-lg border bg-zinc-800 border-red-700 text-red-200" hidden phx-connected="[[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#server-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-in&quot;,&quot;duration-200&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;]]}]]" phx-disconnected="[[&quot;show&quot;,{&quot;time&quot;:300,&quot;to&quot;:&quot;.phx-server-error #server-error&quot;,&quot;transition&quot;:[[&quot;transition-all&quot;,&quot;transform&quot;,&quot;ease-out&quot;,&quot;duration-300&quot;],[&quot;opacity-0&quot;,&quot;translate-y-4&quot;,&quot;sm:translate-y-0&quot;,&quot;sm:scale-95&quot;],[&quot;opacity-100&quot;,&quot;translate-y-0&quot;,&quot;sm:scale-100&quot;]]}]]">
+  <p class="flex items-center gap-1.5 text-sm font-semibold leading-6">
+    
+    <span class="hero-exclamation-circle-mini h-4 w-4"></span>
+    Something went wrong!
+  </p>
+  <p class="mt-2 text-sm leading-5">
+    Hang in there while we get back on track
+    <span class="hero-arrow-path ml-1 h-3 w-3 animate-spin"></span>
+  </p>
+  <button type="button" class="group absolute top-1 right-1 p-2" aria-label="close">
+    <span class="hero-x-mark-solid h-5 w-5 opacity-40 group-hover:opacity-70"></span>
+  </button>
+</div>
+</div>
+
+  
+  <div class="px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
+    <div class="max-w-4xl mx-auto">
+
+      <div class="mb-6">
+        <a href="/community/patch_notes" data-phx-link="redirect" data-phx-link-state="push" class="game-button">
+          <span class="hero-chevron-left h-5 w-5 mr-1"></span> Back to Patch Notes
+        </a>
+      </div>
+
+      <div id="patch-note-content" class="paper-frame p-10 break-words">
+        <h1 class="text-2xl sm:text-3xl font-bold text-zinc-900 mb-2">
+          0.25.0.2 - Beta Patch 6 Balance Patch
+        </h1>
+        <p class="text-sm text-zinc-700 mb-6">
+          June 12, 2026
+        </p>
+
+        <div class="space-y-3">
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-2064" aria-expanded="true" aria-controls="patch-section-2064" phx-click="toggle_section" phx-value-id="2064" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Stat changes
+                  </h2>
+                </button>
+
+                <div id="patch-section-2064" class="mt-4 space-y-2">
+                  <ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Clerics, Druids, Shamans, Rangers and Paladins now scale their ability damage off of Wisdom, not intelligence</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-2066" aria-expanded="true" aria-controls="patch-section-2066" phx-click="toggle_section" phx-value-id="2066" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Wizard
+                  </h2>
+                </button>
+
+                <div id="patch-section-2066" class="mt-4 space-y-2">
+                  <ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Seal of Magic III - you can now apply Mark of Magic to creatures up to level 64.</li><li class="text-zinc-800">Mark of Magic - Duration increased to 60 seconds</li><li class="text-zinc-800">Fixed an inconsistency where Arcane Volley and Fire Volley tooltips did not match the amount of missiles fired -</li><li class="text-zinc-800">Set glyphs and catalyst to cast while moving - This is just the very short cast time of the glyph itself, and wizards must stand still while the glyph-triggered spell is casting. This is seeing if we can improve the glyph casting experience for players with some lag and should not be a meaningful advantage otherwise. We are not trying to turn Wizards into bards, and they do need to stand still to cast the actual spells.</li><li class="text-zinc-800">Added an earlier tier for Iceblast at level 8.</li><li class="text-zinc-800">Reclaim Magic changed to target AOE - it will now be a bit easier to use when kiting.</li><li class="text-zinc-800">Combined Reclaim Magic and Arcane Acceleration into a single spell - using Reclaim Magic will return mana and apply or refresh your group spell haste buff.  This frees up one extra slot on your spell bar.</li><li class="text-zinc-800">Removed Arcane Acceleration as a stand-alone spell - it no longer has a purpose as it&#39;s been combined with Reclaim Magic. You&#39;re not losing any abilities, it just got bundled up to be more convenient.</li><li class="text-zinc-800">Slightly increased the mana return on Mark of Magic</li><li class="text-zinc-800">Based on community feedback, we removed a few spells from being glyph-castable and replaced them with spells that may be used more frequently, or buffs that you don&#39;t want to sit and memorize in order to cast once per hour.  This is going to be a challenging area to find a spell set for glyphs that will please everyone, so we&#39;re not planning to continue making changes to this.  Any spells that are no longer glyph-castable are still available to memorize and cast normally.</li><li class="text-zinc-800">Removed - Arcane Acceleration, Bind Vision, Wall of Force</li><li class="text-zinc-800">Added - Spellshield, Seal of Magic, Sense Magic</li><li class="text-zinc-800">We also took another balancing pass on damage spells, based on early play data and constructive player feedback. Please give your damage spells a try and post your feedback in the new threads set up for this.</li></ul>
+                </div>
+              </div>
+
+
+
+
+              <div class="mt-4">
+                <button type="button" id="patch-section-toggle-2080" aria-expanded="true" aria-controls="patch-section-2080" phx-click="toggle_section" phx-value-id="2080" class="flex items-center gap-3 w-full min-h-11 text-left group/heading focus-visible:outline-2 focus-visible:outline-zinc-700 focus-visible:outline-offset-2">
+                  <span class="hero-chevron-right h-4 w-4 text-zinc-700 transition-transform flex-shrink-0 rotate-90"></span>
+                  <h2 class="text-xl font-semibold text-zinc-900 group-hover/heading:text-zinc-600 transition-colors">
+                    Druids
+                  </h2>
+                </button>
+
+                <div id="patch-section-2080" class="mt-4 space-y-2">
+                  <ul data-depth="1" class="list-disc list-inside space-y-1 pl-2 ml-8"><li class="text-zinc-800">Reduced Mantle of Winter and Mantle of Summer to a 15 minute cooldown.</li><li class="text-zinc-800">Currently the buffs provided by seasons are very strong, which is balanced by the natural rate of change for seasons.</li><li class="text-zinc-800">If we make it faster and easier to change seasons at will, the buffs offered by seasons will need to be less impactful as it was meant to be a bonus where you get a large benefit for a season, but could not easily get all the larger benefits in a short period of time.</li><li class="text-zinc-800">We fixed the bug that would sometimes cause seasons to shift unusually, or prevent Mantle of Summer or Winter from correctly setting your season. Please let us know if you run into any unexpected season transitions.</li><li class="text-zinc-800">Embers DoT spells have a shorter cast time</li><li class="text-zinc-800">We made some improvements the Ray of Sun and Winter&#39;s Chill damage spell lines. We&#39;ll continue to evaluate other druid spells in the next few days.</li><li class="text-zinc-800">Druids, along with a few other classes, will be getting bonus spell damage and healing based on their Wisdom scores. We wanted to hold off on adjust any Druid spells until this Wisdom change rolls out and we get a bit of play data. We will be keeping an eye on Druid feedback and do plan to revisit the class and address any concerns soon.</li><li class="text-zinc-800">We are evaluating additional tuning and updates for druids over the next few days.</li><li class="text-zinc-800">There have already been some very helpful and constructive posts in the Druid feedback thread - so give the Wisdom change a try and then share your thoughts with us. Thanks!</li></ul>
+                </div>
+              </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+        </main>
+      </div>
+
+
+
+  </body>
+</html>
