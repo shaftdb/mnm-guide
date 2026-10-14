@@ -1,0 +1,437 @@
+{
+ "fetched": "2026-10-13",
+ "events": [
+  {
+   "date": "2026-10-11",
+   "kind": "patch",
+   "title": "0.30.2.8 - Module 1 Patch 11",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/59"
+  },
+  {
+   "date": "2026-10-11",
+   "kind": "patch",
+   "title": "0.30.2.7 - Module 1 Patch 10",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/58"
+  },
+  {
+   "date": "2026-10-07",
+   "kind": "patch",
+   "title": "0.30.2.6 - Module 1 Patch 9",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/57"
+  },
+  {
+   "date": "2026-10-07",
+   "kind": "patch",
+   "title": "0.30.2.5 - Module 1 Patch 8",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/56"
+  },
+  {
+   "date": "2026-10-04",
+   "kind": "patch",
+   "title": "0.30.2.4 - Module 1 Patch 7",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/55"
+  },
+  {
+   "date": "2026-10-03",
+   "kind": "patch",
+   "title": "0.30.2.3 - Module 1 Patch 6",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/54"
+  },
+  {
+   "date": "2026-10-03",
+   "kind": "patch",
+   "title": "0.30.2.2 - Module 1 Patch 5",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/53"
+  },
+  {
+   "date": "2026-09-30",
+   "kind": "patch",
+   "title": "0.30.2.1 - Module 1 Patch 4 - Release Patch!",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/52"
+  },
+  {
+   "date": "2026-09-29",
+   "kind": "news",
+   "title": "Necromancer, Ranger, and Shadow Knight Deep Dives and Traits Preview",
+   "url": "https://monstersandmemories.com/updates/necromancer-ranger-and-shadow-knight-deep-dives-and-traits-preview"
+  },
+  {
+   "date": "2026-09-25",
+   "kind": "patch",
+   "title": "0.30.2.0 - Module 1 Patch 3",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/51"
+  },
+  {
+   "date": "2026-09-21",
+   "kind": "patch",
+   "title": "0.30.1.0 - Module 1 Patch 2",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/48"
+  },
+  {
+   "date": "2026-09-19",
+   "kind": "news",
+   "title": "Bard and Enchanter Deep Dives",
+   "url": "https://monstersandmemories.com/updates/bard-and-enchanter-deep-dives"
+  },
+  {
+   "date": "2026-09-19",
+   "kind": "patch",
+   "title": "0.30.0.1 - Module 1 Patch 1",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/47"
+  },
+  {
+   "date": "2026-09-19",
+   "kind": "patch",
+   "title": "0.30.0.0 - Early Access Patch + Module 1",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/46"
+  },
+  {
+   "date": "2026-09-15",
+   "kind": "news",
+   "title": "Get Ready for Early Access",
+   "url": "https://monstersandmemories.com/updates/get-ready-for-early-access"
+  },
+  {
+   "date": "2026-09-11",
+   "kind": "patch",
+   "title": "0.29.0.1 - Beta Patch 10 Hotfix 1",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/45"
+  },
+  {
+   "date": "2026-09-10",
+   "kind": "news",
+   "title": "Elementalist & Paladin Deep Dives",
+   "url": "https://monstersandmemories.com/updates/elementalist-amp-paladin-deep-dives"
+  },
+  {
+   "date": "2026-09-10",
+   "kind": "patch",
+   "title": "0.29.0.0 - Beta Patch 10",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/44"
+  },
+  {
+   "date": "2026-09-05",
+   "kind": "news",
+   "title": "Check your email…",
+   "url": "https://monstersandmemories.com/updates/check-your-email"
+  },
+  {
+   "date": "2026-08-28",
+   "kind": "patch",
+   "title": "0.28.1.1 - Beta Patch 9 Hotfix 2",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/42"
+  },
+  {
+   "date": "2026-08-22",
+   "kind": "patch",
+   "title": "0.28.1.0 - Beta Patch 9 Hotfix 1",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/41"
+  },
+  {
+   "date": "2026-08-20",
+   "kind": "news",
+   "title": "Shaman & Inquisitor - Deep Dives",
+   "url": "https://monstersandmemories.com/updates/cleric-fighter-monk-deep-dives-7z4hh"
+  },
+  {
+   "date": "2026-08-20",
+   "kind": "patch",
+   "title": "0.28.0.0 - Beta Patch 9",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/40"
+  },
+  {
+   "date": "2026-08-09",
+   "kind": "patch",
+   "title": "0.27.0.3 - Beta Patch 8 Hotfix 3",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/39"
+  },
+  {
+   "date": "2026-08-07",
+   "kind": "patch",
+   "title": "0.27.0.2 - Beta Patch 8 Hotfix 2",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/38"
+  },
+  {
+   "date": "2026-08-05",
+   "kind": "news",
+   "title": "Cleric, Fighter, and Monk - Deep Dives",
+   "url": "https://monstersandmemories.com/updates/cleric-fighter-monk-deep-dives"
+  },
+  {
+   "date": "2026-08-04",
+   "kind": "patch",
+   "title": "0.27.0.1 - Beta Patch 8 Hotfix 1",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/37"
+  },
+  {
+   "date": "2026-08-04",
+   "kind": "patch",
+   "title": "0.27.0.0 - Beta Patch 8",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/36"
+  },
+  {
+   "date": "2026-07-14",
+   "kind": "patch",
+   "title": "0.26.0.2 - Beta Patch 7 Hotfix 2",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/35"
+  },
+  {
+   "date": "2026-07-04",
+   "kind": "patch",
+   "title": "0.26.0.1 - Beta Patch 7 Hotfix 1",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/34"
+  },
+  {
+   "date": "2026-07-02",
+   "kind": "news",
+   "title": "Beastmaster & Rogue - Deep Dives",
+   "url": "https://monstersandmemories.com/updates/beastmaster-amp-rogue-deep-dives"
+  },
+  {
+   "date": "2026-07-02",
+   "kind": "patch",
+   "title": "0.26.0.0 - Beta Patch 7",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/33"
+  },
+  {
+   "date": "2026-06-22",
+   "kind": "news",
+   "title": "Update 52: Mar - May 2026",
+   "url": "https://monstersandmemories.com/updates/update-52-mar-may-2026"
+  },
+  {
+   "date": "2026-06-20",
+   "kind": "patch",
+   "title": "0.25.1.3 - Beta Patch 6 Hotfix 5",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/32"
+  },
+  {
+   "date": "2026-06-18",
+   "kind": "patch",
+   "title": "0.25.1.2 - Beta Patch 6 Hotfix 4",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/31"
+  },
+  {
+   "date": "2026-06-17",
+   "kind": "patch",
+   "title": "0.25.1.1 - Beta Patch 6 Hotfix 3",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/30"
+  },
+  {
+   "date": "2026-06-17",
+   "kind": "patch",
+   "title": "0.25.1.0 - Beta Patch 6 Hotfix 2",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/29"
+  },
+  {
+   "date": "2026-06-12",
+   "kind": "patch",
+   "title": "0.25.0.2 - Beta Patch 6 Balance Patch",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/28"
+  },
+  {
+   "date": "2026-06-09",
+   "kind": "patch",
+   "title": "0.25.0.1 - Beta Patch 6 Hotfix 1",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/27"
+  },
+  {
+   "date": "2026-06-07",
+   "kind": "news",
+   "title": "Archer & Druid - Deep Dives",
+   "url": "https://monstersandmemories.com/updates/archer-amp-druid-deep-dives"
+  },
+  {
+   "date": "2026-06-07",
+   "kind": "patch",
+   "title": "0.25.0.0 - Beta Patch 6",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/26"
+  },
+  {
+   "date": "2026-05-28",
+   "kind": "news",
+   "title": "Wizard - Deep Dive",
+   "url": "https://monstersandmemories.com/updates/wizard-deep-dive"
+  },
+  {
+   "date": "2026-05-25",
+   "kind": "patch",
+   "title": "0.24.1.8 - Beta Patch 5 Hotfix 10",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/25"
+  },
+  {
+   "date": "2026-05-25",
+   "kind": "patch",
+   "title": "0.24.1.7 - Beta Patch 5 Hotfix 9",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/24"
+  },
+  {
+   "date": "2026-05-23",
+   "kind": "patch",
+   "title": "0.24.1.6 - Beta Patch 5 Hotfix 8",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/23"
+  },
+  {
+   "date": "2026-05-18",
+   "kind": "patch",
+   "title": "0.24.1.5 - Beta Patch 5 Hotfix 7",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/22"
+  },
+  {
+   "date": "2026-05-16",
+   "kind": "news",
+   "title": "Spellblade - Deep Dive",
+   "url": "https://monstersandmemories.com/updates/deep-dive-spellblade"
+  },
+  {
+   "date": "2026-05-10",
+   "kind": "patch",
+   "title": "0.24.1.4 - Beta Patch 5 Hotfix 6",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/21"
+  },
+  {
+   "date": "2026-05-10",
+   "kind": "patch",
+   "title": "0.24.1.3 - Beta Patch 5 Hotfix 5",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/20"
+  },
+  {
+   "date": "2026-05-08",
+   "kind": "patch",
+   "title": "0.24.1.2 - Beta Patch 5 Hotfix 4",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/19"
+  },
+  {
+   "date": "2026-05-07",
+   "kind": "patch",
+   "title": "0.24.1.1 - Beta Patch 5 Hotfix 3",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/18"
+  },
+  {
+   "date": "2026-05-07",
+   "kind": "patch",
+   "title": "0.24.1.0 - Beta Patch 5 Hotfix 2",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/17"
+  },
+  {
+   "date": "2026-05-05",
+   "kind": "patch",
+   "title": "0.24.0.1 - Beta Patch 5 Hotfix 1",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/16"
+  },
+  {
+   "date": "2026-05-05",
+   "kind": "patch",
+   "title": "0.24.0.0 - Beta Patch 5",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/15"
+  },
+  {
+   "date": "2026-05-03",
+   "kind": "patch",
+   "title": "0.23.0.4 - Beta Patch 4 Hotfix 4",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/14"
+  },
+  {
+   "date": "2026-05-03",
+   "kind": "patch",
+   "title": "0.23.0.3 - Beta Patch 4 Hotfix 3",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/13"
+  },
+  {
+   "date": "2026-05-03",
+   "kind": "patch",
+   "title": "0.23.0.2 - Beta Patch 4 Hotfix 2",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/12"
+  },
+  {
+   "date": "2026-05-03",
+   "kind": "patch",
+   "title": "0.23.0.1 - Beta Patch 4 Hotfix 1",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/11"
+  },
+  {
+   "date": "2026-04-28",
+   "kind": "news",
+   "title": "Class Design Update",
+   "url": "https://monstersandmemories.com/updates/qrm9tsnqnusn47teayuou1lc54adgj"
+  },
+  {
+   "date": "2026-04-21",
+   "kind": "patch",
+   "title": "0.23.0.0 - Beta Patch 4",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/10"
+  },
+  {
+   "date": "2026-04-20",
+   "kind": "news",
+   "title": "Early Access Launch October 1, 2026",
+   "url": "https://monstersandmemories.com/updates/early-access-launch-october-1-2026"
+  },
+  {
+   "date": "2026-04-07",
+   "kind": "patch",
+   "title": "0.22.0.0 - Beta Patch 3",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/9"
+  },
+  {
+   "date": "2026-03-20",
+   "kind": "patch",
+   "title": "0.21.0.0 - Beta Patch 2",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/6"
+  },
+  {
+   "date": "2026-03-10",
+   "kind": "patch",
+   "title": "0.20.26.0 - Beta Patch 1",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/5"
+  },
+  {
+   "date": "2026-02-28",
+   "kind": "news",
+   "title": "Update Regarding Beta Lottery",
+   "url": "https://monstersandmemories.com/updates/update-regarding-beta-lottery"
+  },
+  {
+   "date": "2026-02-27",
+   "kind": "patch",
+   "title": "0.20.25.1 - Hotfixes",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/4"
+  },
+  {
+   "date": "2026-02-25",
+   "kind": "news",
+   "title": "Update 51: Dec 2025-Feb 2026",
+   "url": "https://monstersandmemories.com/updates/update-51-dec-2025-feb-2026"
+  },
+  {
+   "date": "2026-02-25",
+   "kind": "patch",
+   "title": "0.20.25.0 - Beta Pre-Patch",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/2"
+  },
+  {
+   "date": "2025-12-23",
+   "kind": "news",
+   "title": "Beta & Early Access Update",
+   "url": "https://monstersandmemories.com/updates/beta-amp-early-access-update"
+  },
+  {
+   "date": "2025-12-07",
+   "kind": "news",
+   "title": "Update 50: Sept, Oct, Nov 2025",
+   "url": "https://monstersandmemories.com/updates/update-50-sept-oct-nov-2025"
+  },
+  {
+   "date": "2025-09-28",
+   "kind": "news",
+   "title": "Update on Beta Timing",
+   "url": "https://monstersandmemories.com/updates/update-on-beta-timing"
+  },
+  {
+   "date": "2025-09-12",
+   "kind": "news",
+   "title": "Update 49: July & August 2025",
+   "url": "https://monstersandmemories.com/updates/update-49-july-amp-august-2025"
+  }
+ ]
+}
