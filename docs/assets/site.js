@@ -69,6 +69,7 @@ function marks(){
   var b=cur.split('-').map(Number), code=(R.codes||{})[cls];
   document.querySelectorAll('[data-lo]').forEach(function(el){var lo=+el.getAttribute('data-lo'),hi=+el.getAttribute('data-hi');
     el.classList.toggle('inband',!!lo&&lo<=b[1]&&hi>=b[0]);});
+  document.querySelectorAll('[data-cls]').forEach(function(el){el.classList.toggle('clsok',('|'+el.getAttribute('data-cls')+'|').indexOf('|'+cls+'|')>=0);});
   document.querySelectorAll('table.dloot tbody tr').forEach(function(tr){var c=(tr.getAttribute('data-c')||'').split(' ');tr.classList.toggle('clsok',!!code&&c.indexOf(code)>=0);});
 }
 marks();
