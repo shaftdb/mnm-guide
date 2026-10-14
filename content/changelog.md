@@ -5,8 +5,8 @@ desc: Game patch summary and site verification dates
 sources: Official patch notes|https://account.monstersandmemories.com/community/patch_notes
 ---
 :::facts Verification
-Site built: 2026-10-11
-Latest patch checked: 0.30.2.8 (Oct 11, 2026)
+Site built: 2026-10-14
+Latest patch checked: 0.30.3.2 (Oct 14, 2026)
 Wiki data pulled: 2026-10-11 (MediaWiki API)
 Deep dives fetched: 2026-10-11
 :::
@@ -16,6 +16,8 @@ Newest first.
 
 | Date | Change | Known gaps |
 |---|---|---|
+| Oct 14, 2026 | **Broken class guide links fixed**: the "Full [class] guide" link in the class quick-reference box pointed outside the site and gave a 404 for every class. It now goes to the Shaman extended guide or each class's overview page | — |
+| Oct 14, 2026 | **Patch 12 (0.30.3.2)** added to the patch digest, home page and events timeline with a plain-English summary | — |
 | Oct 13, 2026 | **Navigation** regrouped into one line of menus: Home, Class, World, Database, Crafting & Economy, News, Tools. Menus open on hover, click or tap, and work with the keyboard (Enter, arrow keys, Esc). On narrow screens, the ☰ menu shows collapsible groups | — |
 | Oct 13, 2026 | **My class**: gear and quick-reference sections now follow the class picker. All 18 classes get an easy BiS page by level range, gear lists by level, leveling camps by range, spells by level and solo, group and duo notes. The existing Shaman pages are the Shaman view. Nav links and class pages switch to the picked class (remembered in this browser) | Gear picks are this guide's suggestion from wiki stats. Classes without wiki stat advice, and level ranges with few wiki items, have thin or empty lists. Playbook, quest and gathering pages are still Shaman-only |
 | Oct 13, 2026 | **Dungeons** expanded: Blacktide Bay, Tel Ekir, Rothold and Fallen Watch added (all in the wiki's Dungeons category), same format as the others | Tel Ekir has a key diagram from the wiki map legend and Rothold a one-area schematic from wiki NPC locations; Blacktide Bay and Fallen Watch have no sourced layout. Blacktide Bay and Tel Ekir entrances, Fallen Watch named levels and most Rothold camps aren't on the wiki |
@@ -33,10 +35,11 @@ Newest first.
 | Oct 13, 2026 | **Dungeons** launched: 9 dungeons with maps, loot, directions, access and tips | 3 dungeons have no map yet. Hidden Grotto isn't covered (wiki is placeholder only) and Night Harbor Sewers are closed |
 
 ## Game patches since Early Access
-Patch note IDs 46–59 were read in full. IDs 49 and 50 returned 404 when checked.
+Patch note IDs 46–60 were read in full. IDs 49 and 50 returned 404 when checked.
 
 | Version | Date | Highlights for me | Link |
 |---|---|---|---|
+| 0.30.3.2 | Oct 14 | **Permanent fix for missing house crates; scroll overcharge refunds to your bank.** Cleric HP-buff heals no longer scale with Wisdom, Ranger Recuperate out-of-combat only, more cash loot from common mobs, Woodworking cap 300, big server optimizations (may be rolled back) | [#60](https://account.monstersandmemories.com/community/patch_notes/60) |
 | 0.30.2.8 | Oct 11 | More tradeskill economic-exploit fixes. **Night Harbor reunited into one zone.** Missing house crates are back | [#59](https://account.monstersandmemories.com/community/patch_notes/59) |
 | 0.30.2.7 | Oct 11 | Fixes for exploits with mispriced tradeskill items | [#58](https://account.monstersandmemories.com/community/patch_notes/58) |
 | 0.30.2.6 | Oct 7 | Housing load fix (Night Harbor on Trem) | [#57](https://account.monstersandmemories.com/community/patch_notes/57) |

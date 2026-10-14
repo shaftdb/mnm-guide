@@ -1,6 +1,12 @@
 {
- "fetched": "2026-10-13",
+ "fetched": "2026-10-14",
  "events": [
+  {
+   "date": "2026-10-14",
+   "kind": "patch",
+   "title": "0.30.3.2 - Module 1 Patch 12",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/60"
+  },
   {
    "date": "2026-10-11",
    "kind": "patch",

@@ -2,7 +2,7 @@
 title: Home
 section: home
 desc: Monsters & Memories quick reference for every class — pick a class and level range
-sources: Official class pages|https://monstersandmemories.com/class-fighter; Wiki: Classes|https://monstersandmemories.miraheze.org/wiki/Classes; Patch notes (latest 0.30.2.8, Oct 11 2026)|https://account.monstersandmemories.com/community/patch_notes
+sources: Official class pages|https://monstersandmemories.com/class-fighter; Wiki: Classes|https://monstersandmemories.miraheze.org/wiki/Classes; Patch notes (latest 0.30.3.2, Oct 14 2026)|https://account.monstersandmemories.com/community/patch_notes
 ---
 <div class="hero"><p style="margin:0"><strong>Pick a class and level range</strong> in the bar at the top. Quick info below updates to show that class's spells, the gear to wear, where to level and tips. Your picks are saved in this browser. Built to sit in a narrow window on a second monitor.</p></div>
 
@@ -14,6 +14,7 @@ sources: Official class pages|https://monstersandmemories.com/class-fighter; Wik
 - **World:** [Zones and maps](/zones/index.html) · [Leveling by band](/leveling.html) · [Farming](/farming.html) · [Economy](/economy.html) · [Factions](/factions.html) · [Quests](/quests.html) · [Tradeskills](/tradeskills.html)
 
 ## What changed recently (game patches)
+- **Oct 14, 0.30.3.2 (Patch 12):** missing house crates restored for good and the scroll overcharge refund lands in your bank. Cleric HP-buff heals no longer scale with Wisdom, Ranger Recuperate is out-of-combat only, and common mobs drop more sellable loot. Woodworking caps at 300 at any level and failed crafts return some materials. Big server optimizations, which the devs may roll back if they cause trouble.
 - **Oct 11, 0.30.2.7 and 0.30.2.8:** fixes for economic exploits with mispriced tradeskill items. Night Harbor is one zone again.
 - **Oct 7, 0.30.2.5:** spell scrolls are cheaper with a smoother ramp across 1–60. The devs are "looking into giving some coin back" to people who bought scrolls before the cut. Cureberries are now foraged by Druids and Rangers instead of summoned.
 - **Oct 4, 0.30.2.4:** the devs say all four starting cities give similar income per hour, with Evershade Weald slightly ahead. They also say tradeskills are expensive to start.
