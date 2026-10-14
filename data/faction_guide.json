@@ -1,0 +1,2415 @@
+{
+ "Ail'vorith Exiles": {
+  "name": "Ail'vorith Exiles",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Ail%27vorith_Exiles",
+  "revid": 80235,
+  "desc": "The Ail'vorith Exiles are a faction associated with Ail'Vorith. Killing members of Clan Deepgulp increases standing with the Ail'vorith Exiles.",
+  "zones_raise": [
+   "Ail'Vorith"
+  ],
+  "zones_lower": [],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [
+   "A Deepgulp explorer",
+   "A Deepgulp runt",
+   "A Deepgulp warrior",
+   "A Deepgulp hunter",
+   "A Deepgulp mystic",
+   "A Deepgulp shaman",
+   "A Deepgulp berserker",
+   "Cook Deepbite"
+  ],
+  "mobs_lower": []
+ },
+ "Ardent Keepers": {
+  "name": "Ardent Keepers",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Ardent_Keepers",
+  "revid": 81082,
+  "desc": "The Ardent Keepers are the beastmasters and rangers of Faelindral, sworn wardens of Evershade Weald's ancient forests and surrounding lands. Their oath is to preserve the natural order between the beasts of the Weald and Faelindral, as well as protect the land from encroachment. They have organized with the Wyrdguard to combat the Fellstone orc incursion.",
+  "zones_raise": [
+   "Evershade Weald",
+   "Keeper's Bight"
+  ],
+  "zones_lower": [],
+  "quests_raise": [
+   "Beastmaster Starter Quest (Faelindral)",
+   "Culling the Fellstone",
+   "Diseased Wolf Pelts for Baewyn Mossfang",
+   "Poacher's Knives",
+   "Ranger Starter Quest (Faelindral)"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [
+   "A shady farmer"
+  ],
+  "mobs_lower": []
+ },
+ "Azure Veils": {
+  "name": "Azure Veils",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Azure_Veils",
+  "revid": 23604,
+  "desc": "Not much is known about the Azure Veils faction.",
+  "zones_raise": [
+   "Night Harbor"
+  ],
+  "zones_lower": [],
+  "quests_raise": [
+   "Laundry Day Quest"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": []
+ },
+ "Ba'Haara": {
+  "name": "Ba'Haara",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Ba%27Haara",
+  "revid": 21040,
+  "desc": "The Ba'Haara trace their roots back to Hathalia, fleeing its shores for Aêthoril during the Second Deicidium. Ba'Haara (ba-HAAR-ra), translated from Old Hathalian, means \"The Seafarers\". Ancestors of the Ba'Haara are believed to have been allied with djinn and other unseen forces.",
+  "zones_raise": [
+   "Night Harbor"
+  ],
+  "zones_lower": [
+   "Night Harbor"
+  ],
+  "quests_raise": [],
+  "quests_lower": [
+   "Ashira Infiltrator Heads"
+  ],
+  "mobs_raise": [],
+  "mobs_lower": []
+ },
+ "Bends Garrison": {
+  "name": "Bends Garrison",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Bends_Garrison",
+  "revid": 80817,
+  "desc": "Not much is known about the Bends Garrison.",
+  "zones_raise": [
+   "Night Harbor"
+  ],
+  "zones_lower": [],
+  "quests_raise": [
+   "Riverbend Gang Wars Quest"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [
+   "Sahir Muzalal (Night Harbor - Named Mob)",
+   "Vikar Brask (Night Harbor - Named Mob)",
+   "Darius Brask (Night Harbor - Named Mob)",
+   "Cormac Brask (Night Harbor - Named Mob)",
+   "Eamon Kassir (Night Harbor - Named Mob)",
+   "a river pirate",
+   "a smuggler",
+   "a scoundrel"
+  ],
+  "mobs_lower": []
+ },
+ "Benu Ansar": {
+  "name": "Benu Ansar",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Benu_Ansar",
+  "revid": 46002,
+  "desc": "Not much is known about the Benu Ansar, other than were are an Ashira faction. They aren't active in Beta atm.",
+  "zones_raise": [
+   "Tel Ekir",
+   "Sungreet Strand"
+  ],
+  "zones_lower": [
+   "Shaded Dunes",
+   "Tel Ekir",
+   "Sungreet Strand"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": []
+ },
+ "Benu Lakhim": {
+  "name": "Benu Lakhim",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Benu_Lakhim",
+  "revid": 45777,
+  "desc": "Not much is known about the Benu Lakhim, other than they are an Ashira faction.",
+  "zones_raise": [
+   "Tel Ekir",
+   "Sungreet Strand"
+  ],
+  "zones_lower": [
+   "Shaded Dunes",
+   "Tel Ekir",
+   "Sungreet Strand"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [
+   "a sweaty Bloodynose goblin",
+   "a Bloodynose quarreler",
+   "a Bloodynose fumer",
+   "a Bloodynose sergeant",
+   "a Bloodynose captain",
+   "a Bloodynose healer",
+   "a Bloodynose scarer",
+   "a Bloodynose witch doctor",
+   "a Bloodynose spooker",
+   "a Bloodynose stabber",
+   "a Bloodynose frightener",
+   "a Bloodynose voodooist",
+   "a Bloodynose trainer (Tel Ekir - Named Mob)",
+   "a Bloodynose hag (Tel Ekir - Named Mob)",
+   "General Overlord Bloodynose (Tel Ekir - Named Mob)"
+  ],
+  "mobs_lower": [
+   "Dhajr Spitemaw (Shaded Dunes - Named Mob)",
+   "Yapala (Tel Ekir - Named Mob)",
+   "Ayip (Tel Ekir - Named Mob)",
+   "Roa the Huntress‎‎ (Tel Ekir - Named Mob)",
+   "Hadhraman, First Among Alphas‎‎ (Tel Ekir - Named Mob)",
+   "Animist Wafi",
+   "Zahid the Calm",
+   "An ashira adept",
+   "An ashira ain guard",
+   "An ashira alpha",
+   "An ashira mystic",
+   "An ashira naturalist",
+   "An ashira oracle",
+   "An ashira pathfinder",
+   "An ashira scout",
+   "An ashira shaman",
+   "An ashira wanderer",
+   "a Corrupted Adept",
+   "Fernic the Cur (Vale of Zintar - Named Mob)",
+   "a corrupted outrider",
+   "A Sojourner"
+  ]
+ },
+ "Benu Memza": {
+  "name": "Benu Memza",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Benu_Memza",
+  "revid": 45778,
+  "desc": "Not much is known about the Benu Memza, other than they are an Ashira faction.",
+  "zones_raise": [
+   "Tel Ekir",
+   "Sungreet Strand"
+  ],
+  "zones_lower": [
+   "Shaded Dunes",
+   "Tel Ekir",
+   "Sungreet Strand"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [
+   "a sweaty Bloodynose goblin",
+   "a Bloodynose quarreler",
+   "a Bloodynose fumer",
+   "a Bloodynose sergeant",
+   "a Bloodynose captain",
+   "a Bloodynose healer",
+   "a Bloodynose scarer",
+   "a Bloodynose witch doctor",
+   "a Bloodynose spooker",
+   "a Bloodynose stabber",
+   "a Bloodynose frightener",
+   "a Bloodynose voodooist",
+   "a Bloodynose trainer (Tel Ekir - Named Mob)",
+   "a Bloodynose hag (Tel Ekir - Named Mob)",
+   "General Overlord Bloodynose (Tel Ekir - Named Mob)"
+  ],
+  "mobs_lower": [
+   "Dhajr Spitemaw (Shaded Dunes - Named Mob)",
+   "Yapala (Tel Ekir - Named Mob)",
+   "Ayip (Tel Ekir - Named Mob)",
+   "Roa the Huntress‎‎ (Tel Ekir - Named Mob)",
+   "Wily Rufga (Tel Ekir - Named Mob)",
+   "Hadhraman, First Among Alphas‎‎ (Tel Ekir - Named Mob)",
+   "an ashira ain guard",
+   "an ashira huntmaster",
+   "an ashira mystic",
+   "an ashira spearthrower",
+   "an ashira scout",
+   "a corrupted Adept",
+   "Fernic the Cur (Vale of Zintar - Named Mob)",
+   "a corrupted outrider",
+   "Whiskey"
+  ]
+ },
+ "Blacktide Orcs": {
+  "name": "Blacktide Orcs",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Blacktide_Orcs",
+  "revid": 20083,
+  "desc": "Not much is known about the Blacktide Orcs faction.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Keeper's Bight"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "a Blacktide raider",
+   "a Blacktide brute",
+   "a Blacktide seer",
+   "a Blacktide cleric",
+   "a Blacktide guard",
+   "a Blacktide slaver",
+   "a Blacktide bowman",
+   "a Blacktide tracker",
+   "a Blacktide acolyte"
+  ]
+ },
+ "Bloodchain Orcs": {
+  "name": "Bloodchain Orcs",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Bloodchain_Orcs",
+  "revid": 49323,
+  "desc": "Not much is known about the Blackchain Orcs faction.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Blacktide Bay",
+   "Keeper's Bight"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "Bloodchain Champion",
+   "a Bloodchain mender",
+   "a Bloodchain guard",
+   "a Bloodchain mindbreaker",
+   "a Bloodchain sentry",
+   "a Bloodchain taskmaster",
+   "a Bloodchain overseer",
+   "a Bloodchain soulherder"
+  ]
+ },
+ "Brotherhood of the Wyrm": {
+  "name": "Brotherhood of the Wyrm",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Brotherhood_of_the_Wyrm",
+  "revid": 50825,
+  "desc": "Not much is known about the Brotherhood of the Wyrm faction.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Glass Flats"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "a cultist lookout",
+   "a cultist guard",
+   "Ebon Scholar Myrddin",
+   "High Wyrmseer Valthrun",
+   "Emissary Irina",
+   "a visiting cultist",
+   "a heretical zealot",
+   "an ashen knight",
+   "a drowned knight",
+   "a wyrmseer",
+   "A wyrmseer vizier",
+   "An abyssal emissary",
+   "a ebon acolyte",
+   "a whispering adapt"
+  ]
+ },
+ "Chartered Academy of Arcane Inquiry": {
+  "name": "Chartered Academy of Arcane Inquiry",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Chartered_Academy_of_Arcane_Inquiry",
+  "revid": 38607,
+  "desc": "Not much is known about the Chartered Academy of Arcane Inquiry faction.",
+  "zones_raise": [
+   "Night Harbor"
+  ],
+  "zones_lower": [],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": []
+ },
+ "Circle of Scarce Rains": {
+  "name": "Circle of Scarce Rains",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Circle_of_Scarce_Rains",
+  "revid": 78743,
+  "desc": "Not much is known about the Circle of Scarce Rains.",
+  "zones_raise": [
+   "Sungreet Strand"
+  ],
+  "zones_lower": [
+   "Night Harbor"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [
+   "a skintaker ritualist (Sungreet Strand)",
+   "a skintaker sneak (Sungreet Strand)",
+   "a skintaker pet (Sungreet Strand)",
+   "a skintaker bravo (Sungreet Strand)",
+   "Ixelda Jackalfang (Sungreet Strand - Named Mob)"
+  ],
+  "mobs_lower": [
+   "a sojourner",
+   "a black rat"
+  ]
+ },
+ "Circle of Spores": {
+  "name": "Circle of Spores",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Circle_of_Spores",
+  "revid": 31164,
+  "desc": "\"They're a group of reclusive druids who dedicate themselves to the research and proliferation of fungi. Though normally quite harmless, their fungal research has a history of spreading infestations up into Faelindral, which we are then forced to cleanse.\" - Captain Relgen Greenblade",
+  "zones_raise": [
+   "Evershade Weald"
+  ],
+  "zones_lower": [
+   "Evershade Weald"
+  ],
+  "quests_raise": [
+   "Mushroom Menace"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [
+   "A beguiled wolf",
+   "a beguiled bluecap",
+   "a beguiled water elemental",
+   "a Fossergrim Watcher"
+  ],
+  "mobs_lower": [
+   "a docile bluecap"
+  ]
+ },
+ "Citizens of Ail'Vorith": {
+  "name": "Citizens of Ail'Vorith",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Citizens_of_Ail%27Vorith",
+  "revid": 77197,
+  "desc": "The citizenry of Ail'Vorith in The Deep.",
+  "zones_raise": [
+   "Ail'Vorith"
+  ],
+  "zones_lower": [
+   "Underdocks"
+  ],
+  "quests_raise": [
+   "Fungal Armor Quests"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [
+   "a Deepgulp warrior",
+   "a Deepgulp scavenger",
+   "a Deepgulp hunter",
+   "a Deepgulp berserker",
+   "a Deepgulp mystic"
+  ],
+  "mobs_lower": [
+   "a Deepcut marksman",
+   "a Deepcut basher",
+   "a Deepcut tracker",
+   "a Deepcut miner",
+   "a Deepcut cursecaller",
+   "a Deepcut arsonist",
+   "a Deepcut skulker",
+   "a Deepcut thorncoat",
+   "Jorlach the Fearless"
+  ]
+ },
+ "Citizens of Ail'vorith": {
+  "name": "Citizens of Ail'vorith",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Citizens_of_Ail%27vorith",
+  "revid": 75561,
+  "desc": "Not much is known about the Citizens of Ail'vorith.",
+  "zones_raise": [
+   "Ail'Vorith"
+  ],
+  "zones_lower": [],
+  "quests_raise": [
+   "Ail'Vorith Starter Quest",
+   "Ail'Vorith Class Quests (repeatable)"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [
+   "a Deepgulp runt",
+   "a Deepgulp explorer"
+  ],
+  "mobs_lower": []
+ },
+ "Citizens of Faelindral": {
+  "name": "Citizens of Faelindral",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Citizens_of_Faelindral",
+  "revid": 49420,
+  "desc": "The citizenry of Faelindral in Calafrey.",
+  "zones_raise": [
+   "Evershade Weald"
+  ],
+  "zones_lower": [],
+  "quests_raise": [
+   "Mierra's Famed Cupcakes"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [
+   "A Fellstone Warrior",
+   "A Fellstone shaman",
+   "A Fellstone scout",
+   "Scout Grimgaze",
+   "a Mezzatrian broodling",
+   "Mezzatrian Boneweaver - Named Mob",
+   "a Mezzatrain scion"
+  ],
+  "mobs_lower": [
+   "a summer pixie"
+  ]
+ },
+ "Citizens of Gizmopolis": {
+  "name": "Citizens of Gizmopolis",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Citizens_of_Gizmopolis",
+  "revid": 80146,
+  "desc": "Not much is known about the Citizens of Gizmopolis.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Ail'Vorith"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "a synthetic ooze",
+   "A deep gnome researcher"
+  ]
+ },
+ "Citizens of Night Harbor": {
+  "name": "Citizens of Night Harbor",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Citizens_of_Night_Harbor",
+  "revid": 75754,
+  "desc": "Not much is known about the Citizens of Night Harbor faction.",
+  "zones_raise": [
+   "Night Harbor",
+   "Shallow Shoals",
+   "Shaded Dunes",
+   "Tel Ekir",
+   "Fallen Pass",
+   "Glass Flats",
+   "Sungreet Strand",
+   "Keeper's Bight",
+   "Vale of Zintar"
+  ],
+  "zones_lower": [],
+  "quests_raise": [
+   "Laundry Day Quest"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [
+   "a Blacktide raider",
+   "a Blacktide brute",
+   "a Blacktide seer",
+   "a Blacktide cleric",
+   "a Blacktide guard",
+   "a Blacktide slaver",
+   "a Blacktide bowman",
+   "a Blacktide tracker",
+   "a Blacktide acolyte",
+   "a Blacktide overseer",
+   "a Blacktide chef",
+   "a witchguard signifer",
+   "a witchguard serverat",
+   "a witchguard princeps",
+   "a witchguard cultor",
+   "a witchguard velite",
+   "a witchguard Signifer",
+   "a witchguard Sacramir",
+   "Witchguard Hellblade",
+   "Herald of Muurtu - Named Mob",
+   "High Sister of Sarinius - Named Mob",
+   "High-Priest of Muurtu - Named Mob",
+   "Champion of Muurtu - Named Mob",
+   "Witchguard Primus - Named Mob",
+   "Witchguard Kruurgal - Named Mob",
+   "An ashira ain guard",
+   "A grizzled smuggler",
+   "a Muggrah robber",
+   "a Muggrah scavenger",
+   "a Muggrah scrapper",
+   "a Muggrah stabber",
+   "a Muggrah raider",
+   "a Muggrah bonestealer",
+   "a Muggrah spiritseer",
+   "a Muggrah shaman",
+   "A Muggrah frightener",
+   "a Muggrah brawler",
+   "a Muggrah bonecollector",
+   "a Muggrah bonekeeper",
+   "a Muggrah spiritcaller",
+   "Warlord Muggrah - Named Mob",
+   "Klimpi the Feared - Named Mob",
+   "Best Appraiser Bibic - Named Mob",
+   "Baron Bigtent - Named Mob",
+   "Sivah Arjun - Named Mob",
+   "Seamas Growt - Named Mob",
+   "a Dustrend foot soldier",
+   "a Dustrend legionary",
+   "a Dustrend patroller",
+   "a Dustrend priest",
+   "a Dustrend venator",
+   "a Dustrend sacramir",
+   "Animist Wafi - Named Mob",
+   "Zahid the Calm - Named Mob",
+   "An ashira adept",
+   "An ashira oracle",
+   "An ashira alpha",
+   "An ashira mystic",
+   "An ashira wanderer",
+   "An ashira pathfinder",
+   "An ashira shaman",
+   "a visiting cultist",
+   "a heretical zealot",
+   "an ashen knight",
+   "a drowned knight",
+   "a wyrmseer",
+   "an abyssal emissary",
+   "a veiled emissary",
+   "a shadowed scribe",
+   "a ebon acolyte",
+   "a whispering adapt",
+   "Ebon Scholar Myrddin - Named Mob",
+   "High Wyrmseer Valthrun - Named Mob",
+   "a sand giant geomancer",
+   "a sand giant suncaller",
+   "a sand giant fakir",
+   "a sand giant brigand",
+   "a giant wolf",
+   "a sand giant bandit",
+   "Grand Vizier Al'Kithar - Named Mob",
+   "Old Scar - Named Mob",
+   "Khal'Baar the Growler - Named Mob",
+   "Spicy Raziq - Named Mob",
+   "Zubair Goldtongue - Named Mob",
+   "a wererat",
+   "a smuggler",
+   "Toma the Two-Faced - Named Mob"
+  ],
+  "mobs_lower": [
+   "Whiskey",
+   "Mayana",
+   "Jumthem"
+  ]
+ },
+ "City Watch of Night Harbor": {
+  "name": "City Watch of Night Harbor",
+  "url": "https://monstersandmemories.miraheze.org/wiki/City_Watch_of_Night_Harbor",
+  "revid": 79385,
+  "desc": "Not much is known about the City Watch of Night Harbor faction.",
+  "zones_raise": [
+   "Night Harbor"
+  ],
+  "zones_lower": [],
+  "quests_raise": [
+   "Laundry Day Quest"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [
+   "A cultist"
+  ],
+  "mobs_lower": []
+ },
+ "Clan Bloodynose": {
+  "name": "Clan Bloodynose",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Clan_Bloodynose",
+  "revid": 50390,
+  "desc": "Not much is known about the Goblins of Clan Bloodynose, other than they inhabit the outskirts of the hidden Ashira sanctuary Tel Ekir.",
+  "zones_raise": [
+   "Shaded Dunes",
+   "Tel Ekir",
+   "Night Harbor",
+   "Sungreet Strand"
+  ],
+  "zones_lower": [
+   "Tel Ekir",
+   "Sungreet Strand"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [
+   "Dhajr Spitemaw (Shaded Dunes - Named Mob)",
+   "Yapala (Tel Ekir - Named Mob)",
+   "Ayip (Tel Ekir - Named Mob)",
+   "Roa the Huntress‎‎ (Tel Ekir - Named Mob)",
+   "Hadhraman, First Among Alphas‎‎ (Tel Ekir - Named Mob)",
+   "Animist Wafi (Tel Ekir - Named Mob)",
+   "an ashira shapeshifter",
+   "an ashira scout",
+   "An ashira ain guard",
+   "Zahid the Calm",
+   "An ashira adept",
+   "An ashira oracle",
+   "An ashira alpha",
+   "An ashira mystic",
+   "An ashira wanderer",
+   "An ashira pathfinder",
+   "An ashira shaman"
+  ],
+  "mobs_lower": [
+   "a sweaty Bloodynose goblin",
+   "a Bloodynose quarreler",
+   "a Bloodynose fumer",
+   "a Bloodynose sergeant",
+   "a Bloodynose captain",
+   "a Bloodynose healer",
+   "a Bloodynose scarer",
+   "a Bloodynose witch doctor",
+   "a Bloodynose spooker",
+   "a Bloodynose stabber",
+   "a Bloodynose frightener",
+   "a Bloodynose voodooist",
+   "a Bloodynose trainer (Tel Ekir - Named Mob)",
+   "a Bloodynose hag (Tel Ekir - Named Mob)",
+   "General Overlord Bloodynose (Tel Ekir - Named Mob)"
+  ]
+ },
+ "Clan Deepgulp": {
+  "name": "Clan Deepgulp",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Clan_Deepgulp",
+  "revid": 75511,
+  "desc": "Not much is known about the Goblins of Clan Deepgulp, other than they inhabit the outskirts of Ail'Vorith.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Ail'Vorith"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "a Deepgulp warrior",
+   "a Deepgulp scavenger",
+   "a Deepgulp hunter",
+   "a Deepgulp berserker",
+   "a Deepgulp mystic"
+  ]
+ },
+ "Clan Grimtide": {
+  "name": "Clan Grimtide",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Clan_Grimtide",
+  "revid": 48633,
+  "desc": "Not much is known about the goblins of Clan Grimtide faction.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Grimtide Sanctum"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "Tidecaller Selka (Grimtide Sanctum - Named Mob)",
+   "Vesska the Bloodbound (Grimtide Sanctum - Named Mob)",
+   "Bloatbelly (Grimtide Sanctum - Named Mob)",
+   "Devourhymn Glomenda (Grimtide Sanctum - Named Mob)",
+   "Braggla the Spawnkeeper (Grimtide Sanctum - Named Mob)",
+   "a sanctum elemental",
+   "a Grimtide fangbearer",
+   "a Grimtide tidewatcher",
+   "a Grimtide deepseeress",
+   "a Grimtide reefshaper",
+   "a Grimtide kelpweaver",
+   "a Grimtide shellcaller",
+   "a Grimtide echohexer",
+   "a Grimtide moondrowner",
+   "a slithering serpent",
+   "a sanctum shark"
+  ]
+ },
+ "Congregation of Trem": {
+  "name": "Congregation of Trem",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Congregation_of_Trem",
+  "revid": 38549,
+  "desc": "Not much is known about the Congregation of Trem, other than they are a criminal related faction.",
+  "zones_raise": [
+   "Sungreet Strand"
+  ],
+  "zones_lower": [],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [
+   "A cinder sentinel (Sungreet Strand)",
+   "a cinder harvester (Sungreet Strand)",
+   "Taskmaster Urka (Sungreet Strand)",
+   "Seeric of Maelsin Thrys (Sungreet Strand)",
+   "A goblin overseer (Sungreet Strand)"
+  ],
+  "mobs_lower": []
+ },
+ "Corrupted Zintari Giants": {
+  "name": "Corrupted Zintari Giants",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Corrupted_Zintari_Giants",
+  "revid": 51397,
+  "desc": "Not much is known about the Corrupted Zintari Giants.",
+  "zones_raise": [
+   "Vale of Zintar"
+  ],
+  "zones_lower": [],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [
+   "a sand giant geomancer",
+   "a sand giant suncaller",
+   "a sand giant fakir",
+   "a sand giant brigand",
+   "a giant wolf",
+   "a sand giant bandit",
+   "Grand Vizier Al'Kithar - Named Mob",
+   "Old Scar - Named Mob",
+   "Khal'Baar the Growler - Named Mob",
+   "Spicy Raziq - Named Mob",
+   "Zubair Goldtongue - Named Mob"
+  ],
+  "mobs_lower": []
+ },
+ "Council of Aldermen": {
+  "name": "Council of Aldermen",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Council_of_Aldermen",
+  "revid": 48930,
+  "desc": "Not much is known about the council of Alderman faction.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Keeper's Bight"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "Dubar Falshim"
+  ]
+ },
+ "Court of Summer": {
+  "name": "Court of Summer",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Court_of_Summer",
+  "revid": 45280,
+  "desc": "Not much is known about the Court of Summer, except that it is related to the Fae and pixies.",
+  "zones_raise": [
+   "Evershade Weald"
+  ],
+  "zones_lower": [
+   "Evershade Weald",
+   "Glinting Hollow"
+  ],
+  "quests_raise": [
+   "Six Eyes Too Many"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "A dawn pixie",
+   "A trixie pixie",
+   "a prowling wolf",
+   "a snarling wolf",
+   "Softpaws",
+   "a treant",
+   "a flourishing treant",
+   "a summer pixie"
+  ]
+ },
+ "Court of Winter": {
+  "name": "Court of Winter",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Court_of_Winter",
+  "revid": 28296,
+  "desc": "Not much is known about the Court of Winter, except that it is related to the Fae and pixies.",
+  "zones_raise": [
+   "Evershade Weald"
+  ],
+  "zones_lower": [
+   "Evershade Weald"
+  ],
+  "quests_raise": [],
+  "quests_lower": [
+   "Six Eyes Too Many"
+  ],
+  "mobs_raise": [
+   "A dawn pixie",
+   "A trixie pixie"
+  ],
+  "mobs_lower": []
+ },
+ "Crag Serpents": {
+  "name": "Crag Serpents",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Crag_Serpents",
+  "revid": 42214,
+  "desc": "Not much is known about the Crag Serpents faction. They occupy a few camps on the cliff face and a cave, in the south west of Glass Flats",
+  "zones_raise": [],
+  "zones_lower": [
+   "Glass Flats"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "a highwayman prospect",
+   "a veteran brigand",
+   "a road deacon",
+   "a road captain",
+   "a seasoned marauder",
+   "a seasoned spellslinger",
+   "a grizzled raider",
+   "Malik the Glass Viper - Named Mob",
+   "Soraya the Mirage - Named Mob"
+  ]
+ },
+ "Cult of Kravvin": {
+  "name": "Cult of Kravvin",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Cult_of_Kravvin",
+  "revid": 19737,
+  "desc": "Not much is known about the Cult of Kravvin faction.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Grain Cellar"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "a craven cultist",
+   "a devoted cultist",
+   "a priestess of Kravvin",
+   "a nefarious cultist",
+   "Khalid al-Bahri",
+   "Leila al-Bahri"
+  ]
+ },
+ "Cult of Trimminax": {
+  "name": "Cult of Trimminax",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Cult_of_Trimminax",
+  "revid": 50812,
+  "desc": "Not much is known about the Cult of Trimminax faction.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Glass Flats"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "a veiled emissary"
+  ]
+ },
+ "Cult of the Living City": {
+  "name": "Cult of the Living City",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Cult_of_the_Living_City",
+  "revid": 36870,
+  "desc": "Not much is known about the Cult of the Living City. Maybe you can help us by sharing some tales about them?",
+  "zones_raise": [
+   "Night Harbor"
+  ],
+  "zones_lower": [],
+  "quests_raise": [
+   "Riverbend_Gang_Wars_Quest (Garrison Side)",
+   "Platinum Badge of the Living City Quest"
+  ],
+  "quests_lower": [
+   "Riverbend_Gang_Wars_Quest (Waterdog Side)"
+  ],
+  "mobs_raise": [],
+  "mobs_lower": []
+ },
+ "Cult of the Wyrm": {
+  "name": "Cult of the Wyrm",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Cult_of_the_Wyrm",
+  "revid": 10990,
+  "desc": "Not much is known about the Cult of the Wyrm.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Night Harbor"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "a cultist (Night Harbor)"
+  ]
+ },
+ "Deepcut Bandits": {
+  "name": "Deepcut Bandits",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Deepcut_Bandits",
+  "revid": 77264,
+  "desc": "",
+  "zones_raise": [],
+  "zones_lower": [],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": []
+ },
+ "Defenders of Faelindral": {
+  "name": "Defenders of Faelindral",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Defenders_of_Faelindral",
+  "revid": 49419,
+  "desc": "The guards and defenders of Faelindral in Calafrey.",
+  "zones_raise": [
+   "Evershade Weald"
+  ],
+  "zones_lower": [],
+  "quests_raise": [
+   "A Sweet Treat"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [
+   "A Fellstone Warrior",
+   "A Fellstone shaman",
+   "A Fellstone scout",
+   "a Mezzatrian broodling",
+   "a Mezzatrain scion",
+   "Mezzatrian Boneweaver - Named Mob",
+   "Scout Grimgaze"
+  ],
+  "mobs_lower": []
+ },
+ "Denizens of Wyrmsbane Tomb": {
+  "name": "Denizens of Wyrmsbane Tomb",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Denizens_of_Wyrmsbane_Tomb",
+  "revid": 13092,
+  "desc": "The denizens of the Tomb of the Last Wyrmsbane. Currently no known way to raise this faction.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Tomb of the Last Wyrmsbane"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "Quartermaster Boothroy (Tomb of the Last Wrymsbane - Named Mob)",
+   "Timmon Bell (Tomb of the Last Wrymsbane - Named Mob)",
+   "Jakob Geffrey (Tomb of the Last Wrymsbane - Named Mob)",
+   "Lieutenant Gregan Snyde (Tomb of the Last Wrymsbane - Named Mob)",
+   "Bone Construct (Tomb of the Last Wrymsbane - Named Mob)",
+   "Ariblast the Wicked (Tomb of the Last Wrymsbane - Named Mob)",
+   "Dario Numas (Tomb of the Last Wrymsbane - Named Mob)",
+   "Grandmaster Obadiah (Tomb of the Last Wrymsbane - Named Mob)",
+   "Grandmaster Gildas (Tomb of the Last Wrymsbane - Named Mob)",
+   "High Marshal Fionna (Tomb of the Last Wrymsbane - Named Mob)",
+   "a skeletal fighter (Tomb of the Last Wrymsbane)",
+   "a skeletal cleric (Tomb of the Last Wrymsbane)",
+   "a skeletal warrior (Tomb of the Last Wrymsbane)",
+   "a skeletal deacon (Tomb of the Last Wrymsbane)",
+   "a skeletal archer (Tomb of the Last Wrymsbane)",
+   "a skeletal marksman (Tomb of the Last Wrymsbane)",
+   "a skeletal vicar (Tomb of the Last Wrymsbane)",
+   "a skeletal cavalier (Tomb of the Last Wrymsbane)",
+   "a skeletal knight (Tomb of the Last Wrymsbane)",
+   "a skeletal defender (Tomb of the Last Wrymsbane)",
+   "a skeletal priest (Tomb of the Last Wrymsbane)",
+   "a skeletal monk (Tomb of the Last Wrymsbane)",
+   "a skeletal champion (Tomb of the Last Wrymsbane)",
+   "a Wyrmsbane crusader (Tomb of the Last Wrymsbane)",
+   "a zombie laborer (Tomb of the Last Wrymsbane)",
+   "a zombie provisioner (Tomb of the Last Wrymsbane)",
+   "a risen zombie (Tomb of the Last Wrymsbane)",
+   "a roving ghoul (Tomb of the Last Wrymsbane)"
+  ]
+ },
+ "Easthymn Freebooters": {
+  "name": "Easthymn Freebooters",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Easthymn_Freebooters",
+  "revid": 21039,
+  "desc": "The Easthymn Freebooters, a group of researchers who fled Easthymn in search of wealth and opportunity, have recently uncovered a walled up tomb near Night Harbor. The city of Easthymn is widely believed to be rife with dark magics, cults, and all manner of corruption.",
+  "zones_raise": [
+   "Tomb of the Last Wyrmsbane"
+  ],
+  "zones_lower": [],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [
+   "Quartermaster Boothroy (Tomb of the Last Wrymsbane - Named Mob)",
+   "Timmon Bell (Tomb of the Last Wrymsbane - Named Mob)",
+   "Jakob Geffrey (Tomb of the Last Wrymsbane - Named Mob)",
+   "Lieutenant Gregan Snyde (Tomb of the Last Wrymsbane - Named Mob)",
+   "Bone Construct (Tomb of the Last Wrymsbane - Named Mob)",
+   "Ariblast the Wicked (Tomb of the Last Wrymsbane - Named Mob)",
+   "Dario Numas (Tomb of the Last Wrymsbane - Named Mob)",
+   "Grandmaster Obadiah (Tomb of the Last Wrymsbane - Named Mob)",
+   "Grandmaster Gildas (Tomb of the Last Wrymsbane - Named Mob)",
+   "High Marshal Fionna (Tomb of the Last Wrymsbane - Named Mob)",
+   "a skeletal fighter (Tomb of the Last Wrymsbane)",
+   "a skeletal cleric (Tomb of the Last Wrymsbane)",
+   "a skeletal warrior (Tomb of the Last Wrymsbane)",
+   "a skeletal deacon (Tomb of the Last Wrymsbane)",
+   "a skeletal archer (Tomb of the Last Wrymsbane)",
+   "a skeletal marksman (Tomb of the Last Wrymsbane)",
+   "a skeletal vicar (Tomb of the Last Wrymsbane)",
+   "a skeletal cavalier (Tomb of the Last Wrymsbane)",
+   "a skeletal knight (Tomb of the Last Wrymsbane)",
+   "a skeletal defender (Tomb of the Last Wrymsbane)",
+   "a skeletal priest (Tomb of the Last Wrymsbane)",
+   "a skeletal monk (Tomb of the Last Wrymsbane)",
+   "a skeletal champion (Tomb of the Last Wrymsbane)",
+   "a Wyrmsbane crusader (Tomb of the Last Wrymsbane)",
+   "a zombie laborer (Tomb of the Last Wrymsbane)",
+   "a zombie provisioner (Tomb of the Last Wrymsbane)",
+   "a risen zombie (Tomb of the Last Wrymsbane)",
+   "a roving ghoul (Tomb of the Last Wrymsbane)"
+  ],
+  "mobs_lower": []
+ },
+ "Ebon Order": {
+  "name": "Ebon Order",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Ebon_Order",
+  "revid": 41760,
+  "desc": "Not much is known about the Ebon Order faction.",
+  "zones_raise": [
+   "Glass Flats"
+  ],
+  "zones_lower": [],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [
+   "a visiting cultist",
+   "a heretical zealot",
+   "an ashen knight",
+   "a drowned knight",
+   "a wyrmseer",
+   "an abyssal emissary",
+   "a veiled emissary",
+   "a shadowed scribe",
+   "a ebon acolyte",
+   "a whispering adapt",
+   "Ebon Scholar Myrddin - Named Mob",
+   "High Wyrmseer Valthrun - Named Mob"
+  ],
+  "mobs_lower": []
+ },
+ "Eyes of Old Irem": {
+  "name": "Eyes of Old Irem",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Eyes_of_Old_Irem",
+  "revid": 70803,
+  "desc": "Not much is known about the Eyes of the Old Irem. This faction is concentrated in and around the Pyramid Ruins in Caves of Irem.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Caves of Irem"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "an enthralled giant",
+   "an enthralled mercenary",
+   "an enthralled explorer",
+   "an enthralled adventurer",
+   "an enthralled ranger",
+   "an enthralled zealot",
+   "an enthralled wizard",
+   "an enthralled druid",
+   "a lesser observer"
+  ]
+ },
+ "Fellstone Orcs": {
+  "name": "Fellstone Orcs",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Fellstone_Orcs",
+  "revid": 53639,
+  "desc": "Not much is known about the Fellstone Orcs.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Evershade Weald"
+  ],
+  "quests_raise": [],
+  "quests_lower": [
+   "Culling the Fellstone",
+   "Ranger Starter Quest (Faelindral)"
+  ],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "Muleda Murktoe (Evershade Weald)",
+   "Vorkuul Blighteye (Evershade Weald)",
+   "A Fellstone corrupter (Evershade Weald)",
+   "A Fellstone defiler (Evershade Weald)",
+   "A Fellstone necromancer (Evershade Weald)",
+   "A Fellstone ragecaller (Evershade Weald)",
+   "A Fellstone scout (Evershade Weald)",
+   "A Fellstone shaman (Evershade Weald)",
+   "A Fellstone Warrior (Evershade Weald)"
+  ]
+ },
+ "Fossergrim": {
+  "name": "Fossergrim",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Fossergrim",
+  "revid": 37500,
+  "desc": "",
+  "zones_raise": [
+   "Evershade Weald"
+  ],
+  "zones_lower": [
+   "Evershade Weald"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "A beguiled wolf"
+  ]
+ },
+ "Giants of Old Irem": {
+  "name": "Giants of Old Irem",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Giants_of_Old_Irem",
+  "revid": 70773,
+  "desc": "Not much is known about the Giants of Old Irem.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Caves of Irem"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "a trained razorwing",
+   "a vicious razorwing",
+   "a razorwing roost",
+   "a lake-fed razorwing",
+   "a roostguard giant Giant",
+   "a wandering deep giant"
+  ]
+ },
+ "Gilded Claw": {
+  "name": "Gilded Claw",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Gilded_Claw",
+  "revid": 75747,
+  "desc": "Not much is known about the Gilded Claw.",
+  "zones_raise": [
+   "Shaded Dunes",
+   "Fallen Pass",
+   "Night Harbor"
+  ],
+  "zones_lower": [],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [
+   "A grave robber",
+   "A bandit",
+   "A grizzled smuggler",
+   "a smuggler laborer",
+   "Sivah Arjun",
+   "Ruffian, at night in NH",
+   "a wererat",
+   "a smuggler",
+   "Toma the Two-Faced - Named Mob"
+  ],
+  "mobs_lower": [
+   "An emissary",
+   "a Claw vilicus",
+   "a Claw enforcer",
+   "a Claw henchman",
+   "a Claw blackguard",
+   "a Claw rhetor",
+   "a Claw shafi",
+   "a Claw steward",
+   "a Claw aide",
+   "Aide Aida - Named Mob",
+   "Pasha Patrice - Named Mob"
+  ]
+ },
+ "House Drezzorith": {
+  "name": "House Drezzorith",
+  "url": "https://monstersandmemories.miraheze.org/wiki/House_Drezzorith",
+  "revid": 74144,
+  "desc": "",
+  "zones_raise": [
+   "Ail'Vorith"
+  ],
+  "zones_lower": [],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": []
+ },
+ "House Hal'kareth": {
+  "name": "House Hal'kareth",
+  "url": "https://monstersandmemories.miraheze.org/wiki/House_Hal%27kareth",
+  "revid": 74190,
+  "desc": "",
+  "zones_raise": [
+   "Ail'Vorith"
+  ],
+  "zones_lower": [],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": []
+ },
+ "House Ith'vayen": {
+  "name": "House Ith'vayen",
+  "url": "https://monstersandmemories.miraheze.org/wiki/House_Ith%27vayen",
+  "revid": 77193,
+  "desc": "",
+  "zones_raise": [
+   "Ail'Vorith"
+  ],
+  "zones_lower": [
+   "Underdocks"
+  ],
+  "quests_raise": [
+   "House Ith'vayen (Quest)"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "a Deepcut marksman",
+   "a Deepcut basher",
+   "a Deepcut tracker",
+   "a Deepcut miner",
+   "a Deepcut cursecaller",
+   "a Deepcut arsonist",
+   "a Deepcut skulker",
+   "a Deepcut thorncoat",
+   "Jorlach the Fearless"
+  ]
+ },
+ "House Vael'xirith": {
+  "name": "House Vael'xirith",
+  "url": "https://monstersandmemories.miraheze.org/wiki/House_Vael%27xirith",
+  "revid": 74180,
+  "desc": "",
+  "zones_raise": [
+   "Ail'Vorith"
+  ],
+  "zones_lower": [],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": []
+ },
+ "House Varros": {
+  "name": "House Varros",
+  "url": "https://monstersandmemories.miraheze.org/wiki/House_Varros",
+  "revid": 74121,
+  "desc": "",
+  "zones_raise": [
+   "Ail'Vorith"
+  ],
+  "zones_lower": [],
+  "quests_raise": [
+   "House Varros Supplies"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": []
+ },
+ "House Velgarrith": {
+  "name": "House Velgarrith",
+  "url": "https://monstersandmemories.miraheze.org/wiki/House_Velgarrith",
+  "revid": 74100,
+  "desc": "The faction of House Velgarrith in Ail'Vorith of The Deep.",
+  "zones_raise": [
+   "Ail'Vorith"
+  ],
+  "zones_lower": [],
+  "quests_raise": [
+   "Fungal Armor Quests"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [
+   "?"
+  ],
+  "mobs_lower": [
+   "?"
+  ]
+ },
+ "House Xal'tharn": {
+  "name": "House Xal'tharn",
+  "url": "https://monstersandmemories.miraheze.org/wiki/House_Xal%27tharn",
+  "revid": 74141,
+  "desc": "",
+  "zones_raise": [
+   "Ail'Vorith"
+  ],
+  "zones_lower": [],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": []
+ },
+ "Iron Emissaries": {
+  "name": "Iron Emissaries",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Iron_Emissaries",
+  "revid": 48939,
+  "desc": "Not much is known about the Iron Emissaries faction.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Keeper's Bight"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "Dubar Falshim",
+   "an Iron Emissaries envoy"
+  ]
+ },
+ "Islanders of Shallow Shoals": {
+  "name": "Islanders of Shallow Shoals",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Islanders_of_Shallow_Shoals",
+  "revid": 45537,
+  "desc": "Not much is known about the Islanders of Shallow Shoals faction.",
+  "zones_raise": [
+   "Keeper's Bight",
+   "Grimtide Sanctum"
+  ],
+  "zones_lower": [],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [
+   "a Blacktide raider",
+   "a Blacktide brute",
+   "a Blacktide seer",
+   "a Blacktide cleric",
+   "a Blacktide guard",
+   "a Blacktide slaver",
+   "a Blacktide bowman",
+   "a Blacktide tracker",
+   "a Blacktide acolyte",
+   "Tidecaller Selka (Grimtide Sanctum - Named Mob)",
+   "Vesska the Bloodbound (Grimtide Sanctum - Named Mob)",
+   "Bloatbelly (Grimtide Sanctum - Named Mob)",
+   "Devourhymn Glomenda (Grimtide Sanctum - Named Mob)",
+   "Braggla the Spawnkeeper (Grimtide Sanctum - Named Mob)",
+   "a sanctum elemental",
+   "a Grimtide fangbearer",
+   "a Grimtide tidewatcher",
+   "a Grimtide deepseeress",
+   "a Grimtide reefshaper",
+   "a Grimtide kelpweaver",
+   "a Grimtide shellcaller",
+   "a Grimtide echohexer",
+   "a Grimtide moondrowner"
+  ],
+  "mobs_lower": []
+ },
+ "Langsdorfian League": {
+  "name": "Langsdorfian League",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Langsdorfian_League",
+  "revid": 46037,
+  "desc": "The Langsdorfian League's history goes back centuries, making them the oldest trade guild in the known realms of Eth-Ur. The Langsdorfian League is, in effect, a nation with its own military, spy networks, researchers and diplomats. The motto of the Langsdorfian League is \"By Patience We Prosper\". The Langsdorfian League and the Seafarers Consortium established Night Harbor as part of the twilight accord. Night Harbor is the seat of power for the Langsdorfian League, a confederacy of guilds with a near monopoly on trade and transportation throughout Aêthoril. The Langsdorfian League is named after the quaint village of Langsdorf, known for its skilled craftsmen and its role as the League's founding place. The Langsdorfian League maintains guild houses, known as \"kontors\", in or around nearly every city of note.",
+  "zones_raise": [
+   "Shaded Dunes",
+   "Night Harbor"
+  ],
+  "zones_lower": [],
+  "quests_raise": [
+   "Ashira Infiltrator Heads",
+   "Hale's Haul"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [
+   "Dhajr Spitemaw (Shaded Dunes - Named Mob)"
+  ],
+  "mobs_lower": []
+ },
+ "Lost Sisters of Etheralis": {
+  "name": "Lost Sisters of Etheralis",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Lost_Sisters_of_Etheralis",
+  "revid": 68585,
+  "desc": "Not much is known about the Lost Sisters of Etheralis faction.",
+  "zones_raise": [
+   "Keeper's Bight"
+  ],
+  "zones_lower": [
+   "Shallow Shoals"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [
+   "a Blacktide raider",
+   "a Blacktide brute",
+   "a Blacktide seer",
+   "a Blacktide cleric",
+   "a Blacktide guard",
+   "a Blacktide slaver",
+   "a Blacktide bowman",
+   "a Blacktide tracker",
+   "a Blacktide acolyte"
+  ],
+  "mobs_lower": [
+   "an arcane sister",
+   "a Witchguard cultor",
+   "a Witchguard signifer",
+   "a Witchguard venator",
+   "a Witchguard defiler",
+   "a Witchguard princeps",
+   "a Witchguard sacramir",
+   "a Witchguard shaman",
+   "a Witchguard myrmidon",
+   "a Witchguard oracle",
+   "a Witchguard medicus",
+   "a Witchguard veles"
+  ]
+ },
+ "Merchants of Night Harbor": {
+  "name": "Merchants of Night Harbor",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Merchants_of_Night_Harbor",
+  "revid": 23602,
+  "desc": "Not much is known about the Merchants of Night Harbor faction.",
+  "zones_raise": [
+   "Night Harbor"
+  ],
+  "zones_lower": [],
+  "quests_raise": [
+   "Laundry Day Quest"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": []
+ },
+ "Mezzatria's Cluster": {
+  "name": "Mezzatria's Cluster",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Mezzatria%27s_Cluster",
+  "revid": 49423,
+  "desc": "Not much is known about the Mezzatria's Cluster faction. It is a spider brood in the North of Evershade Weald.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Evershade Weald"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "a Mezzatrian broodling",
+   "a Mezzatrain scion",
+   "Mezzatrian Boneweaver - Named Mob"
+  ]
+ },
+ "Muggrah Goblins": {
+  "name": "Muggrah Goblins",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Muggrah_Goblins",
+  "revid": 50961,
+  "desc": "Not much is known about the Muggrah Goblins faction.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Glass Flats",
+   "Sungreet Strand"
+  ],
+  "quests_raise": [],
+  "quests_lower": [
+   "Druid Starter Quest (Night Harbor)"
+  ],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "a Muggrah robber",
+   "a Muggrah scavenger",
+   "a Muggrah scrapper",
+   "a Muggrah stabber",
+   "a Muggrah raider",
+   "a Muggrah bonestealer",
+   "a Muggrah spiritseer",
+   "a Muggrah shaman",
+   "A Muggrah frightener",
+   "a Muggrah brawler",
+   "a Muggrah bonecollector",
+   "a Muggrah bonekeeper",
+   "a Muggrah spiritcaller",
+   "a Muggrah mindstealer",
+   "Warlord Muggrah",
+   "Klimpi the Feared",
+   "Best Appraiser Bibic",
+   "Baron Bigtent"
+  ]
+ },
+ "Mur'Hua": {
+  "name": "Mur'Hua",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Mur%27Hua",
+  "revid": 49203,
+  "desc": "Not much is known about the Mur'Hua faction.",
+  "zones_raise": [
+   "Fallen Pass",
+   "Blacktide Bay"
+  ],
+  "zones_lower": [],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [
+   "a Skri'Var taskmaster",
+   "a Skri'Var raider",
+   "a Skri'Var guard",
+   "a Skri'Var tracker",
+   "a Skri'Var mystic",
+   "a Mur'Hua slave",
+   "a Mur'Hua harvester",
+   "Chieftain Raka'Matar",
+   "Tok'Nor",
+   "A degenerating Mur'Hua"
+  ],
+  "mobs_lower": []
+ },
+ "Naelira's Court": {
+  "name": "Naelira's Court",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Naelira%27s_Court",
+  "revid": 37499,
+  "desc": "",
+  "zones_raise": [
+   "Evershade Weald"
+  ],
+  "zones_lower": [
+   "Evershade Weald"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "A beguiled wolf"
+  ]
+ },
+ "Night Harbor Garrison": {
+  "name": "Night Harbor Garrison",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Night_Harbor_Garrison",
+  "revid": 50759,
+  "desc": "Not much is known about the Night Harbor Garrison faction.",
+  "zones_raise": [
+   "Shaded Dunes",
+   "Fallen Pass",
+   "Keeper's Bight",
+   "Vale of Zintar",
+   "Tel Ekir"
+  ],
+  "zones_lower": [],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [
+   "A bandit",
+   "An ashira ain guard",
+   "A grizzled smuggler",
+   "Sivah Arjun",
+   "Seamas Growt",
+   "a Blacktide raider",
+   "a Blacktide brute",
+   "a Blacktide seer",
+   "a Blacktide cleric",
+   "a Blacktide guard",
+   "a Blacktide slaver",
+   "a Blacktide bowman",
+   "a Blacktide tracker",
+   "a Blacktide acolyte",
+   "a Dustrend foot soldier",
+   "a Dustrend legionary",
+   "a Dustrend patroller",
+   "a Dustrend priest",
+   "a Dustrend venator",
+   "a Dustrend sacramir",
+   "Animist Wafi",
+   "Zahid the Calm",
+   "An ashira adept",
+   "An ashira oracle",
+   "An ashira alpha",
+   "An ashira ain guard",
+   "An ashira mystic",
+   "An ashira wanderer",
+   "An ashira pathfinder",
+   "An ashira shaman",
+   "A grave robber"
+  ],
+  "mobs_lower": []
+ },
+ "Onyx Outlaw Gang": {
+  "name": "Onyx Outlaw Gang",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Onyx_Outlaw_Gang",
+  "revid": 38532,
+  "desc": "Not much is known about The Onyx Outlaw Gang, other than they are a criminal related faction.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Sungreet Strand"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "Taskmaster Urka (Sungreet Strand)",
+   "Seeric of Maelsin Thrys (Sungreet Strand)",
+   "A goblin overseer (Sungreet Strand)"
+  ]
+ },
+ "Orcs": {
+  "name": "Orcs",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Orcs",
+  "revid": 20089,
+  "desc": "Not much is known about the Orcs faction.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Vale of Zintar"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "a Dustrend foot soldier",
+   "a Dustrend legionary",
+   "a Dustrend patroller",
+   "a Dustrend priest",
+   "a Dustrend venator",
+   "a Dustrend sacramir"
+  ]
+ },
+ "Penitent Knights of the Hospice": {
+  "name": "Penitent Knights of the Hospice",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Penitent_Knights_of_the_Hospice",
+  "revid": 79172,
+  "desc": "The Penitent Knights of the Hospice comprise the Clerics and Paladins of Night Harbor, located at the Wayfarer's Hospice near West Gate. If you have raised your reputation to Amicable, the NPCs at the hospice will give 30-minute buffs to your pet: * Adrenaline * Berserker Rage * Divine Spark * Holy Resilience * Poison Resistance * Speed of the Wild Not much else is known about the Penitent Knights outside of Night Harbor.",
+  "zones_raise": [],
+  "zones_lower": [],
+  "quests_raise": [
+   "Bone Chips for Squire Ryland"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": []
+ },
+ "Poachers of Calafrey": {
+  "name": "Poachers of Calafrey",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Poachers_of_Calafrey",
+  "revid": 48734,
+  "desc": "Not much is known about the Poachers of Calafrey faction outside of their blatant disregard of the natural order in Keeper's Bight.",
+  "zones_raise": [
+   "Keeper's Bight"
+  ],
+  "zones_lower": [
+   "Keeper's Bight"
+  ],
+  "quests_raise": [],
+  "quests_lower": [
+   "Poacher's Knives",
+   "Left Behind"
+  ],
+  "mobs_raise": [
+   "Ranger Rylin"
+  ],
+  "mobs_lower": [
+   "a poacher",
+   "a poacher pathfinder",
+   "a poacher bruiser",
+   "a poacher herbalist",
+   "Poacher Tolan",
+   "Poacher Garrus",
+   "Poacher Wilna"
+  ]
+ },
+ "Preservers": {
+  "name": "Preservers",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Preservers",
+  "revid": 75975,
+  "desc": "Preservers are a tribe of Shamans with residence in Faelindral. Their namesake is derived from their spiritually driven mission to preserve balance.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Evershade Weald"
+  ],
+  "quests_raise": [
+   "Shaman Starter Quest (Faelindral)"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": []
+ },
+ "Pymos Mercenaries": {
+  "name": "Pymos Mercenaries",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Pymos_Mercenaries",
+  "revid": 19397,
+  "desc": "Not much is known about the pymos Mercenaries faction.",
+  "zones_raise": [
+   "Fallen Pass"
+  ],
+  "zones_lower": [],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [
+   "Sivah Arjun"
+  ],
+  "mobs_lower": []
+ },
+ "Pyrmos Mercenaries": {
+  "name": "Pyrmos Mercenaries",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Pyrmos_Mercenaries",
+  "revid": 50968,
+  "desc": "Not much is known about the Pyrmos Mercenaries faction.",
+  "zones_raise": [
+   "Shaded Dunes",
+   "Fallen Pass",
+   "Keeper's Bight",
+   "Vale of Zintar",
+   "Shallow Shoals",
+   "Sungreet Strand]",
+   "Glass Flats"
+  ],
+  "zones_lower": [],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [
+   "A bandit",
+   "A grizzled smuggler",
+   "Seamas Growt",
+   "a Blacktide raider",
+   "a Blacktide brute",
+   "a Blacktide seer",
+   "a Blacktide cleric",
+   "a Blacktide guard",
+   "a Blacktide slaver",
+   "a Blacktide bowman",
+   "a Blacktide tracker",
+   "a Blacktide acolyte",
+   "a Dustrend foot soldier",
+   "a Dustrend legionary",
+   "a Dustrend patroller",
+   "a Dustrend priest",
+   "a Dustrend venator",
+   "a Dustrend sacramir",
+   "a Muggrah robber",
+   "a Muggrah scavenger",
+   "a Muggrah scrapper",
+   "a Muggrah stabber",
+   "a Muggrah raider",
+   "a Muggrah bonestealer",
+   "a Muggrah spiritseer",
+   "a Muggrah shaman",
+   "A Muggrah frightener",
+   "a Muggrah brawler",
+   "a Muggrah bonecollector",
+   "a Muggrah bonekeeper",
+   "a Muggrah spiritcaller",
+   "Warlord Muggrah",
+   "Klimpi the Feared",
+   "Best Appraiser Bibic",
+   "Baron Bigtent",
+   "a witchguard signifer",
+   "a witchguard serverat",
+   "a witchguard princeps",
+   "a witchguard cultor",
+   "A witchguard velite",
+   "a witchguard Signifer",
+   "a witchguard Sacramir",
+   "Witchguard Hellblade",
+   "Herald of Muurtu",
+   "High Sister of Sarinius",
+   "High-Priest of Muurtu",
+   "Champion of Muurtu",
+   "Witchguard Primus",
+   "Witchguard Kruurgal",
+   "A grave robber"
+  ],
+  "mobs_lower": [
+   "Whiskey"
+  ]
+ },
+ "Razorwings of Old Irem": {
+  "name": "Razorwings of Old Irem",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Razorwings_of_Old_Irem",
+  "revid": 70771,
+  "desc": "Not much is known about the Razorwings of Old Irem.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Caves of Irem"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "a trained razorwing",
+   "a vicious razorwing",
+   "a razorwing roost",
+   "a lake-fed razorwing"
+  ]
+ },
+ "Red Mantles": {
+  "name": "Red Mantles",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Red_Mantles",
+  "revid": 81087,
+  "desc": "Not much is known about the Red Mantles.",
+  "zones_raise": [
+   "Shaded Dunes",
+   "Night Harbor",
+   "Keeper's Bight"
+  ],
+  "zones_lower": [],
+  "quests_raise": [
+   "Wanted: Ayip & Yapala",
+   "Ashira Infiltrator Heads"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [
+   "A shady farmer (Keepers Bight)",
+   "Sangrel (Keepers Bight)",
+   "Dhajr Spitemaw (Shaded Dunes - Named Mob)",
+   "a dusty scarab",
+   "a hardened scarab",
+   "a cracked beetle",
+   "a pristine beetle"
+  ],
+  "mobs_lower": []
+ },
+ "Residents of Ain Golot": {
+  "name": "Residents of Ain Golot",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Residents_of_Ain_Golot",
+  "revid": 78064,
+  "desc": "Not much is known about the Residents of Ain Golot.",
+  "zones_raise": [
+   "Night Harbor"
+  ],
+  "zones_lower": [],
+  "quests_raise": [
+   "The Yowling"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": []
+ },
+ "Residents of the Bends": {
+  "name": "Residents of the Bends",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Residents_of_the_Bends",
+  "revid": 59604,
+  "desc": "Not much is known about the Residents of the Bends.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Night Harbor"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "Sahir Muzalal (Night Harbor - Named Mob)",
+   "a smuggler (Night Harbor - Named Mob)"
+  ]
+ },
+ "SCEAS": {
+  "name": "SCEAS",
+  "url": "https://monstersandmemories.miraheze.org/wiki/SCEAS",
+  "revid": 51981,
+  "desc": "Not much is known about the SCEAS faction.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Shaded Dunes"
+  ],
+  "quests_raise": [
+   "Escort Head Researcher Aashir"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "Head Researcher Aashir - Quest Mob",
+   "an archaeologist",
+   "a researcher",
+   "a senior researcher",
+   "a theologian"
+  ]
+ },
+ "Sangrel Fist": {
+  "name": "Sangrel Fist",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Sangrel_Fist",
+  "revid": 81088,
+  "desc": "*unknown",
+  "zones_raise": [],
+  "zones_lower": [],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "a Sangrel arcanist",
+   "a Sangrel entangler",
+   "a Sangrel grappler",
+   "a Sangrel hunter",
+   "a Sangrel shadowblade",
+   "a Sangrel striker",
+   "Mirella Nighthorn",
+   "A shady farmer"
+  ]
+ },
+ "Seafarers Consortium": {
+  "name": "Seafarers Consortium",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Seafarers_Consortium",
+  "revid": 53862,
+  "desc": "The Seafarers Consortium's membership is composed of the Ba'Haara, a culture of seafaring nomads. The Langsdorfian League and the Seafarers Consortium established Night Harbor as part of the twilight accord. Not much else is known about the Seafarers Consortium.",
+  "zones_raise": [
+   "Night Harbor"
+  ],
+  "zones_lower": [],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [
+   "Red Mantle guards"
+  ],
+  "mobs_lower": []
+ },
+ "Seekers of the Lost Eye": {
+  "name": "Seekers of the Lost Eye",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Seekers_of_the_Lost_Eye",
+  "revid": 78744,
+  "desc": "Not much is known about the Seekers of the Lost Eye.",
+  "zones_raise": [
+   "Sungreet Strand"
+  ],
+  "zones_lower": [],
+  "quests_raise": [
+   "Little Tamsah, Big Appetite",
+   "Shaman Starter Quest (Night Harbor)"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [
+   "a skintaker ritualist (Sungreet Strand)",
+   "a skintaker sneak (Sungreet Strand)",
+   "a skintaker pet (Sungreet Strand)",
+   "a skintaker bravo (Sungreet Strand)",
+   "Ixelda Jackalfang (Sungreet Strand - Named Mob)"
+  ],
+  "mobs_lower": [
+   "Errol Shrewtender",
+   "Masoumeh Akhtar",
+   "Eskander Akhtar",
+   "a black rat"
+  ]
+ },
+ "Serpent Sashes": {
+  "name": "Serpent Sashes",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Serpent_Sashes",
+  "revid": 32940,
+  "desc": "The Serpent Sashes is a violent gang located in the Bends of Night Harbor.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Night Harbor"
+  ],
+  "quests_raise": [],
+  "quests_lower": [
+   "Riverbend Gang Wars Quest"
+  ],
+  "mobs_raise": [
+   "a smuggler",
+   "a river pirate"
+  ],
+  "mobs_lower": [
+   "Sahir Muzalal (Night Harbor - Named Mob)"
+  ]
+ },
+ "Skintakers of Szuur": {
+  "name": "Skintakers of Szuur",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Skintakers_of_Szuur",
+  "revid": 11093,
+  "desc": "Not much is known about the Skintakers of Szuur.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Sungreet Strand"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "a skintaker ritualist (Sungreet Strand)",
+   "a skintaker sneak (Sungreet Strand)",
+   "a skintaker pet (Sungreet Strand)",
+   "a skintaker bravo (Sungreet Strand)",
+   "Ixelda Jackalfang (Sungreet Strand - Named Mob)"
+  ]
+ },
+ "Skri'Var": {
+  "name": "Skri'Var",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Skri%27Var",
+  "revid": 19064,
+  "desc": "Not much is known about the Skri'Var faction.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Fallen Pass"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "a Skri'Var taskmaster",
+   "a Skri'Var raider",
+   "a Skri'Var guard",
+   "a Skri'Var tracker",
+   "a Skri'Var mystic",
+   "a Mur'Hua slave",
+   "a Mur'Hua harvester",
+   "Chieftain Raka'Matar",
+   "Tok'Nor",
+   "A degenerating Mur'Hua"
+  ]
+ },
+ "Slaves of the Pasha": {
+  "name": "Slaves of the Pasha",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Slaves_of_the_Pasha",
+  "revid": 42170,
+  "desc": "Not much is known about the Slaves of the Pasha faction.",
+  "zones_raise": [
+   "Night Harbor"
+  ],
+  "zones_lower": [],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [
+   "An emissary",
+   "a Claw vilicus",
+   "a Claw enforcer",
+   "a Claw henchman",
+   "a Claw blackguard",
+   "a Claw rhetor",
+   "a Claw shafi",
+   "a Claw steward",
+   "a Claw aid",
+   "Aide Aida - Named Mob",
+   "Pasha Patrice - Named Mob"
+  ],
+  "mobs_lower": []
+ },
+ "Smallfolk Alliance": {
+  "name": "Smallfolk Alliance",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Smallfolk_Alliance",
+  "revid": 44056,
+  "desc": "Not much is known about the Smallfolk Alliance faction.",
+  "zones_raise": [
+   "Night Harbor"
+  ],
+  "zones_lower": [
+   "Sungreet Strand"
+  ],
+  "quests_raise": [
+   "Laundry Day Quest",
+   "A Sweet Treat"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "Balindor Silvertrowel"
+  ]
+ },
+ "Steel Talons": {
+  "name": "Steel Talons",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Steel_Talons",
+  "revid": 50761,
+  "desc": "Not much is known about the Steel Talons faction.",
+  "zones_raise": [
+   "Shaded Dunes",
+   "Tel Ekir",
+   "Fallen Pass",
+   "Shallow Shoals"
+  ],
+  "zones_lower": [],
+  "quests_raise": [
+   "Ashira Warrior Bracer Quest"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [
+   "A bandit",
+   "A grave robber",
+   "An ashira ain guard",
+   "A grizzled smuggler",
+   "Sivah Arjun",
+   "Seamas Growt",
+   "Animist Wafi",
+   "Zahid the Calm",
+   "An ashira adept",
+   "An ashira oracle",
+   "An ashira alpha",
+   "An ashira ain guard",
+   "An ashira mystic",
+   "An ashira wanderer",
+   "An ashira pathfinder",
+   "An ashira shaman",
+   "a witchguard signifer",
+   "a witchguard serverat",
+   "a witchguard princeps",
+   "a witchguard cultor",
+   "a witchguard velite",
+   "a witchguard Signifer",
+   "a witchguard Sacramir",
+   "Witchguard Hellblade",
+   "Herald of Muurtu",
+   "High Sister of Sarinius",
+   "High-Priest of Muurtu",
+   "Champion of Muurtu",
+   "Witchguard Primus",
+   "Witchguard Kruurgal"
+  ],
+  "mobs_lower": []
+ },
+ "Stewards of the Reliquary": {
+  "name": "Stewards of the Reliquary",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Stewards_of_the_Reliquary",
+  "revid": 51016,
+  "desc": "Not much is known about the Stewards of the Reliquary.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Night Harbor",
+   "Glass Flats"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "Anlisia Silvereye"
+  ]
+ },
+ "Ten Hooks": {
+  "name": "Ten Hooks",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Ten_Hooks",
+  "revid": 51018,
+  "desc": "The Ten Hooks is a violent gang located in the Bends of Night Harbor.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Night Harbor"
+  ],
+  "quests_raise": [],
+  "quests_lower": [
+   "Riverbend Gang Wars Quest"
+  ],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "Sahir Muzalal (Night Harbor - Named Mob)"
+  ]
+ },
+ "The Dreaming Dawn": {
+  "name": "The Dreaming Dawn",
+  "url": "https://monstersandmemories.miraheze.org/wiki/The_Dreaming_Dawn",
+  "revid": 74622,
+  "desc": "The Dreaming Dawn is a faction in Monsters & Memories.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Underdocks"
+  ],
+  "quests_raise": [],
+  "quests_lower": [
+   "Necromancer Starter Quest (Underdocks)"
+  ],
+  "mobs_raise": [],
+  "mobs_lower": []
+ },
+ "The Eternal Queen": {
+  "name": "The Eternal Queen",
+  "url": "https://monstersandmemories.miraheze.org/wiki/The_Eternal_Queen",
+  "revid": 80615,
+  "desc": "The Eternal Queen who rules Ail'Vorith.",
+  "zones_raise": [],
+  "zones_lower": [],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [
+   "[Unknown"
+  ],
+  "mobs_lower": []
+ },
+ "The Fossergrim": {
+  "name": "The Fossergrim",
+  "url": "https://monstersandmemories.miraheze.org/wiki/The_Fossergrim",
+  "revid": 10101,
+  "desc": "Not much is known about the Fossergrim.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Evershade Weald"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": []
+ },
+ "The Hydraids": {
+  "name": "The Hydraids",
+  "url": "https://monstersandmemories.miraheze.org/wiki/The_Hydraids",
+  "revid": 10102,
+  "desc": "Not much is known about the Hydraids.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Evershade Weald"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": []
+ },
+ "The Naiad": {
+  "name": "The Naiad",
+  "url": "https://monstersandmemories.miraheze.org/wiki/The_Naiad",
+  "revid": 10103,
+  "desc": "Not much is known about the Naiad.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Evershade Weald"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": []
+ },
+ "The Pale": {
+  "name": "The Pale",
+  "url": "https://monstersandmemories.miraheze.org/wiki/The_Pale",
+  "revid": 34230,
+  "desc": "Not much is known about the Pale faction. They occupy a tower near the docks of Night Harbor. They also have guards located in a small building on an island in front of The Bends in Night Harbor.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Night Harbor"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "a pale cook",
+   "a pale guard",
+   "a pale lieutenant",
+   "Captain Caspian",
+   "Victualler Veera",
+   "Manciple Daphne"
+  ]
+ },
+ "The Trembling Hand": {
+  "name": "The Trembling Hand",
+  "url": "https://monstersandmemories.miraheze.org/wiki/The_Trembling_Hand",
+  "revid": 74621,
+  "desc": "The Trembling Hand is a faction associated with the Necromancer disciples and practitioners located within the Underdocks.",
+  "zones_raise": [
+   "Underdocks"
+  ],
+  "zones_lower": [],
+  "quests_raise": [
+   "Necromancer Starter Quest (Underdocks)"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": []
+ },
+ "Thorns of the Bloom": {
+  "name": "Thorns of the Bloom",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Thorns_of_the_Bloom",
+  "revid": 46036,
+  "desc": "Not much is known about the Thorns of the Bloom.",
+  "zones_raise": [
+   "Shaded Dunes"
+  ],
+  "zones_lower": [],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [
+   "Dhajr Spitemaw (Shaded Dunes - Named Mob)"
+  ],
+  "mobs_lower": []
+ },
+ "Unseen Court": {
+  "name": "Unseen Court",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Unseen_Court",
+  "revid": 53861,
+  "desc": "Not much is known about the Unseen Court.",
+  "zones_raise": [
+   "Night Harbor"
+  ],
+  "zones_lower": [],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [
+   "Red Mantle guards"
+  ],
+  "mobs_lower": []
+ },
+ "Vermahn's Brood": {
+  "name": "Vermahn's Brood",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Vermahn%27s_Brood",
+  "revid": 76004,
+  "desc": "Not much is known about the Vermahn's Brood, other than they are a criminal related faction.",
+  "zones_raise": [
+   "Night Harbor"
+  ],
+  "zones_lower": [
+   "Fallen Pass",
+   "Night Harbor",
+   "Shaded Dunes"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [
+   "Whiskey",
+   "An emissary",
+   "a Claw vilicus",
+   "a Claw enforcer",
+   "a Claw henchman",
+   "a Claw blackguard",
+   "a Claw rhetor",
+   "a Claw shafi",
+   "a Claw steward",
+   "a Claw aid",
+   "Aide Aida - Named Mob",
+   "Pasha Patrice - Named Mob"
+  ],
+  "mobs_lower": [
+   "Sivah Arjun",
+   "A grizzled smuggler",
+   "A bandit (Shaded Dunes)",
+   "a grave robber (Night Harbor)",
+   "a river pirate captain",
+   "a mugger"
+  ]
+ },
+ "Village of Penshaw": {
+  "name": "Village of Penshaw",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Village_of_Penshaw",
+  "revid": 81085,
+  "desc": "",
+  "zones_raise": [
+   "Keeper's Bight"
+  ],
+  "zones_lower": [],
+  "quests_raise": [
+   "Poacher's Knives",
+   "Left Behind"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [
+   "Mirella Nighthorn",
+   "a poacher pathfinder",
+   "a poacher bruiser",
+   "a poacher herbalist",
+   "Poacher Tolan",
+   "Poacher Garrus",
+   "Poacher Wilna",
+   "Brukk Goldgut",
+   "A shady farmer"
+  ],
+  "mobs_lower": []
+ },
+ "Waterdogs": {
+  "name": "Waterdogs",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Waterdogs",
+  "revid": 15189,
+  "desc": "The Waterdogs are a violent gang located in the Bends of Night Harbor.",
+  "zones_raise": [],
+  "zones_lower": [
+   "Night Harbor"
+  ],
+  "quests_raise": [],
+  "quests_lower": [
+   "Riverbend Gang Wars Quest"
+  ],
+  "mobs_raise": [],
+  "mobs_lower": [
+   "Sahir Muzalal (Night Harbor - Named Mob)"
+  ]
+ },
+ "Wyrdguard": {
+  "name": "Wyrdguard",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Wyrdguard",
+  "revid": 27816,
+  "desc": "The Wyrdguard are sworn to defend Faelindral and the Wyrdgates. We are the silent sentinels in the trees, the unseen hand of violence. To fail in our vigilance is to invite ruin upon our people, and when calamity comes to us, we move deftly and without mercy. - Commander Elydris Stormbough",
+  "zones_raise": [
+   "Evershade Weald"
+  ],
+  "zones_lower": [],
+  "quests_raise": [
+   "Culling the Fellstone"
+  ],
+  "quests_lower": [],
+  "mobs_raise": [],
+  "mobs_lower": []
+ },
+ "Zintari Giants": {
+  "name": "Zintari Giants",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Zintari_Giants",
+  "revid": 51398,
+  "desc": "Not much is known about the Zintari Giants. They inhabit Vale of Zintar and Scarwood zones.",
+  "zones_raise": [
+   "Night Harbor"
+  ],
+  "zones_lower": [
+   "Vale of Zintar"
+  ],
+  "quests_raise": [],
+  "quests_lower": [],
+  "mobs_raise": [
+   "Whiskey"
+  ],
+  "mobs_lower": [
+   "a sand giant geomancer",
+   "a sand giant suncaller",
+   "a sand giant fakir",
+   "a sand giant brigand",
+   "a giant wolf",
+   "a sand giant bandit",
+   "Grand Vizier Al'Kithar - Named Mob",
+   "Old Scar - Named Mob",
+   "Khal'Baar the Growler - Named Mob",
+   "Spicy Raziq - Named Mob",
+   "Zubair Goldtongue - Named Mob"
+  ]
+ }
+}
