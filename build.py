@@ -770,7 +770,7 @@ def g_classquick(arg, ctx):
     return class_quick(cls, int(lo), int(hi))
 # ------------------------------------------------------------------ dungeons section
 DUNGEONS = json.load(open(os.path.join(CONTENT, 'dungeons.json'), encoding='utf8'))
-DUNGEON_ORDER = ['Tomb of the Last Wyrmsbane', 'Infested Crypt', 'Ancient Crypt', 'Sunken Resort', 'Grain Cellar', 'Caves of Irem', 'Glinting Hollow', 'Grimtide Sanctum', 'Blind Midden']
+DUNGEON_ORDER = ['Tomb of the Last Wyrmsbane', 'Infested Crypt', 'Ancient Crypt', 'Sunken Resort', 'Grain Cellar', 'Caves of Irem', 'Glinting Hollow', 'Grimtide Sanctum', 'Blind Midden', 'Blacktide Bay', 'Tel Ekir', 'Rothold', 'Fallen Watch']
 def dungeon_url(d): return '/dungeons/%s.html' % slug(d)
 
 def _lvl_range(d):
