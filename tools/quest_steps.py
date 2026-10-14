@@ -12,7 +12,7 @@ def tparams(t, name):
 out = {}
 for f in glob.glob(os.path.join(R, 'raw', 'wiki', '*.json')):
     d = json.load(open(f, encoding='utf8'))
-    if 'Quests' not in d.get('cats', []): continue
+    if 'Quests' not in d.get('cats', []) or d['title'].startswith('Category:'): continue
     t = d['text']; P = tparams(t, 'Quest')
     w = t.split('== Walkthrough ==', 1)[1] if '== Walkthrough ==' in t else t
     steps = []

@@ -111,19 +111,6 @@
 ]
 ]
 },
-"Category:Monk Quests": {
-"title": "Category:Monk Quests",
-"revid": 10349,
-"ts": "2025-04-12",
-"giver": "",
-"zone": "",
-"min": "",
-"classes": [],
-"rewards": "",
-"kinds": [],
-"needsinfo": false,
-"steps": []
-},
 "The Delvestone Mining Company Quarrel": {
 "title": "The Delvestone Mining Company Quarrel",
 "revid": 72743,
@@ -2316,19 +2303,6 @@
 ]
 ]
 },
-"Category:Archer Quests": {
-"title": "Category:Archer Quests",
-"revid": 10157,
-"ts": "2025-03-28",
-"giver": "",
-"zone": "",
-"min": "",
-"classes": [],
-"rewards": "",
-"kinds": [],
-"needsinfo": false,
-"steps": []
-},
 "Potions for Veylith Frosttongue": {
 "title": "Potions for Veylith Frosttongue",
 "revid": 74871,
@@ -2899,32 +2873,6 @@
 "Cinder Beetle Armor Quests"
 ]
 ]
-},
-"Category:Elementalist Quests": {
-"title": "Category:Elementalist Quests",
-"revid": 2716,
-"ts": "2024-06-02",
-"giver": "",
-"zone": "",
-"min": "",
-"classes": [],
-"rewards": "",
-"kinds": [],
-"needsinfo": false,
-"steps": []
-},
-"Category:Wizard Quests": {
-"title": "Category:Wizard Quests",
-"revid": 10553,
-"ts": "2025-04-13",
-"giver": "",
-"zone": "",
-"min": "",
-"classes": [],
-"rewards": "",
-"kinds": [],
-"needsinfo": false,
-"steps": []
 },
 "Wanted: Ayip & Yapala": {
 "title": "Wanted: Ayip & Yapala",
@@ -3607,19 +3555,6 @@
 ]
 ]
 },
-"Category:Fighter Quests": {
-"title": "Category:Fighter Quests",
-"revid": 10433,
-"ts": "2025-04-12",
-"giver": "",
-"zone": "",
-"min": "",
-"classes": [],
-"rewards": "",
-"kinds": [],
-"needsinfo": false,
-"steps": []
-},
 "The Missing Apprentice": {
 "title": "The Missing Apprentice",
 "revid": 75107,
@@ -3692,47 +3627,6 @@
 "Experience"
 ]
 ]
-},
-"Category:Spellblade Quests": {
-"title": "Category:Spellblade Quests",
-"revid": 8063,
-"ts": "2024-09-04",
-"giver": "",
-"zone": "",
-"min": "",
-"classes": [],
-"rewards": "",
-"kinds": [
-"spell"
-],
-"needsinfo": false,
-"steps": []
-},
-"Category:Enchanter Quests": {
-"title": "Category:Enchanter Quests",
-"revid": 12115,
-"ts": "2025-07-24",
-"giver": "",
-"zone": "",
-"min": "",
-"classes": [],
-"rewards": "",
-"kinds": [],
-"needsinfo": false,
-"steps": []
-},
-"Category:Shaman Quests": {
-"title": "Category:Shaman Quests",
-"revid": 25525,
-"ts": "2026-03-19",
-"giver": "",
-"zone": "",
-"min": "",
-"classes": [],
-"rewards": "",
-"kinds": [],
-"needsinfo": false,
-"steps": []
 },
 "Fariha's Shawl Quest": {
 "title": "Fariha's Shawl Quest",
@@ -4022,19 +3916,6 @@
 ]
 ]
 },
-"Category:Cleric Quests": {
-"title": "Category:Cleric Quests",
-"revid": 10355,
-"ts": "2025-04-12",
-"giver": "",
-"zone": "",
-"min": "",
-"classes": [],
-"rewards": "",
-"kinds": [],
-"needsinfo": false,
-"steps": []
-},
 "Poacher's Knives": {
 "title": "Poacher's Knives",
 "revid": 74866,
@@ -4139,19 +4020,6 @@
 "Experience"
 ]
 ]
-},
-"Category:Bard Quests": {
-"title": "Category:Bard Quests",
-"revid": 2717,
-"ts": "2024-06-02",
-"giver": "",
-"zone": "",
-"min": "",
-"classes": [],
-"rewards": "",
-"kinds": [],
-"needsinfo": false,
-"steps": []
 },
 "Shadow Knight Starter Quest (Night Harbor)": {
 "title": "Shadow Knight Starter Quest (Night Harbor)",
@@ -5172,19 +5040,6 @@
 ]
 ]
 },
-"Category:Quests by Zone": {
-"title": "Category:Quests by Zone",
-"revid": 44317,
-"ts": "2026-06-24",
-"giver": "",
-"zone": "",
-"min": "",
-"classes": [],
-"rewards": "",
-"kinds": [],
-"needsinfo": false,
-"steps": []
-},
 "Dealing with the Blacktide Orcs": {
 "title": "Dealing with the Blacktide Orcs",
 "revid": 80175,
@@ -5865,19 +5720,6 @@
 "*"
 ]
 ]
-},
-"Category:Inquisitor Quests": {
-"title": "Category:Inquisitor Quests",
-"revid": 10047,
-"ts": "2025-03-25",
-"giver": "",
-"zone": "",
-"min": "",
-"classes": [],
-"rewards": "",
-"kinds": [],
-"needsinfo": false,
-"steps": []
 },
 "Turf War with The Fight Club": {
 "title": "Turf War with The Fight Club",
@@ -7150,19 +6992,6 @@
 ]
 ]
 },
-"Category:Rogue Quests": {
-"title": "Category:Rogue Quests",
-"revid": 2720,
-"ts": "2024-06-02",
-"giver": "",
-"zone": "",
-"min": "",
-"classes": [],
-"rewards": "",
-"kinds": [],
-"needsinfo": false,
-"steps": []
-},
 "Mushroom Menace": {
 "title": "Mushroom Menace",
 "revid": 74595,
@@ -7654,19 +7483,6 @@
 ]
 ]
 },
-"Category:Druid Quests": {
-"title": "Category:Druid Quests",
-"revid": 2718,
-"ts": "2024-06-02",
-"giver": "",
-"zone": "",
-"min": "",
-"classes": [],
-"rewards": "",
-"kinds": [],
-"needsinfo": false,
-"steps": []
-},
 "Druid Starter Quest (Faelindral)": {
 "title": "Druid Starter Quest (Faelindral)",
 "revid": 80229,
@@ -7927,19 +7743,6 @@
 ]
 ]
 },
-"Category:Necromancer Quests": {
-"title": "Category:Necromancer Quests",
-"revid": 10600,
-"ts": "2025-04-14",
-"giver": "",
-"zone": "",
-"min": "",
-"classes": [],
-"rewards": "",
-"kinds": [],
-"needsinfo": false,
-"steps": []
-},
 "Kill Tora'Galdo": {
 "title": "Kill Tora'Galdo",
 "revid": 74194,
@@ -8192,19 +7995,6 @@
 "kinds": [
 "armor"
 ],
-"needsinfo": false,
-"steps": []
-},
-"Category:All Class Quests": {
-"title": "Category:All Class Quests",
-"revid": 70874,
-"ts": "2026-09-13",
-"giver": "",
-"zone": "",
-"min": "",
-"classes": [],
-"rewards": "",
-"kinds": [],
 "needsinfo": false,
 "steps": []
 },
@@ -8469,19 +8259,6 @@
 ]
 ]
 },
-"Category:Ranger Quests": {
-"title": "Category:Ranger Quests",
-"revid": 10441,
-"ts": "2025-04-12",
-"giver": "",
-"zone": "",
-"min": "",
-"classes": [],
-"rewards": "",
-"kinds": [],
-"needsinfo": false,
-"steps": []
-},
 "Wilna's Ring": {
 "title": "Wilna's Ring",
 "revid": 74867,
@@ -8539,32 +8316,6 @@
 "Poacher's Knives"
 ]
 ]
-},
-"Category:Paladin Quests": {
-"title": "Category:Paladin Quests",
-"revid": 10333,
-"ts": "2025-04-12",
-"giver": "",
-"zone": "",
-"min": "",
-"classes": [],
-"rewards": "",
-"kinds": [],
-"needsinfo": false,
-"steps": []
-},
-"Category:Beastmaster Quests": {
-"title": "Category:Beastmaster Quests",
-"revid": 10309,
-"ts": "2025-04-11",
-"giver": "",
-"zone": "",
-"min": "",
-"classes": [],
-"rewards": "",
-"kinds": [],
-"needsinfo": false,
-"steps": []
 },
 "Find Delilah's Pet": {
 "title": "Find Delilah's Pet",
@@ -9078,19 +8829,6 @@
 "You receive Spellbinder's Inquisitor Talisman from Petra Gyle."
 ]
 ]
-},
-"Category:Shadow Knight Quests": {
-"title": "Category:Shadow Knight Quests",
-"revid": 2721,
-"ts": "2024-06-02",
-"giver": "",
-"zone": "",
-"min": "",
-"classes": [],
-"rewards": "",
-"kinds": [],
-"needsinfo": false,
-"steps": []
 },
 "House Velgarrith (Quest)": {
 "title": "House Velgarrith (Quest)",
