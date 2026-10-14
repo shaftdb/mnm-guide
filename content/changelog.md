@@ -16,6 +16,8 @@ Newest first.
 
 | Date | Change | Known gaps |
 |---|---|---|
+| Oct 13, 2026 | **Navigation** regrouped into one line of menus: Home, Class, World, Database, Crafting & Economy, News, Tools. Menus open on hover, click or tap, and work with the keyboard (Enter, arrow keys, Esc). On narrow screens, the ☰ menu shows collapsible groups | — |
+| Oct 13, 2026 | **My class**: gear and quick-reference sections now follow the class picker. All 18 classes get an easy BiS page by level range, gear lists by level, leveling camps by range, spells by level and solo, group and duo notes. The existing Shaman pages are the Shaman view. Nav links and class pages switch to the picked class (remembered in this browser) | Gear picks are this guide's suggestion from wiki stats. Classes without wiki stat advice, and level ranges with few wiki items, have thin or empty lists. Playbook, quest and gathering pages are still Shaman-only |
 | Oct 13, 2026 | **Dungeons** expanded: Blacktide Bay, Tel Ekir, Rothold and Fallen Watch added (all in the wiki's Dungeons category), same format as the others | Tel Ekir has a key diagram from the wiki map legend and Rothold a one-area schematic from wiki NPC locations; Blacktide Bay and Fallen Watch have no sourced layout. Blacktide Bay and Tel Ekir entrances, Fallen Watch named levels and most Rothold camps aren't on the wiki |
 | Oct 13, 2026 | **Community tools** added: spell timer, XP per hour calculator and camp notepad | Data is saved only in your own browser, so it doesn't sync between devices or with your group |
 | Oct 13, 2026 | **Events timeline** added: dated list of official patches, news posts and milestones | Updated by hand when we rebuild, so it isn't live. Only official sources |
