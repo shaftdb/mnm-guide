@@ -931,6 +931,7 @@ def dungeon_index():
 
 
 # ------------------------------------------------------------------ patch notes digest
+PSUM = json.load(open(os.path.join(CONTENT, 'patch_summaries.json'), encoding='utf8')) if os.path.exists(os.path.join(CONTENT, 'patch_summaries.json')) else {}
 PATCHES = json.load(open(os.path.join(DATA, 'patches.json'), encoding='utf8')) if os.path.exists(os.path.join(DATA, 'patches.json')) else []
 SYSTEMS = [('PvP', r'\bpvp\b'), ('UI', r'\bui\b|hotbar|window|tooltip|chat'), ('Tradeskills', r'tradeskill|crafting|smith|tailor|carpent|brew|fletch|jewel|enchanting|harvest|mining|lumber|fishing'),
            ('Housing', r'housing|\bhouse\b|plot'), ('Items', r'\bitems?\b|loot|drop'), ('Quests', r'\bquests?\b'), ('Combat', r'threat|aggro|damage|\bheal|resist|\bmana\b|combat'),
@@ -948,7 +949,7 @@ def patch_tags(p):
     sy = [n for n, r in SYSTEMS if re.search(r, blob, re.I)]
     return cl, zn, sy
 def patches_page():
-    o = ['<p>Every official patch, newest first. The change lists are the official text, grouped as published <span class="badge fact">fact</span>. The one-line digest and the tags are worked out automatically from that text by keyword, so a tag can miss or over-match <span class="badge unc">unverified</span>. Patches that mention your selected class (top bar) are highlighted. Use "Filter this page" for a zone, system or spell name.</p>',
+    o = ['<p>Every official patch, newest first. The change lists are the official text, grouped as published <span class="badge fact">fact</span>. The one-line digest and the tags are worked out automatically from that text by keyword, so a tag can miss or over-match <span class="badge unc">unverified</span>. Our own plain-English summaries, written only from the official wording, cover the latest 10 patches and are marked <span class="badge strat">summary</span>. Patches that mention your selected class (top bar) are highlighted. Use "Filter this page" for a zone, system or spell name.</p>',
          '<p class="dim">Patch note pages missing from the official site (numbers %s) are not listed.</p>' % ', '.join(str(n) for n in sorted(set(range(1, PATCHES[0]['n'])) - {x['n'] for x in PATCHES})) if PATCHES else '']
     for p in PATCHES:
         cl, zn, sy = patch_tags(p)
@@ -957,8 +958,8 @@ def patches_page():
         dig = '%d change%s, mostly %s.' % (nitems, '' if nitems == 1 else 's', ', '.join('%s (%d)' % (x['h'].strip('* '), len(x['items'])) for x in big))
         tags = ''.join('<a class="tag tcls" href="%s">%s</a>' % (class_url(c), esc(c)) for c in cl) + ''.join('<a class="tag tzone" href="%s">%s</a>' % (zone_url(z), esc(z)) for z in zn) + ''.join('<span class="tag tsys">%s</span>' % esc(x) for x in sy)
         secs = ''.join('<h4>%s</h4><ul class="tight">%s</ul>' % (esc(x['h'].strip('* ')), ''.join('<li>%s</li>' % esc(i) for i in x['items'])) for x in p['sections'])
-        o.append('<details class="patch" id="p%d" data-cls="%s"><summary><b>%s</b> <span class="dim">%s</span><br><span class="pdig">%s</span><span class="ptags">%s</span></summary>%s<p class="dim"><a class="ext" target="_blank" rel="noopener" href="%s">Official patch note</a></p></details>' % (
-            p['n'], esc('|'.join(cl)), esc(p['title']), esc(p['date']), esc(dig), tags, secs, esc(p['url'])))
+        o.append('<details class="patch" id="p%d" data-cls="%s"><summary><b>%s</b> <span class="dim">%s</span><br>%s<span class="pdig">%s</span><span class="ptags">%s</span></summary>%s<p class="dim"><a class="ext" target="_blank" rel="noopener" href="%s">Official patch note</a></p></details>' % (
+            p['n'], esc('|'.join(cl)), esc(p['title']), esc(p['date']), ('<span class="psum"><span class="badge strat">summary</span> %s</span>' % esc(PSUM[str(p['n'])])) if str(p['n']) in PSUM else '', esc(dig), tags, secs, esc(p['url'])))
     return ''.join(o)
 
 GENS.update(classquick=g_classquick, classbands=g_classbands)

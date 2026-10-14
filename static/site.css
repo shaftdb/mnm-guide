@@ -155,3 +155,4 @@ details.patch summary{cursor:pointer}details.patch h4{margin:.6em 0 .2em}
 .tag.tcls{border-color:var(--gold)}.tag.tzone{border-color:#3d7a48}
 details.patch.clsok,tr.clsok,.zcard.clsok{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset}
 .sptools{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}.sptools select,.sptools input{max-width:100%}
+.psum{display:block;margin:4px 0;font-size:.92rem}
