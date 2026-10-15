@@ -5,8 +5,8 @@ desc: Game patch summary and site verification dates
 sources: Official patch notes|https://account.monstersandmemories.com/community/patch_notes
 ---
 :::facts Verification
-Site built: 2026-10-14
-Latest patch checked: 0.30.3.2 (Oct 14, 2026)
+Site built: 2026-10-15
+Latest patch checked: 0.30.2.9 (Oct 15, 2026)
 Wiki data pulled: 2026-10-11 (MediaWiki API)
 Deep dives fetched: 2026-10-11
 :::
@@ -16,6 +16,7 @@ Newest first.
 
 | Date | Change | Known gaps |
 |---|---|---|
+| Oct 15, 2026 | **Patch 0.30.2.9 (Patch 12 after 0.30.3.2 reversion)** added to the patch digest, home page and events timeline with a plain-English summary | — |
 | Oct 14, 2026 | **Broken class guide links fixed**: the "Full [class] guide" link in the class quick-reference box pointed outside the site and gave a 404 for every class. It now goes to the Shaman extended guide or each class's overview page | — |
 | Oct 14, 2026 | **Patch 12 (0.30.3.2)** added to the patch digest, home page and events timeline with a plain-English summary | — |
 | Oct 13, 2026 | **Navigation** regrouped into one line of menus: Home, Class, World, Database, Crafting & Economy, News, Tools. Menus open on hover, click or tap, and work with the keyboard (Enter, arrow keys, Esc). On narrow screens, the ☰ menu shows collapsible groups | — |
@@ -35,10 +36,11 @@ Newest first.
 | Oct 13, 2026 | **Dungeons** launched: 9 dungeons with maps, loot, directions, access and tips | 3 dungeons have no map yet. Hidden Grotto isn't covered (wiki is placeholder only) and Night Harbor Sewers are closed |
 
 ## Game patches since Early Access
-Patch note IDs 46–60 were read in full. IDs 49 and 50 returned 404 when checked.
+Patch note IDs 46–61 were read in full. IDs 49 and 50 returned 404 when checked. Official listing no longer shows 0.30.3.2 after the Oct 15 reversion.
 
 | Version | Date | Highlights for me | Link |
 |---|---|---|---|
+| 0.30.2.9 | Oct 15 | **Live client rolled back from 0.30.3.2.** Coin drops rebalanced across many NPC types, herb spawn restrictions fixed, Ranger Recuperate bug from the reversion fixed | [#61](https://account.monstersandmemories.com/community/patch_notes/61) |
 | 0.30.3.2 | Oct 14 | **Permanent fix for missing house crates; scroll overcharge refunds to your bank.** Cleric HP-buff heals no longer scale with Wisdom, Ranger Recuperate out-of-combat only, more cash loot from common mobs, Woodworking cap 300, big server optimizations (may be rolled back) | [#60](https://account.monstersandmemories.com/community/patch_notes/60) |
 | 0.30.2.8 | Oct 11 | More tradeskill economic-exploit fixes. **Night Harbor reunited into one zone.** Missing house crates are back | [#59](https://account.monstersandmemories.com/community/patch_notes/59) |
 | 0.30.2.7 | Oct 11 | Fixes for exploits with mispriced tradeskill items | [#58](https://account.monstersandmemories.com/community/patch_notes/58) |
