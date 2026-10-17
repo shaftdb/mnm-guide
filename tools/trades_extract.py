@@ -31,8 +31,9 @@ for f in glob.glob(os.path.join(R, 'raw', 'wiki', 'Skill *.json')):
             if any(cell(x) == 'Example' for x in raw): continue
             rows.append({'c': [cell(x) for x in raw], 'l': [links(x) for x in raw]})
         if not head:
-            h = re.search(r'^!(.*)$', tb, re.M)
-            if h: head = [cell(x) for x in re.split(r'!!|\|\|', h.group(1))]
+            pre = re.split(r'^\|-.*$', tb, flags=re.M)[0]   # header rows written before the first |- (one ! line per column)
+            hl = [l[1:] for l in pre.splitlines() if l.startswith('!')]
+            if hl: head = [cell(x) for l in hl for x in re.split(r'!!|\|\|', l)]
         if rows: tables.append({'sec': sec, 'head': head, 'rows': rows})
     out[name] = {'name': name, 'title': d['title'], 'revid': d['revid'], 'ts': d['ts'][:10], 'info': info, 'intro': paras[:2], 'tips': tips[:6], 'tables': tables}
 json.dump(out, open(os.path.join(R, 'data', 'trades.json'), 'w', encoding='utf8'), ensure_ascii=False)
