@@ -1,0 +1,22 @@
+.ts-f{position:relative}
+.ts-dd{position:relative}
+.ts-dd>summary{list-style:none;background:#0d0b08;color:var(--ink);border:1px solid var(--gold);border-radius:4px;padding:5px 10px;font-size:.95rem;white-space:nowrap;max-width:12rem;overflow:hidden;text-overflow:ellipsis}
+.ts-dd>summary::-webkit-details-marker{display:none}
+.ts-dd>summary::after{content:" ▾";color:var(--gold)}
+.ts-menu{position:absolute;top:calc(100% + 4px);left:0;z-index:40;background:var(--panel);border:1px solid var(--gold);border-radius:6px;padding:6px 10px;min-width:15rem;max-height:65vh;overflow:auto;box-shadow:0 8px 20px #000c}
+.ts-menu fieldset{border:0;border-top:1px solid var(--line);margin:4px 0 0;padding:4px 0 0}
+.ts-menu legend{color:var(--gold2);font-size:.82rem;font-weight:700;padding:0 4px 0 0}
+.ts-menu label{display:block;padding:2px 0;font-size:.9rem;cursor:pointer}
+.ts-menu small{color:var(--dim)}
+.ts-btns{display:flex;gap:6px;margin-top:6px}.ts-btns button{flex:1;background:#0d0b08;color:var(--gold2);border:1px solid var(--line);border-radius:4px;padding:3px 4px;cursor:pointer}
+.tshide{display:none!important}
+.ts-guide{margin:0 0 12px}
+.ts-ok{color:#9fd9a7;font-size:.82em;white-space:nowrap}.ts-no{color:#d08c7e;font-size:.82em;white-space:nowrap}
+.ts-t td{font-size:.86rem;vertical-align:top}
+.ts-badge{display:inline-block;margin-left:4px;padding:0 5px;border-radius:9px;font-size:.72rem;line-height:1.5;background:#2b2440;color:#d9ccff;border:1px solid #5b4b8a;white-space:nowrap;vertical-align:1px}
+.ts-badge.unc{background:#3a1f1a;color:#f0c0b4;border-color:var(--unc)}
+.ts-all{white-space:nowrap}
+@media (max-width:640px){
+ .ts-dd>summary{font-size:.85rem;padding:4px 7px;max-width:8.5rem}
+ .ts-menu{position:fixed;left:6px;right:6px;top:auto;min-width:0;max-height:60vh}
+}
