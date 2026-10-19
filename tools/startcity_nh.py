@@ -10,6 +10,7 @@ from startcity_common import *
 CITY = 'Night Harbor'
 S = dict(S_COMMON); S.update(S_MID)
 S.update({
+ 'ench': ['Wiki: Enchanter (rev 82930, Human starting stats)', w('Enchanter')],
  'nh': ['Wiki: Night Harbor (rev 83168, 2026-10-18)', w('Night Harbor')],
  'monme': ["monme.no camps (Petrichor's database)", 'https://monme.no/camps'],
  'pk': ['Wiki faction: Penitent Knights of the Hospice', w('Penitent Knights of the Hospice')],
@@ -31,6 +32,7 @@ S.update({
 races, classes = who_starts(CITY)
 
 intro = [
+ it(U, "Human Enchanter is not on the wiki start-city table (rev 74855), but the official Enchanter page and the wiki Human and Enchanter pages (rev 82930) list it, so this Codex infers a Night Harbor start from the Enchanter guild there. The guild master and starter-quest NPC is Master Wincog (Night Harbor zone page and Enchanter Starter Quest). Deities: no sourced data yet.", 'ench', 'nh', 'sqenc', races=['Human'], classes=['Enchanter']),
  it(F, 'Night Harbor is the seat of the Langsdorfian League, a confederacy of guilds with a near monopoly on trade and transport. The wiki gives the zone as level 1-50, with Ashira, bats, goblins, jackals, rats, scarabs, skeletons and snakes.', 'nh'),
  it(F, 'The start-city table allows these races to start here: %s. Pick a combination with the Race, Class and Start boxes in the top bar.' % ', '.join(races), 'start'),
  it(F, 'Neighbouring zones: Shaded Dunes (west gate), Sungreet Strand (north gate), Tomb of the Last Wyrmsbane, the Night Harbor Sewers and the Underdocks (lift down).', 'nh'),
@@ -100,6 +102,10 @@ Q.update({
              mobs=[{'item': 'Fire Beetle Carapace x2', 'from': 'a fire beetle (2), noob yards'}]),
 })
 Q.update(Q_MID)
+Q['s-enchanter'].update(giver='Master Wincog (hand him the Torn Note you start with)',
+    where="Wincog's curious goods shop, on the long stairs between Sageside and Saltbreeze Park. On the registered path you go to Registrar Vauquelin, ground floor of the Spellbinders Spire",
+    rewards='Dusty Violet Robe (Wincog path) or Rough Cut Robe (Vauquelin path); later a Braided Crystal Ring and a no-drop Scroll: Invisibility versus Undead (wiki rev 80831)',
+    faction='House of Candor (−) at one step; no other faction changes listed', src=['qs', 'sqenc'])
 ST_CLASS = [it(F, 'Class starter quest:', 'qs', quest=k, classes=v['classes']) for k, v in sorted(Q.items()) if k.startswith('s-')]
 bands = [
  {'lo': 1, 'hi': 5, 'title': 'Class starter quest, noob yards, scarab armor', 'steps': ST_CLASS + [

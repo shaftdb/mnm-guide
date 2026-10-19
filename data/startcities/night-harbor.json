@@ -290,6 +290,10 @@
    "Reddit: Levelling location near Evershade Weald level 13 (2026-08-10)",
    "https://www.reddit.com/r/MonstersAndMemories/comments/1vkskp0/levelling_location_near_evershade_weald_level_13/"
   ],
+  "ench": [
+   "Wiki: Enchanter (rev 82930, Human starting stats)",
+   "https://monstersandmemories.miraheze.org/wiki/Enchanter"
+  ],
   "nh": [
    "Wiki: Night Harbor (rev 83168, 2026-10-18)",
    "https://monstersandmemories.miraheze.org/wiki/Night_Harbor"
@@ -360,6 +364,21 @@
   ]
  },
  "intro": [
+  {
+   "label": "UNVERIFIED",
+   "text": "Human Enchanter is not on the wiki start-city table (rev 74855), but the official Enchanter page and the wiki Human and Enchanter pages (rev 82930) list it, so this Codex infers a Night Harbor start from the Enchanter guild there. The guild master and starter-quest NPC is Master Wincog (Night Harbor zone page and Enchanter Starter Quest). Deities: no sourced data yet.",
+   "src": [
+    "ench",
+    "nh",
+    "sqenc"
+   ],
+   "races": [
+    "Human"
+   ],
+   "classes": [
+    "Enchanter"
+   ]
+  },
   {
    "label": "FACT",
    "text": "Night Harbor is the seat of the Langsdorfian League, a confederacy of guilds with a near monopoly on trade and transport. The wiki gives the zone as level 1-50, with Ashira, bats, goblins, jackals, rats, scarabs, skeletons and snakes.",
@@ -759,8 +778,12 @@
    "why": "Your class starter quest: first armor or a class item, guild faction and your trainer.",
    "src": [
     "qs",
-    "nh"
-   ]
+    "sqenc"
+   ],
+   "giver": "Master Wincog (hand him the Torn Note you start with)",
+   "where": "Wincog's curious goods shop, on the long stairs between Sageside and Saltbreeze Park. On the registered path you go to Registrar Vauquelin, ground floor of the Spellbinders Spire",
+   "rewards": "Dusty Violet Robe (Wincog path) or Rough Cut Robe (Vauquelin path); later a Braided Crystal Ring and a no-drop Scroll: Invisibility versus Undead (wiki rev 80831)",
+   "faction": "House of Candor (−) at one step; no other faction changes listed"
   },
   "s-fighter": {
    "auto": "Fighter Starter Quest (Night Harbor)",
