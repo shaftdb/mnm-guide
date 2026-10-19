@@ -82,3 +82,48 @@ html.halloween .search input,html.halloween select,html.halloween .pagefilter,ht
   .card:hover{transform:none}
 }
 @media print{.skip,.ux-setup{display:none}body.ux-mini .topin{position:static}}
+
+/* ===== UX pass 2 ===== */
+/* loading states for lazily loaded data */
+.lz-status{color:var(--dim);font-style:italic;margin:.4em 0}
+.lz-status::before{content:"";display:inline-block;width:.8em;height:.8em;margin-right:.45em;border:2px solid var(--gold);border-right-color:transparent;border-radius:50%;vertical-align:-1px;animation:lz-spin .9s linear infinite}
+.lz-status.lz-err{color:var(--red);font-style:normal}.lz-status.lz-err::before{display:none}
+@keyframes lz-spin{to{transform:rotate(360deg)}}
+.qres .lz-status{display:block;padding:8px 10px}
+/* slightly larger table text */
+table.grid{font-size:.92rem}
+/* sortable headers: keyboard focusable, show the sort state */
+table.sortable th[aria-sort=ascending]::after{content:" \25B2";font-size:.7em}
+table.sortable th[aria-sort=descending]::after{content:" \25BC";font-size:.7em}
+/* My setup + valid-starts disclosure + On this page: phone-only controls */
+.ux-mysetup,.ux-cgv-btn,.ux-otp{display:none}
+@media (max-width:640px){
+  html{font-size:16px}
+  body{font-size:16px}
+  table.grid{font-size:.9rem}
+  .ux-mysetup{display:flex;align-items:center;gap:8px;width:100%;min-height:var(--tap);padding:6px 12px;background:none;border:0;color:var(--ink);font:inherit;font-size:.92rem;text-align:left;cursor:pointer}
+  .ux-ms-l{font-family:Georgia,serif;font-weight:700;color:var(--gold2);white-space:nowrap}
+  .ux-ms-v{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ux-ms-c{color:var(--gold);transition:transform .15s}
+  .rangebar.ux-open .ux-ms-c{transform:rotate(180deg)}
+  .rangebar .rangebar-in{display:none}
+  .rangebar.ux-open .rangebar-in{display:flex;border-top:1px solid var(--line)}
+  .ux-cgv-btn{display:inline-flex;align-items:center;gap:6px;min-height:var(--tap);background:none;border:1px solid var(--line);border-radius:var(--r1);color:var(--gold2);font:inherit;font-size:.85rem;padding:0 10px;cursor:pointer}
+  #cg-valid.ux-cgv{display:none}
+  .rangebar.ux-cgv-open #cg-valid.ux-cgv{display:block}
+}
+@media (max-width:800px){
+  body.ux-has-otp{padding-bottom:68px}
+  .ux-otp{display:inline-flex;align-items:center;gap:6px;position:fixed;right:12px;bottom:12px;z-index:45;min-height:var(--tap);padding:0 16px;border-radius:22px;
+    background:var(--panel);color:var(--gold2);border:1px solid var(--gold);font:inherit;font-size:.92rem;box-shadow:0 4px 14px #000c;cursor:pointer}
+  html.halloween .ux-otp{box-shadow:0 4px 14px #000c,0 0 10px rgba(124,242,180,.3)}
+  body.ux-has-otp .right .box.toc{display:none}
+}
+dialog.ux-sheet{border:1px solid var(--gold);border-radius:var(--r3) var(--r3) 0 0;background:var(--panel);color:var(--ink);padding:0;margin:auto auto 0;width:100%;max-width:560px;max-height:75vh;box-shadow:0 -6px 24px #000c}
+dialog.ux-sheet::backdrop{background:rgba(0,0,0,.55)}
+.ux-sheet-hd{display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--panel);border-bottom:1px solid var(--line);padding:4px 8px 4px 16px}
+.ux-sheet-hd h2{margin:0;padding:0;background:none;border:0;font-size:1.1rem}
+.ux-sheet-x{min-width:var(--tap);min-height:var(--tap);background:none;border:0;color:var(--gold2);font-size:1.2rem;cursor:pointer}
+dialog.ux-sheet ul{list-style:none;margin:0;padding:4px 0 12px}
+dialog.ux-sheet a{display:flex;align-items:center;min-height:var(--tap);padding:6px 16px;border-bottom:1px solid var(--line)}
+@media (prefers-reduced-motion:reduce){.lz-status::before{animation:none;border-right-color:var(--gold)}}

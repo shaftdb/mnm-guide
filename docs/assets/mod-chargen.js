@@ -73,7 +73,7 @@ document.addEventListener('click',function(e){var b=e.target.closest&&e.target.c
   try{localStorage.setItem('mnm-trades',b.getAttribute('data-ts'))}catch(x){}var m=b.parentNode.querySelector('.cg-ts-msg');if(m)m.textContent='Saved to your Trades picker. Reloading…';setTimeout(function(){location.reload()},400);});
 
 // ---- walkthrough
-var W=window.MNM_WT, mount=document.getElementById('cg-walk');
+var W=window.MNM_WT, mount=document.getElementById('cg-walk'), wtFail=0;
 function band(){var v=(selL&&selL.value)||get('mnm-range')||'11-15';return v}
 function bl(k){return k.split('-').map(Number)}
 function badge(l){l=String(l||'unverified').toUpperCase();var c=l==='FACT'?'fact':l==='STRATEGY'?'strat':'unc';return '<span class="badge '+c+'">'+esc(l.toLowerCase())+'</span>'}
@@ -133,11 +133,11 @@ function walkHTML(c,race,city,k,opt){var code=W.codes[c],C=W.cities[city],R=W.ra
   if(nh) h.push('<h2 id="wt-nh">Starting near Night Harbor</h2><p>'+badge('fact')+' '+esc(nh.summary)+'</p><ul>'+nh.cities.map(function(x){return '<li><b>'+esc(x.city)+'</b>: '+esc(x.distance)+' <i>'+esc(x.inq)+'</i></li>'}).join('')+'</ul><p>'+badge('strategy')+' '+esc(nh.best)+'</p><p class="dim">'+badge('unverified')+' '+esc(nh.caveat)+'</p>');
   if(opt){opt.C=C;opt.st=st;opt.tr=tr;opt.sq=sq;opt.s1=s1;opt.dz=dz;}
   return h.join('');}
-function walk(){if(!W||!mount)return;mount.innerHTML=walkHTML(cls(),race,city,band());}
+function walk(){if(!mount)return;if(!W){if(wtFail)mount.innerHTML='<p class="lz-status lz-err">'+badge('unverified')+' Walkthrough data did not load (offline?). Reload to retry.</p>';return}mount.innerHTML=walkHTML(cls(),race,city,band());}
 // ---- class pages: Quick info walkthrough summary for the selected band (reuses walkHTML; never falls back to another city's route)
 function setBand(k){if(selL){selL.value=k;selL.dispatchEvent(new Event('change'))}else{put('mnm-range',k);apply()}}
 function qwalk(el){var c=el.getAttribute('data-class'),k=band(),notes=[],r=race,t=city;
-  if(!W){el.innerHTML='<p>'+badge('unverified')+' Walkthrough data did not load: no sourced data yet.</p>';return}
+  if(!W){if(wtFail)el.innerHTML='<p class="lz-status lz-err">'+badge('unverified')+' Walkthrough data did not load (offline?): no sourced data shown. Reload to retry.</p>';return}
   if(!(G.combos[c]||{})[r]){var d=defRace(c);notes.push(badge('unverified')+' Your Race pick ('+esc(r||'none')+') cannot be a '+esc(c)+' on the wiki start-city table, so this shows '+esc(d)+'. Pick a race under <a href="#best-races">Best races for '+esc(c)+'</a>.');r=d}
   var cs=cities(c,r);if(cs.indexOf(t)<0){notes.push(badge('unverified')+' '+esc(t||'Your start')+' is not a valid start for a '+esc(r)+' '+esc(c)+', so this shows '+esc(cs[0]||'no start')+'.');t=cs[0]||''}
   var opt={bands:{}},full=walkHTML(c,r,t,k,opt),B=opt.bands[k],idx=W.bands.map(function(x){return x[0]}).indexOf(k),nx=W.bands[idx+1];
@@ -183,4 +183,8 @@ function hashTab(){var id=location.hash.slice(1);if(!id)return;var el=document.g
 window.addEventListener('hashchange',hashTab);document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(a)setTimeout(hashTab,0)});hashTab();
 function apply(){tailor();walk();qwalkAll();}
 apply();
+document.addEventListener('mnm:quick',function(){tailor();qwalkAll();});
+// UX pass 2: walk-data.js (~560 KB) is loaded async by the shared loader on pages that show a walkthrough, then rendered
+if(!W&&(mount||document.querySelector('.cg-qwalk'))){[mount].concat([].slice.call(document.querySelectorAll('.cg-qwalk'))).forEach(function(el){if(el){var p=el.querySelector('p');if(p){p.classList.add('lz-status');p.setAttribute('role','status');p.setAttribute('aria-busy','true');p.textContent='Loading the new-character walkthrough…'}}});
+ if(window.MNM_LOAD)MNM_LOAD('walk-data.js').then(function(){W=window.MNM_WT;apply()},function(){wtFail=1;apply()});else{wtFail=1;apply()}}
 })();

@@ -312,7 +312,7 @@ def race_rank_html(c, top=3):
 # ------------------------------------------------------------------ Quick info: compact new-character walkthrough (rendered by mod-chargen.js from walk-data.js)
 def qwalk_html(c):
     return ('<div class="cg-qwalk" data-class="%s" aria-live="polite"><p class="dim">New-character walkthrough for your Race and Start picks: loading… (needs JavaScript). '
-            'Or open the <a href="/walkthrough.html">full walkthrough</a>.</p></div><script src="/assets/walk-data.js"></script>') % esc(c)
+            'Or open the <a href="/walkthrough.html">full walkthrough</a>.</p></div>') % esc(c)
 
 def _tab_insert(body, label, key, pane_html):
     """Insert a tab (button after the first tab button, pane after the tab bar) into the first .tabs block."""
@@ -396,7 +396,7 @@ def _cg_walk_page():
             'Everything listed comes from this Codex\'s wiki data (zones, named camps, quests, factions, spells, gear) and is marked <span class="badge fact">fact</span>; the order and "when to move" advice is <span class="badge strat">strategy</span>. '
             'Where nothing is sourced it says so instead of guessing.</p>'
             '<div id="cg-walk" class="cg-walk" aria-live="polite"><p class="dim">Loading… (needs JavaScript)</p></div>'
-            '<script src="/assets/walk-data.js"></script>')
+            '')
 
 _cg_prev_ra = render_all
 def render_all():

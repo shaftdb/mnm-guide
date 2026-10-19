@@ -12,16 +12,18 @@ const SIZES=(process.env.UX_SIZES||'480x900,1024x768,3440x1440').split(',').map(
 (async()=>{
  let tabs;for(let i=0;i<50;i++){try{tabs=await getJSON('http://127.0.0.1:'+(PORT+1000)+'/json');break}catch(e){await sleep(200)}}
  const t=tabs.find(x=>x.type==='page');const ws=new WebSocket(t.webSocketDebuggerUrl);await new Promise(r=>ws.onopen=r);
- let id=0;const pend={},errs=[];ws.onmessage=m=>{const d=JSON.parse(m.data);if(d.id&&pend[d.id]){pend[d.id](d);delete pend[d.id]}else if(d.method==='Runtime.exceptionThrown')errs.push(JSON.stringify(d.params.exceptionDetails).slice(0,300))};
+ let id=0,bytes=0,jsb=0,reqs=0;const pend={},errs=[],rt={};ws.onmessage=m=>{const d=JSON.parse(m.data);if(d.id&&pend[d.id]){pend[d.id](d);delete pend[d.id]}else if(d.method==='Runtime.exceptionThrown')errs.push(JSON.stringify(d.params.exceptionDetails).slice(0,300));
+  else if(d.method==='Network.responseReceived')rt[d.params.requestId]=d.params.type;else if(d.method==='Network.loadingFinished'){bytes+=d.params.encodedDataLength;reqs++;if(rt[d.params.requestId]==='Script')jsb+=d.params.encodedDataLength}};
  const send=(method,params={})=>new Promise(r=>{const i=++id;pend[i]=r;ws.send(JSON.stringify({id:i,method,params}))});
  const ev=async e=>{const r=await send('Runtime.evaluate',{expression:e,returnByValue:true});return r.result.result&&r.result.result.value};
- await send('Page.enable');await send('Runtime.enable');
+ await send('Page.enable');await send('Runtime.enable');await send('Network.enable');await send('Network.setCacheDisabled',{cacheDisabled:true});const W={};
  for(const [w,h] of SIZES){
   await send('Emulation.setDeviceMetricsOverride',{width:w,height:h,deviceScaleFactor:1,mobile:w<600});
   if(w<600)await send('Emulation.setTouchEmulationEnabled',{enabled:true});else await send('Emulation.setTouchEmulationEnabled',{enabled:false});
   for(const [name,u] of PAGES){
-   await send('Page.navigate',{url:'http://127.0.0.1:'+PORT+'/'+u});
-   for(let i=0;i<150;i++){await sleep(100);if(await ev('document.readyState==="complete"'))break}await sleep(700);
+   bytes=0;jsb=0;reqs=0;await send('Page.navigate',{url:'http://127.0.0.1:'+PORT+'/'+u});
+   for(let i=0;i<150;i++){await sleep(100);if(await ev('document.readyState==="complete"'))break}await sleep(1500);
+   if(!W[name])W[name]={total_kb:Math.round(bytes/1024),js_kb:Math.round(jsb/1024),requests:reqs,width:w};
    const m=await ev(`(function(){var mn=document.querySelector('.main'),top=document.querySelector('.top');
      var small=0,tot=0;document.querySelectorAll('.top a,.top button,.top select,.top input,.rangebar a,.rangebar select,.rangebar button,.rangebar input').forEach(function(e){var r=e.getBoundingClientRect();if(r.width&&r.height&&(!e.checkVisibility||e.checkVisibility({visibilityProperty:true}))){tot++;if(r.height<44&&r.width<44||r.height<${w<600?44:24})small++}});
      return {ovf:document.documentElement.scrollWidth>innerWidth,main:mn?Math.round(mn.getBoundingClientRect().width):0,topH:top?Math.round(top.getBoundingClientRect().height):0,small:small,tot:tot}})()`);
@@ -30,6 +32,7 @@ const SIZES=(process.env.UX_SIZES||'480x900,1024x768,3440x1440').split(',').map(
    fs.writeFileSync(path.join(OUT,`${PFX}-${TAG}-${name}-${w}.png`),Buffer.from(r.result.data,'base64'));
   }
  }
+ console.log('WEIGHT '+JSON.stringify(W));if(process.env.UX_WEIGHT_OUT)fs.writeFileSync(process.env.UX_WEIGHT_OUT,JSON.stringify(W,null,1));
  console.log('js errors:',errs.length,errs.slice(0,3).join(' | '));
  ws.close();chrome.kill();srv.kill();process.exit(0);
 })().catch(e=>{console.error(e);chrome.kill();srv.kill();process.exit(1)});
