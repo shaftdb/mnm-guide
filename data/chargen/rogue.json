@@ -1,0 +1,283 @@
+{
+ "class": "Rogue",
+ "updated": "2026-10-18",
+ "generated_by": "tools/chargen_classes.py",
+ "sources": [
+  [
+   "Official class page: Rogue",
+   "https://monstersandmemories.com/class-rogue"
+  ],
+  [
+   "Wiki: Rogue (rev 81079)",
+   "https://monstersandmemories.miraheze.org/wiki/Rogue"
+  ],
+  [
+   "Wiki: Statistics (rev 82276)",
+   "https://monstersandmemories.miraheze.org/wiki/Statistics"
+  ],
+  [
+   "Wiki: Traits (Template:Traits rev 79106)",
+   "https://monstersandmemories.miraheze.org/wiki/Traits"
+  ],
+  [
+   "Wiki: Starting City by Race, Class, and Deity (rev 74855)",
+   "https://monstersandmemories.miraheze.org/wiki/Starting_City_by_Race,_Class,_and_Deity"
+  ],
+  [
+   "Official Early Access FAQ: starting areas",
+   "https://monstersandmemories.com/early-access-faq"
+  ],
+  [
+   "Wiki: Deep Elf (rev 69451)",
+   "https://monstersandmemories.miraheze.org/wiki/Deep_Elf"
+  ],
+  [
+   "Wiki: Deep Gnome (rev 75256)",
+   "https://monstersandmemories.miraheze.org/wiki/Deep_Gnome"
+  ],
+  [
+   "Wiki: Dwarf (rev 33158)",
+   "https://monstersandmemories.miraheze.org/wiki/Dwarf"
+  ],
+  [
+   "Wiki: Gnome (rev 33790)",
+   "https://monstersandmemories.miraheze.org/wiki/Gnome"
+  ],
+  [
+   "Wiki: Goblin (rev 74107)",
+   "https://monstersandmemories.miraheze.org/wiki/Goblin"
+  ],
+  [
+   "Wiki: Halfling (rev 26426)",
+   "https://monstersandmemories.miraheze.org/wiki/Halfling"
+  ],
+  [
+   "Wiki: Human (rev 26421)",
+   "https://monstersandmemories.miraheze.org/wiki/Human"
+  ],
+  [
+   "Wiki: Wood Elf (rev 26425)",
+   "https://monstersandmemories.miraheze.org/wiki/Wood_Elf"
+  ]
+ ],
+ "stat_facts": [
+  [
+   "STA",
+   "Increases health and reduces chance to be dazed in combat (wiki Statistics; '1 STA = 1 HP' is marked 'need testing' there)."
+  ],
+  [
+   "AGI",
+   "Provides damage mitigation (wiki Statistics)."
+  ],
+  [
+   "STR",
+   "Increases melee and ranged weapon damage and shield block amounts; 1 STR = 2 weight (wiki Statistics)."
+  ],
+  [
+   "DEX",
+   "Increases hit rate, weapon proc frequency and gives a channeling bonus to spellcasters (wiki Statistics)."
+  ],
+  [
+   "INT",
+   "Mana pool size if INT is higher than WIS, and offensive spell damage (wiki Statistics)."
+  ],
+  [
+   "WIS",
+   "Mana pool size if WIS is higher than INT, and healing done; 4 mana per WIS point for WIS-based classes (wiki Statistics)."
+  ],
+  [
+   "CHA",
+   "Merchant prices and charm break rate on paper; the wiki notes CHA did not seem to affect vendor prices in beta (May 2026)."
+  ]
+ ],
+ "class_mod": "+4 DEX, +4 AGI (wiki Rogue Creation Guide)",
+ "mana": {
+  "stat": null,
+  "text": "No spell on the wiki Rogue list has a numeric mana cost.",
+  "label": "FACT"
+ },
+ "wiki_advice": null,
+ "builds": [
+  {
+   "name": "Backstabber (default)",
+   "alloc": {
+    "DEX": 4,
+    "STR": 3,
+    "AGI": 3
+   },
+   "why": "Rogues deal damage with dagger backstabs and thrown weapons (official). DEX for hit rate and procs, STR for damage, AGI to survive aggro."
+  },
+  {
+   "name": "Max damage",
+   "alloc": {
+    "DEX": 5,
+    "STR": 5
+   },
+   "why": "For groups where you never take aggro."
+  },
+  {
+   "name": "Solo sneak",
+   "alloc": {
+    "AGI": 4,
+    "STA": 3,
+    "DEX": 3
+   },
+   "why": "More mitigation and HP for soloing and corpse runs."
+  }
+ ],
+ "build_caveat": "Point totals are from the wiki race pages (10 bonus points for every listed race/class). Whether a stat has a per-point cap or diminishing returns at creation is not documented on the wiki: UNVERIFIED.",
+ "traits": [
+  {
+   "cat": "Major Combat Traits",
+   "pick": "Dexterous",
+   "alt": [
+    "Strong",
+    "Agile"
+   ],
+   "why": "Dexterous: +5% DEX and a 15-second +50% DEX burst."
+  },
+  {
+   "cat": "Minor Combat Traits",
+   "pick": "Cutthroat",
+   "alt": [
+    "Knife Thrower",
+    "Warrior"
+   ],
+   "why": "Cutthroat starts Piercing at 5 (+25%) with a Trainee's Dirk: daggers are your main weapon. Knife Thrower gives 1000 throwing daggers."
+  },
+  {
+   "cat": "Major Non-Combat Traits",
+   "pick": "Forage",
+   "alt": [
+    "Infravision",
+    "Ultravision",
+    "Slow Metabolism"
+   ],
+   "why": "Forage finds food and drink in the field, so fewer vendor runs. Rogues may take it. Infravision or Ultravision only if your race may take it (see the race note).",
+   "race_pick": {
+    "Halfling": "Infravision (you already have Forage as a racial)",
+    "Wood Elf": "Infravision (you already have Forage as a racial)"
+   }
+  },
+  {
+   "cat": "Minor Non-Combat Traits",
+   "pick": "Poison Maker",
+   "alt": [
+    "Miner",
+    "Medic"
+   ],
+   "why": "Poison Maker (Rogue only) starts Poison Making at 25 (+25% speed) with a kit; the official page makes poisons a core Rogue tool."
+  }
+ ],
+ "trait_caveat": "Trait text and race/class limits are from Template:Traits; picks that your race cannot take are swapped automatically in the race note. Which trait is 'best' is STRATEGY; no sourced numbers compare them.",
+ "races": {
+  "Deep Elf": {
+   "pros": [
+    "Can take the Ultravision trait."
+   ],
+   "cons": [
+    "Lowest starting DEX of the playable Rogue races (20).",
+    "Lowest starting STR of the playable Rogue races (14).",
+    "Racial ability not documented on the wiki race page.",
+    "Evil alignment; starts as a Rogue in Ail'Vorith, Underdocks. Night Harbor is the start for good and neutral combinations (official FAQ); how it treats evil races is not sourced yet."
+   ]
+  },
+  "Deep Gnome": {
+   "pros": [
+    "Can take the Ultravision trait."
+   ],
+   "cons": [
+    "Lowest starting STR of the playable Rogue races (14).",
+    "Racial ability not documented on the wiki race page.",
+    "Alignment not on the wiki; starts as a Rogue in Underdocks.",
+    "Race page note: Deep Gnomes con Disdain at worst in Evershade Weald and Night Harbor. They are KoS to everyone in Ail'Vorith."
+   ]
+  },
+  "Dwarf": {
+   "pros": [
+    "Highest starting STR of the playable Rogue races (17).",
+    "Racial: Stone Form: 15 seconds of +25% AC, -10% physical damage taken and Disease/Electricity/Poison cleanse.",
+    "Resistance Cold +5 (race page).",
+    "Resistance Magic +5 (race page).",
+    "Neutral alignment; starts as a Rogue in Night Harbor."
+   ],
+   "cons": [
+    "Lowest starting AGI of the playable Rogue races (19)."
+   ]
+  },
+  "Gnome": {
+   "pros": [
+    "Highest starting DEX of the playable Rogue races (23).",
+    "Racial: Slippery: +15% root resistance, plus an active 15-second Root/Snare immunity.",
+    "Resistance Electricity +5 (race page).",
+    "Resistance Poison +5 (race page).",
+    "Neutral alignment; starts as a Rogue in Night Harbor, Underdocks."
+   ],
+   "cons": [
+    "Lowest starting STR of the playable Rogue races (14)."
+   ]
+  },
+  "Goblin": {
+   "pros": [
+    "Highest starting DEX of the playable Rogue races (23).",
+    "Racial: Bribe: make a target forget past wrongdoings.",
+    "Resistance Disease +5 (race page).",
+    "Resistance Poison +5 (race page).",
+    "Neutral alignment; starts as a Rogue in Underdocks."
+   ],
+   "cons": []
+  },
+  "Halfling": {
+   "pros": [
+    "Racial: Sneak (race page); Forage as a racial (race page), so no trait slot needed for it.",
+    "Resistance Corruption +5 (race page).",
+    "Resistance Disease +5 (race page).",
+    "Neutral alignment; starts as a Rogue in Faelindral, Night Harbor."
+   ],
+   "cons": [
+    "Lowest starting DEX of the playable Rogue races (20)."
+   ]
+  },
+  "Human": {
+   "pros": [
+    "Racial: Tenacity: +15% resistance to Mesmerize and Incapacitate, plus an active 15-second immunity.",
+    "Neutral alignment; starts as a Rogue in Night Harbor, Underdocks."
+   ],
+   "cons": [
+    "Lowest starting DEX of the playable Rogue races (20).",
+    "Resistance Corruption -5 (race page).",
+    "Resistance Holy -5 (race page)."
+   ]
+  },
+  "Wood Elf": {
+   "pros": [
+    "Highest starting AGI of the playable Rogue races (24).",
+    "Racial: Hide: become unseen while still (removed by moving or acting); Forage as a racial (race page), so no trait slot needed for it.",
+    "Resistance Electricity +5 (race page).",
+    "Good alignment; starts as a Rogue in Faelindral, Night Harbor."
+   ],
+   "cons": [
+    "Lowest starting STR of the playable Rogue races (14).",
+    "Resistance Fire -5 (race page)."
+   ]
+  }
+ },
+ "planned_races": {
+  "Troll": "Listed on the official Rogue page but not playable in Early Access (no wiki start-city row)."
+ },
+ "tradeskills": {
+  "recommend": [
+   "poison-making",
+   "mining",
+   "smelting",
+   "lumberjacking"
+  ],
+  "why": {
+   "poison-making": "Rogue-only skill on the wiki; your poisons are a core part of the class.",
+   "mining": "Gathering for coin; pairs with the Miner trait (this Codex's default set).",
+   "smelting": "Turns ore into sellable bars (separate skill on the wiki).",
+   "lumberjacking": "Second gathering skill for coin, part of the default set."
+  },
+  "note": "Poison Making first, plus the gathering defaults. Smithing stays off. STRATEGY."
+ }
+}

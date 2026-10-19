@@ -1,0 +1,269 @@
+{
+ "class": "Fighter",
+ "updated": "2026-10-18",
+ "generated_by": "tools/chargen_classes.py",
+ "sources": [
+  [
+   "Official class page: Fighter",
+   "https://monstersandmemories.com/class-fighter"
+  ],
+  [
+   "Wiki: Fighter (rev 80191)",
+   "https://monstersandmemories.miraheze.org/wiki/Fighter"
+  ],
+  [
+   "Wiki: Statistics (rev 82276)",
+   "https://monstersandmemories.miraheze.org/wiki/Statistics"
+  ],
+  [
+   "Wiki: Traits (Template:Traits rev 79106)",
+   "https://monstersandmemories.miraheze.org/wiki/Traits"
+  ],
+  [
+   "Wiki: Starting City by Race, Class, and Deity (rev 74855)",
+   "https://monstersandmemories.miraheze.org/wiki/Starting_City_by_Race,_Class,_and_Deity"
+  ],
+  [
+   "Official Early Access FAQ: starting areas",
+   "https://monstersandmemories.com/early-access-faq"
+  ],
+  [
+   "Wiki: Deep Elf (rev 69451)",
+   "https://monstersandmemories.miraheze.org/wiki/Deep_Elf"
+  ],
+  [
+   "Wiki: Dwarf (rev 33158)",
+   "https://monstersandmemories.miraheze.org/wiki/Dwarf"
+  ],
+  [
+   "Wiki: Gnome (rev 33790)",
+   "https://monstersandmemories.miraheze.org/wiki/Gnome"
+  ],
+  [
+   "Wiki: Goblin (rev 74107)",
+   "https://monstersandmemories.miraheze.org/wiki/Goblin"
+  ],
+  [
+   "Wiki: Halfling (rev 26426)",
+   "https://monstersandmemories.miraheze.org/wiki/Halfling"
+  ],
+  [
+   "Wiki: Human (rev 26421)",
+   "https://monstersandmemories.miraheze.org/wiki/Human"
+  ],
+  [
+   "Wiki: Wood Elf (rev 26425)",
+   "https://monstersandmemories.miraheze.org/wiki/Wood_Elf"
+  ]
+ ],
+ "stat_facts": [
+  [
+   "STA",
+   "Increases health and reduces chance to be dazed in combat (wiki Statistics; '1 STA = 1 HP' is marked 'need testing' there)."
+  ],
+  [
+   "AGI",
+   "Provides damage mitigation (wiki Statistics)."
+  ],
+  [
+   "STR",
+   "Increases melee and ranged weapon damage and shield block amounts; 1 STR = 2 weight (wiki Statistics)."
+  ],
+  [
+   "DEX",
+   "Increases hit rate, weapon proc frequency and gives a channeling bonus to spellcasters (wiki Statistics)."
+  ],
+  [
+   "INT",
+   "Mana pool size if INT is higher than WIS, and offensive spell damage (wiki Statistics)."
+  ],
+  [
+   "WIS",
+   "Mana pool size if WIS is higher than INT, and healing done; 4 mana per WIS point for WIS-based classes (wiki Statistics)."
+  ],
+  [
+   "CHA",
+   "Merchant prices and charm break rate on paper; the wiki notes CHA did not seem to affect vendor prices in beta (May 2026)."
+  ]
+ ],
+ "class_mod": "+4 STR, +3 STA, +1 AGI (wiki Fighter Creation Guide)",
+ "mana": {
+  "stat": null,
+  "text": "No spell on the wiki Fighter list has a numeric mana cost.",
+  "label": "FACT"
+ },
+ "wiki_advice": null,
+ "builds": [
+  {
+   "name": "Tank (default)",
+   "alloc": {
+    "STA": 4,
+    "AGI": 3,
+    "STR": 3
+   },
+   "why": "The official page gives Fighters the strongest aggro tools and shield tanking. STA health, AGI mitigation, STR weapon damage and shield block (wiki Statistics)."
+  },
+  {
+   "name": "Two-hander DPS",
+   "alloc": {
+    "STR": 5,
+    "DEX": 3,
+    "STA": 2
+   },
+   "why": "For dual-wield or two-handed damage stances (official)."
+  },
+  {
+   "name": "Avoidance",
+   "alloc": {
+    "AGI": 4,
+    "STA": 4,
+    "STR": 2
+   },
+   "why": "Even more mitigation for long dungeon pulls."
+  }
+ ],
+ "build_caveat": "Point totals are from the wiki race pages (10 bonus points for every listed race/class). Whether a stat has a per-point cap or diminishing returns at creation is not documented on the wiki: UNVERIFIED.",
+ "traits": [
+  {
+   "cat": "Major Combat Traits",
+   "pick": "Tough",
+   "alt": [
+    "Strong",
+    "Agile"
+   ],
+   "why": "Tough: +5% STA and a 15-second +50% STA emergency button."
+  },
+  {
+   "cat": "Minor Combat Traits",
+   "pick": "Shieldman",
+   "alt": [
+    "Defender",
+    "Warrior"
+   ],
+   "why": "Shieldman starts Block at 5 (+25% speed) with a Trainee's Buckler, which suits shield tanking from level 1."
+  },
+  {
+   "cat": "Major Non-Combat Traits",
+   "pick": "Forage",
+   "alt": [
+    "Infravision",
+    "Ultravision",
+    "Slow Metabolism"
+   ],
+   "why": "Forage finds food and drink in the field, so fewer vendor runs. Fighters may take it (Template:Traits). Infravision or Ultravision only if your race may take it (see the race note).",
+   "race_pick": {
+    "Halfling": "Infravision (you already have Forage as a racial)",
+    "Wood Elf": "Infravision (you already have Forage as a racial)"
+   }
+  },
+  {
+   "cat": "Minor Non-Combat Traits",
+   "pick": "Medic",
+   "alt": [
+    "Miner",
+    "Lumberjack"
+   ],
+   "why": "Medic starts Bind Wound at 25 with bandages: Fighters have no heals on the wiki spell list, so this cuts downtime most. Miner if you want coin first."
+  }
+ ],
+ "trait_caveat": "Trait text and race/class limits are from Template:Traits; picks that your race cannot take are swapped automatically in the race note. Which trait is 'best' is STRATEGY; no sourced numbers compare them.",
+ "races": {
+  "Deep Elf": {
+   "pros": [
+    "Can take the Ultravision trait."
+   ],
+   "cons": [
+    "Lowest starting STR of the playable Fighter races (18).",
+    "Racial ability not documented on the wiki race page.",
+    "Evil alignment; starts as a Fighter in Ail'Vorith, Underdocks. Night Harbor is the start for good and neutral combinations (official FAQ); how it treats evil races is not sourced yet."
+   ]
+  },
+  "Dwarf": {
+   "pros": [
+    "Highest starting STR of the playable Fighter races (21).",
+    "Highest starting STA of the playable Fighter races (20).",
+    "Racial: Stone Form: 15 seconds of +25% AC, -10% physical damage taken and Disease/Electricity/Poison cleanse.",
+    "Resistance Cold +5 (race page).",
+    "Resistance Magic +5 (race page).",
+    "Neutral alignment; starts as a Fighter in Night Harbor."
+   ],
+   "cons": [
+    "Lowest starting AGI of the playable Fighter races (16)."
+   ]
+  },
+  "Gnome": {
+   "pros": [
+    "Racial: Slippery: +15% root resistance, plus an active 15-second Root/Snare immunity.",
+    "Resistance Electricity +5 (race page).",
+    "Resistance Poison +5 (race page).",
+    "Neutral alignment; starts as a Fighter in Night Harbor, Underdocks."
+   ],
+   "cons": [
+    "Lowest starting STR of the playable Fighter races (18)."
+   ]
+  },
+  "Goblin": {
+   "pros": [
+    "Racial: Bribe: make a target forget past wrongdoings.",
+    "Resistance Disease +5 (race page).",
+    "Resistance Poison +5 (race page).",
+    "Neutral alignment; starts as a Fighter in Underdocks."
+   ],
+   "cons": []
+  },
+  "Halfling": {
+   "pros": [
+    "Highest starting STA of the playable Fighter races (20).",
+    "Racial: Sneak (race page); Forage as a racial (race page), so no trait slot needed for it.",
+    "Resistance Corruption +5 (race page).",
+    "Resistance Disease +5 (race page).",
+    "Neutral alignment; starts as a Fighter in Faelindral, Night Harbor."
+   ],
+   "cons": []
+  },
+  "Human": {
+   "pros": [
+    "Highest starting STA of the playable Fighter races (20).",
+    "Racial: Tenacity: +15% resistance to Mesmerize and Incapacitate, plus an active 15-second immunity.",
+    "Neutral alignment; starts as a Fighter in Night Harbor, Underdocks."
+   ],
+   "cons": [
+    "Resistance Corruption -5 (race page).",
+    "Resistance Holy -5 (race page)."
+   ]
+  },
+  "Wood Elf": {
+   "pros": [
+    "Highest starting AGI of the playable Fighter races (21).",
+    "Racial: Hide: become unseen while still (removed by moving or acting); Forage as a racial (race page), so no trait slot needed for it.",
+    "Resistance Electricity +5 (race page).",
+    "Good alignment; starts as a Fighter in Faelindral, Night Harbor."
+   ],
+   "cons": [
+    "Lowest starting STR of the playable Fighter races (18).",
+    "Lowest starting STA of the playable Fighter races (17).",
+    "Resistance Fire -5 (race page)."
+   ]
+  }
+ },
+ "planned_races": {
+  "Deep Dwarf": "Listed on the official Fighter page but not playable in Early Access (no wiki start-city row).",
+  "Troll": "Listed on the official Fighter page but not playable in Early Access (no wiki start-city row).",
+  "Var'nai": "Listed on the official Fighter page but not playable in Early Access (no wiki start-city row)."
+ },
+ "tradeskills": {
+  "recommend": [
+   "mining",
+   "smelting",
+   "lumberjacking",
+   "bind-wound"
+  ],
+  "why": {
+   "mining": "Gathering for coin; pairs with the Miner trait (this Codex's default set).",
+   "smelting": "Turns ore into sellable bars (separate skill on the wiki).",
+   "lumberjacking": "Second gathering skill for coin, part of the default set.",
+   "bind-wound": "Bandaging between pulls cuts downtime for classes without strong self-heals."
+  },
+  "note": "Gathering defaults plus Bind Wound. Smithing stays off by default even for a Fighter; switch it on in the Trades menu if you want to craft armor. STRATEGY."
+ }
+}

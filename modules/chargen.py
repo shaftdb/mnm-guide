@@ -90,6 +90,16 @@ def chargen_section(c):
         return ''.join(o)
     # stats
     o.append('<h3>Stat points</h3><p>%s Class modifier: %s. Every listed race gets <b>10 bonus points</b> at creation (wiki race pages).</p>' % (_cg_badge('FACT'), esc(D['class_mod'])))
+    M = D.get('mana')
+    if M:
+        per = ''
+        if M.get('stat') == 'INT/WIS':
+            per = ''.join('<span data-cg-race="%s" class="cg-res">%s %s: INT %s, WIS %s, so your mana stat is <b>%s</b>.</span>' % (
+                esc(r), esc(r), esc(c), st['INT'], st['WIS'], 'INT' if st['INT'] > st['WIS'] else ('WIS' if st['WIS'] > st['INT'] else 'INT or WIS (tied at creation)'))
+                for r in rs if r not in CG_LARGE for st in [((CG['races'].get(r, {}).get('start') or {}).get(c) or {}).get('stats')] if st and st.get('INT') and st.get('WIS'))
+        o.append('<p>%s Mana: %s %s</p>' % (_cg_badge(M.get('label')), esc(M['text']), per))
+    if D.get('wiki_advice'):
+        o.append('<details class="cg-facts"><summary>Wiki creation advice for %s %s</summary><p>%s</p><p class="dim">Quoted from the community wiki class page; it is advice, not a game rule.</p></details>' % (esc(c), _cg_badge('FACT'), esc(D['wiki_advice'])))
     o.append('<details class="cg-facts"><summary>What each stat does (wiki) %s</summary><ul class="tight">%s</ul></details>' % (_cg_badge('FACT'), ''.join('<li><b>%s</b>: %s</li>' % (esc(k), esc(v)) for k, v in D['stat_facts'])))
     cards = []
     for b in D['builds']:

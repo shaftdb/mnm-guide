@@ -1,0 +1,207 @@
+{
+ "class": "Shadow Knight",
+ "updated": "2026-10-18",
+ "generated_by": "tools/chargen_classes.py",
+ "sources": [
+  [
+   "Official class page: Shadow Knight",
+   "https://monstersandmemories.com/class-shadow-knight"
+  ],
+  [
+   "Wiki: Shadow Knight (rev 80029)",
+   "https://monstersandmemories.miraheze.org/wiki/Shadow_Knight"
+  ],
+  [
+   "Wiki: Statistics (rev 82276)",
+   "https://monstersandmemories.miraheze.org/wiki/Statistics"
+  ],
+  [
+   "Wiki: Traits (Template:Traits rev 79106)",
+   "https://monstersandmemories.miraheze.org/wiki/Traits"
+  ],
+  [
+   "Wiki: Starting City by Race, Class, and Deity (rev 74855)",
+   "https://monstersandmemories.miraheze.org/wiki/Starting_City_by_Race,_Class,_and_Deity"
+  ],
+  [
+   "Official Early Access FAQ: starting areas",
+   "https://monstersandmemories.com/early-access-faq"
+  ],
+  [
+   "Wiki: Deep Elf (rev 69451)",
+   "https://monstersandmemories.miraheze.org/wiki/Deep_Elf"
+  ],
+  [
+   "Wiki: Goblin (rev 74107)",
+   "https://monstersandmemories.miraheze.org/wiki/Goblin"
+  ],
+  [
+   "Wiki: Human (rev 26421)",
+   "https://monstersandmemories.miraheze.org/wiki/Human"
+  ]
+ ],
+ "stat_facts": [
+  [
+   "STA",
+   "Increases health and reduces chance to be dazed in combat (wiki Statistics; '1 STA = 1 HP' is marked 'need testing' there)."
+  ],
+  [
+   "AGI",
+   "Provides damage mitigation (wiki Statistics)."
+  ],
+  [
+   "STR",
+   "Increases melee and ranged weapon damage and shield block amounts; 1 STR = 2 weight (wiki Statistics)."
+  ],
+  [
+   "DEX",
+   "Increases hit rate, weapon proc frequency and gives a channeling bonus to spellcasters (wiki Statistics)."
+  ],
+  [
+   "INT",
+   "Mana pool size if INT is higher than WIS, and offensive spell damage (wiki Statistics)."
+  ],
+  [
+   "WIS",
+   "Mana pool size if WIS is higher than INT, and healing done; 4 mana per WIS point for WIS-based classes (wiki Statistics)."
+  ],
+  [
+   "CHA",
+   "Merchant prices and charm break rate on paper; the wiki notes CHA did not seem to affect vendor prices in beta (May 2026)."
+  ]
+ ],
+ "class_mod": "+3 STR, +2 STA, +3 INT (wiki Shadow Knight Creation Guide)",
+ "mana": {
+  "stat": "INT/WIS",
+  "text": "Your mana stat is whichever of INT or WIS is higher (wiki Statistics); 23 of 77 wiki Shadow Knight spells cost mana.",
+  "label": "FACT"
+ },
+ "wiki_advice": null,
+ "builds": [
+  {
+   "name": "Tank (default)",
+   "alloc": {
+    "STA": 4,
+    "AGI": 3,
+    "STR": 3
+   },
+   "why": "Shadow Knights tank in plate with fast short-range casts (official). STA, AGI mitigation and STR damage and block."
+  },
+  {
+   "name": "Drain caster",
+   "alloc": {
+    "INT": 4,
+    "STA": 3,
+    "STR": 3
+   },
+   "why": "INT is higher than WIS for every playable race here, so it is your mana stat (wiki Statistics); more mana for life and strength drains."
+  },
+  {
+   "name": "Two-hander DPS",
+   "alloc": {
+    "STR": 5,
+    "DEX": 3,
+    "STA": 2
+   },
+   "why": "Shadow Knights prefer two-handed weapons and out-damage Paladins (official)."
+  }
+ ],
+ "build_caveat": "Point totals are from the wiki race pages (10 bonus points for every listed race/class). Whether a stat has a per-point cap or diminishing returns at creation is not documented on the wiki: UNVERIFIED.",
+ "traits": [
+  {
+   "cat": "Major Combat Traits",
+   "pick": "Tough",
+   "alt": [
+    "Strong",
+    "Intelligent"
+   ],
+   "why": "Tough: +5% STA and a 15-second +50% STA emergency button."
+  },
+  {
+   "cat": "Minor Combat Traits",
+   "pick": "Alterer",
+   "alt": [
+    "Shieldman",
+    "Defender"
+   ],
+   "why": "Alteration is the biggest Shadow Knight school on the wiki (25 of 77). Shieldman if you tank with a shield."
+  },
+  {
+   "cat": "Major Non-Combat Traits",
+   "pick": "Forage",
+   "alt": [
+    "Infravision",
+    "Ultravision",
+    "Slow Metabolism"
+   ],
+   "why": "Forage finds food and drink in the field, so fewer vendor runs. Shadow Knights may take it. Infravision or Ultravision only if your race may take it (see the race note)."
+  },
+  {
+   "cat": "Minor Non-Combat Traits",
+   "pick": "Miner",
+   "alt": [
+    "Medic",
+    "Lumberjack"
+   ],
+   "why": "Miner starts Mining at 25 with a Trainee's Mining Pick and Pouch, matching the default gathering setup (Mining, Lumberjacking, Smelting) for early coin. Medic (Bind Wound 25 and bandages) is the safer pick if you expect downtime between fights. Blacksmith exists but smithing stays off by default here."
+  }
+ ],
+ "trait_caveat": "Trait text and race/class limits are from Template:Traits; picks that your race cannot take are swapped automatically in the race note. Which trait is 'best' is STRATEGY; no sourced numbers compare them.",
+ "races": {
+  "Deep Elf": {
+   "pros": [
+    "Highest starting INT of the playable Shadow Knight races (22).",
+    "Can take the Ultravision trait."
+   ],
+   "cons": [
+    "Lowest starting STR of the playable Shadow Knight races (17).",
+    "Lowest starting STA of the playable Shadow Knight races (17).",
+    "Racial ability not documented on the wiki race page.",
+    "Evil alignment; starts as a Shadow Knight in Ail'Vorith, Underdocks. Night Harbor is the start for good and neutral combinations (official FAQ); how it treats evil races is not sourced yet."
+   ]
+  },
+  "Goblin": {
+   "pros": [
+    "Racial: Bribe: make a target forget past wrongdoings.",
+    "Resistance Disease +5 (race page).",
+    "Resistance Poison +5 (race page).",
+    "Neutral alignment; starts as a Shadow Knight in Underdocks."
+   ],
+   "cons": [
+    "Lowest starting STA of the playable Shadow Knight races (17)."
+   ]
+  },
+  "Human": {
+   "pros": [
+    "Highest starting STR of the playable Shadow Knight races (19).",
+    "Highest starting STA of the playable Shadow Knight races (19).",
+    "Racial: Tenacity: +15% resistance to Mesmerize and Incapacitate, plus an active 15-second immunity.",
+    "Neutral alignment; starts as a Shadow Knight in Night Harbor, Underdocks."
+   ],
+   "cons": [
+    "Lowest starting INT of the playable Shadow Knight races (19).",
+    "Resistance Corruption -5 (race page).",
+    "Resistance Holy -5 (race page)."
+   ]
+  }
+ },
+ "planned_races": {
+  "Deep Dwarf": "Listed on the official Shadow Knight page but not playable in Early Access (no wiki start-city row).",
+  "Troll": "Listed on the official Shadow Knight page but not playable in Early Access (no wiki start-city row)."
+ },
+ "tradeskills": {
+  "recommend": [
+   "mining",
+   "smelting",
+   "lumberjacking",
+   "bind-wound"
+  ],
+  "why": {
+   "mining": "Gathering for coin; pairs with the Miner trait (this Codex's default set).",
+   "smelting": "Turns ore into sellable bars (separate skill on the wiki).",
+   "lumberjacking": "Second gathering skill for coin, part of the default set.",
+   "bind-wound": "Bandaging between pulls cuts downtime for classes without strong self-heals."
+  },
+  "note": "Gathering defaults plus Bind Wound. Smithing stays off. STRATEGY."
+ }
+}

@@ -1,0 +1,225 @@
+{
+ "class": "Bard",
+ "updated": "2026-10-18",
+ "generated_by": "tools/chargen_classes.py",
+ "sources": [
+  [
+   "Official class page: Bard",
+   "https://monstersandmemories.com/class-bard"
+  ],
+  [
+   "Wiki: Bard (rev 79747)",
+   "https://monstersandmemories.miraheze.org/wiki/Bard"
+  ],
+  [
+   "Wiki: Statistics (rev 82276)",
+   "https://monstersandmemories.miraheze.org/wiki/Statistics"
+  ],
+  [
+   "Wiki: Traits (Template:Traits rev 79106)",
+   "https://monstersandmemories.miraheze.org/wiki/Traits"
+  ],
+  [
+   "Wiki: Starting City by Race, Class, and Deity (rev 74855)",
+   "https://monstersandmemories.miraheze.org/wiki/Starting_City_by_Race,_Class,_and_Deity"
+  ],
+  [
+   "Official Early Access FAQ: starting areas",
+   "https://monstersandmemories.com/early-access-faq"
+  ],
+  [
+   "Wiki: Dwarf (rev 33158)",
+   "https://monstersandmemories.miraheze.org/wiki/Dwarf"
+  ],
+  [
+   "Wiki: Halfling (rev 26426)",
+   "https://monstersandmemories.miraheze.org/wiki/Halfling"
+  ],
+  [
+   "Wiki: Human (rev 26421)",
+   "https://monstersandmemories.miraheze.org/wiki/Human"
+  ],
+  [
+   "Wiki: Wood Elf (rev 26425)",
+   "https://monstersandmemories.miraheze.org/wiki/Wood_Elf"
+  ]
+ ],
+ "stat_facts": [
+  [
+   "STA",
+   "Increases health and reduces chance to be dazed in combat (wiki Statistics; '1 STA = 1 HP' is marked 'need testing' there)."
+  ],
+  [
+   "AGI",
+   "Provides damage mitigation (wiki Statistics)."
+  ],
+  [
+   "STR",
+   "Increases melee and ranged weapon damage and shield block amounts; 1 STR = 2 weight (wiki Statistics)."
+  ],
+  [
+   "DEX",
+   "Increases hit rate, weapon proc frequency and gives a channeling bonus to spellcasters (wiki Statistics)."
+  ],
+  [
+   "INT",
+   "Mana pool size if INT is higher than WIS, and offensive spell damage (wiki Statistics)."
+  ],
+  [
+   "WIS",
+   "Mana pool size if WIS is higher than INT, and healing done; 4 mana per WIS point for WIS-based classes (wiki Statistics)."
+  ],
+  [
+   "CHA",
+   "Merchant prices and charm break rate on paper; the wiki notes CHA did not seem to affect vendor prices in beta (May 2026)."
+  ]
+ ],
+ "class_mod": "+1 STR, +3 DEX, +4 CHA (wiki Bard Creation Guide)",
+ "mana": {
+  "stat": "CHA",
+  "text": "The wiki Bard page says Bard mana is now tied to Charisma, not INT or WIS.",
+  "label": "FACT"
+ },
+ "wiki_advice": "Listed below is the recommended allocation of bonus points by race. Since Charisma is a Bard’s main attribute, you should focus on maximizing it whenever possible. Most of your songs' effectiveness are tied to it. The remaining points are flexible, dexterity is supposed to be tied to missed notes but it is unknown how large of an effect this has. Because bards are often pulling for a group many players will opt to put their remaining points into stamina instead so that they can survive long enough to get back within range of the healer should problems arise. * Note: Mana total for a bard is now tied to charisma instead of int or wis like other classes. Dwarf: +7 Charisma, 3 flex points Halfling: +7 Charisma, 3 flex points Human: +6 Charisma, 4 flex points Wood Elf: +7 Charisma, 3 flex points",
+ "builds": [
+  {
+   "name": "Song power (default)",
+   "alloc": {
+    "CHA": 6,
+    "STA": 4
+   },
+   "why": "The wiki Bard page calls CHA the main attribute: song effectiveness and (now) mana are tied to it. Bards often pull, so the rest goes to STA to survive the run back."
+  },
+  {
+   "name": "Melee bard",
+   "alloc": {
+    "CHA": 5,
+    "DEX": 3,
+    "STR": 2
+   },
+   "why": "Half on CHA, the rest on hit rate and weapon damage for soloing in melee. The wiki says DEX may affect missed notes, size unknown."
+  },
+  {
+   "name": "Max charisma",
+   "alloc": {
+    "CHA": 8,
+    "STA": 2
+   },
+   "why": "For charm-heavy play: the official page says Bards can temporarily charm enemies and the wiki ties charm break rate to CHA."
+  }
+ ],
+ "build_caveat": "Point totals are from the wiki race pages (10 bonus points for every listed race/class). Whether a stat has a per-point cap or diminishing returns at creation is not documented on the wiki: UNVERIFIED.",
+ "traits": [
+  {
+   "cat": "Major Combat Traits",
+   "pick": "Charismatic",
+   "alt": [
+    "Tough",
+    "Dexterous"
+   ],
+   "why": "Charismatic: +5% CHA, your song and mana stat, plus a 15-second +50% CHA burst."
+  },
+  {
+   "cat": "Minor Combat Traits",
+   "pick": "Vocalist",
+   "alt": [
+    "Virtuoso",
+    "Swordsman"
+   ],
+   "why": "Vocalist starts Singing at 50 and raises it 50% faster; the wiki spell list has 25 Singing songs, the biggest school for Bards. Virtuoso does the same for instruments and gives a Trainee's Recorder."
+  },
+  {
+   "cat": "Major Non-Combat Traits",
+   "pick": "Forage",
+   "alt": [
+    "Infravision",
+    "Ultravision",
+    "Slow Metabolism"
+   ],
+   "why": "Forage finds food and drink in the field, so fewer vendor runs. Bards may take it (Template:Traits). Infravision or Ultravision only if your race may take it (see the race note).",
+   "race_pick": {
+    "Halfling": "Infravision (you already have Forage as a racial)",
+    "Wood Elf": "Infravision (you already have Forage as a racial)"
+   }
+  },
+  {
+   "cat": "Minor Non-Combat Traits",
+   "pick": "Miner",
+   "alt": [
+    "Tracker",
+    "Medic"
+   ],
+   "why": "Miner for early gathering coin. Tracker (Bard, Druid, Ranger only) starts Tracking at 25 if you want to find camps faster."
+  }
+ ],
+ "trait_caveat": "Trait text and race/class limits are from Template:Traits; picks that your race cannot take are swapped automatically in the race note. Which trait is 'best' is STRATEGY; no sourced numbers compare them.",
+ "races": {
+  "Dwarf": {
+   "pros": [
+    "Highest starting DEX of the playable Bard races (21).",
+    "Highest starting STA of the playable Bard races (17).",
+    "Racial: Stone Form: 15 seconds of +25% AC, -10% physical damage taken and Disease/Electricity/Poison cleanse.",
+    "Resistance Cold +5 (race page).",
+    "Resistance Magic +5 (race page).",
+    "Neutral alignment; starts as a Bard in Night Harbor."
+   ],
+   "cons": [
+    "Lowest starting CHA of the playable Bard races (19)."
+   ]
+  },
+  "Halfling": {
+   "pros": [
+    "Highest starting STA of the playable Bard races (17).",
+    "Racial: Sneak (race page); Forage as a racial (race page), so no trait slot needed for it.",
+    "Resistance Corruption +5 (race page).",
+    "Resistance Disease +5 (race page).",
+    "Neutral alignment; starts as a Bard in Faelindral, Night Harbor."
+   ],
+   "cons": [
+    "Lowest starting CHA of the playable Bard races (19).",
+    "Lowest starting DEX of the playable Bard races (19)."
+   ]
+  },
+  "Human": {
+   "pros": [
+    "Highest starting CHA of the playable Bard races (21).",
+    "Highest starting STA of the playable Bard races (17).",
+    "Racial: Tenacity: +15% resistance to Mesmerize and Incapacitate, plus an active 15-second immunity.",
+    "Neutral alignment; starts as a Bard in Night Harbor."
+   ],
+   "cons": [
+    "Lowest starting DEX of the playable Bard races (19).",
+    "Resistance Corruption -5 (race page).",
+    "Resistance Holy -5 (race page)."
+   ]
+  },
+  "Wood Elf": {
+   "pros": [
+    "Highest starting DEX of the playable Bard races (21).",
+    "Racial: Hide: become unseen while still (removed by moving or acting); Forage as a racial (race page), so no trait slot needed for it.",
+    "Resistance Electricity +5 (race page).",
+    "Good alignment; starts as a Bard in Faelindral, Night Harbor."
+   ],
+   "cons": [
+    "Lowest starting STA of the playable Bard races (14).",
+    "Resistance Fire -5 (race page)."
+   ]
+  }
+ },
+ "planned_races": {},
+ "tradeskills": {
+  "recommend": [
+   "mining",
+   "smelting",
+   "lumberjacking",
+   "bind-wound"
+  ],
+  "why": {
+   "mining": "Gathering for coin; pairs with the Miner trait (this Codex's default set).",
+   "smelting": "Turns ore into sellable bars (separate skill on the wiki).",
+   "lumberjacking": "Second gathering skill for coin, part of the default set.",
+   "bind-wound": "Bandaging between pulls cuts downtime for classes without strong self-heals."
+  },
+  "note": "Gathering defaults plus Bind Wound for pulling downtime. Smithing stays off. STRATEGY."
+ }
+}

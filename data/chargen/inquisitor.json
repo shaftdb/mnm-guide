@@ -254,5 +254,10 @@
     "label": "UNVERIFIED"
    }
   ]
+ },
+ "mana": {
+  "stat": "INT/WIS",
+  "text": "Your mana stat is whichever of INT or WIS is higher (wiki Statistics); 30 of 72 wiki Inquisitor spells cost mana.",
+  "label": "FACT"
  }
 }

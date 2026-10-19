@@ -1,0 +1,216 @@
+{
+ "class": "Shaman",
+ "updated": "2026-10-18",
+ "generated_by": "tools/chargen_classes.py",
+ "sources": [
+  [
+   "Official class page: Shaman",
+   "https://monstersandmemories.com/class-shaman"
+  ],
+  [
+   "Wiki: Shaman (rev 80920)",
+   "https://monstersandmemories.miraheze.org/wiki/Shaman"
+  ],
+  [
+   "Wiki: Statistics (rev 82276)",
+   "https://monstersandmemories.miraheze.org/wiki/Statistics"
+  ],
+  [
+   "Wiki: Traits (Template:Traits rev 79106)",
+   "https://monstersandmemories.miraheze.org/wiki/Traits"
+  ],
+  [
+   "Wiki: Starting City by Race, Class, and Deity (rev 74855)",
+   "https://monstersandmemories.miraheze.org/wiki/Starting_City_by_Race,_Class,_and_Deity"
+  ],
+  [
+   "Official Early Access FAQ: starting areas",
+   "https://monstersandmemories.com/early-access-faq"
+  ],
+  [
+   "Wiki: Deep Gnome (rev 75256)",
+   "https://monstersandmemories.miraheze.org/wiki/Deep_Gnome"
+  ],
+  [
+   "Wiki: Goblin (rev 74107)",
+   "https://monstersandmemories.miraheze.org/wiki/Goblin"
+  ],
+  [
+   "Wiki: Human (rev 26421)",
+   "https://monstersandmemories.miraheze.org/wiki/Human"
+  ],
+  [
+   "Wiki: Wood Elf (rev 26425)",
+   "https://monstersandmemories.miraheze.org/wiki/Wood_Elf"
+  ]
+ ],
+ "stat_facts": [
+  [
+   "STA",
+   "Increases health and reduces chance to be dazed in combat (wiki Statistics; '1 STA = 1 HP' is marked 'need testing' there)."
+  ],
+  [
+   "AGI",
+   "Provides damage mitigation (wiki Statistics)."
+  ],
+  [
+   "STR",
+   "Increases melee and ranged weapon damage and shield block amounts; 1 STR = 2 weight (wiki Statistics)."
+  ],
+  [
+   "DEX",
+   "Increases hit rate, weapon proc frequency and gives a channeling bonus to spellcasters (wiki Statistics)."
+  ],
+  [
+   "INT",
+   "Mana pool size if INT is higher than WIS, and offensive spell damage (wiki Statistics)."
+  ],
+  [
+   "WIS",
+   "Mana pool size if WIS is higher than INT, and healing done; 4 mana per WIS point for WIS-based classes (wiki Statistics)."
+  ],
+  [
+   "CHA",
+   "Merchant prices and charm break rate on paper; the wiki notes CHA did not seem to affect vendor prices in beta (May 2026)."
+  ]
+ ],
+ "class_mod": "+1 STR, +2 STA, +1 DEX, +4 WIS (wiki Shaman Creation Guide)",
+ "mana": {
+  "stat": "INT/WIS",
+  "text": "Your mana stat is whichever of INT or WIS is higher (wiki Statistics); 101 of 123 wiki Shaman spells cost mana.",
+  "label": "FACT"
+ },
+ "wiki_advice": "Listed below is the recommended allocation of bonus points by race. Since Wisdom is a Shaman’s main attribute, you should focus on maximizing it whenever possible. Wisdom is directly tied to your healing spells effectiveness and total mana. After that, prioritize Stamina. It gives you extra HP and a bit of stun resistance. Finally, put a point into Dexterity if you have any left. It affects hit rate across the board and increases your proc chance. Goblin: +4 Stamina and +6 Wisdom Human: +2 Stamina, +1 Dexterity, and +7 Wisdom Ogre: +2 Dexterity and +8 Wisdom Wood Elf: +3 Stamina and +7 Wisdom",
+ "builds": [
+  {
+   "name": "Healer-buffer (default)",
+   "alloc": {
+    "WIS": 7,
+    "STA": 2,
+    "DEX": 1
+   },
+   "why": "The wiki Shaman advice (Human): WIS for heals and mana, then STA, then DEX."
+  },
+  {
+   "name": "Sturdy soloer",
+   "alloc": {
+    "WIS": 6,
+    "STA": 4
+   },
+   "why": "The wiki Goblin allocation; Shamans cannibalize health for mana (official), so extra HP pays twice."
+  },
+  {
+   "name": "Max WIS",
+   "alloc": {
+    "WIS": 8,
+    "DEX": 2
+   },
+   "why": "Biggest heals and pool for group play."
+  }
+ ],
+ "build_caveat": "Point totals are from the wiki race pages (10 bonus points for every listed race/class). Whether a stat has a per-point cap or diminishing returns at creation is not documented on the wiki: UNVERIFIED.",
+ "traits": [
+  {
+   "cat": "Major Combat Traits",
+   "pick": "Wise",
+   "alt": [
+    "Tough",
+    "Cold Resistant"
+   ],
+   "why": "Wise: +5% base WIS and a 15-second +50% WIS burst."
+  },
+  {
+   "cat": "Minor Combat Traits",
+   "pick": "Alterer",
+   "alt": [
+    "Channeler",
+    "Conjurer"
+   ],
+   "why": "Alteration is by far the biggest Shaman school on the wiki (87 of 123): buffs, slows and heals over time."
+  },
+  {
+   "cat": "Major Non-Combat Traits",
+   "pick": "Readiness",
+   "alt": [
+    "Forage",
+    "Infravision",
+    "Ultravision"
+   ],
+   "why": "Readiness gives a Cantrip slot from level 1, so one memorized spell survives death. "
+  },
+  {
+   "cat": "Minor Non-Combat Traits",
+   "pick": "Miner",
+   "alt": [
+    "Medic",
+    "Lumberjack"
+   ],
+   "why": "Miner starts Mining at 25 with a Trainee's Mining Pick and Pouch, matching the default gathering setup (Mining, Lumberjacking, Smelting) for early coin. Medic (Bind Wound 25 and bandages) is the safer pick if you expect downtime between fights. Blacksmith exists but smithing stays off by default here."
+  }
+ ],
+ "trait_caveat": "Trait text and race/class limits are from Template:Traits; picks that your race cannot take are swapped automatically in the race note. Which trait is 'best' is STRATEGY; no sourced numbers compare them.",
+ "races": {
+  "Deep Gnome": {
+   "pros": [
+    "Can take the Ultravision trait."
+   ],
+   "cons": [
+    "Lowest starting WIS of the playable Shaman races (18).",
+    "Racial ability not documented on the wiki race page.",
+    "Alignment not on the wiki; starts as a Shaman in Underdocks.",
+    "Race page note: Deep Gnomes con Disdain at worst in Evershade Weald and Night Harbor. They are KoS to everyone in Ail'Vorith."
+   ]
+  },
+  "Goblin": {
+   "pros": [
+    "Highest starting DEX of the playable Shaman races (20).",
+    "Racial: Bribe: make a target forget past wrongdoings.",
+    "Resistance Disease +5 (race page).",
+    "Resistance Poison +5 (race page).",
+    "Neutral alignment; starts as a Shaman in Underdocks."
+   ],
+   "cons": []
+  },
+  "Human": {
+   "pros": [
+    "Highest starting STA of the playable Shaman races (19).",
+    "Racial: Tenacity: +15% resistance to Mesmerize and Incapacitate, plus an active 15-second immunity.",
+    "Neutral alignment; starts as a Shaman in Night Harbor, Underdocks."
+   ],
+   "cons": [
+    "Lowest starting DEX of the playable Shaman races (17).",
+    "Resistance Corruption -5 (race page).",
+    "Resistance Holy -5 (race page)."
+   ]
+  },
+  "Wood Elf": {
+   "pros": [
+    "Highest starting WIS of the playable Shaman races (21).",
+    "Racial: Hide: become unseen while still (removed by moving or acting); Forage as a racial (race page), so no trait slot needed for it.",
+    "Resistance Electricity +5 (race page).",
+    "Good alignment; starts as a Shaman in Faelindral, Night Harbor."
+   ],
+   "cons": [
+    "Lowest starting STA of the playable Shaman races (16).",
+    "Resistance Fire -5 (race page)."
+   ]
+  }
+ },
+ "planned_races": {
+  "Troll": "Listed on the official Shaman page but not playable in Early Access (no wiki start-city row).",
+  "Var'nai": "Listed on the official Shaman page but not playable in Early Access (no wiki start-city row)."
+ },
+ "tradeskills": {
+  "recommend": [
+   "mining",
+   "smelting",
+   "lumberjacking"
+  ],
+  "why": {
+   "mining": "Gathering for coin; pairs with the Miner trait (this Codex's default set).",
+   "smelting": "Turns ore into sellable bars (separate skill on the wiki).",
+   "lumberjacking": "Second gathering skill for coin, part of the default set."
+  },
+  "note": "Gathering defaults. Smithing stays off. See also the Shaman gathering route page. STRATEGY."
+ }
+}

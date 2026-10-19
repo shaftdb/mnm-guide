@@ -1,0 +1,233 @@
+{
+ "class": "Enchanter",
+ "updated": "2026-10-18",
+ "generated_by": "tools/chargen_classes.py",
+ "sources": [
+  [
+   "Official class page: Enchanter",
+   "https://monstersandmemories.com/class-enchanter"
+  ],
+  [
+   "Wiki: Enchanter (rev 81186)",
+   "https://monstersandmemories.miraheze.org/wiki/Enchanter"
+  ],
+  [
+   "Wiki: Statistics (rev 82276)",
+   "https://monstersandmemories.miraheze.org/wiki/Statistics"
+  ],
+  [
+   "Wiki: Traits (Template:Traits rev 79106)",
+   "https://monstersandmemories.miraheze.org/wiki/Traits"
+  ],
+  [
+   "Wiki: Starting City by Race, Class, and Deity (rev 74855)",
+   "https://monstersandmemories.miraheze.org/wiki/Starting_City_by_Race,_Class,_and_Deity"
+  ],
+  [
+   "Official Early Access FAQ: starting areas",
+   "https://monstersandmemories.com/early-access-faq"
+  ],
+  [
+   "Wiki: Deep Elf (rev 69451)",
+   "https://monstersandmemories.miraheze.org/wiki/Deep_Elf"
+  ],
+  [
+   "Wiki: Deep Gnome (rev 75256)",
+   "https://monstersandmemories.miraheze.org/wiki/Deep_Gnome"
+  ],
+  [
+   "Wiki: Dwarf (rev 33158)",
+   "https://monstersandmemories.miraheze.org/wiki/Dwarf"
+  ],
+  [
+   "Wiki: Gnome (rev 33790)",
+   "https://monstersandmemories.miraheze.org/wiki/Gnome"
+  ],
+  [
+   "Wiki: Goblin (rev 74107)",
+   "https://monstersandmemories.miraheze.org/wiki/Goblin"
+  ]
+ ],
+ "stat_facts": [
+  [
+   "STA",
+   "Increases health and reduces chance to be dazed in combat (wiki Statistics; '1 STA = 1 HP' is marked 'need testing' there)."
+  ],
+  [
+   "AGI",
+   "Provides damage mitigation (wiki Statistics)."
+  ],
+  [
+   "STR",
+   "Increases melee and ranged weapon damage and shield block amounts; 1 STR = 2 weight (wiki Statistics)."
+  ],
+  [
+   "DEX",
+   "Increases hit rate, weapon proc frequency and gives a channeling bonus to spellcasters (wiki Statistics)."
+  ],
+  [
+   "INT",
+   "Mana pool size if INT is higher than WIS, and offensive spell damage (wiki Statistics)."
+  ],
+  [
+   "WIS",
+   "Mana pool size if WIS is higher than INT, and healing done; 4 mana per WIS point for WIS-based classes (wiki Statistics)."
+  ],
+  [
+   "CHA",
+   "Merchant prices and charm break rate on paper; the wiki notes CHA did not seem to affect vendor prices in beta (May 2026)."
+  ]
+ ],
+ "class_mod": "+4 INT, +4 CHA (wiki Enchanter Creation Guide)",
+ "mana": {
+  "stat": "INT/WIS",
+  "text": "Your mana stat is whichever of INT or WIS is higher (wiki Statistics); 54 of 136 wiki Enchanter spells cost mana.",
+  "label": "FACT"
+ },
+ "wiki_advice": "Below is the recommended allocation of bonus points by race. Since Intelligence is a Enchanter’s main attribute, you should focus on maximizing it whenever possible. Your spell damage and mana total is directly tied to it. Very close behind it is Charisma. As an Enchanter you are the best crowd controller in the game, and both your Charm and Mesmerize line of skills rely on this stat. Dwarf: +5 Intelligence and +5 Charisma Gnome: +5 Intelligence and +5 Charisma Goblin: +5 Intelligence and +5 Charisma Human: +7 Intelligence and +3 Charisma",
+ "builds": [
+  {
+   "name": "Controller (default)",
+   "alloc": {
+    "INT": 5,
+    "CHA": 5
+   },
+   "why": "The wiki Enchanter advice for most races: INT (mana, damage) and CHA (charm and mesmerize) almost equally."
+  },
+  {
+   "name": "Mana battery",
+   "alloc": {
+    "INT": 7,
+    "CHA": 3
+   },
+   "why": "The wiki Human allocation: a bigger pool for buffs, mana regeneration and long fights."
+  },
+  {
+   "name": "Charmer",
+   "alloc": {
+    "CHA": 6,
+    "INT": 4
+   },
+   "why": "Charm break rate is tied to CHA (wiki Statistics); for soloing with charmed pets."
+  }
+ ],
+ "build_caveat": "Point totals are from the wiki race pages (10 bonus points for every listed race/class). Whether a stat has a per-point cap or diminishing returns at creation is not documented on the wiki: UNVERIFIED.",
+ "traits": [
+  {
+   "cat": "Major Combat Traits",
+   "pick": "Intelligent",
+   "alt": [
+    "Charismatic",
+    "Tough"
+   ],
+   "why": "Intelligent: +5% INT and a 15-second +50% INT burst. Charismatic if you lean on charm."
+  },
+  {
+   "cat": "Minor Combat Traits",
+   "pick": "Alterer",
+   "alt": [
+    "Channeler",
+    "Abjurer"
+   ],
+   "why": "Alteration is the biggest Enchanter school on the wiki (95 of 136 spells). Channeler keeps mesmerizes landing when you are hit."
+  },
+  {
+   "cat": "Major Non-Combat Traits",
+   "pick": "Readiness",
+   "alt": [
+    "Forage",
+    "Infravision",
+    "Ultravision"
+   ],
+   "why": "Readiness gives a Cantrip slot from level 1, so one memorized spell survives death. "
+  },
+  {
+   "cat": "Minor Non-Combat Traits",
+   "pick": "Miner",
+   "alt": [
+    "Medic",
+    "Lumberjack"
+   ],
+   "why": "Miner starts Mining at 25 with a Trainee's Mining Pick and Pouch, matching the default gathering setup (Mining, Lumberjacking, Smelting) for early coin. Medic (Bind Wound 25 and bandages) is the safer pick if you expect downtime between fights. Blacksmith exists but smithing stays off by default here."
+  }
+ ],
+ "trait_caveat": "Trait text and race/class limits are from Template:Traits; picks that your race cannot take are swapped automatically in the race note. Which trait is 'best' is STRATEGY; no sourced numbers compare them.",
+ "races": {
+  "Deep Elf": {
+   "pros": [
+    "Can take the Ultravision trait."
+   ],
+   "cons": [
+    "Lowest starting STA of the playable Enchanter races (15).",
+    "Racial ability not documented on the wiki race page.",
+    "Evil alignment; starts as a Enchanter in Ail'Vorith, Underdocks. Night Harbor is the start for good and neutral combinations (official FAQ); how it treats evil races is not sourced yet."
+   ]
+  },
+  "Deep Gnome": {
+   "pros": [
+    "Highest starting CHA of the playable Enchanter races (20).",
+    "Can take the Ultravision trait."
+   ],
+   "cons": [
+    "Lowest starting STA of the playable Enchanter races (15).",
+    "Racial ability not documented on the wiki race page.",
+    "Alignment not on the wiki; starts as a Enchanter in Underdocks.",
+    "Race page note: Deep Gnomes con Disdain at worst in Evershade Weald and Night Harbor. They are KoS to everyone in Ail'Vorith."
+   ]
+  },
+  "Dwarf": {
+   "pros": [
+    "Highest starting STA of the playable Enchanter races (17).",
+    "Racial: Stone Form: 15 seconds of +25% AC, -10% physical damage taken and Disease/Electricity/Poison cleanse.",
+    "Resistance Cold +5 (race page).",
+    "Resistance Magic +5 (race page).",
+    "Neutral alignment; starts as a Enchanter in Night Harbor."
+   ],
+   "cons": [
+    "Lowest starting INT of the playable Enchanter races (20)."
+   ]
+  },
+  "Gnome": {
+   "pros": [
+    "Highest starting INT of the playable Enchanter races (24).",
+    "Racial: Slippery: +15% root resistance, plus an active 15-second Root/Snare immunity.",
+    "Resistance Electricity +5 (race page).",
+    "Resistance Poison +5 (race page).",
+    "Neutral alignment; starts as a Enchanter in Night Harbor, Underdocks."
+   ],
+   "cons": [
+    "Lowest starting STA of the playable Enchanter races (15)."
+   ]
+  },
+  "Goblin": {
+   "pros": [
+    "Racial: Bribe: make a target forget past wrongdoings.",
+    "Resistance Disease +5 (race page).",
+    "Resistance Poison +5 (race page).",
+    "Neutral alignment; starts as a Enchanter in Underdocks."
+   ],
+   "cons": [
+    "Lowest starting CHA of the playable Enchanter races (17).",
+    "Lowest starting STA of the playable Enchanter races (15)."
+   ]
+  }
+ },
+ "planned_races": {
+  "High Elf": "Listed on the official Enchanter page but not playable in Early Access (no wiki start-city row).",
+  "Troll": "Listed on the official Enchanter page but not playable in Early Access (no wiki start-city row).",
+  "Var'nai": "Listed on the official Enchanter page but not playable in Early Access (no wiki start-city row)."
+ },
+ "tradeskills": {
+  "recommend": [
+   "mining",
+   "smelting",
+   "lumberjacking"
+  ],
+  "why": {
+   "mining": "Gathering for coin; pairs with the Miner trait (this Codex's default set).",
+   "smelting": "Turns ore into sellable bars (separate skill on the wiki).",
+   "lumberjacking": "Second gathering skill for coin, part of the default set."
+  },
+  "note": "Gathering defaults. Smithing stays off. STRATEGY."
+ }
+}

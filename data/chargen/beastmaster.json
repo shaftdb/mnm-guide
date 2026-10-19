@@ -1,0 +1,238 @@
+{
+ "class": "Beastmaster",
+ "updated": "2026-10-18",
+ "generated_by": "tools/chargen_classes.py",
+ "sources": [
+  [
+   "Official class page: Beastmaster",
+   "https://monstersandmemories.com/class-beastmaster"
+  ],
+  [
+   "Wiki: Beastmaster (rev 79620)",
+   "https://monstersandmemories.miraheze.org/wiki/Beastmaster"
+  ],
+  [
+   "Wiki: Statistics (rev 82276)",
+   "https://monstersandmemories.miraheze.org/wiki/Statistics"
+  ],
+  [
+   "Wiki: Traits (Template:Traits rev 79106)",
+   "https://monstersandmemories.miraheze.org/wiki/Traits"
+  ],
+  [
+   "Wiki: Starting City by Race, Class, and Deity (rev 74855)",
+   "https://monstersandmemories.miraheze.org/wiki/Starting_City_by_Race,_Class,_and_Deity"
+  ],
+  [
+   "Official Early Access FAQ: starting areas",
+   "https://monstersandmemories.com/early-access-faq"
+  ],
+  [
+   "Wiki: Deep Gnome (rev 75256)",
+   "https://monstersandmemories.miraheze.org/wiki/Deep_Gnome"
+  ],
+  [
+   "Wiki: Goblin (rev 74107)",
+   "https://monstersandmemories.miraheze.org/wiki/Goblin"
+  ],
+  [
+   "Wiki: Halfling (rev 26426)",
+   "https://monstersandmemories.miraheze.org/wiki/Halfling"
+  ],
+  [
+   "Wiki: Human (rev 26421)",
+   "https://monstersandmemories.miraheze.org/wiki/Human"
+  ],
+  [
+   "Wiki: Wood Elf (rev 26425)",
+   "https://monstersandmemories.miraheze.org/wiki/Wood_Elf"
+  ]
+ ],
+ "stat_facts": [
+  [
+   "STA",
+   "Increases health and reduces chance to be dazed in combat (wiki Statistics; '1 STA = 1 HP' is marked 'need testing' there)."
+  ],
+  [
+   "AGI",
+   "Provides damage mitigation (wiki Statistics)."
+  ],
+  [
+   "STR",
+   "Increases melee and ranged weapon damage and shield block amounts; 1 STR = 2 weight (wiki Statistics)."
+  ],
+  [
+   "DEX",
+   "Increases hit rate, weapon proc frequency and gives a channeling bonus to spellcasters (wiki Statistics)."
+  ],
+  [
+   "INT",
+   "Mana pool size if INT is higher than WIS, and offensive spell damage (wiki Statistics)."
+  ],
+  [
+   "WIS",
+   "Mana pool size if WIS is higher than INT, and healing done; 4 mana per WIS point for WIS-based classes (wiki Statistics)."
+  ],
+  [
+   "CHA",
+   "Merchant prices and charm break rate on paper; the wiki notes CHA did not seem to affect vendor prices in beta (May 2026)."
+  ]
+ ],
+ "class_mod": "+4 STR, +2 AGI, +2 WIS (wiki Beastmaster Creation Guide)",
+ "mana": {
+  "stat": "INT/WIS",
+  "text": "Your mana stat is whichever of INT or WIS is higher (wiki Statistics); 34 of 74 wiki Beastmaster spells cost mana.",
+  "label": "FACT"
+ },
+ "wiki_advice": null,
+ "builds": [
+  {
+   "name": "Brawler (default)",
+   "alloc": {
+    "STR": 4,
+    "STA": 3,
+    "AGI": 3
+   },
+   "why": "Beastmasters fight in melee with two-handers or claws alongside a companion (official). STR for damage, STA and AGI to survive when the pet loses aggro."
+  },
+  {
+   "name": "Pet support",
+   "alloc": {
+    "WIS": 4,
+    "STA": 3,
+    "STR": 3
+   },
+   "why": "For most playable races your WIS is higher than INT, so WIS is your mana stat (wiki Statistics; Deep Gnome is the exception, see the mana note). More mana for companion heals and buffs."
+  },
+  {
+   "name": "Hard hitter",
+   "alloc": {
+    "STR": 5,
+    "DEX": 3,
+    "STA": 2
+   },
+   "why": "Weapon damage and hit rate when your companion tanks."
+  }
+ ],
+ "build_caveat": "Point totals are from the wiki race pages (10 bonus points for every listed race/class). Whether a stat has a per-point cap or diminishing returns at creation is not documented on the wiki: UNVERIFIED.",
+ "traits": [
+  {
+   "cat": "Major Combat Traits",
+   "pick": "Strong",
+   "alt": [
+    "Agile",
+    "Wise"
+   ],
+   "why": "Strong: +5% STR and a 15-second +50% STR burst for your melee."
+  },
+  {
+   "cat": "Minor Combat Traits",
+   "pick": "Alterer",
+   "alt": [
+    "Warrior",
+    "Defender"
+   ],
+   "why": "Alteration is the biggest Beastmaster school on the wiki spell list (35 of 74). Alterer starts it at 10 and raises it 25% faster. Warrior (Offense) if you play mostly melee."
+  },
+  {
+   "cat": "Major Non-Combat Traits",
+   "pick": "Forage",
+   "alt": [
+    "Infravision",
+    "Ultravision",
+    "Slow Metabolism"
+   ],
+   "why": "Forage finds food and drink in the field, so fewer vendor runs. Beastmasters may take it. Infravision or Ultravision only if your race may take it (see the race note).",
+   "race_pick": {
+    "Halfling": "Infravision (you already have Forage as a racial)",
+    "Wood Elf": "Infravision (you already have Forage as a racial)"
+   }
+  },
+  {
+   "cat": "Minor Non-Combat Traits",
+   "pick": "Miner",
+   "alt": [
+    "Medic",
+    "Lumberjack"
+   ],
+   "why": "Miner starts Mining at 25 with a Trainee's Mining Pick and Pouch, matching the default gathering setup (Mining, Lumberjacking, Smelting) for early coin. Medic (Bind Wound 25 and bandages) is the safer pick if you expect downtime between fights. Blacksmith exists but smithing stays off by default here."
+  }
+ ],
+ "trait_caveat": "Trait text and race/class limits are from Template:Traits; picks that your race cannot take are swapped automatically in the race note. Which trait is 'best' is STRATEGY; no sourced numbers compare them.",
+ "races": {
+  "Deep Gnome": {
+   "pros": [
+    "Can take the Ultravision trait."
+   ],
+   "cons": [
+    "Lowest starting STR of the playable Beastmaster races (18).",
+    "Racial ability not documented on the wiki race page.",
+    "Alignment not on the wiki; starts as a Beastmaster in Underdocks.",
+    "Race page note: Deep Gnomes con Disdain at worst in Evershade Weald and Night Harbor. They are KoS to everyone in Ail'Vorith."
+   ]
+  },
+  "Goblin": {
+   "pros": [
+    "Racial: Bribe: make a target forget past wrongdoings.",
+    "Resistance Disease +5 (race page).",
+    "Resistance Poison +5 (race page).",
+    "Neutral alignment; starts as a Beastmaster in Underdocks."
+   ],
+   "cons": []
+  },
+  "Halfling": {
+   "pros": [
+    "Highest starting STA of the playable Beastmaster races (17).",
+    "Racial: Sneak (race page); Forage as a racial (race page), so no trait slot needed for it.",
+    "Resistance Corruption +5 (race page).",
+    "Resistance Disease +5 (race page).",
+    "Neutral alignment; starts as a Beastmaster in Faelindral, Night Harbor."
+   ],
+   "cons": []
+  },
+  "Human": {
+   "pros": [
+    "Highest starting STR of the playable Beastmaster races (20).",
+    "Highest starting STA of the playable Beastmaster races (17).",
+    "Racial: Tenacity: +15% resistance to Mesmerize and Incapacitate, plus an active 15-second immunity.",
+    "Neutral alignment; starts as a Beastmaster in Night Harbor, Underdocks."
+   ],
+   "cons": [
+    "Lowest starting AGI of the playable Beastmaster races (18).",
+    "Resistance Corruption -5 (race page).",
+    "Resistance Holy -5 (race page)."
+   ]
+  },
+  "Wood Elf": {
+   "pros": [
+    "Highest starting AGI of the playable Beastmaster races (22).",
+    "Racial: Hide: become unseen while still (removed by moving or acting); Forage as a racial (race page), so no trait slot needed for it.",
+    "Resistance Electricity +5 (race page).",
+    "Good alignment; starts as a Beastmaster in Faelindral, Night Harbor."
+   ],
+   "cons": [
+    "Lowest starting STR of the playable Beastmaster races (18).",
+    "Lowest starting STA of the playable Beastmaster races (14).",
+    "Resistance Fire -5 (race page)."
+   ]
+  }
+ },
+ "planned_races": {
+  "Troll": "Listed on the official Beastmaster page but not playable in Early Access (no wiki start-city row)."
+ },
+ "tradeskills": {
+  "recommend": [
+   "mining",
+   "smelting",
+   "lumberjacking",
+   "bind-wound"
+  ],
+  "why": {
+   "mining": "Gathering for coin; pairs with the Miner trait (this Codex's default set).",
+   "smelting": "Turns ore into sellable bars (separate skill on the wiki).",
+   "lumberjacking": "Second gathering skill for coin, part of the default set.",
+   "bind-wound": "Bandaging between pulls cuts downtime for classes without strong self-heals."
+  },
+  "note": "Gathering defaults plus Bind Wound. Smithing stays off. STRATEGY."
+ }
+}

@@ -1,0 +1,238 @@
+{
+ "class": "Cleric",
+ "updated": "2026-10-18",
+ "generated_by": "tools/chargen_classes.py",
+ "sources": [
+  [
+   "Official class page: Cleric",
+   "https://monstersandmemories.com/class-cleric"
+  ],
+  [
+   "Wiki: Cleric (rev 79422)",
+   "https://monstersandmemories.miraheze.org/wiki/Cleric"
+  ],
+  [
+   "Wiki: Statistics (rev 82276)",
+   "https://monstersandmemories.miraheze.org/wiki/Statistics"
+  ],
+  [
+   "Wiki: Traits (Template:Traits rev 79106)",
+   "https://monstersandmemories.miraheze.org/wiki/Traits"
+  ],
+  [
+   "Wiki: Starting City by Race, Class, and Deity (rev 74855)",
+   "https://monstersandmemories.miraheze.org/wiki/Starting_City_by_Race,_Class,_and_Deity"
+  ],
+  [
+   "Official Early Access FAQ: starting areas",
+   "https://monstersandmemories.com/early-access-faq"
+  ],
+  [
+   "Wiki: Deep Elf (rev 69451)",
+   "https://monstersandmemories.miraheze.org/wiki/Deep_Elf"
+  ],
+  [
+   "Wiki: Dwarf (rev 33158)",
+   "https://monstersandmemories.miraheze.org/wiki/Dwarf"
+  ],
+  [
+   "Wiki: Gnome (rev 33790)",
+   "https://monstersandmemories.miraheze.org/wiki/Gnome"
+  ],
+  [
+   "Wiki: Halfling (rev 26426)",
+   "https://monstersandmemories.miraheze.org/wiki/Halfling"
+  ],
+  [
+   "Wiki: Human (rev 26421)",
+   "https://monstersandmemories.miraheze.org/wiki/Human"
+  ]
+ ],
+ "stat_facts": [
+  [
+   "STA",
+   "Increases health and reduces chance to be dazed in combat (wiki Statistics; '1 STA = 1 HP' is marked 'need testing' there)."
+  ],
+  [
+   "AGI",
+   "Provides damage mitigation (wiki Statistics)."
+  ],
+  [
+   "STR",
+   "Increases melee and ranged weapon damage and shield block amounts; 1 STR = 2 weight (wiki Statistics)."
+  ],
+  [
+   "DEX",
+   "Increases hit rate, weapon proc frequency and gives a channeling bonus to spellcasters (wiki Statistics)."
+  ],
+  [
+   "INT",
+   "Mana pool size if INT is higher than WIS, and offensive spell damage (wiki Statistics)."
+  ],
+  [
+   "WIS",
+   "Mana pool size if WIS is higher than INT, and healing done; 4 mana per WIS point for WIS-based classes (wiki Statistics)."
+  ],
+  [
+   "CHA",
+   "Merchant prices and charm break rate on paper; the wiki notes CHA did not seem to affect vendor prices in beta (May 2026)."
+  ]
+ ],
+ "class_mod": "+2 STR, +2 STA, +3 WIS, +1 CHA (wiki Cleric Creation Guide)",
+ "mana": {
+  "stat": "INT/WIS",
+  "text": "Your mana stat is whichever of INT or WIS is higher (wiki Statistics); 106 of 125 wiki Cleric spells cost mana.",
+  "label": "FACT"
+ },
+ "wiki_advice": "Listed below is the recommended allocation of bonus points by race. Since Wisdom is a Cleric’s main attribute, you should focus on maximizing it whenever possible. Wisdom is directly tied to your healing spells effectiveness and total mana. After that, prioritize Stamina. It gives you extra HP and a bit of stun resistance. Finally, put a point into Dexterity if you have any left. It affects hit rate across the board and increases your proc chance. Dwarf: +2 Stamina and +8 Wisdom Gnome: +2 Stamina and +8 Wisdom Halfling: +4 Stamina, +2 Dexterity, and +4 Wisdom Human: +2 Stamina and +8 Wisdom",
+ "builds": [
+  {
+   "name": "Healer (default)",
+   "alloc": {
+    "WIS": 8,
+    "STA": 2
+   },
+   "why": "Matches the wiki Cleric creation advice for most races: WIS is tied to heal strength and mana; STA next for HP and stun resistance."
+  },
+  {
+   "name": "Off-tank cleric",
+   "alloc": {
+    "WIS": 5,
+    "STA": 3,
+    "AGI": 2
+   },
+   "why": "The official page says Clerics can off-tank in heavy armor while casting. More STA/AGI for that, still WIS-first."
+  },
+  {
+   "name": "Halfling split",
+   "alloc": {
+    "WIS": 4,
+    "STA": 4,
+    "DEX": 2
+   },
+   "why": "The wiki's Halfling allocation, since Halflings already start with very high WIS (23)."
+  }
+ ],
+ "build_caveat": "Point totals are from the wiki race pages (10 bonus points for every listed race/class). Whether a stat has a per-point cap or diminishing returns at creation is not documented on the wiki: UNVERIFIED.",
+ "traits": [
+  {
+   "cat": "Major Combat Traits",
+   "pick": "Wise",
+   "alt": [
+    "Tough",
+    "Holy Resistant"
+   ],
+   "why": "Wise: +5% base WIS and a 15-second +50% WIS burst, your heal and mana stat."
+  },
+  {
+   "cat": "Minor Combat Traits",
+   "pick": "Channeler",
+   "alt": [
+    "Alterer",
+    "Shieldman"
+   ],
+   "why": "Channeler keeps heals going while you are hit (starts at 10, +25% speed). The wiki Cleric spell list has no school column, so no school trait is suggested from data. Shieldman gives a buckler for off-tanking."
+  },
+  {
+   "cat": "Major Non-Combat Traits",
+   "pick": "Readiness",
+   "alt": [
+    "Forage",
+    "Infravision",
+    "Ultravision"
+   ],
+   "why": "Readiness gives a Cantrip slot from level 1, so one memorized spell survives death. Good insurance for a healer."
+  },
+  {
+   "cat": "Minor Non-Combat Traits",
+   "pick": "Miner",
+   "alt": [
+    "Medic",
+    "Lumberjack"
+   ],
+   "why": "Miner starts Mining at 25 with a Trainee's Mining Pick and Pouch, matching the default gathering setup (Mining, Lumberjacking, Smelting) for early coin. Medic (Bind Wound 25 and bandages) is the safer pick if you expect downtime between fights. Blacksmith exists but smithing stays off by default here."
+  }
+ ],
+ "trait_caveat": "Trait text and race/class limits are from Template:Traits; picks that your race cannot take are swapped automatically in the race note. Which trait is 'best' is STRATEGY; no sourced numbers compare them.",
+ "races": {
+  "Deep Elf": {
+   "pros": [
+    "Can take the Ultravision trait."
+   ],
+   "cons": [
+    "Lowest starting STA of the playable Cleric races (17).",
+    "Lowest starting DEX of the playable Cleric races (16).",
+    "Racial ability not documented on the wiki race page.",
+    "Evil alignment; starts as a Cleric in Ail'Vorith, Underdocks. Night Harbor is the start for good and neutral combinations (official FAQ); how it treats evil races is not sourced yet."
+   ]
+  },
+  "Dwarf": {
+   "pros": [
+    "Highest starting STA of the playable Cleric races (19).",
+    "Racial: Stone Form: 15 seconds of +25% AC, -10% physical damage taken and Disease/Electricity/Poison cleanse.",
+    "Resistance Cold +5 (race page).",
+    "Resistance Magic +5 (race page).",
+    "Neutral alignment; starts as a Cleric in Night Harbor."
+   ],
+   "cons": []
+  },
+  "Gnome": {
+   "pros": [
+    "Highest starting DEX of the playable Cleric races (19).",
+    "Racial: Slippery: +15% root resistance, plus an active 15-second Root/Snare immunity.",
+    "Resistance Electricity +5 (race page).",
+    "Resistance Poison +5 (race page).",
+    "Neutral alignment; starts as a Cleric in Night Harbor, Underdocks."
+   ],
+   "cons": [
+    "Lowest starting WIS of the playable Cleric races (18).",
+    "Lowest starting STA of the playable Cleric races (17)."
+   ]
+  },
+  "Halfling": {
+   "pros": [
+    "Highest starting WIS of the playable Cleric races (23).",
+    "Highest starting STA of the playable Cleric races (19).",
+    "Racial: Sneak (race page); Forage as a racial (race page), so no trait slot needed for it.",
+    "Resistance Corruption +5 (race page).",
+    "Resistance Disease +5 (race page).",
+    "Neutral alignment; starts as a Cleric in Night Harbor."
+   ],
+   "cons": [
+    "Lowest starting DEX of the playable Cleric races (16)."
+   ]
+  },
+  "Human": {
+   "pros": [
+    "Highest starting STA of the playable Cleric races (19).",
+    "Racial: Tenacity: +15% resistance to Mesmerize and Incapacitate, plus an active 15-second immunity.",
+    "Neutral alignment; starts as a Cleric in Night Harbor, Underdocks."
+   ],
+   "cons": [
+    "Lowest starting DEX of the playable Cleric races (16).",
+    "Resistance Corruption -5 (race page).",
+    "Resistance Holy -5 (race page)."
+   ]
+  }
+ },
+ "planned_races": {
+  "Deep Dwarf": "Listed on the official Cleric page but not playable in Early Access (no wiki start-city row).",
+  "High Elf": "Listed on the official Cleric page but not playable in Early Access (no wiki start-city row).",
+  "Var'nai": "Listed on the official Cleric page but not playable in Early Access (no wiki start-city row)."
+ },
+ "tradeskills": {
+  "recommend": [
+   "mining",
+   "smelting",
+   "lumberjacking",
+   "bind-wound"
+  ],
+  "why": {
+   "mining": "Gathering for coin; pairs with the Miner trait (this Codex's default set).",
+   "smelting": "Turns ore into sellable bars (separate skill on the wiki).",
+   "lumberjacking": "Second gathering skill for coin, part of the default set.",
+   "bind-wound": "Bandaging between pulls cuts downtime for classes without strong self-heals."
+  },
+  "note": "Gathering defaults plus Bind Wound. Smithing stays off. STRATEGY."
+ }
+}

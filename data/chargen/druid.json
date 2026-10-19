@@ -1,0 +1,232 @@
+{
+ "class": "Druid",
+ "updated": "2026-10-18",
+ "generated_by": "tools/chargen_classes.py",
+ "sources": [
+  [
+   "Official class page: Druid",
+   "https://monstersandmemories.com/class-druid"
+  ],
+  [
+   "Wiki: Druid (rev 80348)",
+   "https://monstersandmemories.miraheze.org/wiki/Druid"
+  ],
+  [
+   "Wiki: Statistics (rev 82276)",
+   "https://monstersandmemories.miraheze.org/wiki/Statistics"
+  ],
+  [
+   "Wiki: Traits (Template:Traits rev 79106)",
+   "https://monstersandmemories.miraheze.org/wiki/Traits"
+  ],
+  [
+   "Wiki: Starting City by Race, Class, and Deity (rev 74855)",
+   "https://monstersandmemories.miraheze.org/wiki/Starting_City_by_Race,_Class,_and_Deity"
+  ],
+  [
+   "Official Early Access FAQ: starting areas",
+   "https://monstersandmemories.com/early-access-faq"
+  ],
+  [
+   "Wiki: Deep Gnome (rev 75256)",
+   "https://monstersandmemories.miraheze.org/wiki/Deep_Gnome"
+  ],
+  [
+   "Wiki: Goblin (rev 74107)",
+   "https://monstersandmemories.miraheze.org/wiki/Goblin"
+  ],
+  [
+   "Wiki: Halfling (rev 26426)",
+   "https://monstersandmemories.miraheze.org/wiki/Halfling"
+  ],
+  [
+   "Wiki: Human (rev 26421)",
+   "https://monstersandmemories.miraheze.org/wiki/Human"
+  ],
+  [
+   "Wiki: Wood Elf (rev 26425)",
+   "https://monstersandmemories.miraheze.org/wiki/Wood_Elf"
+  ]
+ ],
+ "stat_facts": [
+  [
+   "STA",
+   "Increases health and reduces chance to be dazed in combat (wiki Statistics; '1 STA = 1 HP' is marked 'need testing' there)."
+  ],
+  [
+   "AGI",
+   "Provides damage mitigation (wiki Statistics)."
+  ],
+  [
+   "STR",
+   "Increases melee and ranged weapon damage and shield block amounts; 1 STR = 2 weight (wiki Statistics)."
+  ],
+  [
+   "DEX",
+   "Increases hit rate, weapon proc frequency and gives a channeling bonus to spellcasters (wiki Statistics)."
+  ],
+  [
+   "INT",
+   "Mana pool size if INT is higher than WIS, and offensive spell damage (wiki Statistics)."
+  ],
+  [
+   "WIS",
+   "Mana pool size if WIS is higher than INT, and healing done; 4 mana per WIS point for WIS-based classes (wiki Statistics)."
+  ],
+  [
+   "CHA",
+   "Merchant prices and charm break rate on paper; the wiki notes CHA did not seem to affect vendor prices in beta (May 2026)."
+  ]
+ ],
+ "class_mod": "+2 AGI, +4 WIS, +2 CHA (wiki Druid Creation Guide)",
+ "mana": {
+  "stat": "INT/WIS",
+  "text": "Your mana stat is whichever of INT or WIS is higher (wiki Statistics); 142 of 146 wiki Druid spells cost mana.",
+  "label": "FACT"
+ },
+ "wiki_advice": "Listed below is the recommended allocation of bonus points by race. Since Wisdom is a Druid’s main attribute, you should focus on maximizing it whenever possible. Wisdom is directly tied to your healing spells effectiveness and total mana. After that, prioritize Charisma. It helps with the Druid's charm line of spells, along with a few other spell lines. Finally, put a point into Dexterity if you have any left. It affects hit rate across the board and increases your proc chance. Goblin: +1 Dexterity, +6 Wisdom, and +3 Charisma Halfling: +3 Dexterity, +3 Wisdom, and +4 Charisma Human: +2 Dexterity, +7 Wisdom, and +1 Charisma Wood Elf: +1 Dexterity, +7 Wisdom, and +2 Charisma",
+ "builds": [
+  {
+   "name": "Healer-caster (default)",
+   "alloc": {
+    "WIS": 7,
+    "DEX": 2,
+    "CHA": 1
+   },
+   "why": "The wiki Druid advice: WIS first (heals and mana), then CHA for the charm line, then DEX."
+  },
+  {
+   "name": "Charm soloer",
+   "alloc": {
+    "WIS": 5,
+    "CHA": 5
+   },
+   "why": "The official page calls Druids one of the strongest solo classes through animal control; the wiki ties charm to CHA."
+  },
+  {
+   "name": "Sturdy outdoorsman",
+   "alloc": {
+    "WIS": 6,
+    "STA": 4
+   },
+   "why": "More HP for soloing without a charm pet."
+  }
+ ],
+ "build_caveat": "Point totals are from the wiki race pages (10 bonus points for every listed race/class). Whether a stat has a per-point cap or diminishing returns at creation is not documented on the wiki: UNVERIFIED.",
+ "traits": [
+  {
+   "cat": "Major Combat Traits",
+   "pick": "Wise",
+   "alt": [
+    "Charismatic",
+    "Tough"
+   ],
+   "why": "Wise: +5% base WIS and a 15-second +50% WIS burst."
+  },
+  {
+   "cat": "Minor Combat Traits",
+   "pick": "Alterer",
+   "alt": [
+    "Evoker",
+    "Channeler"
+   ],
+   "why": "Alteration is by far the biggest Druid school on the wiki (82 of 146 spells): heals, buffs and snares. Evoker for the nukes (28)."
+  },
+  {
+   "cat": "Major Non-Combat Traits",
+   "pick": "Readiness",
+   "alt": [
+    "Infravision",
+    "Ultravision"
+   ],
+   "why": "Readiness gives a Cantrip slot from level 1, so one memorized spell survives death. Forage is not available to Druids (Template:Traits)."
+  },
+  {
+   "cat": "Minor Non-Combat Traits",
+   "pick": "Miner",
+   "alt": [
+    "Tracker",
+    "Herbalist"
+   ],
+   "why": "Miner for early coin. Tracker (Druid, Bard, Ranger only) starts Tracking at 25."
+  }
+ ],
+ "trait_caveat": "Trait text and race/class limits are from Template:Traits; picks that your race cannot take are swapped automatically in the race note. Which trait is 'best' is STRATEGY; no sourced numbers compare them.",
+ "races": {
+  "Deep Gnome": {
+   "pros": [
+    "Can take the Ultravision trait."
+   ],
+   "cons": [
+    "Lowest starting WIS of the playable Druid races (18).",
+    "Racial ability not documented on the wiki race page.",
+    "Alignment not on the wiki; starts as a Druid in Underdocks.",
+    "Race page note: Deep Gnomes con Disdain at worst in Evershade Weald and Night Harbor. They are KoS to everyone in Ail'Vorith."
+   ]
+  },
+  "Goblin": {
+   "pros": [
+    "Highest starting DEX of the playable Druid races (19).",
+    "Racial: Bribe: make a target forget past wrongdoings.",
+    "Resistance Disease +5 (race page).",
+    "Resistance Poison +5 (race page).",
+    "Neutral alignment; starts as a Druid in Underdocks."
+   ],
+   "cons": [
+    "Lowest starting CHA of the playable Druid races (15)."
+   ]
+  },
+  "Halfling": {
+   "pros": [
+    "Highest starting WIS of the playable Druid races (24).",
+    "Racial: Sneak (race page); Forage as a racial (race page), so no trait slot needed for it.",
+    "Resistance Corruption +5 (race page).",
+    "Resistance Disease +5 (race page).",
+    "Neutral alignment; starts as a Druid in Faelindral, Night Harbor."
+   ],
+   "cons": [
+    "Lowest starting DEX of the playable Druid races (16)."
+   ]
+  },
+  "Human": {
+   "pros": [
+    "Highest starting CHA of the playable Druid races (19).",
+    "Racial: Tenacity: +15% resistance to Mesmerize and Incapacitate, plus an active 15-second immunity.",
+    "Neutral alignment; starts as a Druid in Night Harbor, Underdocks."
+   ],
+   "cons": [
+    "Lowest starting DEX of the playable Druid races (16).",
+    "Resistance Corruption -5 (race page).",
+    "Resistance Holy -5 (race page)."
+   ]
+  },
+  "Wood Elf": {
+   "pros": [
+    "Racial: Hide: become unseen while still (removed by moving or acting); Forage as a racial (race page), so no trait slot needed for it.",
+    "Resistance Electricity +5 (race page).",
+    "Good alignment; starts as a Druid in Faelindral, Night Harbor."
+   ],
+   "cons": [
+    "Resistance Fire -5 (race page)."
+   ]
+  }
+ },
+ "planned_races": {
+  "Troll": "Listed on the official Druid page but not playable in Early Access (no wiki start-city row)."
+ },
+ "tradeskills": {
+  "recommend": [
+   "mining",
+   "smelting",
+   "lumberjacking",
+   "herbalism"
+  ],
+  "why": {
+   "mining": "Gathering for coin; pairs with the Miner trait (this Codex's default set).",
+   "smelting": "Turns ore into sellable bars (separate skill on the wiki).",
+   "lumberjacking": "Second gathering skill for coin, part of the default set.",
+   "herbalism": "Gathering skill that pairs with outdoor travel."
+  },
+  "note": "Gathering defaults plus Herbalism for outdoor travel. Smithing stays off. STRATEGY."
+ }
+}

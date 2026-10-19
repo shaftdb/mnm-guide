@@ -1,0 +1,250 @@
+{
+ "class": "Ranger",
+ "updated": "2026-10-18",
+ "generated_by": "tools/chargen_classes.py",
+ "sources": [
+  [
+   "Official class page: Ranger",
+   "https://monstersandmemories.com/class-ranger"
+  ],
+  [
+   "Wiki: Ranger (rev 78039)",
+   "https://monstersandmemories.miraheze.org/wiki/Ranger"
+  ],
+  [
+   "Wiki: Statistics (rev 82276)",
+   "https://monstersandmemories.miraheze.org/wiki/Statistics"
+  ],
+  [
+   "Wiki: Traits (Template:Traits rev 79106)",
+   "https://monstersandmemories.miraheze.org/wiki/Traits"
+  ],
+  [
+   "Wiki: Starting City by Race, Class, and Deity (rev 74855)",
+   "https://monstersandmemories.miraheze.org/wiki/Starting_City_by_Race,_Class,_and_Deity"
+  ],
+  [
+   "Official Early Access FAQ: starting areas",
+   "https://monstersandmemories.com/early-access-faq"
+  ],
+  [
+   "Wiki: Deep Elf (rev 69451)",
+   "https://monstersandmemories.miraheze.org/wiki/Deep_Elf"
+  ],
+  [
+   "Wiki: Dwarf (rev 33158)",
+   "https://monstersandmemories.miraheze.org/wiki/Dwarf"
+  ],
+  [
+   "Wiki: Goblin (rev 74107)",
+   "https://monstersandmemories.miraheze.org/wiki/Goblin"
+  ],
+  [
+   "Wiki: Halfling (rev 26426)",
+   "https://monstersandmemories.miraheze.org/wiki/Halfling"
+  ],
+  [
+   "Wiki: Human (rev 26421)",
+   "https://monstersandmemories.miraheze.org/wiki/Human"
+  ],
+  [
+   "Wiki: Wood Elf (rev 26425)",
+   "https://monstersandmemories.miraheze.org/wiki/Wood_Elf"
+  ]
+ ],
+ "stat_facts": [
+  [
+   "STA",
+   "Increases health and reduces chance to be dazed in combat (wiki Statistics; '1 STA = 1 HP' is marked 'need testing' there)."
+  ],
+  [
+   "AGI",
+   "Provides damage mitigation (wiki Statistics)."
+  ],
+  [
+   "STR",
+   "Increases melee and ranged weapon damage and shield block amounts; 1 STR = 2 weight (wiki Statistics)."
+  ],
+  [
+   "DEX",
+   "Increases hit rate, weapon proc frequency and gives a channeling bonus to spellcasters (wiki Statistics)."
+  ],
+  [
+   "INT",
+   "Mana pool size if INT is higher than WIS, and offensive spell damage (wiki Statistics)."
+  ],
+  [
+   "WIS",
+   "Mana pool size if WIS is higher than INT, and healing done; 4 mana per WIS point for WIS-based classes (wiki Statistics)."
+  ],
+  [
+   "CHA",
+   "Merchant prices and charm break rate on paper; the wiki notes CHA did not seem to affect vendor prices in beta (May 2026)."
+  ]
+ ],
+ "class_mod": "+1 STR, +3 DEX, +2 AGI, +2 WIS (wiki Ranger Creation Guide)",
+ "mana": {
+  "stat": "INT/WIS",
+  "text": "Your mana stat is whichever of INT or WIS is higher (wiki Statistics); 13 of 103 wiki Ranger spells cost mana.",
+  "label": "FACT"
+ },
+ "wiki_advice": null,
+ "builds": [
+  {
+   "name": "Dual-wield and bow (default)",
+   "alloc": {
+    "DEX": 4,
+    "STR": 3,
+    "AGI": 3
+   },
+   "why": "Rangers use a bow and dual blades (official). DEX for hit rate and procs, STR for weapon damage, AGI for off-tanking."
+  },
+  {
+   "name": "Outdoor utility",
+   "alloc": {
+    "DEX": 3,
+    "WIS": 4,
+    "STA": 3
+   },
+   "why": "For most playable races WIS is at least as high as INT, so it is your mana stat for snares and travel spells (see the mana note for your race)."
+  },
+  {
+   "name": "Off-tank",
+   "alloc": {
+    "STA": 4,
+    "AGI": 4,
+    "STR": 2
+   },
+   "why": "The official page says Rangers can off-tank with limited aggro control."
+  }
+ ],
+ "build_caveat": "Point totals are from the wiki race pages (10 bonus points for every listed race/class). Whether a stat has a per-point cap or diminishing returns at creation is not documented on the wiki: UNVERIFIED.",
+ "traits": [
+  {
+   "cat": "Major Combat Traits",
+   "pick": "Dexterous",
+   "alt": [
+    "Strong",
+    "Agile"
+   ],
+   "why": "Dexterous: +5% DEX and a 15-second +50% DEX burst."
+  },
+  {
+   "cat": "Minor Combat Traits",
+   "pick": "Bowman",
+   "alt": [
+    "Swordsman",
+    "Defender"
+   ],
+   "why": "Bowman: Archery at 5 (+25%), a Trainee's Longbow, Hip Quiver and 1000 arrows. Swordsman if you open in melee."
+  },
+  {
+   "cat": "Major Non-Combat Traits",
+   "pick": "Infravision",
+   "alt": [
+    "Ultravision",
+    "Slow Metabolism"
+   ],
+   "why": "Forage is not available to Rangers (they draw food from nature as a class ability, official). Infravision or Ultravision helps in caves at night; pick one your race may take.",
+   "race_pick": {
+    "Deep Elf": "Ultravision (Infravision is not available to your race)",
+    "Human": "Slow Metabolism (Infravision is not available to your race)"
+   }
+  },
+  {
+   "cat": "Minor Non-Combat Traits",
+   "pick": "Tracker",
+   "alt": [
+    "Miner",
+    "Medic"
+   ],
+   "why": "Tracker (Ranger, Druid, Bard only) starts Tracking at 25 and raises it 25% faster; Rangers can track creatures (official). Miner for coin."
+  }
+ ],
+ "trait_caveat": "Trait text and race/class limits are from Template:Traits; picks that your race cannot take are swapped automatically in the race note. Which trait is 'best' is STRATEGY; no sourced numbers compare them.",
+ "races": {
+  "Deep Elf": {
+   "pros": [
+    "Can take the Ultravision trait."
+   ],
+   "cons": [
+    "Lowest starting DEX of the playable Ranger races (19).",
+    "Lowest starting STR of the playable Ranger races (15).",
+    "Racial ability not documented on the wiki race page.",
+    "Evil alignment; starts as a Ranger in Ail'Vorith, Underdocks. Night Harbor is the start for good and neutral combinations (official FAQ); how it treats evil races is not sourced yet."
+   ]
+  },
+  "Dwarf": {
+   "pros": [
+    "Highest starting STR of the playable Ranger races (18).",
+    "Racial: Stone Form: 15 seconds of +25% AC, -10% physical damage taken and Disease/Electricity/Poison cleanse.",
+    "Resistance Cold +5 (race page).",
+    "Resistance Magic +5 (race page).",
+    "Neutral alignment; starts as a Ranger in Night Harbor."
+   ],
+   "cons": [
+    "Lowest starting AGI of the playable Ranger races (17)."
+   ]
+  },
+  "Goblin": {
+   "pros": [
+    "Highest starting DEX of the playable Ranger races (22).",
+    "Racial: Bribe: make a target forget past wrongdoings.",
+    "Resistance Disease +5 (race page).",
+    "Resistance Poison +5 (race page).",
+    "Neutral alignment; starts as a Ranger in Underdocks."
+   ],
+   "cons": []
+  },
+  "Halfling": {
+   "pros": [
+    "Racial: Sneak (race page); Forage as a racial (race page), so no trait slot needed for it.",
+    "Resistance Corruption +5 (race page).",
+    "Resistance Disease +5 (race page).",
+    "Neutral alignment; starts as a Ranger in Faelindral, Night Harbor."
+   ],
+   "cons": [
+    "Lowest starting DEX of the playable Ranger races (19)."
+   ]
+  },
+  "Human": {
+   "pros": [
+    "Racial: Tenacity: +15% resistance to Mesmerize and Incapacitate, plus an active 15-second immunity.",
+    "Neutral alignment; starts as a Ranger in Night Harbor, Underdocks."
+   ],
+   "cons": [
+    "Lowest starting DEX of the playable Ranger races (19).",
+    "Resistance Corruption -5 (race page).",
+    "Resistance Holy -5 (race page)."
+   ]
+  },
+  "Wood Elf": {
+   "pros": [
+    "Highest starting AGI of the playable Ranger races (22).",
+    "Racial: Hide: become unseen while still (removed by moving or acting); Forage as a racial (race page), so no trait slot needed for it.",
+    "Resistance Electricity +5 (race page).",
+    "Good alignment; starts as a Ranger in Faelindral, Night Harbor."
+   ],
+   "cons": [
+    "Lowest starting STR of the playable Ranger races (15).",
+    "Resistance Fire -5 (race page)."
+   ]
+  }
+ },
+ "planned_races": {},
+ "tradeskills": {
+  "recommend": [
+   "mining",
+   "smelting",
+   "lumberjacking",
+   "fletching"
+  ],
+  "why": {
+   "mining": "Gathering for coin; pairs with the Miner trait (this Codex's default set).",
+   "smelting": "Turns ore into sellable bars (separate skill on the wiki).",
+   "lumberjacking": "Second gathering skill for coin, part of the default set.",
+   "fletching": "Make your own arrows instead of buying them."
+  },
+  "note": "Gathering defaults plus Fletching for arrows. Smithing stays off. STRATEGY."
+ }
+}
