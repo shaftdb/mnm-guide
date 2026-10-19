@@ -62,7 +62,7 @@ function render(){
   var Q=window.MNM_QUICK; if(!mount||!Q) return;
   var p=Q.panels[cls+'|'+cur]; if(!p) return;
   mount.innerHTML='<div class="qi-head"><h2 style="margin-top:0">Quick info · '+cls+' · '+(R.labels[cur]||cur)+'</h2>'+
-   '<p class="dim">Change class or levels in the bar at the top (remembered in this browser). <a href="'+root+String(R.urls[cls]).replace(/^\//,'')+'">Full '+cls+' guide</a></p></div>'+fix(p);
+   '<p class="dim">Change class or levels in the bar at the top (remembered in this browser). <a href="'+root+String(R.urls[cls]).replace(/^\//,'')+'">Full '+cls+' guide</a></p></div>'+fix(p).replace('<!--sc-route-->','<div class="qi-sec sc-qi">'+fix((Q.route||{})[cur]||'')+'</div>').replace('<!--sc-route-nh-->','<div class="qi-sec sc-qi">'+fix((Q.routenh||{})[cur]||'')+'</div>');
   var f=document.getElementById('mnm-filter'); if(f&&f.value) f.dispatchEvent(new Event('input'));
 }
 function marks(){

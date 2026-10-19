@@ -1,0 +1,581 @@
+{
+ "city": "Night Harbor",
+ "slug": "night-harbor",
+ "status": "partial",
+ "updated": "2026-10-18",
+ "generated_by": "tools/startcity_stubs.py",
+ "sources": {
+  "faq": [
+   "Official Early Access FAQ (starting areas)",
+   "https://monstersandmemories.com/early-access-faq"
+  ],
+  "city": [
+   "Wiki: Night Harbor",
+   "https://monstersandmemories.miraheze.org/wiki/Night_Harbor"
+  ],
+  "nh": [
+   "Wiki: Night Harbor",
+   "https://monstersandmemories.miraheze.org/wiki/Night_Harbor"
+  ],
+  "tomb": [
+   "Wiki: Tomb of the Last Wyrmsbane",
+   "https://monstersandmemories.miraheze.org/wiki/Tomb_of_the_Last_Wyrmsbane"
+  ],
+  "sd": [
+   "Wiki: Shaded Dunes",
+   "https://monstersandmemories.miraheze.org/wiki/Shaded_Dunes"
+  ],
+  "qs": [
+   "Wiki quest walkthroughs (quest helper)",
+   "/quest-helper.html"
+  ]
+ },
+ "intro": [
+  {
+   "label": "FACT",
+   "text": "Good and neutral race/faith/class combinations can start here.",
+   "src": [
+    "faq"
+   ]
+  },
+  {
+   "label": "UNVERIFIED",
+   "text": "Partial route: class starter quests and the Night Harbor camps that were in the old band notes. A full curated Night Harbor route is not written yet: no sourced data yet for the other bands.",
+   "src": []
+  }
+ ],
+ "faction": [],
+ "travel": [],
+ "money": [],
+ "trainers": {},
+ "quests": {
+  "s-archer": {
+   "auto": "Archer Starter Quest (Night Harbor)",
+   "classes": [
+    "Archer"
+   ],
+   "tag": "Recommended",
+   "why": "Your class starter quest in Night Harbor.",
+   "src": [
+    "qs"
+   ]
+  },
+  "s-bard": {
+   "auto": "Bard Starter Quest (Night Harbor)",
+   "classes": [
+    "Bard"
+   ],
+   "tag": "Recommended",
+   "why": "Your class starter quest in Night Harbor.",
+   "src": [
+    "qs"
+   ]
+  },
+  "s-beastmaster": {
+   "auto": "Beastmaster Starter Quest (Night Harbor)",
+   "classes": [
+    "Beastmaster"
+   ],
+   "tag": "Recommended",
+   "why": "Your class starter quest in Night Harbor.",
+   "src": [
+    "qs"
+   ]
+  },
+  "s-cleric": {
+   "auto": "Cleric Starter Quest (Night Harbor)",
+   "classes": [
+    "Cleric"
+   ],
+   "tag": "Recommended",
+   "why": "Your class starter quest in Night Harbor.",
+   "src": [
+    "qs"
+   ]
+  },
+  "s-druid": {
+   "auto": "Druid Starter Quest (Night Harbor)",
+   "classes": [
+    "Druid"
+   ],
+   "tag": "Recommended",
+   "why": "Your class starter quest in Night Harbor.",
+   "src": [
+    "qs"
+   ]
+  },
+  "s-elementalist": {
+   "auto": "Elementalist Starter Quest (Night Harbor)",
+   "classes": [
+    "Elementalist"
+   ],
+   "tag": "Recommended",
+   "why": "Your class starter quest in Night Harbor.",
+   "src": [
+    "qs"
+   ]
+  },
+  "s-enchanter": {
+   "auto": "Enchanter Starter Quest (Night Harbor)",
+   "classes": [
+    "Enchanter"
+   ],
+   "tag": "Recommended",
+   "why": "Your class starter quest in Night Harbor.",
+   "src": [
+    "qs"
+   ]
+  },
+  "s-fighter": {
+   "auto": "Fighter Starter Quest (Night Harbor)",
+   "classes": [
+    "Fighter"
+   ],
+   "tag": "Recommended",
+   "why": "Your class starter quest in Night Harbor.",
+   "src": [
+    "qs"
+   ]
+  },
+  "s-inquisitor": {
+   "auto": "Inquisitor Starter Quest (Night Harbor)",
+   "classes": [
+    "Inquisitor"
+   ],
+   "tag": "Recommended",
+   "why": "Your class starter quest in Night Harbor.",
+   "src": [
+    "qs"
+   ]
+  },
+  "s-monk": {
+   "auto": "Monk Starter Quest (Night Harbor)",
+   "classes": [
+    "Monk"
+   ],
+   "tag": "Recommended",
+   "why": "Your class starter quest in Night Harbor.",
+   "src": [
+    "qs"
+   ]
+  },
+  "s-necromancer": {
+   "auto": "Necromancer Starter Quest (Night Harbor)",
+   "classes": [
+    "Necromancer"
+   ],
+   "tag": "Recommended",
+   "why": "Your class starter quest in Night Harbor.",
+   "src": [
+    "qs"
+   ]
+  },
+  "s-paladin": {
+   "auto": "Paladin Starter Quest (Night Harbor)",
+   "classes": [
+    "Paladin"
+   ],
+   "tag": "Recommended",
+   "why": "Your class starter quest in Night Harbor.",
+   "src": [
+    "qs"
+   ]
+  },
+  "s-ranger": {
+   "auto": "Ranger Starter Quest (Night Harbor)",
+   "classes": [
+    "Ranger"
+   ],
+   "tag": "Recommended",
+   "why": "Your class starter quest in Night Harbor.",
+   "src": [
+    "qs"
+   ]
+  },
+  "s-rogue": {
+   "auto": "Rogue Starter Quest (Night Harbor)",
+   "classes": [
+    "Rogue"
+   ],
+   "tag": "Recommended",
+   "why": "Your class starter quest in Night Harbor.",
+   "src": [
+    "qs"
+   ]
+  },
+  "s-shadow-knight": {
+   "auto": "Shadow Knight Starter Quest (Night Harbor)",
+   "classes": [
+    "Shadow Knight"
+   ],
+   "tag": "Recommended",
+   "why": "Your class starter quest in Night Harbor.",
+   "src": [
+    "qs"
+   ]
+  },
+  "s-shaman": {
+   "auto": "Shaman Starter Quest (Night Harbor)",
+   "classes": [
+    "Shaman"
+   ],
+   "tag": "Recommended",
+   "why": "Your class starter quest in Night Harbor.",
+   "src": [
+    "qs"
+   ]
+  },
+  "s-spellblade": {
+   "auto": "Spellblade Starter Quest (Night Harbor)",
+   "classes": [
+    "Spellblade"
+   ],
+   "tag": "Recommended",
+   "why": "Your class starter quest in Night Harbor.",
+   "src": [
+    "qs"
+   ]
+  },
+  "s-wizard": {
+   "auto": "Wizard Starter Quest (Night Harbor)",
+   "classes": [
+    "Wizard"
+   ],
+   "tag": "Recommended",
+   "why": "Your class starter quest in Night Harbor.",
+   "src": [
+    "qs"
+   ]
+  },
+  "scarab": {
+   "auto": "Scarab Armor Quests",
+   "classes": [],
+   "tag": "Recommended",
+   "why": "Starter armor set for any class.",
+   "src": [
+    "nh"
+   ]
+  },
+  "tails": {
+   "auto": "Ashira Tails Quest",
+   "classes": [],
+   "tag": "Optional",
+   "why": "Tattered Rawhide armor from Old Rankle.",
+   "src": [
+    "nh"
+   ]
+  },
+  "ryland": {
+   "auto": "Bone Chips for Squire Ryland",
+   "classes": [],
+   "tag": "Optional",
+   "why": "Repeatable Penitent Knights of the Hospice faction.",
+   "src": [
+    "nh"
+   ]
+  },
+  "cinder": {
+   "auto": "Cinder Beetle Armor Quests",
+   "classes": [],
+   "tag": "Recommended",
+   "why": "Next armor set (minimum level 14 on the Night Harbor page).",
+   "src": [
+    "nh"
+   ]
+  },
+  "heads": {
+   "auto": "Ashira Infiltrator Heads",
+   "classes": [],
+   "tag": "Optional",
+   "why": "Repeatable Red Mantles faction (~15).",
+   "src": [
+    "nh"
+   ]
+  }
+ },
+ "bands": [
+  {
+   "lo": 1,
+   "hi": 5,
+   "title": "Starter quests",
+   "steps": [
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-archer",
+     "classes": [
+      "Archer"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-bard",
+     "classes": [
+      "Bard"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-beastmaster",
+     "classes": [
+      "Beastmaster"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-cleric",
+     "classes": [
+      "Cleric"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-druid",
+     "classes": [
+      "Druid"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-elementalist",
+     "classes": [
+      "Elementalist"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-enchanter",
+     "classes": [
+      "Enchanter"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-fighter",
+     "classes": [
+      "Fighter"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-inquisitor",
+     "classes": [
+      "Inquisitor"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-monk",
+     "classes": [
+      "Monk"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-necromancer",
+     "classes": [
+      "Necromancer"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-paladin",
+     "classes": [
+      "Paladin"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-ranger",
+     "classes": [
+      "Ranger"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-rogue",
+     "classes": [
+      "Rogue"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-shadow-knight",
+     "classes": [
+      "Shadow Knight"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-shaman",
+     "classes": [
+      "Shaman"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-spellblade",
+     "classes": [
+      "Spellblade"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-wizard",
+     "classes": [
+      "Wizard"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Trainer",
+     "src": [
+      "nh"
+     ],
+     "trainer": true
+    },
+    {
+     "label": "FACT",
+     "text": "City armor quest:",
+     "src": [
+      "nh"
+     ],
+     "quest": "scarab"
+    },
+    {
+     "label": "FACT",
+     "text": "City quest:",
+     "src": [
+      "nh"
+     ],
+     "quest": "tails"
+    },
+    {
+     "label": "FACT",
+     "text": "Faction quest:",
+     "src": [
+      "nh"
+     ],
+     "quest": "ryland"
+    }
+   ]
+  },
+  {
+   "lo": 6,
+   "hi": 10,
+   "title": "Outskirts",
+   "steps": [
+    {
+     "label": "FACT",
+     "text": "Night Harbor outskirts, the Underdocks, Tomb of the Last Wyrmsbane (3-15) and early Shaded Dunes (moved from the old 6-10 band note).",
+     "src": [
+      "nh",
+      "tomb",
+      "sd"
+     ]
+    }
+   ]
+  },
+  {
+   "lo": 11,
+   "hi": 15,
+   "title": "City camps",
+   "steps": [
+    {
+     "label": "FACT",
+     "text": "Night Harbor (wiki levels): diseased bats 10, cracked and diseased beetles 12-14, decrepit to cackling skeletons 12-15 (moved from the old 11-15 band note).",
+     "src": [
+      "nh"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Armor quest:",
+     "src": [
+      "nh"
+     ],
+     "quest": "cinder"
+    },
+    {
+     "label": "FACT",
+     "text": "Faction quest:",
+     "src": [
+      "nh"
+     ],
+     "quest": "heads"
+    }
+   ]
+  }
+ ]
+}

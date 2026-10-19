@@ -14,8 +14,11 @@ Data: Wiki NPC levels, pulled at build time
 
 STRATEGY The band notes are recommendations. The camp lists under each band are **generated** from the wiki zone NPC tables: every mob whose listed level overlaps the band. Many wiki mobs have no level and don't show up. Camps marked ★ are named. Always /consider before pulling.
 
+{{gen:schead}}
+
 :::tabs
 === 11–15
+{{gen:route 11,15,nh}}
 ## 11–15: get your level-12 kit working
 - **Spells:** Consume, Omen of Enfeeblement and Root (12). Keep Omen of Lethargy (10%) and Pact of Renewal (8) current.
 - **Solo pattern (wiki Shaman Guides):** slow, Malady, keep a HoT up, melee. Use Root to make space if a fight goes wrong.
@@ -27,6 +30,7 @@ STRATEGY The band notes are recommendations. The camp lists under each band are 
 {{gen:camps 11,15}}
 
 === 16–20
+{{gen:route 16,20,nh}}
 ## 16–20: the level-16 power spike
 - **Buy at 16:** Greater Omen of Lethargy (20%), Greater Pact of Renewal, Greater Pact of Haste, Sickness, Greater Ghostly Blight, Invisibility.
 - **Ancient Crypt:** skeletal porter and ghastly cook 16, skeletal soldier and acolyte 17.
@@ -35,21 +39,25 @@ STRATEGY The band notes are recommendations. The camp lists under each band are 
 {{gen:camps 16,20}}
 
 === 21–25
+{{gen:route 21,25,nh}}
 ## 21–25
 - **Buy at 20 and 24:** Greater Spirit Mending, Lesser Rite of Mending, Pact of Restoration, Consume II, Greater Sickness, Ghostly Miasma.
 - From here, group content gets much more efficient because you're the slow + HoT + haste package. STRATEGY
 {{gen:camps 21,25}}
 
 === 26–30
+{{gen:route 26,30,nh}}
 ## 26–30
 {{gen:camps 26,30}}
 
 === 31–40
+{{gen:route 31,40,nh}}
 ## 31–40
 - **32:** Hex of Lethargy (30%) and Rite of Haste. **40:** Ritual of Escape.
 {{gen:camps 31,40}}
 
 === 41–60
+{{gen:route 41,60,nh}}
 ## 41–60
 UNCONFIRMED Endgame routes are thinly documented on the wiki in Early Access.
 {{gen:camps 41,60}}

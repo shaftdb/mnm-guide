@@ -10,9 +10,9 @@ def _qrow(q):
     steps = ('<ol class="tight">%s</ol>' % ''.join(st)).replace('<ol class="tight"></ol>', '') if st else '<p><span class="badge unc">unverified</span> No walkthrough on the wiki yet.</p>'
     z = q['zone']; zl = (zlink(z) if z in ZONES else esc(z)) if z else '<span class="dim">zone not listed</span>'
     kinds = ''.join('<span class="tag">%s</span>' % k for k in q['kinds'])
-    return ('<details class="call qh" data-k="%s" data-cls="%s"><summary><b>%s</b> <span class="dim">min lvl %s</span> %s</summary>'
+    return ('<details class="call qh" id="q-%s" data-k="%s" data-cls="%s"><summary><b>%s</b> <span class="dim">min lvl %s</span> %s</summary>'
             '<p class="dim">%s · Giver: %s%s%s</p>%s%s<p class="dim"><a class="ext" target="_blank" rel="noopener" href="%s">Wiki page</a> (updated %s)</p></details>') % (
-        ' '.join(q['kinds']) or 'other', esc('|'.join(q['classes'])), esc(q['title']), esc(q['min'] or '?'), kinds, zl, esc(q['giver'] or '?'),
+        slug(q['title']), ' '.join(q['kinds']) or 'other', esc('|'.join(q['classes'])), esc(q['title']), esc(q['min'] or '?'), kinds, zl, esc(q['giver'] or '?'),
         (' · Classes: ' + esc(', '.join(q['classes']))) if q['classes'] else '', (' · Rewards: ' + esc(q['rewards'])) if q['rewards'] else '',
         '<p><span class="badge unc">unverified</span> The wiki marks this page as needing more info.</p>' if q['needsinfo'] else '', steps, esc(wiki(q['title'])), esc(q['ts']))
 def _quest_page():

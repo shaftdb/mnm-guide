@@ -1,0 +1,37 @@
+{
+ "city": "Faelindral",
+ "slug": "faelindral",
+ "status": "stub",
+ "updated": "2026-10-18",
+ "generated_by": "tools/startcity_stubs.py",
+ "sources": {
+  "faq": [
+   "Official Early Access FAQ (starting areas)",
+   "https://monstersandmemories.com/early-access-faq"
+  ],
+  "city": [
+   "Wiki: Faelindral",
+   "https://monstersandmemories.miraheze.org/wiki/Faelindral"
+  ]
+ },
+ "intro": [
+  {
+   "label": "FACT",
+   "text": "Wood Elves and Halflings have the option of starting here.",
+   "src": [
+    "faq"
+   ]
+  },
+  {
+   "label": "UNVERIFIED",
+   "text": "No curated early route for Faelindral yet: no sourced data yet. The zone and camp lists below the route box are for every start city.",
+   "src": []
+  }
+ ],
+ "faction": [],
+ "travel": [],
+ "money": [],
+ "trainers": {},
+ "quests": {},
+ "bands": []
+}

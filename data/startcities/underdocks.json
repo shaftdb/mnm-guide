@@ -1,0 +1,37 @@
+{
+ "city": "Underdocks",
+ "slug": "underdocks",
+ "status": "stub",
+ "updated": "2026-10-18",
+ "generated_by": "tools/startcity_stubs.py",
+ "sources": {
+  "faq": [
+   "Official Early Access FAQ (starting areas)",
+   "https://monstersandmemories.com/early-access-faq"
+  ],
+  "city": [
+   "Wiki: Underdocks",
+   "https://monstersandmemories.miraheze.org/wiki/Underdocks"
+  ]
+ },
+ "intro": [
+  {
+   "label": "FACT",
+   "text": "Some neutral and evil race/faith/class combinations have the option of starting here (a port district far below Night Harbor).",
+   "src": [
+    "faq"
+   ]
+  },
+  {
+   "label": "UNVERIFIED",
+   "text": "No curated early route for Underdocks yet: no sourced data yet. The zone and camp lists below the route box are for every start city.",
+   "src": []
+  }
+ ],
+ "faction": [],
+ "travel": [],
+ "money": [],
+ "trainers": {},
+ "quests": {},
+ "bands": []
+}

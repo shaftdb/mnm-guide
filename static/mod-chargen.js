@@ -7,6 +7,7 @@ function get(k){try{return localStorage.getItem(k)}catch(e){return null}}
 function put(k,v){try{localStorage.setItem(k,v)}catch(e){}}
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function rel(u){return root+String(u).replace(/^\//,'')}
+function fixh(h){return String(h||'').replace(/(href|src)="\/(?!\/)/g,'$1="'+root);}
 function qp(n){var m=location.search.match(new RegExp('[?&]'+n+'=([^&]*)'));return m?decodeURIComponent(m[1].replace(/\+/g,' ')):null}
 function cls(){return (selC&&selC.value)||get('mnm-class')||'Fighter'}
 function races(c){return Object.keys(G.combos[c]||{}).sort(function(a,b){return (G.large.indexOf(a)>=0)-(G.large.indexOf(b)>=0)||a.localeCompare(b)})}
@@ -60,9 +61,10 @@ function walkHTML(c,race,city,k,opt){var code=W.codes[c],C=W.cities[city],R=W.ra
   if(R.al) risk.push('<li>'+badge('fact')+' '+esc(race)+' faction alignment on the wiki: <b>'+esc(R.al)+'</b>.</li>');
   if(R.note) risk.push('<li>'+badge('fact')+' Race page note: '+esc(R.note)+'</li>');
   Object.keys(W.cities).forEach(function(t){if(W.cities[t].faq) risk.push('<li>'+badge('fact')+' <b>'+esc(t)+'</b> (official FAQ): '+esc(W.cities[t].faq)+'</li>')});
-  if(R.al==='Evil') risk.push('<li>'+badge('unverified')+' How Night Harbor guards treat an evil race is not on the wiki yet: no sourced data yet. Travel carefully; the FAQ says factions "will begin to matter much more".</li>');
+  if(R.al==='Evil') risk.push('<li>'+badge('unverified')+' How other cities treat an evil race: see <b>Faction, KoS and when it is safe to travel</b> in the start-city box above. Where that box has no notes for your race and city: no sourced data yet. The FAQ says factions "will begin to matter much more".</li>');
   if(C.home.length) risk.push('<li>'+badge('fact')+' Home-city factions on the wiki: '+C.home.map(esc).join(', ')+'. Their "lowered by" lists are flagged in each level range below.</li>');
-  h.push('<details class="call" open><summary><b>Faction risks for this race and city</b></summary><ul class="tight">'+risk.join('')+'</ul></details>');
+  if(W.schead) h.push(fixh(W.schead));
+  h.push('<details class="call" open><summary><b>Faction risks for this race and city (wiki faction pages)</b></summary><ul class="tight">'+risk.join('')+'</ul></details>');
   // level 1 start
   var st=W.walk[c+'|'+city]||[];
   var tr=(C.tr||{})[c]||[];
@@ -77,7 +79,8 @@ function walkHTML(c,race,city,k,opt){var code=W.codes[c],C=W.cities[city],R=W.ra
   W.bands.forEach(function(B){var bb=bl(B[0]),lo=bb[0],hi=bb[1],cur=B[0]===k;
     var zs=Object.keys(W.zones).filter(function(z){var Z=W.zones[z];return Z.lo!=null&&Z.lo<=hi&&Z.hi>=lo&&dz(z)<99}).sort(function(a,b){return dz(a)-dz(b)||W.zones[a].lo-W.zones[b].lo}).slice(0,5);
     var o=[];
-    o.push('<h3>Where to go '+badge('strategy')+'</h3>'+(zs.length?'<ul class="tight">'+zs.map(function(z){var Z=W.zones[z];return '<li><a href="'+rel(Z.u)+'">'+esc(z)+'</a>'+(Z.dg?' (dungeon)':'')+' <span class="dim">lvl '+Z.lo+'–'+Z.hi+(Z.est?' (from mob levels)':'')+(Z.hi-Z.lo>=30?', wide range: check the camps below':'')+' · '+(dz(z)===0?'your start city':dz(z)+' zone hop'+(dz(z)>1?'s':'')+' away on the wiki connections')+'</span></li>'}).join('')+'</ul><p class="dim">Nearest zones whose wiki level range overlaps '+lo+'–'+hi+'. Move on when the next range’s zones start to overlap your level.</p>':'<p>'+badge('unverified')+' No zone with a wiki level range for '+lo+'–'+hi+' is connected to '+esc(city)+' in the zone data yet.</p>'));
+    if(W.route&&W.route[B[0]]) o.push(fixh(W.route[B[0]]));
+    o.push('<h3>Nearby zones by wiki connections '+badge('strategy')+'</h3>'+(zs.length?'<ul class="tight">'+zs.map(function(z){var Z=W.zones[z];return '<li><a href="'+rel(Z.u)+'">'+esc(z)+'</a>'+(Z.dg?' (dungeon)':'')+' <span class="dim">lvl '+Z.lo+'–'+Z.hi+(Z.est?' (from mob levels)':'')+(Z.hi-Z.lo>=30?', wide range: check the camps below':'')+' · '+(dz(z)===0?'your start city':dz(z)+' zone hop'+(dz(z)>1?'s':'')+' away on the wiki connections')+'</span></li>'}).join('')+'</ul><p class="dim">Nearest zones whose wiki level range overlaps '+lo+'–'+hi+'. Move on when the next range’s zones start to overlap your level.</p>':'<p>'+badge('unverified')+' No zone with a wiki level range for '+lo+'–'+hi+' is connected to '+esc(city)+' in the zone data yet.</p>'));
     var camps=[];zs.forEach(function(z){W.zones[z].camps.forEach(function(m){var n=(String(m[1]).match(/\d+/g)||[]).map(Number);if(n.length&&n[0]<=hi&&n[n.length-1]>=lo)camps.push('<li><b>'+esc(m[0])+'</b> (lvl '+esc(m[1])+') · <a href="'+rel(W.zones[z].u)+'">'+esc(z)+'</a>'+(m[2]?' <span class="dim">loot: '+esc(m[2])+'</span>':'')+'</li>')})});
     o.push('<h3>Named camps '+badge('fact')+'</h3>'+(camps.length?'<ul class="tight">'+camps.slice(0,8).join('')+'</ul>':'<p class="dim">No named mobs with a wiki level in this range in those zones.</p>'));
     var qs=W.quests.filter(function(q){return zs.indexOf(q[2])>=0&&q[3]!=null&&q[3]>=lo&&q[3]<=hi&&(q[4]==='ALL'||q[4]==='ANY'||q[4].split(' ').indexOf(code)>=0)});
