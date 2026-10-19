@@ -1,0 +1,234 @@
+{
+ "checked": "2026-10-18",
+ "generated_by": "manual audit (see changelog Oct 18, 2026); applied by modules/chargen.py on top of races.json",
+ "start_table": {
+  "url": "https://monstersandmemories.miraheze.org/wiki/Starting_City_by_Race,_Class,_and_Deity",
+  "revid": 74855,
+  "ts": "2026-09-29T19:21:32Z",
+  "note": "Latest revision on Oct 18, 2026: no edits after rev 74855 (history: 72076 created Sep 16 ... 74855 Sep 29). All 144 race/class rows and every deity cell re-parsed and match this Codex's data exactly."
+ },
+ "pages_checked": {
+  "Archer": {
+   "revid": 81280,
+   "ts": "2026-10-14T07:54:50Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Archer"
+  },
+  "Bard": {
+   "revid": 82002,
+   "ts": "2026-10-15T04:05:02Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Bard"
+  },
+  "Beastmaster": {
+   "revid": 79620,
+   "ts": "2026-10-10T09:10:27Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Beastmaster"
+  },
+  "Cleric": {
+   "revid": 79422,
+   "ts": "2026-10-09T19:17:18Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Cleric"
+  },
+  "Deep Elf": {
+   "revid": 69451,
+   "ts": "2026-09-10T18:24:33Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Deep_Elf"
+  },
+  "Deep Gnome": {
+   "revid": 75256,
+   "ts": "2026-10-02T07:33:42Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Deep_Gnome"
+  },
+  "Druid": {
+   "revid": 82130,
+   "ts": "2026-10-15T14:15:44Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Druid"
+  },
+  "Dwarf": {
+   "revid": 33158,
+   "ts": "2026-04-30T13:53:23Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Dwarf"
+  },
+  "Elementalist": {
+   "revid": 82823,
+   "ts": "2026-10-17T22:21:40Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Elementalist"
+  },
+  "Enchanter": {
+   "revid": 82930,
+   "ts": "2026-10-18T02:35:14Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Enchanter"
+  },
+  "Fighter": {
+   "revid": 82378,
+   "ts": "2026-10-16T07:00:52Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Fighter"
+  },
+  "Gnome": {
+   "revid": 33790,
+   "ts": "2026-05-01T07:43:48Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Gnome"
+  },
+  "Goblin": {
+   "revid": 74107,
+   "ts": "2026-09-26T02:26:55Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Goblin"
+  },
+  "Halfling": {
+   "revid": 26426,
+   "ts": "2026-03-31T16:13:34Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Halfling"
+  },
+  "Human": {
+   "revid": 26421,
+   "ts": "2026-03-31T16:07:04Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Human"
+  },
+  "Inquisitor": {
+   "revid": 76001,
+   "ts": "2026-10-04T08:23:23Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Inquisitor"
+  },
+  "Monk": {
+   "revid": 79805,
+   "ts": "2026-10-10T20:42:52Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Monk"
+  },
+  "Ogre": {
+   "revid": 83099,
+   "ts": "2026-10-18T16:12:41Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Ogre"
+  },
+  "Starting City by Race, Class, and Deity": {
+   "revid": 74855,
+   "ts": "2026-09-29T19:21:32Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Starting_City_by_Race,_Class,_and_Deity"
+  },
+  "Wood Elf": {
+   "revid": 26425,
+   "ts": "2026-03-31T16:10:11Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Wood_Elf"
+  },
+  "Ail'Vorith": {
+   "revid": 83176,
+   "ts": "2026-10-18T23:16:45Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Ail%27Vorith"
+  },
+  "Faelindral": {
+   "revid": 83070,
+   "ts": "2026-10-18T09:37:43Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Faelindral"
+  },
+  "Necromancer": {
+   "revid": 77182,
+   "ts": "2026-10-06T08:50:54Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Necromancer"
+  },
+  "Night Harbor": {
+   "revid": 83168,
+   "ts": "2026-10-18T22:46:40Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Night_Harbor"
+  },
+  "Paladin": {
+   "revid": 76271,
+   "ts": "2026-10-04T19:32:29Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Paladin"
+  },
+  "Ranger": {
+   "revid": 83026,
+   "ts": "2026-10-18T06:28:50Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Ranger"
+  },
+  "Rogue": {
+   "revid": 81079,
+   "ts": "2026-10-13T18:18:03Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Rogue"
+  },
+  "Shadow Knight": {
+   "revid": 80029,
+   "ts": "2026-10-11T04:33:55Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Shadow_Knight"
+  },
+  "Shaman": {
+   "revid": 83132,
+   "ts": "2026-10-18T20:27:29Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Shaman"
+  },
+  "Spellblade": {
+   "revid": 69767,
+   "ts": "2026-09-11T09:50:34Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Spellblade"
+  },
+  "Underdocks": {
+   "revid": 82552,
+   "ts": "2026-10-17T04:16:42Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Underdocks"
+  },
+  "Wizard": {
+   "revid": 80822,
+   "ts": "2026-10-12T22:50:42Z",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Wizard"
+  }
+ },
+ "official": [
+  {
+   "name": "Official Early Access FAQ (playable races, starting areas)",
+   "url": "https://monstersandmemories.com/early-access-faq",
+   "checked": "2026-10-18",
+   "finding": "9 playable races; 4 start locations; Underdocks is for 'some neutral and evil race/faith/class combinations'. No per-class list."
+  },
+  {
+   "name": "Official class pages (races per class)",
+   "url": "https://monstersandmemories.com/class-enchanter",
+   "checked": "2026-10-18",
+   "finding": "Race lists agree with the wiki table for every class except Enchanter, which also lists Human. Other extra races (High Elf, Troll, Var'nai, Deep Dwarf) are not playable in Early Access."
+  },
+  {
+   "name": "Patch notes 0.29-0.30.2.9",
+   "url": "https://account.monstersandmemories.com/community/patch_notes",
+   "checked": "2026-10-18",
+   "finding": "No start-city changes since the table. Patch 46 added 'available location' to deity selection, so starts depend on deity (matches the table's per-deity cells)."
+  },
+  {
+   "name": "Forum player posts (no dev or staff answers found)",
+   "url": "https://forum.monstersandmemories.com/d/761-paladin-starting-zones",
+   "checked": "2026-10-18",
+   "finding": "Players report: Paladins cannot start in the Underdocks; Goblins only get the Underdocks; a Deep Elf with Maelsin Thrys cannot pick the Underdocks but can with another god; a Deep Elf Monk starts in Ail'Vorith. All agree with the table."
+  }
+ ],
+ "conflicts": [
+  {
+   "combo": "Human Enchanter",
+   "sources": "Wiki start table rev 74855: no Human Enchanter row. Official Enchanter page, wiki Human page (Playable Classes) and wiki Enchanter page (rev 82930: Human starting stats 16/17/16/16/20/16/21 and bonus-point advice): Human can be an Enchanter.",
+   "winner": "Official + two wiki pages: Human Enchanter added. Start city Night Harbor (Enchanter guild master Khaila and the Enchanter Starter Quest are in Night Harbor; good/neutral races start there per the FAQ). Deities and an Underdocks option are not sourced.",
+   "label": "UNVERIFIED"
+  },
+  {
+   "combo": "Halfling Fighter",
+   "sources": "Start table and official Fighter page and wiki Halfling page: yes. Wiki Fighter creation table: no Halfling row.",
+   "winner": "Start table (kept). The creation table is just incomplete.",
+   "label": "FACT"
+  },
+  {
+   "combo": "Gnome and Human in the Underdocks",
+   "sources": "Wiki Gnome and Human race pages (last edited Mar-May, 'during development'): Night Harbor only. Start table: Underdocks for some classes.",
+   "winner": "Start table (newer, per-deity).",
+   "label": "FACT"
+  },
+  {
+   "combo": "Deep Elf Inquisitor / Monk / Paladin / Spellblade in the Underdocks",
+   "sources": "Start table: not available. Deep Elf race page lists the Underdocks as a Deep Elf start (race-level, not per class). No Underdocks starter quest exists on the wiki for these four classes; the Monk page lists only Night Harbor and Ail'Vorith class quests; forum players confirm no Paladin Underdocks start.",
+   "winner": "Start table (unchanged): these four classes start only in Ail'Vorith as a Deep Elf.",
+   "label": "FACT"
+  }
+ ],
+ "overrides": [
+  {
+   "race": "Human",
+   "class": "Enchanter",
+   "city": "Night Harbor",
+   "deities": [],
+   "label": "UNVERIFIED",
+   "note": "Not on the wiki start table (rev 74855). Added because the official Enchanter page, the wiki Human page and the wiki Enchanter page all list Human Enchanter; Night Harbor inferred from the Enchanter guild and starter quest there. Deities not sourced."
+  }
+ ]
+}

@@ -28,9 +28,32 @@ function pick(){var c=cls();var rs=races(c);
   var cs=cities(c,r); var t=city||get('mnm-city'); if(cs.indexOf(t)<0) t=cs[0]||''; city=t;}
 if(ur){race=ur;fromUrl=true} if(ut){city=ut;fromUrl=true}
 pick();
-function fill(){var c=cls();
-  if(selR) selR.innerHTML=races(c).map(function(r){var lg=G.large.indexOf(r)>=0;return '<option value="'+esc(r)+'"'+(r===race?' selected':'')+(lg?' title="Large race: a valid option, but this Codex never defaults to or recommends it"':'')+'>'+esc(r)+(lg?' (large race)':'')+'</option>'}).join('')||'<option value="">(no wiki data)</option>';
-  if(selT) selT.innerHTML=cities(c,race).map(function(t){return '<option'+(t===city?' selected':'')+'>'+esc(t)+'</option>'}).join('')||'<option value="">(no wiki data)</option>';}
+// ---- validity: every playable race and every city is listed; invalid ones are disabled with a visible reason
+var ALLR=(G.playable||Object.keys(G.races)).slice().sort(function(a,b){return (G.large.indexOf(a)>=0)-(G.large.indexOf(b)>=0)||a.localeCompare(b)});
+function classesFor(r){return Object.keys(G.combos).filter(function(c){return (G.combos[c]||{})[r]}).sort()}
+function classesForCity(r,t){return Object.keys(G.combos).filter(function(c){return cities(c,r).indexOf(t)>=0}).sort()}
+function lst(a){return a.length?a.join(', '):'none'}
+function raceWhy(c,r){var cs=classesFor(r);return r+': not available as '+c+(cs.length?'; '+r+' can be '+lst(cs):'; not playable in Early Access')}
+function cityWhy(c,r,t){var cs=classesForCity(r,t);return t+': not available for '+r+' '+c+(cs.length?'; available for '+r+' '+lst(cs):'; not available for any '+r+' class')}
+function noteFor(c,r,t){return (G.notes||{})[c+'|'+r+'|'+t]}
+function fill(){var c=cls(),ok=races(c),okc=cities(c,race);
+  if(selR) selR.innerHTML=ALLR.map(function(r){var lg=G.large.indexOf(r)>=0,v=ok.indexOf(r)>=0;
+    var t=v?(lg?'Large race: a valid option, but this Codex never defaults to or recommends it':''):raceWhy(c,r);
+    return '<option value="'+esc(r)+'"'+(r===race?' selected':'')+(v?'':' disabled aria-disabled="true"')+(t?' title="'+esc(t)+'"':'')+'>'+esc(r)+(lg&&v?' (large race)':'')+(v?'':' (not for '+esc(c)+')')+'</option>'}).join('')||'<option value="">(no wiki data)</option>';
+  if(selT) selT.innerHTML=G.cities.map(function(t){var v=okc.indexOf(t)>=0,n=noteFor(c,race,t);
+    return '<option value="'+esc(t)+'"'+(t===city?' selected':'')+(v?'':' disabled aria-disabled="true"')+' title="'+esc(v?(n?t+': '+n[1]:t+': valid for '+race+' '+c):cityWhy(c,race,t))+'">'+esc(t)+(v?(n?' (unverified)':''):' (not for '+esc(race)+' '+esc(c)+')')+'</option>'}).join('');
+  valid();}
+var VB=document.getElementById('cg-valid');
+function valid(){if(!VB)return;var c=cls(),r=race,okc=cities(c,r);
+  var per=G.cities.map(function(t){var cs=classesForCity(r,t);return cs.length?'<b>'+esc(t)+'</b> ('+(cs.length===classesFor(r).length?'all '+cs.length+' classes':cs.length+': '+esc(cs.join(', ')))+')':null}).filter(Boolean);
+  var badR=ALLR.filter(function(x){return races(c).indexOf(x)<0}),badT=G.cities.filter(function(t){return okc.indexOf(t)<0});
+  var n=okc.map(function(t){return noteFor(c,r,t)}).filter(Boolean);
+  VB.innerHTML='<span class="cg-vl"><span class="cg-vk">Valid starts for '+esc(r||'?')+':</span> '+(per.join(' · ')||'none on the wiki table')+'.</span> '+
+   '<span class="cg-vl cg-vcur">'+esc(r+' '+c)+': '+(okc.length?esc(okc.join(', ')):'no start')+(n.length?' <span class="badge unc">unverified</span>':'')+'.</span> '+
+   ((badR.length||badT.length)?'<details class="cg-why"><summary>Why are some options greyed out?</summary><ul>'+
+     badT.map(function(t){return '<li>'+esc(cityWhy(c,r,t))+'.</li>'}).join('')+badR.map(function(x){return '<li>'+esc(raceWhy(c,x))+'.</li>'}).join('')+
+     n.map(function(x){return '<li>'+esc(x[1])+'</li>'}).join('')+
+     '<li class="dim">Source: wiki start-city table rev '+esc((G.audit||{}).rev||'')+', re-checked '+esc((G.audit||{}).checked||'')+'.</li></ul></details>':'');}
 function url(){if(!history.replaceState)return;var s=location.search.replace(/^\?/,'').split('&').filter(function(kv){return kv&&!/^(class|race|city)=/.test(kv)});
   s.push('class='+encodeURIComponent(cls()),'race='+encodeURIComponent(race),'city='+encodeURIComponent(city));
   history.replaceState(null,'',location.pathname+'?'+s.join('&')+location.hash);}
@@ -60,7 +83,7 @@ function walkHTML(c,race,city,k,opt){var code=W.codes[c],C=W.cities[city],R=W.ra
   var h=[];var dist=C.dist;
   function dz(z){return dist[z]==null?99:dist[z]}
   h.push('<div class="cg-head"><h2 style="margin-top:0">'+esc(race)+' '+esc(c)+' · starting in <a class="ext" target="_blank" rel="noopener" href="'+esc(C.u)+'">'+esc(city)+'</a></h2>'+
-   '<p class="dim">'+badge('fact')+' Valid on the wiki start-city table'+((G.deities[c+'|'+race+'|'+city]||[]).length?' for deities: '+esc(G.deities[c+'|'+race+'|'+city].join(', ')):'')+'. Change class, race, start or levels in the top bar.'+
+   '<p class="dim">'+(noteFor(c,race,city)?badge('unverified')+' '+esc(noteFor(c,race,city)[1]):badge('fact')+' Valid on the wiki start-city table'+((G.deities[c+'|'+race+'|'+city]||[]).length?' for deities: '+esc(G.deities[c+'|'+race+'|'+city].join(', ')):'')+'.')+' Change class, race, start or levels in the top bar.'+
    (G.chargen[c]?' · <a href="'+rel(G.chargen[c])+'#chargen">'+esc(c)+' character creation</a>':'')+'</p></div>');
   // faction / race risks
   var risk=[];

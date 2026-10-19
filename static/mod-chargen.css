@@ -52,3 +52,11 @@ html.halloween .cg-warn li{color:#ff9e88}
 .rr .gb-ev{font-size:.78rem;color:var(--dim)}
 .rr .gb-more summary{cursor:pointer;padding:6px 0;color:var(--gold2);font-weight:600}
 .rr .rr-row.cg-sel{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset;background:rgba(255,190,90,.06)}
+
+/* start/race validity line + greyed-option reasons */
+.cg-valid{flex:1 1 100%;font-size:.78rem;line-height:1.35;color:var(--dim)}
+.cg-valid b{color:var(--ink);font-weight:600}.cg-vk{color:var(--gold2)}.cg-vcur{color:var(--ink)}
+.cg-why{display:inline}.cg-why summary{display:inline;cursor:pointer;color:var(--gold2);text-decoration:underline dotted}
+.cg-why[open]{display:block}.cg-why ul{margin:4px 0 2px;padding-left:18px}.cg-why li{margin:2px 0}
+.rangebar select option:disabled{color:#7d7366}
+@media (max-width:520px){.cg-valid{font-size:.74rem}}

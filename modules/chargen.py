@@ -9,6 +9,15 @@ CGC = {}
 for _f in sorted(glob.glob(os.path.join(_CGD, '*.json'))):
     if os.path.basename(_f) != 'races.json':
         _d = json.load(open(_f, encoding='utf8')); CGC[_d['class']] = _d
+# Start-city audit (data/start_audit.json): records the wiki/official revisions checked and applies sourced overrides on top of
+# the wiki start table (races.json). Each override is labelled and noted; the picker shows the note.
+CG_AUDIT = json.load(open(os.path.join(ROOT, 'data', 'start_audit.json'), encoding='utf8'))
+CG['_source']['audit'] = {'checked': CG_AUDIT['checked'], 'start_table_revid': CG_AUDIT['start_table']['revid']}
+CG_NOTES = {}
+for _o in CG_AUDIT.get('overrides', []):
+    _cell = CG['combos'].setdefault(_o['race'], {}).setdefault(_o['class'], {})
+    if _o['city'] not in _cell: _cell[_o['city']] = list(_o.get('deities') or [])
+    CG_NOTES['%s|%s|%s' % (_o['class'], _o['race'], _o['city'])] = [_o.get('label') or 'UNVERIFIED', _o.get('note') or '']
 CG_LARGE = CG['large']
 CG_FAQ = 'https://monstersandmemories.com/early-access-faq'
 CG_CITY_FAQ = {  # official Early Access FAQ wording (FACT)
@@ -34,7 +43,8 @@ RANGEBAR_HTML = RANGEBAR_HTML.replace(
     '<label class="rb-f"><span class="range-lab">Levels</span>',
     '<label class="rb-f cg-f"><span class="range-lab">Race</span><select id="mnm-race" aria-label="Race"></select></label>'
     '<label class="rb-f cg-f"><span class="range-lab">Start</span><select id="mnm-city" aria-label="Starting city"></select></label>'
-    '<label class="rb-f"><span class="range-lab">Levels</span>', 1)
+    '<label class="rb-f"><span class="range-lab">Levels</span>', 1).replace(
+    '</div></div>', '<div class="cg-valid" id="cg-valid" aria-live="polite"></div></div></div>', 1)
 TEMPLATE = TEMPLATE.replace('</head>', '<link rel="stylesheet" href="{root}assets/mod-chargen.css">\n</head>', 1).replace(
     '</body>', '<script src="{root}assets/chargen-data.js"></script>\n<script src="{root}assets/mod-chargen.js"></script>\n</body>', 1)
 # footer credit: one plain small line, inherits the footer colour
@@ -46,7 +56,8 @@ def _cg_topdata():
     for race, cl in CG['combos'].items():
         for c, cities in cl.items():
             for city, ds in cities.items(): deities['%s|%s|%s' % (c, race, city)] = ds
-    return {'combos': CG_BY_CLASS, 'races': races, 'cities': CG['cities'], 'large': CG_LARGE, 'deities': deities,
+    return {'combos': CG_BY_CLASS, 'races': races, 'cities': CG['cities'], 'large': CG_LARGE, 'deities': deities, 'notes': CG_NOTES,
+            'playable': sorted(CG['combos']), 'audit': {'rev': CG_AUDIT['start_table']['revid'], 'checked': CG_AUDIT['checked'], 'url': CG_AUDIT['start_table']['url']},
             'chargen': {c: _cref(c)['overview'] if '_cref' in globals() else class_url(c) for c in CGC}}
 
 # ------------------------------------------------------------------ helpers
