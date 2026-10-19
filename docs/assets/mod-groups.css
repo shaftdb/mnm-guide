@@ -13,3 +13,12 @@
 .gb-tools button:focus-visible,.gb-rec button:focus-visible,.gb-slot select:focus-visible{outline:2px solid var(--gold2);outline-offset:2px}
 .gb-warn{color:#e8c66a}
 @media (max-width:520px){.gb-slots,.gb-recs{grid-template-columns:1fr}.grid.gb-cov td,.grid.gb-cov th{padding:3px 4px}}
+.gb-rank{padding-left:0;list-style:none;margin:.3em 0}
+.gb-row{border:1px solid var(--line);border-radius:6px;padding:6px 8px;margin:5px 0;background:var(--panel);cursor:pointer}
+.gb-row:hover{border-color:var(--gold)}
+.gb-pick{all:unset;display:flex;flex-wrap:wrap;gap:6px;align-items:baseline;width:100%;cursor:pointer;color:var(--parch)}
+.gb-pick:focus-visible{outline:2px solid var(--gold2);outline-offset:2px}
+.gb-rk{font-family:monospace;color:var(--dim);min-width:2.4em}.gb-sc{margin-left:auto;font-family:monospace;color:var(--gold2)}
+.gb-why{font-size:.82rem;margin-top:2px}.gb-gap{font-size:.8rem;color:#e8a090}
+html.halloween .gb-gap{color:#ff9e88}
+.gb-more summary{cursor:pointer;padding:6px 0;color:var(--gold2);font-weight:600}

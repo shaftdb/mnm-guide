@@ -80,7 +80,7 @@ _TRIO_RECS = [
 def _groups_page():
     data = {'caps': _CAPS, 'classes': _trio_caps(), 'start': _START, 'large': _LARGE, 'recs': _TRIO_RECS}
     return ('<link rel="stylesheet" href="/assets/mod-groups.css">'
-            '<p>Pick 3 classes and an optional 4th to see what the group covers. <span class="badge fact">fact</span> Each score lists its evidence: wiki spells with their level (W), or lines from the official class page (O). '
+            '<p>Pick 1 or 2 classes to get every possible pair or third ranked best to worst (click one to fill it), or pick 3 plus an optional 4th to see what the group covers and every 4th ranked. <span class="badge fact">fact</span> Each score lists its evidence: wiki spells with their level (W), or lines from the official class page (O). '
             '<span class="badge strat">strategy</span> The 0–2 scores, verdicts, money rating and suggested 4th are rules of thumb. Keyword matching can miss abilities <span class="badge unc">unverified</span>. '
             'For the full plan, see the <a href="/trio.html">trio plan</a>.</p>'
             '<h2 id="recommended">Recommended groups</h2><div id="gb-recs" class="gb-recs"></div>'

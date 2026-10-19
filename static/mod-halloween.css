@@ -30,12 +30,13 @@ html.halloween .search input,html.halloween select,html.halloween code{backgroun
 html.halloween .ngb{color:var(--parch)}
 html.halloween .badge.fact{background:#1f6b4f;color:#fff}html.halloween .badge.strat{background:#2f5d7d;color:#fff}html.halloween .badge.unc{background:#8a3b2e;color:#fff}
 html.halloween ::selection{background:#e8913a;color:#0a0d12}
-/* toggle button (always present when module is on) */
-.hw-toggle{position:fixed;right:10px;bottom:10px;z-index:60;font:600 12px/1 "Segoe UI",Roboto,sans-serif;padding:7px 10px;border-radius:16px;cursor:pointer;
+/* toggle button: sits in the footer (in normal flow) so it never covers content */
+.hw-wrap{margin:0 0 8px}
+.hw-toggle{position:static;display:inline-block;font:600 12px/1 "Segoe UI",Roboto,sans-serif;padding:7px 10px;border-radius:16px;cursor:pointer;
   border:1px solid #e8913a;background:#120f0b;color:#f0cf7f}
 html.halloween .hw-toggle{background:#0d131a;color:#ffc27a;box-shadow:0 0 10px rgba(124,242,180,.35)}
 .hw-toggle:focus-visible{outline:2px solid #7cf2b4;outline-offset:2px}
 @media (prefers-reduced-motion:no-preference){html.halloween .logo .sig{animation:hw-pulse 4s ease-in-out infinite}
   @keyframes hw-pulse{50%{text-shadow:0 0 14px rgba(124,242,180,.9)}}}
-@media (max-width:520px){html.halloween body::before{width:240px;height:150px}.hw-toggle{bottom:6px;right:6px;padding:6px 8px}}
+@media (max-width:520px){html.halloween body::before{width:240px;height:150px}.hw-toggle{padding:8px 10px}}
 @media print{html.halloween body::before,.hw-toggle{display:none}}

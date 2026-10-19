@@ -22,9 +22,11 @@ function moneyRating(list,m){var dps=0;list.forEach(function(c){dps+=G.classes[c
 function copy(txt,btn){function ok(){var o=btn.textContent;btn.textContent='Copied';setTimeout(function(){btn.textContent=o},1200)}
  if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(txt).then(ok,function(){prompt('Copy:',txt)});else{prompt('Copy:',txt)}}
 function go(){save();var picked=st.c.filter(Boolean),trio=st.c.slice(0,3).filter(Boolean);
- if(picked.length<2){out.innerHTML='<p class="dim">Pick at least 2 classes (3 for a trio). Your picks are remembered in this browser and saved in the page link.</p>';return}
+ if(!picked.length){out.innerHTML='<p class="dim">Pick a class to start. With 1 or 2 picks you get every possible completion ranked best to worst; click one to fill the slots. Picks are remembered in this browser and saved in the page link.</p>';return}
  var m=cov(picked),bars=['✗','◐','●'],html='';
  html+='<div class="gb-tools"><button type="button" id="gb-share">Copy share link</button><button type="button" id="gb-copy">Copy setup as text</button></div>';
+ if(trio.length===1)html+=rankList(trio,2);else if(trio.length===2)html+=rankList(trio,1);
+ if(picked.length<2){out.innerHTML=html;wire();return}
  html+='<h3>Coverage</h3><div class="tw"><table class="grid gb-cov"><thead><tr><th>Need</th><th>Score</th><th>Covered by (evidence)</th></tr></thead><tbody>'+G.caps.map(function(k){var who=picked.filter(function(c){return G.classes[c].sc[k[0]]>0}).sort(function(a,b){return G.classes[b].sc[k[0]]-G.classes[a].sc[k[0]]});
   return '<tr><td>'+e(k[1])+'</td><td><span class="gb-bar gb-s'+m[k[0]]+'">'+bars[m[k[0]]]+' '+m[k[0]]+'/2</span></td><td>'+(who.length?who.map(function(c){var ev=G.classes[c].ev[k[0]]||[];return '<b>'+e(c)+'</b> '+G.classes[c].sc[k[0]]+'/2'+(ev.length?'<div class="gb-ev">'+ev.slice(0,3).map(function(x){return x[2]==='w'?e(x[0])+' (W, L'+x[1]+')':'“'+e(x[0])+'” (O)'}).join('; ')+'</div>':(k[0]==='dps'?'<div class="gb-ev">official role: '+e(G.classes[c].roles)+' (O)</div>':''))}).join('<br>'):'<b class="gb-s0">gap</b>')+'</td></tr>'}).join('')+'</tbody></table></div>';
  var mr=moneyRating(picked,m);html+='<p>Money farming: <span class="gb-bar gb-s'+mr+'">'+bars[mr]+' '+mr+'/2</span> <span class="badge strat">strategy</span> <span class="dim">(kill speed + safe pulls + run speed and gate; no earn-rate data exists)</span></p>';
@@ -41,11 +43,38 @@ function go(){save();var picked=st.c.filter(Boolean),trio=st.c.slice(0,3).filter
  var rs=st.r.filter(function(r,i){return r&&st.c[i]});if(rs.length){var cities=null;rs.forEach(function(r){var cs=(G.start[r]||[]).map(function(x){return x.replace(/ \(some\)/,'')});cities=cities?cities.filter(function(x){return cs.indexOf(x)>=0}):cs});
   html+='<h3>Starting city</h3><p>'+(cities&&cities.length?'Shared start: '+e(cities.join(' or ')):'<span class="gb-warn">No shared starting city for these races; meet up after creation.</span>')+' <span class="dim">Race, faith and class decide the start; check the creation map</span> <span class="badge unc">unverified</span></p>';
   if(rs.some(function(r){return G.large.indexOf(r)>=0}))html+='<p class="gb-warn">Large race picked: not recommended for this plan.</p>'}
- if(trio.length===3){var base=score(cov(trio)),best=names.filter(function(c){return trio.indexOf(c)<0}).map(function(c){var mm=cov(trio.concat([c]));return [c,score(mm)-base+(G.classes[c].solo?0.5:0),mm]}).sort(function(a,b){return b[1]-a[1]}).slice(0,3);
-  html+='<h3>Suggested 4th <span class="badge strat">strategy</span></h3><ol>'+best.map(function(b){var gain=G.caps.filter(function(k){return b[2][k[0]]>cov(trio)[k[0]]}).map(function(k){return k[1]});return '<li><b>'+e(b[0])+'</b>: adds '+e(gain.join(', ')||'depth')+(G.classes[b[0]].solo?' · strong soloist, so it can catch up alone (O)':'')+'</li>'}).join('')+'</ol>'}
+ if(trio.length===3)html+=rankList(trio,1,true);
  html+='<p class="dim">Class pages: '+picked.map(function(c){return '<a href="'+root+G.classes[c].page+'">'+e(c)+'</a> (<a class="ext" target="_blank" rel="noopener" href="'+e(G.classes[c].url)+'">official</a>)'}).join(', ')+'</p>';
- out.innerHTML=html;
+ out.innerHTML=html;wire();}
+function wire(){
  document.getElementById('gb-share').onclick=function(){copy(location.href,this)};
  document.getElementById('gb-copy').onclick=function(){copy(st.c.map(function(c,i){return c?(i===3?'4th: ':'')+(st.r[i]?st.r[i]+' ':'')+c:''}).filter(Boolean).join(' / ')+' — '+location.href,this)};}
+/* ---- ranked completions (STRATEGY): every pair / third / 4th, best to worst ---- */
+var RK=['tank','heal','dps','cc','pull','self'],CAPN={};G.caps.forEach(function(k){CAPN[k[0]]=k[1]});
+function defRace(c){var R=G.classes[c].races.filter(function(r){return G.large.indexOf(r)<0});return R.indexOf('Human')>=0?'Human':(R[0]||'')}
+function rankScore(list,fourth){var mm=cov(list),t=0,keys=fourth?Object.keys(W):RK;keys.forEach(function(k){t+=W[k]*mm[k]});t+=2*moneyRating(list,mm);return [Math.round(t*10)/10,mm]}
+function ranked(base,k,fourth){var cand=names.filter(function(c){return base.indexOf(c)<0}),combos=[],bm=cov(base);
+ if(k===1)cand.forEach(function(c){combos.push([c])});else for(var a=0;a<cand.length;a++)for(var b=a+1;b<cand.length;b++)combos.push([cand[a],cand[b]]);
+ return combos.map(function(add){var full=base.concat(add),r=rankScore(full,fourth),mm=r[1],solo=add.some(function(c){return G.classes[c].solo});
+  var sc=r[0]+(fourth&&solo?0.5:0),keys=RK.concat(['buffs','sustain','rez']);
+  var gains=keys.filter(function(x){return mm[x]>bm[x]}).map(function(x){return CAPN[x]+(mm[x]<2?' (partial)':'')});
+  var gaps=RK.filter(function(x){return mm[x]===0}).map(function(x){return 'no '+CAPN[x].toLowerCase()}).concat(RK.filter(function(x){return mm[x]===1}).map(function(x){return 'weak '+CAPN[x].toLowerCase()}));
+  if(!mm.sustain)gaps.push('no mana sustain');if(!mm.rez)gaps.push('no resurrect');
+  var depth=0,backs={};add.forEach(function(c){var S=G.classes[c].sc;for(var x in W){depth+=W[x]*S[x];if(S[x]===2&&bm[x]===2)backs[CAPN[x]]=1}});
+  return {add:add,score:sc,tie:score(mm)*1000+depth,gains:gains,backs:Object.keys(backs),gaps:gaps,money:moneyRating(full,mm),solo:solo}})
+ .sort(function(x,y){return y.score-x.score||y.tie-x.tie||x.add.join().localeCompare(y.add.join())})}
+function rowHTML(R,i,fourth){var lbl=R.add.map(function(c){var r=defRace(c);return e((r?r+' ':'')+c)}).join(' + ');
+ return '<li class="gb-row" data-add="'+e(R.add.join('|'))+'"><button type="button" class="gb-pick" aria-label="Fill with '+lbl+'"><span class="gb-rk">#'+(i+1)+'</span> <b>'+lbl+'</b> <span class="gb-sc">'+R.score+'</span></button>'+
+  '<div class="gb-why">'+(R.gains.length?'Adds: '+e(R.gains.join(', ')):'Adds no new coverage')+(R.backs.length?' · backs up: '+e(R.backs.join(', ')):'')+' · money '+R.money+'/2'+(R.solo&&fourth?' · strong soloist, can catch up alone (O)':'')+'</div>'+
+  '<div class="gb-gap">'+(R.gaps.length?'Gaps: '+e(R.gaps.join(', ')):'No gaps flagged')+'</div></li>'}
+function rankList(base,k,fourth){var rs=ranked(base,k,fourth),top=5,what=fourth?'4th':(k===2?'pairs for the other two slots':'thirds');
+ var h='<h3 id="gb-sugg">'+(fourth?'Every possible 4th, ranked':'Every possible '+(k===2?'pair':'third')+', ranked')+' <span class="badge strat">strategy</span></h3>'+
+  '<p class="gb-ev">'+rs.length+' '+what+', best to worst. Score = weighted coverage of tank, heals, DPS, CC, pulling and self-sufficiency'+(fourth?', plus buffs, low downtime and resurrect':'')+', plus money rating; ties go to the option that backs up more roles (0–2 each, from keyword matches on wiki spells and official class pages, so abilities can be missed or mis-tagged) <span class="badge unc">unverified</span>. Races shown are defaults: Human where allowed, large races skipped. Click a row to fill the slot'+(k===2?'s':'')+'.</p>';
+ h+='<ol class="gb-rank">'+rs.slice(0,top).map(function(R,i){return rowHTML(R,i,fourth)}).join('')+'</ol>';
+ if(rs.length>top)h+='<details class="gb-more"><summary>Show all '+rs.length+'</summary><ol class="gb-rank" start="'+(top+1)+'">'+rs.slice(top).map(function(R,i){return rowHTML(R,i+top,fourth)}).join('')+'</ol></details>';
+ return h}
+out.addEventListener('click',function(ev){var li=ev.target.closest('.gb-row');if(!li||ev.target.closest('a'))return;var add=li.getAttribute('data-add').split('|');
+ add.forEach(function(c){var lim=st.c.slice(0,3).filter(Boolean).length<3?3:4;for(var i=0;i<lim;i++){if(!st.c[i]){st.c[i]=c;st.r[i]=defRace(c);break}}});
+ drawSlots();go();var t=document.getElementById('gb-sugg')||out;t.scrollIntoView({block:'start'})});
 window.addEventListener('hashchange',function(){if(fromHash()){drawSlots();go()}});
 drawSlots();go();})();
