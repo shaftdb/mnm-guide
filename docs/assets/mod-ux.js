@@ -232,7 +232,11 @@ if(o.csv){var cb=document.createElement('button');cb.type='button';cb.className=
 var rows=function(){var r=document.getElementById(o.out).mnmRows;return Array.isArray(r)?r:[]};
 var tip=function(){var n=rows().length;cb.title='Download the '+n+' matching '+o.csv.what+(n===1?'':'s')+' as a CSV file (all matches, not only the ones shown)';cb.setAttribute('aria-label','Export CSV: '+n+' matching '+o.csv.what+(n===1?'':'s'))};
 ['pointerenter','focus'].forEach(function(ev){cb.addEventListener(ev,tip)});tip();
-cb.addEventListener('click',function(){var r=rows();tip();window.MNM_UX_CSV(o.csv.file,o.csv.head,r.map(o.csv.row));say('Exported '+r.length+' '+o.csv.what+(r.length===1?'':'s')+' to CSV')})}
+var done=function(r){tip();window.MNM_UX_CSV(o.csv.file,o.csv.head,r.map(o.csv.row));say('Exported '+r.length+' '+o.csv.what+(r.length===1?'':'s')+' to CSV')};
+cb.addEventListener('click',function(){var X=window.MNM_UXDB;if(!X){done(rows());return}if(cb.getAttribute('aria-busy'))return;
+cb.setAttribute('aria-busy','true');cb.textContent='Preparing CSV\u2026';say('Preparing the CSV export\u2026');
+X.full().then(function(r){cb.removeAttribute('aria-busy');cb.textContent='Export CSV';cb.classList.remove('ux-err');done(r)},
+function(){cb.removeAttribute('aria-busy');cb.textContent='Export failed: try again';cb.classList.add('ux-err');say('The CSV export could not load the item data (offline?). Press the button to try again.')})})}
 bar.querySelector('.ux-tbar-r').addEventListener('click',function(){P.forEach(function(p){setv(p,'')});sortData();rerun();sync();qEl.focus()});
 window.addEventListener('hashchange',function(){var x='';try{x=decodeURIComponent(location.hash.slice(1))}catch(e){}if(!x)return;P.forEach(function(p){setv(p,'')});setv(o.ctl[0][0],x);sortData();rerun();sync()});
 sortData();rerun();sync();
@@ -336,7 +340,7 @@ if(y+th>innerHeight-8&&r.top-th-6>=8)y=r.top-th-6;tt.style.left=Math.round(x)+'p
 function show(el,pin){clearTimeout(hoverT);if(cur&&cur!==el)cur.removeAttribute('aria-describedby');cur=el;pinned=!!pin;box();fill(el);tt.hidden=false;el.setAttribute('aria-describedby','ux-tt');place(el);
 if(!window[KIND[el.getAttribute('data-tt')||'s'].v])load(KIND[el.getAttribute('data-tt')||'s'].f).then(function(){if(cur===el&&!tt.hidden)place(el)},function(){})}
 function hide(){clearTimeout(hoverT);if(!tt||tt.hidden)return;tt.hidden=true;pinned=false;if(cur)cur.removeAttribute('aria-describedby');cur=null}
-window.MNM_UX_TT={show:show,hide:hide};
+window.MNM_UX_TT={show:show,hide:hide,scan:deco};
 document.addEventListener('pointerover',function(e){if(e.pointerType!=='mouse')return;var el=e.target.closest&&e.target.closest('.ux-tt-t');if(!el||(pinned&&cur===el))return;clearTimeout(hoverT);hoverT=setTimeout(function(){show(el)},120)});
 document.addEventListener('pointerout',function(e){if(e.pointerType!=='mouse'||pinned)return;var el=e.target.closest&&e.target.closest('.ux-tt-t');if(!el)return;if(e.relatedTarget&&(el.contains(e.relatedTarget)||(tt&&tt.contains(e.relatedTarget))))return;
 clearTimeout(hoverT);hoverT=setTimeout(hide,150)});
@@ -359,8 +363,8 @@ function prep(){[].forEach.call(document.querySelectorAll('.tabpane'),function(p
 window.addEventListener('beforeprint',prep);
 window.addEventListener('afterprint',function(){opened.forEach(function(d){d.open=false});opened=[]});
 document.addEventListener('keydown',function(e){if(!(e.ctrlKey||e.metaKey)||e.altKey||e.shiftKey||(e.key!=='p'&&e.key!=='P'))return;
-var need=document.querySelector('.tabpane[data-lz],.sc-lz,.cg-qwalk .lz-status');if(!need)return;e.preventDefault();
-var w=[];if(window.MNM_UX_PANES)w.push(window.MNM_UX_PANES.loadAll());if(window.MNM_UX_ROUTES)window.MNM_UX_ROUTES.fillAll();if(window.MNM_WT_LOAD)window.MNM_WT_LOAD();
+var need=document.querySelector('.tabpane[data-lz],.sc-lz,.cg-qwalk .lz-status,.ux-dbp');if(!need)return;e.preventDefault();
+var w=[];if(window.MNM_UX_PANES)w.push(window.MNM_UX_PANES.loadAll());if(window.MNM_UXDB)w.push(window.MNM_UXDB.fillAll());if(window.MNM_UX_ROUTES)window.MNM_UX_ROUTES.fillAll();if(window.MNM_WT_LOAD)window.MNM_WT_LOAD();
 var st=document.createElement('p');st.className='ux-vh';st.setAttribute('role','status');st.textContent='Preparing the page for printing\u2026';document.body.appendChild(st);
 Promise.all(w).then(function(){return new Promise(function(r){setTimeout(r,700)})}).then(function(){st.remove();window.print()})});
 var TH=[['dark','Dark'],['light','Light'],['contrast','High contrast']];
@@ -381,4 +385,35 @@ tb.addEventListener('click',function(){var i=TH.map(function(x){return x[0]}).in
 var lv=document.querySelector('.ux-vh[aria-live]');if(lv){lv.textContent='';setTimeout(function(){lv.textContent='Theme: '+TH[(i+1)%TH.length][1]},30)}});paint()}
 window.addEventListener('storage',function(e){if(e.key==='mnm-theme')setTheme(e.newValue==='light'||e.newValue==='contrast'?e.newValue:'dark')});
 window.MNM_UX_THEME=setTheme;
+})();
+(function(){
+var de=document.documentElement,main=document.querySelector('main.main');if(!main)return;
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+var marked=0;
+[].forEach.call(main.querySelectorAll('table.spelllook tbody td:first-child>strong'),function(b){var tr=b.closest('tr');
+b.setAttribute('data-sp',b.textContent.trim());if(tr&&tr.getAttribute('data-cls'))b.setAttribute('data-class',tr.getAttribute('data-cls'));b.setAttribute('tabindex','-1');marked++});
+[].forEach.call(main.querySelectorAll('h2#named,h2#mobs'),function(h){var t=null;for(var n=h.nextElementSibling;n&&n.tagName!=='H2';n=n.nextElementSibling){t=n.matches('table')?n:n.querySelector('table');if(t)break}
+if(!t||!t.tBodies[0])return;[].forEach.call(t.tBodies[0].rows,function(tr){var c=tr.cells[0];if(!c)return;var host=c.querySelector(':scope>strong')||c,tn=host.firstChild;
+if(!tn||tn.nodeType!==3)return;var nm=tn.textContent.trim();if(!nm||!/[a-z]/i.test(nm))return;var sp=document.createElement('span');sp.className='tt-mob';sp.setAttribute('data-mob',nm);
+sp.textContent=tn.textContent.replace(/\s+$/,'');host.insertBefore(sp,tn);tn.textContent=tn.textContent.slice(sp.textContent.length);marked++})});
+if(marked&&window.MNM_UX_TT&&window.MNM_UX_TT.scan)window.MNM_UX_TT.scan();
+var cw=document.getElementById('cg-walk');if(!cw)return;
+function title(b){var s=b.querySelector('summary'),h=document.querySelector('#cg-walk .cg-head h2');return (h?h.textContent.trim()+' \u2014 ':'')+(s?s.textContent.replace(/\s*\(your level range\)\s*/,'').trim():'')}
+function addBtns(){[].forEach.call(cw.querySelectorAll('details.cg-band'),function(b){if(b.querySelector(':scope>.ux-pband'))return;var s=b.querySelector(':scope>summary');if(!s)return;
+var lab=s.textContent.replace(/\s*\(your level range\)\s*/,'').trim().replace(/^Levels/,'levels');
+var w=document.createElement('p');w.className='ux-pband';w.innerHTML='<button type="button" class="ux-pband-b"><span aria-hidden="true">\ud83d\udda8</span> Print '+esc(lab)+' only</button><span class="ux-pband-st" role="status"></span>';
+s.parentNode.insertBefore(w,s.nextSibling)})}
+addBtns();if(window.MutationObserver)new MutationObserver(function(){addBtns()}).observe(cw,{childList:true});
+var keep=[],one=null;
+function cleanup(){de.classList.remove('ux-print-one');keep.forEach(function(e){e.classList.remove('ux-pkeep')});keep=[];if(one){one.classList.remove('ux-pthis');var t=one.querySelector('.ux-ptitle');if(t)t.remove();one=null}}
+window.addEventListener('afterprint',cleanup);
+function ready(b){return !b.querySelector('.wt-slot .lz-status:not(.lz-err)')}
+cw.addEventListener('click',function(e){var btn=e.target.closest&&e.target.closest('.ux-pband-b');if(!btn)return;var b=btn.closest('details.cg-band'),st=btn.parentNode.querySelector('.ux-pband-st');
+if(!b.open)b.open=true;st.textContent='Preparing this band for printing\u2026';btn.setAttribute('aria-busy','true');var t0=Date.now();
+(function wait(){if(!ready(b)&&Date.now()-t0<10000){setTimeout(wait,150);return}btn.removeAttribute('aria-busy');
+if(!ready(b)||b.querySelector('.wt-slot .lz-err')){st.textContent='This band\u2019s route could not load (offline?), so it was not printed. Open the band and use Try again.';return}
+st.textContent='';cleanup();one=b;b.classList.add('ux-pthis');var h=document.createElement('p');h.className='ux-ptitle';h.textContent=title(b)+' \u00b7 M&M Quick Codex';b.insertBefore(h,b.firstChild);
+for(var p=b.parentElement;p&&p!==document.body;p=p.parentElement){p.classList.add('ux-pkeep');keep.push(p)}
+de.classList.add('ux-print-one');setTimeout(function(){window.print()},50)})()});
+document.addEventListener('keydown',function(e){if((e.ctrlKey||e.metaKey)&&(e.key==='p'||e.key==='P'))cleanup()});
 })();

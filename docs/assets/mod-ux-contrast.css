@@ -381,11 +381,16 @@ html[data-theme="contrast"] .ux-themebtn.ux-theme-hint::after{background:var(--g
 @media print{html[data-theme="contrast"] .badge{border:1px solid #b8b8b8!important;background:#fff!important;color:#000!important}}
 @media print{html[data-theme="contrast"] .idb-it{border-bottom:1px solid #b8b8b8}}
 @media print{html[data-theme="contrast"] .foot{border-top:1px solid #b8b8b8;color:#000!important}}
+html[data-theme="contrast"] .ux-tbar-csv.ux-err{border-color:var(--red);color:var(--red)}
+html[data-theme="contrast"] .hb-app .hb-kin,html[data-theme="contrast"] .hb-app .hb-gs:not(.full),html[data-theme="contrast"] .hb-app .hb-ib,html[data-theme="contrast"] #hb-size{border-color:var(--ctl-line)!important}
+html[data-theme="contrast"] #hb-size{border:1px solid var(--ctl-line);border-radius:var(--r1);accent-color:var(--gold)}
+html[data-theme="contrast"] .ux-pband-b{border:1px solid var(--ctl-line);border-radius:var(--r1);color:var(--gold2)}
+html[data-theme="contrast"] .ux-pband-st{color:var(--dim)}
+@media print{html[data-theme="contrast"].ux-print-one .ux-ptitle{border-bottom:1px solid #b8b8b8}}
 html[data-theme="contrast"],html[data-theme="contrast"].halloween{color-scheme:dark;
   --bg:#000;--panel:#0a0805;--panel2:#16110a;--line:#c8ae78;--ink:#fff;--dim:#ece2cc;--gold:#ffc94a;--gold2:#ffd98a;--parch:#fff4da;
   --red:#ffa08c;--teal:#8ee6cf;--magic:#a8c8ff;--lore:#ffc46a;--unc:#8a3020;--strat:#1f4d33;--glow:#ffd98a;--crystal:#ffc94a;--ctl:#ffc94a;--ctl-line:#ffc94a;--focus:#fff;--h2bg:#2a1f0e}
 html[data-theme="contrast"] body,html[data-theme="contrast"].halloween body{background:var(--bg)!important;background-image:none!important;color:var(--ink)}
-html[data-theme="contrast"].halloween body::before{display:none}
 html[data-theme="contrast"] .top,html[data-theme="contrast"].halloween .top{background:#000;box-shadow:none;border-bottom:2px solid var(--gold)}
 html[data-theme="contrast"] h2,html[data-theme="contrast"].halloween h2{background:linear-gradient(90deg,var(--h2bg),transparent);border-left-color:var(--gold)}
 html[data-theme="contrast"] a,html[data-theme="contrast"].halloween a{color:var(--gold2);text-decoration:underline;text-underline-offset:2px}
@@ -407,3 +412,7 @@ html[data-theme="contrast"] .hw-toggle,html[data-theme="contrast"].halloween .hw
 html[data-theme="contrast"] .ux-tt,html[data-theme="contrast"].halloween .ux-tt{background:#000;color:#fff;border-color:#fff;box-shadow:none}
 html[data-theme="contrast"] .skip,html[data-theme="contrast"].halloween .skip{background:#ffc94a;color:#000}
 html[data-theme="contrast"] .tab.on,html[data-theme="contrast"].halloween .tab.on{background:#ffc94a;color:#000}
+html[data-theme="contrast"].halloween body::before{display:block;opacity:.16;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 260'%3E%3Cpath d='M30 260 L210 40 L390 260Z' fill='none' stroke='%23ffc94a' stroke-width='5'/%3E%3Cellipse cx='210' cy='150' rx='34' ry='18' fill='none' stroke='%23ffd98a' stroke-width='5'/%3E%3Ccircle cx='210' cy='150' r='8' fill='%23ffd98a'/%3E%3C/svg%3E") no-repeat bottom right/contain}
+html[data-theme="contrast"].halloween h2{border-left-color:var(--glow)}
+html[data-theme="contrast"].halloween .top{border-bottom:2px solid var(--glow)}

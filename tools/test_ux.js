@@ -1,4 +1,6 @@
-// Headless Chrome checks for UX passes 1-5 (pass 5 at the end: lazy walk-data on class pages, Shaman routes on demand, spell/mob
+// Headless Chrome checks for UX passes 1-6 (pass 6 at the end: Items/Mobs databases in pieces with loading/error/Try again,
+// tooltips on Spells/zone camp tables/Items mob names, print one walkthrough band, hotbar dialog contrast, Irem x theme combos).
+// Pass 5 before it: lazy walk-data on class pages, Shaman routes on demand, spell/mob
 // tooltips, CSV export + print, Light/High contrast themes with 4.5:1 / 3:1 contrast scans. Pass 4 before it: on-demand class routes/tabs, Items/Mobs memory, lazy palette,
 // favorites, copy buttons, what's new). UX pass 1: skip link + focus ring (normal and Halloween themes), compact mini bar on phones,
 // 44px touch targets at 480, no horizontal overflow at 480/1024/2560/3440, ultrawide width + multi-column quick info,
@@ -7,6 +9,7 @@
 const {spawn}=require('child_process'),http=require('http'),fs=require('fs'),path=require('path');
 const DOCS=path.join(__dirname,'..','docs'),SHOT=process.argv[2]||null,PORT=8000+Math.floor(Math.random()*900);
 const srv=spawn('python3',['-m','http.server',String(PORT),'--bind','127.0.0.1'],{cwd:DOCS,stdio:'ignore'});
+try{fs.rmSync('/tmp/uxt-chrome-'+PORT,{recursive:true,force:true})}catch(e){} // fresh profile: no localStorage from an earlier run on the same port
 const chrome=spawn('google-chrome',['--headless=new','--no-sandbox','--disable-gpu','--hide-scrollbars','--remote-debugging-port='+(PORT+1000),'--user-data-dir=/tmp/uxt-chrome-'+PORT,'about:blank'],{stdio:'ignore'});
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 let fails=0,passes=0;function ok(c,m){if(c){passes++;console.log('PASS',m)}else{fails++;console.log('FAIL',m)}}
@@ -482,11 +485,11 @@ function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('
  await send('Input.dispatchMouseEvent',{type:'mouseMoved',x:5,y:700});ok(await waitFor('(document.getElementById("ux-tt")||{hidden:true}).hidden'),'moving the mouse away closes it');
  // 4) CSV export + print
  await go('items.html?iq=sword');await ev('(function(){var o=window.MNM_UX_CSV;window.MNM_UX_CSV=function(n,h,r){window.__csv=o(n,h,r);window.__csvn=n;return window.__csv}})()');
- await ev('document.querySelector(".ux-tbar-csv").click()');
+ await ev('document.querySelector(".ux-tbar-csv").click()');await waitFor('!!window.__csv',15000);
  const cv=await ev('(function(){var t=window.__csv||"",lines=t.replace(/^\\ufeff/,"").trim().split("\\r\\n"),n=+(document.getElementById("idb-count").textContent.match(/\\d+/)||[0])[0];return {n:n,rows:lines.length-1,head:lines[0],bom:t.charCodeAt(0)===0xfeff,all:lines.slice(1).every(function(l){return /sword/i.test(l)}),name:window.__csvn,lab:document.querySelector(".ux-tbar-csv").getAttribute("aria-label")}})()');
  ok(cv.rows===cv.n&&cv.n>0&&cv.all&&cv.bom&&/^Item,Slot,Level,Classes,Stats,Sources/.test(cv.head),'items: Export CSV holds all '+cv.n+' matching rows (header '+cv.head.slice(0,50)+'…, UTF-8 BOM) — '+cv.lab);
  await ev('document.querySelector(".ux-dbbar .ux-tbar-r").click()');
- await go('mobs.html?mq=wolf&mn=1');await ev('(function(){var o=window.MNM_UX_CSV;window.MNM_UX_CSV=function(n,h,r){window.__csv=o(n,h,r);return window.__csv}})()');await ev('document.querySelector(".ux-tbar-csv").click()');
+ await go('mobs.html?mq=wolf&mn=1');await ev('(function(){var o=window.MNM_UX_CSV;window.MNM_UX_CSV=function(n,h,r){window.__csv=o(n,h,r);return window.__csv}})()');await ev('document.querySelector(".ux-tbar-csv").click()');await waitFor('!!window.__csv',15000);
  const mv=await ev('(function(){var l=(window.__csv||"").trim().split("\\r\\n"),n=+(document.getElementById("mob-count").textContent.match(/\\d+/)||[0])[0];return {n:n,rows:l.length-1,head:l[0],named:l.slice(1).every(function(x){return /,yes,/.test(x)})}})()');
  ok(mv.rows===mv.n&&mv.n>0&&mv.named&&/^Mob,Level,Zone,Named/.test(mv.head),'mobs: Export CSV holds the '+mv.n+' filtered rows (named wolves only)');
  ok(await ev('(function(){var t=window.MNM_UX_CSV("x",["a"],[["=1+1"],["-x"],["-5"],["a,\\"b\\""]]);return t.indexOf("\\x27=1+1")>0&&t.indexOf("\\x27-x")>0&&t.indexOf("\\r\\n-5\\r\\n")>0&&t.indexOf("\\"a,\\"\\"b\\"\\"\\"")>0})()'),'CSV cells are quoted, and formula-like cells (=, +, @, -text) are neutralised');
@@ -543,6 +546,159 @@ function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('
    if(await ev('document.documentElement.scrollWidth>innerWidth'))ok(false,'pass 5: '+u+' overflows @'+w+' ('+th+')')}}}
  ok(true,'pass 5: no horizontal overflow at 480/1024/2560/3440 (home, class, items, mobs, Shaman) in Dark, Light and High contrast');
  await ev('localStorage.removeItem("mnm-theme")');
+ // =============================== UX pass 6
+ const DBOK="(function(){var s=document.querySelector('.ux-dbst');return (!s||s.hidden)&&[].slice.call(document.querySelectorAll('#mob-out [data-id],#idb-out [data-id]'),0,5).every(function(e){return !e.classList.contains('ux-dbp')})})()";
+ await send('Network.setBlockedURLs',{urls:[]});await send('Emulation.setEmulatedMedia',{media:''});
+ await size(480,900);await go('index.html');await ev('localStorage.removeItem("mnm-db:items.html");localStorage.removeItem("mnm-db:mobs.html");localStorage.removeItem("mnm-theme");localStorage.removeItem("mnm-halloween")');
+ // 1) Items: compact index first, details per 100-item piece as rows near the screen, search text on the first query
+ reqs=[];await go('items.html');await waitFor(DBOK);
+ const i0=await ev('({n:document.getElementById("idb-count").textContent,rows:document.querySelectorAll("#idb-out .idb-it").length,first:document.querySelector("#idb-out .idb-it").textContent,pend:document.querySelectorAll("#idb-out .idb-it.ux-dbp").length})');
+ const ic=reqs.filter(r=>/^idb-c-/.test(r));
+ ok(!reqs.includes('items-db.js')&&reqs.includes('idb-index.js')&&!reqs.includes('idb-text.js')&&ic.length>=1&&ic.length<=2,'items: first load = idb-index.js ('+sz('idb-index.js')+' KB) + '+ic.join(', ')+'; no items-db.js ('+sz('items-db.js')+' KB), no search text');
+ ok(/^5\d{3} items \(showing first 150/.test(i0.n)&&i0.rows===150&&i0.pend>100&&/Sources?|Quest|Drop|Vendor|Named|Crafted|No source/.test(i0.first),'items: '+i0.n+'; first rows filled, '+i0.pend+' rows below wait for their piece');
+ ok(sz('idb-index.js')<300&&sz('idb-text.js')<450,'items index '+sz('idb-index.js')+' KB, search text '+sz('idb-text.js')+' KB, '+fs.readdirSync(path.join(DOCS,'assets')).filter(f=>/^idb-c-\d+\.js$/.test(f)).length+' pieces of 100 items');
+ await ev('document.querySelectorAll("#idb-out .idb-it")[140].scrollIntoView({block:"center",behavior:"instant"})');
+ ok(await waitFor('!document.querySelectorAll("#idb-out .idb-it")[140].classList.contains("ux-dbp")'),'scrolling down fills the rows there ('+reqs.filter(r=>/^idb-c-/.test(r)).join(', ')+')');
+ await ev('scrollTo(0,0)');
+ await send('Network.emulateNetworkConditions',{offline:false,latency:900,downloadThroughput:300000,uploadThroughput:300000});
+ await ev('(function(){var q=document.getElementById("idb-q");q.value="sword";q.dispatchEvent(new Event("input",{bubbles:true}))})()');await sleep(100);
+ const ip=await ev('({c:document.getElementById("idb-count").textContent,s:document.querySelector(".ux-dbst").textContent,h:document.querySelector(".ux-dbst").hidden})');
+ ok(/names so far/.test(ip.c)&&!ip.h&&/Loading the full search/.test(ip.s),'typing shows name matches at once ("'+ip.c+'") and "'+ip.s+'"');
+ await shot('ux6-after-items-search-loading-480.png');
+ await send('Network.emulateNetworkConditions',{offline:false,latency:0,downloadThroughput:-1,uploadThroughput:-1});
+ ok(await waitFor(DBOK,15000)&&await ev('/^106 items$/.test(document.getElementById("idb-count").textContent)'),'full search ready: '+await ev('document.getElementById("idb-count").textContent')+' (same 106 matches as the old single file: names, stats and sources)');
+ ok(await ev('/sword/i.test(document.querySelector("#idb-out .idb-it").textContent)&&!!document.querySelector("#idb-out .idb-it ul.tight li")'),'result rows show their sources once filled');
+ // mob names inside Items rows get the mob tooltip
+ await go('items.html#'+encodeURIComponent("Vikkit's Chain Cap"));await waitFor(DBOK);
+ const im=await ev('(function(){var m=document.querySelector("#idb-out .tt-mob.ux-tt-t");if(!m)return null;m.focus();return m.textContent})()');
+ ok(im==='Foreman Vikkit'&&await waitFor('(function(){var t=document.getElementById("ux-tt");return t&&!t.hidden&&/Great Cavern Sea/.test(t.textContent)})()'),'Items database: drop-source mob name ('+im+') shows the mob tooltip (Mobs database data)');
+ await key('Escape');
+ // blocked piece: error + Try again; blocked search text: names only + Try again
+ await ev('localStorage.removeItem("mnm-db:items.html")');
+ await send('Network.setBlockedURLs',{urls:['*idb-c-0.js']});await go('items.html');
+ ok(await waitFor('/Could not load the details/.test(document.querySelector("#idb-out .idb-it").textContent)&&!!document.querySelector("#idb-out .idb-it .ux-retry")'),'blocked piece: "Could not load the details (offline?)" + Try again in the row');
+ ok(await ev('/For Sale/.test(document.querySelector("#idb-out .idb-it b").textContent)&&!!document.querySelector("#idb-out .idb-it .ux-copy")'),'…the row still shows its name (with Copy), slot and level from the index');
+ await shot('ux6-after-items-error-480.png');
+ await send('Network.setBlockedURLs',{urls:[]});await ev('document.querySelector("#idb-out .idb-it .ux-retry").click()');
+ ok(await waitFor('!document.querySelector("#idb-out .idb-it").classList.contains("ux-dbp")'),'Try again fills it');
+ await send('Network.setBlockedURLs',{urls:['*idb-text.js']});await go('items.html?iq=beetle');
+ ok(await waitFor('/could not load/i.test(document.querySelector(".ux-dbst").textContent)&&!!document.querySelector(".ux-dbst .ux-retry")'),'blocked search text: names-only results ('+await ev('document.getElementById("idb-count").textContent')+') + "Full-text search could not load" + Try again');
+ await send('Network.setBlockedURLs',{urls:[]});await ev('document.querySelector(".ux-dbst .ux-retry").click()');
+ ok(await waitFor('document.querySelector(".ux-dbst").hidden&&/^80 items$/.test(document.getElementById("idb-count").textContent)'),'Try again loads the full search (80 beetle items)');
+ // CSV of every filtered row, across pieces; blocked pieces -> button error
+ await go('items.html?iq=sword');await waitFor(DBOK);await ev('(function(){var o=window.MNM_UX_CSV;window.__csv=null;window.MNM_UX_CSV=function(n,h,r){window.__csv=o(n,h,r);return window.__csv}})()');
+ await ev('document.querySelector(".ux-tbar-csv").click()');ok(await waitFor('!!window.__csv'),'CSV export waits for the item pieces');
+ const ix=await ev('(function(){var l=window.__csv.replace(/^\\ufeff/,"").trim().split("\\r\\n");return {rows:l.length-1,urls:l.slice(1).filter(function(x){return /https:\\/\\//.test(x)}).length}})()');
+ ok(ix.rows===106&&ix.urls===106,'CSV holds all 106 matches with full rows (wiki links included)');
+ await send('Network.setBlockedURLs',{urls:['*idb-c-*']});await go('items.html?iq=helm');await waitFor('document.querySelector(".ux-dbst").hidden');
+ await ev('document.querySelector(".ux-tbar-csv").click()');
+ ok(await waitFor('/Export failed: try again/.test(document.querySelector(".ux-tbar-csv").textContent)'),'blocked pieces: the button says "Export failed: try again"');
+ await send('Network.setBlockedURLs',{urls:[]});
+ await go('items.html');await ev('document.querySelector(".ux-dbbar .ux-tbar-r").click()');
+ // print fills every listed row first
+ await go('items.html?iq=a');await waitFor(DBOK);await ev('window.__printed=0;window.print=function(){window.__printed=document.querySelectorAll("#idb-out .ux-dbp").length+1}');await key('p',2);
+ ok(await waitFor('window.__printed>0',20000)&&await ev('window.__printed===1'),'Ctrl+P on Items fills all 150 listed rows before printing');
+ await go('items.html');await ev('document.querySelector(".ux-dbbar .ux-tbar-r").click()');
+ // 2) Mobs
+ reqs=[];await go('mobs.html');await waitFor(DBOK);const mc=reqs.filter(r=>/^mdb-c-/.test(r));
+ ok(!reqs.includes('mobs-db.js')&&reqs.includes('mdb-index.js')&&!reqs.includes('mdb-text.js')&&mc.length>=1&&mc.length<=2,'mobs: first load = mdb-index.js ('+sz('mdb-index.js')+' KB) + '+mc.join(', ')+'; no mobs-db.js ('+sz('mobs-db.js')+' KB)');
+ ok(await ev('/^\\d{4} mobs \\(showing first 200\\)$/.test(document.getElementById("mob-count").textContent)&&document.querySelectorAll("#mob-out tbody tr").length===200'),'mobs: '+await ev('document.getElementById("mob-count").textContent'));
+ await go('mobs.html?mq=wolf&mn=1&msort=L');await waitFor(DBOK,15000);
+ const m6=await ev('({c:document.getElementById("mob-count").textContent,q:document.getElementById("mob-q").value,n:document.getElementById("mob-named").checked,o:document.getElementById("msort-sel").value,r:document.querySelector("#mob-out tbody tr").innerText})');
+ ok(m6.q==='wolf'&&m6.n&&m6.o==='L'&&/\d+ mobs/.test(m6.c),'mobs: ?mq=wolf&mn=1&msort=L restored ('+m6.c+'; first row '+m6.r.replace(/\s+/g,' ').slice(0,80)+')');
+ await go('mobs.html#'+encodeURIComponent('Foreman Vikkit'));await waitFor(DBOK,15000);
+ ok(await ev('document.getElementById("mob-q").value==="Foreman Vikkit"&&/Vikkit\'s Chain Cap/.test(document.getElementById("mob-out").textContent)'),'mobs.html#Foreman Vikkit deep link shows the mob with its drops');
+ await go('mobs.html?mq=wolf');await waitFor(DBOK,15000);await ev('(function(){var o=window.MNM_UX_CSV;window.__csv=null;window.MNM_UX_CSV=function(n,h,r){window.__csv=o(n,h,r);return window.__csv}})()');
+ await ev('document.querySelector(".ux-tbar-csv").click()');await waitFor('!!window.__csv');
+ ok(await ev('window.__csv.trim().split("\\r\\n").length-1===53'),'mobs CSV: all 53 wolf rows');
+ await send('Network.setBlockedURLs',{urls:['*mdb-c-*']});await go('mobs.html');
+ ok(await waitFor('/Could not load the drops/.test(document.querySelector("#mob-out tbody tr").textContent)&&!!document.querySelector("#mob-out tbody tr .ux-retry")'),'blocked mob piece: "Could not load the drops (offline?)" + Try again');
+ await send('Network.setBlockedURLs',{urls:[]});await ev('document.querySelector("#mob-out tbody tr .ux-retry").click()');
+ ok(await waitFor('!document.querySelector("#mob-out tbody tr").classList.contains("ux-dbp")'),'Try again fills the row');
+ await go('mobs.html');await ev('document.querySelector(".ux-dbbar .ux-tbar-r").click()');
+ // 3) tooltips: Spells page and zone camp tables
+ reqs=[];await go('spells.html');
+ ok(await ev('document.querySelectorAll("table.spelllook [data-sp].ux-tt-t").length')>1000&&!reqs.includes('spell-tips.js'),'Spells page: '+await ev('document.querySelectorAll("table.spelllook [data-sp].ux-tt-t").length')+' spell names have tooltips (data loads on first use)');
+ const sp6=await ev('(function(){var b=[].find.call(document.querySelectorAll("table.spelllook [data-sp]"),function(x){return x.closest("tr").getAttribute("data-cls")==="Inquisitor"});b.scrollIntoView({block:"center",behavior:"instant"});var r=b.getBoundingClientRect();return {x:r.left+4,y:r.top+r.height/2,t:b.textContent,lv:b.closest("tr").cells[1].textContent}})()');
+ await send('Emulation.setTouchEmulationEnabled',{enabled:true});await sleep(150);
+ await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:sp6.x,y:sp6.y}]});await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+ ok(await waitFor('(function(){var t=document.getElementById("ux-tt");return t&&!t.hidden&&/Inquisitor/.test(t.textContent)})()'),'tap on "'+sp6.t+'" opens its tooltip');
+ const st6=await ev('(function(){var t=document.getElementById("ux-tt"),r=t.getBoundingClientRect();return {txt:t.textContent,l:r.left,r:r.right,ovf:document.documentElement.scrollWidth>innerWidth}})()');
+ ok(st6.l>=0&&st6.r<=480&&!st6.ovf&&new RegExp('Level '+sp6.lv.trim()).test(st6.txt),'Spells tooltip fits 480 and matches the row (Level '+sp6.lv.trim()+', Inquisitor): '+st6.txt.slice(0,90));
+ await shot('ux6-after-spells-tooltip-480.png');
+ await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:20,y:880}]});await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await send('Emulation.setTouchEmulationEnabled',{enabled:false});
+ ok(await ev('document.querySelector("table.spelllook [data-sp]").tabIndex===-1'),'spell names are not extra Tab stops (the row already shows the same details)');
+ await go('zones/great-cavern-sea.html');
+ const z6=await ev('({n:document.querySelectorAll("#named ~ .tw .tt-mob.ux-tt-t").length,all:document.querySelectorAll(".tt-mob.ux-tt-t").length,clean:[].every.call(document.querySelectorAll(".tt-mob"),function(s){return s.textContent===s.getAttribute("data-mob")&&!/wiki/.test(s.textContent)})})');
+ ok(z6.all>=20&&z6.clean,'zone camp tables: '+z6.all+' mob names have tooltips (wiki links left out of the name)');
+ await ev('(function(){var m=document.querySelector("h2#named ~ .tw .tt-mob");m.scrollIntoView({block:"center",behavior:"instant"});m.focus()})()');
+ ok(await waitFor('(function(){var t=document.getElementById("ux-tt");return t&&!t.hidden&&/Level/.test(t.textContent)&&/Great Cavern Sea/.test(t.textContent)})()'),'zone mob tooltip: '+(await ev('(document.getElementById("ux-tt")||{}).textContent||""')).slice(0,80));
+ await key('Escape');
+ await go('zones/great-cavern-sea.html');await ev('(function(){var t=document.querySelector("h2#named ~ .tw table.sortable");t.tHead.rows[0].cells[0].click()})()');
+ ok(await ev('[].every.call(document.querySelector("h2#named ~ .tw").querySelectorAll("tbody tr"),function(r){return !!r.querySelector(".tt-mob")})'),'sorting a camp table keeps the tooltips');
+ // 4) walkthrough: print one level band
+ await size(1024,768);await go('walkthrough.html?class=Inquisitor&race=Deep+Elf&city=Ail%27Vorith');await waitFor('document.querySelectorAll(".ux-pband-b").length===8',10000);
+ ok(await ev('/Print levels 16.20 only/.test(document.querySelector("#wt-b-16-20 .ux-pband-b").textContent)'),'each level band has "'+await ev('document.querySelector("#wt-b-16-20 .ux-pband-b").textContent.trim()')+'"');
+ await ev('window.__pp=null;window.print=function(){window.__pp={one:document.documentElement.classList.contains("ux-print-one"),open:document.getElementById("wt-b-16-20").open,busy:!!document.querySelector("#wt-b-16-20 .wt-slot .lz-status"),t:(document.querySelector(".ux-ptitle")||{}).textContent}}');
+ await ev('document.querySelector("#wt-b-16-20 .ux-pband-b").click()');
+ ok(await waitFor('!!window.__pp',12000)&&await ev('window.__pp.one&&window.__pp.open&&!window.__pp.busy'),'button opens the band, waits for its route, then prints ('+await ev('JSON.stringify(window.__pp)')+')');
+ await send('Emulation.setEmulatedMedia',{media:'print'});await sleep(200);
+ const pb6=await ev('(function(){var b=[].filter.call(document.querySelectorAll("details.cg-band"),function(x){return x.checkVisibility()}).map(function(x){return x.id});return {b:b,h1:document.querySelector("main h1").checkVisibility(),head:document.querySelector(".cg-head").checkVisibility(),route:/Ail.Vorith/.test(document.getElementById("wt-b-16-20").textContent)&&!/Start-city route: (Night Harbor|Underdocks|Faelindral)/.test(document.getElementById("wt-b-16-20").textContent),btn:document.querySelector(".ux-pband-b").checkVisibility()}})()');
+ ok(pb6.b.join()==='wt-b-16-20'&&!pb6.h1&&!pb6.head&&pb6.route&&!pb6.btn,'print preview: only levels 16–20 (Ail\'Vorith route, no other city), no page chrome or buttons');
+ await shot('ux6-after-print-route.png');
+ await ev('dispatchEvent(new Event("afterprint"))');await sleep(100);
+ ok(await ev('!document.documentElement.classList.contains("ux-print-one")&&!document.querySelector(".ux-pthis,.ux-pkeep,.ux-ptitle")'),'after printing the page is back to normal (Ctrl+P prints the whole page again)');
+ await send('Emulation.setEmulatedMedia',{media:''});
+ // 5) hotbar app dialogs: 4.5:1 text and 3:1 control borders in all six theme x Irem combinations
+ const HB=s=>CSCAN.replace('document.body.querySelectorAll(\'*\')','document.querySelector(\''+s+'\').querySelectorAll(\'*\')');
+ for(const stt of ['dark-hw','dark','light-hw','light','contrast-hw','contrast']){const [th,hw]=stt.split('-');
+  await ev(`localStorage.setItem('mnm-theme','${th}');localStorage.setItem('mnm-halloween','${hw?'on':'off'}');localStorage.setItem('mnm-class','Inquisitor')`);
+  const bad=[];const scan=async(lab,sel)=>{const r=await ev(HB(sel||'#hb-app'));r.fails.forEach(f=>bad.push(lab+' T '+f.r+' '+f.el));r.cfails.forEach(f=>bad.push(lab+' C '+f.r+' '+f.el))};
+  await go('hotbar.html');await scan('app');
+  await ev('document.querySelector(".hb-pi[data-i=\\"1\\"]").click()');await scan('armed');await key('Escape');
+  await ev('document.getElementById("hb-keys").click()');await scan('keybinds');await ev('document.getElementById("hb-keys").click()');
+  await ev('document.getElementById("hb-sheet-t").click()');await sleep(150);await scan('sheet');
+  await ev('document.querySelector(".hb-gs[data-g=\\"Chest\\"]").click()');await sleep(200);await scan('item picker','#hb-picker');await ev('document.querySelector(".hb-px").click()');
+  await ev('document.getElementById("hb-sheet-t").click()');await ev('document.getElementById("hb-focus-t").click()');await sleep(150);await scan('focus mode','body');await key('Escape');
+  ok(bad.length===0,'hotbar dialogs ['+stt+']: app, armed item, keybind editor, character sheet, item picker, focus mode pass 4.5:1 / 3:1'+(bad.length?' — '+bad.slice(0,5).join(' | '):''));
+ }
+ // 6) Irem x theme: 6 combinations on several pages; decorations, persistence, no flash, contrast covered above + pass 5
+ const IREM=`(function(){var d=document.documentElement,b=getComputedStyle(document.body,'::before'),h2=[].find.call(document.querySelectorAll('main h2'),function(x){return parseFloat(getComputedStyle(x).borderLeftWidth)>0}),t=document.querySelector('.hw-toggle'),th=document.querySelector('.ux-themebtn');
+  return {hw:d.classList.contains('halloween'),theme:d.getAttribute('data-theme')||'dark',deco:b.content!=='none'&&b.display!=='none'&&parseFloat(b.opacity)>0,bimg:b.backgroundImage.slice(0,40),bodyImg:getComputedStyle(document.body).backgroundImage!=='none',
+   h2c:h2?getComputedStyle(h2).borderLeftColor:'',tog:t?t.textContent:'',tp:t?t.getAttribute('aria-pressed'):'',thl:th?th.querySelector('.ux-theme-l').textContent:'',css:(document.getElementById('ux-theme-css')||{}).href||''}})()`;
+ await send('Page.addScriptToEvaluateOnNewDocument',{source:"window.__first=null;new MutationObserver(function(m,o){if(document.body&&!window.__first){window.__first={hw:document.documentElement.classList.contains('halloween'),theme:document.documentElement.getAttribute('data-theme')||'dark',css:!!document.getElementById('ux-theme-css')};o.disconnect()}}).observe(document,{childList:true,subtree:true})"}).then(r=>{global.__irem_sid=r.result&&r.result.identifier});
+ const glowOf={dark:'rgb(124, 242, 180)',light:'rgb(93, 107, 34)',contrast:'rgb(255, 217, 138)'};
+ for(const th of ['dark','light','contrast'])for(const hw of [true,false]){
+  await ev(`localStorage.setItem('mnm-theme','${th}');localStorage.setItem('mnm-halloween','${hw?'on':'off'}')`);
+  const bad=[];
+  for(const u of ['index.html','classes/inquisitor.html','items.html','walkthrough.html','zones/ailvorith.html']){await go(u);const r=await ev(IREM),f=await ev('window.__first');
+   if(r.hw!==hw||r.theme!==th)bad.push(u+' state '+JSON.stringify(r));
+   if(!f||f.hw!==hw||f.theme!==th||(th!=='dark')!==f.css)bad.push(u+' first paint '+JSON.stringify(f));
+   if(hw&&!r.deco)bad.push(u+' Irem decoration missing');if(!hw&&r.deco)bad.push(u+' decoration while Irem is off');
+   if(hw&&r.h2c&&r.h2c!==glowOf[th])bad.push(u+' h2 rule '+r.h2c);
+   if(r.tp!==String(hw)||(hw?!/on/.test(r.tog):!/off/.test(r.tog)))bad.push(u+' toggle '+r.tog);
+   if(r.thl!==({dark:'Dark',light:'Light',contrast:'High contrast'})[th])bad.push(u+' theme button '+r.thl);
+   if(th==='dark'&&hw&&!r.bodyImg)bad.push(u+' Irem cavern glow missing');if(th==='contrast'&&r.bodyImg)bad.push(u+' background image in High contrast')}
+  ok(bad.length===0,'Irem '+(hw?'on':'off')+' x '+th+': correct on 5 pages from the first paint (class + data-theme + theme CSS before <body>), decorations '+(hw?'shown':'absent')+', toggle and theme button labels'+(bad.length?' — '+bad.slice(0,4).join(' | '):''));
+  if(hw){await go('classes/inquisitor.html');await shot('ux6-after-irem-'+th+'-1024.png')}
+ }
+ if(global.__irem_sid)await send('Page.removeScriptToEvaluateOnNewDocument',{identifier:global.__irem_sid});
+ // toggles: each persists independently, no reload needed
+ await ev("localStorage.setItem('mnm-theme','light');localStorage.setItem('mnm-halloween','on')");await go('items.html');
+ await ev('document.querySelector(".hw-toggle").click()');ok(await ev('!document.documentElement.classList.contains("halloween")&&document.documentElement.getAttribute("data-theme")==="light"&&getComputedStyle(document.body,"::before").content==="none"'),'Light: Irem toggle off removes the decorations at once, Light stays');
+ await go('mobs.html');ok(await ev('!document.documentElement.classList.contains("halloween")&&document.documentElement.getAttribute("data-theme")==="light"&&localStorage.getItem("mnm-halloween")==="off"'),'…and both choices persist on the next page');
+ await ev('document.querySelector(".hw-toggle").click()');await ev('document.querySelector(".ux-themebtn").click()');
+ ok(await waitFor('document.documentElement.getAttribute("data-theme")==="contrast"')&&await ev('document.documentElement.classList.contains("halloween")&&localStorage.getItem("mnm-halloween")==="on"&&getComputedStyle(document.body,"::before").display!=="none"'),'Irem on + theme switch to High contrast: Irem stays on, its High contrast decorations apply');
+ await ev('document.querySelector(".ux-themebtn").click()');ok(await waitFor('!document.documentElement.hasAttribute("data-theme")')&&await ev('document.documentElement.classList.contains("halloween")&&getComputedStyle(document.body,"::before").display!=="none"&&localStorage.getItem("mnm-theme")==="dark"'),'back to Dark: the original Irem look returns');
+ await ev('localStorage.removeItem("mnm-theme");localStorage.removeItem("mnm-halloween")');
+ // overflow at all widths in all themes on the pass 6 pages
+ for(const th of ['dark','light','contrast']){await ev(`localStorage.setItem('mnm-theme','${th}')`);
+  for(const [w,h] of [[480,900],[1024,768],[2560,1080],[3440,1440]]){await size(w,h);for(const u of ['items.html?iq=sword','mobs.html?mq=wolf','spells.html','walkthrough.html','hotbar.html','zones/great-cavern-sea.html']){await go(u);
+   if(await ev('document.documentElement.scrollWidth>innerWidth'))ok(false,'pass 6: '+u+' overflows @'+w+' ('+th+')')}}}
+ ok(true,'pass 6: no horizontal overflow at 480/1024/2560/3440 (items, mobs, spells, walkthrough, hotbar, zone) in Dark, Light and High contrast');
+ await ev('localStorage.removeItem("mnm-theme")');
+ await go("classes/inquisitor.html?class=Inquisitor&race=Deep+Elf&city=Ail%27Vorith");await ev('MNM_UX_ROUTES.fillAll()');await waitFor('!document.querySelector(".sc-lz .lz-status")',15000);
+ ok(await ev('[].every.call(document.querySelectorAll(".sc-route"),function(e){return !e.checkVisibility()||e.getAttribute("data-sc")==="ailvorith"})&&document.querySelectorAll(".sc-route[data-sc=ailvorith]").length>0'),'classes/inquisitor.html: Deep Elf Inquisitor in Ail\'Vorith shows Ail\'Vorith routes only');
  ok(await ev('true')&&!/serviceWorker|Notification|PushManager/.test(fs.readFileSync(path.join(DOCS,'assets','mod-ux.js'),'utf8')),'still no notifications, push or service worker');
  ok(errs.length===0,'no JS exceptions'+(errs.length?': '+errs.slice(0,2).join(' | '):''));
  console.log(passes+' passed, '+fails+' failed');ws.close();chrome.kill();srv.kill();process.exit(fails?1:0);

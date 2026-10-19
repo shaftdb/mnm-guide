@@ -497,3 +497,101 @@ _ux_prev_ra5b = render_all
 def render_all():
     _ux_prev_ra5b()
     _ux_themes()
+
+# ---------------------------------------------------------------- UX pass 6: Items and Mobs databases load in pieces
+# items-db.js (2.8 MB) and mobs-db.js (1.2 MB) were one blocking download each. After the build they are split into:
+#   idb-index.js / mdb-index.js  compact rows for filtering, sorting and the first screen (name, slot, class mask, level,
+#                                source kinds / level, zone, named, flags); loaded with the page as before
+#   idb-text.js / mdb-text.js    the rest of the search text (stats, sources, drops), loaded on the first typed search
+#   idb-c-<n>.js / mdb-c-<n>.js  the full original rows, 100 per file in the original order, loaded when a result row
+#                                nears the screen (or for CSV export / printing)
+# static/mod-ux-db.js renders from these; the page's script tags are swapped only when the split checks pass, otherwise
+# items.html / mobs.html keep items-db.js + mod-items.js / mobs-db.js + mod-mobs.js exactly as before.
+_UX_DBN = 100
+def _ux_db_text(dic, s):
+    s = str(s or '').strip().lower()
+    if not s: return None
+    if s not in dic: dic[s] = len(dic)
+    return dic[s]
+
+def _ux_split_items():
+    fp, hp = os.path.join(OUT, 'assets', 'items-db.js'), os.path.join(OUT, 'items.html')
+    if not (os.path.exists(fp) and os.path.exists(hp)): return 0
+    s = open(fp, encoding='utf8').read().strip()
+    if not s.startswith('window.MNM_IDB='): print('zzz_ux: items-db.js not split (format)'); return 0
+    D = json.loads(s[len('window.MNM_IDB='):].rstrip(';'))
+    if not all(isinstance(d, list) and len(d) == 8 and isinstance(d[6], list) for d in D): print('zzz_ux: items-db.js not split (rows)'); return 0
+    codes = sorted({c for d in D for c in str(d[3]).split()})
+    if len(codes) > 30: print('zzz_ux: items-db.js not split (class codes)'); return 0
+    slots = sorted({str(d[2]) for d in D}); si = {v: i for i, v in enumerate(slots)}
+    KB = {'n': 1, 'd': 2, 'q': 4, 'v': 8, 'c': 16}
+    rows, txt, dic = [], [], {}
+    for i, d in enumerate(D):
+        mask = 0
+        for c in str(d[3]).split(): mask |= 1 << codes.index(c)
+        kinds = 0
+        for x in d[6]: kinds |= KB.get(x[0], 0)
+        rows.append([d[0], i, si[str(d[2])], mask, d[4] or 0, kinds])
+        refs = []
+        for x in d[6]:
+            for v in (x[1], x[2], x[3], x[5] if len(x) > 5 else '', x[6] if len(x) > 6 else ''):  # x[6] = 'mnm-db' source flag
+                r = _ux_db_text(dic, v)
+                if r is not None and r not in refs: refs.append(r)
+        txt.append([str(d[5] or '').lower()] + refs)
+    words = [w for w, _ in sorted(dic.items(), key=lambda kv: kv[1])]
+    nch = (len(D) + _UX_DBN - 1) // _UX_DBN
+    for c in range(nch):
+        _ux_js('idb-c-%d.js' % c, '(window.MNM_IDBC=window.MNM_IDBC||{})[%d]=%s;' % (c, _ux_dump(D[c * _UX_DBN:(c + 1) * _UX_DBN])))
+    _ux_js('idb-text.js', 'window.MNM_IDBT=%s;' % _ux_dump({'w': words, 'r': txt}))
+    _ux_js('idb-index.js', 'window.MNM_IDBX=%s;window.MNM_IDB=window.MNM_IDBX.rows;' % _ux_dump({'codes': codes, 'slots': slots, 'n': _UX_DBN, 'chunks': nch, 'rows': rows}))
+    h = open(hp, encoding='utf8').read(); a, b = 'assets/items-db.js"></script>', 'assets/mod-items.js"></script>'
+    if h.count(a) != 1 or h.count(b) != 1: print('zzz_ux: items.html script tags not found; page left on items-db.js'); return 0
+    open(hp, 'w', encoding='utf8').write(h.replace(a, 'assets/idb-index.js"></script>', 1).replace(b, 'assets/mod-ux-db.js"></script>', 1))
+    return nch
+
+def _ux_split_mobs():
+    fp, hp = os.path.join(OUT, 'assets', 'mobs-db.js'), os.path.join(OUT, 'mobs.html')
+    if not (os.path.exists(fp) and os.path.exists(hp)): return 0
+    s = open(fp, encoding='utf8').read().strip(); dec = json.JSONDecoder()
+    if not s.startswith('window.MNM_MOBS='): print('zzz_ux: mobs-db.js not split (format)'); return 0
+    D, i = dec.raw_decode(s, len('window.MNM_MOBS='))
+    m = re.compile(r';window\.MNM_IURL=').match(s, i)
+    if not m: print('zzz_ux: mobs-db.js not split (IURL)'); return 0
+    U = dec.raw_decode(s, m.end())[0]
+    if not all(isinstance(d, list) and len(d) == 11 for d in D): print('zzz_ux: mobs-db.js not split (rows)'); return 0
+    h = open(hp, encoding='utf8').read(); itempage = 'window.MNM_ITEMPAGE=true;' in h
+    zones = []; zi = {}
+    rows, txt, dic = [], [], {}
+    for k, d in enumerate(D):
+        zk = (d[3], d[4])
+        if zk not in zi: zi[zk] = len(zones); zones.append(list(zk))
+        x = d[10] or {}
+        fl = (1 if (d[8] or x.get('m')) else 0) | (2 if x.get('q') else 0) | (4 if x.get('s') else 0)
+        rows.append([d[0], d[1] or 0, d[2] or '', zi[zk], k, 1 if d[5] else 0, fl])
+        refs = []
+        for v in list(d[8] or []) + list(d[9] or []) + [mm[0] for mm in x.get('m', [])]:
+            q = _ux_db_text(dic, v)
+            if q is not None and q not in refs: refs.append(q)
+        txt.append([(str(d[6] or '') + ' ' + str(d[7] or '')).strip().lower()] + refs)
+    words = [w for w, _ in sorted(dic.items(), key=lambda kv: kv[1])]
+    nch = (len(D) + _UX_DBN - 1) // _UX_DBN
+    for c in range(nch):
+        part = D[c * _UX_DBN:(c + 1) * _UX_DBN]
+        u = {} if itempage else {n: U[n] for d in part for n in d[8] if n in U}
+        _ux_js('mdb-c-%d.js' % c, '(window.MNM_MDBC=window.MNM_MDBC||{})[%d]=%s;' % (c, _ux_dump({'r': part, 'u': u})))
+    _ux_js('mdb-text.js', 'window.MNM_MDBT=%s;' % _ux_dump({'w': words, 'r': txt}))
+    # zone names expand into each row (sorting by zone compares row[3] strings, as before)
+    _ux_js('mdb-index.js', 'window.MNM_MDBX=%s;window.MNM_MOBS=window.MNM_MDBX.rows.map(function(r){var z=window.MNM_MDBX.zones[r[3]];r[3]=z[0];r.push(z[1]);return r});' % _ux_dump(
+        {'zones': zones, 'n': _UX_DBN, 'chunks': nch, 'rows': rows}))
+    a, b = 'assets/mobs-db.js"></script>', 'assets/mod-mobs.js"></script>'
+    if h.count(a) != 1 or h.count(b) != 1: print('zzz_ux: mobs.html script tags not found; page left on mobs-db.js'); return 0
+    open(hp, 'w', encoding='utf8').write(h.replace(a, 'assets/mdb-index.js"></script>', 1).replace(b, 'assets/mod-ux-db.js"></script>', 1))
+    return nch
+
+_ux_prev_ra6 = render_all
+def render_all():
+    _ux_prev_ra6()
+    ni, nm = _ux_split_items(), _ux_split_mobs()
+    sz = lambda f: os.path.getsize(os.path.join(OUT, 'assets', f)) // 1024 if os.path.exists(os.path.join(OUT, 'assets', f)) else -1
+    print('zzz_ux pass 6: items in %d chunks (index %d KB, text %d KB), mobs in %d chunks (index %d KB, text %d KB)' % (
+        ni, sz('idb-index.js'), sz('idb-text.js'), nm, sz('mdb-index.js'), sz('mdb-text.js')))

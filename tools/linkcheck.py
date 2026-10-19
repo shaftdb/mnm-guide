@@ -36,7 +36,7 @@ for d, _, fs in os.walk(ROOT):
                 if m.startswith('data:') or '://' in m: continue
                 n += 1
                 if not os.path.exists(os.path.normpath(os.path.join(d, m))): bad.append((f, m, 'css missing'))
-# UX passes 2-5: files the lazy loader fetches by name (not visible as href/src) must exist too
+# UX passes 2-6: files the lazy loader fetches by name (not visible as href/src) must exist too
 A = os.path.join(ROOT, 'assets'); lazy = set()
 for f in os.listdir(A):
     if f.endswith('.js') and (f.startswith('mod-') or f == 'site.js'):
@@ -57,6 +57,14 @@ for p, x in pages.items():
     for band, cities in re.findall(r'class="sc-lz" data-band="([\w-]+)" data-cities="([^"]*)"', h):
         lazy.update(('walk-r-%s-%s.js' % (band, c), rp) for c in cities.split())
 lazy.update((f, 'mod-ux.js (theme toggle)') for f in ('mod-ux-light.css', 'mod-ux-contrast.css'))
+# UX pass 6: Items / Mobs database pieces (mod-ux-db.js builds idb-c-<n>.js / mdb-c-<n>.js from the index's "chunks" count)
+for idx, pfx in (('idb-index.js', 'idb-c-'), ('mdb-index.js', 'mdb-c-')):
+    fp = os.path.join(A, idx)
+    if not os.path.exists(fp): continue
+    m = re.search(r'"chunks":(\d+)', open(fp, encoding='utf-8').read())
+    if not m: bad.append((idx, 'chunks', 'no piece count')); continue
+    lazy.update(('%s%d.js' % (pfx, i), idx) for i in range(int(m.group(1))))
+    if os.path.exists(os.path.join(A, '%s%d.js' % (pfx, int(m.group(1))))): bad.append((idx, '%s%s.js' % (pfx, m.group(1)), 'stale piece beyond the count'))
 for f, src in sorted(lazy):
     n += 1
     if not os.path.exists(os.path.join(A, f)): bad.append((src, f, 'lazy asset missing'))
