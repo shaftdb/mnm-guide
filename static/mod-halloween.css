@@ -1,0 +1,41 @@
+/* Seasonal "Caves of Irem" Halloween theme. Original CSS/SVG only (no game art).
+   Inspired by community descriptions of Irem: a bioluminescent cavern under the dunes, glowing flora, a green lake,
+   crystal grottos, pyramid ruins and the "Eyes of Old Irem". Active only when <html> has class "halloween".
+   Sources (descriptions only): https://www.monstersandmemories.wiki/zones/caves-of-irem (crystal grottos, Irem ruins, green lake),
+   https://storiesofmnm.com/zone/caves-of-irem/ ("vast bioluminescent cavern... glowing flora"), https://monstersandmemories.miraheze.org/wiki/Eyes_of_Old_Irem (pyramid ruins).
+   Remove: set HALLOWEEN = False in modules/halloween.py (or delete that module + this file). */
+html.halloween{--bg:#0a0d12;--panel:#111821;--panel2:#16202b;--line:#2a3a46;--ink:#e3ece6;--dim:#a3b4ad;--gold:#e8913a;--gold2:#ffc27a;
+  --parch:#f2ead8;--teal:#5fe0c0;--glow:#7cf2b4;--crystal:#b49cff;--red:#ff8a70;--strat:#2f7d68;--unc:#a8584a}
+html.halloween body{background:var(--bg) fixed;
+  background-image:radial-gradient(ellipse 60% 40% at 15% 0%,rgba(124,242,180,.10),transparent 70%),
+    radial-gradient(ellipse 50% 35% at 90% 10%,rgba(180,156,255,.10),transparent 70%),
+    radial-gradient(ellipse at 50% 120%,rgba(232,145,58,.10),transparent 60%),
+    linear-gradient(#0a0d12,#0b1016 60%,#0a0d12)}
+/* faint pyramid silhouette + floating wisps, bottom-right, decorative only */
+html.halloween body::before{content:"";position:fixed;right:-40px;bottom:-20px;width:420px;height:260px;pointer-events:none;z-index:0;opacity:.07;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 260'%3E%3Cpath d='M30 260 L210 40 L390 260Z' fill='%23e8913a'/%3E%3Cpath d='M210 40 L250 90 L170 90Z' fill='%23ffc27a'/%3E%3Cellipse cx='210' cy='150' rx='34' ry='18' fill='none' stroke='%237cf2b4' stroke-width='6'/%3E%3Ccircle cx='210' cy='150' r='8' fill='%237cf2b4'/%3E%3C/svg%3E") no-repeat bottom right/contain}
+html.halloween .wrap,html.halloween .foot{position:relative;z-index:1}
+html.halloween .top{background:linear-gradient(#121a22,#0d131a);border-bottom-color:var(--gold);box-shadow:0 2px 14px rgba(0,0,0,.7),0 1px 0 rgba(124,242,180,.25)}
+html.halloween .logo .sig{color:var(--glow);text-shadow:0 0 8px rgba(124,242,180,.6)}
+html.halloween h1{border-bottom-color:var(--gold)}
+html.halloween h2{background:linear-gradient(90deg,rgba(124,242,180,.13),transparent);border-left-color:var(--glow)}
+html.halloween h3{color:var(--gold2)}
+html.halloween a{color:#ffc27a}html.halloween a:hover{color:#ffe0b3}
+html.halloween .box,html.halloween .call,html.halloween .ngm{background:var(--panel);border-color:var(--line)}
+html.halloween .call{border-left-color:var(--crystal)}
+html.halloween .grid{background:#0e141b}
+html.halloween .grid th{background:#16202b;color:var(--parch)}
+html.halloween .grid tr:nth-child(even) td{background:rgba(124,242,180,.035)}
+html.halloween .search input,html.halloween select,html.halloween code{background:#081016;border-color:#3b5260;color:var(--ink)}
+html.halloween .ngb{color:var(--parch)}
+html.halloween .badge.fact{background:#1f6b4f;color:#fff}html.halloween .badge.strat{background:#2f5d7d;color:#fff}html.halloween .badge.unc{background:#8a3b2e;color:#fff}
+html.halloween ::selection{background:#e8913a;color:#0a0d12}
+/* toggle button (always present when module is on) */
+.hw-toggle{position:fixed;right:10px;bottom:10px;z-index:60;font:600 12px/1 "Segoe UI",Roboto,sans-serif;padding:7px 10px;border-radius:16px;cursor:pointer;
+  border:1px solid #e8913a;background:#120f0b;color:#f0cf7f}
+html.halloween .hw-toggle{background:#0d131a;color:#ffc27a;box-shadow:0 0 10px rgba(124,242,180,.35)}
+.hw-toggle:focus-visible{outline:2px solid #7cf2b4;outline-offset:2px}
+@media (prefers-reduced-motion:no-preference){html.halloween .logo .sig{animation:hw-pulse 4s ease-in-out infinite}
+  @keyframes hw-pulse{50%{text-shadow:0 0 14px rgba(124,242,180,.9)}}}
+@media (max-width:520px){html.halloween body::before{width:240px;height:150px}.hw-toggle{bottom:6px;right:6px;padding:6px 8px}}
+@media print{html.halloween body::before,.hw-toggle{display:none}}
