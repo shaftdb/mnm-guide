@@ -68,6 +68,7 @@ def chargen_section(c):
     o = ['<section class="cg-sec" id="character-creation"><h2 id="chargen">Character creation</h2>']
     o.append('<p class="dim">Pick your race and starting city in the top bar (<b>Race</b> / <b>Start</b>); parts of this section follow that pick. '
              '<span class="badge fact">fact</span> = wiki or official page, <span class="badge strat">strategy</span> = this Codex\'s suggestion, <span class="badge unc">unverified</span> = not sourced yet.</p>')
+    o.append(race_rank_html(c))
     # races & cities table
     rows = []
     for r in sorted(rs, key=lambda r: (r in CG_LARGE, r)):
@@ -148,6 +149,169 @@ def cg_nh_html(N):
             '<a class="ext" href="%s" target="_blank" rel="noopener">official Early Access FAQ</a>, wiki <a class="ext" href="%s" target="_blank" rel="noopener">Underdocks</a> and <a class="ext" href="%s" target="_blank" rel="noopener">Ail\'Vorith</a>.</p>') % (
         _cg_badge('FACT'), esc(N['summary']), li, _cg_badge('STRATEGY'), esc(N['best']), _cg_badge('UNVERIFIED'), esc(N['caveat']), esc(CG['_source']['start_table']['url']), CG_FAQ,
         esc(CG['city_info']['Underdocks']['url']), esc(CG['city_info']["Ail'Vorith"]['url']))
+
+
+# ------------------------------------------------------------------ "Best races for <Class>" ranking (STRATEGY score built from FACT data)
+# Score (0-100, STRATEGY): stat fit 0-50 (weighted by this Codex's builds for the class; -5 per point of weighted-average deficit vs the best race),
+# racial ability 0-20 (class-role value of the documented racial; undocumented = 0, UNVERIFIED), vision trait 0-5, city access 0-15, size/upkeep penalties.
+RR_ROLE = {'Fighter': 'tank', 'Paladin': 'tank', 'Shadow Knight': 'tank', 'Inquisitor': 'tank',
+           'Rogue': 'melee', 'Monk': 'melee', 'Ranger': 'melee', 'Spellblade': 'melee', 'Bard': 'melee', 'Beastmaster': 'melee',
+           'Archer': 'ranged', 'Wizard': 'caster', 'Elementalist': 'caster', 'Enchanter': 'caster', 'Necromancer': 'caster',
+           'Cleric': 'healer', 'Druid': 'healer', 'Shaman': 'healer'}
+# racial -> (value 0-10 by role, one-line reason). STRATEGY judgement on the wiki Template:Traits text.
+RR_RACIAL = {
+    'Tenacity': ({'tank': 8, 'melee': 6, 'ranged': 6, 'caster': 7, 'healer': 7}, 'mesmerize/incapacitate resistance and a 15 s immunity keep you acting'),
+    'Stone Form': ({'tank': 9, 'melee': 7, 'ranged': 5, 'caster': 5, 'healer': 5}, '15 s of +25% AC and -10% physical damage, plus a disease/electric/poison cleanse'),
+    'Slippery': ({'tank': 4, 'melee': 5, 'ranged': 8, 'caster': 7, 'healer': 5}, 'root resistance and a 15 s root/snare immunity, best for kiting'),
+    'Hide': ({'tank': 3, 'melee': 5, 'ranged': 6, 'caster': 3, 'healer': 3}, 'unseen while still, useful for scouting and escapes'),
+    'Sneak': ({'tank': 3, 'melee': 5, 'ranged': 5, 'caster': 3, 'healer': 3}, 'move unseen, useful for scouting and pulling'),
+    'Bribe': ({'tank': 4, 'melee': 5, 'ranged': 4, 'caster': 5, 'healer': 4}, 'make a target forget past wrongdoings (a memory blur for bad pulls)'),
+    'Ogre Smash': ({'tank': 7, 'melee': 6, 'ranged': 4, 'caster': 4, 'healer': 4}, 'a 2 s AoE stun on nearby targets'),
+    'Forage': ({'tank': 2, 'melee': 2, 'ranged': 2, 'caster': 2, 'healer': 2}, 'Forage as a racial, so no trait slot is needed for it'),
+}
+RR_CLASS_RACIAL = {('Rogue', 'Sneak'): 9, ('Rogue', 'Hide'): 8, ('Ranger', 'Hide'): 7, ('Archer', 'Hide'): 7, ('Monk', 'Bribe'): 6, ('Enchanter', 'Bribe'): 6, ('Bard', 'Bribe'): 6}
+RR_RCODE = {'Human': 'HUM', 'Wood Elf': 'ELF', 'Goblin': 'GOB', 'Ogre': 'OGR', 'Gnome': 'GNM', 'Dwarf': 'DWF', 'Deep Dwarf': 'DDF', 'Deep Elf': 'DEF',
+            'Deep Gnome': 'DGN', 'Halfling': 'HFL', 'High Elf': 'HIE', 'Troll': 'TRL'}
+RR_STATS = ['STR', 'STA', 'DEX', 'AGI', 'INT', 'WIS', 'CHA']
+
+def _rr_racials(R):
+    s = re.sub(r'\s*\(as of[^)]*\)', '', R.get('racial') or '')
+    return [x.strip() for x in s.split(',') if x.strip()]
+def _rr_vision(r):
+    code = RR_RCODE.get(r); out = []
+    for t in CG['traits'].get('Major Non-Combat Traits', []):
+        if t['name'] in ('Infravision', 'Ultravision') and code and code in [x.strip() for x in t['race'].split(',')]: out.append(t['name'])
+    return out
+def _rr_weights(c):
+    D = CGC.get(c) or {}; w = {}
+    for i, b in enumerate(D.get('builds', [])):
+        for k, v in b['alloc'].items(): w[k] = w.get(k, 0) + v * (2 if i == 0 else 1)
+    return w
+
+def race_rank(c):
+    """Ranked list for class c: every race on the wiki start-city table for c."""
+    rs = CG_BY_CLASS.get(c, {}); role = RR_ROLE.get(c, 'melee'); W_ = _rr_weights(c); D = CGC.get(c) or {}
+    def st(r): return (((CG['races'].get(r, {}).get('start') or {}).get(c)) or {}).get('stats') or {}
+    def fit(r):
+        s = st(r); tw = sum(W_.values())
+        if not tw or any(s.get(k) is None for k in W_): return None
+        return sum(W_[k] * s[k] for k in W_) / tw
+    fits = {r: fit(r) for r in rs}; best = max([f for f in fits.values() if f is not None] or [0])
+    # playable-race stat extremes for the weighted stats (for generated pros/cons)
+    rows = []
+    for r in rs:
+        R = CG['races'].get(r, {}); large = r in CG_LARGE; rac = _rr_racials(R); vis = _rr_vision(r); cities = rs[r]
+        f = fits[r]; p_stat = None if f is None else max(20.0, 50 - 5 * (best - f))
+        rv, rwhy = 0, []
+        for n in rac:
+            if n in RR_RACIAL:
+                v = RR_CLASS_RACIAL.get((c, n), RR_RACIAL[n][0][role]); rv += v; rwhy.append('%s (%s)' % (n, RR_RACIAL[n][1]))
+        p_rac = min(20, 2 * rv)
+        p_vis = 5 if 'Ultravision' in vis else (4 if 'Infravision' in vis else 0)
+        p_acc = min(10, 5 * len(cities)) + (5 if 'Night Harbor' in cities else 0) - (3 if R.get('alignment') == 'Evil' else 0) - (2 if 'KoS' in (R.get('note') or '') else 0)
+        p_size = (-10 if large else 0) - (2 if any('Consumption' in n for n in rac) else 0)
+        score = round((p_stat or 20) + p_rac + p_vis + p_acc + p_size)
+        rows.append(dict(race=r, R=R, large=large, rac=rac, rwhy=rwhy, vis=vis, cities=cities, fit=f, stats=st(r), score=score,
+                         parts=[('stats', None if p_stat is None else round(p_stat)), ('racial', p_rac), ('vision', p_vis), ('access', p_acc), ('size/upkeep', p_size)]))
+    rows.sort(key=lambda x: (-x['score'], x['large'], x['race']))
+    # a large race is never the #1 / default recommendation
+    if len(rows) > 1 and rows[0]['large']:
+        i = next((j for j, x in enumerate(rows) if not x['large']), None)
+        if i: rows.insert(0, rows.pop(i)); rows[1]['demoted'] = True
+    for i, x in enumerate(rows):
+        x['rank'] = i + 1; s = x['score']
+        x['tier'] = 'A' if s >= 75 else 'B' if s >= 62 else 'C' if s >= 50 else 'D'
+        x['pros'], x['cons'] = _rr_proscons(c, x, rows, W_)
+    return rows
+
+def _rr_proscons(c, x, rows, W_):
+    D = CGC.get(c) or {}; r = x['race']; R = x['R']
+    have = (D.get('races') or {}).get(r)
+    if have: pros, cons = list(have['pros']), list(have['cons'])
+    else:
+        pros, cons = [], []
+        for k in sorted(W_, key=lambda k: -W_[k])[:3]:
+            vals = [y['stats'].get(k) for y in rows if y['stats'].get(k) is not None]
+            v = x['stats'].get(k)
+            if v is None or len(vals) < 2: continue
+            if v == max(vals): pros.append('Highest starting %s of the playable %s races (%s).' % (k, c, v))
+            if v == min(vals): cons.append('Lowest starting %s of the playable %s races (%s).' % (k, c, v))
+        for n in x['rac']:
+            if n in RR_RACIAL: pros.append('Racial: %s: %s.' % (n, RR_RACIAL[n][1]))
+            elif 'Consumption' in n: cons.append('Increased Consumption Rate (race page): more food and drink.')
+        if R.get('resists'): (pros if '-' not in R['resists'] else cons).append('Resistances %s (race page).' % R['resists'])
+        cons.append('%s alignment; starts as a %s in %s.' % (R.get('alignment') or 'Unknown', c, ', '.join(x['cities'])))
+    if x['large']: cons.insert(0, 'Large race: this Codex never defaults to or recommends it (size can limit where you fit; the wiki does not document the exact effects).')
+    if not x['rac'] and not any('racial' in y.lower() and 'not documented' in y.lower() for y in cons): cons.append('Racial ability not documented on the wiki race page: UNVERIFIED.')
+    if x['fit'] is None: cons.append('Starting stats for %s %s not on the wiki: UNVERIFIED.' % (r, c))
+    vis = x['vis']
+    if vis and not any('vision' in p.lower() for p in pros): pros.append('Can take the %s trait (Template:Traits).' % ' or '.join(vis))
+    if not vis: cons.append('No Infravision or Ultravision trait available (Template:Traits).')
+    return pros, cons
+
+def _rr_why1(c, rows):
+    if not rows: return ''
+    a = rows[0]; b = rows[1] if len(rows) > 1 else None
+    if not b: return '%s is the only race the wiki start-city table allows for %s.' % (a['race'], c)
+    pa, pb = dict(a['parts']), dict(b['parts']); bits = []
+    lab = {'stats': 'stat fit for the %s builds' % c, 'racial': 'racial value', 'vision': 'vision trait', 'access': 'start-city access'}
+    for k in ('stats', 'racial', 'access', 'vision'):
+        va, vb = pa.get(k) or 0, pb.get(k) or 0
+        if va > vb:
+            extra = {'racial': ' (%s)' % ', '.join(a['rac']), 'access': ' (%s)' % ', '.join(a['cities']), 'vision': ' (%s)' % ' / '.join(a['vis'])}.get(k, '')
+            bits.append('better %s%s, %s vs %s' % (lab[k], extra, va, vb))
+    if (pb.get('size/upkeep') or 0) < (pa.get('size/upkeep') or 0): bits.append('%s loses %s for size/upkeep' % (b['race'], -(pb.get('size/upkeep') or 0)))
+    return '%s (score %s) beats #2 %s (%s): %s.' % (a['race'], a['score'], b['race'], b['score'], '; '.join(bits) or 'higher total score')
+
+def _rr_row(c, x):
+    R = x['R']; parts = ' · '.join('%s %s' % (k, ('?' if v is None else ('%+d' % v if k == 'size/upkeep' else v))) for k, v in x['parts'])
+    facts = '%s · starts in %s · racial: %s · vision: %s%s' % (esc(R.get('alignment') or 'alignment ?'), esc(', '.join(x['cities'])),
+        esc(', '.join(x['rac'])) if x['rac'] else 'not documented', esc(' / '.join(x['vis'])) if x['vis'] else 'none', ' · <b>large race</b>' if x['large'] else '')
+    return ('<li class="rr-row gb-row%s" data-cg-race="%s"><button type="button" class="gb-pick rr-use" data-class="%s" data-race="%s" aria-label="Set Race to %s">'
+            '<span class="gb-rk">#%d</span> <b>%s</b> <span class="rr-tier rr-t%s">Tier %s</span> <span class="gb-sc">%s</span></button>'
+            '<div class="gb-why">%s %s</div>'
+            '<div class="rr-pc"><div><b>Pros</b> %s<ul class="tight">%s</ul></div><div><b>Cons</b> %s<ul class="tight">%s</ul></div></div>'
+            '<div class="gb-ev">Score %s: %s%s</div></li>') % (
+        ' rr-large' if x['large'] else '', esc(x['race']), esc(c), esc(x['race']), esc(x['race']), x['rank'], esc(x['race']), x['tier'], x['tier'], x['score'],
+        _cg_badge('FACT'), facts, _cg_badge('STRATEGY'), ''.join('<li>%s</li>' % esc(p) for p in x['pros']) or '<li>None flagged</li>',
+        _cg_badge('STRATEGY'), ''.join('<li>%s</li>' % esc(p) for p in x['cons']) or '<li>None flagged</li>', x['score'], parts,
+        ' · moved below #1 because large races are never the top pick' if x.get('demoted') else '')
+
+def race_rank_html(c, top=3):
+    rows = race_rank(c); D = CGC.get(c) or {}
+    o = ['<div class="rr" id="best-races"><h3 id="best-races-h">Best races for %s %s</h3>' % (esc(c), _cg_badge('STRATEGY'))]
+    if not rows:
+        return o[0] + '<p>%s No race on the wiki start-city table for %s: no sourced data yet.</p></div>' % (_cg_badge('UNVERIFIED'), esc(c))
+    o.append('<p class="rr-why1"><b>Why #1:</b> %s</p>' % esc(_rr_why1(c, rows)))
+    o.append('<p class="gb-ev">Every race the wiki start-city table allows for %s, best to worst. Click a race to set <b>Race</b> in the top bar (Class becomes %s and Start stays valid). '
+             'Score = stat fit for this class\'s builds (up to 50, from wiki starting stats) + racial ability value for the role (up to 20) + Infravision/Ultravision trait (up to 5) + start-city access (up to 15: more cities, Night Harbor hub; evil races and KoS notes cost points) − large size and food upkeep. '
+             'Tiers: A 75+, B 62+, C 50+, D below. The weights are this Codex\'s judgement %s; the stats, racials, traits and cities are %s.</p>' % (esc(c), esc(c), _cg_badge('STRATEGY'), _cg_badge('FACT')))
+    o.append('<ol class="gb-rank rr-list">%s</ol>' % ''.join(_rr_row(c, x) for x in rows[:top]))
+    if len(rows) > top:
+        o.append('<details class="gb-more rr-more"><summary>Show all %d</summary><ol class="gb-rank rr-list" start="%d">%s</ol></details>' % (len(rows), top + 1, ''.join(_rr_row(c, x) for x in rows[top:])))
+    pl = D.get('planned_races') or {}
+    off = [r for r in _cg_official_races(c) if r not in CG_BY_CLASS.get(c, {})]
+    names = sorted(set(pl) | set(off))
+    if names:
+        o.append('<p class="dim">%s Not ranked (not playable in Early Access, no wiki start-city row%s): %s.</p>' % (_cg_badge('UNVERIFIED'),
+            '; starting stats and racials not on the wiki' if any(not _rr_racials(CG['races'].get(n, {})) for n in names) else '', esc(', '.join(names))))
+    o.append('</div>')
+    return ''.join(o)
+
+# ------------------------------------------------------------------ Quick info: compact new-character walkthrough (rendered by mod-chargen.js from walk-data.js)
+def qwalk_html(c):
+    return ('<div class="cg-qwalk" data-class="%s" aria-live="polite"><p class="dim">New-character walkthrough for your Race and Start picks: loading… (needs JavaScript). '
+            'Or open the <a href="/walkthrough.html">full walkthrough</a>.</p></div><script src="/assets/walk-data.js"></script>') % esc(c)
+
+def _tab_insert(body, label, key, pane_html):
+    """Insert a tab (button after the first tab button, pane after the tab bar) into the first .tabs block."""
+    m = re.search(r'<div class="tabs"><div class="tabbar"><button class="tab on" data-tab="([^"]+)">.*?</button>', body)
+    if not m: return None
+    tid = m.group(1).rsplit('-', 1)[0] + '-' + key
+    btn = '<button class="tab" data-tab="%s">%s</button>' % (tid, esc(label))
+    body = body[:m.end()] + btn + body[m.end():]
+    i = body.index('</div>', body.index('<div class="tabbar">')) + len('</div>')
+    return body[:i] + '<div class="tabpane" id="%s">%s</div>' % (tid, pane_html) + body[i:]
 
 # ------------------------------------------------------------------ walkthrough data
 def _cg_dist(start):
@@ -230,11 +394,28 @@ def render_all():
             if m or p['path'] == 'shaman/index.html':
                 c = next((x for x in CLASS_LIST if slug(x) == m.group(1)), None) if m else 'Shaman'
                 if c:
-                    p['body'] += chargen_section(c)
+                    sec = chargen_section(c)
+                    if p['path'] == 'shaman/index.html':
+                        nb = _tab_insert(p['body'], 'Character creation', 'cg', sec)
+                        p['body'] = (qwalk_html(c) + nb) if nb else (p['body'] + sec)
+                    else:
+                        p['body'] += sec
+                        p['body'] = re.sub(r'(<div class="call note"><div class="call-t">Quick info by level</div><p>.*?</p></div>)', lambda mm: mm.group(1) + qwalk_html(c), p['body'], count=1, flags=re.S)
                     if c in CGC:
                         p['sources'] = (p['sources'] or [s.strip() for s in p['meta'].get('sources', '').split(';') if s.strip()]) + _cg_srcs(c)
                     toc = p['ctx'].setdefault('toc', [])
                     if toc: toc.append(('chargen', 'Character creation'))
+        for p in PAGES:
+            m = re.match(r'classes/([a-z-]+)\.html$', p['path'])
+            c = next((x for x in CLASS_LIST if m and slug(x) == m.group(1)), None)
+            if c:
+                nb = _tab_insert(p['body'], 'Character creation', 'cg', chargen_section(c))
+                if nb:
+                    nb = re.sub(r'(<h2 id="[^"]*">%s quick reference by level</h2>\s*<p>.*?</p>)' % re.escape(esc(c)), lambda mm: mm.group(1) + qwalk_html(c), nb, count=1, flags=re.S)
+                    jump = '<p class="cg-jump"><a href="#best-races">Best races for %s</a> · <a href="#chargen">stats, traits and tradeskills</a> <span class="dim">(Character creation tab)</span></p>' % esc(c)
+                    p['body'] = nb.replace('<div class="tabs">', jump + '<div class="tabs">', 1)
+                    if c in CGC: p['sources'] = (p['sources'] or [s.strip() for s in p['meta'].get('sources', '').split(';') if s.strip()]) + _cg_srcs(c)
+            if p['path'] == 'shaman/quickinfo.html': p['body'] = qwalk_html('Shaman') + p['body']
     _cg_prev_ra()
     open(os.path.join(OUT, 'assets', 'chargen-data.js'), 'w', encoding='utf8').write('window.MNM_CG=' + json.dumps(_cg_topdata(), ensure_ascii=False, separators=(',', ':')) + ';')
     open(os.path.join(OUT, 'assets', 'walk-data.js'), 'w', encoding='utf8').write('window.MNM_WT=' + json.dumps(_cg_walkdata(), ensure_ascii=False, separators=(',', ':')) + ';')

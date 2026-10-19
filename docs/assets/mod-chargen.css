@@ -18,3 +18,37 @@
 html.halloween .cg-warn li{color:#ff9e88}
 .cg-sp{columns:2;column-gap:20px}
 @media (max-width:520px){.cg-sp{columns:1}.cg-f select{max-width:118px}.cg-cards{grid-template-columns:1fr}}
+/* Best races ranking (reuses the group builder .gb-row/.gb-pick/.gb-more look) */
+.rr{margin:6px 0 14px}
+.rr-why1{border-left:3px solid var(--gold);padding:4px 8px;margin:6px 0;background:rgba(255,190,90,.05)}
+.rr-row{cursor:default}
+.rr-row .gb-pick{cursor:pointer}
+.rr-tier{font-size:.75rem;padding:0 6px;border-radius:3px;border:1px solid var(--line)}
+.rr-tA{color:#8fd19e;border-color:#8fd19e}.rr-tB{color:#e8c66a;border-color:#e8c66a}.rr-tC{color:#e8a090;border-color:#e8a090}.rr-tD{color:#e08a7a;border-color:#e08a7a}
+.rr-pc{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:.9rem;margin-top:4px}
+.rr-pc li{font-size:inherit}
+.rr-pc ul{margin:2px 0 0;padding-left:18px}
+.rr-row.cg-sel{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset}
+.rr-large .gb-pick b{opacity:.85}
+.cg-jump{margin:6px 0;font-weight:600}
+/* Quick info walkthrough summary */
+.cg-qwalk{border:1px solid var(--line);border-radius:6px;padding:8px 10px;margin:8px 0;background:rgba(255,255,255,.02);overflow-wrap:anywhere}
+.cg-qwalk h3{margin:0 0 2px;font-size:1rem}
+.qw-tag{margin:4px 0;font-size:.85rem}.qw-note{font-size:.85rem;color:#e8c66a}
+.qw-steps li{margin:3px 0}
+.qw-toggle,.qw-band{font-size:.85rem;padding:3px 9px;border:1px solid var(--gold);border-radius:4px;background:#2a2116;color:var(--ink);cursor:pointer;margin:2px 0}
+.qw-more{border-top:1px solid var(--line);margin-top:8px;padding-top:4px}
+.qw-more h3{font-size:.95rem;margin:8px 0 2px}
+@media (max-width:520px){.rr-pc{grid-template-columns:1fr}.cg-qwalk .cg-sp{columns:1}}
+/* group-builder row look, scoped to the race ranking (mod-groups.css only loads on /groups.html) */
+.rr .gb-rank{padding-left:0;list-style:none;margin:.3em 0}
+.rr .gb-row{border:1px solid var(--line);border-radius:6px;padding:6px 8px;margin:5px 0;background:var(--panel)}
+.rr .gb-row:hover{border-color:var(--gold)}
+.rr .gb-pick{all:unset;display:flex;flex-wrap:wrap;gap:6px;align-items:baseline;width:100%;box-sizing:border-box;cursor:pointer;color:var(--parch)}
+.rr .gb-pick:focus-visible{outline:2px solid var(--gold2);outline-offset:2px}
+.rr .gb-rk{font-family:monospace;color:var(--dim);min-width:2.4em}
+.rr .gb-sc{margin-left:auto;font-family:monospace;color:var(--gold2)}
+.rr .gb-why{font-size:.85rem;margin-top:2px}
+.rr .gb-ev{font-size:.78rem;color:var(--dim)}
+.rr .gb-more summary{cursor:pointer;padding:6px 0;color:var(--gold2);font-weight:600}
+.rr .rr-row.cg-sel{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset;background:rgba(255,190,90,.06)}

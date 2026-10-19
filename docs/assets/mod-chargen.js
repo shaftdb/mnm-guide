@@ -47,8 +47,9 @@ var W=window.MNM_WT, mount=document.getElementById('cg-walk');
 function band(){var v=(selL&&selL.value)||get('mnm-range')||'11-15';return v}
 function bl(k){return k.split('-').map(Number)}
 function badge(l){l=String(l||'unverified').toUpperCase();var c=l==='FACT'?'fact':l==='STRATEGY'?'strat':'unc';return '<span class="badge '+c+'">'+esc(l.toLowerCase())+'</span>'}
-function walk(){if(!W||!mount)return;var c=cls(),code=W.codes[c],C=W.cities[city],R=W.races[race]||{},k=band(),b=bl(k);
-  if(!C){mount.innerHTML='<p>'+badge('unverified')+' No wiki start-city data for '+esc(c)+' / '+esc(race)+'. Pick another race in the top bar.</p>';return;}
+// walkHTML: the one walkthrough renderer (walkthrough.html and the class-page Quick info summary). opt (optional) collects the per-band parts.
+function walkHTML(c,race,city,k,opt){var code=W.codes[c],C=W.cities[city],R=W.races[race]||{},b=bl(k);
+  if(!C)return '<p>'+badge('unverified')+' No sourced data yet for '+esc(race)+' '+esc(c)+' starting in '+esc(city||'(no start)')+': this start has no wiki start-city data. Pick another race or start in the top bar.</p>';
   var h=[];var dist=C.dist;
   function dz(z){return dist[z]==null?99:dist[z]}
   h.push('<div class="cg-head"><h2 style="margin-top:0">'+esc(race)+' '+esc(c)+' · starting in <a class="ext" target="_blank" rel="noopener" href="'+esc(C.u)+'">'+esc(city)+'</a></h2>'+
@@ -65,10 +66,10 @@ function walk(){if(!W||!mount)return;var c=cls(),code=W.codes[c],C=W.cities[city
   // level 1 start
   var st=W.walk[c+'|'+city]||[];
   var tr=(C.tr||{})[c]||[];
+  var sq=W.quests.filter(function(q){return q[2]===city&&(q[3]==null||q[3]<=2)&&(q[4]==='ALL'||q[4]==='ANY'||q[4].split(' ').indexOf(code)>=0)&&/starter|class/i.test(q[0])});
   var s1=st.map(function(s){return '<li>'+badge(s.label)+' '+esc(s.text)+'</li>'});
   if(!st.length){
     s1.push('<li>'+(tr.length?badge('fact')+' Class trainer in '+esc(city)+': '+tr.map(function(t){return '<b>'+esc(t.npc)+'</b>'+(t.where?' ('+esc(t.where)+')':'')}).join(', '):badge('unverified')+' No '+esc(c)+' trainer listed on the wiki '+esc(city)+' page: no sourced data yet.')+'</li>');
-    var sq=W.quests.filter(function(q){return q[2]===city&&(q[3]==null||q[3]<=2)&&(q[4]==='ALL'||q[4]==='ANY'||q[4].split(' ').indexOf(code)>=0)&&/starter|class/i.test(q[0])});
     s1.push(sq.length?'<li>'+badge('fact')+' Starter / class quests here: '+sq.map(function(q){return '<a class="ext" target="_blank" rel="noopener" href="'+esc(q[1])+'">'+esc(q[0])+'</a>'}).join(', ')+'. Step lists: <a href="'+rel('/quest-helper.html')+'">quest helper</a>.</li>':'<li>'+badge('unverified')+' No '+esc(c)+' starter quest for '+esc(city)+' in the wiki data: no sourced data yet.</li>');
   }
   h.push('<h2 id="wt-start">Level 1: first steps in '+esc(city)+'</h2><ol class="cg-steps">'+s1.join('')+'</ol>');
@@ -91,11 +92,60 @@ function walk(){if(!W||!mount)return;var c=cls(),code=W.codes[c],C=W.cities[city
     var rep=[],warn=[];zs.forEach(function(z){var Z=W.zones[z];Z.fr.forEach(function(f){if(f[1].length)rep.push('<li><b>'+esc(f[0])+'</b>: kill '+f[1].map(esc).join(', ')+' in '+esc(z)+'</li>')});
       Z.fl.forEach(function(f){if(C.home.indexOf(f[0])>=0)warn.push('<li>'+badge('fact')+' '+(f[1].length?'Killing '+f[1].map(esc).join(', '):'Activity')+' in '+esc(z)+' <b>lowers '+esc(f[0])+'</b> (your home-city faction).</li>')})});
     o.push('<h3>Rep and faction '+badge('fact')+'</h3>'+(warn.length?'<ul class="tight cg-warn">'+warn.join('')+'</ul>':'')+(rep.length?'<ul class="tight">'+rep.slice(0,6).join('')+'</ul>':'<p class="dim">No faction gains listed on the wiki for mobs in these zones.</p>')+'<p class="dim">From the wiki faction pages (<a href="'+rel('/faction-guide.html')+'">faction guide</a>).</p>');
-    h.push('<details class="cg-band'+(cur?' cg-cur':'')+'"'+(cur?' open':'')+'><summary><b>Levels '+esc(B[1])+'</b>'+(cur?' <span class="dim">(your level range)</span>':'')+'</summary>'+o.join('')+'</details>');
+    if(opt)opt.bands[B[0]]={lo:lo,hi:hi,label:B[1],zs:zs,camps:camps,qs:qs,html:o.join('')};
+    h.push('<details id="wt-b-'+B[0]+'" class="cg-band'+(cur?' cg-cur':'')+'"'+(cur||location.hash==='#wt-b-'+B[0]?' open':'')+'><summary><b>Levels '+esc(B[1])+'</b>'+(cur?' <span class="dim">(your level range)</span>':'')+'</summary>'+o.join('')+'</details>');
   });
   var nh=W.nh[c];
   if(nh) h.push('<h2 id="wt-nh">Starting near Night Harbor</h2><p>'+badge('fact')+' '+esc(nh.summary)+'</p><ul>'+nh.cities.map(function(x){return '<li><b>'+esc(x.city)+'</b>: '+esc(x.distance)+' <i>'+esc(x.inq)+'</i></li>'}).join('')+'</ul><p>'+badge('strategy')+' '+esc(nh.best)+'</p><p class="dim">'+badge('unverified')+' '+esc(nh.caveat)+'</p>');
-  mount.innerHTML=h.join('');}
-function apply(){tailor();walk();}
+  if(opt){opt.C=C;opt.st=st;opt.tr=tr;opt.sq=sq;opt.s1=s1;opt.dz=dz;}
+  return h.join('');}
+function walk(){if(!W||!mount)return;mount.innerHTML=walkHTML(cls(),race,city,band());}
+// ---- class pages: Quick info walkthrough summary for the selected band (reuses walkHTML; never falls back to another city's route)
+function setBand(k){if(selL){selL.value=k;selL.dispatchEvent(new Event('change'))}else{put('mnm-range',k);apply()}}
+function qwalk(el){var c=el.getAttribute('data-class'),k=band(),notes=[],r=race,t=city;
+  if(!W){el.innerHTML='<p>'+badge('unverified')+' Walkthrough data did not load: no sourced data yet.</p>';return}
+  if(!(G.combos[c]||{})[r]){var d=defRace(c);notes.push(badge('unverified')+' Your Race pick ('+esc(r||'none')+') cannot be a '+esc(c)+' on the wiki start-city table, so this shows '+esc(d)+'. Pick a race under <a href="#best-races">Best races for '+esc(c)+'</a>.');r=d}
+  var cs=cities(c,r);if(cs.indexOf(t)<0){notes.push(badge('unverified')+' '+esc(t||'Your start')+' is not a valid start for a '+esc(r)+' '+esc(c)+', so this shows '+esc(cs[0]||'no start')+'.');t=cs[0]||''}
+  var opt={bands:{}},full=walkHTML(c,r,t,k,opt),B=opt.bands[k],idx=W.bands.map(function(x){return x[0]}).indexOf(k),nx=W.bands[idx+1];
+  var fp=rel('/walkthrough.html')+'?class='+encodeURIComponent(c)+'&race='+encodeURIComponent(r)+'&city='+encodeURIComponent(t);
+  var h=['<div class="qw-head"><h3>New character: '+esc(r)+' '+esc(c)+' · '+esc(t||'?')+' · levels '+esc(B?B.label:k.replace('-','\u2013'))+'</h3>'+
+    '<p class="dim">Follows Race, Start and Levels in the top bar. <a class="qw-full" href="'+fp+'#wt-b-'+esc(k)+'">Open full page</a></p></div>'];
+  notes.forEach(function(n){h.push('<p class="qw-note">'+n+'</p>')});
+  if(!opt.C||!B){h.push(full||'<p>'+badge('unverified')+' No sourced data yet for this band.</p>');el.innerHTML=h.join('');return}
+  var lo=B.lo,hi=B.hi,dz=opt.dz,starter=lo<=10&&B.zs.length&&dz(B.zs[0])===0,li=[];
+  if(starter){
+    h.push('<p class="qw-tag">'+badge('strategy')+' Starter area: '+esc(t)+'</p>');
+    var steps=opt.st.length?opt.st.filter(function(s){return s.lvl==null||(s.lvl>=lo&&s.lvl<=hi)}).map(function(s){var x=String(s.text);return '<li>'+badge(s.label)+' '+esc(x.length>170?x.slice(0,x.lastIndexOf(' ',165))+'…':x)+'</li>'}):(lo===1?opt.s1:[]);
+    if(steps.length)h.push('<b>First steps from spawn</b><ol class="tight qw-steps">'+steps.slice(0,4).join('')+'</ol>');
+    li.push('<li>'+(opt.tr.length?badge('fact')+' Trainer: '+opt.tr.map(function(x){return '<b>'+esc(x.npc)+'</b>'+(x.where?' ('+esc(x.where)+')':'')}).join(', '):badge('unverified')+' Trainer in '+esc(t)+': no sourced data yet')+'</li>');
+    li.push(opt.sq.length?'<li>'+badge('fact')+' Starter / class quests: '+opt.sq.map(function(q){return '<a class="ext" target="_blank" rel="noopener" href="'+esc(q[1])+'">'+esc(q[0])+'</a>'}).join(', ')+'</li>':'<li>'+badge('unverified')+' Starter / class quest for '+esc(c)+' in '+esc(t)+': no sourced data yet</li>');
+    B.qs.filter(function(q){return !opt.sq.some(function(x){return x[0]===q[0]})}).slice(0,3).forEach(function(q){li.push('<li>'+badge('fact')+' Quest: <a class="ext" target="_blank" rel="noopener" href="'+esc(q[1])+'">'+esc(q[0])+'</a> <span class="dim">'+esc(q[2])+' · min lvl '+q[3]+'</span></li>')});
+    h.push('<b>Key quests and trainer</b><ul class="tight">'+li.join('')+'</ul>');
+  }else{
+    var pv=W.bands[idx-1]&&opt.bands[W.bands[idx-1][0]];
+    h.push('<p class="qw-tag">'+badge('strategy')+' Beyond the starter area'+(pv&&pv.zs.length?', continuing from '+esc(pv.zs[0]):'')+'</p>');
+    h.push('<b>Where to go</b>'+(B.zs.length?'<ul class="tight">'+B.zs.slice(0,3).map(function(z){var Z=W.zones[z];return '<li><a href="'+rel(Z.u)+'">'+esc(z)+'</a> <span class="dim">lvl '+Z.lo+'\u2013'+Z.hi+' · '+(dz(z)===0?'your start city':dz(z)+' hop'+(dz(z)>1?'s':'')+' from '+esc(t))+'</span></li>'}).join('')+'</ul>':'<p>'+badge('unverified')+' No sourced data yet: no zone with a wiki level range for '+lo+'\u2013'+hi+' is connected to '+esc(t)+'.</p>'));
+  }
+  h.push('<b>Camps</b>'+(B.camps.length?'<ul class="tight">'+B.camps.slice(0,4).join('')+'</ul>':'<p class="dim">No sourced named camps for '+lo+'\u2013'+hi+' near '+esc(t)+' yet.</p>'));
+  var nb=nx&&opt.bands[nx[0]];
+  h.push('<p class="qw-next"><b>Next up:</b> '+(nx?'<button type="button" class="qw-band" data-band="'+esc(nx[0])+'">Levels '+esc(nx[1])+'</button> '+(nb&&nb.zs.length?'→ '+esc(nb.zs[0]):'<span class="dim">no sourced zone yet</span>'):'this is the last level range')+'</p>');
+  var open=el.getAttribute('data-open')==='1';
+  h.push('<button type="button" class="qw-toggle" aria-expanded="'+open+'">'+(open?'Hide full walkthrough':'Show full walkthrough')+'</button>');
+  h.push('<div class="qw-more"'+(open?'':' hidden')+'>'+(open?B.html+'<p class="qw-bands"><b>Other level ranges:</b> '+W.bands.map(function(x){return x[0]===k?'<b>'+esc(x[1])+'</b>':'<button type="button" class="qw-band" data-band="'+esc(x[0])+'">'+esc(x[1])+'</button>'}).join(' ')+'</p>':'')+'</div>');
+  el.innerHTML=h.join('');}
+function qwalkAll(){document.querySelectorAll('.cg-qwalk').forEach(qwalk)}
+document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('.qw-toggle,.qw-band,.rr-use');if(!t)return;
+  if(t.classList.contains('qw-toggle')){var el=t.closest('.cg-qwalk');el.setAttribute('data-open',el.getAttribute('data-open')==='1'?'0':'1');qwalk(el);return}
+  if(t.classList.contains('qw-band')){setBand(t.getAttribute('data-band'));return}
+  // ranking row: set Class (to this page's class) + Race, keep Start valid
+  var c=t.getAttribute('data-class'),r=t.getAttribute('data-race');if(!G.combos[c]||!G.combos[c][r])return;
+  if(selC&&selC.value!==c){selC.value=c;put('mnm-class',c);selC.dispatchEvent(new Event('change'))}else put('mnm-class',c);
+  race=r;city=null;pick();fill();changed(true);
+  var m=t.closest('.rr');if(m){var s=m.querySelector('.rr-msg');if(!s){s=document.createElement('p');s.className='rr-msg dim';s.setAttribute('aria-live','polite');m.insertBefore(s,m.children[1])}s.textContent='Race set to '+r+' (Start: '+city+'). The rest of this page now follows that pick.'}});
+// open the tab that holds a #hash target (e.g. #best-races on class guides)
+function hashTab(){var id=location.hash.slice(1);if(!id)return;var el=document.getElementById(id);if(!el)return;var p=el.closest('.tabpane');
+  if(p&&!p.classList.contains('on')){var b=document.querySelector('.tab[data-tab="'+p.id+'"]');if(b){b.click();setTimeout(function(){el.scrollIntoView()},0)}}}
+window.addEventListener('hashchange',hashTab);document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(a)setTimeout(hashTab,0)});hashTab();
+function apply(){tailor();walk();qwalkAll();}
 apply();
 })();
