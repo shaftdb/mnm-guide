@@ -25,6 +25,7 @@ details.sc-q[open]{padding-bottom:.5rem}
 .sc-qi h3.sc-h{margin-top:0}
 @media (max-width:520px){.sc-steps-list{padding-left:.9rem}.sc-kv{display:block;overflow-x:auto}details.sc-q{padding:.2rem .35rem}}
 .sc-route,.sc-pick{display:none}
+.sc-route.sc-on{display:block}
 html:not([data-sc]) .sc-pick{display:block}
 html[data-sc="ailvorith"] .sc-route[data-sc="ailvorith"]{display:block}
 html[data-sc="faelindral"] .sc-route[data-sc="faelindral"]{display:block}

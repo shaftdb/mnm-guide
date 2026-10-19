@@ -203,7 +203,7 @@ def _cg_walkdata():
     d = _sc_prev_wd(); d['route'] = {k: sc_route(*[int(x) for x in k.split('-')]) for k in RANGE_ORDER}; d['schead'] = sc_head(); return d
 
 def _sc_css():
-    r = ['.sc-route,.sc-pick{display:none}', 'html:not([data-sc]) .sc-pick{display:block}']
+    r = ['.sc-route,.sc-pick{display:none}', '.sc-route.sc-on{display:block}', 'html:not([data-sc]) .sc-pick{display:block}']
     for city in SC_CITIES: r.append('html[data-sc="%s"] .sc-route[data-sc="%s"]{display:block}' % (slug(city), slug(city)))
     for c in CLASS_LIST: r.append('html[data-scc="%s"] .sc-fc:not([data-scc~="%s"]){display:none}' % (slug(c), slug(c)))
     for rc in CG['races']: r.append('html[data-scr="%s"] .sc-fr:not([data-scr~="%s"]){display:none}' % (slug(rc), slug(rc)))
