@@ -10,6 +10,8 @@ Since Oct 7: Lower. New figures UNCONFIRMED
 Item prices: Mostly not on the wiki yet
 :::
 
+**Prices and vendor values:** see the [Market](/market.html) page: a searchable table of every sourced price, with its source, date and a confidence tag, plus NPC vendor values per weight and money items by camp.
+
 ## Spell scroll pricing
 - **Sep 30 (0.30.2.1):** each 5-level range has a set total cost that's the same for every class. Earlier scrolls in a range cost less than later ones. Shared scrolls like Gate have one low price.
 - **Oct 3 (0.30.2.3):** cheaper for classes that have very few scrolls.

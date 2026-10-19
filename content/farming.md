@@ -8,6 +8,8 @@ sources: Patch 0.30.2.4 (income by city, Deep Beetle Eyes)|https://account.monst
 The wiki has almost no merchant sell values or drop rates for Early Access yet. Nothing on this page gives a coin/hour number, and this site won't make one up.
 :::
 
+**Vendor values and money items by camp:** [Market](/market.html#money).
+
 ## What the devs have said (patch notes)
 - **Oct 4 (0.30.2.4):** all four starting cities give similar income per hour across the levels. **Evershade Weald** is slightly ahead, with Night Harbor and Underdocks very close behind. Ail'Vorith starts harder but catches up.
 - **Deep Beetle Eyes** were raised to match **Fire Beetle Eyes**. Drop rates and prices in the newbie areas were adjusted too.

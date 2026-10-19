@@ -1,0 +1,30 @@
+.mkt-facts ul{list-style:none;padding:0}.mkt-facts li{margin:3px 0}
+.mkt-jump{margin:6px 0 2px;font-size:.9rem}
+.mkt-wrap{overflow-x:auto}
+.mkt-t,.mkt-src{width:100%;border-collapse:collapse;font-size:.88rem}
+.mkt-t th,.mkt-t td,.mkt-src th,.mkt-src td{border-bottom:1px solid var(--line);padding:5px 6px;text-align:left;vertical-align:top}
+.mkt-t thead th,.mkt-src thead th{background:var(--panel2);color:var(--parch);position:sticky;top:0}
+.mkt-t th button{background:none;border:0;color:inherit;font:inherit;font-weight:600;cursor:pointer;padding:0}
+.mkt-t th[aria-sort=ascending] button::after{content:" \25B2";font-size:.7em;color:var(--gold)}.mkt-t th[aria-sort=descending] button::after{content:" \25BC";font-size:.7em;color:var(--gold)}
+.mkt-t tbody tr:hover{background:#ffffff08}
+.mkt-old{opacity:.6}
+.mkt-n{font-size:.8rem}
+.mkt-conf{font-size:.72rem;padding:0 6px;border-radius:9px;text-transform:uppercase;letter-spacing:.5px;border:1px solid var(--line);white-space:nowrap}
+.mkt-high{background:#1f3a24;color:#bfe8c4;border-color:#3d7a48}.mkt-medium{background:#3a3016;color:#f0cf7f;border-color:#7a6430}.mkt-low{background:#3a1f1a;color:#f0b4a6;border-color:var(--unc)}
+.mkt-keep{font-size:.7rem;padding:0 5px;border-radius:9px;background:var(--strat);color:#fff}
+.mkt-camps{display:grid;gap:6px}
+.mkt-camp{border:1px solid var(--line);border-radius:6px;background:var(--panel);margin:6px 0}
+.mkt-camp summary{cursor:pointer;padding:6px 8px;list-style-position:inside}
+.mkt-camp[open] summary{border-bottom:1px solid var(--line)}
+.mkt-cb{padding:4px 10px 8px}.mkt-cb p{margin:.4em 0}
+.mkt-band{display:inline-block;min-width:3.6em;text-align:center;font-size:.75rem;padding:0 6px;border-radius:9px;background:var(--panel2);border:1px solid var(--gold);color:var(--gold2)}
+@media (max-width:600px){
+ .mkt-t thead,.mkt-src thead{display:none}
+ .mkt-t,.mkt-t tbody,.mkt-t tr,.mkt-t td,.mkt-src,.mkt-src tbody,.mkt-src tr,.mkt-src td{display:block;width:100%}
+ .mkt-t tr,.mkt-src tr{border:1px solid var(--line);border-radius:6px;margin:6px 0;padding:4px 6px;background:var(--panel)}
+ .mkt-t td,.mkt-src td{border:0;padding:2px 0 2px 6.5em;position:relative;min-height:1.4em}
+ .mkt-t td::before,.mkt-src td::before{content:attr(data-l);position:absolute;left:0;width:6em;color:var(--dim);font-size:.78rem}
+ .mkt-t td[colspan]{padding-left:0}.mkt-t td[colspan]::before{content:none}
+ .mkt-sortbar{display:flex}
+}
+.mkt-nw b,span.mkt-nw{white-space:nowrap}

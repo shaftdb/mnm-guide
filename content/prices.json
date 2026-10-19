@@ -1,0 +1,669 @@
+{
+ "meta": {
+  "schema": 1,
+  "currency": "100 copper (cp) = 1 silver (sp); 100 sp = 1 gold (gp). Prices are stored in copper.",
+  "notes": [
+   "No in-game auction house exists, so there is no complete or official price feed. Every row is a single dated observation from the named source.",
+   "Patch 0.30.2.9 (Oct 15, 2026) rebalanced coin drops across many NPC types and added sellable medallion drops. Vendor values recorded before then may be stale."
+  ],
+  "updated": "2026-10-18",
+  "counts": {
+   "vendor_buys": 18,
+   "vendor_sells": 1,
+   "player_ask": 11,
+   "player_bid": 5,
+   "player_sale": 3,
+   "report": 1
+  }
+ },
+ "sources": {
+  "mmwiki-lv": {
+   "name": "monstersandmemories.wiki - Loot Worth Keeping",
+   "url": "https://monstersandmemories.wiki/loot-value",
+   "kind": "Fan database of vendor values, built from players' vendor ledgers",
+   "freshness": "Live database; values quoted here were pulled Oct 18, 2026 (ledgers may predate the Oct 15 coin patch)",
+   "auto": "Not by scraping: the site's copyright page forbids automated collection and copying large parts. Its Partner API (key from a wiki Site Admin) returns vendorPays per item for lookups, 120 calls/min, attribution required, no wholesale mirroring.",
+   "reliability": "Medium: real ledger data, per-item, but sample size per item is not shown",
+   "label": "FACT",
+   "short": "Loot Worth Keeping"
+  },
+  "mmwiki-api": {
+   "name": "monstersandmemories.wiki Partner API (vendorPays)",
+   "url": "https://monstersandmemories.wiki/api/partner/v1/docs",
+   "kind": "Per-item vendor value lookup (copper)",
+   "freshness": "Live; vendorPays field added Oct 17, 2026",
+   "auto": "Yes with a key: tools/prices_update.py --wiki-refresh reads MNM_WIKI_PARTNER_KEY. No key configured yet.",
+   "reliability": "Medium (same ledger data as Loot Worth Keeping)",
+   "label": "FACT",
+   "short": "Wiki Partner API"
+  },
+  "miraheze": {
+   "name": "Monsters and Memories Wiki (Miraheze) item pages",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Category:Items",
+   "kind": "Item infobox 'merchant value' field (CC BY-SA 4.0)",
+   "freshness": "Per page; only 2 of 3,467 items in this Codex's Oct 11 wiki pull have a value",
+   "auto": "Already pulled by the existing wiki tools (MediaWiki API), but almost no data",
+   "reliability": "Low to medium: sparse, some values are from before Early Access",
+   "label": "FACT",
+   "short": "Miraheze wiki"
+  },
+  "official": {
+   "name": "Official patch notes",
+   "url": "https://account.monstersandmemories.com/community/patch_notes",
+   "kind": "Developer statements on pricing (scrolls, coin drops); no item price lists",
+   "freshness": "Per patch",
+   "auto": "Patch notes are already tracked by the news/patch tools; they contain no machine-readable prices",
+   "reliability": "High for what they say, but they rarely give numbers",
+   "label": "FACT",
+   "short": "Patch notes"
+  },
+  "tunnel": {
+   "name": "The Tunnel (thetunnel.xyz)",
+   "url": "https://thetunnel.xyz/",
+   "kind": "Unofficial player marketplace: buy/sell listings (asking prices, expire after 7 days) and anonymous 'log a sale' reports",
+   "freshness": "Live, but thin: 18 open listings and 3 logged sales across all servers when checked Oct 18, 2026",
+   "auto": "No. There is no documented API or terms for reuse, and the site's own listing feed also returns posters' IP addresses and PINs, so this Codex will not pull it automatically. Rows here were copied by hand (item, price, server, date only).",
+   "reliability": "Low: asking prices from single players, not completed sales; tiny sample",
+   "label": "UNVERIFIED",
+   "short": "The Tunnel"
+  },
+  "forum": {
+   "name": "Official forum",
+   "url": "https://forum.monstersandmemories.com/",
+   "kind": "Player reports in discussion threads; there is no WTS/WTB board",
+   "freshness": "Per post",
+   "auto": "Possible via the forum's public JSON search, but posts rarely contain item prices; manual only",
+   "reliability": "Low: single anecdotes",
+   "label": "UNVERIFIED",
+   "short": "Official forum"
+  },
+  "reddit": {
+   "name": "r/MonstersAndMemories",
+   "url": "https://www.reddit.com/r/MonstersAndMemories/",
+   "kind": "Discussion; no regular price or WTS threads found",
+   "freshness": "-",
+   "auto": "No usable price data found",
+   "reliability": "-",
+   "label": "UNVERIFIED",
+   "short": "Reddit"
+  },
+  "discord": {
+   "name": "Official Discord",
+   "url": "https://monstersandmemories.com/",
+   "kind": "Trade channels exist only behind a Discord login; nothing public to read",
+   "freshness": "-",
+   "auto": "No (login required; not public)",
+   "reliability": "-",
+   "label": "UNVERIFIED",
+   "short": "Discord"
+  }
+ },
+ "entries": [
+  {
+   "item": "Antique Billon Coin",
+   "kind": "vendor_buys",
+   "price": "5 sp 17 cp",
+   "weight": 0.1,
+   "source": "mmwiki-lv",
+   "seen": "2026-10-18",
+   "confidence": "medium",
+   "label": "FACT",
+   "note": "Listed for Shaded Dunes/Tel Ekir; dropping mob not sourced",
+   "cp": 517
+  },
+  {
+   "item": "Brinehands Resized Greaves",
+   "kind": "player_sale",
+   "price": "3 Gold",
+   "server": "Estaire (US-PvE)",
+   "source": "tunnel",
+   "seen": "2026-10-16",
+   "confidence": "low",
+   "label": "UNVERIFIED",
+   "cp": 30000
+  },
+  {
+   "item": "Cinder Beetle Eye",
+   "kind": "vendor_buys",
+   "price": "19 cp",
+   "source": "mmwiki-lv",
+   "seen": "2026-10-18",
+   "confidence": "medium",
+   "label": "FACT",
+   "note": "Worth more as the Cinder Beetle armor quest turn-in",
+   "cp": 19
+  },
+  {
+   "item": "Corroded Bronze Plate (pieces)",
+   "kind": "vendor_buys",
+   "price": "1 sp 50 cp - 1 sp 87 cp",
+   "source": "mmwiki-lv",
+   "seen": "2026-10-18",
+   "confidence": "medium",
+   "label": "FACT",
+   "note": "Range across the plate pieces (helm, bracer, boots...)",
+   "link": "Corroded Bronze Plate Helm",
+   "cp": 150,
+   "cp_max": 187
+  },
+  {
+   "item": "Corroded Mithril Plate Visor",
+   "kind": "vendor_buys",
+   "price": "8 sp 69 cp",
+   "source": "miraheze",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Corroded_Mithril_Plate_Visor",
+   "seen": "2026-07-12",
+   "confidence": "low",
+   "label": "FACT",
+   "note": "Wiki page last edited Jul 12, before Early Access",
+   "cp": 869
+  },
+  {
+   "item": "Cracked Elderwood Staff",
+   "kind": "vendor_buys",
+   "price": "27 sp 17 cp",
+   "weight": 4.25,
+   "source": "mmwiki-lv",
+   "seen": "2026-10-18",
+   "confidence": "medium",
+   "label": "FACT",
+   "note": "Best value per weight found. The Miraheze item page lists weight 6",
+   "cp": 2717
+  },
+  {
+   "item": "Cracked Fine Wood Staff",
+   "kind": "vendor_buys",
+   "price": "8 sp 75 cp",
+   "weight": 6,
+   "source": "mmwiki-lv",
+   "seen": "2026-10-18",
+   "confidence": "medium",
+   "label": "FACT",
+   "cp": 875
+  },
+  {
+   "item": "Cracked Ironbark Staff",
+   "kind": "vendor_buys",
+   "price": "12 sp 47 cp",
+   "weight": 6,
+   "source": "mmwiki-lv",
+   "seen": "2026-10-18",
+   "confidence": "medium",
+   "label": "FACT",
+   "cp": 1247
+  },
+  {
+   "item": "Cracked Staff",
+   "kind": "vendor_buys",
+   "price": "4 sp 94 cp",
+   "weight": 6,
+   "source": "mmwiki-lv",
+   "seen": "2026-10-18",
+   "confidence": "medium",
+   "label": "FACT",
+   "cp": 494
+  },
+  {
+   "item": "Deathcharmer's Masquerade",
+   "kind": "player_bid",
+   "price": "40 Silver",
+   "server": "Trem (US-PvE)",
+   "source": "tunnel",
+   "seen": "2026-10-17",
+   "confidence": "low",
+   "label": "UNVERIFIED",
+   "cp": 4000
+  },
+  {
+   "item": "Dense Gold Carapace",
+   "kind": "vendor_buys",
+   "price": "17 sp 10 cp",
+   "weight": 10,
+   "source": "mmwiki-lv",
+   "seen": "2026-10-18",
+   "confidence": "medium",
+   "label": "FACT",
+   "note": "Vale of Zintar; drop mob inferred from the name (gold devourer) - UNVERIFIED",
+   "cp": 1710
+  },
+  {
+   "item": "Dense Silver Carapace",
+   "kind": "vendor_buys",
+   "price": "17 sp 10 cp",
+   "weight": 10,
+   "source": "mmwiki-lv",
+   "seen": "2026-10-18",
+   "confidence": "medium",
+   "label": "FACT",
+   "note": "Vale of Zintar; drop mob inferred from the name (silver devourer) - UNVERIFIED",
+   "cp": 1710
+  },
+  {
+   "item": "Eclipse Cleaver",
+   "kind": "player_ask",
+   "price": "1 Gold",
+   "server": "Kravvin (US-PvP)",
+   "source": "tunnel",
+   "seen": "2026-10-09",
+   "confidence": "low",
+   "label": "UNVERIFIED",
+   "cp": 10000
+  },
+  {
+   "item": "Fractured Beetle Mandible",
+   "kind": "vendor_buys",
+   "price": "1 sp 96 cp",
+   "weight": 0.1,
+   "source": "mmwiki-lv",
+   "seen": "2026-10-18",
+   "confidence": "medium",
+   "label": "FACT",
+   "note": "Sungreet Strand; dropping mob not sourced",
+   "cp": 196
+  },
+  {
+   "item": "Fungal Boots",
+   "kind": "player_ask",
+   "price": "8 Silver",
+   "server": "Trem (US-PvE)",
+   "source": "tunnel",
+   "seen": "2026-10-09",
+   "confidence": "low",
+   "label": "UNVERIFIED",
+   "cp": 800
+  },
+  {
+   "item": "Fungal Coat",
+   "kind": "player_ask",
+   "price": "20 Silver",
+   "server": "Trem (US-PvE)",
+   "source": "tunnel",
+   "seen": "2026-10-09",
+   "confidence": "low",
+   "label": "UNVERIFIED",
+   "cp": 2000
+  },
+  {
+   "item": "Giant Turtle Shell Shield",
+   "kind": "vendor_buys",
+   "price": "12 cp",
+   "where": "Shady vendors",
+   "source": "miraheze",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Giant_Turtle_Shell_Shield",
+   "seen": "2026-10-02",
+   "confidence": "medium",
+   "label": "FACT",
+   "cp": 12
+  },
+  {
+   "item": "Giant Turtle Shell Shield",
+   "kind": "vendor_buys",
+   "price": "30 cp",
+   "where": "Used weapon vendors",
+   "source": "miraheze",
+   "url": "https://monstersandmemories.miraheze.org/wiki/Giant_Turtle_Shell_Shield",
+   "seen": "2026-10-02",
+   "confidence": "medium",
+   "label": "FACT",
+   "note": "Shows the category premium: the right vendor pays 2.5x a shady one",
+   "cp": 30
+  },
+  {
+   "item": "Humanoid loot medallions",
+   "kind": "report",
+   "price": "1 sp - 1 sp 50 cp",
+   "where": "Any vendor that buys them (not named)",
+   "source": "forum",
+   "url": "https://forum.monstersandmemories.com/d/2194-new-loot-changes",
+   "seen": "2026-10-14",
+   "confidence": "low",
+   "label": "UNVERIFIED",
+   "note": "New drop with the Oct 2026 loot change. One player soloing Vale of Zintar orcs: medallions 'sell for 1 to 1.5 silver', coin drops fell from over 3 sp to up to ~1.2 sp per kill. Several medallion types with different values; names not reported",
+   "nolink": true,
+   "cp": 100,
+   "cp_max": 150
+  },
+  {
+   "item": "Inlaid Diamond Steel Earring",
+   "kind": "player_ask",
+   "price": "1.25 Gold",
+   "server": "Estaire (US-PvE)",
+   "source": "tunnel",
+   "seen": "2026-10-11",
+   "confidence": "low",
+   "label": "UNVERIFIED",
+   "cp": 12500
+  },
+  {
+   "item": "Inlaid Diamond Steel Ring",
+   "kind": "player_ask",
+   "price": "1.25 Gold",
+   "server": "Estaire (US-PvE)",
+   "source": "tunnel",
+   "seen": "2026-10-11",
+   "confidence": "low",
+   "label": "UNVERIFIED",
+   "cp": 12500
+  },
+  {
+   "item": "Inlaid Sapphire Steel Ring",
+   "kind": "player_ask",
+   "price": "1.25 Gold",
+   "server": "Estaire (US-PvE)",
+   "source": "tunnel",
+   "seen": "2026-10-11",
+   "confidence": "low",
+   "label": "UNVERIFIED",
+   "cp": 12500
+  },
+  {
+   "item": "Iron Battle Axe",
+   "kind": "player_bid",
+   "price": "25 Copper",
+   "server": "Trem (US-PvE)",
+   "source": "tunnel",
+   "seen": "2026-10-17",
+   "confidence": "low",
+   "label": "UNVERIFIED",
+   "cp": 25
+  },
+  {
+   "item": "Iron Greatsword",
+   "kind": "player_bid",
+   "price": "20 Silver",
+   "server": "Vespyra (EU-PvE)",
+   "source": "tunnel",
+   "seen": "2026-10-09",
+   "confidence": "low",
+   "label": "UNVERIFIED",
+   "cp": 2000
+  },
+  {
+   "item": "Jade",
+   "kind": "vendor_buys",
+   "price": "2 sp 17 cp",
+   "source": "mmwiki-lv",
+   "seen": "2026-10-18",
+   "confidence": "medium",
+   "label": "FACT",
+   "note": "Drops in several zones; also a jewelcraft gem, check your mats list before selling",
+   "cp": 217
+  },
+  {
+   "item": "Level 1-5 spell scrolls (all, one class)",
+   "kind": "vendor_sells",
+   "price": "4 sp 5 cp",
+   "where": "Class scroll vendors",
+   "source": "official",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/52",
+   "seen": "2026-09-30",
+   "confidence": "low",
+   "label": "FACT",
+   "note": "Total for the whole 1-5 range, same for every class (0.30.2.1). Lowered again Oct 7 (0.30.2.5); new totals not published",
+   "nolink": true,
+   "cp": 405
+  },
+  {
+   "item": "Longbow",
+   "kind": "player_ask",
+   "price": "10 Silver",
+   "server": "Vespyra (EU-PvE)",
+   "source": "tunnel",
+   "seen": "2026-10-13",
+   "confidence": "low",
+   "label": "UNVERIFIED",
+   "cp": 1000
+  },
+  {
+   "item": "Pot Helmet",
+   "kind": "player_ask",
+   "price": "90 Silver",
+   "server": "Estaire (US-PvE)",
+   "source": "tunnel",
+   "seen": "2026-10-12",
+   "confidence": "low",
+   "label": "UNVERIFIED",
+   "cp": 9000
+  },
+  {
+   "item": "Rawhide Backpack",
+   "kind": "player_ask",
+   "price": "4 Silver",
+   "server": "Trem (US-PvE)",
+   "source": "tunnel",
+   "seen": "2026-10-04",
+   "confidence": "low",
+   "label": "UNVERIFIED",
+   "cp": 400
+  },
+  {
+   "item": "Rawhide Backpack",
+   "kind": "player_sale",
+   "price": "5 Silver",
+   "server": "Estaire (US-PvE)",
+   "source": "tunnel",
+   "seen": "2026-10-12",
+   "confidence": "low",
+   "label": "UNVERIFIED",
+   "cp": 500
+  },
+  {
+   "item": "Rawhide Backpack",
+   "kind": "player_sale",
+   "price": "5 Silver",
+   "server": "Tilustra (US-PvE)",
+   "source": "tunnel",
+   "seen": "2026-10-17",
+   "confidence": "low",
+   "label": "UNVERIFIED",
+   "cp": 500
+  },
+  {
+   "item": "Rusty Iron Greatsword",
+   "kind": "vendor_buys",
+   "price": "9 sp 52 cp",
+   "weight": 13,
+   "source": "mmwiki-lv",
+   "seen": "2026-10-18",
+   "confidence": "medium",
+   "label": "FACT",
+   "note": "Other rusty iron weapons 9 sp 42 cp-9 sp 52 cp; heavy",
+   "cp": 952
+  },
+  {
+   "item": "Sash of Herbs",
+   "kind": "player_bid",
+   "price": "60 Silver",
+   "server": "Trem (US-PvE)",
+   "source": "tunnel",
+   "seen": "2026-10-17",
+   "confidence": "low",
+   "label": "UNVERIFIED",
+   "cp": 6000
+  },
+  {
+   "item": "Soft-Soled Wading Boots",
+   "kind": "player_ask",
+   "price": "77 Silver",
+   "server": "Estaire (US-PvE)",
+   "source": "tunnel",
+   "seen": "2026-10-12",
+   "confidence": "low",
+   "label": "UNVERIFIED",
+   "cp": 7700
+  },
+  {
+   "item": "Twilight Cap",
+   "kind": "player_bid",
+   "price": "1 Gold",
+   "server": "Trem (US-PvE)",
+   "source": "tunnel",
+   "seen": "2026-10-17",
+   "confidence": "low",
+   "label": "UNVERIFIED",
+   "cp": 10000
+  },
+  {
+   "item": "Wolf Blood",
+   "kind": "vendor_buys",
+   "price": "80 cp",
+   "where": "Evershade Weald vendor",
+   "weight": 0.1,
+   "source": "mmwiki-lv",
+   "seen": "2026-10-18",
+   "confidence": "medium",
+   "label": "FACT",
+   "cp": 80
+  },
+  {
+   "item": "Wolf Blood",
+   "kind": "vendor_buys",
+   "price": "86 cp",
+   "where": "Night Harbor vendor",
+   "weight": 0.1,
+   "source": "mmwiki-lv",
+   "seen": "2026-10-18",
+   "confidence": "medium",
+   "label": "FACT",
+   "cp": 86
+  },
+  {
+   "item": "Wooden Bank Crate",
+   "kind": "player_ask",
+   "price": "60 Silver",
+   "server": "Estaire (US-PvE)",
+   "source": "tunnel",
+   "seen": "2026-10-13",
+   "confidence": "low",
+   "label": "UNVERIFIED",
+   "cp": 6000
+  },
+  {
+   "item": "Worn Fine Wood Bow",
+   "kind": "vendor_buys",
+   "price": "2 sp 42 cp",
+   "source": "mmwiki-lv",
+   "seen": "2026-10-18",
+   "confidence": "medium",
+   "label": "FACT",
+   "cp": 242
+  }
+ ],
+ "camps": [
+  {
+   "band": "1-10",
+   "camp": "Wolves",
+   "zone": "Evershade Weald",
+   "mobs": [],
+   "items": [
+    "Wolf Blood"
+   ],
+   "note": "Light (0.1 weight). Wolves are also a leather source",
+   "label": "FACT"
+  },
+  {
+   "band": "6-16",
+   "camp": "Ashira and Bloodynose goblins",
+   "zone": "Tel Ekir",
+   "mobs": [
+    "a Bloodynose frightener",
+    "an ashira spearthrower"
+   ],
+   "items": [
+    "Cracked Fine Wood Staff",
+    "Cracked Staff",
+    "Antique Billon Coin"
+   ],
+   "note": "Tel Ekir is also a top XP camp at 9-16",
+   "label": "FACT"
+  },
+  {
+   "band": "13-22",
+   "camp": "Skeletons",
+   "zone": "Ancient Crypt",
+   "mobs": [
+    "a skeletal soldier",
+    "a skeletal acolyte"
+   ],
+   "items": [
+    "Corroded Bronze Plate (pieces)",
+    "Worn Fine Wood Bow"
+   ],
+   "note": "Same camp as the leveling pick; tank and healer needed",
+   "label": "FACT"
+  },
+  {
+   "band": "16-25",
+   "camp": "Quarry beetles",
+   "zone": "Sungreet Strand",
+   "mobs": [
+    "a cinder harvester",
+    "a cinder drone"
+   ],
+   "items": [
+    "Fractured Beetle Mandible",
+    "Jade",
+    "Cinder Beetle Eye"
+   ],
+   "note": "Less XP than the Fallen Pass ramp (STRATEGY)",
+   "label": "FACT"
+  },
+  {
+   "band": "26-35",
+   "camp": "Dustrend orcs, then Keeper's Bight poachers",
+   "zone": "Keeper's Bight",
+   "mobs": [
+    "a poacher",
+    "a poacher bruiser",
+    "Poacher Garrus"
+   ],
+   "items": [
+    "Cracked Ironbark Staff"
+   ],
+   "note": "Orcs in Vale of Zintar also drop Cracked Ironbark Staffs and heavy rusty iron weapons. Since Oct 14-15 orc coin drops are reportedly lower but they drop medallions (UNVERIFIED)",
+   "label": "FACT",
+   "zone2": "Vale of Zintar"
+  },
+  {
+   "band": "32-38",
+   "camp": "Tomb burrowers / gold and silver devourers",
+   "zone": "Vale of Zintar",
+   "mobs": [],
+   "items": [
+    "Dense Gold Carapace",
+    "Dense Silver Carapace"
+   ],
+   "note": "Drop mob inferred from item names (UNVERIFIED). 10 weight each",
+   "label": "UNVERIFIED"
+  },
+  {
+   "band": "41-48",
+   "camp": "Outer cultists (L43-44)",
+   "zone": "Glass Flats",
+   "mobs": [
+    "a cultist guard",
+    "a cultist lookout"
+   ],
+   "items": [
+    "Cracked Ironbark Staff",
+    "Rusty Iron Greatsword"
+   ],
+   "note": "'Easy exp' leveling pick. The Trio plan lists Rusty Iron Greatswords here, but the wiki's drop list ties them to Shallow Shoals Witchguard (UNVERIFIED for Glass Flats). Leave 13-weight two-handers unless you have spare capacity",
+   "label": "FACT"
+  },
+  {
+   "band": "45-60",
+   "camp": "Undead tower / Plagueborn",
+   "zone": "Glass Flats",
+   "mobs": [
+    "an ashen knight",
+    "a risen reveler"
+   ],
+   "items": [
+    "Cracked Elderwood Staff"
+   ],
+   "note": "Best value per weight found (27 sp 17 cp)",
+   "label": "FACT"
+  }
+ ]
+}

@@ -1,3 +1,5 @@
 .idb-tools{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:6px 0}.idb-tools input[type=search]{flex:1 1 220px}
 .idb-it{border:1px solid var(--line);border-radius:6px;padding:6px 8px;margin:6px 0;background:#15110c}.idb-it ul{margin:.2em 0 0 1em}
 .tag{font-size:.72rem;padding:0 6px;border-radius:9px;border:1px solid var(--line)}
+
+.idb-mkt{font-size:.78rem;padding:0 6px;border-radius:9px;border:1px solid var(--gold);white-space:nowrap}

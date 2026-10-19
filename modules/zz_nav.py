@@ -1,6 +1,6 @@
 # Grouped top nav (runs last): Home + category dropdowns; hamburger with collapsible groups on narrow screens.
 NAV_GROUPS = [('Class', ['shaman', 'classes', 'gear', 'leveling', 'farming']), ('World', ['dungeons', 'zones', 'mobs', 'quests', 'factions']),
-              ('Database', ['items', 'spells']), ('Crafting & Economy', ['tradeskills', 'economy']), ('News', ['news', 'patches', 'events', 'changelog']), ('Tools', ['planner', 'groups', 'trio', 'tools'])]
+              ('Database', ['items', 'spells']), ('Crafting & Economy', ['tradeskills', 'economy', 'market']), ('News', ['news', 'patches', 'events', 'changelog']), ('Tools', ['planner', 'groups', 'trio', 'tools'])]
 def nav_html(section):
     by = {k: (t, u) for t, u, k in NAV}
     used = {'home'}; out = ['<a href="%s"%s>%s</a>' % (by['home'][1], ' class="on"' if section == 'home' else '', 'Home')]
