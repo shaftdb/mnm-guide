@@ -1,0 +1,258 @@
+{
+ "class": "Inquisitor",
+ "updated": "2026-10-18",
+ "sources": [
+  [
+   "Official class page: Inquisitor",
+   "https://monstersandmemories.com/class-inquisitor"
+  ],
+  [
+   "Wiki: Inquisitor (Creation Guide, rev 76001)",
+   "https://monstersandmemories.miraheze.org/wiki/Inquisitor"
+  ],
+  [
+   "Wiki: Statistics (rev 82276)",
+   "https://monstersandmemories.miraheze.org/wiki/Statistics"
+  ],
+  [
+   "Wiki: Traits (Template:Traits rev 79106)",
+   "https://monstersandmemories.miraheze.org/wiki/Traits"
+  ],
+  [
+   "Wiki: Starting City by Race, Class, and Deity (rev 74855)",
+   "https://monstersandmemories.miraheze.org/wiki/Starting_City_by_Race,_Class,_and_Deity"
+  ],
+  [
+   "Wiki: Human (rev 26421)",
+   "https://monstersandmemories.miraheze.org/wiki/Human"
+  ],
+  [
+   "Wiki: Deep Elf (rev 69451)",
+   "https://monstersandmemories.miraheze.org/wiki/Deep_Elf"
+  ],
+  [
+   "Wiki: Ail'Vorith (rev 83176)",
+   "https://monstersandmemories.miraheze.org/wiki/Ail%27Vorith"
+  ],
+  [
+   "Wiki: Underdocks (rev 82552)",
+   "https://monstersandmemories.miraheze.org/wiki/Underdocks"
+  ],
+  [
+   "Official Early Access FAQ: starting areas",
+   "https://monstersandmemories.com/early-access-faq"
+  ]
+ ],
+ "stat_facts": [
+  [
+   "STA",
+   "Increases health and reduces chance to be dazed in combat (wiki Statistics; '1 STA = 1 HP' is marked 'need testing' there)."
+  ],
+  [
+   "AGI",
+   "Provides damage mitigation (wiki Statistics)."
+  ],
+  [
+   "STR",
+   "Increases melee and ranged weapon damage and shield block amounts; 1 STR = 2 weight (wiki Statistics)."
+  ],
+  [
+   "DEX",
+   "Increases hit rate, weapon proc frequency and gives a channeling bonus to spellcasters (wiki Statistics)."
+  ],
+  [
+   "INT",
+   "Mana pool size if INT is higher than WIS, and offensive spell damage (wiki Statistics)."
+  ],
+  [
+   "WIS",
+   "Mana pool size if WIS is higher than INT, and healing done (wiki Statistics)."
+  ],
+  [
+   "CHA",
+   "Merchant prices and charm break rate on paper; the wiki notes CHA did not seem to affect vendor prices in beta (May 2026)."
+  ]
+ ],
+ "class_mod": "+1 STR, +3 STA, +1 DEX, +2 INT, +1 CHA (wiki Inquisitor Creation Guide)",
+ "builds": [
+  {
+   "name": "Group tank (default)",
+   "alloc": {
+    "STA": 4,
+    "AGI": 3,
+    "STR": 3
+   },
+   "why": "The official page and wiki both describe the Inquisitor as a plate tank and 'protector'. STA is health and daze resistance, AGI is mitigation and STR adds weapon damage and shield block, so every point goes into surviving and holding threat with Censuring Strike / Distress damage."
+  },
+  {
+   "name": "Anti-caster / mana",
+   "alloc": {
+    "STA": 4,
+    "INT": 4,
+    "AGI": 2
+   },
+   "why": "Your starting INT is higher than WIS for both playable races, so INT is your mana stat (wiki Statistics). The official page says the reworked melee tools 'cost mana', so a bigger pool helps long fights against casters. Pick this if you mostly group with casters or tank caster-heavy camps."
+  },
+  {
+   "name": "Solo-leaning",
+   "alloc": {
+    "STR": 4,
+    "STA": 3,
+    "DEX": 3
+   },
+   "why": "The wiki class page says Inquisitors 'may find some difficulty' alone. STR and DEX raise weapon damage and hit rate, which is most of your solo kill speed early; STA keeps you alive. Expect to regroup for dungeons."
+  }
+ ],
+ "build_caveat": "Point totals are from the wiki race pages (10 bonus points for every listed race/class). Whether a stat has a per-point cap or diminishing returns at creation is not documented on the wiki: UNVERIFIED.",
+ "traits": [
+  {
+   "cat": "Major Combat Traits",
+   "pick": "Tough",
+   "alt": [
+    "Magic Resistant",
+    "Agile"
+   ],
+   "why": "Tough: +5% STA and a 15-second +50% STA emergency button, the most direct tank survival pick. Magic Resistant fits the anti-mage identity (you are 'the specialist called in when the enemy wears robes'). Agile if you prefer mitigation."
+  },
+  {
+   "cat": "Minor Combat Traits",
+   "pick": "Shieldman",
+   "alt": [
+    "Defender",
+    "Channeler"
+   ],
+   "why": "Shieldman starts Block at 5, raises it 25% faster and gives a Trainee's Buckler, which suits a sword-and-board tank from level 1. Defender (Defense skill) is the other tank pick. Channeler helps keep your fast casts going while you are being hit."
+  },
+  {
+   "cat": "Major Non-Combat Traits",
+   "pick": "Forage",
+   "alt": [
+    "Ultravision (Deep Elf only)",
+    "Slow Metabolism"
+   ],
+   "race_pick": {
+    "Deep Elf": "Ultravision"
+   },
+   "why": "Forage (allowed for Human and Deep Elf Inquisitors) finds food and drink, which cuts vendor runs. As a Deep Elf starting in Ail'Vorith you live in the Deep, so Ultravision ('greatly enhanced' darkness vision, worse in bright light) is the stronger quality-of-life pick there; Infravision is not available to Human or Deep Elf."
+  },
+  {
+   "cat": "Minor Non-Combat Traits",
+   "pick": "Miner",
+   "alt": [
+    "Medic",
+    "Survivalist"
+   ],
+   "why": "Miner starts Mining at 25 with a Trainee's Mining Pick and Pouch, matching this Codex's default gathering setup (Mining, Lumberjacking, Smelting) for money. Medic (Bind Wound 25, bandages) cuts a tank's downtime between pulls. Blacksmith exists but smithing stays off by default here."
+  }
+ ],
+ "trait_caveat": "Trait text and race/class limits are from Template:Traits. Which trait is 'best' is STRATEGY; no sourced numbers compare them.",
+ "races": {
+  "Human": {
+   "pros": [
+    "Tenacity (racial): +15% resistance to Mesmerize and Incapacitate, and an active 15-second immunity. Strong for a tank that faces casters.",
+    "Highest starting STA of the playable Inquisitor races (20 vs 18) and CHA 18.",
+    "Neutral alignment; starts in Night Harbor, the hub with the most documented quests on the wiki."
+   ],
+   "cons": [
+    "Corruption -5 and Holy -5 resistance.",
+    "Lower INT (18) than a Deep Elf, so a smaller mana pool from the same points.",
+    "Can only start in Night Harbor as an Inquisitor (no Underdocks option)."
+   ]
+  },
+  "Deep Elf": {
+   "pros": [
+    "INT 21 and AGI 18 at creation: more mana and mitigation from the start.",
+    "Ultravision available as a trait.",
+    "Only Inquisitor race that can start outside Night Harbor (Ail'Vorith), with its own Inquisitor trainer and the House Xal'tharn class quest."
+   ],
+   "cons": [
+    "Lower STA (18) and STR (15) than a Human.",
+    "Racial ability not documented on the wiki ('unknown').",
+    "Evil alignment: Night Harbor is described as the start for good and neutral combinations; how Night Harbor treats Deep Elves is not sourced yet."
+   ]
+  }
+ },
+ "planned_races": {
+  "Deep Dwarf": "Listed on the official Inquisitor page but not playable in Early Access (no wiki start-city row).",
+  "High Elf": "Listed on the official Inquisitor page but not playable in Early Access (no wiki start-city row)."
+ },
+ "tradeskills": {
+  "recommend": [
+   "mining",
+   "smelting",
+   "lumberjacking",
+   "bind-wound"
+  ],
+  "why": {
+   "mining": "Pairs with the Miner trait; the Ail'Vorith starter quest also has you mine Fragile Quarry Rock with a Slave Pickaxe.",
+   "smelting": "Turns ore into sellable bars (separate skill on the wiki).",
+   "lumberjacking": "Second gathering skill for coin, part of this Codex's default set.",
+   "bind-wound": "Bandaging between pulls; useful for a tank's downtime."
+  },
+  "note": "Gathering defaults plus Bind Wound. Blacksmithing (smithing) stays off by default; switch it on in the Trades menu if you want to craft plate later. STRATEGY."
+ },
+ "night_harbor": {
+  "summary": "Underdocks is the only start city right next to Night Harbor, but no race can start there as an Inquisitor. The only non-Night-Harbor Inquisitor start is a Deep Elf in Ail'Vorith, which is far away in the Deep.",
+  "cities": [
+   {
+    "city": "Underdocks",
+    "distance": "Adjacent zone to Night Harbor (wiki zone infobox); the official FAQ calls it 'a seedy underground port district found far below Night Harbor'.",
+    "inq": "Not an Inquisitor start for any race or deity (wiki start-city table).",
+    "label": "FACT"
+   },
+   {
+    "city": "Ail'Vorith",
+    "distance": "Under the eastern lands of Calafrey (official FAQ). From Underdocks by boat through the Caves of Irem and Great Cavern Sea (wiki Ail'Vorith and Underdocks pages).",
+    "inq": "Deep Elf Inquisitor only, for deities Agnostic, Bulibyre, Erythar, Maelsin Thrys, Trimminax, Urzebol and Ygorath (wiki start-city table). Has an Inquisitor trainer (Nurvol Cereveth) and the House Xal'tharn class quest.",
+    "label": "FACT"
+   },
+   {
+    "city": "Faelindral",
+    "distance": "In Evershade Weald, in Calafrey to the north (official FAQ, wiki).",
+    "inq": "Wood Elf and Halfling only; no Inquisitor.",
+    "label": "FACT"
+   }
+  ],
+  "best": "Deep Elf Inquisitor in Ail'Vorith is the only way to start an Inquisitor outside Night Harbor, and it has its own class trainer and class quest. If you want to stay close to Night Harbor instead, play a Human (Night Harbor start) and head down to the Underdocks, one zone away, once you have finished the Night Harbor starter quest.",
+  "caveat": "The official FAQ says some start locations for race/faith/class combinations will change before 1.0. Re-check the wiki table after patches."
+ },
+ "walk_notes": {
+  "Ail'Vorith": [
+   {
+    "lvl": 1,
+    "text": "Read the Imbued Parchment you spawn with and hand it to Toilmaster Verith or Toilmistress Rallvessa next to you. Search nearby crates for a Slave Pickaxe, head south into the water and right along the wall to a small mining cave, mine 20 Fragile Quarry Rock, and carry the Pack of Stone to Supplier Jul. The chain ends with Provost Xan'shorn handing you the Obsidian Shackle (Ail'Vorith Starter Quest).",
+    "quest": "Ail'Vorith Starter Quest",
+    "label": "FACT"
+   },
+   {
+    "lvl": 1,
+    "text": "Train and buy your spells from Nurvol Cereveth (Inquisitor Trainer, Military Outpost in the Foreign Quarter).",
+    "label": "FACT"
+   },
+   {
+    "lvl": 1,
+    "text": "With the Obsidian Shackle, talk to Klavel Sul for House Xal'tharn (Monk/Inquisitor). Part 1: kill separated skulls and spectral remnants (levels 8-11) on the west island shores for 6 Lost Skull; reward Dull Iron Cuirass. Part 2 (level 13+) has no steps on the wiki yet.",
+    "quest": "House Xal'tharn (Quest)",
+    "label": "FACT"
+   },
+   {
+    "lvl": 1,
+    "text": "The zone table spells the starter NPC 'Toilmaster Vorith'; the quest page says 'Verith'. Klavel Sul is listed in the Military Outpost on the zone page and the Obsidian Academy on the quest page.",
+    "label": "UNVERIFIED"
+   }
+  ],
+  "Night Harbor": [
+   {
+    "lvl": 1,
+    "text": "Inquisitor Starter Quest (Night Harbor) from Petra Gyle: two paths (Note or Spike); rewards Spellbinder's Inquisitor Talisman and Tarnished Spellbinder Cuirass.",
+    "quest": "Inquisitor Starter Quest (Night Harbor)",
+    "label": "FACT"
+   },
+   {
+    "lvl": 1,
+    "text": "No Inquisitor guild master or spell vendor is listed on the wiki Night Harbor page yet: no sourced data yet.",
+    "label": "UNVERIFIED"
+   }
+  ]
+ }
+}

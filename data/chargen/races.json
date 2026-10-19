@@ -1,0 +1,4146 @@
+{
+ "_source": {
+  "start_table": {
+   "url": "https://monstersandmemories.miraheze.org/wiki/Starting_City_by_Race,_Class,_and_Deity",
+   "revid": 74855,
+   "ts": "2026-09-29T19:21:32Z"
+  },
+  "traits": {
+   "url": "https://monstersandmemories.miraheze.org/wiki/Traits",
+   "revid": 79106
+  }
+ },
+ "cities": [
+  "Ail'Vorith",
+  "Faelindral",
+  "Night Harbor",
+  "Underdocks"
+ ],
+ "large": [
+  "Ogre",
+  "Troll"
+ ],
+ "combos": {
+  "Deep Elf": {
+   "Archer": {
+    "Ail'Vorith": [
+     "Agnostic",
+     "Bulibyre",
+     "Maelsin Thrys",
+     "Trimminax",
+     "Urzebol",
+     "Ygorath"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Erythar",
+     "Trimminax",
+     "Urzebol",
+     "Ygorath"
+    ]
+   },
+   "Cleric": {
+    "Ail'Vorith": [
+     "Agnostic",
+     "Bulibyre",
+     "Maelsin Thrys",
+     "Trimminax",
+     "Urzebol",
+     "Ygorath"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Erythar",
+     "Trimminax",
+     "Urzebol",
+     "Ygorath"
+    ]
+   },
+   "Elementalist": {
+    "Ail'Vorith": [
+     "Agnostic",
+     "Bulibyre",
+     "Maelsin Thrys",
+     "Trimminax",
+     "Urzebol",
+     "Ygorath"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Erythar",
+     "Trimminax",
+     "Urzebol",
+     "Ygorath"
+    ]
+   },
+   "Enchanter": {
+    "Ail'Vorith": [
+     "Agnostic",
+     "Bulibyre",
+     "Maelsin Thrys",
+     "Trimminax",
+     "Urzebol",
+     "Ygorath"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Erythar",
+     "Trimminax",
+     "Urzebol",
+     "Ygorath"
+    ]
+   },
+   "Fighter": {
+    "Ail'Vorith": [
+     "Agnostic",
+     "Bulibyre",
+     "Maelsin Thrys",
+     "Trimminax",
+     "Urzebol",
+     "Ygorath"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Erythar",
+     "Trimminax",
+     "Urzebol",
+     "Ygorath"
+    ]
+   },
+   "Inquisitor": {
+    "Ail'Vorith": [
+     "Agnostic",
+     "Bulibyre",
+     "Erythar",
+     "Maelsin Thrys",
+     "Trimminax",
+     "Urzebol",
+     "Ygorath"
+    ]
+   },
+   "Monk": {
+    "Ail'Vorith": [
+     "Agnostic",
+     "Bulibyre",
+     "Erythar",
+     "Maelsin Thrys",
+     "Trimminax",
+     "Urzebol",
+     "Ygorath"
+    ]
+   },
+   "Necromancer": {
+    "Ail'Vorith": [
+     "Agnostic",
+     "Bulibyre",
+     "Maelsin Thrys",
+     "Trimminax",
+     "Urzebol",
+     "Ygorath"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Erythar",
+     "Trimminax",
+     "Urzebol",
+     "Ygorath"
+    ]
+   },
+   "Paladin": {
+    "Ail'Vorith": [
+     "Agnostic",
+     "Bulibyre",
+     "Erythar",
+     "Maelsin Thrys",
+     "Trimminax",
+     "Urzebol",
+     "Ygorath"
+    ]
+   },
+   "Ranger": {
+    "Ail'Vorith": [
+     "Agnostic",
+     "Bulibyre",
+     "Maelsin Thrys",
+     "Trimminax",
+     "Urzebol",
+     "Ygorath"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Erythar",
+     "Trimminax",
+     "Urzebol",
+     "Ygorath"
+    ]
+   },
+   "Rogue": {
+    "Ail'Vorith": [
+     "Agnostic",
+     "Bulibyre",
+     "Maelsin Thrys",
+     "Trimminax",
+     "Urzebol",
+     "Ygorath"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Erythar",
+     "Trimminax",
+     "Urzebol",
+     "Ygorath"
+    ]
+   },
+   "Shadow Knight": {
+    "Ail'Vorith": [
+     "Agnostic",
+     "Bulibyre",
+     "Maelsin Thrys",
+     "Trimminax",
+     "Urzebol",
+     "Ygorath"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Erythar",
+     "Trimminax",
+     "Urzebol",
+     "Ygorath"
+    ]
+   },
+   "Spellblade": {
+    "Ail'Vorith": [
+     "Agnostic",
+     "Bulibyre",
+     "Erythar",
+     "Maelsin Thrys",
+     "Trimminax",
+     "Urzebol",
+     "Ygorath"
+    ]
+   },
+   "Wizard": {
+    "Ail'Vorith": [
+     "Agnostic",
+     "Bulibyre",
+     "Maelsin Thrys",
+     "Trimminax",
+     "Urzebol",
+     "Ygorath"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Erythar",
+     "Trimminax",
+     "Urzebol",
+     "Ygorath"
+    ]
+   }
+  },
+  "Deep Gnome": {
+   "Beastmaster": {
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Druid": {
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Elementalist": {
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Enchanter": {
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Necromancer": {
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Rogue": {
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Shaman": {
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Wizard": {
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   }
+  },
+  "Dwarf": {
+   "Bard": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ]
+   },
+   "Cleric": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ]
+   },
+   "Elementalist": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ]
+   },
+   "Enchanter": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ]
+   },
+   "Fighter": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ]
+   },
+   "Paladin": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ]
+   },
+   "Ranger": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ]
+   },
+   "Rogue": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ]
+   },
+   "Spellblade": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ]
+   },
+   "Wizard": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ]
+   }
+  },
+  "Gnome": {
+   "Cleric": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Elementalist": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Enchanter": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Fighter": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Necromancer": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Paladin": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ]
+   },
+   "Rogue": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Spellblade": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ]
+   },
+   "Wizard": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   }
+  },
+  "Goblin": {
+   "Archer": {
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Beastmaster": {
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Druid": {
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Enchanter": {
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Fighter": {
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Necromancer": {
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Ranger": {
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Rogue": {
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Shadow Knight": {
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Shaman": {
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   }
+  },
+  "Halfling": {
+   "Archer": {
+    "Faelindral": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Shalla",
+     "Sorophal",
+     "Tilustra"
+    ],
+    "Night Harbor": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra"
+    ]
+   },
+   "Bard": {
+    "Faelindral": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Shalla",
+     "Sorophal",
+     "Tilustra"
+    ],
+    "Night Harbor": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra"
+    ]
+   },
+   "Beastmaster": {
+    "Faelindral": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Shalla",
+     "Sorophal",
+     "Tilustra"
+    ],
+    "Night Harbor": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra"
+    ]
+   },
+   "Cleric": {
+    "Night Harbor": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra"
+    ]
+   },
+   "Druid": {
+    "Faelindral": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Shalla",
+     "Sorophal",
+     "Tilustra"
+    ],
+    "Night Harbor": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra"
+    ]
+   },
+   "Fighter": {
+    "Faelindral": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Shalla",
+     "Sorophal",
+     "Tilustra"
+    ],
+    "Night Harbor": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra"
+    ]
+   },
+   "Paladin": {
+    "Night Harbor": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra"
+    ]
+   },
+   "Ranger": {
+    "Faelindral": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Shalla",
+     "Sorophal",
+     "Tilustra"
+    ],
+    "Night Harbor": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra"
+    ]
+   },
+   "Rogue": {
+    "Faelindral": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Shalla",
+     "Sorophal",
+     "Tilustra"
+    ],
+    "Night Harbor": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra"
+    ]
+   }
+  },
+  "Human": {
+   "Archer": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Bard": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ]
+   },
+   "Beastmaster": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Cleric": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Druid": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Elementalist": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Fighter": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Inquisitor": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ]
+   },
+   "Monk": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ]
+   },
+   "Necromancer": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Paladin": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ]
+   },
+   "Ranger": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Rogue": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Shadow Knight": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Shaman": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Bulibyre",
+     "Eltindra",
+     "Erythar",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   },
+   "Spellblade": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ]
+   },
+   "Wizard": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Trem",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Trem",
+     "Trimminax",
+     "Urzebol",
+     "Vespyra",
+     "Ygorath"
+    ]
+   }
+  },
+  "Ogre": {
+   "Archer": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Trimminax",
+     "Vespyra"
+    ]
+   },
+   "Beastmaster": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Trimminax",
+     "Vespyra"
+    ]
+   },
+   "Elementalist": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Trimminax",
+     "Vespyra"
+    ]
+   },
+   "Fighter": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Trimminax",
+     "Vespyra"
+    ]
+   },
+   "Monk": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Vespyra",
+     "Yuum"
+    ]
+   },
+   "Ranger": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Trimminax",
+     "Vespyra"
+    ]
+   },
+   "Shadow Knight": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Trimminax",
+     "Vespyra"
+    ]
+   },
+   "Shaman": {
+    "Night Harbor": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Vespyra",
+     "Yuum"
+    ],
+    "Underdocks": [
+     "Agnostic",
+     "Eltindra",
+     "Haradrel",
+     "Trimminax",
+     "Vespyra"
+    ]
+   }
+  },
+  "Wood Elf": {
+   "Archer": {
+    "Faelindral": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Shalla",
+     "Sorophal",
+     "Tilustra"
+    ],
+    "Night Harbor": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Yuum"
+    ]
+   },
+   "Bard": {
+    "Faelindral": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Shalla",
+     "Sorophal",
+     "Tilustra"
+    ],
+    "Night Harbor": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Yuum"
+    ]
+   },
+   "Beastmaster": {
+    "Faelindral": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Shalla",
+     "Sorophal",
+     "Tilustra"
+    ],
+    "Night Harbor": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Yuum"
+    ]
+   },
+   "Druid": {
+    "Faelindral": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Shalla",
+     "Sorophal",
+     "Tilustra"
+    ],
+    "Night Harbor": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Yuum"
+    ]
+   },
+   "Fighter": {
+    "Faelindral": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Shalla",
+     "Sorophal",
+     "Tilustra"
+    ],
+    "Night Harbor": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Yuum"
+    ]
+   },
+   "Ranger": {
+    "Faelindral": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Shalla",
+     "Sorophal",
+     "Tilustra"
+    ],
+    "Night Harbor": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Yuum"
+    ]
+   },
+   "Rogue": {
+    "Faelindral": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Shalla",
+     "Sorophal",
+     "Tilustra"
+    ],
+    "Night Harbor": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Yuum"
+    ]
+   },
+   "Shaman": {
+    "Faelindral": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Shalla",
+     "Sorophal",
+     "Tilustra"
+    ],
+    "Night Harbor": [
+     "Agnostic",
+     "Krivea",
+     "The Matswar",
+     "Relle",
+     "Sorophal",
+     "Tilustra",
+     "Yuum"
+    ]
+   }
+  }
+ },
+ "city_info": {
+  "Ail'Vorith": {
+   "url": "https://monstersandmemories.miraheze.org/wiki/Ail%27Vorith",
+   "revid": 83176,
+   "ts": "2026-10-18T23:16:45Z",
+   "trainers": {
+    "Monk": [
+     {
+      "npc": "Klavel Sul",
+      "where": "Military Outpost in Foreign Quarter",
+      "note": "House Xal'tharn (Quest), Monk Trainer"
+     }
+    ],
+    "Inquisitor": [
+     {
+      "npc": "Nurvol Cereveth",
+      "where": "Military Outpost in Foreign Quarter",
+      "note": "Inquisitor Trainer"
+     }
+    ],
+    "Archer": [
+     {
+      "npc": "Lurithos Kest",
+      "where": "Military Outpost in Foreign Quarter",
+      "note": "Archer Trainer"
+     }
+    ],
+    "Ranger": [
+     {
+      "npc": "Laren Drin'dar",
+      "where": "Military Outpost in Foreign Quarter",
+      "note": "Ranger Trainer"
+     }
+    ],
+    "Fighter": [
+     {
+      "npc": "Tharkan Inathar",
+      "where": "Military Outpost in Foreign Quarter",
+      "note": "Fighter Trainer"
+     }
+    ],
+    "Paladin": [
+     {
+      "npc": "Mentvar Drezzorith",
+      "where": "Military Outpost 2nd floor in Foreign Quarter",
+      "note": "Paladin Trainer"
+     }
+    ],
+    "Spellblade": [
+     {
+      "npc": "Ilnara Hal'kareth",
+      "where": "Military Outpost 2nd floor in Foreign Quarter",
+      "note": "Spellblade Trainer"
+     }
+    ],
+    "Enchanter": [
+     {
+      "npc": "Amarah Ith'vayen",
+      "where": "Obsidian Academy in Foreign Quarter",
+      "note": "House Ith'vayen (Quest), Enchanter Trainer"
+     }
+    ],
+    "Necromancer": [
+     {
+      "npc": "Vaslir Naiyth",
+      "where": "Obsidian Academy in Foreign Quarter",
+      "note": "House Varros (Quest), Necromancer Trainer"
+     }
+    ],
+    "Cleric": [
+     {
+      "npc": "Zalethra Drezzorith",
+      "where": "Obsidian Academy 2nd floor in Foreign Quarter",
+      "note": "House Drezzorith (Quest), Cleric Trainer"
+     }
+    ],
+    "Elementalist": [
+     {
+      "npc": "Lothur Varros",
+      "where": "Obsidian Academy 2nd floor in Foreign Quarter",
+      "note": "Elementalist Trainer"
+     }
+    ],
+    "Wizard": [
+     {
+      "npc": "Vhasilla Hal'kareth",
+      "where": "Obsidian Academy 2nd floor in Foreign Quarter",
+      "note": "Wizard Trainer"
+     }
+    ],
+    "Shadow Knight": [
+     {
+      "npc": "Vhalrek Velgarrith",
+      "where": "Under the Inn in the Foreign Quarter",
+      "note": "Shadow Knight Trainer"
+     }
+    ],
+    "Rogue": [
+     {
+      "npc": "Zorvanna Velgarrith",
+      "where": "Under the Inn in the Foreign Quarter",
+      "note": "Rogue Trainer"
+     }
+    ]
+   },
+   "adjacent": [
+    "Great Cavern Sea",
+    "Blind Midden"
+   ]
+  },
+  "Faelindral": {
+   "url": "https://monstersandmemories.miraheze.org/wiki/Faelindral",
+   "revid": 83070,
+   "ts": "2026-10-18T09:37:43Z",
+   "trainers": {},
+   "adjacent": [
+    "Evershade Weald"
+   ]
+  },
+  "Night Harbor": {
+   "url": "https://monstersandmemories.miraheze.org/wiki/Night_Harbor",
+   "revid": 83168,
+   "ts": "2026-10-18T22:46:40Z",
+   "trainers": {
+    "Cleric": [
+     {
+      "npc": "Dalinder Grammanoot",
+      "where": "First Floor",
+      "note": "Cleric guild master"
+     }
+    ],
+    "Paladin": [
+     {
+      "npc": "Trey Fulton",
+      "where": "First Floor",
+      "note": "Paladin Guild Master"
+     }
+    ],
+    "Rogue": [
+     {
+      "npc": "Sinastin Aspenleaf",
+      "where": "City Illuminator's Guild",
+      "note": "Rogue guild master"
+     }
+    ],
+    "Bard": [
+     {
+      "npc": "Jamee Langris",
+      "where": null,
+      "note": "Bard guild master"
+     }
+    ],
+    "Ranger": [
+     {
+      "npc": "Foss Dunestrider",
+      "where": "Western Gate",
+      "note": "Ranger guild master"
+     }
+    ],
+    "Archer": [
+     {
+      "npc": "Jacobin Yeats",
+      "where": null,
+      "note": "Archer guild master"
+     }
+    ],
+    "Shaman": [
+     {
+      "npc": "Errol Shrewtender",
+      "where": "Seekers of the Lost Eye",
+      "note": "Shaman guild master"
+     }
+    ],
+    "Druid": [
+     {
+      "npc": "Rolan Talmula",
+      "where": "Circle of Scarce Rains",
+      "note": "Druid guild master"
+     }
+    ],
+    "Elementalist": [
+     {
+      "npc": "Tenebrim Tam",
+      "where": "The School of the Fourfold Path",
+      "note": "Elementalist guild master"
+     }
+    ],
+    "Shadow Knight": [
+     {
+      "npc": "Exavius Deathwhisper",
+      "where": "The Concourse of Souls - Second Floor",
+      "note": "Shadow Knight guild master"
+     }
+    ],
+    "Enchanter": [
+     {
+      "npc": "Master Wincog",
+      "where": "Wincog's Curious Goods, between Necropolis and Northern Gate.",
+      "note": "Enchanter guild master"
+     }
+    ]
+   },
+   "adjacent": [
+    "Shaded Dunes",
+    "Sungreet Strand",
+    "Tomb of the Last Wyrmsbane",
+    "Night Harbor Sewers",
+    "Underdocks"
+   ]
+  },
+  "Underdocks": {
+   "url": "https://monstersandmemories.miraheze.org/wiki/Underdocks",
+   "revid": 82552,
+   "ts": "2026-10-17T04:16:42Z",
+   "trainers": {
+    "Bard": [
+     {
+      "npc": "Crescindy",
+      "where": "Across room from Chordelia",
+      "note": "Bard Trainer"
+     }
+    ]
+   },
+   "adjacent": [
+    "Night Harbor",
+    "Caves of Irem"
+   ]
+  }
+ },
+ "races": {
+  "Deep Elf": {
+   "url": "https://monstersandmemories.miraheze.org/wiki/Deep_Elf",
+   "revid": 69451,
+   "ts": "2026-09-10T18:24:33Z",
+   "alignment": "Evil",
+   "racial": null,
+   "resists": null,
+   "cities_page": "Underdocks, Ail'Vorith",
+   "base": {
+    "STR": 14,
+    "STA": 15,
+    "DEX": 16,
+    "AGI": 18,
+    "INT": 19,
+    "WIS": 17,
+    "CHA": 15
+   },
+   "start": {
+    "Archer": {
+     "stats": {
+      "STR": 16,
+      "STA": 15,
+      "DEX": 20,
+      "AGI": 20,
+      "INT": 19,
+      "WIS": 17,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Cleric": {
+     "stats": {
+      "STR": 16,
+      "STA": 17,
+      "DEX": 16,
+      "AGI": 18,
+      "INT": 19,
+      "WIS": 20,
+      "CHA": 16
+     },
+     "bonus": 10
+    },
+    "Elementalist": {
+     "stats": {
+      "STR": 14,
+      "STA": 19,
+      "DEX": 16,
+      "AGI": 18,
+      "INT": 23,
+      "WIS": 17,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Enchanter": {
+     "stats": {
+      "STR": 14,
+      "STA": 15,
+      "DEX": 16,
+      "AGI": 18,
+      "INT": 23,
+      "WIS": 17,
+      "CHA": 19
+     },
+     "bonus": 10
+    },
+    "Fighter": {
+     "stats": {
+      "STR": 18,
+      "STA": 18,
+      "DEX": 16,
+      "AGI": 19,
+      "INT": 19,
+      "WIS": 17,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Inquisitor": {
+     "stats": {
+      "STR": 15,
+      "STA": 18,
+      "DEX": 17,
+      "AGI": 18,
+      "INT": 21,
+      "WIS": 17,
+      "CHA": 16
+     },
+     "bonus": 10
+    },
+    "Monk": {
+     "stats": {
+      "STR": 15,
+      "STA": 15,
+      "DEX": 19,
+      "AGI": 22,
+      "INT": 19,
+      "WIS": 17,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Necromancer": {
+     "stats": {
+      "STR": 14,
+      "STA": 15,
+      "DEX": 20,
+      "AGI": 18,
+      "INT": 23,
+      "WIS": 17,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Paladin": {
+     "stats": {
+      "STR": 16,
+      "STA": 19,
+      "DEX": 16,
+      "AGI": 18,
+      "INT": 19,
+      "WIS": 19,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Ranger": {
+     "stats": {
+      "STR": 15,
+      "STA": 15,
+      "DEX": 19,
+      "AGI": 20,
+      "INT": 19,
+      "WIS": 19,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Rogue": {
+     "stats": {
+      "STR": 14,
+      "STA": 15,
+      "DEX": 20,
+      "AGI": 22,
+      "INT": 19,
+      "WIS": 17,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Shadow Knight": {
+     "stats": {
+      "STR": 17,
+      "STA": 17,
+      "DEX": 16,
+      "AGI": 18,
+      "INT": 22,
+      "WIS": 17,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Spellblade": {
+     "stats": {
+      "STR": 16,
+      "STA": 15,
+      "DEX": 19,
+      "AGI": 18,
+      "INT": 22,
+      "WIS": 17,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Wizard": {
+     "stats": {
+      "STR": 17,
+      "STA": 15,
+      "DEX": 17,
+      "AGI": 18,
+      "INT": 23,
+      "WIS": 17,
+      "CHA": 15
+     },
+     "bonus": 10
+    }
+   },
+   "large": false,
+   "note": null,
+   "playable_ea": true
+  },
+  "Deep Gnome": {
+   "url": "https://monstersandmemories.miraheze.org/wiki/Deep_Gnome",
+   "revid": 75256,
+   "ts": "2026-10-02T07:33:42Z",
+   "alignment": null,
+   "racial": null,
+   "resists": null,
+   "cities_page": "Underdocks",
+   "base": {
+    "STR": 14,
+    "STA": 15,
+    "DEX": 18,
+    "AGI": 18,
+    "INT": 19,
+    "WIS": 14,
+    "CHA": 16
+   },
+   "start": {
+    "Beastmaster": {
+     "stats": {
+      "STR": 18,
+      "STA": 15,
+      "DEX": 18,
+      "AGI": 20,
+      "INT": 19,
+      "WIS": 16,
+      "CHA": 16
+     },
+     "bonus": 10
+    },
+    "Druid": {
+     "stats": {
+      "STR": 14,
+      "STA": 15,
+      "DEX": 18,
+      "AGI": 20,
+      "INT": 19,
+      "WIS": 18,
+      "CHA": 18
+     },
+     "bonus": 10
+    },
+    "Elementalist": {
+     "stats": {
+      "STR": 14,
+      "STA": 19,
+      "DEX": 18,
+      "AGI": 18,
+      "INT": 23,
+      "WIS": 14,
+      "CHA": 16
+     },
+     "bonus": 10
+    },
+    "Enchanter": {
+     "stats": {
+      "STR": 14,
+      "STA": 15,
+      "DEX": 18,
+      "AGI": 18,
+      "INT": 23,
+      "WIS": 14,
+      "CHA": 20
+     },
+     "bonus": 10
+    },
+    "Necromancer": {
+     "stats": {
+      "STR": 14,
+      "STA": 15,
+      "DEX": 22,
+      "AGI": 18,
+      "INT": 23,
+      "WIS": 14,
+      "CHA": 16
+     },
+     "bonus": 10
+    },
+    "Rogue": {
+     "stats": {
+      "STR": 14,
+      "STA": 15,
+      "DEX": 22,
+      "AGI": 22,
+      "INT": 19,
+      "WIS": 14,
+      "CHA": 16
+     },
+     "bonus": 10
+    },
+    "Shaman": {
+     "stats": {
+      "STR": 15,
+      "STA": 17,
+      "DEX": 19,
+      "AGI": 18,
+      "INT": 19,
+      "WIS": 18,
+      "CHA": 16
+     },
+     "bonus": 10
+    },
+    "Wizard": {
+     "stats": {
+      "STR": 17,
+      "STA": 15,
+      "DEX": 19,
+      "AGI": 18,
+      "INT": 23,
+      "WIS": 14,
+      "CHA": 16
+     },
+     "bonus": 10
+    }
+   },
+   "large": false,
+   "note": "Deep Gnomes con Disdain at worst in Evershade Weald and Night Harbor. They are KoS to everyone in Ail'Vorith.",
+   "playable_ea": true
+  },
+  "Dwarf": {
+   "url": "https://monstersandmemories.miraheze.org/wiki/Dwarf",
+   "revid": 33158,
+   "ts": "2026-04-30T13:53:23Z",
+   "alignment": "Neutral",
+   "racial": "Stone Form (as of Feb 16, 2026)",
+   "resists": "Cold +5, Magic +5",
+   "cities_page": "Night Harbor (during development)",
+   "base": {
+    "STR": 17,
+    "STA": 17,
+    "DEX": 18,
+    "AGI": 15,
+    "INT": 16,
+    "WIS": 16,
+    "CHA": 15
+   },
+   "start": {
+    "Bard": {
+     "stats": {
+      "STR": 18,
+      "STA": 17,
+      "DEX": 21,
+      "AGI": 15,
+      "INT": 16,
+      "WIS": 16,
+      "CHA": 19
+     },
+     "bonus": 10
+    },
+    "Cleric": {
+     "stats": {
+      "STR": 19,
+      "STA": 19,
+      "DEX": 18,
+      "AGI": 15,
+      "INT": 16,
+      "WIS": 19,
+      "CHA": 16
+     },
+     "bonus": 10
+    },
+    "Elementalist": {
+     "stats": {
+      "STR": 17,
+      "STA": 21,
+      "DEX": 18,
+      "AGI": 15,
+      "INT": 20,
+      "WIS": 16,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Enchanter": {
+     "stats": {
+      "STR": 17,
+      "STA": 17,
+      "DEX": 18,
+      "AGI": 15,
+      "INT": 20,
+      "WIS": 16,
+      "CHA": 19
+     },
+     "bonus": 10
+    },
+    "Fighter": {
+     "stats": {
+      "STR": 21,
+      "STA": 20,
+      "DEX": 18,
+      "AGI": 16,
+      "INT": 16,
+      "WIS": 16,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Paladin": {
+     "stats": {
+      "STR": 19,
+      "STA": 21,
+      "DEX": 18,
+      "AGI": 15,
+      "INT": 16,
+      "WIS": 18,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Ranger": {
+     "stats": {
+      "STR": 18,
+      "STA": 17,
+      "DEX": 21,
+      "AGI": 17,
+      "INT": 16,
+      "WIS": 18,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Rogue": {
+     "stats": {
+      "STR": 17,
+      "STA": 17,
+      "DEX": 22,
+      "AGI": 19,
+      "INT": 16,
+      "WIS": 16,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Spellblade": {
+     "stats": {
+      "STR": 19,
+      "STA": 17,
+      "DEX": 21,
+      "AGI": 15,
+      "INT": 19,
+      "WIS": 16,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Wizard": {
+     "stats": {
+      "STR": 20,
+      "STA": 17,
+      "DEX": 19,
+      "AGI": 15,
+      "INT": 20,
+      "WIS": 16,
+      "CHA": 15
+     },
+     "bonus": 10
+    }
+   },
+   "large": false,
+   "note": null,
+   "playable_ea": true
+  },
+  "Gnome": {
+   "url": "https://monstersandmemories.miraheze.org/wiki/Gnome",
+   "revid": 33790,
+   "ts": "2026-05-01T07:43:48Z",
+   "alignment": "Neutral",
+   "racial": "Slippery (as of Feb 16, 2026)",
+   "resists": "Electricity +5, Poison +5",
+   "cities_page": "Night Harbor (during development)",
+   "base": {
+    "STR": 14,
+    "STA": 15,
+    "DEX": 19,
+    "AGI": 16,
+    "INT": 20,
+    "WIS": 15,
+    "CHA": 15
+   },
+   "start": {
+    "Cleric": {
+     "stats": {
+      "STR": 16,
+      "STA": 17,
+      "DEX": 19,
+      "AGI": 16,
+      "INT": 20,
+      "WIS": 18,
+      "CHA": 16
+     },
+     "bonus": 10
+    },
+    "Elementalist": {
+     "stats": {
+      "STR": 14,
+      "STA": 19,
+      "DEX": 19,
+      "AGI": 16,
+      "INT": 24,
+      "WIS": 15,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Enchanter": {
+     "stats": {
+      "STR": 14,
+      "STA": 15,
+      "DEX": 19,
+      "AGI": 16,
+      "INT": 24,
+      "WIS": 15,
+      "CHA": 19
+     },
+     "bonus": 10
+    },
+    "Fighter": {
+     "stats": {
+      "STR": 18,
+      "STA": 18,
+      "DEX": 19,
+      "AGI": 17,
+      "INT": 20,
+      "WIS": 15,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Necromancer": {
+     "stats": {
+      "STR": 14,
+      "STA": 15,
+      "DEX": 23,
+      "AGI": 16,
+      "INT": 24,
+      "WIS": 15,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Paladin": {
+     "stats": {
+      "STR": 16,
+      "STA": 19,
+      "DEX": 19,
+      "AGI": 16,
+      "INT": 20,
+      "WIS": 17,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Rogue": {
+     "stats": {
+      "STR": 14,
+      "STA": 15,
+      "DEX": 23,
+      "AGI": 20,
+      "INT": 20,
+      "WIS": 15,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Spellblade": {
+     "stats": {
+      "STR": 16,
+      "STA": 15,
+      "DEX": 22,
+      "AGI": 16,
+      "INT": 23,
+      "WIS": 15,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Wizard": {
+     "stats": {
+      "STR": 17,
+      "STA": 15,
+      "DEX": 20,
+      "AGI": 16,
+      "INT": 24,
+      "WIS": 15,
+      "CHA": 15
+     },
+     "bonus": 10
+    }
+   },
+   "large": false,
+   "note": null,
+   "playable_ea": true
+  },
+  "Goblin": {
+   "url": "https://monstersandmemories.miraheze.org/wiki/Goblin",
+   "revid": 74107,
+   "ts": "2026-09-26T02:26:55Z",
+   "alignment": "Neutral",
+   "racial": "Bribe (as of Feb 16, 2026)",
+   "resists": "Disease +5, Poison +5",
+   "cities_page": "Underdocks",
+   "base": {
+    "STR": 15,
+    "STA": 15,
+    "DEX": 19,
+    "AGI": 19,
+    "INT": 17,
+    "WIS": 16,
+    "CHA": 13
+   },
+   "start": {
+    "Archer": {
+     "stats": {
+      "STR": 17,
+      "STA": 15,
+      "DEX": 23,
+      "AGI": 21,
+      "INT": 17,
+      "WIS": 16,
+      "CHA": 13
+     },
+     "bonus": 10
+    },
+    "Beastmaster": {
+     "stats": {
+      "STR": 19,
+      "STA": 15,
+      "DEX": 19,
+      "AGI": 21,
+      "INT": 17,
+      "WIS": 18,
+      "CHA": 13
+     },
+     "bonus": 10
+    },
+    "Druid": {
+     "stats": {
+      "STR": 15,
+      "STA": 15,
+      "DEX": 19,
+      "AGI": 21,
+      "INT": 17,
+      "WIS": 20,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Enchanter": {
+     "stats": {
+      "STR": 15,
+      "STA": 15,
+      "DEX": 19,
+      "AGI": 19,
+      "INT": 21,
+      "WIS": 16,
+      "CHA": 17
+     },
+     "bonus": 10
+    },
+    "Fighter": {
+     "stats": {
+      "STR": 19,
+      "STA": 18,
+      "DEX": 19,
+      "AGI": 20,
+      "INT": 17,
+      "WIS": 16,
+      "CHA": 13
+     },
+     "bonus": 10
+    },
+    "Necromancer": {
+     "stats": {
+      "STR": 15,
+      "STA": 15,
+      "DEX": 23,
+      "AGI": 19,
+      "INT": 21,
+      "WIS": 16,
+      "CHA": 13
+     },
+     "bonus": 10
+    },
+    "Ranger": {
+     "stats": {
+      "STR": 16,
+      "STA": 15,
+      "DEX": 22,
+      "AGI": 21,
+      "INT": 17,
+      "WIS": 18,
+      "CHA": 13
+     },
+     "bonus": 10
+    },
+    "Rogue": {
+     "stats": {
+      "STR": 15,
+      "STA": 15,
+      "DEX": 23,
+      "AGI": 23,
+      "INT": 17,
+      "WIS": 16,
+      "CHA": 13
+     },
+     "bonus": 10
+    },
+    "Shadow Knight": {
+     "stats": {
+      "STR": 18,
+      "STA": 17,
+      "DEX": 19,
+      "AGI": 19,
+      "INT": 20,
+      "WIS": 16,
+      "CHA": 13
+     },
+     "bonus": 10
+    },
+    "Shaman": {
+     "stats": {
+      "STR": 16,
+      "STA": 17,
+      "DEX": 20,
+      "AGI": 19,
+      "INT": 17,
+      "WIS": 20,
+      "CHA": 13
+     },
+     "bonus": 10
+    }
+   },
+   "large": false,
+   "note": null,
+   "playable_ea": true
+  },
+  "Halfling": {
+   "url": "https://monstersandmemories.miraheze.org/wiki/Halfling",
+   "revid": 26426,
+   "ts": "2026-03-31T16:13:34Z",
+   "alignment": "Neutral",
+   "racial": "Sneak, Forage, Increased Consumption Rate (as of Feb 16, 2026)",
+   "resists": "Corruption +5, Disease +5",
+   "cities_page": "Night Harbor (during development), Faelindral",
+   "base": {
+    "STR": 15,
+    "STA": 17,
+    "DEX": 16,
+    "AGI": 17,
+    "INT": 14,
+    "WIS": 20,
+    "CHA": 15
+   },
+   "start": {
+    "Archer": {
+     "stats": {
+      "STR": 17,
+      "STA": 17,
+      "DEX": 20,
+      "AGI": 19,
+      "INT": 14,
+      "WIS": 20,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Bard": {
+     "stats": {
+      "STR": 16,
+      "STA": 17,
+      "DEX": 19,
+      "AGI": 17,
+      "INT": 14,
+      "WIS": 20,
+      "CHA": 19
+     },
+     "bonus": 10
+    },
+    "Beastmaster": {
+     "stats": {
+      "STR": 19,
+      "STA": 17,
+      "DEX": 16,
+      "AGI": 19,
+      "INT": 14,
+      "WIS": 22,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Cleric": {
+     "stats": {
+      "STR": 17,
+      "STA": 19,
+      "DEX": 16,
+      "AGI": 17,
+      "INT": 14,
+      "WIS": 23,
+      "CHA": 16
+     },
+     "bonus": 10
+    },
+    "Druid": {
+     "stats": {
+      "STR": 15,
+      "STA": 17,
+      "DEX": 16,
+      "AGI": 19,
+      "INT": 14,
+      "WIS": 24,
+      "CHA": 17
+     },
+     "bonus": 10
+    },
+    "Fighter": {
+     "stats": {
+      "STR": 19,
+      "STA": 20,
+      "DEX": 16,
+      "AGI": 18,
+      "INT": 14,
+      "WIS": 20,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Paladin": {
+     "stats": {
+      "STR": 17,
+      "STA": 21,
+      "DEX": 16,
+      "AGI": 17,
+      "INT": 14,
+      "WIS": 22,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Ranger": {
+     "stats": {
+      "STR": 16,
+      "STA": 17,
+      "DEX": 19,
+      "AGI": 19,
+      "INT": 14,
+      "WIS": 22,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Rogue": {
+     "stats": {
+      "STR": 15,
+      "STA": 17,
+      "DEX": 20,
+      "AGI": 21,
+      "INT": 14,
+      "WIS": 20,
+      "CHA": 15
+     },
+     "bonus": 10
+    }
+   },
+   "large": false,
+   "note": null,
+   "playable_ea": true
+  },
+  "Human": {
+   "url": "https://monstersandmemories.miraheze.org/wiki/Human",
+   "revid": 26421,
+   "ts": "2026-03-31T16:07:04Z",
+   "alignment": "Neutral",
+   "racial": "Tenacity (as of Feb 16, 2026)",
+   "resists": "Corruption -5, Holy -5",
+   "cities_page": "Night Harbor",
+   "base": {
+    "STR": 16,
+    "STA": 17,
+    "DEX": 16,
+    "AGI": 16,
+    "INT": 16,
+    "WIS": 16,
+    "CHA": 17
+   },
+   "start": {
+    "Archer": {
+     "stats": {
+      "STR": 18,
+      "STA": 17,
+      "DEX": 20,
+      "AGI": 18,
+      "INT": 16,
+      "WIS": 16,
+      "CHA": 17
+     },
+     "bonus": 10
+    },
+    "Bard": {
+     "stats": {
+      "STR": 17,
+      "STA": 17,
+      "DEX": 19,
+      "AGI": 16,
+      "INT": 16,
+      "WIS": 16,
+      "CHA": 21
+     },
+     "bonus": 10
+    },
+    "Beastmaster": {
+     "stats": {
+      "STR": 20,
+      "STA": 17,
+      "DEX": 16,
+      "AGI": 18,
+      "INT": 16,
+      "WIS": 18,
+      "CHA": 17
+     },
+     "bonus": 10
+    },
+    "Cleric": {
+     "stats": {
+      "STR": 18,
+      "STA": 19,
+      "DEX": 16,
+      "AGI": 16,
+      "INT": 16,
+      "WIS": 19,
+      "CHA": 18
+     },
+     "bonus": 10
+    },
+    "Druid": {
+     "stats": {
+      "STR": 16,
+      "STA": 17,
+      "DEX": 16,
+      "AGI": 18,
+      "INT": 16,
+      "WIS": 20,
+      "CHA": 19
+     },
+     "bonus": 10
+    },
+    "Enchanter": {
+     "stats": {
+      "STR": 16,
+      "STA": 17,
+      "DEX": 16,
+      "AGI": 16,
+      "INT": 20,
+      "WIS": 16,
+      "CHA": 21
+     },
+     "bonus": 10
+    },
+    "Elementalist": {
+     "stats": {
+      "STR": 16,
+      "STA": 21,
+      "DEX": 16,
+      "AGI": 16,
+      "INT": 20,
+      "WIS": 16,
+      "CHA": 17
+     },
+     "bonus": 10
+    },
+    "Fighter": {
+     "stats": {
+      "STR": 20,
+      "STA": 20,
+      "DEX": 16,
+      "AGI": 17,
+      "INT": 16,
+      "WIS": 16,
+      "CHA": 17
+     },
+     "bonus": 10
+    },
+    "Inquisitor": {
+     "stats": {
+      "STR": 17,
+      "STA": 20,
+      "DEX": 17,
+      "AGI": 16,
+      "INT": 18,
+      "WIS": 16,
+      "CHA": 18
+     },
+     "bonus": 10
+    },
+    "Monk": {
+     "stats": {
+      "STR": 17,
+      "STA": 17,
+      "DEX": 19,
+      "AGI": 20,
+      "INT": 16,
+      "WIS": 16,
+      "CHA": 17
+     },
+     "bonus": 10
+    },
+    "Necromancer": {
+     "stats": {
+      "STR": 16,
+      "STA": 17,
+      "DEX": 20,
+      "AGI": 16,
+      "INT": 20,
+      "WIS": 16,
+      "CHA": 17
+     },
+     "bonus": 10
+    },
+    "Paladin": {
+     "stats": {
+      "STR": 18,
+      "STA": 21,
+      "DEX": 16,
+      "AGI": 16,
+      "INT": 16,
+      "WIS": 18,
+      "CHA": 17
+     },
+     "bonus": 10
+    },
+    "Ranger": {
+     "stats": {
+      "STR": 17,
+      "STA": 17,
+      "DEX": 19,
+      "AGI": 18,
+      "INT": 16,
+      "WIS": 18,
+      "CHA": 17
+     },
+     "bonus": 10
+    },
+    "Rogue": {
+     "stats": {
+      "STR": 16,
+      "STA": 17,
+      "DEX": 20,
+      "AGI": 20,
+      "INT": 16,
+      "WIS": 16,
+      "CHA": 17
+     },
+     "bonus": 10
+    },
+    "Shadow Knight": {
+     "stats": {
+      "STR": 19,
+      "STA": 19,
+      "DEX": 16,
+      "AGI": 16,
+      "INT": 19,
+      "WIS": 16,
+      "CHA": 17
+     },
+     "bonus": 10
+    },
+    "Shaman": {
+     "stats": {
+      "STR": 17,
+      "STA": 19,
+      "DEX": 17,
+      "AGI": 16,
+      "INT": 16,
+      "WIS": 20,
+      "CHA": 17
+     },
+     "bonus": 10
+    },
+    "Spellblade": {
+     "stats": {
+      "STR": 18,
+      "STA": 17,
+      "DEX": 19,
+      "AGI": 16,
+      "INT": 19,
+      "WIS": 16,
+      "CHA": 17
+     },
+     "bonus": 10
+    },
+    "Wizard": {
+     "stats": {
+      "STR": 19,
+      "STA": 17,
+      "DEX": 17,
+      "AGI": 16,
+      "INT": 20,
+      "WIS": 16,
+      "CHA": 17
+     },
+     "bonus": 10
+    }
+   },
+   "large": false,
+   "note": null,
+   "playable_ea": true
+  },
+  "Ogre": {
+   "url": "https://monstersandmemories.miraheze.org/wiki/Ogre",
+   "revid": 83099,
+   "ts": "2026-10-18T16:12:41Z",
+   "alignment": "Neutral",
+   "racial": "Ogre Smash, Increased Consumption Rate (as of Feb 16, 2026)",
+   "resists": "Cold +10, Magic -10",
+   "cities_page": "Night Harbor, Underdocks",
+   "base": {
+    "STR": 20,
+    "STA": 19,
+    "DEX": 15,
+    "AGI": 14,
+    "INT": 16,
+    "WIS": 15,
+    "CHA": 15
+   },
+   "start": {
+    "Archer": {
+     "stats": {
+      "STR": 22,
+      "STA": 19,
+      "DEX": 19,
+      "AGI": 16,
+      "INT": 16,
+      "WIS": 15,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Beastmaster": {
+     "stats": {
+      "STR": 24,
+      "STA": 19,
+      "DEX": 15,
+      "AGI": 16,
+      "INT": 16,
+      "WIS": 17,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Elementalist": {
+     "stats": {
+      "STR": 20,
+      "STA": 23,
+      "DEX": 15,
+      "AGI": 14,
+      "INT": 20,
+      "WIS": 15,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Fighter": {
+     "stats": {
+      "STR": 24,
+      "STA": 22,
+      "DEX": 15,
+      "AGI": 15,
+      "INT": 16,
+      "WIS": 15,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Monk": {
+     "stats": {
+      "STR": 21,
+      "STA": 19,
+      "DEX": 18,
+      "AGI": 18,
+      "INT": 16,
+      "WIS": 15,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Ranger": {
+     "stats": {
+      "STR": 21,
+      "STA": 19,
+      "DEX": 18,
+      "AGI": 16,
+      "INT": 16,
+      "WIS": 17,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Shadow Knight": {
+     "stats": {
+      "STR": 23,
+      "STA": 21,
+      "DEX": 15,
+      "AGI": 14,
+      "INT": 19,
+      "WIS": 15,
+      "CHA": 15
+     },
+     "bonus": 10
+    },
+    "Shaman": {
+     "stats": {
+      "STR": 21,
+      "STA": 21,
+      "DEX": 16,
+      "AGI": 14,
+      "INT": 16,
+      "WIS": 19,
+      "CHA": 15
+     },
+     "bonus": 10
+    }
+   },
+   "large": true,
+   "note": null,
+   "playable_ea": true
+  },
+  "Wood Elf": {
+   "url": "https://monstersandmemories.miraheze.org/wiki/Wood_Elf",
+   "revid": 26425,
+   "ts": "2026-03-31T16:10:11Z",
+   "alignment": "Good",
+   "racial": "Hide, Forage (as of Feb 16, 2026)",
+   "resists": "Electricity +5, Fire -5",
+   "cities_page": "Night Harbor (during development), Faelindral",
+   "base": {
+    "STR": 14,
+    "STA": 14,
+    "DEX": 18,
+    "AGI": 20,
+    "INT": 15,
+    "WIS": 17,
+    "CHA": 16
+   },
+   "start": {
+    "Archer": {
+     "stats": {
+      "STR": 16,
+      "STA": 14,
+      "DEX": 22,
+      "AGI": 22,
+      "INT": 15,
+      "WIS": 17,
+      "CHA": 16
+     },
+     "bonus": 10
+    },
+    "Bard": {
+     "stats": {
+      "STR": 15,
+      "STA": 14,
+      "DEX": 21,
+      "AGI": 20,
+      "INT": 15,
+      "WIS": 17,
+      "CHA": 20
+     },
+     "bonus": 10
+    },
+    "Beastmaster": {
+     "stats": {
+      "STR": 18,
+      "STA": 14,
+      "DEX": 18,
+      "AGI": 22,
+      "INT": 15,
+      "WIS": 19,
+      "CHA": 16
+     },
+     "bonus": 10
+    },
+    "Druid": {
+     "stats": {
+      "STR": 14,
+      "STA": 14,
+      "DEX": 18,
+      "AGI": 22,
+      "INT": 15,
+      "WIS": 21,
+      "CHA": 18
+     },
+     "bonus": 10
+    },
+    "Fighter": {
+     "stats": {
+      "STR": 18,
+      "STA": 17,
+      "DEX": 18,
+      "AGI": 21,
+      "INT": 15,
+      "WIS": 17,
+      "CHA": 16
+     },
+     "bonus": 10
+    },
+    "Ranger": {
+     "stats": {
+      "STR": 15,
+      "STA": 14,
+      "DEX": 21,
+      "AGI": 22,
+      "INT": 15,
+      "WIS": 19,
+      "CHA": 16
+     },
+     "bonus": 10
+    },
+    "Rogue": {
+     "stats": {
+      "STR": 14,
+      "STA": 14,
+      "DEX": 22,
+      "AGI": 24,
+      "INT": 15,
+      "WIS": 17,
+      "CHA": 16
+     },
+     "bonus": 10
+    },
+    "Shaman": {
+     "stats": {
+      "STR": 15,
+      "STA": 16,
+      "DEX": 19,
+      "AGI": 20,
+      "INT": 15,
+      "WIS": 21,
+      "CHA": 16
+     },
+     "bonus": 10
+    }
+   },
+   "large": false,
+   "note": null,
+   "playable_ea": true
+  },
+  "Deep Dwarf": {
+   "url": "https://monstersandmemories.miraheze.org/wiki/Deep_Dwarf",
+   "revid": 22743,
+   "ts": "2026-02-05T17:58:03Z",
+   "alignment": "Evil",
+   "racial": null,
+   "resists": null,
+   "cities_page": "Night Harbor (during development)",
+   "base": {
+    "STR": null,
+    "STA": null,
+    "DEX": null,
+    "AGI": null,
+    "INT": null,
+    "WIS": null,
+    "CHA": null
+   },
+   "start": {
+    "Cleric": {
+     "stats": {
+      "STR": null,
+      "STA": null,
+      "DEX": null,
+      "AGI": null,
+      "INT": null,
+      "WIS": null,
+      "CHA": null
+     },
+     "bonus": 10
+    },
+    "Elementalist": {
+     "stats": {
+      "STR": null,
+      "STA": null,
+      "DEX": null,
+      "AGI": null,
+      "INT": null,
+      "WIS": null,
+      "CHA": null
+     },
+     "bonus": 10
+    },
+    "Fighter": {
+     "stats": {
+      "STR": null,
+      "STA": null,
+      "DEX": null,
+      "AGI": null,
+      "INT": null,
+      "WIS": null,
+      "CHA": null
+     },
+     "bonus": 10
+    },
+    "Inquisitor": {
+     "stats": {
+      "STR": null,
+      "STA": null,
+      "DEX": null,
+      "AGI": null,
+      "INT": null,
+      "WIS": null,
+      "CHA": null
+     },
+     "bonus": 10
+    },
+    "Necromancer": {
+     "stats": {
+      "STR": null,
+      "STA": null,
+      "DEX": null,
+      "AGI": null,
+      "INT": null,
+      "WIS": null,
+      "CHA": null
+     },
+     "bonus": 10
+    },
+    "Paladin": {
+     "stats": {
+      "STR": null,
+      "STA": null,
+      "DEX": null,
+      "AGI": null,
+      "INT": null,
+      "WIS": null,
+      "CHA": null
+     },
+     "bonus": 10
+    },
+    "Shadow Knight": {
+     "stats": {
+      "STR": null,
+      "STA": null,
+      "DEX": null,
+      "AGI": null,
+      "INT": null,
+      "WIS": null,
+      "CHA": null
+     },
+     "bonus": 10
+    },
+    "Spellblade": {
+     "stats": {
+      "STR": null,
+      "STA": null,
+      "DEX": null,
+      "AGI": null,
+      "INT": null,
+      "WIS": null,
+      "CHA": null
+     },
+     "bonus": 10
+    }
+   },
+   "large": false,
+   "note": null,
+   "playable_ea": false
+  },
+  "High Elf": {
+   "url": "https://monstersandmemories.miraheze.org/wiki/High_Elf",
+   "revid": 22750,
+   "ts": "2026-02-05T18:11:04Z",
+   "alignment": "Good",
+   "racial": null,
+   "resists": null,
+   "cities_page": "Night Harbor (during development)",
+   "base": {
+    "STR": null,
+    "STA": null,
+    "DEX": null,
+    "AGI": null,
+    "INT": null,
+    "WIS": null,
+    "CHA": null
+   },
+   "start": {
+    "Archer": {
+     "stats": {
+      "STR": null,
+      "STA": null,
+      "DEX": null,
+      "AGI": null,
+      "INT": null,
+      "WIS": null,
+      "CHA": null
+     },
+     "bonus": 10
+    },
+    "Cleric": {
+     "stats": {
+      "STR": null,
+      "STA": null,
+      "DEX": null,
+      "AGI": null,
+      "INT": null,
+      "WIS": null,
+      "CHA": null
+     },
+     "bonus": 10
+    },
+    "Enchanter": {
+     "stats": {
+      "STR": null,
+      "STA": null,
+      "DEX": null,
+      "AGI": null,
+      "INT": null,
+      "WIS": null,
+      "CHA": null
+     },
+     "bonus": 10
+    },
+    "Elementalist": {
+     "stats": {
+      "STR": null,
+      "STA": null,
+      "DEX": null,
+      "AGI": null,
+      "INT": null,
+      "WIS": null,
+      "CHA": null
+     },
+     "bonus": 10
+    },
+    "Inquisitor": {
+     "stats": {
+      "STR": null,
+      "STA": null,
+      "DEX": null,
+      "AGI": null,
+      "INT": null,
+      "WIS": null,
+      "CHA": null
+     },
+     "bonus": 10
+    },
+    "Paladin": {
+     "stats": {
+      "STR": null,
+      "STA": null,
+      "DEX": null,
+      "AGI": null,
+      "INT": null,
+      "WIS": null,
+      "CHA": null
+     },
+     "bonus": 10
+    },
+    "Spellblade": {
+     "stats": {
+      "STR": null,
+      "STA": null,
+      "DEX": null,
+      "AGI": null,
+      "INT": null,
+      "WIS": null,
+      "CHA": null
+     },
+     "bonus": 10
+    },
+    "Wizard": {
+     "stats": {
+      "STR": null,
+      "STA": null,
+      "DEX": null,
+      "AGI": null,
+      "INT": null,
+      "WIS": null,
+      "CHA": null
+     },
+     "bonus": 10
+    }
+   },
+   "large": false,
+   "note": null,
+   "playable_ea": false
+  },
+  "Troll": {
+   "url": "https://monstersandmemories.miraheze.org/wiki/Troll",
+   "revid": 22753,
+   "ts": "2026-02-05T18:13:52Z",
+   "alignment": "Neutral",
+   "racial": null,
+   "resists": null,
+   "cities_page": "Night Harbor (during development)",
+   "base": {
+    "STR": null,
+    "STA": null,
+    "DEX": null,
+    "AGI": null,
+    "INT": null,
+    "WIS": null,
+    "CHA": null
+   },
+   "start": {
+    "Beastmaster": {
+     "stats": {
+      "STR": null,
+      "STA": null,
+      "DEX": null,
+      "AGI": null,
+      "INT": null,
+      "WIS": null,
+      "CHA": null
+     },
+     "bonus": 10
+    },
+    "Druid": {
+     "stats": {
+      "STR": null,
+      "STA": null,
+      "DEX": null,
+      "AGI": null,
+      "INT": null,
+      "WIS": null,
+      "CHA": null
+     },
+     "bonus": 10
+    },
+    "Enchanter": {
+     "stats": {
+      "STR": null,
+      "STA": null,
+      "DEX": null,
+      "AGI": null,
+      "INT": null,
+      "WIS": null,
+      "CHA": null
+     },
+     "bonus": 10
+    },
+    "Necromancer": {
+     "stats": {
+      "STR": null,
+      "STA": null,
+      "DEX": null,
+      "AGI": null,
+      "INT": null,
+      "WIS": null,
+      "CHA": null
+     },
+     "bonus": 10
+    },
+    "Rogue": {
+     "stats": {
+      "STR": null,
+      "STA": null,
+      "DEX": null,
+      "AGI": null,
+      "INT": null,
+      "WIS": null,
+      "CHA": null
+     },
+     "bonus": 10
+    },
+    "Shadow Knight": {
+     "stats": {
+      "STR": null,
+      "STA": null,
+      "DEX": null,
+      "AGI": null,
+      "INT": null,
+      "WIS": null,
+      "CHA": null
+     },
+     "bonus": 10
+    },
+    "Shaman": {
+     "stats": {
+      "STR": null,
+      "STA": null,
+      "DEX": null,
+      "AGI": null,
+      "INT": null,
+      "WIS": null,
+      "CHA": null
+     },
+     "bonus": 10
+    },
+    "Fighter": {
+     "stats": {
+      "STR": null,
+      "STA": null,
+      "DEX": null,
+      "AGI": null,
+      "INT": null,
+      "WIS": null,
+      "CHA": null
+     },
+     "bonus": 10
+    }
+   },
+   "large": true,
+   "note": null,
+   "playable_ea": false
+  }
+ },
+ "traits": {
+  "Class Specific Traits": [
+   {
+    "name": "High Ground",
+    "race": "Any",
+    "cls": "ARC",
+    "desc": "Passive: Your damage dealt with a bow is increased when above your target."
+   }
+  ],
+  "Racial Combat Abilities": [
+   {
+    "name": "Tenacity",
+    "race": "HUM",
+    "cls": "Any",
+    "desc": "Passive: Your resistance to Mesmerize and Incapacitate is increased by 15%. Active: Become tenacious, removing all Mesmerize and Incapacitate effects and granting you immunity to them for 15 seconds."
+   },
+   {
+    "name": "Hide",
+    "race": "ELF",
+    "cls": "Any",
+    "desc": "Active: Slip into the shadows, rendering you unseen by the living. This ability is removed by movement and actions."
+   },
+   {
+    "name": "Bribe",
+    "race": "GOB",
+    "cls": "Any",
+    "desc": "Active: Bribe your target, causing them to forget past wrongdoings."
+   },
+   {
+    "name": "Ogre Smash",
+    "race": "OGR",
+    "cls": "Any",
+    "desc": "Active: Forcefully smash nearby targets, stunning them for 2 seconds."
+   },
+   {
+    "name": "Slippery",
+    "race": "GNM",
+    "cls": "Any",
+    "desc": "Passive: Root resistance increased by 15%. Active: Become slippery, removing all Root and Snare effects and granting you immunity to them for 15 seconds."
+   },
+   {
+    "name": "Stone Form",
+    "race": "DDF, DWF",
+    "cls": "Any",
+    "desc": "Active: Turn to stone, removing all harmful Disease, Electricity, and Poison effects and increasing your resistance to them, reducing your Physical Damage received by 10%, and increasing your Armor Class by 25% for 15 seconds."
+   }
+  ],
+  "Major Combat Traits": [
+   {
+    "name": "Agile",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Agility is increased by 5%. Active: Increases your Agility by 50% for 15 seconds."
+   },
+   {
+    "name": "Charismatic",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Charisma is increased by 5%. Active: Become charismatic, increasing your Charisma by 50% for 15 seconds."
+   },
+   {
+    "name": "Cold Resistant",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your base Cold Resistance is increased by 10. Your total Cold Resistance is increased by 15%. Active: Become resistant to cold, removing all harmful Cold effects and greatly increasing your resistance to them for 15 seconds."
+   },
+   {
+    "name": "Corruption Resistant",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your base Corruption resistance is increased by 10. Your total Corruption Resistance is increased by 15%. Active: Become resistant to corruption, removing all harmful Corruption effects and greatly increasing your resistance to them for 15 seconds."
+   },
+   {
+    "name": "Dexterous",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Dexterity is increased by 5%. Active: Become dexterous, increasing your Dexterity by 50% for 15 seconds."
+   },
+   {
+    "name": "Disease Resistant",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your base Disease Resistance is increased by 10. Your total Disease Resistance is increased by 15%. Active: Become resistant to disease, removing all harmful disease effects and greatly increasing your resistance to them for 15 seconds."
+   },
+   {
+    "name": "Electric Resistant",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your base Electric Resistance is increased by 10. Your total Electric Resistance is increased by 15%. Active: Become resistant to electricity, removing all harmful Electric effects and greatly increasing your resistance to them for 15 seconds."
+   },
+   {
+    "name": "Fire Resistant",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your base Fire Resistance is increased by 10. Your total Fire Resistance is increased by 15%. Active: Become resistant to fire, removing all harmful Fire effects and greatly increasing your resistance to them for 15 seconds."
+   },
+   {
+    "name": "Holy Resistant",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your base Holy Resistance is increased by 10. Your total Holy Resistance is increased by 15%. Active: Become resistant to holiness, removing all harmful Holy effects and greatly increasing your resistance to them for 15 seconds."
+   },
+   {
+    "name": "Intelligent",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Intelligence is increased by 5%. Active: Become intelligent, increasing your Intelligence by 50% for 15 seconds."
+   },
+   {
+    "name": "Magic Resistant",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your base Magic Resistance is increased by 10. Your total Magic Resistance is increased by 15%. Active: Become resistant to magic, removing all harmful Magic effects and greatly increasing your resistance to them for 15 seconds."
+   },
+   {
+    "name": "Poison Resistant",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your base Poison Resistance is increased by 10. Your total Poison Resistance is increased by 15%. Active: Become resistant to poison, removing all harmful Poison effects and greatly increasing your resistance to them for 15 seconds."
+   },
+   {
+    "name": "Strong",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Strength is increased by 5%. Active: Become strong, increasing your Strength by 50% for 15 seconds."
+   },
+   {
+    "name": "Tough",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Stamina is increased by 5%. Active: Become tough, increasing your Stamina by 50% for 15 seconds."
+   },
+   {
+    "name": "Wise",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your base Wisdom is increased by 5%. Active: Become wise, increasing your Wisdom by 50% for 15 seconds."
+   }
+  ],
+  "Minor Combat Traits": [
+   {
+    "name": "Abjurer",
+    "race": "Any",
+    "cls": "BST, CLR, DRU, ELE, ENC, INQ, NEC, PAL, RNG, SHD, SHM, SPB, WIZ",
+    "desc": "Your Abjuration skill starts at 10. Your Abjuration skill increases 25% faster. ''Abjuration spells protect allies from physical and elemental damage.''"
+   },
+   {
+    "name": "Alterer",
+    "race": "Any",
+    "cls": "BST, CLR, DRU, ELE, ENC, INQ, NEC, PAL, RNG, SHD, SHM, SPB, WIZ",
+    "desc": "Your Alteration skill starts at 10. Your Alteration skill increases 25% faster. ''Alteration spells heal and enhance allies, and hinder enemies.''"
+   },
+   {
+    "name": "Bludgeoner",
+    "race": "Any",
+    "cls": "BST, CLR, DRU, ELE, ENC, FTR, MNK, NEC, PAL, ROG, SHM, SPB, WIZ",
+    "desc": "Your Bludgeoning skill starts at 5. Your Bludgeoning skill increases 25% faster. You start with a Trainee's Staff instead of your default starter weapon."
+   },
+   {
+    "name": "Bowman",
+    "race": "Any",
+    "cls": "ARC, BST, FTR, INQ, PAL, RNG, ROG, SHD, SPB",
+    "desc": "Your Archery skill starts at 5.  Your Archery skill increases 25% faster. You start with a Trainee's Longbow, a Trainee's Hip Quiver, and 1000 Trainee's Arrows."
+   },
+   {
+    "name": "Brawler",
+    "race": "Any",
+    "cls": "MNK",
+    "desc": "Your Dual Wield skill starts at 20. Your Dual Wield skill increases 25% faster."
+   },
+   {
+    "name": "Channeler",
+    "race": "Any",
+    "cls": "BST, CLR, DRU, ELE, ENC, INQ, NEC, PAL, RNG, SHD, SHM, SPB, WIZ",
+    "desc": "Your Channeling skill starts at 10. Your Channeling skill increases 25% faster. ''Channeling allows you to continue casting spells through enemy attacks and other interruptions.''"
+   },
+   {
+    "name": "Conjurer",
+    "race": "Any",
+    "cls": "BST, CLR, DRU, ELE, ENC, INQ, NEC, PAL, RNG, SHD, SHM, SPB, WIZ",
+    "desc": "Your Conjuration skill starts at 10. Your Conjuration skill increases 25% faster. ''Conjuration spells summon creatures and objects, and deal damage over time to enemies.''"
+   },
+   {
+    "name": "Cutthroat",
+    "race": "Any",
+    "cls": "ARC, BRD, BST, ELE, ENC, FTR, INQ, NEC, RNG, ROG, SHD, SHM, SPB, WIZ",
+    "desc": "Your Piercing skill starts at 5. Your Piercing skill increases 25% faster. You start with a Trainee's Dirk instead of your default starter weapon."
+   },
+   {
+    "name": "Defender",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Defense skill starts at 5. Your Defense skill increases 25% faster."
+   },
+   {
+    "name": "Diviner",
+    "race": "Any",
+    "cls": "BST, CLR, DRU, ELE, ENC, INQ, NEC, PAL, RNG, SHD, SHM, SPB, WIZ",
+    "desc": "Your Divination skill starts at 10. Your Divination skill increases 25% faster. ''Divination spells disguise and obscure allies, and enhance their vision.''"
+   },
+   {
+    "name": "Evoker",
+    "race": "Any",
+    "cls": "BST, CLR, DRU, ELE, ENC, INQ, NEC, PAL, RNG, SHD, SHM, SPB, WIZ",
+    "desc": "Your Evocation skill starts at 10. Your Evocation skill increases 25% faster. ''Evocation spells deal direct damage and apply stuns to enemies.''"
+   },
+   {
+    "name": "Knife Thrower",
+    "race": "Any",
+    "cls": "ARC, BST, FTR, MNK, RNG, ROG, SPB",
+    "desc": "Your Throwing skill starts at 5. Your Throwing skill increases 25% faster. You start with 1000 Trainee's Throwing Daggers."
+   },
+   {
+    "name": "Shieldman",
+    "race": "Any",
+    "cls": "BRD, CLR, DRU, FTR, INQ, PAL, RNG, SHD, SHM, SPB",
+    "desc": "Your Block skill starts at 5. Your Block skill increases 25% faster. You start with a Trainee's Buckler."
+   },
+   {
+    "name": "Swordsman",
+    "race": "Any",
+    "cls": "ARC, BRD, BST, DRU, FTR, INQ, PAL, RNG, ROG, SHD, SPB, WIZ",
+    "desc": "Your Slashing skill starts at 5. Your Slashing skill increases 25% faster. You start with a Trainee's Scimitar instead of your default starter weapon."
+   },
+   {
+    "name": "Virtuoso",
+    "race": "Any",
+    "cls": "BRD",
+    "desc": "Your Brass, Percussion, String, and Wind skill(s) starts at 25. Your Brass, Percussion, Strings, and Woodwind skills increase 25% faster. You start with a Trainee's Recorder."
+   },
+   {
+    "name": "Vocalist",
+    "race": "Any",
+    "cls": "BRD",
+    "desc": "Your Singing skill starts at 50. Your Singing skill increases 50% faster."
+   },
+   {
+    "name": "Warrior",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Offense skill starts at 5. Your Offensive skill increases 25% faster."
+   }
+  ],
+  "Major Non-Combat Traits": [
+   {
+    "name": "Fast Metabolism",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Endurance is increased by 25%, but you consume food 25% faster."
+   },
+   {
+    "name": "Forage",
+    "race": "DDF, DEF, DGN, DWF, GNM, GOB, HIE, HUM, OGR, TRL",
+    "cls": "ARC, BRD, BST, CLR, ELE, ENC, FTR, INQ, MNK, NEC, PAL, ROG, SHD, SHM, SPB, WIZ",
+    "desc": "Search your surroundings, attempting to gather food, drink, and other supplies."
+   },
+   {
+    "name": "Infravision",
+    "race": "DWF, ELF, GNM, GOB, HFL, HIE, OGR, TRL",
+    "cls": "Any",
+    "desc": "Your vision in darkness is enhanced."
+   },
+   {
+    "name": "Iron Lungs",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your underwater air capacity is increased by 200%, but your Endurance is decreased by 25%."
+   },
+   {
+    "name": "Master Artisan",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Carpentry, Blacksmithing, Jewelcrafting, Leatherworking, Pottery, and Tailoring skills increase 5% faster."
+   },
+   {
+    "name": "Readiness",
+    "race": "Any",
+    "cls": "CLR, DRU, ELE, ENC, NEC, SHM, WIZ",
+    "desc": "You start with an available Cantrip slot, which can be assigned to a memorized spell to retain it after death."
+   },
+   {
+    "name": "Slow Metabolism",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "You consume food 25% slower, but your Endurance is decreased by 25%."
+   },
+   {
+    "name": "Ultravision",
+    "race": "DDF, DEF, DGN",
+    "cls": "Any",
+    "desc": "Your vision in darkness is greatly enhanced, but it is reduced in bright light."
+   }
+  ],
+  "Minor Non-Combat Traits": [
+   {
+    "name": "Alchemist",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Alchemy starts at 25. Alchemy skill increases 5% faster. You start with a Trainee's Mortar and Pestle."
+   },
+   {
+    "name": "Blacksmith",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Blacksmithing starts at 25. Your Blacksmithing skill increases 5% faster. You start with a Trainee's Smithing Hammer."
+   },
+   {
+    "name": "Bookworm",
+    "race": "Any",
+    "cls": "BST, CLR, DRU, ELE, ENC, INQ, NEC, PAL, RNG, SHD, SHM, SPB, WIZ",
+    "desc": "You start with an additional Trainee's Spellbook."
+   },
+   {
+    "name": "Brewmaster",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Brewing skill starts at 25. Your Brewing skill increases 5% faster."
+   },
+   {
+    "name": "Carpenter",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Carpentry skill starts at 25. Your Carpentry skill increases 5% faster. You start with a Trainee's Construction Hammer."
+   },
+   {
+    "name": "Chef",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Cooking skill starts at 25. Your Cooking skill increases 5% faster. You start with a Trainee's Cleaver."
+   },
+   {
+    "name": "Disenchanter",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Disenchanting skill starts at 25. Your Disenchanting skill increases 5% faster. You start with a Trainee's Disenchanting Cube."
+   },
+   {
+    "name": "Enchanter",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Enchanting skill starts at 25. Your Enchanting skill increases 5% faster. You start with a Trainee's Tome of Enchantment."
+   },
+   {
+    "name": "Fisherman",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Fishing skill starts at 25. Your Fishing skill increases 25% faster. You start with a Trainee's Fishing Pole and 20 Trainee's Fishing Grubs."
+   },
+   {
+    "name": "Fletcher",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Fletching skill starts at 25. Your Fletching skill increases 5% faster. You start with a Trainee's Fletching Kit."
+   },
+   {
+    "name": "Herbalist",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Herbalism skill starts at 25. Your Herbalism skill increases 5% faster. You start with a Trainee's Sickle and Trainee's Herb Pouch."
+   },
+   {
+    "name": "Jewelcrafter",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Jewelcrafting skill starts at 25. Your Jewelcrafting skill increases 5% faster. You start with a Trainee's Jewelcrafting Kit."
+   },
+   {
+    "name": "Leatherworker",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Leatherworking skill starts at 25. Your Leatherworking skill increases 5% faster. You start with a Trainee's Leatherworking Kit."
+   },
+   {
+    "name": "Lumberjack",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Lumberjacking skill starts at 25. Your Lumberjacking skill increases 5% faster. You start with a Trainee's Lumberjack Axe and Trainee's Lumberjack Pouch."
+   },
+   {
+    "name": "Medic",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Bind Wound skill starts at 25 and your Survival skill starts at 5. Your Bind Wound skill increases 25% faster. You start with a Trainee's Survival Satchel and 20 Trainee's Cloth Bandages."
+   },
+   {
+    "name": "Merchant",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Commerce skill starts at 25. Your Commerce skill increases 25% faster."
+   },
+   {
+    "name": "Miner",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Mining skill starts at 25. Your Mining skill increases 5% faster. You start with a Trainee's Mining Pick and Trainee's Mining Pouch."
+   },
+   {
+    "name": "Poison Maker",
+    "race": "Any",
+    "cls": "ROG",
+    "desc": "Your Poison Making skill starts at 25. Your Poison Making skills increase 25% faster. You start with a Trainee's Poison Making Kit."
+   },
+   {
+    "name": "Smelter",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Smelting skill starts at 25. Your Smelting skill increases 5% faster."
+   },
+   {
+    "name": "Stonecutter",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Stonecutting skill starts at 25. Your Stonecutting skill increases 5% faster. You start with a Trainee's Hammer and Chisel."
+   },
+   {
+    "name": "Stonemason",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Masonry skill starts at 25. Your Masonry skill increases 5% faster. You start with a Trainee's Hammer and Chisel."
+   },
+   {
+    "name": "Survivalist",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Survival skill starts at 25. Your Survival skill increases 5% faster. You start with a Trainee's Survival Satchel."
+   },
+   {
+    "name": "Swimmer",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Swimming skill starts at 25. Your Swimming skill increases 25% faster."
+   },
+   {
+    "name": "Tailor",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Tailoring starts at 25. Your Tailoring skill increases 5% faster. You start with a Trainee's Tailoring Kit."
+   },
+   {
+    "name": "Tavern Regular",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Alcohol Tolerance skill starts at 25. Your Alcohol Tolerance skill increases 25% faster."
+   },
+   {
+    "name": "Tinkerer",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Tinkering skill starts at 25. Your Tinkering skill increases 5% faster. You start with a Trainee's Tinkering Toolkit."
+   },
+   {
+    "name": "Tracker",
+    "race": "Any",
+    "cls": "BRD, DRU, RNG",
+    "desc": "Your Tracking skill starts at 25. Your Tracking skill increases 25% faster."
+   },
+   {
+    "name": "Woodworker",
+    "race": "Any",
+    "cls": "Any",
+    "desc": "Your Woodworking skill starts at 25. Your Woodworking skill increases 5% faster."
+   }
+  ]
+ }
+}

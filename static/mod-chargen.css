@@ -1,0 +1,20 @@
+/* Character creation: top-bar race/start selectors, class-page section, walkthrough */
+.cg-f select{max-width:140px}
+.foot-credit{margin-top:6px;font-size:.75rem}
+.cg-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin:8px 0}
+.cg-card,.cg-trait{border:1px solid var(--line);border-radius:6px;padding:8px 10px;background:rgba(255,255,255,.02)}
+.cg-card h4,.cg-trait h4{margin:0 0 4px}
+.cg-trait{margin:8px 0}
+.cg-alloc{font-weight:600;color:var(--gold)}
+.cg-res{display:block}
+.cg-sel.cg-card,.cg-races tr.cg-sel td{outline:1px solid var(--gold);background:rgba(255,190,90,.06)}
+.cg-racepick{margin:4px 0;font-weight:600}
+.cg-ts-apply{cursor:pointer}
+.cg-band{border:1px solid var(--line);border-radius:6px;padding:6px 10px;margin:8px 0}
+.cg-band.cg-cur{border-color:var(--gold)}
+.cg-band h3{font-size:1rem;margin:10px 0 4px}
+.cg-steps li{margin:4px 0}
+.cg-warn li{color:#e8a090}
+html.halloween .cg-warn li{color:#ff9e88}
+.cg-sp{columns:2;column-gap:20px}
+@media (max-width:520px){.cg-sp{columns:1}.cg-f select{max-width:118px}.cg-cards{grid-template-columns:1fr}}
