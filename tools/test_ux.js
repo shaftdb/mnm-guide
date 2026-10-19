@@ -100,7 +100,7 @@ function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('
  await ev('(function(){var q=document.getElementById("q");q.focus();q.value="shaman";q.dispatchEvent(new Event("input"))})()');
  const sl=await ev('document.getElementById("qres").textContent');
  ok(/Loading search index/.test(sl)||/Shaman/i.test(sl),'search shows "Loading search index…" until the index arrives');
- ok(await waitFor('document.querySelectorAll("#qres a[href]").length>3'),'search results appear once search-index.js loads ('+sz('search-index.js')+' KB, only when searching)');
+ ok(await waitFor('document.querySelectorAll("#qres a[href]").length>3'),'search results appear once the titles index loads ('+sz('search-titles.js')+' KB, only when searching)');
  // item tooltips
  reqs=[];await go('classes/inquisitor.html');
  const tipTxt=await ev('(function(){var a=document.querySelector(".itm[data-i]");var r=a.getBoundingClientRect();a.dispatchEvent(new MouseEvent("mouseover",{bubbles:true,clientX:r.left+5,clientY:r.top+5}));return document.getElementById("tip").textContent})()');
@@ -118,7 +118,7 @@ function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('
  ok(await waitFor('reqs=0,(function(){var b=document.querySelector("[data-ts-mount] .ts-body");return !b.querySelector(".lz-status")})()'),'guidance updates after the chunk loads');
  await ev('localStorage.removeItem("mnm-trades")');
  // offline / blocked chunks show a clear error
- await send('Network.setBlockedURLs',{urls:['*search-index.js','*quick-c-bard.js']});
+ await send('Network.setBlockedURLs',{urls:['*search-index.js','*search-titles.js','*quick-c-bard.js']});
  await go('index.html');
  await ev('(function(){var q=document.getElementById("q");q.focus();q.value="shaman";q.dispatchEvent(new Event("input"))})()');
  ok(await waitFor('/could not load/i.test(document.getElementById("qres").textContent)'),'blocked search index: "Search index could not load (offline?)"');
@@ -165,6 +165,119 @@ function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('
  ok(!(await ev('document.querySelector("dialog.ux-sheet").open'))&&await ev('document.activeElement.classList.contains("ux-otp")'),'Esc closes the sheet and returns focus to the button');
  await size(1024,768);await go('classes/inquisitor.html');
  ok(!(await ev('document.querySelector(".ux-otp").checkVisibility()'))&&!(await ev('document.querySelector(".ux-mysetup").checkVisibility()'))&&await ev('document.getElementById("mnm-class").checkVisibility()'),'1024: no phone-only controls; full picker bar and side TOC as before');
+
+ // =============================== UX pass 3
+ const key=async(k,mods=0,code)=>{const vk={'k':75,'/':191,'?':191,'Escape':27,'ArrowDown':40,'ArrowUp':38,'Enter':13,'Tab':9,'g':71,'i':73,'t':84}[k]||0;
+  const p={key:k,code:code||(k.length===1?'Key'+k.toUpperCase():k),windowsVirtualKeyCode:vk,modifiers:mods};
+  await send('Input.dispatchKeyEvent',Object.assign({type:'keyDown',text:(k.length===1&&!(mods&2))?k:undefined},p));await send('Input.dispatchKeyEvent',Object.assign({type:'keyUp'},p));await sleep(120)};
+ await size(1024,768);
+ // 1) start-city route split: Deep Elf Inquisitor in Ail'Vorith only loads Ail'Vorith chunks for the shown band
+ await go('index.html');await ev('localStorage.setItem("mnm-range","1-5");localStorage.setItem("mnm-class","Inquisitor")');
+ reqs=[];await go("walkthrough.html?class=Inquisitor&race=Deep%20Elf&city=Ail'Vorith");
+ ok(await waitFor('(function(){var c=document.querySelector("#wt-b-1-5");return c&&c.open&&!c.querySelector(".wt-slot")&&/Start-city route: Ail.Vorith/.test(c.textContent)})()'),'walkthrough: open band (1-5) fills its Ail\'Vorith route from its chunk');
+ let wr=reqs.filter(r=>/^walk-[rh]-/.test(r));
+ ok(wr.length===2&&wr.includes('walk-r-1-5-ailvorith.js')&&wr.includes('walk-h-ailvorith.js'),'walkthrough first load fetches only walk-r-1-5-ailvorith.js + walk-h-ailvorith.js ('+wr.join(', ')+'), walk-data.js '+sz('walk-data.js')+' KB');
+ const wtx=await ev('document.getElementById("cg-walk").textContent');
+ ok(/Starting in Ail.Vorith/.test(wtx)&&!/Start-city route: (Night Harbor|Underdocks|Faelindral)/.test(wtx)&&!/Starting in Night Harbor/.test(wtx),'walkthrough shows Ail\'Vorith only (no Night Harbor / other city route blocks)');
+ ok(await ev('[].slice.call(document.querySelectorAll("#cg-walk details.cg-band:not([open]) .wt-slot")).length===7'),'closed bands hold a loading slot until opened');
+ reqs=[];await ev('document.querySelector("#wt-b-21-25 summary").click()');
+ ok(await waitFor('(function(){var c=document.querySelector("#wt-b-21-25");return c.open&&!c.querySelector(".wt-slot")&&/Start-city route: Ail.Vorith · levels 21/.test(c.textContent)})()')&&reqs.includes('walk-r-21-25-ailvorith.js')&&reqs.filter(r=>/^walk-r-/.test(r)).length===1,'opening band 21-25 loads only walk-r-21-25-ailvorith.js and fills it');
+ await shot('ux3-after-walkband-1024.png');
+ // blocked chunk: error + retry
+ await send('Network.setBlockedURLs',{urls:['*walk-r-26-30-ailvorith.js']});
+ await ev('document.querySelector("#wt-b-26-30 summary").click()');
+ ok(await waitFor('/did not load/.test((document.querySelector("#wt-b-26-30 .wt-slot")||{}).textContent||"")&&!!document.querySelector("#wt-b-26-30 .wt-retry")'),'blocked band chunk: clear "did not load" message with a Try again button');
+ await send('Network.setBlockedURLs',{urls:[]});await ev('document.querySelector("#wt-b-26-30 .wt-retry").click()');
+ ok(await waitFor('(function(){var c=document.querySelector("#wt-b-26-30");return !c.querySelector(".wt-slot")&&/Start-city route: Ail.Vorith · levels 26/.test(c.textContent)})()'),'Try again loads the band');
+ // class page quick walkthrough loads only its band
+ reqs=[];await go("classes/inquisitor.html?class=Inquisitor&race=Deep%20Elf&city=Ail'Vorith");
+ ok(await waitFor('(function(){var q=document.querySelector(".cg-qwalk");return q&&!q.querySelector(".wt-slot,.lz-status")&&/Start-city route: Ail.Vorith · levels 1/.test(q.textContent)})()'),'class page quick walkthrough shows the Ail\'Vorith 1-5 route');
+ wr=reqs.filter(r=>/^walk-[rh]-/.test(r));
+ ok(wr.length===1&&wr[0]==='walk-r-1-5-ailvorith.js','class page loads one route chunk ('+wr.join(', ')+')');
+ ok(await ev('!/Start-city route: (Night Harbor|Underdocks|Faelindral)/.test(document.querySelector(".cg-qwalk").textContent)'),'class page quick walkthrough: no other city\'s route');
+ await ev('localStorage.setItem("mnm-range","11-15");localStorage.setItem("mnm-class","Fighter");localStorage.removeItem("mnm-race");localStorage.removeItem("mnm-city")');
+ // quick-r routenh rebuilt exactly from route + Night Harbor notes
+ await go('index.html');await waitFor('!!(window.MNM_QUICK&&MNM_QUICK.routenh&&MNM_QUICK.routenh["11-15"])');
+ ok(await ev('(function(){var Q=MNM_QUICK,a=Q.route["11-15"],b=Q.routenh["11-15"];return b.length>a.length&&b.replace(/<p class="sc-nhnote">[\\s\\S]*?<\\/p>/g,"")===a&&(b.match(/sc-nhnote/g)||[]).length===3})()'),'quick-r chunk: routenh = route + 3 Night Harbor notes (stored once, quick-r-1-5.js '+sz('quick-r-1-5.js')+' KB)');
+ // 2) search: titles first, full text after the first query, typo tolerance
+ reqs=[];await go('index.html');
+ await ev('(function(){var q=document.getElementById("q");q.focus();q.value="shamn";q.dispatchEvent(new Event("input"))})()');
+ ok(await waitFor('/Shaman/.test(document.getElementById("qres").textContent)&&document.querySelectorAll("#qres a[href]").length>0'),'typo "shamn" finds Shaman');
+ ok(reqs.includes('search-titles.js')&&!reqs.includes('search-index.js'),'search loads search-titles.js ('+sz('search-titles.js')+' KB), not the 2 MB search-index.js');
+ ok(await waitFor('!!window.MNM_STEXT')&&reqs.includes('search-text.js'),'full text (search-text.js) follows in the background after the first query');
+ // palette
+ await go('index.html');await go('classes/inquisitor.html');await go('zones/ailvorith.html');
+ await key('k',2);
+ const p1=await ev('(function(){var d=document.querySelector("dialog.ux-pal"),i=document.activeElement;return {open:!!d&&d.open,role:i.getAttribute("role"),ctl:i.getAttribute("aria-controls"),lb:document.getElementById("ux-pal-list").getAttribute("role"),rec:[].slice.call(d.querySelectorAll(".ux-pal-g")).map(function(g){return g.textContent}),t:d.querySelector(".ux-pal-list").textContent}})()');
+ ok(p1.open&&p1.role==='combobox'&&p1.ctl==='ux-pal-list'&&p1.lb==='listbox','Ctrl+K opens the quick-jump dialog; focus in a combobox that controls a listbox');
+ ok(p1.rec[0]==='Recently viewed'&&/Inquisitor/.test(p1.t)&&/Home/.test(p1.t),'empty palette lists Recently viewed (Inquisitor, Home) then Jump to');
+ await ev('(function(){var i=document.getElementById("ux-pal-q");i.value="inquisitr";i.dispatchEvent(new Event("input"))})()');
+ ok(await waitFor('/Inquisitor/.test(document.getElementById("ux-pal-list").textContent)&&document.querySelectorAll("#ux-pal-list [role=option]").length>2'),'palette: typo "inquisitr" finds Inquisitor pages ('+await ev('document.getElementById("ux-pal-st").textContent')+')');
+ await shot('ux3-after-palette-1024.png');
+ await key('ArrowDown');const ad=await ev('(function(){var i=document.getElementById("ux-pal-q"),a=i.getAttribute("aria-activedescendant");return a&&document.getElementById(a).getAttribute("aria-selected")==="true"?a:null})()');
+ ok(ad==='ux-pal-o1','ArrowDown moves aria-activedescendant ('+ad+')');
+ await key('Tab');await key('Tab');ok(await ev('!!document.activeElement.closest("dialog.ux-pal")'),'Tab stays inside the dialog (focus trap)');
+ await ev('document.getElementById("ux-pal-q").focus()');await key('Escape');
+ ok(!(await ev('document.querySelector("dialog.ux-pal").open')),'Esc closes the palette');
+ await key('/',0,'Slash');ok(await ev('document.querySelector("dialog.ux-pal").open&&document.activeElement.id==="ux-pal-q"'),"'/' opens the palette");
+ await ev('(function(){var i=document.getElementById("ux-pal-q");i.value="walkthrough";i.dispatchEvent(new Event("input"))})()');await waitFor('document.querySelectorAll("#ux-pal-list [role=option]").length>0');
+ await key('Enter');for(let i=0;i<60;i++){await sleep(100);if(await ev('document.readyState==="complete"&&!document.querySelector("dialog.ux-pal[open]")'))break}
+ ok(/walkthrough/.test(await ev('location.pathname')),'Enter opens the active result ('+await ev('location.pathname')+')');
+ // '?' shortcuts + g-sequences
+ await go('index.html');await key('?',8,'Slash');
+ ok(await ev('(function(){var d=document.querySelector("dialog.ux-keys");return !!d&&d.open&&/Ctrl/.test(d.textContent)&&document.activeElement.closest("dialog")===d})()'),"'?' opens the keyboard-shortcuts overlay with focus inside");
+ await shot('ux3-after-shortcuts-1024.png');
+ await key('Escape');ok(!(await ev('document.querySelector("dialog.ux-keys").open')),'Esc closes the overlay');
+ await key('g');await key('i');for(let i=0;i<60;i++){await sleep(100);if(await ev('document.readyState==="complete"&&/items/.test(location.pathname)'))break}
+ ok(/items\.html/.test(await ev('location.pathname')),'g then i goes to Items');
+ // touch: header search button opens the palette at 480
+ await size(480,900);await send('Emulation.setTouchEmulationEnabled',{enabled:true});await go('index.html');
+ const pb=await ev('(function(){var b=document.querySelector(".ux-palbtn"),r=b.getBoundingClientRect();return {w:r.width,h:r.height,vis:b.checkVisibility(),ovf:document.documentElement.scrollWidth>innerWidth}})()');
+ ok(pb.vis&&pb.w>=44&&pb.h>=44&&!pb.ovf,'480: header search button is a 44px touch target, no overflow');
+ await ev('document.querySelector(".ux-palbtn").click()');
+ ok(await ev('document.querySelector("dialog.ux-pal").open&&document.querySelector("dialog.ux-pal").getBoundingClientRect().right<=innerWidth'),'480: tapping it opens the palette, fits the screen');
+ await ev('(function(){var i=document.getElementById("ux-pal-q");i.value="ail";i.dispatchEvent(new Event("input"))})()');await waitFor('document.querySelectorAll("#ux-pal-list [role=option]").length>3');
+ await shot('ux3-after-palette-480.png');
+ await ev('document.querySelector(".ux-pal-x").click()');await sleep(200);ok(await ev('!document.querySelector("dialog.ux-pal").open&&document.activeElement.classList.contains("ux-palbtn")'),'close button returns focus to the header button');
+ await ev('scrollTo(0,1500)');await sleep(200);
+ const mini=await ev('(function(){var q=document.querySelector(".search input").getBoundingClientRect(),b=document.querySelector(".ux-palbtn").getBoundingClientRect();return {q:q.width,b:b.width,ovf:document.documentElement.scrollWidth>innerWidth,top:b.top}})()');
+ ok(mini.q>150&&mini.b>=44&&!mini.ovf&&mini.top<60,'480 mini bar keeps search ('+Math.round(mini.q)+'px) and the search button');
+ await send('Emulation.setTouchEmulationEnabled',{enabled:false});
+ // 3) table sort/filter memory + URL, toolbar, reset
+ await size(1024,768);await go('quests.html');await ev('localStorage.removeItem("mnm-tbl:quests.html")');await go('quests.html?class=Inquisitor');
+ const t0=await ev('(function(){var b=document.querySelector(".ux-tbar");return b?b.textContent:""})()');
+ ok(/Showing all \d+ rows/.test(t0),'table toolbar shows the row count ('+t0.replace(/Reset$/,'')+')');
+ await ev('(function(){var h=document.querySelector("table.sortable thead th:nth-child(2)");h.click();h.click()})()');await sleep(150);
+ ok(await ev('/[?&]sort=0\\.1d(&|$)/.test(location.search)&&/[?&]class=Inquisitor(&|$)/.test(location.search)'),'sorting writes ?sort=0.1d and keeps ?class= ('+await ev('location.search')+')');
+ await ev('(function(){var f=document.getElementById("mnm-filter");f.value="rat";f.dispatchEvent(new Event("input",{bubbles:true}))})()');await sleep(200);
+ const t1=await ev('document.querySelector(".ux-tbar").textContent');
+ ok(/Showing \d+ of \d+ rows/.test(t1)&&/Sorted by/.test(t1)&&await ev('/[?&]f=rat(&|$)/.test(location.search)'),'filter updates the count and URL ?f=rat ('+t1.replace(/Reset$/,'')+')');
+ await go('quests.html');
+ const rs=await ev('(function(){var h=document.querySelector("table.sortable thead th:nth-child(2)");return [h.getAttribute("aria-sort"),document.getElementById("mnm-filter").value,location.search]})()');
+ ok(rs[0]==='descending'&&rs[1]==='rat'&&/sort=0\.1d/.test(rs[2]),'coming back restores sort + filter from this browser and mirrors them in the URL ('+rs.join(' | ')+')');
+ await size(480,900);await go('quests.html');await shot('ux3-after-tabletoolbar-480.png');
+ ok(!(await ev('document.documentElement.scrollWidth>innerWidth')),'480: no overflow with the table toolbar');
+ await ev('document.querySelector(".ux-tbar-r").click()');await sleep(150);
+ const rr=await ev('(function(){var h=document.querySelector("table.sortable thead th:nth-child(2)");return [h.getAttribute("aria-sort"),document.getElementById("mnm-filter").value,location.search,document.querySelector(".ux-tbar-n").textContent,document.querySelector(".ux-tbar-r").disabled]})()');
+ ok(rr[0]===null&&rr[1]===''&&!/sort=|f=/.test(rr[2])&&/Showing all/.test(rr[3])&&rr[4],'Reset clears sort, filter and URL params ('+rr[3]+')');
+ await size(1024,768);
+ const sh=await go('quests.html?sort=0.0a&f=wolf');
+ ok(await ev('document.querySelector("table.sortable thead th").getAttribute("aria-sort")==="ascending"&&document.getElementById("mnm-filter").value==="wolf"'),'a shared link (?sort=0.0a&f=wolf) opens with that sort and filter');
+ await ev('document.querySelector(".ux-tbar-r").click()');
+ // gear filters
+ await go('gear/weapons.html?gt=staff');
+ ok(await ev('(function(){var t=document.querySelector(".textfilter");return !!t&&t.value==="staff"&&/Showing \\d+ of/.test(document.querySelector(".ux-tbar").textContent)})()'),'gear page: ?gt= text filter restored and counted');
+ await ev('document.querySelector(".ux-tbar-r").click()');
+ // existing params still work
+ await go('market.html?server=Trem');ok(await ev('/[?&]server=Trem/.test(location.search)'),'?server= untouched on the market page');await ev('localStorage.setItem("mnm-server","Tilustra")');
+ // 4) back to top + TOC ampersand
+ await go('spells.html');await ev('scrollTo(0,4000)');await sleep(300);
+ ok(await ev('(function(){var b=document.querySelector(".ux-totop");return !!b&&!b.hidden&&b.checkVisibility()})()'),'long table page: Back to top button appears after scrolling');
+ await ev('document.querySelector(".ux-totop").click()');ok(await waitFor('scrollY<5',4000),'Back to top scrolls up');
+ await go('classes/inquisitor.html');
+ ok(await ev('![].some.call(document.querySelectorAll(".right .box.toc a"),function(a){return /&amp;|amp;/.test(a.textContent)})&&[].some.call(document.querySelectorAll(".right .box.toc a"),function(a){return /&/.test(a.textContent)})'),'desktop On this page: "&" shows as & (no "amp;")');
+ for(const [w,h] of [[480,900],[1024,768],[3440,1440]]){await size(w,h);for(const u of ['index.html','classes/inquisitor.html','walkthrough.html','market.html','quests.html']){await go(u);if(await ev('document.documentElement.scrollWidth>innerWidth'))ok(false,w+' '+u+' overflows')}}
+ ok(true,'no horizontal overflow at 480/1024/3440 on home, class, walkthrough, market, quests');
  ok(errs.length===0,'no JS exceptions'+(errs.length?': '+errs.slice(0,2).join(' | '):''));
  console.log(passes+' passed, '+fails+' failed');ws.close();chrome.kill();srv.kill();process.exit(fails?1:0);
 })().catch(e=>{console.error(e);chrome.kill();srv.kill();process.exit(1)});

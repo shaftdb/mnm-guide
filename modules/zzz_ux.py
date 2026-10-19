@@ -53,7 +53,7 @@ def _ux_split_quick():
     for k in base['order']:
         if k in route or k in routenh:
             f = 'quick-r-%s.js' % k; lazy['band'][k] = f
-            _ux_js(f, 'window.MNM_QUICK.route[%s]=%s;window.MNM_QUICK.routenh[%s]=%s;' % (_ux_dump(k), _ux_dump(route.get(k, '')), _ux_dump(k), _ux_dump(routenh.get(k, ''))))
+            _ux_js(f, _ux_route_js(k, route.get(k, ''), routenh.get(k, '')))  # UX pass 3: route stored once (see below)
     base.update(panels={}, route={}, routenh={}, lazy=lazy)
     _ux_js('quick-data.js', 'window.MNM_QUICK=%s;%s' % (_ux_dump(base), ''.join('window.MNM_QUICK.%s=%s;' % (k, _ux_dump(v)) for k, v in extra.items())))
 
@@ -74,3 +74,95 @@ _ux_prev_ra = render_all
 def render_all():
     _ux_prev_ra()
     _ux_split_quick(); _ux_split_trades()
+
+# ---------------------------------------------------------------- UX pass 3: smaller downloads
+# 1) walk-data.js: the start-city route HTML (one string per level band holding all four cities, ~715 KB) and the city
+#    overview (schead, ~80 KB) move into per-band x per-city chunks (walk-r-<band>-<city>.js, walk-h-<city>.js). The base
+#    file carries lazy.route[band][city] / lazy.schead[city]; mod-chargen.js loads only the bands it renders.
+#    Each city chunk = the wrapper + that city's block, so the client-side scFor() result is byte-identical.
+# 2) quick-r-<band>.js: routenh is route plus one "notes written for Night Harbor" paragraph per non-NH city, so the
+#    chunk stores route once plus those inserts (UTF-16 offsets) and rebuilds routenh on load. Verified exact at build.
+# 3) search: search-titles.js (titles/urls/sections, compact) loads first; search-text.js (the full text, same order)
+#    loads in the background after the first query. search-index.js is still written (unused fallback).
+# Any check that fails leaves that file complete, and the JS uses it as before.
+_SC_BLOCK = re.compile(r'<div class="sc-route" data-sc="([a-z0-9-]+)">')
+
+def _ux_city_split(h):
+    """'<div class="sc-wrap">PICK<div class="sc-route" data-sc=a>..</div>..</div>' -> (prefix, {slug: block}, suffix) or None"""
+    ms = list(_SC_BLOCK.finditer(h))
+    if not ms or not h.endswith('</div>'): return None
+    pre, suf, blocks = h[:ms[0].start()], '</div>', {}
+    for i, m in enumerate(ms):
+        b = h[m.start():ms[i + 1].start() if i + 1 < len(ms) else len(h) - len(suf)]
+        if b.count('<div') != b.count('</div>') or m.group(1) in blocks: return None
+        blocks[m.group(1)] = b
+    if pre + ''.join(blocks.values()) + suf != h or pre.count('<div') != pre.count('</div>') + 1: return None
+    return pre, blocks, suf
+
+def _ux_split_walk():
+    fp = os.path.join(OUT, 'assets', 'walk-data.js')
+    if not os.path.exists(fp): return
+    r = _ux_read_assign(fp, 'MNM_WT')
+    if not r or r[1] or not isinstance(r[0].get('route'), dict): print('zzz_ux: walk-data.js not split (unexpected format)'); return
+    d = r[0]; lazy = {'route': {}, 'schead': {}}; files = {}
+    for k, h in d['route'].items():
+        sp = _ux_city_split(h)
+        if not sp or not re.match(r'^\d+-\d+$', k): print('zzz_ux: walk route band %s not split' % k); return
+        pre, blocks, suf = sp; lazy['route'][k] = {}
+        for sl, b in blocks.items():
+            f = 'walk-r-%s-%s.js' % (k, sl); lazy['route'][k][sl] = f
+            files[f] = 'window.MNM_WT.route[%s]=%s;' % (_ux_dump(k + '|' + sl), _ux_dump(pre + b + suf))
+    if d.get('schead'):
+        sp = _ux_city_split(d['schead'])
+        if not sp: print('zzz_ux: walk schead not split'); return
+        pre, blocks, suf = sp
+        for sl, b in blocks.items():
+            f = 'walk-h-%s.js' % sl; lazy['schead'][sl] = f
+            files[f] = 'window.MNM_WT.schead_c[%s]=%s;' % (_ux_dump(sl), _ux_dump(pre + b + suf))
+        d['schead'] = ''
+    for f, t in files.items(): _ux_js(f, t)
+    d.update(route={}, schead_c={}, lazy=lazy)
+    _ux_js('walk-data.js', 'window.MNM_WT=%s;' % _ux_dump(d))
+
+def _u16(s): return len(s.encode('utf-16-le')) // 2
+_NH_NOTE = re.compile(r'<p class="sc-nhnote">.*?</p>', re.S)
+def _ux_route_js(k, route, routenh):
+    """quick-r chunk: route once + the Night Harbor notes as inserts (falls back to both strings if not exact)"""
+    ins, plain, last = [], [], 0
+    for m in _NH_NOTE.finditer(routenh):
+        plain.append(routenh[last:m.start()]); ins.append([_u16(''.join(plain)), m.group(0)]); last = m.end()
+    plain.append(routenh[last:])
+    if ''.join(plain) != route or not ins:
+        return 'window.MNM_QUICK.route[%s]=%s;window.MNM_QUICK.routenh[%s]=%s;' % (_ux_dump(k), _ux_dump(route), _ux_dump(k), _ux_dump(routenh))
+    # self-check of the rebuild in Python using the same UTF-16 offsets
+    u = route.encode('utf-16-le'); o, p = b'', 0
+    for at, t in ins: o += u[2 * p:2 * at] + t.encode('utf-16-le'); p = at
+    assert (o + u[2 * p:]).decode('utf-16-le') == routenh, 'zzz_ux: routenh rebuild mismatch ' + k
+    return ('(function(Q,k,r,n){Q.route[k]=r;var o="",p=0;n.forEach(function(x){o+=r.slice(p,x[0])+x[1];p=x[0]});Q.routenh[k]=o+r.slice(p)})'
+            '(window.MNM_QUICK,%s,%s,%s);' % (_ux_dump(k), _ux_dump(route), _ux_dump(ins)))
+
+def _ux_split_search():
+    fp = os.path.join(OUT, 'assets', 'search-index.js')
+    if not os.path.exists(fp): return
+    s = open(fp, encoding='utf8').read()
+    if not s.startswith('window.MNM_INDEX='): print('zzz_ux: search index not split'); return
+    idx = json.loads(s[len('window.MNM_INDEX='):].rstrip(';\n '))
+    secs = sorted({x.get('s', '') for x in idx}); si = {v: i for i, v in enumerate(secs)}
+    pc = {}
+    for x in idx:
+        if x.get('e'): pc[x['u'].rsplit('/', 1)[0] + '/'] = pc.get(x['u'].rsplit('/', 1)[0] + '/', 0) + 1
+    pre = sorted(p for p, n in pc.items() if n >= 20); rows = []
+    for x in idx:
+        row = [x['t'], x['u'], si[x.get('s', '')]]
+        if x.get('e'):
+            p = x['u'].rsplit('/', 1)[0] + '/'
+            if p in pre: row[1] = x['u'][len(p):]; row.append(pre.index(p))
+            else: row.append(-1)
+        rows.append(row)
+    _ux_js('search-titles.js', 'window.MNM_TITLES=%s;' % _ux_dump({'s': secs, 'p': pre, 'r': rows}))
+    _ux_js('search-text.js', 'window.MNM_STEXT=%s;' % _ux_dump([x.get('x', '') for x in idx]))
+
+_ux_prev_ra3 = render_all
+def render_all():
+    _ux_prev_ra3()
+    _ux_split_walk(); _ux_split_search()

@@ -1133,7 +1133,7 @@ def render_all():
         root = '../' * depth
         nav = ''.join('<a href="%s"%s>%s</a>' % (u, ' class="on"' if k == p['section'] else '', t) for t, u, k in NAV)
         toc = p['ctx'].get('toc') or []
-        toch = '<div class="box toc"><h3>On this page</h3><ul>%s</ul></div>' % ''.join('<li><a href="#%s">%s</a></li>' % (a, esc(t)) for a, t in toc) if len(toc) > 1 else ''
+        toch = '<div class="box toc"><h3>On this page</h3><ul>%s</ul></div>' % ''.join('<li><a href="#%s">%s</a></li>' % (a, esc(html.unescape(t))) for a, t in toc) if len(toc) > 1 else ''
         src = ''
         srcs = p['sources'] or [s.strip() for s in p['meta'].get('sources', '').split(';') if s.strip()]
         if srcs:
