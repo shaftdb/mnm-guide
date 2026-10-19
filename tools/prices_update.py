@@ -8,9 +8,12 @@
                                                  (needs MNM_WIKI_PARTNER_KEY; 1 call/sec, max --max-calls, honours 429 Retry-After)
   add --build to rebuild the site and run tools/linkcheck.py afterwards.
 
-Entry fields: item, kind, price (text like "8 sp 75 cp", "1.25 Gold", "1 sp - 1 sp 50 cp"), source (key of "sources"),
+Entry fields: item, kind, price (text like "8 sp 75 cp", "1.25 Gold", "1 sp - 1 sp 50 cp"), server, source (key of "sources"),
 seen (YYYY-MM-DD), confidence (high|medium|low), label (FACT|STRATEGY|UNVERIFIED); optional url, server, where, weight, note,
 link (item name to link instead of item), nolink. Derived and overwritten here: cp, cp_max, checked.
+server is required on every entry: player prices (player_ask/player_bid/player_sale) need a real server from meta.servers
+(or "unknown" if the source does not say); vendor, official and player reports of vendor prices use "all". Pasted names
+like "Tilustra NO BOX (US-PvE)" or the misspelling "Tulistra" are normalised to the official name.
 Never add a price you did not see in a source. The Tunnel feed is deliberately not fetched (it exposes posters' IPs/PINs).
 """
 import argparse, datetime, json, os, re, subprocess, sys, time, urllib.error, urllib.parse, urllib.request
@@ -23,6 +26,19 @@ CONF = ('high', 'medium', 'low'); LABELS = ('FACT', 'STRATEGY', 'UNVERIFIED')
 UNIT = {'cp': 1, 'c': 1, 'copper': 1, 'sp': 100, 's': 100, 'silver': 100, 'gp': 10000, 'g': 10000, 'gold': 10000}
 API = 'https://monstersandmemories.wiki/api/partner/v1/'
 TODAY = datetime.date.today().isoformat()
+PLAYER_KINDS = ('player_ask', 'player_bid', 'player_sale')
+SERVER_ALIASES = {'tulistra': 'tilustra'}
+
+def norm_server(v, names):
+    """'Tilustra NO BOX (US-PvE)' -> 'Tilustra'; case-insensitive; aliases for common misspellings. Unknown values are returned unchanged."""
+    if not isinstance(v, str) or not v.strip(): return v
+    t = v.strip(); low = t.lower()
+    if low in ('all', 'unknown'): return low
+    first = re.split(r'[\s(]', low, maxsplit=1)[0]
+    first = SERVER_ALIASES.get(first, first)
+    for n in names:
+        if n.lower() == first: return n
+    return t
 
 def parse_one(t):
     t = t.strip().lower()
@@ -48,8 +64,15 @@ def fmt(cp):
 def validate(D):
     errs = []
     src = D.get('sources') or {}
+    names = [x['name'] for x in (D.get('meta') or {}).get('servers') or []]
+    if not names: errs.append('meta.servers is missing')
     for i, e in enumerate(D.get('entries') or []):
         w = '%d %s' % (i, e.get('item'))
+        sv = e.get('server')
+        if not sv: errs.append('%s: missing server (use a server name, "unknown", or "all" for vendor/official prices)' % w)
+        elif e.get('kind') in PLAYER_KINDS:
+            if sv not in names + ['unknown']: errs.append('%s: player price needs a server from meta.servers (or "unknown"), got %r' % (w, sv))
+        elif sv != 'all': errs.append('%s: %s entries must use server "all", got %r' % (w, e.get('kind'), sv))
         for k in ('item', 'kind', 'price', 'source', 'seen', 'confidence', 'label'):
             if not e.get(k): errs.append('%s: missing %s' % (w, k))
         if e.get('kind') not in KINDS: errs.append('%s: bad kind %r' % (w, e.get('kind')))
@@ -77,6 +100,7 @@ def normalise(D):
         e['cp'], cpm = parse_price(e['price'])
         if cpm is None: e.pop('cp_max', None)
         else: e['cp_max'] = cpm
+        e['server'] = norm_server(e.get('server'), [x['name'] for x in D['meta'].get('servers', [])])
         key = (e['item'].strip().lower(), e['kind'], (e.get('server') or '').lower(), (e.get('where') or '').lower(), e['source'], e['cp'], e.get('cp_max'))
         old = out.get(key)
         if old is None or e['seen'] > old['seen']: out[key] = e  # same observation seen again: keep the newest date
@@ -111,7 +135,7 @@ def wiki_refresh(D, max_calls):
             for e in same: e['checked'] = TODAY
             continue
         D['entries'].append({'item': it.get('name') or nm, 'kind': 'vendor_buys', 'price': fmt(cp), 'source': 'mmwiki-api', 'url': it.get('url') or '',
-                             'seen': TODAY, 'checked': TODAY, 'confidence': 'medium', 'label': 'FACT', 'weight': it.get('weight'),
+                             'seen': TODAY, 'checked': TODAY, 'server': 'all', 'confidence': 'medium', 'label': 'FACT', 'weight': it.get('weight'),
                              'note': 'Partner API vendorPays (players\' ledgers)'}); added += 1
     print('wiki-refresh: %d calls, %d new values' % (calls, added)); return added
 
@@ -123,8 +147,11 @@ def main():
     D = json.load(open(PATH, encoding='utf8'))
     if a.add:
         new = json.load(open(a.add, encoding='utf8'))
+        names = [x['name'] for x in D['meta'].get('servers', [])]
         for e in (new if isinstance(new, list) else new.get('entries', [])):
-            e.setdefault('seen', TODAY); D['entries'].append(e)
+            e.setdefault('seen', TODAY)
+            if 'server' in e: e['server'] = norm_server(e['server'], names)
+            D['entries'].append(e)
     errs = validate(D)
     if errs:
         print('\n'.join('ERROR ' + x for x in errs)); sys.exit(1)

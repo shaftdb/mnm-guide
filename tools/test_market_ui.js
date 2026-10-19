@@ -1,4 +1,4 @@
-// Headless Chrome test for the Market page and the Items -> Market link.
+// Headless Chrome test for the Market page (incl. the server picker: default Tilustra, localStorage mnm-server, ?server=, ordering, badges) and the Items -> Market link.
 // Usage: node --experimental-websocket tools/test_market_ui.js [shotdir]   (serves docs/ on a local port, needs google-chrome)
 const {spawn}=require('child_process'),http=require('http'),fs=require('fs'),path=require('path');
 const DOCS=path.join(__dirname,'..','docs'),SHOT=process.argv[2]||null,PORT=8000+Math.floor(Math.random()*900);
@@ -21,7 +21,7 @@ function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('
  await send('Page.enable');await send('Runtime.enable');
  const P=JSON.parse(fs.readFileSync(path.join(__dirname,'..','content','prices.json'),'utf8'));
  for(const W of [480,1280]){
-  await size(W,900);await go('market.html');
+  await size(W,900);await go('market.html?server=all');
   ok(await ev('MNM_MKT.rows.length')===P.entries.length,W+': all '+P.entries.length+' entries in market-db.js');
   ok(await ev('document.querySelectorAll("#mkt-b tr").length')===P.entries.length,W+': price table shows every row');
   ok(await ev('document.documentElement.scrollWidth-innerWidth')<=1,W+': no horizontal overflow');
@@ -43,9 +43,46 @@ function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('
   ok(await ev('!!document.querySelector("#mkt-cities details[open]")&&/Ail.Vorith/.test(document.querySelector("#mkt-cities details[open] summary").textContent)'),W+': Ail\'Vorith money notes open');
   ok(await ev('document.querySelectorAll(".nav a[href$=\'market.html\'], nav a[href$=\'market.html\']").length')>0,W+': nav entry for Market');
   await ev('document.getElementById("mkt-sort").value="i:1";document.getElementById("mkt-sort").dispatchEvent(new Event("change"))');
-  if(W===480)await shot('market-480.png',3200);else await shot('market-desktop.png',2600);
+  
  }
- await size(1280,900);await go('market.html#Wolf%20Blood');
+
+ // ---- server picker
+ const PK=['player_ask','player_bid','player_sale'],players=P.entries.filter(e=>PK.includes(e.kind)),tilu=players.filter(e=>e.server==='Tilustra');
+ ok(P.entries.every(e=>e.server&&(PK.includes(e.kind)?e.server!=='all':e.server==='all')),'data: every entry has a server; vendor/official use "all"');
+ await size(480,900);await go('market.html');await ev('localStorage.clear()');await go('market.html');
+ ok(await ev('document.getElementById("mkt-s").value')==='Tilustra','default server is Tilustra');
+ ok(await ev('localStorage.getItem("mnm-server")')==='Tilustra','default saved to localStorage mnm-server');
+ ok(await ev('/[?&]server=Tilustra(&|$)/.test(location.search)'),'default written to URL ?server=Tilustra');
+ const rows=await ev('[].map.call(document.querySelectorAll("#mkt-b tr"),function(tr){var b=tr.querySelector(".mkt-svb");return {sv:tr.getAttribute("data-sv"),k:tr.getAttribute("data-k"),g:+(tr.className.match(/mkt-g(\\d)/)||[0,9])[1],b:b?b.className+"|"+b.textContent:"",all:!!tr.querySelector(".mkt-svall")}})');
+ ok(rows.length===P.entries.length,'Tilustra view still shows every row ('+rows.length+')');
+ ok(rows.slice(0,tilu.length).every(r=>r.sv==='Tilustra'&&PK.includes(r.k))&&tilu.length>0,'Tilustra player prices first ('+tilu.length+')');
+ ok(rows.every((r,i)=>i===0||rows[i-1].g<=r.g),'order: my server, then all-server vendor values, then other servers');
+ ok(rows.filter(r=>r.sv==='Tilustra').every(r=>/mkt-mine/.test(r.b)&&/Your server: Tilustra/.test(r.b)),'Tilustra rows badged "Your server"');
+ ok(rows.filter(r=>PK.includes(r.k)&&r.sv!=='Tilustra').every(r=>/mkt-other/.test(r.b)&&/Other server: /.test(r.b)),'every other-server player row badged "Other server"');
+ ok(rows.filter(r=>!PK.includes(r.k)).every(r=>r.all&&!r.b),'vendor/official rows marked "All servers", no server badge');
+ ok(await ev('document.querySelectorAll("#mkt-vb tr").length')===P.entries.filter(e=>e.kind==='vendor_buys').length,'vendor values table shows all vendor values on Tilustra');
+ ok(/Tilustra:.*1 player price/.test(await ev('document.getElementById("mkt-snote").textContent')),'note counts Tilustra player prices');
+ ok(await ev('document.documentElement.scrollWidth-innerWidth')<=1,'480: no horizontal overflow with server picker');
+ await shot('market-server-480.png',2200);
+ await ev('(function(){var b=document.getElementById("mkt-only");b.checked=true;b.dispatchEvent(new Event("change"))})()');
+ ok(await ev('document.querySelectorAll("#mkt-b .mkt-other").length')===0&&await ev('document.querySelectorAll("#mkt-b tr").length')===P.entries.length-players.length+tilu.length,'"Hide other servers" hides only other-server player prices');
+ await ev('(function(){var b=document.getElementById("mkt-only");b.checked=false;b.dispatchEvent(new Event("change"));var s=document.getElementById("mkt-s");s.value="Trem";s.dispatchEvent(new Event("change"))})()');
+ ok(await ev('localStorage.getItem("mnm-server")')==='Trem'&&await ev('/[?&]server=Trem(&|$)/.test(location.search)'),'changing to Trem updates localStorage and URL');
+ ok(await ev('document.querySelector("#mkt-b tr").getAttribute("data-sv")')==='Trem','Trem rows first after switching');
+ await go('market.html');
+ ok(await ev('document.getElementById("mkt-s").value')==='Trem','Trem persists across reload (localStorage)');
+ await go('market.html?server=Estaire');
+ ok(await ev('document.getElementById("mkt-s").value')==='Estaire'&&await ev('localStorage.getItem("mnm-server")')==='Estaire','URL ?server=Estaire overrides and is saved');
+ await go('market.html?server=Tulistra');
+ ok(await ev('document.getElementById("mkt-s").value')==='Tilustra','?server=Tulistra (misspelling) maps to Tilustra');
+ await go('market.html?server=Nunavoth');
+ const nn=await ev('document.getElementById("mkt-snote").textContent');
+ ok(/No player listings for Nunavoth yet/.test(nn),'server with no listings says so plainly');
+ ok(await ev('document.querySelectorAll("#mkt-b tr").length')===P.entries.length,'...and still shows every row (nothing hidden)');
+ await go('market.html?server=all');
+ ok(await ev('document.getElementById("mkt-s").value')===''&&await ev('document.querySelectorAll("#mkt-b .mkt-other").length')===0,'?server=all: no preference, no "other server" badges');
+ await ev('localStorage.clear()');
+ await size(1280,900);await go('market.html?server=all#Wolf%20Blood');
  ok(await ev('document.querySelectorAll("#mkt-b tr").length')===2,'hash prefill market.html#Wolf Blood shows 2 rows');
  await go('items.html#Cracked%20Elderwood%20Staff','window.MNM_IDB');
  const ml=await ev('(function(){var a=document.querySelector("#idb-out a.idb-mkt");return a?a.getAttribute("href")+"|"+a.textContent:null})()');

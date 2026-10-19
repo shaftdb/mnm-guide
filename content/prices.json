@@ -14,7 +14,35 @@
    "player_bid": 5,
    "player_sale": 3,
    "report": 1
-  }
+  },
+  "servers": [
+   {
+    "name": "Tilustra",
+    "region": "US East PvE 2 (no boxing)"
+   },
+   {
+    "name": "Trem",
+    "region": "US East PvE (no boxing)"
+   },
+   {
+    "name": "Estaire",
+    "region": "US West PvE (no boxing)"
+   },
+   {
+    "name": "Kravvin",
+    "region": "US PvP (no boxing)"
+   },
+   {
+    "name": "Nunavoth",
+    "region": "US PvE (3 box)"
+   },
+   {
+    "name": "Vespyra",
+    "region": "EU PvE (no boxing)"
+   }
+  ],
+  "servers_source": "https://monstersandmemories.com/early-access-faq",
+  "default_server": "Tilustra"
  },
  "sources": {
   "mmwiki-lv": {
@@ -109,13 +137,14 @@
    "confidence": "medium",
    "label": "FACT",
    "note": "Listed for Shaded Dunes/Tel Ekir; dropping mob not sourced",
-   "cp": 517
+   "cp": 517,
+   "server": "all"
   },
   {
    "item": "Brinehands Resized Greaves",
    "kind": "player_sale",
    "price": "3 Gold",
-   "server": "Estaire (US-PvE)",
+   "server": "Estaire",
    "source": "tunnel",
    "seen": "2026-10-16",
    "confidence": "low",
@@ -131,7 +160,8 @@
    "confidence": "medium",
    "label": "FACT",
    "note": "Worth more as the Cinder Beetle armor quest turn-in",
-   "cp": 19
+   "cp": 19,
+   "server": "all"
   },
   {
    "item": "Corroded Bronze Plate (pieces)",
@@ -144,7 +174,8 @@
    "note": "Range across the plate pieces (helm, bracer, boots...)",
    "link": "Corroded Bronze Plate Helm",
    "cp": 150,
-   "cp_max": 187
+   "cp_max": 187,
+   "server": "all"
   },
   {
    "item": "Corroded Mithril Plate Visor",
@@ -156,7 +187,8 @@
    "confidence": "low",
    "label": "FACT",
    "note": "Wiki page last edited Jul 12, before Early Access",
-   "cp": 869
+   "cp": 869,
+   "server": "all"
   },
   {
    "item": "Cracked Elderwood Staff",
@@ -168,7 +200,8 @@
    "confidence": "medium",
    "label": "FACT",
    "note": "Best value per weight found. The Miraheze item page lists weight 6",
-   "cp": 2717
+   "cp": 2717,
+   "server": "all"
   },
   {
    "item": "Cracked Fine Wood Staff",
@@ -179,7 +212,8 @@
    "seen": "2026-10-18",
    "confidence": "medium",
    "label": "FACT",
-   "cp": 875
+   "cp": 875,
+   "server": "all"
   },
   {
    "item": "Cracked Ironbark Staff",
@@ -190,7 +224,8 @@
    "seen": "2026-10-18",
    "confidence": "medium",
    "label": "FACT",
-   "cp": 1247
+   "cp": 1247,
+   "server": "all"
   },
   {
    "item": "Cracked Staff",
@@ -201,13 +236,14 @@
    "seen": "2026-10-18",
    "confidence": "medium",
    "label": "FACT",
-   "cp": 494
+   "cp": 494,
+   "server": "all"
   },
   {
    "item": "Deathcharmer's Masquerade",
    "kind": "player_bid",
    "price": "40 Silver",
-   "server": "Trem (US-PvE)",
+   "server": "Trem",
    "source": "tunnel",
    "seen": "2026-10-17",
    "confidence": "low",
@@ -224,7 +260,8 @@
    "confidence": "medium",
    "label": "FACT",
    "note": "Vale of Zintar; drop mob inferred from the name (gold devourer) - UNVERIFIED",
-   "cp": 1710
+   "cp": 1710,
+   "server": "all"
   },
   {
    "item": "Dense Silver Carapace",
@@ -236,13 +273,14 @@
    "confidence": "medium",
    "label": "FACT",
    "note": "Vale of Zintar; drop mob inferred from the name (silver devourer) - UNVERIFIED",
-   "cp": 1710
+   "cp": 1710,
+   "server": "all"
   },
   {
    "item": "Eclipse Cleaver",
    "kind": "player_ask",
    "price": "1 Gold",
-   "server": "Kravvin (US-PvP)",
+   "server": "Kravvin",
    "source": "tunnel",
    "seen": "2026-10-09",
    "confidence": "low",
@@ -259,13 +297,14 @@
    "confidence": "medium",
    "label": "FACT",
    "note": "Sungreet Strand; dropping mob not sourced",
-   "cp": 196
+   "cp": 196,
+   "server": "all"
   },
   {
    "item": "Fungal Boots",
    "kind": "player_ask",
    "price": "8 Silver",
-   "server": "Trem (US-PvE)",
+   "server": "Trem",
    "source": "tunnel",
    "seen": "2026-10-09",
    "confidence": "low",
@@ -276,7 +315,7 @@
    "item": "Fungal Coat",
    "kind": "player_ask",
    "price": "20 Silver",
-   "server": "Trem (US-PvE)",
+   "server": "Trem",
    "source": "tunnel",
    "seen": "2026-10-09",
    "confidence": "low",
@@ -293,7 +332,8 @@
    "seen": "2026-10-02",
    "confidence": "medium",
    "label": "FACT",
-   "cp": 12
+   "cp": 12,
+   "server": "all"
   },
   {
    "item": "Giant Turtle Shell Shield",
@@ -306,7 +346,8 @@
    "confidence": "medium",
    "label": "FACT",
    "note": "Shows the category premium: the right vendor pays 2.5x a shady one",
-   "cp": 30
+   "cp": 30,
+   "server": "all"
   },
   {
    "item": "Humanoid loot medallions",
@@ -321,13 +362,14 @@
    "note": "New drop with the Oct 2026 loot change. One player soloing Vale of Zintar orcs: medallions 'sell for 1 to 1.5 silver', coin drops fell from over 3 sp to up to ~1.2 sp per kill. Several medallion types with different values; names not reported",
    "nolink": true,
    "cp": 100,
-   "cp_max": 150
+   "cp_max": 150,
+   "server": "all"
   },
   {
    "item": "Inlaid Diamond Steel Earring",
    "kind": "player_ask",
    "price": "1.25 Gold",
-   "server": "Estaire (US-PvE)",
+   "server": "Estaire",
    "source": "tunnel",
    "seen": "2026-10-11",
    "confidence": "low",
@@ -338,7 +380,7 @@
    "item": "Inlaid Diamond Steel Ring",
    "kind": "player_ask",
    "price": "1.25 Gold",
-   "server": "Estaire (US-PvE)",
+   "server": "Estaire",
    "source": "tunnel",
    "seen": "2026-10-11",
    "confidence": "low",
@@ -349,7 +391,7 @@
    "item": "Inlaid Sapphire Steel Ring",
    "kind": "player_ask",
    "price": "1.25 Gold",
-   "server": "Estaire (US-PvE)",
+   "server": "Estaire",
    "source": "tunnel",
    "seen": "2026-10-11",
    "confidence": "low",
@@ -360,7 +402,7 @@
    "item": "Iron Battle Axe",
    "kind": "player_bid",
    "price": "25 Copper",
-   "server": "Trem (US-PvE)",
+   "server": "Trem",
    "source": "tunnel",
    "seen": "2026-10-17",
    "confidence": "low",
@@ -371,7 +413,7 @@
    "item": "Iron Greatsword",
    "kind": "player_bid",
    "price": "20 Silver",
-   "server": "Vespyra (EU-PvE)",
+   "server": "Vespyra",
    "source": "tunnel",
    "seen": "2026-10-09",
    "confidence": "low",
@@ -387,7 +429,8 @@
    "confidence": "medium",
    "label": "FACT",
    "note": "Drops in several zones; also a jewelcraft gem, check your mats list before selling",
-   "cp": 217
+   "cp": 217,
+   "server": "all"
   },
   {
    "item": "Level 1-5 spell scrolls (all, one class)",
@@ -401,13 +444,14 @@
    "label": "FACT",
    "note": "Total for the whole 1-5 range, same for every class (0.30.2.1). Lowered again Oct 7 (0.30.2.5); new totals not published",
    "nolink": true,
-   "cp": 405
+   "cp": 405,
+   "server": "all"
   },
   {
    "item": "Longbow",
    "kind": "player_ask",
    "price": "10 Silver",
-   "server": "Vespyra (EU-PvE)",
+   "server": "Vespyra",
    "source": "tunnel",
    "seen": "2026-10-13",
    "confidence": "low",
@@ -418,7 +462,7 @@
    "item": "Pot Helmet",
    "kind": "player_ask",
    "price": "90 Silver",
-   "server": "Estaire (US-PvE)",
+   "server": "Estaire",
    "source": "tunnel",
    "seen": "2026-10-12",
    "confidence": "low",
@@ -429,7 +473,7 @@
    "item": "Rawhide Backpack",
    "kind": "player_ask",
    "price": "4 Silver",
-   "server": "Trem (US-PvE)",
+   "server": "Trem",
    "source": "tunnel",
    "seen": "2026-10-04",
    "confidence": "low",
@@ -440,7 +484,7 @@
    "item": "Rawhide Backpack",
    "kind": "player_sale",
    "price": "5 Silver",
-   "server": "Estaire (US-PvE)",
+   "server": "Estaire",
    "source": "tunnel",
    "seen": "2026-10-12",
    "confidence": "low",
@@ -451,7 +495,7 @@
    "item": "Rawhide Backpack",
    "kind": "player_sale",
    "price": "5 Silver",
-   "server": "Tilustra (US-PvE)",
+   "server": "Tilustra",
    "source": "tunnel",
    "seen": "2026-10-17",
    "confidence": "low",
@@ -468,13 +512,14 @@
    "confidence": "medium",
    "label": "FACT",
    "note": "Other rusty iron weapons 9 sp 42 cp-9 sp 52 cp; heavy",
-   "cp": 952
+   "cp": 952,
+   "server": "all"
   },
   {
    "item": "Sash of Herbs",
    "kind": "player_bid",
    "price": "60 Silver",
-   "server": "Trem (US-PvE)",
+   "server": "Trem",
    "source": "tunnel",
    "seen": "2026-10-17",
    "confidence": "low",
@@ -485,7 +530,7 @@
    "item": "Soft-Soled Wading Boots",
    "kind": "player_ask",
    "price": "77 Silver",
-   "server": "Estaire (US-PvE)",
+   "server": "Estaire",
    "source": "tunnel",
    "seen": "2026-10-12",
    "confidence": "low",
@@ -496,7 +541,7 @@
    "item": "Twilight Cap",
    "kind": "player_bid",
    "price": "1 Gold",
-   "server": "Trem (US-PvE)",
+   "server": "Trem",
    "source": "tunnel",
    "seen": "2026-10-17",
    "confidence": "low",
@@ -513,7 +558,8 @@
    "seen": "2026-10-18",
    "confidence": "medium",
    "label": "FACT",
-   "cp": 80
+   "cp": 80,
+   "server": "all"
   },
   {
    "item": "Wolf Blood",
@@ -525,13 +571,14 @@
    "seen": "2026-10-18",
    "confidence": "medium",
    "label": "FACT",
-   "cp": 86
+   "cp": 86,
+   "server": "all"
   },
   {
    "item": "Wooden Bank Crate",
    "kind": "player_ask",
    "price": "60 Silver",
-   "server": "Estaire (US-PvE)",
+   "server": "Estaire",
    "source": "tunnel",
    "seen": "2026-10-13",
    "confidence": "low",
@@ -546,7 +593,8 @@
    "seen": "2026-10-18",
    "confidence": "medium",
    "label": "FACT",
-   "cp": 242
+   "cp": 242,
+   "server": "all"
   }
  ],
  "camps": [

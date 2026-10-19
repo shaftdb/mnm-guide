@@ -23,7 +23,7 @@ def _mkt_db():
         ln = None if e.get('nolink') else (e.get('link') or e['item'])
         I = _mkt_item(ln) if ln else None
         wt = e.get('weight') if e.get('weight') is not None else (I or {}).get('wt')
-        rows.append({'i': e['item'], 'k': e['kind'], 'p': e['price'], 'cp': e['cp'], 'cx': e.get('cp_max'), 'sv': e.get('server') or '',
+        rows.append({'i': e['item'], 'k': e['kind'], 'p': e['price'], 'cp': e['cp'], 'cx': e.get('cp_max'), 'sv': e.get('server') or 'unknown',
                      'wh': e.get('where') or '', 's': e['source'], 'u': e.get('url') or S[e['source']]['url'], 'd': e['seen'], 'ck': e.get('checked') or '',
                      'c': e['confidence'], 'l': e['label'], 'n': e.get('note') or '', 'w': wt, 'db': ln if I else '', 'wu': (I or {}).get('url', ''),
                      'dr': (I or {}).get('drops', [])})
@@ -45,7 +45,7 @@ def _mkt_db():
         cities.append({'city': city, 'status': D.get('status'), 'race': 'Deep Elf' if city == "Ail'Vorith" else '',
                        'money': [{'l': m.get('label', ''), 't': m.get('text', ''), 's': [[src[k][0], src[k][1]] for k in m.get('src', []) if k in src]} for m in D.get('money', [])]})
     return {'rows': rows, 'camps': camps, 'cities': cities, 'kinds': _MKT_KINDS, 'meta': MKT['meta'],
-            'sources': [[k, v.get('short') or v['name'], v['url'], v.get('label', ''), v['name']] for k, v in MKT['sources'].items()]}
+            'servers': MKT['meta'].get('servers', []), 'defsv': MKT['meta'].get('default_server', ''), 'sources': [[k, v.get('short') or v['name'], v['url'], v.get('label', ''), v['name']] for k, v in MKT['sources'].items()]}
 def _mkt_src_table():
     h = ['<div class="mkt-wrap"><table class="mkt-src"><thead><tr><th>Source</th><th>What it gives</th><th>Freshness</th><th>Automatic refresh?</th><th>Reliability</th></tr></thead><tbody>']
     lab = {'FACT': '<span class="badge fact">fact</span>', 'UNVERIFIED': '<span class="badge unc">unverified</span>', 'STRATEGY': '<span class="badge strat">strategy</span>'}
@@ -65,10 +65,13 @@ def _mkt_page():
             '<p class="dim">%d observations, data file updated %s. Nothing here is estimated: a blank means no source. Item names link to the <a href="/items.html">Item database</a>, which links back here.</p></div>'
             '<nav class="mkt-jump"><a href="#prices">Price table</a> · <a href="#vendor">Vendor values</a> · <a href="#money">Good money items</a> · <a href="#sources">Sources</a></nav>'
             '<h2 id="prices">Price table</h2>'
+            '<div class="mkt-server" id="mkt-server"><label for="mkt-s"><b>Your server</b></label> <select id="mkt-s"></select>'
+            '<label class="mkt-only"><input type="checkbox" id="mkt-only"> Hide other servers\' player prices</label>'
+            '<p id="mkt-snote" class="mkt-snote" aria-live="polite"></p><p class="dim mkt-sx">Player prices come from one server each; your server\'s come first and others are marked. NPC vendor values apply on every server and always show. Saved in this browser and in the page link (<code>?server=</code>).</p></div>'
             '<div class="idb-tools"><input id="mkt-q" type="search" placeholder="Item, server, zone or mob…" aria-label="Search prices">'
             '<select id="mkt-k" aria-label="Type"><option value="">Any type</option></select>'
             '<select id="mkt-c" aria-label="Confidence"><option value="">Any confidence</option><option value="high">High</option><option value="medium">Medium+</option><option value="low">Low only</option></select>'
-            '<select id="mkt-s" aria-label="Server"><option value="">Any server</option></select><select id="mkt-sort" aria-label="Sort"><option value="i:1">Sort: item A-Z</option><option value="cp:-1">Price, high to low</option><option value="cp:1">Price, low to high</option><option value="d:-1">Newest first</option><option value="c:-1">Most confident first</option></select></div>'
+            '<select id="mkt-sort" aria-label="Sort"><option value="i:1">Sort: item A-Z</option><option value="cp:-1">Price, high to low</option><option value="cp:1">Price, low to high</option><option value="d:-1">Newest first</option><option value="c:-1">Most confident first</option></select></div>'
             '<p id="mkt-count" class="dim" aria-live="polite"></p><div class="mkt-wrap"><table class="mkt-t" id="mkt-t"><thead><tr>'
             '<th data-s="i" aria-sort="ascending"><button type="button">Item</button></th><th data-s="cp"><button type="button">Price</button></th><th data-s="k"><button type="button">Type</button></th>'
             '<th data-s="s"><button type="button">Source</button></th><th data-s="d"><button type="button">Seen</button></th><th data-s="c"><button type="button">Confidence</button></th></tr></thead><tbody id="mkt-b"></tbody></table></div>'

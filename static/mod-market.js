@@ -12,22 +12,37 @@ function zlink(z,u){return u?'<a href="'+root+u+'">'+e(z)+'</a>':e(z)}
 function conf(c){return '<span class="mkt-conf mkt-'+c+'">'+c+'</span>'}
 var R=M.rows,qi=$('mkt-q'),qk=$('mkt-k'),qc=$('mkt-c'),qs=$('mkt-s');
 Object.keys(M.kinds).forEach(function(k){if(R.some(function(r){return r.k===k}))qk.insertAdjacentHTML('beforeend','<option value="'+k+'">'+e(M.kinds[k])+'</option>')});
-R.map(function(r){return r.sv}).filter(function(v,i,a){return v&&a.indexOf(v)===i}).sort().forEach(function(v){qs.insertAdjacentHTML('beforeend','<option>'+e(v)+'</option>')});
+// server picker: URL (?server=) first, then localStorage (mnm-server), then the default (Tilustra); kept in both
+var PK={player_ask:1,player_bid:1,player_sale:1},SV=M.servers.map(function(x){return x.name}),onlyB=$('mkt-only'),snote=$('mkt-snote');
+function lsGet(k){try{return localStorage.getItem(k)}catch(x){return null}}function lsPut(k,v){try{localStorage.setItem(k,v)}catch(x){}}
+function qp(n){var m=location.search.match(new RegExp('[?&]'+n+'=([^&]*)'));return m?decodeURIComponent(m[1].replace(/\+/g,' ')):null}
+function canon(v){if(v==null)return null;var l=String(v).trim().toLowerCase().split(/[\s(]/)[0];if(l==='tulistra')l='tilustra';if(l==='any'||l==='all')return '';for(var i=0;i<SV.length;i++)if(SV[i].toLowerCase()===l)return SV[i];return null}
+qs.innerHTML=M.servers.map(function(x){return '<option value="'+e(x.name)+'">'+e(x.name)+' · '+e(x.region)+'</option>'}).join('')+'<option value="">All servers (no preference)</option>';
+var s0=canon(qp('server'));if(s0==null)s0=canon(lsGet('mnm-server'));if(s0==null)s0=M.defsv||SV[0]||'';qs.value=s0;
+function saveSv(){var v=qs.value;lsPut('mnm-server',v||'all');if(!history.replaceState)return;var p=location.search.replace(/^\?/,'').split('&').filter(function(kv){return kv&&!/^server=/.test(kv)});p.push('server='+encodeURIComponent(v||'all'));history.replaceState(null,'',location.pathname+'?'+p.join('&')+location.hash)}
+saveSv();qs.addEventListener('change',saveSv);
+function grp(r,s){if(!s)return 0;if(PK[r.k]&&r.sv===s)return 0;if(!PK[r.k])return 1;return 2}
+function svBadge(r,s){if(!PK[r.k])return '<div class="dim mkt-svall">All servers</div>';if(r.sv==='unknown')return '<div><span class="mkt-svb mkt-other">Server unknown</span></div>';
+ return '<div><span class="mkt-svb '+(!s?'">Server: ':r.sv===s?'mkt-mine">Your server: ':'mkt-other">Other server: ')+e(r.sv)+'</span></div>'}
+function noteSv(s){if(!s){snote.innerHTML='Showing player prices from every server.';return}
+ var mine=R.filter(function(r){return PK[r.k]&&r.sv===s}),open=mine.filter(function(r){return r.k!=='player_sale'}).length,sold=mine.length-open,oth=R.filter(function(r){return PK[r.k]&&r.sv!==s}).length;
+ snote.innerHTML=mine.length?'<b>'+e(s)+':</b> '+mine.length+' player price'+(mine.length>1?'s':'')+' ('+open+' open listing'+(open===1?'':'s')+', '+sold+' reported sale'+(sold===1?'':'s')+'), shown first. '+oth+' more from other servers are marked below.'
+  :'<b>No player listings for '+e(s)+' yet.</b> The '+oth+' player prices below are from other servers and are marked. NPC vendor values apply on every server.'}
 function sorter(st){return function(a,b){var k=st.k,x=a[k],y=b[k];if(k==='c'){x=CR[x];y=CR[y]}if(k==='k'){x=M.kinds[x];y=M.kinds[y]}if(k==='s'){x=SRC[x][1];y=SRC[y][1]}
  if(x==null||x==='')return 1;if(y==null||y==='')return -1;var r=(typeof x==='number'&&typeof y==='number')?x-y:String(x).localeCompare(String(y));return st.d*r||a.i.localeCompare(b.i)}}
 function wireSort(tid,st,draw){var ths=document.querySelectorAll('#'+tid+' th[data-s]');ths.forEach(function(th){th.querySelector('button').addEventListener('click',function(){var k=th.getAttribute('data-s');st.d=st.k===k?-st.d:((k==='cp'||k==='d'||k==='c'||k==='pw'||k==='w')?-1:1);st.k=k;
  ths.forEach(function(o){o.removeAttribute('aria-sort')});th.setAttribute('aria-sort',st.d>0?'ascending':'descending');draw()})})}
 var S1={k:'i',d:1};
-function draw1(){var t=qi.value.trim().toLowerCase(),k=qk.value,c=qc.value,s=qs.value;
- var L=R.filter(function(r){if(k&&r.k!==k)return false;if(s&&r.sv!==s)return false;if(c==='high'&&r.c!=='high')return false;if(c==='medium'&&CR[r.c]<2)return false;if(c==='low'&&r.c!=='low')return false;
-  if(t&&(r.i+' '+r.sv+' '+r.wh+' '+r.n+' '+SRC[r.s][1]+' '+r.dr.map(function(d){return d[0]+' '+d[1]}).join(' ')).toLowerCase().indexOf(t)<0)return false;return true}).sort(sorter(S1));
+function draw1(){var t=qi.value.trim().toLowerCase(),k=qk.value,c=qc.value,s=qs.value,srt=sorter(S1);noteSv(s);
+ var L=R.filter(function(r){if(k&&r.k!==k)return false;if(s&&onlyB.checked&&PK[r.k]&&r.sv!==s)return false;if(c==='high'&&r.c!=='high')return false;if(c==='medium'&&CR[r.c]<2)return false;if(c==='low'&&r.c!=='low')return false;
+  if(t&&(r.i+' '+r.sv+' '+r.wh+' '+r.n+' '+SRC[r.s][1]+' '+r.dr.map(function(d){return d[0]+' '+d[1]}).join(' ')).toLowerCase().indexOf(t)<0)return false;return true}).sort(function(a,b){return grp(a,s)-grp(b,s)||srt(a,b)});
  $('mkt-count').textContent=L.length+' of '+R.length+' observations';
  $('mkt-b').innerHTML=L.length?L.map(function(r){var a=age(r.d),old=(r.k==='player_ask'||r.k==='player_bid')&&a>7;
-  return '<tr'+(old?' class="mkt-old"':'')+'><td data-l="Item">'+ilink(r)+(r.wh?'<div class="dim">'+e(r.wh)+'</div>':'')+(r.n?'<div class="dim mkt-n">'+e(r.n)+'</div>':'')+'</td>'+
-   '<td data-l="Price" class="mkt-nw"><b>'+e(r.p)+'</b>'+(r.cx?'':'')+(r.sv?'<div class="dim">'+e(r.sv)+'</div>':'')+'</td><td data-l="Type">'+e(M.kinds[r.k])+'</td>'+
+  return '<tr class="'+(old?'mkt-old ':'')+'mkt-g'+grp(r,s)+'" data-sv="'+e(r.sv)+'" data-k="'+r.k+'"><td data-l="Item">'+ilink(r)+(r.wh?'<div class="dim">'+e(r.wh)+'</div>':'')+(r.n?'<div class="dim mkt-n">'+e(r.n)+'</div>':'')+'</td>'+
+   '<td data-l="Price" class="mkt-nw"><b>'+e(r.p)+'</b>'+(r.cx?'':'')+svBadge(r,s)+'</td><td data-l="Type">'+e(M.kinds[r.k])+'</td>'+
    '<td data-l="Source"><a class="ext" target="_blank" rel="noopener" href="'+e(r.u)+'" title="'+e(SRC[r.s][4])+'">'+e(SRC[r.s][1])+'</a> '+(LB[r.l]||'')+'</td>'+
    '<td data-l="Seen"><span class="mkt-nw">'+e(r.d)+'</span><div class="dim">'+(a===''?'':a===0?'today':a===1?'1 day ago':a+' days ago')+(old?' · listing likely expired':'')+(r.ck?' · rechecked '+e(r.ck):'')+'</div></td><td data-l="Confidence">'+conf(r.c)+'</td></tr>'}).join(''):'<tr><td colspan="6" class="dim">Nothing matches. No price is sourced for that search.</td></tr>'}
-[qi,qk,qc,qs].forEach(function(x){x.addEventListener('input',draw1);x.addEventListener('change',draw1)});
+[qi,qk,qc,qs,onlyB].forEach(function(x){x.addEventListener('input',draw1);x.addEventListener('change',draw1)});
 function fromHash(){var h=decodeURIComponent(location.hash.slice(1));if(h&&!/^(prices|vendor|money|money-cities|sources)$/.test(h)){qi.value=h;return true}}fromHash();window.addEventListener('hashchange',function(){if(fromHash()){draw1();var p=document.getElementById('prices');p&&p.scrollIntoView()}});
 wireSort('mkt-t',S1,draw1);var so=$('mkt-sort');so.addEventListener('change',function(){var v=so.value.split(':');S1.k=v[0];S1.d=+v[1];document.querySelectorAll('#mkt-t th[data-s]').forEach(function(o){o.removeAttribute('aria-sort');if(o.getAttribute('data-s')===S1.k)o.setAttribute('aria-sort',S1.d>0?'ascending':'descending')});draw1()});draw1();
 // vendor values

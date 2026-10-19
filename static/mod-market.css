@@ -28,3 +28,10 @@
  .mkt-sortbar{display:flex}
 }
 .mkt-nw b,span.mkt-nw{white-space:nowrap}
+.mkt-server{border:1px solid var(--gold);border-radius:6px;background:var(--panel2);padding:8px 10px;margin:6px 0 8px}
+.mkt-server select{font-size:1rem;max-width:100%}.mkt-only{display:inline-block;margin-left:10px;font-size:.88rem}
+.mkt-snote{margin:.4em 0 .2em}.mkt-sx{margin:.2em 0 0;font-size:.82rem}
+.mkt-svb{font-size:.72rem;padding:0 6px;border-radius:9px;white-space:nowrap;border:1px solid var(--line)}
+.mkt-mine{background:#1f3a24;color:#bfe8c4;border-color:#3d7a48}.mkt-other{background:#2a2333;color:#d6c4f0;border-color:#6a5590}
+.mkt-svall{font-size:.75rem}
+@media (max-width:600px){.mkt-only{display:block;margin:6px 0 0}}
