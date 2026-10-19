@@ -14,6 +14,7 @@ function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('
  const send=(method,params={})=>new Promise(r=>{const i=++id;pend[i]=r;ws.send(JSON.stringify({id:i,method,params}))});
  const ev=async(expr)=>{const r=await send('Runtime.evaluate',{expression:expr,awaitPromise:true,returnByValue:true});if(r.result.exceptionDetails)throw new Error(expr+'\n'+JSON.stringify(r.result.exceptionDetails));return r.result.result.value};
  const size=async(w,h)=>send('Emulation.setDeviceMetricsOverride',{width:w,height:h,deviceScaleFactor:1,mobile:w<600});
+ const waitQ=async(e,ms=8000)=>{for(let i=0;i<ms/50;i++){if(await ev(e))return true;await sleep(50)}return false};
  const go=async(u)=>{const url='http://127.0.0.1:'+PORT+'/'+u;await send('Page.navigate',{url});
    for(let i=0;i<100;i++){await sleep(100);try{if(await ev(`location.href===${JSON.stringify(url)}&&document.readyState==='complete'&&!!window.MNM_WT`))break}catch(e){}}await sleep(150)};
  const shot=async(file,sel,maxH)=>{if(!SHOT)return;const b=await ev(`(function(){if(!document.getElementById('rr-shotcss')){var st=document.createElement('style');st.id='rr-shotcss';st.textContent='header,.rangebar,#mnm-rangebar,.topbar{position:static!important}';document.head.appendChild(st)}var e=document.querySelector(${JSON.stringify(sel)});e.scrollIntoView();var r=e.getBoundingClientRect();return {x:0,y:r.top+scrollY-8,w:innerWidth,h:Math.min(r.height+16,${maxH||1800})}})()`);
@@ -33,9 +34,11 @@ function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('
   ok(r&&r.rows===n&&r.vis&&r.why,`${c}: Best races renders all ${n} races, visible in Character creation tab`);
   ok(r&&G.large.indexOf(r.first)<0,`${c}: #1 is not a large race (${r&&r.first})`);
   ok(r&&r.top===Math.min(3,n)&&r.more===(n>3),`${c}: top ${Math.min(3,n)} shown, expandable list ${n>3?'present':'absent'}`);
-  ok(r&&/New character:/.test(r.qw),`${c}: Quick info walkthrough summary renders`);
   ok(await overflow()<=0,`${c}: no horizontal overflow at 480px (Character creation tab)`);
   await ev(`document.querySelector('.tab').click()`);ok(await overflow()<=0,`${c}: no horizontal overflow at 480px (quick reference tab)`);
+  // UX pass 5: walk-data.js loads once the Quick info walkthrough is on screen, so scroll to it first
+  await ev(`(document.querySelector('.cg-qwalk')||document.body).scrollIntoView()`);
+  ok(await waitQ(`/New character:/.test((document.querySelector('.cg-qwalk .qw-head')||{}).textContent||'')`),`${c}: Quick info walkthrough summary renders`);
  }
  // expand + click-to-set on Rogue
  await go('classes/rogue.html');await ev('localStorage.clear()');await ev(`localStorage.setItem('mnm-class','Wizard')`);await go('classes/rogue.html');
@@ -62,7 +65,7 @@ function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('
  await shot('race-rank-inquisitor-480.png','#best-races',2400);
  await ev(`[].find.call(document.querySelectorAll('.rr-use'),x=>x.getAttribute('data-race')==='Deep Elf').click()`);await sleep(100);
  ok(await ev(`localStorage.getItem('mnm-city')`)==="Ail'Vorith",'Deep Elf Inquisitor click sets Start to Ail\'Vorith');
- await ev(`document.querySelector('.tab').click()`);
+ await ev(`document.querySelector('.tab').click()`);await ev(`document.querySelector('.cg-qwalk').scrollIntoView()`);await waitQ(`!!document.querySelector('.cg-qwalk .qw-head')`);
  const q=async()=>ev(`(function(){var e=document.querySelector('.cg-qwalk'),f=e.querySelector('.qw-full'),m=e.querySelector('.qw-more');return {t:e.textContent,full:f?f.getAttribute('href'):'',more:!!m&&!m.hidden}})()`);
  let s=await q();
  ok(/Deep Elf Inquisitor · Ail'Vorith · levels 1–5/.test(s.t),'summary header follows race/city/band');

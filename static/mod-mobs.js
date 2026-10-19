@@ -2,9 +2,9 @@
 var q=document.getElementById('mob-q'),nm=document.getElementById('mob-named'),ml=document.getElementById('mob-lvl'),md=document.getElementById('mob-drop'),out=document.getElementById('mob-out'),cnt=document.getElementById('mob-count');if(!out)return;
 function e(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function il(n){return window.MNM_ITEMPAGE?'<a href="'+root+'items.html#'+encodeURIComponent(n)+'">'+e(n)+'</a>':'<a class="ext" target="_blank" rel="noopener" href="'+e(U[n]||'#')+'">'+e(n)+'</a>'}
-function go(){var t=q.value.trim().toLowerCase(),r=(document.getElementById('mnm-range')||{}).value||'1-60',b=r.split('-').map(Number),res=[],n=0;
+function go(){var t=q.value.trim().toLowerCase(),r=(document.getElementById('mnm-range')||{}).value||'1-60',b=r.split('-').map(Number),res=[],n=0,all=[];
  for(var i=0;i<D.length;i++){var d=D[i];if(nm.checked&&!d[5])continue;if(ml.checked&&!(d[1]&&d[1]>=b[0]&&d[1]<=b[1]))continue;if(md.checked&&!d[8].length&&!(d[10]&&d[10].m))continue;
-  if(t&&(d[0]+' '+d[3]+' '+d[6]+' '+d[7]+' '+d[8].join(' ')+' '+d[9].join(' ')+' '+((d[10]||{}).m||[]).map(function(m){return m[0]}).join(' ')).toLowerCase().indexOf(t)<0)continue;n++;if(res.length<200)res.push(d);}
+  if(t&&(d[0]+' '+d[3]+' '+d[6]+' '+d[7]+' '+d[8].join(' ')+' '+d[9].join(' ')+' '+((d[10]||{}).m||[]).map(function(m){return m[0]}).join(' ')).toLowerCase().indexOf(t)<0)continue;n++;all.push(d);if(res.length<200)res.push(d);}out.mnmRows=all;
  cnt.textContent=n+' mobs'+(n>200?' (showing first 200)':'');
  out.innerHTML='<div class="tw"><table class="grid"><thead><tr><th>Mob</th><th>Lvl</th><th>Zone</th><th>Drops</th></tr></thead><tbody>'+res.map(function(d){
   var x=d[10]||{},M='<a class="ext" target="_blank" rel="noopener" href="https://mnm-db.com/">mnm-db</a>';

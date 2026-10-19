@@ -112,7 +112,7 @@ function walkHTML(c,race,city,k,opt){var code=W.codes[c],C=W.cities[city],R=W.ra
     var o=[];
     o.push(rtHTML('r',B[0],city));
     o.push('<h3>Nearby zones by wiki connections '+badge('strategy')+'</h3>'+(zs.length?'<ul class="tight">'+zs.map(function(z){var Z=W.zones[z];return '<li><a href="'+rel(Z.u)+'">'+esc(z)+'</a>'+(Z.dg?' (dungeon)':'')+' <span class="dim">lvl '+Z.lo+'–'+Z.hi+(Z.est?' (from mob levels)':'')+(Z.hi-Z.lo>=30?', wide range: check the camps below':'')+' · '+(dz(z)===0?'your start city':dz(z)+' zone hop'+(dz(z)>1?'s':'')+' away on the wiki connections')+'</span></li>'}).join('')+'</ul><p class="dim">Nearest zones whose wiki level range overlaps '+lo+'–'+hi+'. Move on when the next range’s zones start to overlap your level.</p>':'<p>'+badge('unverified')+' No zone with a wiki level range for '+lo+'–'+hi+' is connected to '+esc(city)+' in the zone data yet.</p>'));
-    var camps=[];zs.forEach(function(z){W.zones[z].camps.forEach(function(m){var n=(String(m[1]).match(/\d+/g)||[]).map(Number);if(n.length&&n[0]<=hi&&n[n.length-1]>=lo)camps.push('<li><b>'+esc(m[0])+'</b> (lvl '+esc(m[1])+') · <a href="'+rel(W.zones[z].u)+'">'+esc(z)+'</a>'+(m[2]?' <span class="dim">loot: '+esc(m[2])+'</span>':'')+'</li>')})});
+    var camps=[];zs.forEach(function(z){W.zones[z].camps.forEach(function(m){var n=(String(m[1]).match(/\d+/g)||[]).map(Number);if(n.length&&n[0]<=hi&&n[n.length-1]>=lo)camps.push('<li><b class="tt-mob">'+esc(m[0])+'</b> (lvl '+esc(m[1])+') · <a href="'+rel(W.zones[z].u)+'">'+esc(z)+'</a>'+(m[2]?' <span class="dim">loot: '+esc(m[2])+'</span>':'')+'</li>')})});
     o.push('<h3>Named camps '+badge('fact')+'</h3>'+(camps.length?'<ul class="tight">'+camps.slice(0,8).join('')+'</ul>':'<p class="dim">No named mobs with a wiki level in this range in those zones.</p>'));
     var qs=W.quests.filter(function(q){return zs.indexOf(q[2])>=0&&q[3]!=null&&q[3]>=lo&&q[3]<=hi&&qFor(q)});
     o.push('<h3>Quests '+badge('fact')+'</h3>'+(qs.length?'<ul class="tight">'+qs.slice(0,10).map(function(q){return '<li><a class="ext" target="_blank" rel="noopener" href="'+esc(q[1])+'">'+esc(q[0])+'</a> <span class="dim">'+esc(q[2])+' · min lvl '+q[3]+(q[5]?' · '+esc(q[5]):'')+'</span></li>'}).join('')+'</ul>':'<p class="dim">No quests with a wiki minimum level in '+lo+'–'+hi+' in those zones for '+esc(c)+'.</p>'));
@@ -204,6 +204,14 @@ function apply(){tailor();walk();qwalkAll();}
 apply();
 document.addEventListener('mnm:quick',function(){tailor();qwalkAll();});
 // UX pass 2: walk-data.js (~560 KB) is loaded async by the shared loader on pages that show a walkthrough, then rendered
-if(!W&&(mount||document.querySelector('.cg-qwalk'))){[mount].concat([].slice.call(document.querySelectorAll('.cg-qwalk'))).forEach(function(el){if(el){var p=el.querySelector('p');if(p){p.classList.add('lz-status');p.setAttribute('role','status');p.setAttribute('aria-busy','true');p.textContent='Loading the new-character walkthrough…'}}});
- if(window.MNM_LOAD)MNM_LOAD('walk-data.js').then(function(){W=window.MNM_WT;apply()},function(){wtFail=1;apply()});else{wtFail=1;apply()}}
+// UX pass 5: on class pages (no #cg-walk) it loads only once a Quick info walkthrough box is actually on screen (its tab open
+// and scrolled into view, or printing); the walkthrough page itself still loads it straight away.
+if(!W&&(mount||document.querySelector('.cg-qwalk'))){var qws=[].slice.call(document.querySelectorAll('.cg-qwalk')),wtGo=0;
+ var wtMsg=function(t,busy){[mount].concat(qws).forEach(function(el){if(el){var p=el.querySelector('p');if(p){p.classList.add('lz-status');p.setAttribute('role','status');if(busy)p.setAttribute('aria-busy','true');p.textContent=t}}})};
+ var wtLoad=function(){if(wtGo)return;wtGo=1;wtMsg('Loading the new-character walkthrough…',1);
+  if(window.MNM_LOAD)MNM_LOAD('walk-data.js').then(function(){W=window.MNM_WT;apply()},function(){wtFail=1;apply()});else{wtFail=1;apply()}};
+ if(mount||!window.IntersectionObserver)wtLoad();
+ else{wtMsg('The new-character walkthrough loads when you scroll to it.');
+  var wtIO=new IntersectionObserver(function(es){if(es.some(function(e){return e.isIntersecting})){wtIO.disconnect();wtLoad()}},{rootMargin:'0px'});
+  qws.forEach(function(el){wtIO.observe(el)});window.addEventListener('beforeprint',wtLoad);window.MNM_WT_LOAD=wtLoad}}
 })();

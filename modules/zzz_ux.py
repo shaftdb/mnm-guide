@@ -209,23 +209,47 @@ def _ux_div_end(h, i):
 def _ux_lazy_routes(h, depth):
     """Swap each start-city wrap that equals a relinked walk route for its sc-pick line + a placeholder. Returns (html, n)."""
     if '<div class="sc-wrap">' not in h or not _UX_WALK: return h, 0
-    want = {}
+    want, bypre = {}, {}
     for k, full in _UX_WALK.items():
         sp = _ux_city_split(full)
-        if sp: want[relink(full, depth)] = (k, sp)
+        if sp: want[relink(full, depth)] = (k, sp); bypre[relink(sp[0], depth)] = (k, sp)
     out, last, n = [], 0, 0
     for m in _UX_SCWRAP.finditer(h):
         if m.start() < last: continue
         e = _ux_div_end(h, m.start())
         if e < 0: continue
-        w = h[m.start():e]; hit = want.get(w)
-        if not hit: continue
+        w = h[m.start():e]; hit = want.get(w); notes = {}
+        if not hit:  # UX pass 5: the Shaman guide's variant (routes with a "notes written for Night Harbor" paragraph per city)
+            hit, notes = _ux_nh_match(w, bypre, depth)
+            if not hit: continue
         k, (pre, blocks, suf) = hit; lo, hi = k.split('-')
         ph = ('<div class="sc-lz" data-band="%s" data-cities="%s"><noscript><p class="dim">Start-city routes for levels %s–%s need JavaScript: '
               'see the <a href="%swalkthrough.html">walkthrough</a>.</p></noscript></div>') % (k, ' '.join(blocks), lo, hi, '../' * depth)
+        ph += ''.join('<template class="sc-nht" data-sc="%s">%s</template>' % (sl, t) for sl, t in notes.items())
         out.append(h[last:m.start()]); out.append(relink(pre, depth) + ph + suf); last = e; n += 1
     out.append(h[last:])
     return ''.join(out), n
+
+_NH_ONE = re.compile(r'<p class="sc-nhnote">(?:(?!</p>).)*</p>', re.S)
+def _ux_nh_match(w, bypre, depth):
+    """Shaman variant: w == relinked walk route band, except each city block may end with one sc-nhnote paragraph.
+    Returns ((band, split), {city: note html}) only if pre + blocks + notes + suf rebuilds w byte for byte, else (None, {})."""
+    sp = _ux_city_split(w)
+    if not sp: return None, {}
+    pre2, blocks2, suf2 = sp; hit = bypre.get(pre2)
+    if not hit: return None, {}
+    k, (pre, blocks, suf) = hit
+    if suf2 != suf or list(blocks2) != list(blocks): return None, {}
+    notes, rebuilt = {}, relink(pre, depth)
+    for sl, b in blocks.items():
+        rb, b2 = relink(b, depth), blocks2[sl]
+        if b2 != rb:
+            mid = b2[len(rb) - 6:-6] if b2.startswith(rb[:-6]) and b2.endswith('</div>') else ''
+            if not _NH_ONE.fullmatch(mid or '-') or '<template' in mid: return None, {}
+            notes[sl] = mid
+        rebuilt += rb[:-6] + notes.get(sl, '') + '</div>'
+    if rebuilt + suf != w or not notes: return None, {}
+    return hit, notes
 
 _UX_PANE = re.compile(r'<div class="tabpane( on)?" id="(t\d+-[\w-]+)">')
 _UX_PANE_SKIP = re.compile(r'<script|<form|<input|<select|<button|<textarea|sortable|data-ts|cg-|class="rr|sc-wrap|mnm-|<dialog|onclick')
@@ -284,3 +308,192 @@ _ux_prev_ra4 = render_all
 def render_all():
     _ux_prev_ra4()
     _ux_pass4()
+
+# ---------------------------------------------------------------- UX pass 5
+# 1) Shaman guide routes on demand: its start-city routes carry one "notes written for Night Harbor" paragraph per city, so
+#    they never matched the walk route in pass 4. _ux_nh_match (above) accepts them only when the walk route + those notes
+#    rebuild the page HTML byte for byte; the notes stay in the page as <template class="sc-nht"> and mod-ux.js appends the
+#    picked city's note to its loaded route block, so the DOM ends up the same as before.
+# 3) Theme (#15): this <head> script applies localStorage mnm-theme (dark | light | contrast) before the first paint. With no saved
+#    choice, prefers-contrast: more starts High contrast (nothing is saved until the toggle is used). prefers-color-scheme: light
+#    does not switch anything: the default stays the dark (Irem) theme and the toggle shows a small "Light available" hint.
+_UX_THEME = ('<script>try{var t=localStorage.getItem("mnm-theme");if(!t&&window.matchMedia){if(matchMedia("(prefers-contrast: more)").matches)t="contrast"}'
+    'if(t==="light"||t==="contrast"){var d=document.documentElement;d.setAttribute("data-theme",t);'
+    'document.write(\'<link rel="stylesheet" id="ux-theme-css" href="\'+(d.getAttribute("data-root")||"")+"assets/mod-ux-"+t+\'.css">\')}}catch(e){}</script>')
+TEMPLATE = TEMPLATE.replace('</head>', _UX_THEME.replace('{', '{{').replace('}', '}}') + '\n</head>', 1)
+# 2) Spell and mob tooltips (#7): spell-tips.js (the same fields as the Spells page table) and mob-tips.js (the same fields
+#    as the Mobs database: level, zone, named, type, where, wiki-listed loot). Both load on the first tooltip of their kind.
+def _ux_cut(t, n): return t if len(t) <= n else t[:t.rfind(' ', 0, n - 1) if ' ' in t[:n - 1] else n - 1].rstrip(' ,;') + '…'
+
+def _ux_tips():
+    st = {}
+    try:
+        for c in CLASS_LIST:
+            for sp in CLASSES[c]['spells']:
+                nm = sp.get('spell name')
+                if not nm: continue
+                st.setdefault(nm.strip().lower(), []).append([nm, sp.get('level') or 0, c, sp.get('spell description') or '', sp.get('mana') or '', sp.get('location') or ''])
+    except (NameError, KeyError, TypeError) as ex:
+        print('zzz_ux: spell tips skipped', ex); st = {}
+    if st: _ux_js('spell-tips.js', 'window.MNM_STIPS=%s;' % _ux_dump(st))
+    fp = os.path.join(OUT, 'assets', 'mobs-db.js'); mt = {}
+    if os.path.exists(fp):
+        s = open(fp, encoding='utf8').read().strip()
+        try:
+            rows = json.JSONDecoder().raw_decode(s, len('window.MNM_MOBS='))[0] if s.startswith('window.MNM_MOBS=') else []
+        except ValueError: rows = []
+        for d in rows:
+            if not isinstance(d, list) or len(d) < 10 or not d[0]: continue
+            loot = list(d[8] or []) + list(d[9] or [])
+            mt.setdefault(str(d[0]).strip().lower(), []).append([d[0], d[2] or '', d[3] or '', d[4] or '', 1 if d[5] else 0, d[6] or '', _ux_cut(d[7] or '', 160), loot[:4], len(loot)])
+    if mt: _ux_js('mob-tips.js', 'window.MNM_MTIPS=%s;' % _ux_dump(mt))
+    print('zzz_ux pass 5: tooltips for %d spell names, %d mob names' % (len(st), len(mt)))
+
+_ux_prev_ra5 = render_all
+def render_all():
+    _ux_prev_ra5()
+    _ux_tips()
+
+# 4) Theme stylesheets: assets/mod-ux-light.css and assets/mod-ux-contrast.css are generated from every built stylesheet. Each rule
+#    that sets a literal colour gets a themed copy (scoped by html[data-theme=...], so it out-ranks the original), with colours
+#    moved in lightness only (hue kept, so the amber/gold/brown/olive family stays). Hand-written rules from
+#    static/mod-ux-themes.css (variables, controls, badges, decorations) follow and win. Only the chosen theme's file loads.
+import colorsys as _ux_cs
+_UX_NAMED = {'white': (255, 255, 255, 1.0), 'black': (0, 0, 0, 1.0)}
+_UX_COL = re.compile(r'#[0-9a-fA-F]{3,8}\b|rgba?\([^)]*\)|\b(?:white|black)\b')
+def _ux_pcol(t):
+    t = t.strip().lower()
+    if t in _UX_NAMED: return _UX_NAMED[t]
+    if t.startswith('#'):
+        h = t[1:]
+        if len(h) in (3, 4): h = ''.join(c * 2 for c in h)
+        if len(h) not in (6, 8): return None
+        return int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16), (int(h[6:8], 16) / 255 if len(h) == 8 else 1.0)
+    m = re.match(r'rgba?\(([^)]*)\)', t)
+    if not m: return None
+    p = [x.strip() for x in re.split(r'[,\s/]+', m.group(1)) if x.strip()]
+    try:
+        v = [float(x[:-1]) * 2.55 if x.endswith('%') else float(x) for x in p[:3]]
+        a = (float(p[3][:-1]) / 100 if p[3].endswith('%') else float(p[3])) if len(p) > 3 else 1.0
+    except (ValueError, IndexError): return None
+    return v[0], v[1], v[2], a
+def _ux_fcol(r, g, b, a):
+    r, g, b = [max(0, min(255, int(round(x)))) for x in (r, g, b)]
+    return '#%02x%02x%02x' % (r, g, b) if a >= 0.999 else 'rgba(%d,%d,%d,%s)' % (r, g, b, ('%.3f' % a).rstrip('0').rstrip('.'))
+_UX_ACC_VARS = ('--gold', '--gold2', '--red', '--teal', '--magic', '--lore', '--unc', '--strat', '--glow', '--crystal')
+def _ux_map(col, kind, theme):
+    c = _ux_pcol(col)
+    if not c: return col
+    r, g, b, a = c; h, l, s = _ux_cs.rgb_to_hls(r / 255, g / 255, b / 255)
+    if theme == 'light':
+        if kind == 'bg':
+            if l >= 0.35 and a > 0.5: return col                    # accent fill (badge, button): keep with its own text colour
+            l, s = 0.97 - l * 0.5, min(s, 0.45)
+            if a < 0.5: l = 0.35 + l * 0.2; a = min(a * 1.4, 0.35)  # translucent tints (row stripes, hovers): faint amber
+        elif kind == 'fg':
+            if l <= 0.55: return col
+            l = min(0.30, max(0.12, 1.02 - l))
+        elif kind == 'bd':
+            l = 0.62 if l < 0.4 else max(0.30, l - 0.22)
+        elif kind == 'sh':
+            if l > 0.5: return 'transparent'
+            r, g, b, a = 80, 55, 20, a * 0.35; return _ux_fcol(r, g, b, a)
+    else:
+        if kind == 'bg':
+            if l >= 0.35 and a > 0.5: return col
+            l = l * 0.35
+            if a < 0.5: a = min(a, 0.2)
+        elif kind == 'fg':
+            if l <= 0.5: return col
+            l, s = max(l, 0.88), min(s, 0.9)
+        elif kind == 'bd':
+            l, s = (0.72, min(s, 0.5)) if l < 0.5 else (max(l, 0.72), s)
+        elif kind == 'sh':
+            return col
+    r, g, b = _ux_cs.hls_to_rgb(h, max(0, min(1, l)), max(0, min(1, s)))
+    return _ux_fcol(r * 255, g * 255, b * 255, a)
+def _ux_kind(prop):
+    if prop.startswith('background'): return 'bg'
+    if prop in ('color', 'fill', 'stroke', 'caret-color', 'text-decoration-color', 'accent-color', '-webkit-text-fill-color'): return 'fg'
+    if prop.startswith('border') or prop.startswith('outline') or prop == 'column-rule-color': return 'bd'
+    if prop in ('box-shadow', 'text-shadow'): return 'sh'
+    return None
+def _ux_scope(sel, theme):
+    out = []
+    for x in sel.split(','):
+        x = x.strip()
+        if not x: continue
+        if x.startswith(':root'): return None
+        m = re.match(r'html(?![\w-])', x)
+        out.append(('html[data-theme="%s"]' % theme + x[4:]) if m else 'html[data-theme="%s"] %s' % (theme, x))
+    return ','.join(out)
+def _ux_rules(css):
+    """yield (wrapper or '', selector, body) for plain rules, one @media/@supports level deep; other at-rules skipped"""
+    css = re.sub(r'/\*.*?\*/', '', css, flags=re.S); i, n = 0, len(css)
+    def block(j):
+        d = 0
+        for k in range(j, n):
+            if css[k] == '{': d += 1
+            elif css[k] == '}':
+                d -= 1
+                if d == 0: return k
+        return n
+    while i < n:
+        j = css.find('{', i)
+        if j < 0: break
+        head = css[i:j].strip(); e = block(j)
+        if head.startswith('@media') or head.startswith('@supports'):
+            for _, s2, b2 in _ux_rules(css[j + 1:e]): yield head, s2, b2
+        elif not head.startswith('@'):
+            yield '', head, css[j + 1:e]
+        i = e + 1
+def _ux_theme_css(theme, sources):
+    out = []
+    for css in sources:
+        for wrap, sel, body in _ux_rules(css):
+            decl = []
+            bgvars = re.search(r'background(?:-color)?\s*:[^;]*var\((--[\w-]+)', body)
+            accent_bg = bgvars and bgvars.group(1) in _UX_ACC_VARS
+            for d in body.split(';'):
+                if ':' not in d: continue
+                p, v = d.split(':', 1); p = p.strip().lower(); v = v.strip(); k = _ux_kind(p)
+                if not k or p.startswith('--') or 'url(' in v: continue
+                if not _UX_COL.search(v):  # var()-based colour: re-assert it so the themed copies keep the original cascade order
+                    if 'var(' in v: decl.append('%s:%s' % (p, v))
+                    continue
+                if k == 'fg' and accent_bg: decl.append('%s:%s' % (p, v)); continue
+                if k == 'fg':  # text on a literal accent fill in the same rule keeps its colour
+                    bgm = re.search(r'background(?:-color)?\s*:\s*([^;]+)', body)
+                    if bgm:
+                        bc = _UX_COL.search(bgm.group(1)); pc = _ux_pcol(bc.group(0)) if bc else None
+                        if pc and pc[3] > 0.5 and _ux_cs.rgb_to_hls(pc[0] / 255, pc[1] / 255, pc[2] / 255)[1] >= 0.35: decl.append('%s:%s' % (p, v)); continue
+                decl.append('%s:%s' % (p, _UX_COL.sub(lambda m: _ux_map(m.group(0), k, theme), v)))
+            if not decl or not any(_UX_COL.search(x) for x in decl) and not re.search(r'background|color|border', sel + body): continue
+            sc = _ux_scope(sel, theme)
+            if not sc: continue
+            r = '%s{%s}' % (sc, ';'.join(decl))
+            out.append('%s{%s}' % (wrap, r) if wrap else r)
+    return '\n'.join(out)
+def _ux_themes():
+    ad = os.path.join(OUT, 'assets'); hand = ''
+    hp = os.path.join(ad, 'mod-ux-themes.css')
+    if os.path.exists(hp): hand = open(hp, encoding='utf8').read(); os.remove(hp)
+    order = lambda f: (0 if f == 'site.css' else 3 if f == 'mod-ux.css' else 2 if f == 'mod-nav.css' else 1, f)  # same order as the <link> tags
+    srcs = [open(os.path.join(ad, f), encoding='utf8').read() for f in sorted(os.listdir(ad), key=order)
+            if f.endswith('.css') and not f.startswith('mod-ux-light') and not f.startswith('mod-ux-contrast')]
+    for th in ('light', 'contrast'):
+        hw = '\n'.join(_ux_hand_part(hand, th))
+        _ux_js('mod-ux-%s.css' % th, '/* generated by modules/zzz_ux.py (UX pass 5) */\n' + _ux_theme_css(th, srcs) + '\n' + hw + '\n')
+def _ux_hand_part(hand, th):
+    """keep rules of static/mod-ux-themes.css that mention this theme (or no theme)"""
+    hand = re.sub(r'/\*.*?\*/', '', hand, flags=re.S); other = 'contrast' if th == 'light' else 'light'
+    for wrap, sel, body in _ux_rules(hand):
+        sels = [x for x in sel.split(',') if 'data-theme="%s"' % other not in x]
+        if not sels: continue
+        r = '%s{%s}' % (','.join(s.strip() for s in sels), body.strip())
+        yield '%s{%s}' % (wrap, r) if wrap else r
+
+_ux_prev_ra5b = render_all
+def render_all():
+    _ux_prev_ra5b()
+    _ux_themes()

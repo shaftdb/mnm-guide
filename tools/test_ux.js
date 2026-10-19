@@ -1,4 +1,5 @@
-// Headless Chrome checks for UX passes 1-4 (pass 4 at the end: on-demand class routes/tabs, Items/Mobs memory, lazy palette,
+// Headless Chrome checks for UX passes 1-5 (pass 5 at the end: lazy walk-data on class pages, Shaman routes on demand, spell/mob
+// tooltips, CSV export + print, Light/High contrast themes with 4.5:1 / 3:1 contrast scans. Pass 4 before it: on-demand class routes/tabs, Items/Mobs memory, lazy palette,
 // favorites, copy buttons, what's new). UX pass 1: skip link + focus ring (normal and Halloween themes), compact mini bar on phones,
 // 44px touch targets at 480, no horizontal overflow at 480/1024/2560/3440, ultrawide width + multi-column quick info,
 // sticky side rails below the real header, prefers-reduced-motion.
@@ -168,7 +169,7 @@ function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('
  ok(!(await ev('document.querySelector(".ux-otp").checkVisibility()'))&&!(await ev('document.querySelector(".ux-mysetup").checkVisibility()'))&&await ev('document.getElementById("mnm-class").checkVisibility()'),'1024: no phone-only controls; full picker bar and side TOC as before');
 
  // =============================== UX pass 3
- const key=async(k,mods=0,code)=>{const vk={'k':75,'/':191,'?':191,'Escape':27,'ArrowDown':40,'ArrowUp':38,'Enter':13,'Tab':9,'g':71,'i':73,'t':84}[k]||0;
+ const key=async(k,mods=0,code)=>{const vk={'k':75,'/':191,'?':191,'Escape':27,'ArrowDown':40,'ArrowUp':38,'Enter':13,'Tab':9,'g':71,'i':73,'t':84,'p':80}[k]||0;
   const p={key:k,code:code||(k.length===1?'Key'+k.toUpperCase():k),windowsVirtualKeyCode:vk,modifiers:mods};
   await send('Input.dispatchKeyEvent',Object.assign({type:'keyDown',text:(k.length===1&&!(mods&2))?k:undefined},p));await send('Input.dispatchKeyEvent',Object.assign({type:'keyUp'},p));await sleep(120)};
  await size(1024,768);
@@ -191,7 +192,7 @@ function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('
  await send('Network.setBlockedURLs',{urls:[]});await ev('document.querySelector("#wt-b-26-30 .wt-retry").click()');
  ok(await waitFor('(function(){var c=document.querySelector("#wt-b-26-30");return !c.querySelector(".wt-slot")&&/Start-city route: Ail.Vorith · levels 26/.test(c.textContent)})()'),'Try again loads the band');
  // class page quick walkthrough loads only its band
- reqs=[];await go("classes/inquisitor.html?class=Inquisitor&race=Deep%20Elf&city=Ail'Vorith");
+ reqs=[];await go("classes/inquisitor.html?class=Inquisitor&race=Deep%20Elf&city=Ail'Vorith");await ev('document.querySelector(".cg-qwalk").scrollIntoView()');
  ok(await waitFor('(function(){var q=document.querySelector(".cg-qwalk");return q&&!q.querySelector(".wt-slot,.lz-status")&&/Start-city route: Ail.Vorith · levels 1/.test(q.textContent)})()'),'class page quick walkthrough shows the Ail\'Vorith 1-5 route');
  wr=reqs.filter(r=>/^walk-[rh]-/.test(r));
  ok(wr.length===1&&wr[0]==='walk-r-1-5-ailvorith.js','class page loads one route chunk ('+wr.join(', ')+')');
@@ -288,6 +289,7 @@ function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('
  await size(480,900);reqs=[];
  await go("classes/inquisitor.html?class=Inquisitor&race=Deep+Elf&city=Ail%27Vorith");
  ok(await ev('document.documentElement.getAttribute("data-sc")')==='ailvorith','Deep Elf Inquisitor, Start Ail\'Vorith: page follows Ail\'Vorith');
+ await ev('document.querySelector(".cg-qwalk").scrollIntoView()');  // pass 5: the quick walkthrough (and its route) loads when on screen
  ok(await waitFor('!!document.querySelector(".sc-wrap .sc-route[data-sc=ailvorith]")'),'the first level band\'s Ail\'Vorith route renders on demand');
  const r1=reqs.filter(r=>/^walk-r-/.test(r));
  ok(r1.length>=1&&r1.length<8&&r1.every(r=>/-ailvorith\.js$/.test(r)),'first load fetches only nearby Ail\'Vorith bands ('+r1.join(', ')+')');
@@ -315,7 +317,7 @@ function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('
  await ev('document.querySelector(".tab[data-tab=\\"t0-2\\"]").click()');await sleep(150);
  const ld=await ev('(function(){var s=document.querySelector("#t0-2 .ux-lzp");return s?s.textContent:""})()');
  ok(/Loading .Early spells 1.20./.test(ld),'opening a tab shows "'+ld+'"');
- await ev('document.getElementById("t0-2").scrollIntoView({block:"center"})');await shot('ux4-after-classtab-loading-480.png');
+ await ev('document.getElementById("t0-2").scrollIntoView({block:"center",behavior:"instant"})');await shot('ux4-after-classtab-loading-480.png');
  await send('Network.emulateNetworkConditions',{offline:false,latency:0,downloadThroughput:-1,uploadThroughput:-1});
  ok(await waitFor('!!document.querySelector("#t0-2.on table.spells tbody tr")&&!document.querySelector("#t0-2[data-lz]")'),'Early spells tab renders its spell table');
  ok(await ev('(function(){var t=document.querySelector("#t0-2 table.spells");return t.tBodies[0].rows.length<15||!!(t.closest(".tw")||t).previousElementSibling.classList.contains("ux-tbar")})()'),'tab tables get the row-count bar');
@@ -393,12 +395,12 @@ function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('
  const cb=await ev('(function(){var b=[].find.call(document.querySelectorAll("#idb-out .ux-copy"),function(x){return /Cinder Beetle/.test(x.getAttribute("data-copy"))});return b?{c:b.getAttribute("data-copy"),l:b.getAttribute("aria-label"),h:b.getBoundingClientRect().height}:null})()');
  ok(!!cb&&/Cinder Beetle/.test(cb.c)&&cb.h>=36,'items: a copy button next to each item name ('+(cb&&cb.l)+')');
  await send('Emulation.setFocusEmulationEnabled',{enabled:true});
- const cr=await ev('(function(){var b=[].find.call(document.querySelectorAll("#idb-out .ux-copy"),function(x){return /Cinder Beetle/.test(x.getAttribute("data-copy"))});b.scrollIntoView({block:"center"});var r=b.getBoundingClientRect();return {x:r.left+r.width/2,y:r.top+r.height/2}})()');
+ const cr=await ev('(function(){var b=[].find.call(document.querySelectorAll("#idb-out .ux-copy"),function(x){return /Cinder Beetle/.test(x.getAttribute("data-copy"))});b.scrollIntoView({block:"center",behavior:"instant"});var r=b.getBoundingClientRect();return {x:r.left+r.width/2,y:r.top+r.height/2}})()');
  await sleep(300);for(const t of ['mousePressed','mouseReleased'])await send('Input.dispatchMouseEvent',{type:t,x:cr.x,y:cr.y,button:'left',clickCount:1});
  ok(await waitFor('/Copied/.test((document.querySelector("#idb-out .ux-copy.ok")||{}).textContent)'),'copy shows "'+await ev('document.querySelector("#idb-out .ux-copy.ok,#idb-out .ux-copy.bad").textContent')+'"');
  const clip=await evp('navigator.clipboard.readText().catch(function(e){return "ERR "+e.message})');
  ok(clip===cb.c,'clipboard holds the item name ('+clip+')');
- await ev('document.querySelector("#idb-out .ux-copy.ok,#idb-out .ux-copy.bad").scrollIntoView({block:"center"})');await shot('ux4-after-copy-480.png');
+ await ev('document.querySelector("#idb-out .ux-copy.ok,#idb-out .ux-copy.bad").scrollIntoView({block:"center",behavior:"instant"})');await shot('ux4-after-copy-480.png');
  await go('mobs.html?mq=wolf');ok(await ev('(function(){var b=document.querySelector("#mob-out tbody tr .ux-copy");return !!b&&b.getAttribute("data-copy").length>2&&!/named|wiki/.test(b.getAttribute("data-copy"))})()'),'mobs: copy button with the mob name ('+await ev('(document.querySelector("#mob-out .ux-copy")||{}).title')+')');
  await ev('document.querySelector(".ux-dbbar .ux-tbar-r").click()');await ev('localStorage.removeItem("mnm-db:items.html")');
  await go('trio.html');ok(await ev('[].some.call(document.querySelectorAll("code+.ux-copy"),function(b){return b.getAttribute("data-copy")==="/consent group"})'),'game commands in <code> (/consent group) get a copy button');
@@ -422,6 +424,126 @@ function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('
    if(await ev('document.documentElement.scrollWidth>innerWidth'))ok(false,'pass 4: '+u+' overflows @'+w)}}
  ok(true,'pass 4: no horizontal overflow at 480/1024/2560/3440 on home, class, items, mobs, walkthrough, market');
  await ev('localStorage.removeItem("mnm-favs");localStorage.removeItem("mnm-db:items.html");localStorage.removeItem("mnm-db:mobs.html")');
+ // =============================== UX pass 5
+ const CSCAN="(function(){\nfunction parse(c){var m=c&&c.match(/rgba?\\(([^)]+)\\)/);if(!m)return null;var p=m[1].split(/[,\\s\\/]+/).filter(Boolean).map(parseFloat);return [p[0],p[1],p[2],p.length>3?p[3]:1]}\nfunction over(t,b){var a=t[3];return [t[0]*a+b[0]*(1-a),t[1]*a+b[1]*(1-a),t[2]*a+b[2]*(1-a),1]}\nfunction lum(c){var w=[.2126,.7152,.0722],s=0;for(var i=0;i<3;i++){var v=c[i]/255;s+=w[i]*(v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4))}return s}\nfunction ratio(a,b){var x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)}\nfunction bgOf(el){var st=[];for(var e=el;e;e=e.parentElement){var cs=getComputedStyle(e),c=parse(cs.backgroundColor);\n  if(/gradient/.test(cs.backgroundImage)){var g=cs.backgroundImage.match(/rgba?\\([^)]+\\)/g);if(g){var gc=g.map(parse).reduce(function(m,x){return lum(x)<lum(m)===(lum(parse(getComputedStyle(document.body).color))>.4)?x:m});st.push(gc)}}\n  if(c&&c[3]>0){st.push(c);if(c[3]>=.999)break}}\n  var b=[255,255,255,1];for(var i=st.length-1;i>=0;i--)b=over(st[i],b);return b}\nfunction vis(e){if(!e.checkVisibility||!e.checkVisibility({opacityProperty:true,visibilityProperty:true}))return false;var r=e.getBoundingClientRect();if(r.width<2||r.height<2)return false;\n  var cs=getComputedStyle(e);if(cs.clip==='rect(0px, 0px, 0px, 0px)'||cs.clipPath==='inset(50%)')return false;for(var p=e;p;p=p.parentElement){if(parseFloat(getComputedStyle(p).opacity)<.99&&!p.matches(':disabled'))return 'op'}return true}\nvar fails=[],seen={},n=0;\n[].forEach.call(document.body.querySelectorAll('*'),function(e){if(/^(SCRIPT|STYLE|NOSCRIPT|OPTION|TEMPLATE|svg|path|BR)$/i.test(e.tagName))return;\n  var own=[].some.call(e.childNodes,function(t){return t.nodeType===3&&t.textContent.trim().length>0});if(!own)return;if(e.closest(':disabled,[aria-disabled=\"true\"],.ux-vh,[aria-hidden=\"true\"]'))return;\n  var v=vis(e);if(!v)return;n++;var cs=getComputedStyle(e),bg=bgOf(e),fg=parse(cs.color);if(!fg)return;fg=over(fg,bg);var r=ratio(fg,bg),need=4.5;\n  if(r<need){var k=e.tagName+'.'+String(e.className).split(' ')[0]+'|'+cs.color+'|'+bg.map(Math.round);if(!seen[k]){seen[k]=1;fails.push({el:e.tagName.toLowerCase()+(e.className&&typeof e.className==='string'?'.'+e.className.trim().split(/\\s+/).join('.'):'')+(e.parentElement?' < '+e.parentElement.tagName.toLowerCase()+'.'+String(e.parentElement.className).split(' ')[0]:''),t:e.textContent.trim().slice(0,30),r:Math.round(r*100)/100,fg:cs.color,bg:'rgb('+bg.slice(0,3).map(Math.round)+')',op:v==='op'})}}});\nvar cf=[],cn=0;\n[].forEach.call(document.body.querySelectorAll('input:not([type=hidden]):not([type=checkbox]):not([type=radio]),select,textarea,button'),function(e){if(vis(e)!==true||e.disabled)return;var cs=getComputedStyle(e),bw=parseFloat(cs.borderTopWidth)||0;\n  var isField=/^(INPUT|SELECT|TEXTAREA)$/.test(e.tagName);if(!isField&&bw<1)return;cn++;\n  var pb=bgOf(e.parentElement||document.body),own=parse(cs.backgroundColor),cb=own&&own[3]>0?over(own,pb):pb,bc=bw>=1?over(parse(cs.borderTopColor),pb):null;\n  var r=Math.max(bc?ratio(bc,pb):0,ratio(cb,pb));if(r<3){var k=e.tagName+'.'+e.className+'|'+cs.borderTopColor;if(!seen[k]){seen[k]=1;cf.push({el:e.tagName.toLowerCase()+'.'+String(e.className).trim().split(/\\s+/).join('.')+'#'+e.id,r:Math.round(r*100)/100,bd:cs.borderTopColor,bg:'rgb('+pb.slice(0,3).map(Math.round)+')'})}}});\nreturn {text:n,fails:fails.slice(0,40),nf:fails.length,ctl:cn,cfails:cf.slice(0,20),ncf:cf.length}})()";
+ await send('Browser.setDownloadBehavior',{behavior:'deny'}).catch(()=>{});await send('Emulation.setFocusEmulationEnabled',{enabled:true});
+ // 1) class pages load walk-data.js only once the Quick info walkthrough is on screen
+ await size(480,900);reqs=[];await go("classes/inquisitor.html?class=Inquisitor&race=Deep+Elf&city=Ail%27Vorith");await sleep(600);
+ ok(!reqs.includes('walk-data.js')&&/loads when you scroll/.test(await ev('document.querySelector(".cg-qwalk").textContent')),'class page @480: walk-data.js ('+sz('walk-data.js')+' KB) not loaded until the walkthrough box is on screen ("'+(await ev('document.querySelector(".cg-qwalk").textContent')).trim()+'")');
+ await ev('document.querySelector(".cg-qwalk").scrollIntoView()');
+ ok(await waitFor('/New character: Deep Elf Inquisitor · Ail.Vorith/.test(document.querySelector(".cg-qwalk").textContent)')&&reqs.includes('walk-data.js'),'scrolling to it loads walk-data.js and renders the Deep Elf Inquisitor · Ail\'Vorith walkthrough');
+ ok(await ev('!/Start-city route: (Night Harbor|Underdocks|Faelindral)/.test(document.querySelector(".cg-qwalk").textContent)&&!/Petra Gyle/.test(document.querySelector(".cg-qwalk").textContent)'),'class page quick walkthrough: Ail\'Vorith only, no Night Harbor fallback');
+ reqs=[];await go('walkthrough.html');ok(reqs.includes('walk-data.js'),'walkthrough page still loads walk-data.js straight away');
+ reqs=[];await go("classes/inquisitor.html?class=Inquisitor&race=Deep+Elf&city=Ail%27Vorith");await ev('document.querySelector(".tab[data-tab$=\\"-cg\\"]").click()');await ev('scrollTo(0,document.documentElement.scrollHeight)');await sleep(800);
+ ok(!reqs.includes('walk-data.js'),'Character creation tab open: the hidden Quick reference walkthrough does not load walk-data.js');
+ // 2) Shaman guide routes on demand (Night Harbor notes kept per city)
+ ok(fsz('shaman/leveling.html')<450,'shaman/leveling.html is '+fsz('shaman/leveling.html')+' KB (was 700 KB)');
+ await size(480,900);reqs=[];await go("shaman/leveling.html?class=Shaman&race=Wood+Elf&city=Faelindral");
+ ok(await ev('document.documentElement.getAttribute("data-sc")')==='faelindral','Wood Elf Shaman, Start Faelindral: page follows Faelindral');
+ await ev('document.querySelector(".tabpane.on .sc-wrap").scrollIntoView()');
+ ok(await waitFor('(function(){var b=document.querySelector(".tabpane.on .sc-route[data-sc=faelindral]");return !!b&&/written for a Night Harbor start/.test(b.textContent)&&/You picked Faelindral/.test(b.lastElementChild.textContent)})()'),'Shaman 11-15: Faelindral route renders on demand, ending with its "notes written for Night Harbor" paragraph');
+ const sr=reqs.filter(r=>/^walk-r-/.test(r));
+ ok(sr.length>=1&&sr.every(r=>/-faelindral\.js$/.test(r)),'Shaman first load fetches only Faelindral route chunks ('+sr.join(', ')+')');
+ ok(await ev('document.querySelectorAll(".sc-wrap:not(.sc-headwrap) .sc-route:not([data-sc=faelindral])").length===0&&document.querySelectorAll(".tabpane.on .sc-route .sc-nhnote").length===1'),'Shaman: no other city\'s route in the page, one note');
+ await go("shaman/leveling.html?class=Shaman&race=Human&city=Night+Harbor");await ev('document.querySelector(".tabpane.on .sc-wrap").scrollIntoView()');
+ ok(await waitFor('(function(){var b=document.querySelector(".tabpane.on .sc-route[data-sc=night-harbor]");return !!b&&!b.querySelector(".sc-nhnote")})()'),'Shaman, Night Harbor start: route without the note (as before)');
+ await ev('MNM_UX_ROUTES.fillAll()');
+ ok(await waitFor('document.querySelectorAll(".sc-wrap:not(.sc-headwrap) .sc-route[data-sc=night-harbor]").length===document.querySelectorAll(".sc-lz").length',15000),'Shaman: all '+await ev('document.querySelectorAll(".sc-lz").length')+' bands render for printing');
+ reqs=[];await go("shaman/index.html?class=Shaman&race=Wood+Elf&city=Faelindral");await sleep(500);await ev('document.querySelector(".cg-qwalk").scrollIntoView()');
+ ok(await waitFor('/New character: Wood Elf Shaman · Faelindral/.test(document.querySelector(".cg-qwalk").textContent)'),'shaman/index.html (the Shaman class page) renders its quick walkthrough for Faelindral');
+ // 3) spell + mob tooltips
+ reqs=[];await go("walkthrough.html?class=Inquisitor&race=Deep+Elf&city=Ail%27Vorith");await waitFor('!!document.querySelector("#cg-walk .cg-sp li>b.ux-tt-t")',10000);
+ ok(!reqs.includes('spell-tips.js')&&!reqs.includes('mob-tips.js'),'tooltip data not loaded up front');
+ const sp=await ev('(function(){var b=document.querySelector("#cg-walk details[open] .cg-sp li>b.ux-tt-t")||document.querySelector("#cg-walk .cg-sp li>b.ux-tt-t");b.scrollIntoView({block:"center",behavior:"instant"});b.focus();return {t:b.textContent,ti:b.tabIndex}})()');
+ ok(sp.ti===0,'spell names are keyboard-focusable ('+sp.t+')');
+ ok(await waitFor('(function(){var t=document.getElementById("ux-tt");return t&&!t.hidden&&/Level \\d+/.test(t.textContent)&&/Inquisitor/.test(t.textContent)})()')&&reqs.includes('spell-tips.js'),'focus shows the spell tooltip (level, class, wiki text) after spell-tips.js ('+sz('spell-tips.js')+' KB) loads');
+ const tt1=await ev('(function(){var t=document.getElementById("ux-tt"),r=t.getBoundingClientRect(),a=document.activeElement;return {role:t.getAttribute("role"),db:a.getAttribute("aria-describedby"),l:r.left,r:r.right,b:r.bottom,txt:t.textContent.slice(0,120),ovf:document.documentElement.scrollWidth>innerWidth}})()');
+ ok(tt1.role==='tooltip'&&tt1.db==='ux-tt','tooltip has role=tooltip and is linked with aria-describedby');
+ ok(tt1.l>=0&&tt1.r<=480&&tt1.b<=900&&!tt1.ovf,'tooltip fits the 480px window ('+Math.round(tt1.l)+'–'+Math.round(tt1.r)+'px): '+tt1.txt);
+ const spd=await ev('(function(){var n=document.activeElement.textContent.trim().toLowerCase(),d=(window.MNM_STIPS||{})[n];return d?d.map(function(x){return x[2]+" L"+x[1]}).join(","):""})()');
+ ok(spd.length>0&&new RegExp('Level '+spd.match(/Inquisitor L(\d+)/)[1]).test(await ev('document.getElementById("ux-tt").textContent')),'tooltip level matches the site data for that spell ('+spd.slice(0,60)+')');
+ await shot('ux5-after-tooltip-480.png');
+ await key('Escape');ok(await ev('document.getElementById("ux-tt").hidden&&document.activeElement.classList.contains("ux-tt-t")'),'Esc closes the tooltip and keeps focus on the name');
+ // tap
+ await send('Emulation.setTouchEmulationEnabled',{enabled:true});
+ const tp=await ev('(function(){var b=[].filter.call(document.querySelectorAll("#cg-walk .cg-sp li>b.ux-tt-t"),function(e){return e.checkVisibility()})[1];b.scrollIntoView({block:"center",behavior:"instant"});var r=b.getBoundingClientRect();return {x:r.left+5,y:r.top+r.height/2}})()');await sleep(200);
+ await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:tp.x,y:tp.y}]});await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+ ok(await waitFor('!document.getElementById("ux-tt").hidden'),'tap on a spell name opens its tooltip');
+ await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:20,y:880}]});await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+ ok(await waitFor('document.getElementById("ux-tt").hidden'),'tap elsewhere closes it');
+ await send('Emulation.setTouchEmulationEnabled',{enabled:false});
+ // mob tooltip (camps list) on hover
+ await size(1024,768);reqs=[];await go("walkthrough.html?class=Inquisitor&race=Deep+Elf&city=Ail%27Vorith");await waitFor('!!document.querySelector("#cg-walk .tt-mob.ux-tt-t")',10000);
+ const mp=await ev('(function(){var b=[].find.call(document.querySelectorAll("#cg-walk .tt-mob.ux-tt-t"),function(e){return e.checkVisibility()});b.scrollIntoView({block:"center",behavior:"instant"});var r=b.getBoundingClientRect();return {x:r.left+4,y:r.top+r.height/2,t:b.textContent}})()');await sleep(200);
+ await send('Input.dispatchMouseEvent',{type:'mouseMoved',x:mp.x,y:mp.y});
+ ok(await waitFor('(function(){var t=document.getElementById("ux-tt");return t&&!t.hidden&&/Level/.test(t.textContent)})()')&&reqs.includes('mob-tips.js'),'hovering a camp mob ('+mp.t+') shows its tooltip after mob-tips.js ('+sz('mob-tips.js')+' KB) loads');
+ const mt=await ev('(function(){var t=(document.getElementById("ux-tt")||{}).textContent||"",d=(window.MNM_MTIPS||{})[document.activeElement&&0||([].find.call(document.querySelectorAll("#cg-walk .tt-mob.ux-tt-t"),function(e){return e.checkVisibility()})||{textContent:""}).textContent.trim().toLowerCase()];return {t:t.slice(0,140),ok:!d||t.indexOf(d[0][2])>=0}})()');
+ ok(mt.ok&&mt.t.length>0,'mob tooltip shows the Mobs database zone/level ('+mt.t+')');
+ await send('Input.dispatchMouseEvent',{type:'mouseMoved',x:5,y:700});ok(await waitFor('(document.getElementById("ux-tt")||{hidden:true}).hidden'),'moving the mouse away closes it');
+ // 4) CSV export + print
+ await go('items.html?iq=sword');await ev('(function(){var o=window.MNM_UX_CSV;window.MNM_UX_CSV=function(n,h,r){window.__csv=o(n,h,r);window.__csvn=n;return window.__csv}})()');
+ await ev('document.querySelector(".ux-tbar-csv").click()');
+ const cv=await ev('(function(){var t=window.__csv||"",lines=t.replace(/^\\ufeff/,"").trim().split("\\r\\n"),n=+(document.getElementById("idb-count").textContent.match(/\\d+/)||[0])[0];return {n:n,rows:lines.length-1,head:lines[0],bom:t.charCodeAt(0)===0xfeff,all:lines.slice(1).every(function(l){return /sword/i.test(l)}),name:window.__csvn,lab:document.querySelector(".ux-tbar-csv").getAttribute("aria-label")}})()');
+ ok(cv.rows===cv.n&&cv.n>0&&cv.all&&cv.bom&&/^Item,Slot,Level,Classes,Stats,Sources/.test(cv.head),'items: Export CSV holds all '+cv.n+' matching rows (header '+cv.head.slice(0,50)+'…, UTF-8 BOM) — '+cv.lab);
+ await ev('document.querySelector(".ux-dbbar .ux-tbar-r").click()');
+ await go('mobs.html?mq=wolf&mn=1');await ev('(function(){var o=window.MNM_UX_CSV;window.MNM_UX_CSV=function(n,h,r){window.__csv=o(n,h,r);return window.__csv}})()');await ev('document.querySelector(".ux-tbar-csv").click()');
+ const mv=await ev('(function(){var l=(window.__csv||"").trim().split("\\r\\n"),n=+(document.getElementById("mob-count").textContent.match(/\\d+/)||[0])[0];return {n:n,rows:l.length-1,head:l[0],named:l.slice(1).every(function(x){return /,yes,/.test(x)})}})()');
+ ok(mv.rows===mv.n&&mv.n>0&&mv.named&&/^Mob,Level,Zone,Named/.test(mv.head),'mobs: Export CSV holds the '+mv.n+' filtered rows (named wolves only)');
+ ok(await ev('(function(){var t=window.MNM_UX_CSV("x",["a"],[["=1+1"],["-x"],["-5"],["a,\\"b\\""]]);return t.indexOf("\\x27=1+1")>0&&t.indexOf("\\x27-x")>0&&t.indexOf("\\r\\n-5\\r\\n")>0&&t.indexOf("\\"a,\\"\\"b\\"\\"\\"")>0})()'),'CSV cells are quoted, and formula-like cells (=, +, @, -text) are neutralised');
+ await ev('document.querySelector(".ux-dbbar .ux-tbar-r").click()');
+ await send('Emulation.setEmulatedMedia',{media:'print'});await go('items.html?iq=sword');
+ const pr=await ev('(function(){var g=function(s){var e=document.querySelector(s);return e?getComputedStyle(e).display:"none"};return {top:g(".top"),left:g(".left"),right:g(".right"),bar:g(".ux-dbbar"),mw:Math.round(document.querySelector(".main").getBoundingClientRect().width),bg:getComputedStyle(document.body).backgroundColor}})()');
+ ok(pr.top==='none'&&pr.left==='none'&&pr.right==='none'&&pr.bar==='none'&&pr.mw>=900&&pr.bg==='rgb(255, 255, 255)','print (items): header, nav rails and toolbars hidden, content full width ('+pr.mw+'px), white page');
+ await go("classes/inquisitor.html");await ev('dispatchEvent(new Event("beforeprint"))');
+ const pc=await ev('(function(){var p=[].slice.call(document.querySelectorAll(".tabpane"));return {all:p.every(function(x){return getComputedStyle(x).display==="block"}),t:p.filter(function(x){return x.getAttribute("data-ptitle")}).length,n:p.length,closed:document.querySelectorAll("main details:not([open])").length}})()');
+ ok(pc.all&&pc.t===pc.n&&pc.closed===0,'print (class guide): all '+pc.n+' tabs print under their titles, every <details> opened');
+ await ev('dispatchEvent(new Event("afterprint"))');await send('Emulation.setEmulatedMedia',{media:''});
+ await go("classes/inquisitor.html?class=Inquisitor&race=Deep+Elf&city=Ail%27Vorith");await ev('window.__printed=0;window.print=function(){window.__printed=1}');await key('p',2);
+ ok(await waitFor('window.__printed===1',15000)&&await ev('!document.querySelector(".tabpane[data-lz]")&&!!document.querySelector(".cg-qwalk .qw-head")'),'Ctrl+P first loads every on-demand tab and the walkthrough, then opens the print dialog');
+ // 5) themes
+ await send('Emulation.setEmulatedMedia',{features:[{name:'prefers-color-scheme',value:'dark'}]});
+ await size(1024,768);await go('index.html');await ev('localStorage.removeItem("mnm-theme");localStorage.removeItem("mnm-halloween")');reqs=[];await go('index.html');
+ ok(await ev('!document.documentElement.hasAttribute("data-theme")&&document.documentElement.classList.contains("halloween")')&&!reqs.some(r=>/mod-ux-(light|contrast)/.test(r)),'default: dark Irem theme, no theme stylesheet downloaded');
+ const tb0=await ev('(function(){var b=document.querySelector(".ux-themebtn");var r=b.getBoundingClientRect();return {l:b.getAttribute("aria-label"),h:r.height,vis:b.checkVisibility()}})()');
+ ok(tb0.vis&&/Theme: Dark/.test(tb0.l),'theme button in the header ('+tb0.l+')');
+ await ev('document.querySelector(".ux-themebtn").click()');
+ ok(await waitFor('document.documentElement.getAttribute("data-theme")==="light"')&&await ev('localStorage.getItem("mnm-theme")==="light"&&getComputedStyle(document.body).backgroundColor!=="rgb(10, 13, 18)"'),'click: Light (saved as mnm-theme=light, '+sz('mod-ux-light.css')+' KB stylesheet loaded on demand)');
+ await shot('ux5-after-light-1024.png');
+ await ev('document.querySelector(".ux-themebtn").click()');ok(await waitFor('document.documentElement.getAttribute("data-theme")==="contrast"'),'click: High contrast');
+ await ev('document.querySelector(".ux-themebtn").click()');ok(await waitFor('!document.documentElement.hasAttribute("data-theme")')&&await ev('localStorage.getItem("mnm-theme")==="dark"'),'click: back to Dark');
+ await ev('localStorage.setItem("mnm-theme","light")');await go('items.html');
+ ok(await ev('document.documentElement.getAttribute("data-theme")==="light"&&!!document.getElementById("ux-theme-css")&&getComputedStyle(document.body).backgroundColor==="rgb(246, 239, 225)"'),'saved Light applies on load (stylesheet linked from <head>, no dark flash)');
+ await ev('localStorage.removeItem("mnm-theme")');
+ await send('Emulation.setEmulatedMedia',{features:[{name:'prefers-contrast',value:'more'}]});await go('index.html');
+ ok(await ev('document.documentElement.getAttribute("data-theme")==="contrast"&&localStorage.getItem("mnm-theme")===null'),'prefers-contrast: more starts High contrast (hint only, nothing saved)');
+ await send('Emulation.setEmulatedMedia',{features:[{name:'prefers-color-scheme',value:'light'}]});await go('index.html');
+ ok(await ev('!document.documentElement.hasAttribute("data-theme")&&document.querySelector(".ux-themebtn").classList.contains("ux-theme-hint")&&/system prefers a light theme/.test(document.querySelector(".ux-themebtn").getAttribute("aria-label"))'),'prefers-color-scheme: light keeps the dark default and only marks the theme button ("Light available" hint)');
+ await ev('localStorage.setItem("mnm-theme","dark")');await go('index.html');
+ ok(await ev('!document.documentElement.hasAttribute("data-theme")'),'a saved choice (Dark) wins over the system hint');
+ await send('Emulation.setEmulatedMedia',{features:[]});
+ // contrast: 4.5:1 text and 3:1 control borders, every theme (Irem on and off)
+ const CP=['index.html','classes/inquisitor.html','walkthrough.html','items.html','mobs.html','market.html','hotbar.html','planner.html','groups.html','shaman/leveling.html','spells.html','zones/ailvorith.html'];
+ for(const st of ['dark-hw','dark','light-hw','light','contrast-hw','contrast']){const [th,hw]=st.split('-');
+  await ev(`localStorage.setItem('mnm-theme','${th}');localStorage.setItem('mnm-halloween','${hw?'on':'off'}');localStorage.setItem('mnm-city',"Ail'Vorith");localStorage.setItem('mnm-race','Deep Elf');localStorage.setItem('mnm-class','Inquisitor')`);
+  let bad=[],nt=0,nc=0;
+  for(const u of CP){await go(u);const q=await ev('!!document.querySelector(".cg-qwalk")');if(q){await ev('document.querySelector(".cg-qwalk").scrollIntoView()');await sleep(700);await ev('scrollTo(0,0)')}
+   const r=await ev(CSCAN);nt+=r.text;nc+=r.ctl;r.fails.forEach(f=>bad.push(u+' T '+f.r+' '+f.el+' "'+f.t+'"'));r.cfails.forEach(f=>bad.push(u+' C '+f.r+' '+f.el))}
+  // open UI: tooltip + palette + favorites popup
+  await go("walkthrough.html?class=Inquisitor&race=Deep+Elf&city=Ail%27Vorith");await waitFor('!!document.querySelector("#cg-walk .cg-sp li>b.ux-tt-t")',10000);
+  await ev('(function(){var b=[].find.call(document.querySelectorAll("#cg-walk .cg-sp li>b.ux-tt-t"),function(e){return e.checkVisibility()});b.scrollIntoView({block:"center",behavior:"instant"});b.focus()})()');await waitFor('/Level/.test((document.getElementById("ux-tt")||{}).textContent||"")');
+  let r=await ev(CSCAN.replace('document.body.querySelectorAll(\'*\')','document.getElementById("ux-tt").querySelectorAll(\'*\')'));r.fails.forEach(f=>bad.push('tooltip T '+f.r+' '+f.el));
+  await key('Escape');await key('k',2);await waitFor('!!document.querySelector("dialog.ux-pal[open]")');await ev('(function(){var i=document.getElementById("ux-pal-q");i.value="inq";i.dispatchEvent(new Event("input"))})()');await sleep(400);
+  r=await ev(CSCAN.replace('document.body.querySelectorAll(\'*\')','document.querySelector("dialog.ux-pal").querySelectorAll(\'*\')'));r.fails.forEach(f=>bad.push('palette T '+f.r+' '+f.el));await key('Escape');
+  ok(bad.length===0,'contrast ['+st+']: '+nt+' text elements ≥ 4.5:1 and '+nc+' bordered controls ≥ 3:1 on '+CP.length+' pages + tooltip + palette'+(bad.length?' — '+bad.slice(0,6).join(' | '):''));
+ }
+ await ev('localStorage.removeItem("mnm-theme");localStorage.removeItem("mnm-halloween")');
+ // overflow with the theme button + CSV button in every theme
+ for(const th of ['dark','light','contrast']){await ev(`localStorage.setItem('mnm-theme','${th}')`);
+  for(const [w,h] of [[480,900],[1024,768],[2560,1080],[3440,1440]]){await size(w,h);for(const u of ['index.html','classes/inquisitor.html','items.html','mobs.html','shaman/index.html']){await go(u);
+   if(await ev('document.documentElement.scrollWidth>innerWidth'))ok(false,'pass 5: '+u+' overflows @'+w+' ('+th+')')}}}
+ ok(true,'pass 5: no horizontal overflow at 480/1024/2560/3440 (home, class, items, mobs, Shaman) in Dark, Light and High contrast');
+ await ev('localStorage.removeItem("mnm-theme")');
+ ok(await ev('true')&&!/serviceWorker|Notification|PushManager/.test(fs.readFileSync(path.join(DOCS,'assets','mod-ux.js'),'utf8')),'still no notifications, push or service worker');
  ok(errs.length===0,'no JS exceptions'+(errs.length?': '+errs.slice(0,2).join(' | '):''));
  console.log(passes+' passed, '+fails+' failed');ws.close();chrome.kill();srv.kill();process.exit(fails?1:0);
 })().catch(e=>{console.error(e);chrome.kill();srv.kill();process.exit(1)});

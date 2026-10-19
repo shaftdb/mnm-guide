@@ -36,6 +36,31 @@ for d, _, fs in os.walk(ROOT):
                 if m.startswith('data:') or '://' in m: continue
                 n += 1
                 if not os.path.exists(os.path.normpath(os.path.join(d, m))): bad.append((f, m, 'css missing'))
+# UX passes 2-5: files the lazy loader fetches by name (not visible as href/src) must exist too
+A = os.path.join(ROOT, 'assets'); lazy = set()
+for f in os.listdir(A):
+    if f.endswith('.js') and (f.startswith('mod-') or f == 'site.js'):
+        lazy.update((m, f) for m in re.findall(r'["\']([\w.-]+\.(?:js|css))["\']', open(os.path.join(A, f), encoding='utf-8').read()))
+def _walk(v, src):
+    if isinstance(v, dict): [_walk(x, src) for x in v.values()]
+    elif isinstance(v, list): [_walk(x, src) for x in v]
+    elif isinstance(v, str) and re.fullmatch(r'[\w.-]+\.js', v): lazy.add((v, src))
+import json
+for f in ('quick-data.js', 'trade-data.js', 'walk-data.js'):
+    fp = os.path.join(A, f)
+    if not os.path.exists(fp): continue
+    t = open(fp, encoding='utf-8').read(); i = t.find('"lazy":')
+    if i >= 0: _walk(json.JSONDecoder().raw_decode(t, i + 7)[0], f)
+for p, x in pages.items():
+    h = open(p, encoding='utf-8').read(); rp = os.path.relpath(p, ROOT)
+    lazy.update((m, rp) for m in re.findall(r'data-lz="([\w.-]+\.js)"', h))
+    for band, cities in re.findall(r'class="sc-lz" data-band="([\w-]+)" data-cities="([^"]*)"', h):
+        lazy.update(('walk-r-%s-%s.js' % (band, c), rp) for c in cities.split())
+lazy.update((f, 'mod-ux.js (theme toggle)') for f in ('mod-ux-light.css', 'mod-ux-contrast.css'))
+for f, src in sorted(lazy):
+    n += 1
+    if not os.path.exists(os.path.join(A, f)): bad.append((src, f, 'lazy asset missing'))
+print('lazy-loaded asset references checked: %d' % len(lazy))
 for b in bad: print('BAD', os.path.relpath(b[0], ROOT) if os.path.isabs(b[0]) or '/' in b[0] else b[0], b[1], b[2])
 print('pages %d, internal links %d, broken %d' % (len(pages), n, len(bad)))
 sys.exit(1 if bad else 0)

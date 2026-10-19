@@ -1,0 +1,60 @@
+/* UX pass 5 (#15): hand-written parts of the optional Light and High contrast themes. modules/zzz_ux.py splits this file into
+   assets/mod-ux-light.css and assets/mod-ux-contrast.css after the generated colour rules (so these win), then removes it.
+   Palette stays in the amber / gold / brown / olive family. Targets: 4.5:1 text, 3:1 control borders (tools/test_ux.js checks). */
+html[data-theme="light"],html[data-theme="light"].halloween{color-scheme:light;
+  --bg:#f6efe1;--panel:#fffaf0;--panel2:#efe4cc;--line:#b9a27a;--ink:#21180e;--dim:#594832;--gold:#8a5a14;--gold2:#7a4606;--parch:#3a2912;
+  --red:#a1301c;--teal:#2c6656;--magic:#2a52a8;--lore:#7f4a06;--unc:#9a4636;--strat:#3d6338;--glow:#5d6b22;--crystal:#7a5212;--ctl:#7a5f3a;--ctl-line:#7a5f3a;--focus:#6a3f00;--h2bg:#ead8b0}
+html[data-theme="contrast"],html[data-theme="contrast"].halloween{color-scheme:dark;
+  --bg:#000;--panel:#0a0805;--panel2:#16110a;--line:#c8ae78;--ink:#fff;--dim:#ece2cc;--gold:#ffc94a;--gold2:#ffd98a;--parch:#fff4da;
+  --red:#ffa08c;--teal:#8ee6cf;--magic:#a8c8ff;--lore:#ffc46a;--unc:#8a3020;--strat:#1f4d33;--glow:#ffd98a;--crystal:#ffc94a;--ctl:#ffc94a;--ctl-line:#ffc94a;--focus:#fff;--h2bg:#2a1f0e}
+html[data-theme="light"] body,html[data-theme="light"].halloween body,html[data-theme="contrast"] body,html[data-theme="contrast"].halloween body{background:var(--bg)!important;background-image:none!important;color:var(--ink)}
+html[data-theme="light"].halloween body::before,html[data-theme="contrast"].halloween body::before{display:none}
+html[data-theme="light"] .top,html[data-theme="light"].halloween .top{background:var(--panel2);box-shadow:0 2px 8px rgba(80,55,20,.18)}
+html[data-theme="contrast"] .top,html[data-theme="contrast"].halloween .top{background:#000;box-shadow:none;border-bottom:2px solid var(--gold)}
+html[data-theme="light"] h2,html[data-theme="light"].halloween h2,html[data-theme="contrast"] h2,html[data-theme="contrast"].halloween h2{background:linear-gradient(90deg,var(--h2bg),transparent);border-left-color:var(--gold)}
+html[data-theme="light"] h1,html[data-theme="light"] h2,html[data-theme="light"] h4,html[data-theme="light"].halloween h1,html[data-theme="light"].halloween h2{color:var(--parch)}
+html[data-theme="light"] h3,html[data-theme="light"].halloween h3{color:var(--gold2)}
+html[data-theme="light"] a,html[data-theme="light"].halloween a{color:var(--gold2)}
+html[data-theme="light"] a:hover,html[data-theme="light"].halloween a:hover{color:#4f2c00}
+html[data-theme="contrast"] a,html[data-theme="contrast"].halloween a{color:var(--gold2);text-decoration:underline;text-underline-offset:2px}
+html[data-theme="contrast"] a:hover,html[data-theme="contrast"].halloween a:hover{color:#fff}
+html[data-theme="light"] .logo .sig,html[data-theme="light"].halloween .logo .sig{color:var(--gold);text-shadow:none;animation:none}
+html[data-theme="contrast"] .logo .sig,html[data-theme="contrast"].halloween .logo .sig{color:var(--gold);text-shadow:none;animation:none}
+html[data-theme="light"] .box,html[data-theme="light"] .call,html[data-theme="light"].halloween .box,html[data-theme="light"].halloween .call,html[data-theme="light"].halloween .ngm{background:var(--panel);border-color:var(--line)}
+html[data-theme="contrast"] .box,html[data-theme="contrast"] .call,html[data-theme="contrast"].halloween .box,html[data-theme="contrast"].halloween .call,html[data-theme="contrast"].halloween .ngm{background:var(--panel);border-color:var(--line)}
+html[data-theme="light"] .grid,html[data-theme="light"].halloween .grid,html[data-theme="contrast"] .grid,html[data-theme="contrast"].halloween .grid{background:var(--panel)}
+html[data-theme="light"] .grid th,html[data-theme="light"].halloween .grid th,html[data-theme="contrast"] .grid th,html[data-theme="contrast"].halloween .grid th{background:var(--panel2);color:var(--parch)}
+html[data-theme="light"] .grid tr:nth-child(even) td,html[data-theme="light"].halloween .grid tr:nth-child(even) td{background:rgba(138,90,20,.06)}
+html[data-theme="contrast"] .grid tr:nth-child(even) td,html[data-theme="contrast"].halloween .grid tr:nth-child(even) td{background:#100c06}
+/* form controls and buttons: 3:1 border against the page in both themes */
+html[data-theme="light"] input,html[data-theme="light"] select,html[data-theme="light"] textarea,html[data-theme="light"] button,html[data-theme="light"] code,
+html[data-theme="light"].halloween input,html[data-theme="light"].halloween select,html[data-theme="light"].halloween textarea,html[data-theme="light"].halloween button,html[data-theme="light"].halloween code,
+html[data-theme="light"] .search input,html[data-theme="light"].halloween .search input{background-color:var(--panel);color:var(--ink);border-color:var(--ctl)}
+html[data-theme="contrast"] input,html[data-theme="contrast"] select,html[data-theme="contrast"] textarea,html[data-theme="contrast"] button,html[data-theme="contrast"] code,
+html[data-theme="contrast"].halloween input,html[data-theme="contrast"].halloween select,html[data-theme="contrast"].halloween textarea,html[data-theme="contrast"].halloween button,html[data-theme="contrast"].halloween code,
+html[data-theme="contrast"] .search input,html[data-theme="contrast"].halloween .search input{background-color:#000;color:#fff;border-color:var(--ctl)}
+html[data-theme="light"] input::placeholder,html[data-theme="light"] textarea::placeholder{color:#6b5a42;opacity:1}
+html[data-theme="contrast"] input::placeholder,html[data-theme="contrast"] textarea::placeholder{color:#d9cfb8;opacity:1}
+html[data-theme="light"] :focus-visible,html[data-theme="light"].halloween :focus-visible{outline-color:#6a3f00!important}
+html[data-theme="contrast"] :focus-visible,html[data-theme="contrast"].halloween :focus-visible{outline-color:#fff!important}
+html[data-theme="light"] ::selection,html[data-theme="light"].halloween ::selection{background:#e6c27a;color:#21180e}
+html[data-theme="contrast"] ::selection,html[data-theme="contrast"].halloween ::selection{background:#ffc94a;color:#000}
+/* badges: solid fills with white text (light) or white text on deep fills with a light outline (contrast) */
+html[data-theme="light"] .badge.fact,html[data-theme="light"].halloween .badge.fact{background:#2f5a2a;color:#fff;border-color:#2f5a2a}
+html[data-theme="light"] .badge.strat,html[data-theme="light"].halloween .badge.strat{background:#3d5a2c;color:#fff}
+html[data-theme="light"] .badge.unc,html[data-theme="light"].halloween .badge.unc{background:#8f3f2f;color:#fff}
+html[data-theme="light"] .badge.ok{background:#3c6b3a;color:#fff}
+html[data-theme="contrast"] .badge,html[data-theme="contrast"].halloween .badge{border:1px solid #fff;color:#fff}
+html[data-theme="contrast"] .badge.fact,html[data-theme="contrast"].halloween .badge.fact{background:#123d1f}
+html[data-theme="contrast"] .badge.strat,html[data-theme="contrast"].halloween .badge.strat{background:#1f3d2a}
+html[data-theme="contrast"] .badge.unc,html[data-theme="contrast"].halloween .badge.unc{background:#6e2414}
+html[data-theme="light"] .hw-toggle,html[data-theme="light"].halloween .hw-toggle{background:var(--panel);color:var(--ink);border-color:var(--ctl);box-shadow:none}
+html[data-theme="contrast"] .hw-toggle,html[data-theme="contrast"].halloween .hw-toggle{background:#000;color:#fff;border-color:var(--ctl);box-shadow:none}
+html[data-theme="light"] .ux-tt,html[data-theme="light"].halloween .ux-tt{background:#fffaf0;color:var(--ink);border-color:var(--ctl);box-shadow:0 6px 18px rgba(80,55,20,.25)}
+html[data-theme="contrast"] .ux-tt,html[data-theme="contrast"].halloween .ux-tt{background:#000;color:#fff;border-color:#fff;box-shadow:none}
+html[data-theme="light"] .skip,html[data-theme="light"].halloween .skip{background:#6e4510;color:#fff}
+html[data-theme="contrast"] .skip,html[data-theme="contrast"].halloween .skip{background:#ffc94a;color:#000}
+html[data-theme="light"] .tab.on,html[data-theme="light"].halloween .tab.on{background:#7a4f12;color:#fff}
+html[data-theme="contrast"] .tab.on,html[data-theme="contrast"].halloween .tab.on{background:#ffc94a;color:#000}
+html[data-theme="light"] .hb-app button[aria-pressed=true],html[data-theme="light"] .hb-app .hb-primary,html[data-theme="light"].halloween .hb-app button[aria-pressed=true],html[data-theme="light"].halloween .hb-app .hb-primary{color:#fff}
+html[data-theme="light"] .mkt-medium,html[data-theme="light"].halloween .mkt-medium{color:#6b4f0a}
