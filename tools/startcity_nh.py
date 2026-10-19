@@ -96,7 +96,8 @@ Q.update({
  'heads': auto('Ashira Infiltrator Heads', 'Optional', 'Red Mantles faction, but it costs Citizens of Night Harbor if you over-kill Mayana and Jumthem.', notes=[it(F, 'Starts after The Yowling.', 'qs')]),
  'chompers': auto("Chompers' Hide Tunic Quest", 'Optional', 'A tunic from Chompers (16), a crocodile that spawns randomly on the Shaded Dunes beach.'),
  'aashir': auto('Escort Head Researcher Aashir', 'Optional', "Aashir's Earring (15+, Shaded Dunes). An escort, so bring a group."),
- 'bowl': auto("Hult's Beetle Bowl (Quest)", 'Optional', "Hult's Beetle Bowl from the scarab armor NPC."),
+ 'bowl': auto("Hult's Beetle Bowl (Quest)", 'Optional', "Hult's Beetle Bowl from Hult Beetlewrangler for 2 Fire Beetle Carapace.", where='Hult Beetlewrangler, rear of the Sojourner Camp',
+             mobs=[{'item': 'Fire Beetle Carapace x2', 'from': 'a fire beetle (2), noob yards'}]),
 })
 Q.update(Q_MID)
 ST_CLASS = [it(F, 'Class starter quest:', 'qs', quest=k, classes=v['classes']) for k, v in sorted(Q.items()) if k.startswith('s-')]
@@ -107,6 +108,7 @@ bands = [
    it(F, 'Noob yards outside the north and west gates (wiki levels): large rat, rotting skeleton, desert bat and jackal pup 1; spiderling, fire beetle and ashira scout 2; dunes scarab 3; jackal and curious jackal 4.', 'nh'),
    it(F, 'In town: Shaded Bloom Inn basement (beetles and rats, solo 1-3), Saltbreeze Park (bats at night), the Necropolis front yard (rats, bats, spiders, beetles, skeletons; the Night Terror, level 8, spawns at night) and the Garrison Boatyard rats.', 'hunt'),
    it(F, 'Starter armor:', 'qs', quest='scarab'),
+   it(F, 'Optional, same NPC:', 'qs', quest='bowl'),
    it(F, 'Crocodile hatchlings (non-hostile; Snar the egg collector is the named) by the shore outside the west gate and tucked away right of the north gate. Hunting guide: solo 4-6. monme.no: 3-7.', 'hunt', 'monme'),
    it(F, 'Optional city quests:', 'qs', quest='cloth'), it(F, 'Optional:', 'qs', quest='pests'), it(F, 'Optional:', 'qs', quest='tails'),
    it(F, 'Faction (Clerics and Paladins):', 'pk', quest='ryland', classes=['Cleric', 'Paladin']),

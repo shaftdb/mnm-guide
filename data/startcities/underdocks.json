@@ -1,37 +1,1521 @@
 {
  "city": "Underdocks",
  "slug": "underdocks",
- "status": "stub",
+ "status": "sourced",
  "updated": "2026-10-18",
- "generated_by": "tools/startcity_stubs.py",
+ "researched": "2026-10-18 22:45 America/New_York",
+ "generated_by": "tools/startcity_underdocks.py",
  "sources": {
   "faq": [
    "Official Early Access FAQ (starting areas)",
    "https://monstersandmemories.com/early-access-faq"
   ],
-  "city": [
+  "npg": [
+   "Official New Player Guide (scrolls are sold near your class guild hall)",
+   "https://monstersandmemories.com/new-player-guide"
+  ],
+  "start": [
+   "Wiki: Starting City by Race, Class, and Deity",
+   "https://monstersandmemories.miraheze.org/wiki/Starting_City_by_Race,_Class,_and_Deity"
+  ],
+  "hunt": [
+   "Wiki: Per-Level Hunting Guide (rev 73595, 2026-09-22; marked work in progress)",
+   "https://monstersandmemories.miraheze.org/wiki/Per-Level_Hunting_Guide"
+  ],
+  "qs": [
+   "Wiki quest walkthroughs (quest helper)",
+   "/quest-helper.html"
+  ],
+  "p29": [
+   "Official patch notes 0.29.0.0 (2026-09-10)",
+   "https://account.monstersandmemories.com/community/patch_notes/44"
+  ],
+  "p291": [
+   "Official patch notes 0.29.0.1 (2026-09-11)",
+   "https://account.monstersandmemories.com/community/patch_notes/45"
+  ],
+  "p300": [
+   "Official patch notes 0.30.0.0 (2026-09-19)",
+   "https://account.monstersandmemories.com/community/patch_notes/46"
+  ],
+  "p302": [
+   "Official patch notes 0.30.2.0 (2026-09-25)",
+   "https://account.monstersandmemories.com/community/patch_notes/51"
+  ],
+  "p3021": [
+   "Official patch notes 0.30.2.1 (2026-09-30)",
+   "https://account.monstersandmemories.com/community/patch_notes/52"
+  ],
+  "p3024": [
+   "Official patch notes 0.30.2.4 (2026-10-04)",
+   "https://account.monstersandmemories.com/community/patch_notes/55"
+  ],
+  "p3025": [
+   "Official patch notes 0.30.2.5 (2026-10-07)",
+   "https://account.monstersandmemories.com/community/patch_notes/56"
+  ],
+  "p3028": [
+   "Official patch notes 0.30.2.8 (2026-10-11)",
+   "https://account.monstersandmemories.com/community/patch_notes/59"
+  ],
+  "f551": [
+   "Forum: Necromancer v Elves? (race standing in Faelindral and Ail'Vorith, 2026-08-25 to 09-18)",
+   "https://forum.monstersandmemories.com/d/551-necromancer-v-elves"
+  ],
+  "f771": [
+   "Forum: Deep Elf to NH without KoS (2026-09-10/12)",
+   "https://forum.monstersandmemories.com/d/771-deep-elf-to-nh-without-kos"
+  ],
+  "f1514": [
+   "Forum: NH factions frozen for Deep elf (2026-10-03/04)",
+   "https://forum.monstersandmemories.com/d/1514-nh-factions-frozen-for-deep-elf"
+  ],
+  "f1616": [
+   "Forum: Deep Elf Non-KOS Night Harbor (2026-10-04)",
+   "https://forum.monstersandmemories.com/d/1616-deep-elf-non-kos-night-harbor"
+  ],
+  "f1647": [
+   "Forum: Faction Hostility in Night Harbor is broken",
+   "https://forum.monstersandmemories.com/d/1647-faction-hostility-in-night-harbor-is-broken"
+  ],
+  "r1": [
+   "Reddit: Dark Elves and Night Harbor (2026-09-24)",
+   "https://www.reddit.com/r/MonstersAndMemories/comments/1wpcpke/dark_elves_and_night_harbor/"
+  ],
+  "r2": [
+   "Reddit: Starting Ail'vorith as a new player (2026-09-28)",
+   "https://www.reddit.com/r/MonstersAndMemories/comments/1ws687w/starting_ailvorith_as_anew_player/"
+  ],
+  "cav": [
+   "Wiki faction: Citizens of Ail'Vorith",
+   "https://monstersandmemories.miraheze.org/wiki/Citizens_of_Ail%27Vorith"
+  ],
+  "deepcut": [
+   "Wiki faction: Deepcut Bandits",
+   "https://monstersandmemories.miraheze.org/wiki/Deepcut_Bandits"
+  ],
+  "cnh": [
+   "Wiki faction: Citizens of Night Harbor",
+   "https://monstersandmemories.miraheze.org/wiki/Citizens_of_Night_Harbor"
+  ],
+  "redm": [
+   "Wiki faction: Red Mantles",
+   "https://monstersandmemories.miraheze.org/wiki/Red_Mantles"
+  ],
+  "steel": [
+   "Wiki faction: Steel Talons",
+   "https://monstersandmemories.miraheze.org/wiki/Steel_Talons"
+  ],
+  "nhg": [
+   "Wiki faction: Night Harbor Garrison",
+   "https://monstersandmemories.miraheze.org/wiki/Night_Harbor_Garrison"
+  ],
+  "races": [
+   "Wiki: start-city table race notes (Deep Gnome standing)",
+   "https://monstersandmemories.miraheze.org/wiki/Starting_City_by_Race,_Class,_and_Deity"
+  ],
+  "mw-night-harbor": [
+   "monstersandmemories.wiki: Night Harbor (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/night-harbor"
+  ],
+  "mw-underdocks": [
+   "monstersandmemories.wiki: Underdocks (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/underdocks"
+  ],
+  "mw-evershade-weald": [
+   "monstersandmemories.wiki: Evershade Weald (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/evershade-weald"
+  ],
+  "mw-keepers-bight": [
+   "monstersandmemories.wiki: Keeper's Bight (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/keepers-bight"
+  ],
+  "mw-blacktide-bay": [
+   "monstersandmemories.wiki: Blacktide Bay (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/blacktide-bay"
+  ],
+  "mw-shaded-dunes": [
+   "monstersandmemories.wiki: Shaded Dunes (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/shaded-dunes"
+  ],
+  "mw-sungreet-strand": [
+   "monstersandmemories.wiki: Sungreet Strand (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/sungreet-strand"
+  ],
+  "mw-tel-ekir": [
+   "monstersandmemories.wiki: Tel Ekir (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/tel-ekir"
+  ],
+  "mw-tomb-of-the-last-wyrmsbane": [
+   "monstersandmemories.wiki: Tomb of the Last Wyrmsbane (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/tomb-of-the-last-wyrmsbane"
+  ],
+  "mw-ancient-crypt": [
+   "monstersandmemories.wiki: Ancient Crypt (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/ancient-crypt"
+  ],
+  "mw-caves-of-irem": [
+   "monstersandmemories.wiki: Caves of Irem (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/caves-of-irem"
+  ],
+  "mw-great-cavern-sea": [
+   "monstersandmemories.wiki: Great Cavern Sea (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/great-cavern-sea"
+  ],
+  "mw-fallen-pass": [
+   "monstersandmemories.wiki: Fallen Pass (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/fallen-pass"
+  ],
+  "mw-glass-flats": [
+   "monstersandmemories.wiki: Glass Flats (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/glass-flats"
+  ],
+  "mw-vale-of-zintar": [
+   "monstersandmemories.wiki: Vale of Zintar (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/vale-of-zintar"
+  ],
+  "mw-scarwood": [
+   "monstersandmemories.wiki: Scarwood (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/scarwood"
+  ],
+  "mw-shallow-shoals": [
+   "monstersandmemories.wiki: Shallow Shoals (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/shallow-shoals"
+  ],
+  "mw-grain-cellar": [
+   "monstersandmemories.wiki: Grain Cellar (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/grain-cellar"
+  ],
+  "mw-rothold": [
+   "monstersandmemories.wiki: Rothold (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/rothold"
+  ],
+  "mw-blind-midden": [
+   "monstersandmemories.wiki: Blind Midden (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/blind-midden"
+  ],
+  "z-night-harbor": [
+   "Wiki: Night Harbor",
+   "https://monstersandmemories.miraheze.org/wiki/Night_Harbor"
+  ],
+  "z-underdocks": [
    "Wiki: Underdocks",
    "https://monstersandmemories.miraheze.org/wiki/Underdocks"
+  ],
+  "z-faelindral": [
+   "Wiki: Faelindral",
+   "https://monstersandmemories.miraheze.org/wiki/Faelindral"
+  ],
+  "z-evershade-weald": [
+   "Wiki: Evershade Weald",
+   "https://monstersandmemories.miraheze.org/wiki/Evershade_Weald"
+  ],
+  "z-keepers-bight": [
+   "Wiki: Keeper's Bight",
+   "https://monstersandmemories.miraheze.org/wiki/Keeper%27s_Bight"
+  ],
+  "z-blacktide-bay": [
+   "Wiki: Blacktide Bay",
+   "https://monstersandmemories.miraheze.org/wiki/Blacktide_Bay"
+  ],
+  "z-shaded-dunes": [
+   "Wiki: Shaded Dunes",
+   "https://monstersandmemories.miraheze.org/wiki/Shaded_Dunes"
+  ],
+  "z-sungreet-strand": [
+   "Wiki: Sungreet Strand",
+   "https://monstersandmemories.miraheze.org/wiki/Sungreet_Strand"
+  ],
+  "z-tel-ekir": [
+   "Wiki: Tel Ekir",
+   "https://monstersandmemories.miraheze.org/wiki/Tel_Ekir"
+  ],
+  "z-tomb-of-the-last-wyrmsbane": [
+   "Wiki: Tomb of the Last Wyrmsbane",
+   "https://monstersandmemories.miraheze.org/wiki/Tomb_of_the_Last_Wyrmsbane"
+  ],
+  "z-night-harbor-sewers": [
+   "Wiki: Night Harbor Sewers",
+   "https://monstersandmemories.miraheze.org/wiki/Night_Harbor_Sewers"
+  ],
+  "z-infested-crypt": [
+   "Wiki: Infested Crypt",
+   "https://monstersandmemories.miraheze.org/wiki/Infested_Crypt"
+  ],
+  "z-ancient-crypt": [
+   "Wiki: Ancient Crypt",
+   "https://monstersandmemories.miraheze.org/wiki/Ancient_Crypt"
+  ],
+  "z-caves-of-irem": [
+   "Wiki: Caves of Irem",
+   "https://monstersandmemories.miraheze.org/wiki/Caves_of_Irem"
+  ],
+  "z-glinting-hollow": [
+   "Wiki: Glinting Hollow",
+   "https://monstersandmemories.miraheze.org/wiki/Glinting_Hollow"
+  ],
+  "z-scarwood": [
+   "Wiki: Scarwood",
+   "https://monstersandmemories.miraheze.org/wiki/Scarwood"
+  ],
+  "z-vale-of-zintar": [
+   "Wiki: Vale of Zintar",
+   "https://monstersandmemories.miraheze.org/wiki/Vale_of_Zintar"
+  ],
+  "z-fallen-pass": [
+   "Wiki: Fallen Pass",
+   "https://monstersandmemories.miraheze.org/wiki/Fallen_Pass"
+  ],
+  "z-shallow-shoals": [
+   "Wiki: Shallow Shoals",
+   "https://monstersandmemories.miraheze.org/wiki/Shallow_Shoals"
+  ],
+  "z-glass-flats": [
+   "Wiki: Glass Flats",
+   "https://monstersandmemories.miraheze.org/wiki/Glass_Flats"
+  ],
+  "z-grain-cellar": [
+   "Wiki: Grain Cellar",
+   "https://monstersandmemories.miraheze.org/wiki/Grain_Cellar"
+  ],
+  "z-sunken-resort": [
+   "Wiki: Sunken Resort",
+   "https://monstersandmemories.miraheze.org/wiki/Sunken_Resort"
+  ],
+  "z-great-cavern-sea": [
+   "Wiki: Great Cavern Sea",
+   "https://monstersandmemories.miraheze.org/wiki/Great_Cavern_Sea"
+  ],
+  "rkb": [
+   "Reddit: Levelling location near Evershade Weald level 13 (2026-08-10)",
+   "https://www.reddit.com/r/MonstersAndMemories/comments/1vkskp0/levelling_location_near_evershade_weald_level_13/"
+  ],
+  "ud": [
+   "Wiki: Underdocks (rev 82552, 2026-10-17)",
+   "https://monstersandmemories.miraheze.org/wiki/Underdocks"
+  ],
+  "udsq": [
+   "Wiki: Underdocks Starter Quest (rev 82503, 2026-10-16)",
+   "https://monstersandmemories.miraheze.org/wiki/Underdocks_Starter_Quest"
+  ],
+  "udrog": [
+   "Wiki: Rogue Starter Quest (Underdocks) (rev 80340)",
+   "https://monstersandmemories.miraheze.org/wiki/Rogue_Starter_Quest_(Underdocks)"
+  ],
+  "uddru": [
+   "Wiki: Druid Starter Quest (Underdocks) (rev 82416)",
+   "https://monstersandmemories.miraheze.org/wiki/Druid_Starter_Quest_(Underdocks)"
+  ],
+  "udclr": [
+   "Wiki: Cleric Starter Quest (Underdocks) (rev 75141)",
+   "https://monstersandmemories.miraheze.org/wiki/Cleric_Starter_Quest_(Underdocks)"
+  ],
+  "udshd": [
+   "Wiki: Shadow Knight Starter Quest (Underdocks) (rev 79359)",
+   "https://monstersandmemories.miraheze.org/wiki/Shadow_Knight_Starter_Quest_(Underdocks)"
+  ],
+  "udshm": [
+   "Wiki: Shaman Starter Quest (Underdocks) (rev 79808)",
+   "https://monstersandmemories.miraheze.org/wiki/Shaman_Starter_Quest_(Underdocks)"
+  ],
+  "udwiz": [
+   "Wiki: Wizard Starter Quest (Underdocks) (rev 79672)",
+   "https://monstersandmemories.miraheze.org/wiki/Wizard_Starter_Quest_(Underdocks)"
+  ],
+  "wfc": [
+   "Wiki: Wererat Fight Club (rev 81100)",
+   "https://monstersandmemories.miraheze.org/wiki/Wererat_Fight_Club"
+  ],
+  "picks": [
+   "Wiki: Mining Picks for Hull (rev 76278)",
+   "https://monstersandmemories.miraheze.org/wiki/Mining_Picks_for_Hull"
+  ],
+  "delilah": [
+   "Wiki: Find Delilah's Pet (rev 81994)",
+   "https://monstersandmemories.miraheze.org/wiki/Find_Delilah%27s_Pet"
+  ],
+  "trem": [
+   "Wiki faction: The Trembling Hand",
+   "https://monstersandmemories.miraheze.org/wiki/The_Trembling_Hand"
+  ],
+  "sos": [
+   "storiesofmnm: Mindless blightspore",
+   "https://storiesofmnm.com/wiki/npc/mindless-blightspore/"
+  ],
+  "irem": [
+   "Wiki: Caves of Irem",
+   "https://monstersandmemories.miraheze.org/wiki/Caves_of_Irem"
+  ],
+  "av": [
+   "This Codex: Ail'Vorith route",
+   "/walkthrough.html?city=Ail%27Vorith"
+  ],
+  "dg": [
+   "Wiki: Deep Gnome (race page)",
+   "https://monstersandmemories.miraheze.org/wiki/Deep_Gnome"
+  ],
+  "monme": [
+   "monme.no camps (Petrichor's database)",
+   "https://monme.no/camps"
   ]
  },
  "intro": [
   {
    "label": "FACT",
-   "text": "Some neutral and evil race/faith/class combinations have the option of starting here (a port district far below Night Harbor).",
+   "text": "The Underdocks is a port district far below Night Harbor: a circular cavern with an underground lake, the Citadel building in the middle and a ring of stone walkway around it. The wiki gives the zone as level 1-50.",
    "src": [
+    "ud",
     "faq"
    ]
   },
   {
-   "label": "UNVERIFIED",
-   "text": "No curated early route for Underdocks yet: no sourced data yet. The zone and camp lists below the route box are for every start city.",
-   "src": []
+   "label": "FACT",
+   "text": "The start-city table allows these races to start here: Deep Elf, Deep Gnome, Gnome, Goblin, Human, Ogre. The zone page calls it the main start for Deep Elves and Deep Gnomes.",
+   "src": [
+    "start",
+    "ud"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Set chat to Common Tongue for Marshal Harding (he could not understand Deep Tongue as of 2026-09-10). Patch 0.30.2.0 made the relevant Underdocks NPCs speak both Common and Deep Common.",
+   "src": [
+    "udsq",
+    "p302"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Player-tracked hunting in Underdocks: levels 2-15, most at 9; 1cp-4sp 88cp, average 29cp (7,046 kills).",
+   "src": [
+    "mw-underdocks"
+   ]
+  },
+  {
+   "label": "STRATEGY",
+   "text": "Underdocks starts are short on local content past about 15: do your class starter, the repeatable bounties and wererats, then either head up into Night Harbor and the surface route or, as a Deep Elf, take the boat to the Deep.",
+   "src": [
+    "ud",
+    "hunt"
+   ]
   }
  ],
- "faction": [],
- "travel": [],
- "money": [],
- "trainers": {},
- "quests": {},
- "bands": []
+ "faction": [
+  {
+   "label": "FACT",
+   "text": "Deepcut bandit bounties, mushroom farmer and Thieves Guild bounties all raise The Descendian Order and Citizens of Underdocks (quest walkthroughs). The Descendian Order and Citizens of Underdocks have no wiki faction page yet: no sourced data yet for what lowers them.",
+   "src": [
+    "qs"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Killing Deepcut bandits lowers Citizens of Ail'Vorith (Ail'Vorith faction page). That matters if you plan to use Ail'Vorith later as a Deep Elf.",
+   "src": [
+    "cav"
+   ],
+   "races": [
+    "Deep Elf"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Necromancer starter: The Trembling Hand + and The Dreaming Dawn −. Shaman starter: Rot of Gorm +. Mining Picks for Hull raises the Delvestone Mining Company, The Underwatch and Citizens of Underdocks. Wererat Fight Club raises The Fight Club.",
+   "src": [
+    "qs",
+    "trem",
+    "picks",
+    "wfc"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Deep Gnomes con Disdain at worst in Night Harbor and Evershade Weald, but are KoS to everyone in Ail'Vorith.",
+   "src": [
+    "dg"
+   ],
+   "races": [
+    "Deep Gnome"
+   ]
+  },
+  {
+   "label": "UNVERIFIED",
+   "text": "A Deep Gnome taken to the Ail'Vorith Foreign Quarter found every NPC there KoS (forum, 2026-09-18), which matches the race page.",
+   "src": [
+    "f551"
+   ],
+   "races": [
+    "Deep Gnome"
+   ]
+  },
+  {
+   "label": "UNVERIFIED",
+   "text": "How Night Harbor and Faelindral treat Goblins and other Underdocks races: no sourced data yet.",
+   "src": []
+  },
+  {
+   "label": "FACT",
+   "text": "Night Harbor: the wiki has no standing table for Deep Elves. Patch 0.30.2.0 (2026-09-25) says 'Night Harbor factions should now be easier to gain'.",
+   "src": [
+    "p302"
+   ],
+   "races": [
+    "Deep Elf"
+   ]
+  },
+  {
+   "label": "UNVERIFIED",
+   "text": "Night Harbor is effectively KoS for a Deep Elf, whatever city you started in. Players report seething or KoS with the Red Mantle and Steel Talon guards, Harbor guards, patrolmen and citizens; an Agnostic deity did not stop the named guards. The guards at the Underdocks tunnel entrance and the Sojourners were fine.",
+   "src": [
+    "f771",
+    "r1",
+    "f1647",
+    "f551"
+   ],
+   "races": [
+    "Deep Elf"
+   ]
+  },
+  {
+   "label": "UNVERIFIED",
+   "text": "Getting out of KoS in Night Harbor is a long grind: from about 500 faction kills after the patch (hearsay) to 7-8 hours of wererats in Shaded Dunes to reach Disdain (2026-10-04) or about 6 hours of wererats outside the Underdocks. Several players report the faction bar not moving at all (2026-10-03). The Bard and Rogue guilds stayed KoS, and the North Bank guards and bankers stayed hostile for one player at Amicable citizens.",
+   "src": [
+    "r1",
+    "f1514",
+    "f1616",
+    "f1647"
+   ],
+   "races": [
+    "Deep Elf"
+   ]
+  },
+  {
+   "label": "UNVERIFIED",
+   "text": "A Reddit player (2026-09-28) says the Night Harbor faction has to be ground around that city (Ashira in Sungreet Strand and Tel Ekir), not in the Deep, and that entering Night Harbor from the Underdocks puts you in The Bends with no KoS guards right at the zone line.",
+   "src": [
+    "r2"
+   ],
+   "races": [
+    "Deep Elf"
+   ]
+  },
+  {
+   "label": "STRATEGY",
+   "text": "As a Deep Elf, treat Night Harbor as hostile until your own faction check (/con a guard) says otherwise. Use the Underdocks as your surface hub, and get a friend to buy Night Harbor spells or sell loot for you if you need the city early.",
+   "src": [
+    "r1",
+    "r2"
+   ],
+   "races": [
+    "Deep Elf"
+   ]
+  }
+ ],
+ "travel": [
+  {
+   "label": "FACT",
+   "text": "Up: lifts to Overreach and the upper city, and on to Night Harbor. Down the river: the Caves of Irem, north along the river (a long way) or by boat. The boat continues through the Great Cavern Sea to Ail'Vorith.",
+   "src": [
+    "ud"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Inside the Citadel: teleporter pads and tunnels under them lead to the east shore and the west bank; there are raft docks and a ferry. Jumping off the walkway at the entrance to Crown Reach drops you in front of the bank.",
+   "src": [
+    "ud"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "The newbie hunting area is through the north gate (Underdocks wall). The Deepcut bandit camps are east of North Gate East, past the wererat camp.",
+   "src": [
+    "udsq",
+    "deepcut"
+   ]
+  }
+ ],
+ "money": [
+  {
+   "label": "FACT",
+   "text": "Player-tracked coin in the Underdocks averages 29cp a kill (1cp-4sp 88cp; most hunting at level 9).",
+   "src": [
+    "mw-underdocks"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Repeatable coin quests: Deepcut Bandit Bounty (8 silver per 6 hands), Mining Picks for Hull (2sp 18cp plus a random Patched Rawhide or Patched Cloth piece), Mushroom Farmers and Thieves Guild bounties (1 silver), Wererat Fight Club (50 copper a head).",
+   "src": [
+    "qs",
+    "picks",
+    "wfc",
+    "ud"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "The Underdocks sells no smelting molds (nearest: the Night Harbor Night Market) and has no loom, so tailoring recipes with 7+ ingredients cannot be made here. Banks are on the third floor (Citadel Exchange). The basement baths give Fair and Fresh (+10 CHA for 20 minutes).",
+   "src": [
+    "ud"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Karsh Spoonthrower (east island) buys the latest patch's drops. Gaden Shale buys everything at a reduced price, and Keen Strikemore pays more for weapons.",
+   "src": [
+    "ud"
+   ]
+  }
+ ],
+ "trainers": {
+  "Cleric": {
+   "npc": "Sister Marwen (trainer); Soren Akedd starts the quest",
+   "where": "On the porch of the Temple of Ygorath chapel (red glow inside)",
+   "src": [
+    "udclr",
+    "ud"
+   ],
+   "label": "FACT"
+  },
+  "Necromancer": {
+   "npc": "Soren Akedd (starter quest)",
+   "where": "Next to the Temple of Ygorath; Abbot Harrow takes part in the quest",
+   "src": [
+    "udclr",
+    "qs"
+   ],
+   "label": "FACT",
+   "note": "No Necromancer trainer or spell vendor is named on the wiki Underdocks page: no sourced data yet."
+  },
+  "Shadow Knight": {
+   "npc": "Father Fyod (after Soren Akedd)",
+   "where": "Balcony upstairs in the Soren Akedd building, left of centre facing the yard",
+   "src": [
+    "udshd"
+   ],
+   "label": "FACT"
+  },
+  "Shaman": {
+   "npc": "Picci Manifold",
+   "where": "Rotten Hollow, the Rot of Gorm cavern west of the palace",
+   "src": [
+    "udshm",
+    "ud"
+   ],
+   "label": "FACT"
+  },
+  "Druid": {
+   "npc": "Luskmit",
+   "where": "Rotten Hollow (Rot of Gorm cavern west of the palace): east to the Dry Docks, right along the water, through the vine tunnel, keep right to a camp up a hill",
+   "src": [
+    "uddru",
+    "ud"
+   ],
+   "label": "FACT"
+  },
+  "Rogue": {
+   "npc": "Slylara Llumare",
+   "where": "Thieves guild on the west docks, behind the herbalist (path behind the purple-glow enchanter buildings, then up the stairs)",
+   "src": [
+    "udrog"
+   ],
+   "label": "FACT"
+  },
+  "Archer": {
+   "npc": "Simrut the Green (after Marshal Harding)",
+   "where": "Eastern District, a goblin by the tall stones next to the archery range",
+   "src": [
+    "udsq"
+   ],
+   "label": "FACT"
+  },
+  "Ranger": {
+   "npc": "Simrut the Green (after Marshal Harding)",
+   "where": "Eastern District, by the archery range",
+   "src": [
+    "udsq",
+    "ud"
+   ],
+   "label": "FACT",
+   "note": "Xeldrin Waymark sells Ranger spell and ability scrolls (wiki NPC table)."
+  },
+  "Beastmaster": {
+   "npc": "Gunder Dinnig (after Marshal Harding)",
+   "where": "Eastern District, a halfling just up the stairs from Simrut",
+   "src": [
+    "udsq"
+   ],
+   "label": "FACT"
+  },
+  "Fighter": {
+   "npc": "Gunder Dinnig (after Marshal Harding)",
+   "where": "Eastern District, up the stairs from Simrut",
+   "src": [
+    "udsq"
+   ],
+   "label": "FACT"
+  },
+  "Enchanter": {
+   "npc": "Maude Astarace (after Marshal Harding)",
+   "where": "Eastern District, a gnome in the building next to the quartermaster",
+   "src": [
+    "udsq",
+    "ud"
+   ],
+   "label": "FACT",
+   "note": "Nyssara Mesmerin, Caster's Guild, is the Enchanter spell vendor."
+  },
+  "Elementalist": {
+   "npc": "Maude Astarace (after Marshal Harding)",
+   "where": "Eastern District, next to the quartermaster",
+   "src": [
+    "udsq"
+   ],
+   "label": "FACT"
+  },
+  "Wizard": {
+   "npc": "Maude Astarace (after Marshal Harding)",
+   "where": "Eastern District, next to the quartermaster",
+   "src": [
+    "udsq",
+    "udwiz"
+   ],
+   "label": "FACT"
+  },
+  "Bard": {
+   "npc": "Crescindy (sells Bard songs)",
+   "where": "Bellowing Bards, across from The High Note (Crown Reach, 5th floor)",
+   "src": [
+    "ud"
+   ],
+   "label": "FACT",
+   "note": "Bards cannot start in the Underdocks (start-city table)."
+  }
+ },
+ "quests": {
+  "s-cleric": {
+   "auto": "Cleric Starter Quest (Underdocks)",
+   "classes": [
+    "Cleric"
+   ],
+   "tag": "Recommended",
+   "why": "Your class starter quest: first gear, guild faction and your trainer.",
+   "src": [
+    "qs",
+    "ud"
+   ]
+  },
+  "s-druid": {
+   "auto": "Druid Starter Quest (Underdocks)",
+   "classes": [
+    "Druid"
+   ],
+   "tag": "Recommended",
+   "why": "Your class starter quest: first gear, guild faction and your trainer.",
+   "src": [
+    "qs",
+    "ud"
+   ]
+  },
+  "s-necromancer": {
+   "auto": "Necromancer Starter Quest (Underdocks)",
+   "classes": [
+    "Necromancer"
+   ],
+   "tag": "Recommended",
+   "why": "Your class starter quest: first gear, guild faction and your trainer.",
+   "src": [
+    "qs",
+    "ud"
+   ]
+  },
+  "s-rogue": {
+   "auto": "Rogue Starter Quest (Underdocks)",
+   "classes": [
+    "Rogue"
+   ],
+   "tag": "Recommended",
+   "why": "Your class starter quest: first gear, guild faction and your trainer.",
+   "src": [
+    "qs",
+    "ud"
+   ]
+  },
+  "s-shadow-knight": {
+   "auto": "Shadow Knight Starter Quest (Underdocks)",
+   "classes": [
+    "Shadow Knight"
+   ],
+   "tag": "Recommended",
+   "why": "Your class starter quest: first gear, guild faction and your trainer.",
+   "src": [
+    "qs",
+    "ud"
+   ]
+  },
+  "s-shaman": {
+   "auto": "Shaman Starter Quest (Underdocks)",
+   "classes": [
+    "Shaman"
+   ],
+   "tag": "Recommended",
+   "why": "Your class starter quest: first gear, guild faction and your trainer.",
+   "src": [
+    "qs",
+    "ud"
+   ]
+  },
+  "s-wizard-enchanter": {
+   "auto": "Wizard Starter Quest (Underdocks)",
+   "classes": [
+    "Enchanter",
+    "Wizard"
+   ],
+   "tag": "Recommended",
+   "why": "Same opening as the Underdocks Starter Quest (Recruitment Notice to Marshal Harding); the quest page lists Musty Tunic and Hammered Iron Ring.",
+   "src": [
+    "qs",
+    "ud"
+   ]
+  },
+  "udsq": {
+   "auto": "Underdocks Starter Quest",
+   "classes": [
+    "Archer",
+    "Beastmaster",
+    "Elementalist",
+    "Enchanter",
+    "Fighter",
+    "Ranger",
+    "Wizard"
+   ],
+   "tag": "Recommended",
+   "why": "Musty Tunic and Hammered Iron Ring at 1-2, then a class follow-up for Polished Iron Ring and 10 silver (Archer/Ranger), and at 12-14 Ratkiller.",
+   "src": [
+    "udsq",
+    "qs"
+   ],
+   "where": "Marshal Harding, Eastern District: take a lift down to the Citadel, head east (swim or take the raft), then climb the stairs across from the raft dock",
+   "prereq": "Recruitment Notice (new Archer, Ranger, Beastmaster, Fighter, Enchanter, Elementalist or Wizard). Chat language: Common Tongue.",
+   "mobs": [
+    {
+     "item": "Deep Beetle Carapace x6",
+     "from": "a deep beetle (2-4), outside the gate to the newbie area; kill dusky rats and young shadewings (1-2) first"
+    },
+    {
+     "item": "Riddrick's Ring (Archer/Ranger, 5+)",
+     "from": "wererats (rare drop), encampment along the north wall from the newbie gate"
+    },
+    {
+     "item": "Riddrick's Head (Archer/Ranger, 12-14)",
+     "from": "Riddrick the Cursed (14, rare wererat spawn; may need a group)"
+    },
+    {
+     "item": "Crystals (Enchanter/Elementalist/Wizard, 4+)",
+     "from": "Deepcut miners in the Darrowdwell mines"
+    }
+   ],
+   "turnin": "Marshal Harding, then Simrut the Green, Gunder Dinnig or Maude Astarace by class; the paymaster is Elara Venn",
+   "notes": [
+    {
+     "label": "FACT",
+     "text": "Faction: The Descendian Order + at every step.",
+     "src": [
+      "udsq"
+     ]
+    }
+   ]
+  },
+  "bounty": {
+   "auto": "Deepcut Bandit Bounty",
+   "classes": [],
+   "tag": "Recommended",
+   "why": "8 silver plus XP and Descendian Order and Citizens of Underdocks faction per 6 Deepcut Bandit's Hands. Group content at 10-16.",
+   "src": [
+    "qs"
+   ],
+   "where": "Traven Keldress takes the hands; Elara Venn, the paymaster, redeems the receipt at the East Docks Bounty Office",
+   "mobs": [
+    {
+     "item": "Deepcut Bandit's Hand x6",
+     "from": "Deepcut bandits (miners 3-5, overseers 5-6, marksmen and others) at the 5-8 camps east of North Gate East, past the wererats"
+    }
+   ]
+  },
+  "mush": {
+   "auto": "Mushroom Farmers Bounty Quest",
+   "classes": [],
+   "tag": "Optional",
+   "why": "Repeatable coin (the wiki says 2 silver, the walkthrough 1) plus Descendian Order and Citizens faction.",
+   "src": [
+    "qs"
+   ],
+   "notes": [
+    {
+     "label": "UNVERIFIED",
+     "text": "Coin differs: 2 silver on the Underdocks quest table, 1 silver in the walkthrough.",
+     "src": [
+      "ud",
+      "qs"
+     ]
+    }
+   ]
+  },
+  "thieves": {
+   "auto": "Thieves Guild Bounty Quest",
+   "classes": [],
+   "tag": "Optional",
+   "why": "Repeatable 1 silver plus Descendian Order and Citizens faction.",
+   "src": [
+    "qs"
+   ]
+  },
+  "arson": {
+   "auto": "The Small Problem of Deepcut Arsonists",
+   "classes": [],
+   "tag": "Optional",
+   "why": "1 silver plus faction. Arsonists are an uncommon spawn in the Deepcut mining cave, and their oil is an uncommon drop.",
+   "src": [
+    "qs"
+   ]
+  },
+  "wfc": {
+   "auto": "Wererat Fight Club",
+   "classes": [],
+   "tag": "Recommended",
+   "why": "Repeatable 50 copper and The Fight Club faction per Severed Wererat Head (about 30% drop from 5-8 wererats in the newbie area).",
+   "src": [
+    "wfc",
+    "qs"
+   ],
+   "where": "Draznax, centre of the mercenary camp by the wagons, south-east of the upper city"
+  },
+  "picks": {
+   "auto": "Mining Picks for Hull",
+   "classes": [],
+   "tag": "Recommended",
+   "why": "Repeatable 2sp 18cp, a random Patched Rawhide or Patched Cloth piece, and Delvestone, Underwatch and Citizens faction.",
+   "src": [
+    "picks",
+    "qs"
+   ],
+   "where": "Hull Orbel, near the Delvestone miners in the north-east of the upper city",
+   "mobs": [
+    {
+     "item": "Delvestone Mining Pick (a Broken Mining Pick does not count)",
+     "from": "Deepcut miners in the mines on the rafters level (elevator across from Hull)"
+    }
+   ]
+  },
+  "delilah": {
+   "auto": "Find Delilah's Pet",
+   "classes": [],
+   "tag": "Optional",
+   "why": "Turtle Shell Shield plus Citizens of Underdocks faction. Patch 0.30.3.2 replaced the old Greater Turtle Shell Shield.",
+   "src": [
+    "delilah",
+    "qs"
+   ]
+  },
+  "syrsil": {
+   "auto": "Syrsil's Stolen Package",
+   "classes": [],
+   "tag": "Optional",
+   "why": "XP and House Varros faction (a Deep Elf house). Senior Apprentice Syrsil is in the Inn tavern.",
+   "src": [
+    "qs",
+    "ud"
+   ]
+  },
+  "viper": {
+   "auto": "Viper's Kick Recipe",
+   "classes": [],
+   "tag": "Optional",
+   "why": "Reward is the Viper's Kick recipe item plus XP. Only worth it if you are in Glass Flats anyway.",
+   "src": [
+    "qs"
+   ]
+  },
+  "hulg": {
+   "auto": "Captain Hulg's Mug",
+   "classes": [],
+   "tag": "Optional",
+   "why": "XP and 5 silver while you work the quarry.",
+   "src": [
+    "qs"
+   ]
+  },
+  "left": {
+   "auto": "Left Behind",
+   "classes": [],
+   "tag": "Recommended",
+   "why": "Fendris the Forsaken (30+) turns the named poachers' drops into armor and a weapon. The Keeper's Bight wiki lists Debtcarver, Leggings of Reckoning, Boots of Vengeful Resolve and Vest of Shattered Duty (from Poachers Tolan and Garrus).",
+   "src": [
+    "qs",
+    "z-keepers-bight"
+   ]
+  }
+ },
+ "bands": [
+  {
+   "lo": 1,
+   "hi": 5,
+   "title": "Recruitment notice or temple note, newbie yard",
+   "steps": [
+    {
+     "label": "FACT",
+     "text": "Underdocks Starter Quest (Archer, Ranger, Beastmaster, Fighter, Enchanter, Elementalist, Wizard):",
+     "src": [
+      "udsq"
+     ],
+     "quest": "udsq",
+     "classes": [
+      "Archer",
+      "Ranger",
+      "Beastmaster",
+      "Fighter",
+      "Enchanter",
+      "Elementalist",
+      "Wizard"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-cleric",
+     "classes": [
+      "Cleric"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-druid",
+     "classes": [
+      "Druid"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-necromancer",
+     "classes": [
+      "Necromancer"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-rogue",
+     "classes": [
+      "Rogue"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-shadow-knight",
+     "classes": [
+      "Shadow Knight"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-shaman",
+     "classes": [
+      "Shaman"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-wizard-enchanter",
+     "classes": [
+      "Enchanter",
+      "Wizard"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Trainer",
+     "src": [
+      "ud"
+     ],
+     "trainer": true
+    },
+    {
+     "label": "FACT",
+     "text": "Newbie yard through the north gate (wiki levels): undercap morels, dusky rats, young shadewings and decayed shadowbones 1-2; deepweb crawlers 2-3; deep beetles 2-4. Stay by the gate until level 2 (starter quest notes).",
+     "src": [
+      "ud",
+      "udsq"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Delvestone and Deepcut miners (3-5) and Deepcut overseers (5-6); the Deepcut is east of North Gate East.",
+     "src": [
+      "ud"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "From level 4:",
+     "src": [
+      "wfc"
+     ],
+     "quest": "wfc"
+    },
+    {
+     "label": "FACT",
+     "text": "Repeatable coin:",
+     "src": [
+      "picks"
+     ],
+     "quest": "picks"
+    },
+    {
+     "label": "FACT",
+     "text": "Optional:",
+     "src": [
+      "delilah"
+     ],
+     "quest": "delilah"
+    }
+   ]
+  },
+  {
+   "lo": 6,
+   "hi": 10,
+   "title": "Wererats, greater shadowbones, Deepcut bounties",
+   "steps": [
+    {
+     "label": "FACT",
+     "text": "Wererat encampment along the north wall from the newbie gate: plaguespreaders 8-12, the rest 10-12; the easiest wererats are 5-8 (Fight Club walkthrough). Greater shadowbones 7-9, smugglers 9-10.",
+     "src": [
+      "ud",
+      "wfc"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Deepcut bandit camps (5-8 camps of 4-5) east of North Gate East, past the wererats. The faction page calls them 10-16 and mostly group content; the named Belot spawns at any camp or in the mine.",
+     "src": [
+      "deepcut"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Bounty (from 8 on the zone table):",
+     "src": [
+      "qs"
+     ],
+     "quest": "bounty"
+    },
+    {
+     "label": "FACT",
+     "text": "Optional bounties:",
+     "src": [
+      "qs"
+     ],
+     "quest": "mush"
+    },
+    {
+     "label": "FACT",
+     "text": "Optional:",
+     "src": [
+      "qs"
+     ],
+     "quest": "thieves"
+    },
+    {
+     "label": "FACT",
+     "text": "Optional:",
+     "src": [
+      "qs"
+     ],
+     "quest": "arson"
+    },
+    {
+     "label": "FACT",
+     "text": "Surface alternative: Shaded Dunes smugglers and wererats beach party (6-9, Toma the Two-Faced) and the Tomb of the Last Wyrmsbane entrance (group 4-14), both through Night Harbor.",
+     "src": [
+      "monme",
+      "hunt"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Optional, House Varros faction:",
+     "src": [
+      "qs"
+     ],
+     "quest": "syrsil"
+    }
+   ]
+  },
+  {
+   "lo": 11,
+   "hi": 15,
+   "title": "Elder shadowbones, Sporefather, Riddrick, Night Harbor docks",
+   "steps": [
+    {
+     "label": "FACT",
+     "text": "Elder shadowbones (10-12) and wererats (10-12); named the Sporefather (13-14, Ironroot Fists), Riddrick the Cursed (14, Riddrick's Head for Ratkiller), Jumbe (14) and Munk (14).",
+     "src": [
+      "ud"
+     ]
+    },
+    {
+     "label": "UNVERIFIED",
+     "text": "storiesofmnm lists a mindless blightspore (Myconid, level 13) in a small cave in the northeast cavern of the Underdocks, tied to the Shaman starter quest and dropping a Blightspore Brain.",
+     "src": [
+      "sos"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Deepcut camps and the mine (group 10-16). Jorlach the Fearless near the entrance drops Jorlach's Head, used in the Shadow Knight starter quest.",
+     "src": [
+      "deepcut",
+      "ud"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Up in Night Harbor: the docks goblins by the cranes (no faction hit, solo 13-15, group 8-12), the Tel Ekir Ashira entrance (group 9-16), and the crypt by day (beetles and scarabs 10-15).",
+     "src": [
+      "hunt",
+      "z-night-harbor"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Caves of Irem (wiki 13+; player-tracked 13-37, most at 13), north along the river from the Underdocks.",
+     "src": [
+      "irem",
+      "mw-caves-of-irem"
+     ]
+    }
+   ]
+  },
+  {
+   "lo": 16,
+   "hi": 20,
+   "title": "Abominable ghouls, then the Deep or the surface",
+   "steps": [
+    {
+     "label": "FACT",
+     "text": "Abominable ghouls (18-20, Shriveled Ghoul Heart) are the highest common mobs on the Underdocks page. Player-tracked hunting in the Underdocks tops out at 15.",
+     "src": [
+      "ud",
+      "mw-underdocks"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Deep option: take the boat toward Ail'Vorith and drop off in the Great Cavern Sea (player-tracked 16-24, most at 17). The Ail'Vorith route covers the Cavern Sea outpost quests and the exile caves (15-22).",
+     "src": [
+      "mw-great-cavern-sea",
+      "z-great-cavern-sea",
+      "av"
+     ],
+     "races": [
+      "Deep Elf"
+     ]
+    },
+    {
+     "label": "STRATEGY",
+     "text": "Everyone else: go up into Night Harbor and follow the shared surface route below (Fallen Pass pit, Glass Flats goblins, Sungreet quarry).",
+     "src": [
+      "hunt"
+     ]
+    },
+    {
+     "label": "STRATEGY",
+     "text": "From the Underdocks (up into Night Harbor, then out of a gate): the start cities meet here. Shaded Dunes leads to Fallen Pass, and Sungreet Strand leads to Glass Flats, the quarry and the Grain Cellar.",
+     "src": [
+      "z-shaded-dunes",
+      "z-sungreet-strand"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Fallen Pass: the pit just inside the zone (don't go up the ramp). Dusty skeletons, about 16-19 per the guide, are easy single pulls, and anywhere along the wall is generally safe. Solo 17-20, group 15.",
+     "src": [
+      "hunt",
+      "z-fallen-pass"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Glass Flats: the goblin camp (turn left as you zone in from Sungreet Strand), with Baron Bigtent (20) as the named. Solo 18, group 16-20.",
+     "src": [
+      "hunt",
+      "z-glass-flats"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Sungreet Strand quarry: cinder workers (16-18). Their loot feeds the Cinder Beetle Armor quests. Solo 24, group 16-20. The Ashira camp by the Glass Flats zone line is solo 21+, group 18-23; the guide asks for a level check.",
+     "src": [
+      "hunt",
+      "z-sungreet-strand"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Ancient Crypt (wiki 12-22): the entrance, kitchen, commander, library and researcher skeleton camps. You need a tank and a healer. Solo 21?, group 13-18.",
+     "src": [
+      "hunt",
+      "z-ancient-crypt",
+      "mw-ancient-crypt"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Tel Ekir, Bloodynose goblin side: captains (16), voodooists and stabbers (~16-18), and General Overlord Bloodynose (20+). You need a tank and a healer. Solo 17+, group 10-15.",
+     "src": [
+      "hunt",
+      "z-tel-ekir"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Keeper's Bight: the deadwood spiders on the spider log (recluses 11-14, then the matriarch and Widow Vethra at 16). A Reddit player calls the log 'great til 20', with the Sangrels behind it.",
+     "src": [
+      "z-keepers-bight",
+      "rkb"
+     ]
+    }
+   ]
+  },
+  {
+   "lo": 21,
+   "hi": 25,
+   "title": "Fallen Pass ramp, Glass Flats beach, Sungreet quarry goblins",
+   "steps": [
+    {
+     "label": "FACT",
+     "text": "Fallen Pass pit: bone carver beetles (24) and Necroferius (25, a named beetle in the NW corner of the pit). Solo 27, group 20-25.",
+     "src": [
+      "hunt",
+      "z-fallen-pass"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Fallen Pass, up the ramp to the left: skeletons and ghouls (restless adepts 22-23). The ghoul adepts nuke for about 200 (blaze), so interrupt them. Solo 28, group 20-25.",
+     "src": [
+      "hunt",
+      "z-fallen-pass"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Glass Flats beach (straight ahead after you enter): Szuurian vipers (24-26) and beetles, single pulls, but watch for roaming named 30+. Solo 28, group 20-24.",
+     "src": [
+      "hunt",
+      "z-glass-flats"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Sungreet Strand quarry goblins: miners ~20-21, spellshooters ~20, and Taskmasters Gitch ~18 and Urka 19. Big pulls with casters, so it is dangerous, but there are several quests. Group 18-23.",
+     "src": [
+      "hunt",
+      "z-sungreet-strand"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Keeper's Bight: Blacktide orcs (23-25) and a Bloodchain overseer (25).",
+     "src": [
+      "z-keepers-bight"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Quest (20+) in Glass Flats:",
+     "src": [
+      "qs"
+     ],
+     "quest": "viper"
+    },
+    {
+     "label": "FACT",
+     "text": "Quest (20) in Sungreet Strand:",
+     "src": [
+      "qs"
+     ],
+     "quest": "hulg"
+    }
+   ]
+  },
+  {
+   "lo": 26,
+   "hi": 30,
+   "title": "Vale of Zintar Ashira, Scarwood bandits, Sungreet cellar",
+   "steps": [
+    {
+     "label": "FACT",
+     "text": "Vale of Zintar: the corrupted Ashira camp. Hug the right wall to the tents by a lake under the corrupted floating castle (Onis the Elder 27, Fernic the Cur 28, Seshena ~27+). Drops sell for 30s-1g. Solo 32, group 22-28.",
+     "src": [
+      "hunt",
+      "z-vale-of-zintar"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Vale of Zintar: the Dustrend orc camp by the Fallen Pass entrance in the north-west (foot soldiers ~27-30). Better XP than the Ashira, worse loot. Solo 32-35, group 26-30.",
+     "src": [
+      "hunt",
+      "z-vale-of-zintar"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Scarwood: the bandit island in the middle of the river (bandits 26; Garran and Thorne Grinholdt 28). There may not be enough mobs for a full group. Solo 27, group 22-27.",
+     "src": [
+      "hunt",
+      "z-scarwood"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Sungreet Strand: the secret cellar in the third farm building (double-click the wall) and the pirates in the fourth. Solo 26-32, group 22-28.",
+     "src": [
+      "hunt",
+      "z-sungreet-strand"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Blacktide Bay (wiki 10-30): Bloodchain Champion 23, Taskmaster Murkraal 28, Captain Kruush 29.",
+     "src": [
+      "z-blacktide-bay",
+      "mw-blacktide-bay"
+     ]
+    }
+   ]
+  },
+  {
+   "lo": 31,
+   "hi": 40,
+   "title": "Keeper's Bight poachers, Grain Cellar, Fallen Pass Plagueborn",
+   "steps": [
+    {
+     "label": "FACT",
+     "text": "Keeper's Bight poacher camps (poachers 28-30; Tolan >35). Named poachers drop a tunic, leggings, boots and a dagger, which go to the undead NPC in the bear cave (Left Behind). Solo ~32+, group 28-35.",
+     "src": [
+      "hunt",
+      "z-keepers-bight"
+     ],
+     "quest": "left"
+    },
+    {
+     "label": "FACT",
+     "text": "Grain Cellar (wiki 32-36, off Sungreet Strand): undead and cultists, full of casters. Group 29-35.",
+     "src": [
+      "hunt",
+      "z-grain-cellar"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Vale of Zintar tomb burrowers (~31-34; silver and gold devourers ~35+ are named). They are not KoS but will social, and they dig away and pop up elsewhere. Solo 32-35 / group 32-35, then 36-39 / 36-38 for the elder and ancient burrowers.",
+     "src": [
+      "hunt",
+      "z-vale-of-zintar"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Fallen Pass Plagueborn undead citizens (~34-37). The ramp down is on the far side of the cliffs. A restless parade comes down at night to fight them, and the constable patrols are higher level. Solo 36+, group 30-35. The Skri'Var rat camps NE past the stables have many named: solo 38-44, group 34-38.",
+     "src": [
+      "hunt",
+      "z-fallen-pass"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Shallow Shoals: the basilisk island across from the Zaedin's Landing boat dock (water basilisks ~36-38), good for mining iron and some gold. Solo 38+, group 30-35.",
+     "src": [
+      "hunt",
+      "z-shallow-shoals"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Scarwood: poachers 34-35, wisps 36-38, treants 38+, black drakes 40-41.",
+     "src": [
+      "z-scarwood"
+     ]
+    }
+   ]
+  },
+  {
+   "lo": 41,
+   "hi": 60,
+   "title": "Glass Flats cultists, Shoals Orc Fortress, Saman, Giant City",
+   "steps": [
+    {
+     "label": "FACT",
+     "text": "Glass Flats outer cultists: single mobs spread through the canyons, getting denser near the building. Solo 45-52, group 42-48. The south-west part is solo 48-52, group 45-50.",
+     "src": [
+      "hunt",
+      "z-glass-flats"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Shallow Shoals Orc Fortress (the Black Shoals Fortress, named ~45), a large island not too far from the Keeper's Bight docks. Solo 48+, group 41-48.",
+     "src": [
+      "hunt",
+      "z-shallow-shoals"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Glinting Hollow (wiki 38+, off Evershade Weald): named by floor, from Softpaws and Thornbark 41 on the 1st floor, through goblings ~42 and dryads ~44, to Gazer 47 on the 6th.",
+     "src": [
+      "z-glinting-hollow"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Endgame camps: Glass Flats undead tower (group 45-50, then 51-60); Fallen Pass elder drakes (~49-51, group 45-52); Lower Saman and the stables (group 51-60); Upper Saman (group 53-60); Vale of Zintar Giant City (group 55-60; most solo players cannot).",
+     "src": [
+      "hunt",
+      "z-glass-flats",
+      "z-fallen-pass",
+      "z-vale-of-zintar"
+     ]
+    }
+   ]
+  }
+ ]
 }

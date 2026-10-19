@@ -1109,9 +1109,16 @@
    "auto": "Hult's Beetle Bowl (Quest)",
    "classes": [],
    "tag": "Optional",
-   "why": "Hult's Beetle Bowl from the scarab armor NPC.",
+   "why": "Hult's Beetle Bowl from Hult Beetlewrangler for 2 Fire Beetle Carapace.",
    "src": [
     "qs"
+   ],
+   "where": "Hult Beetlewrangler, rear of the Sojourner Camp",
+   "mobs": [
+    {
+     "item": "Fire Beetle Carapace x2",
+     "from": "a fire beetle (2), noob yards"
+    }
    ]
   },
   "viper": {
@@ -1384,6 +1391,14 @@
       "qs"
      ],
      "quest": "scarab"
+    },
+    {
+     "label": "FACT",
+     "text": "Optional, same NPC:",
+     "src": [
+      "qs"
+     ],
+     "quest": "bowl"
     },
     {
      "label": "FACT",
