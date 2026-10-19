@@ -12,6 +12,7 @@ S = dict(S_COMMON); S.update(S_MID)
 S.update({
  'ench': ['Wiki: Enchanter (rev 82930, Human starting stats)', w('Enchanter')],
  'nh': ['Wiki: Night Harbor (rev 83168, 2026-10-18)', w('Night Harbor')],
+ 'khaila': ['Wiki: Master Khaila (rev 40628, 2026-06-15)', w('Master Khaila')],
  'monme': ["monme.no camps (Petrichor's database)", 'https://monme.no/camps'],
  'pk': ['Wiki faction: Penitent Knights of the Hospice', w('Penitent Knights of the Hospice')],
  'cw': ['Wiki faction: City Watch of Night Harbor', w('City Watch of Night Harbor')],
@@ -32,7 +33,7 @@ S.update({
 races, classes = who_starts(CITY)
 
 intro = [
- it(U, "Human Enchanter is not on the wiki start-city table (rev 74855), but the official Enchanter page and the wiki Human and Enchanter pages (rev 82930) list it, so this Codex infers a Night Harbor start from the Enchanter guild there. The guild master and starter-quest NPC is Master Wincog (Night Harbor zone page and Enchanter Starter Quest). Deities: no sourced data yet.", 'ench', 'nh', 'sqenc', races=['Human'], classes=['Enchanter']),
+ it(U, "Human Enchanter is not on the wiki start-city table (rev 74855), but the official Enchanter page and the wiki Human and Enchanter pages (rev 82930) list it, so this Codex infers a Night Harbor start from the Enchanter guild there. The guild master and starter-quest NPC is Master Wincog (Night Harbor zone page and Enchanter Starter Quest). Sources differ: the wiki Enchanter page and an older Master Khaila page name Master Khaila (Human) as the guild master, with the spell scribe next to her. Deities: no sourced data yet.", 'ench', 'nh', 'sqenc', 'khaila', races=['Human'], classes=['Enchanter']),
  it(F, 'Night Harbor is the seat of the Langsdorfian League, a confederacy of guilds with a near monopoly on trade and transport. The wiki gives the zone as level 1-50, with Ashira, bats, goblins, jackals, rats, scarabs, skeletons and snakes.', 'nh'),
  it(F, 'The start-city table allows these races to start here: %s. Pick a combination with the Race, Class and Start boxes in the top bar.' % ', '.join(races), 'start'),
  it(F, 'Neighbouring zones: Shaded Dunes (west gate), Sungreet Strand (north gate), Tomb of the Last Wyrmsbane, the Night Harbor Sewers and the Underdocks (lift down).', 'nh'),
@@ -71,7 +72,8 @@ trainers = {
                 'note': "Resolved: the quest table names Jaffar Jhaym and the quest page names Petra Gyle because both are right. Jaffar takes the Rune-Etched Note and says 'you will be under the tutelage of Petra Gyle'. Who sells Inquisitor scrolls in Night Harbor: no sourced data yet."},
  'Paladin': {'npc': 'Trey Fulton', 'where': "Wayfarer's Hospice, first floor (Travelers Ward, north of the West Gate); Thibald Burlond greets you first", 'src': ['sqpal', 'nh'], 'label': F},
  'Cleric': {'npc': 'Dalinder Grammanoot', 'where': "Wayfarer's Hospice, ground floor near Thibald Burlond (Sojourner camp next to the West Bank)", 'src': ['sqclr', 'nh'], 'label': F},
- 'Enchanter': {'npc': 'Master Wincog', 'where': "Wincog's Curious Goods, on the long stairs between Sageside and Saltbreeze Park", 'src': ['sqenc', 'nh'], 'label': F},
+ 'Enchanter': {'npc': 'Master Wincog', 'where': "Wincog's Curious Goods, on the long stairs between Sageside and Saltbreeze Park", 'src': ['sqenc', 'nh', 'ench', 'khaila'], 'label': F,
+                'note': "Sources differ (UNVERIFIED): the Night Harbor page (rev 83168) and the starter quest (rev 80831) say Master Wincog; the Enchanter page (rev 82930) and the Master Khaila page (rev 40628) say Master Khaila (Human) is the guild master, north of the Twilight Harbor area, with an enchanter scribe (spells) next to her. Check both."},
 }
 Q = {}
 for t, e in sorted(QS.items()):

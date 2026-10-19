@@ -199,7 +199,13 @@
   {
    "combo": "Human Enchanter",
    "sources": "Wiki start table rev 74855: no Human Enchanter row. Official Enchanter page, wiki Human page (Playable Classes) and wiki Enchanter page (rev 82930: Human starting stats 16/17/16/16/20/16/21 and bonus-point advice): Human can be an Enchanter.",
-   "winner": "Official + two wiki pages: Human Enchanter added. Start city Night Harbor (Enchanter guild master Khaila and the Enchanter Starter Quest are in Night Harbor; good/neutral races start there per the FAQ). Deities and an Underdocks option are not sourced.",
+   "winner": "Official + two wiki pages: Human Enchanter added. Start city Night Harbor (the Enchanter Starter Quest and its NPC Master Wincog are in Night Harbor, per wiki Night Harbor rev 83168 and Enchanter Starter Quest rev 80831; good/neutral races start there per the FAQ). Deities and an Underdocks option are not sourced.",
+   "label": "UNVERIFIED"
+  },
+  {
+   "combo": "Night Harbor Enchanter guild master",
+   "sources": "Wiki Night Harbor (rev 83168, 2026-10-18) NPC table: Master Wincog (Gnome, Trainer, Wincog's Curious Goods) is the Enchanter guild master. Wiki Enchanter Starter Quest (Night Harbor) (rev 80831, 2026-10-12): your Torn Note goes to Master Wincog. Against: wiki Enchanter class page (rev 82930, 2026-10-18) says 'Master Khaila is the guild master and an enchanter scribe (spells) is next to her', and the wiki has a Master Khaila page (rev 40628, 2026-06-15: Human Enchanter, 'Enchanter guild master', Night Harbor, north of the Twilight Harbor area).",
+   "winner": "Master Wincog for the start: the newer city page and the starter quest agree. Khaila's page is older (June) and the class-page sentence may predate the starter quest, but neither has been removed, so Master Khaila may still be an Enchanter trainer and the spell scribe stands next to her. Not resolved in game.",
    "label": "UNVERIFIED"
   },
   {

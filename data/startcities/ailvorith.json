@@ -98,6 +98,22 @@
    "Wiki: Morgak Foamscar (rev 83094, 2026-10-18)",
    "https://monstersandmemories.miraheze.org/wiki/Morgak_Foamscar"
   ],
+  "bthaul": [
+   "Wiki: a Blacktide hauler (rev 74514, no level listed)",
+   "https://monstersandmemories.miraheze.org/wiki/A_Blacktide_hauler"
+  ],
+  "btlook": [
+   "Wiki: a Blacktide lookout (rev 74513, no level listed)",
+   "https://monstersandmemories.miraheze.org/wiki/A_Blacktide_lookout"
+  ],
+  "vhaleth": [
+   "Wiki: Vhaleth Hal'kareth (rev 73852, 2026-09-24)",
+   "https://monstersandmemories.miraheze.org/wiki/Vhaleth_Hal%27kareth"
+  ],
+  "sereth": [
+   "Wiki: Sereth Vael'xirith (rev 82538, 2026-10-16)",
+   "https://monstersandmemories.miraheze.org/wiki/Sereth_Vael%27xirith"
+  ],
   "mwgcs": [
    "monstersandmemories.wiki: Great Cavern Sea (player-tracked levels and coin)",
    "https://monstersandmemories.wiki/zones/great-cavern-sea"
@@ -920,7 +936,7 @@
    "wiki": "Survey the Creatures of the Cavern Sea",
    "helper": true,
    "giver": "Sereth Vael'xirith",
-   "where": "Great Cavern Sea, the outpost right outside Ail'Vorith (turn right as you enter the zone)",
+   "where": "Great Cavern Sea, the outpost right outside Ail'Vorith (turn right as you enter the zone). Sereth is level 20 (zone page Quest NPC table)",
    "level": "16 (recommended 15)",
    "classes": [],
    "tag": "Recommended",
@@ -954,6 +970,7 @@
    "src": [
     "survey",
     "gcs",
+    "sereth",
     "shoreb",
     "shelb",
     "shalb"
@@ -1503,11 +1520,39 @@
      "quest": "merit"
     },
     {
-     "label": "UNVERIFIED",
-     "text": "Great Cavern Sea, Blacktide Orc Cove: a Blacktide hauler, hull hauler and lookout (11-14?), a cargo guard (15-17?), Morgak Foamscar (15-17?). The question marks are the wiki's own; the mob pages have no levels (rev 83094, 2026-10-18), so this is still unresolved. Morgak's page adds one FACT: he dropped Blacktide Chain Leggings (AC 13, STR +2, STA +2).",
+     "label": "FACT",
+     "text": "Great Cavern Sea camp levels (wiki zone page rev 83098; mob pages): by the Ail'Vorith zoneline a shore beetle 15, a shelter bat 16, a shallows basilisk 17 (the Survey targets); goblin island 19-23; Wasp and Beetle Island 22-26; Basilisk Island 27-28; Spider Cave 29-30. Per-camp mobs are listed in the level bands below.",
      "src": [
       "gcs",
+      "shoreb",
+      "shelb",
+      "shalb"
+     ]
+    },
+    {
+     "label": "UNVERIFIED",
+     "text": "Great Cavern Sea, Blacktide Orc Cove: orcs 11-17 (a Blacktide hauler, hull hauler and lookout 11-14?, a cargo guard 15-17?, Morgak Foamscar 15-17?). The question marks are the zone page's own (rev 83098) and the orc mob pages list no level, so treat these as estimates. Morgak's page adds one FACT: he dropped Blacktide Chain Leggings (AC 13, STR +2, STA +2).",
+     "src": [
+      "gcs",
+      "bthaul",
+      "btlook",
       "morgak"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Danger: Vhaleth Hal'kareth, a level 60 Deep Elf Wizard, stands near the wizard pyramid in the Great Cavern Sea. His mob page says he casts a greater fireball for 1280.",
+     "src": [
+      "gcs",
+      "vhaleth"
+     ]
+    },
+    {
+     "label": "STRATEGY",
+     "text": "Keep well away from the wizard pyramid at every level on this route: nothing else in the zone is above 30.",
+     "src": [
+      "gcs",
+      "vhaleth"
      ]
     },
     {
@@ -1565,15 +1610,24 @@
     },
     {
      "label": "FACT",
-     "text": "Survey the Creatures of the Cavern Sea (16) at the outpost just outside Ail'Vorith.",
+     "text": "Survey the Creatures of the Cavern Sea (recommended 15 on the zone page, minimum 16 on the quest page) from Sereth Vael'xirith (level 20), at the outpost near the Ail'Vorith zoneline: turn right as you enter.",
      "src": [
-      "survey"
+      "survey",
+      "gcs",
+      "sereth"
      ],
      "quest": "survey"
     },
     {
      "label": "FACT",
-     "text": "Great Cavern Sea: Boss Gurrok 18 (Gurrok's Barnacled Dagger, Diving Harness, Diving Boots); Overseer Vashruk 20? (Blacktide Order Packet).",
+     "text": "Great Cavern Sea: Boss Gurrok 18 (Gurrok's Barnacled Dagger, Diving Harness, Diving Boots).",
+     "src": [
+      "gcs"
+     ]
+    },
+    {
+     "label": "UNVERIFIED",
+     "text": "Blacktide Order Packet (Drelith Vael'xirith; 2 Scout's Mending Draught and 3 silver): the zone page recommends level 20?, and Overseer Vashruk (20?, Blacktide Orc Cove) drops a Blacktide Order Packet (zone page loot column). The question marks are the wiki's own; the quest has no wiki page yet.",
      "src": [
       "gcs"
      ]
@@ -1609,7 +1663,7 @@
     },
     {
      "label": "FACT",
-     "text": "Goblin Island Records (19) from Halveth Velgarrith; Island Ruin Stones from Isrothen Vael'xirith (same outpost).",
+     "text": "Goblin Island Records (minimum 19, recommended 20-25 on the zone page) from Halveth Velgarrith; Island Ruin Stones from Isrothen Vael'xirith (same outpost).",
      "src": [
       "gir",
       "irs"
@@ -1654,7 +1708,14 @@
    "steps": [
     {
      "label": "FACT",
-     "text": "Great Cavern Sea: a recess basilisk 27-28 (Basilisk Island), a strand spider 29-30 (Spider Cave). The Great Cavern Sea Spider Caves quest is recommended for 30-35? (wiki, giver Mae'vith Ith'vayen; no walkthrough page yet).",
+     "text": "Great Cavern Sea: a recess basilisk 27-28 (Basilisk Island), a strand spider 29-30 (Spider Cave).",
+     "src": [
+      "gcs"
+     ]
+    },
+    {
+     "label": "UNVERIFIED",
+     "text": "Great Cavern Sea Spider Caves (giver Mae'vith Ith'vayen near the spider caves; Ith'vayen Dressed Silk and 5 silver): the zone page recommends 30-35?, with the wiki's own question mark. No walkthrough page yet.",
      "src": [
       "gcs"
      ]

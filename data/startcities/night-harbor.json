@@ -298,6 +298,10 @@
    "Wiki: Night Harbor (rev 83168, 2026-10-18)",
    "https://monstersandmemories.miraheze.org/wiki/Night_Harbor"
   ],
+  "khaila": [
+   "Wiki: Master Khaila (rev 40628, 2026-06-15)",
+   "https://monstersandmemories.miraheze.org/wiki/Master_Khaila"
+  ],
   "monme": [
    "monme.no camps (Petrichor's database)",
    "https://monme.no/camps"
@@ -366,11 +370,12 @@
  "intro": [
   {
    "label": "UNVERIFIED",
-   "text": "Human Enchanter is not on the wiki start-city table (rev 74855), but the official Enchanter page and the wiki Human and Enchanter pages (rev 82930) list it, so this Codex infers a Night Harbor start from the Enchanter guild there. The guild master and starter-quest NPC is Master Wincog (Night Harbor zone page and Enchanter Starter Quest). Deities: no sourced data yet.",
+   "text": "Human Enchanter is not on the wiki start-city table (rev 74855), but the official Enchanter page and the wiki Human and Enchanter pages (rev 82930) list it, so this Codex infers a Night Harbor start from the Enchanter guild there. The guild master and starter-quest NPC is Master Wincog (Night Harbor zone page and Enchanter Starter Quest). Sources differ: the wiki Enchanter page and an older Master Khaila page name Master Khaila (Human) as the guild master, with the spell scribe next to her. Deities: no sourced data yet.",
    "src": [
     "ench",
     "nh",
-    "sqenc"
+    "sqenc",
+    "khaila"
    ],
    "races": [
     "Human"
@@ -691,9 +696,12 @@
    "where": "Wincog's Curious Goods, on the long stairs between Sageside and Saltbreeze Park",
    "src": [
     "sqenc",
-    "nh"
+    "nh",
+    "ench",
+    "khaila"
    ],
-   "label": "FACT"
+   "label": "FACT",
+   "note": "Sources differ (UNVERIFIED): the Night Harbor page (rev 83168) and the starter quest (rev 80831) say Master Wincog; the Enchanter page (rev 82930) and the Master Khaila page (rev 40628) say Master Khaila (Human) is the guild master, north of the Twilight Harbor area, with an enchanter scribe (spells) next to her. Check both."
   }
  },
  "quests": {
