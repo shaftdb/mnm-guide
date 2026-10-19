@@ -83,78 +83,29 @@ var KR='mnm-recent',recent=lsGet(KR,[]);if(!Array.isArray(recent))recent=[];
 var JUMP=[['Home','index.html'],['Classes','classes/index.html'],['Walkthrough','walkthrough.html'],['Leveling by band','leveling.html'],['Items','items.html'],['Mobs','mobs.html'],['Zones','zones/index.html'],['Spells','spells.html'],['Market prices','market.html'],['Hotbar','hotbar.html'],['Quests','quests.html'],['Changelog','changelog.html']];
 var GO={h:'index.html',c:'classes/index.html',w:'walkthrough.html',l:'leveling.html',i:'items.html',m:'mobs.html',z:'zones/index.html',s:'spells.html',k:'market.html',q:'quests.html'};
 function href(u,ext){return ext?u:root+u}
-function kind(it){if(it.e)return 'Wiki';if(/^item\b/i.test(it.s))return 'Items';if(/spells/i.test(it.s))return 'Spells';return 'Pages'}
-var pal=null,inp,list,stat,act=-1,opts=[],opener=null,lastQ=null;
-function build(){if(pal)return;
-  pal=document.createElement('dialog');pal.className='ux-pal';pal.setAttribute('aria-labelledby','ux-pal-h');
-  pal.innerHTML='<div class="ux-pal-hd"><h2 id="ux-pal-h" class="ux-vh">Quick jump</h2><span class="ux-pal-ico" aria-hidden="true">&#9906;</span>'+
-   '<input id="ux-pal-q" type="search" autocomplete="off" spellcheck="false" placeholder="Jump to a page, class, zone, item…" role="combobox" aria-expanded="true" aria-controls="ux-pal-list" aria-autocomplete="list" aria-label="Quick jump: type to search">'+
-   '<button type="button" class="ux-pal-x" aria-label="Close">&#10005;</button></div>'+
-   '<p class="ux-pal-st" id="ux-pal-st" role="status" aria-live="polite"></p><ul id="ux-pal-list" class="ux-pal-list" role="listbox" aria-label="Results"></ul>'+
-   '<p class="ux-pal-ft dim"><kbd>&uarr;</kbd><kbd>&darr;</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close · <kbd>?</kbd> all shortcuts</p>';
-  document.body.appendChild(pal);inp=pal.querySelector('input');list=pal.querySelector('ul');stat=pal.querySelector('.ux-pal-st');
-  inp.addEventListener('input',render);
-  inp.addEventListener('keydown',function(e){if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();mv(e.key==='ArrowDown'?1:-1)}
-    else if(e.key==='Home'&&e.ctrlKey){e.preventDefault();setAct(0)}else if(e.key==='End'&&e.ctrlKey){e.preventDefault();setAct(opts.length-1)}
-    else if(e.key==='Enter'){e.preventDefault();var o=opts[act>=0?act:0];if(o)openOpt(o)}
-    else if(e.key==='Escape'){e.preventDefault();close()}});
-  pal.addEventListener('keydown',function(e){if(e.key!=='Tab')return;var f=[inp,pal.querySelector('.ux-pal-x')];var i=f.indexOf(document.activeElement);e.preventDefault();f[(i+(e.shiftKey?-1:1)+f.length)%f.length].focus()});
-  pal.querySelector('.ux-pal-x').addEventListener('click',close);
-  pal.addEventListener('click',function(e){if(e.target===pal){close();return}var li=e.target.closest('[role=option]');if(li)openOpt(li)});
-  pal.addEventListener('close',function(){if(opener&&opener.focus)opener.focus({preventScroll:true});opener=null});
-  if(S())S().onUpdate(function(){if(pal.open)render(1)});
-}
-function setAct(i){act=Math.max(-1,Math.min(opts.length-1,i));opts.forEach(function(o,j){o.setAttribute('aria-selected',j===act?'true':'false');o.classList.toggle('on',j===act)});
-  if(act>=0){inp.setAttribute('aria-activedescendant',opts[act].id);opts[act].scrollIntoView({block:'nearest'})}else inp.removeAttribute('aria-activedescendant')}
-function mv(d){setAct(act<0?(d>0?0:opts.length-1):(act+d+opts.length)%opts.length)}
-function openOpt(o){var u=o.getAttribute('data-href');if(!u)return;if(o.getAttribute('data-ext')){window.open(u,'_blank','noopener');close();return}location.href=u;close()}
-function item(i,t,u,sub,ext){return '<li role="option" id="ux-pal-o'+i+'" aria-selected="false" data-href="'+esc(u)+'"'+(ext?' data-ext="1"':'')+'><span class="ux-pal-t">'+esc(t)+(ext?' <span aria-hidden="true">&#8599;</span>':'')+'</span>'+(sub?'<span class="ux-pal-s">'+esc(sub)+'</span>':'')+'</li>'}
-function group(n,h){return '<li role="presentation" class="ux-pal-g" aria-hidden="true">'+esc(n)+'</li>'+h}
-function render(keep){var t=inp.value.trim(),h=[],n=0,cur=act;
-  if(t.length<2){var rc=recent.filter(function(r){return r.u!==here}).slice(0,8);
-    if(rc.length)h.push(group('Recently viewed',rc.map(function(r){return item(n++,r.t,href(r.u),r.u.replace(/\.html$/,'').replace(/\/index$/,'/'))}).join('')));
-    h.push(group('Jump to',JUMP.map(function(j){return item(n++,j[0],href(j[1]),'')}).join('')));
-    stat.textContent=t.length?'Type at least 2 letters to search.':(rc.length?'Recently viewed pages and main sections.':'Main sections. Type to search everything.');
-  }else{var s=S(),lt=t.toLowerCase();
-    var rc2=recent.filter(function(r){return r.t.toLowerCase().indexOf(lt)>=0}).slice(0,3);
-    if(rc2.length)h.push(group('Recently viewed',rc2.map(function(r){return item(n++,r.t,href(r.u),r.u)}).join('')));
-    var jm=JUMP.filter(function(j){return j[0].toLowerCase().indexOf(lt)>=0});
-    if(!s){stat.textContent='Search is not available on this page.'}
-    else if(!s.ready()){if(s.failed()){stat.textContent='The search index could not load (offline?). Close and try again.';stat.classList.add('lz-err')}else{stat.textContent='Loading search index…';s.load()}
-      if(jm.length)h.push(group('Jump to',jm.map(function(j){return item(n++,j[0],href(j[1]),'')}).join('')))}
-    else{stat.classList.remove('lz-err');s.loadText();var seenU={},r=s.search(t,60).filter(function(it){var k=it.u+'|'+it.t;if(seenU[k]||seenU[it.u])return false;seenU[k]=seenU[it.u]=1;return true}).slice(0,40),g={},order=['Pages','Spells','Items','Wiki'];
-      r.forEach(function(it){(g[kind(it)]=g[kind(it)]||[]).push(it)});
-      order.forEach(function(k){if(g[k])h.push(group(k,g[k].slice(0,k==='Pages'?14:8).map(function(it){return item(n++,it.t,href(it.u,it.e),(it.fz?'close match · ':'')+it.s,it.e)}).join('')))});
-      stat.textContent=n?(n+' result'+(n>1?'s':'')+(s.full()?'':' (titles; full text still loading)')):'No matches for “'+t+'”'+(s.full()?'':' in titles yet; full text still loading…')}}
-  list.innerHTML=h.join('');opts=[].slice.call(list.querySelectorAll('[role=option]'));setAct(keep===1&&t===lastQ?Math.min(cur,opts.length-1):(t.length>=2&&opts.length?0:-1));lastQ=t}
-function open(from){build();if(pal.open){inp.focus();inp.select();return}opener=from||document.activeElement;var sq=document.getElementById('q');
-  inp.value=(sq&&sq.value&&document.activeElement===sq)?sq.value:'';if(sq)sq.blur();var r=document.getElementById('qres');if(r)r.hidden=true;
-  if(S())S().load();pal.showModal();render();inp.focus()}
-function close(){if(pal&&pal.open)pal.close()}
-window.MNM_UX_PAL={open:open,close:close};
+// UX pass 4: the palette itself lives in assets/mod-ux-pal.js and loads on first use (Ctrl+K, '/', the header button, '?')
+window.MNM_UXC={root:root,esc:esc,recent:recent,here:here,JUMP:JUMP,GO:GO,href:href,S:S,lsGet:lsGet,lsPut:lsPut};
+var palP=null;
+function palLoad(){if(window.MNM_UX_PALI)return Promise.resolve();if(!window.MNM_LOAD)return Promise.reject(new Error('no loader'));
+  if(!palP)palP=MNM_LOAD('mod-ux-pal.js').then(function(){if(!window.MNM_UX_PALI)throw new Error('palette')},function(e){palP=null;throw e});return palP}
+function palFail(from){var sq=document.getElementById('q');if(sq){sq.focus();sq.placeholder='Quick jump could not load (offline?). Search here instead…'}}
+function open(from){from=from||document.activeElement;var pb=document.querySelector('.ux-palbtn');if(pb)pb.setAttribute('aria-busy','true');
+  palLoad().then(function(){if(pb)pb.removeAttribute('aria-busy');window.MNM_UX_PALI.open(from)},function(){if(pb)pb.removeAttribute('aria-busy');palFail(from)})}
+function close(){if(window.MNM_UX_PALI)window.MNM_UX_PALI.close()}
+function palOpen(){return !!(window.MNM_UX_PALI&&window.MNM_UX_PALI.isOpen())}
+window.MNM_UX_PAL={open:open,close:close,load:palLoad};
 // header button (touch + discoverability)
 var topin=document.querySelector('.top .topin'),sf=topin&&topin.querySelector('form.search');
 if(topin){var pb=document.createElement('button');pb.type='button';pb.className='ux-palbtn';pb.setAttribute('aria-haspopup','dialog');pb.setAttribute('aria-label','Quick jump (Ctrl+K)');pb.title='Quick jump (Ctrl+K or /)';
   pb.innerHTML='<svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13 13l5 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><kbd class="ux-palk">Ctrl K</kbd>';
-  if(sf&&sf.nextSibling)topin.insertBefore(pb,sf.nextSibling);else topin.appendChild(pb);pb.addEventListener('click',function(){open(pb)})}
+  if(sf&&sf.nextSibling)topin.insertBefore(pb,sf.nextSibling);else topin.appendChild(pb);pb.addEventListener('click',function(){open(pb)});
+  ['pointerenter','focus','touchstart'].forEach(function(ev){pb.addEventListener(ev,function(){palLoad().catch(function(){})},{passive:true,once:true})})}
 // ---- keyboard shortcuts + '?' overlay (#5)
-var keys=null;
-function keysOpen(){if(!keys){keys=document.createElement('dialog');keys.className='ux-keys';keys.setAttribute('aria-labelledby','ux-keys-h');
-  var row=function(k,d){return '<tr><th scope="row">'+k+'</th><td>'+d+'</td></tr>'};
-  keys.innerHTML='<div class="ux-sheet-hd"><h2 id="ux-keys-h">Keyboard shortcuts</h2><button type="button" class="ux-sheet-x" aria-label="Close">&#10005;</button></div><table class="ux-keys-t"><tbody>'+
-   row('<kbd>Ctrl</kbd> <kbd>K</kbd> or <kbd>/</kbd>','Quick jump: search pages, classes, zones, items; recently viewed')+row('<kbd>?</kbd>','Show this list')+row('<kbd>Esc</kbd>','Close a dialog, menu or search results')+
-   row('<kbd>&uarr;</kbd> <kbd>&darr;</kbd> <kbd>Enter</kbd>','Move through results and open one')+row('<kbd>Tab</kbd> then <kbd>Enter</kbd> on a table header','Sort that column (press again to reverse)')+
-   Object.keys(GO).map(function(k){var j=JUMP.filter(function(x){return x[1]===GO[k]})[0];return row('<kbd>g</kbd> <kbd>'+k+'</kbd>','Go to '+esc(j?j[0]:GO[k]))}).join('')+
-   row('<kbd>t</kbd>','Back to top')+'</tbody></table><p class="dim ux-keys-n">Shortcuts are ignored while you type in a box. On touch screens use the search button in the header.</p>';
-  document.body.appendChild(keys);var x=keys.querySelector('.ux-sheet-x');x.addEventListener('click',function(){keys.close()});
-  keys.addEventListener('click',function(e){if(e.target===keys)keys.close()});
-  keys.addEventListener('keydown',function(e){if(e.key==='Tab'){e.preventDefault();x.focus()}});
-  keys.addEventListener('close',function(){if(keys._op&&keys._op.focus)keys._op.focus({preventScroll:true})})}
-  if(keys.open)return;keys._op=document.activeElement;keys.showModal();keys.querySelector('.ux-sheet-x').focus()}
+function keysOpen(){var from=document.activeElement;palLoad().then(function(){window.MNM_UX_PALI.keys(from)},function(){})}
 window.MNM_UX_KEYS=keysOpen;
 var gAt=0;
 document.addEventListener('keydown',function(e){
-  if((e.ctrlKey||e.metaKey)&&!e.altKey&&!e.shiftKey&&(e.key==='k'||e.key==='K')){e.preventDefault();if(pal&&pal.open)close();else open();return}
+  if((e.ctrlKey||e.metaKey)&&!e.altKey&&!e.shiftKey&&(e.key==='k'||e.key==='K')){e.preventDefault();if(palOpen())close();else open();return}
   if(e.ctrlKey||e.metaKey||e.altKey||typing(e.target)||document.querySelector('dialog[open]'))return;
   if(e.key==='?'){e.preventDefault();keysOpen();return}
   if(e.key==='g'){gAt=Date.now();return}
@@ -165,7 +116,7 @@ document.addEventListener('keydown',function(e){
 // the URL (?sort=<table>.<col><a|d>, filters below). Other params (?class=&race=&city=, ?server=, #hb=, ?focus=1) are kept.
 var CTRL=[['f','#mnm-filter','v'],['gc','main .clsfilter','v'],['gk','main .kindfilter','c'],['gt','main .textfilter','v'],['sm','#sp-mine','c'],['sb','#sp-band','c']]
   .map(function(c){return {p:c[0],el:document.querySelector(c[1]),t:c[2]}}).filter(function(c){return c.el});
-var tabs=[].slice.call(document.querySelectorAll('main.main table.sortable, main.main table.grid')).filter(function(t){return t.tBodies[0]&&(t.classList.contains('sortable')||t.tBodies[0].rows.length>=15)});
+var tabs=[].slice.call(document.querySelectorAll('main.main table.sortable, main.main table.grid')).filter(function(t){return t.tBodies[0]&&!t.closest('#mob-out,#idb-out')&&(t.classList.contains('sortable')||t.tBodies[0].rows.length>=15)});
 var KT='mnm-tbl:'+here,st=lsGet(KT,{});if(!st||typeof st!=='object')st={};
 function qpGet(n){var m=location.search.match(new RegExp('[?&]'+n+'=([^&]*)'));return m?decodeURIComponent(m[1].replace(/\+/g,' ')):null}
 function writeUrl(){if(!history.replaceState)return;var keep=location.search.replace(/^\?/,'').split('&').filter(function(kv){return kv&&!/^(sort|f|gc|gk|gt|sm|sb)=/.test(kv)});
@@ -193,17 +144,20 @@ tabs.forEach(function(t,ti){if(!t.classList.contains('sortable')||!t.tHead)retur
 // toolbar: "Showing X of Y rows" + reset
 function vis(r){return r.style.display!=='none'&&!r.hidden&&!r.classList.contains('fhide')}
 var bars=[];
-tabs.forEach(function(t,ti){var rows=t.tBodies[0].rows.length;if(rows<8)return;var host=t.closest('.tw')||t;
+function addBar(t,ti){var rows=t.tBodies[0].rows.length;if(rows<8)return;var host=t.closest('.tw')||t;
   var b=document.createElement('div');b.className='ux-tbar';b.innerHTML='<span class="ux-tbar-n" role="status" aria-live="polite"></span><span class="ux-tbar-f"></span><span class="ux-tbar-s"></span><button type="button" class="ux-tbar-r">Reset</button>';
   host.parentNode.insertBefore(b,host);b.querySelector('.ux-tbar-r').addEventListener('click',function(){reset(ti)});bars.push([b,t,ti]);
-  if(window.MutationObserver)new MutationObserver(function(){sched()}).observe(t.tBodies[0],{attributes:true,attributeFilter:['style','class','hidden'],subtree:true,childList:true})});
+  if(window.MutationObserver)new MutationObserver(function(){sched()}).observe(t.tBodies[0],{attributes:true,attributeFilter:['style','class','hidden'],subtree:true,childList:true})}
+tabs.forEach(addBar);
+// UX pass 4: tables in tabs that render on demand get the same bar (row count + filter Reset; they are not sortable)
+window.MNM_UX_TBL=function(t){if(!t||!t.tBodies[0]||t.classList.contains('sortable')||t.tBodies[0].rows.length<15||bars.some(function(x){return x[1]===t}))return;addBar(t,-1);countAll()};
 var raf=0;function sched(){if(!raf)raf=requestAnimationFrame(function(){raf=0;countAll()})}
 function countAll(){bars.forEach(function(x){var b=x[0],t=x[1],ti=x[2],rs=[].slice.call(t.tBodies[0].rows),n=rs.filter(vis).length,s=st.sort[ti],fl=Object.keys(st.ctl).length;
   var txt=n===rs.length?'Showing all '+rs.length+' rows':'Showing '+n+' of '+rs.length+' rows';var nn=b.querySelector('.ux-tbar-n');if(nn.textContent!==txt)nn.textContent=txt;
   var th=s&&t.tHead&&t.tHead.rows[0].cells[parseInt(s)];b.querySelector('.ux-tbar-s').textContent=th?'Sorted by '+th.textContent.trim()+(s.slice(-1)==='d'?' (high to low)':' (low to high)'):'';
   var fd=CTRL.filter(function(c){return st.ctl[c.p]}).map(function(c){return c.t==='c'?(c.el.closest('label')||{textContent:c.p}).textContent.trim():(c.el.tagName==='SELECT'?(c.el.selectedOptions[0]||{}).textContent:'“'+st.ctl[c.p]+'”')});b.querySelector('.ux-tbar-f').textContent=fd.length?'Filtered: '+fd.join(', '):'';
   var r=b.querySelector('.ux-tbar-r');r.disabled=!s&&!fl;r.title=fl?'Clear the filters on this page and this table\u2019s sort':'Back to the original order'})}
-function reset(ti){var t=tabs[ti],tb=t.tBodies[0];orig[ti].forEach(function(r){tb.appendChild(r)});if(t.tHead)[].forEach.call(t.tHead.rows[0].cells,function(th){th.removeAttribute('aria-sort');delete th.dataset.dir});delete st.sort[ti];
+function reset(ti){var t=tabs[ti];if(t){var tb=t.tBodies[0];orig[ti].forEach(function(r){tb.appendChild(r)})}if(t&&t.tHead)[].forEach.call(t.tHead.rows[0].cells,function(th){th.removeAttribute('aria-sort');delete th.dataset.dir});delete st.sort[ti];
   CTRL.forEach(function(c){if(!ctlVal(c))return;if(c.t==='c'){c.el.checked=false;c.el.dispatchEvent(new Event('change',{bubbles:true}))}else{c.el.value='';c.el.dispatchEvent(new Event('input',{bubbles:true}));c.el.dispatchEvent(new Event('change',{bubbles:true}))}});
   st.ctl={};save();countAll()}
 countAll();if(fromUrl||Object.keys(st.sort).length||Object.keys(st.ctl).length)save();
@@ -214,3 +168,231 @@ if(longT){var tt=document.createElement('button');tt.type='button';tt.className=
   var tick=0,chk=function(){tick=0;var y=window.scrollY,top=longT.getBoundingClientRect().top+y;tt.hidden=!(y>Math.max(600,top+300))};
   window.addEventListener('scroll',function(){if(!tick){tick=1;requestAnimationFrame(chk)}},{passive:true});chk()}
 })();
+// ---------------------------------------------------------------- UX pass 4
+(function(){
+var de=document.documentElement,root=de.getAttribute('data-root')||'',C=window.MNM_UXC||{};
+function lsGet(k,d){try{var v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}}
+function lsPut(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function slug(s){return String(s||'').toLowerCase().replace(/'/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')}
+function load(f){return window.MNM_LOAD?window.MNM_LOAD(f):Promise.reject(new Error('no loader'))}
+function fixh(h){return String(h||'').replace(/(href|src)="\/(?!\/)/g,'$1="'+root)}
+var here=C.here||location.pathname.split('/').pop()||'index.html';
+var live=document.createElement('div');live.className='ux-vh';live.setAttribute('role','status');live.setAttribute('aria-live','polite');document.body.appendChild(live);
+function say(t){live.textContent='';setTimeout(function(){live.textContent=t},30)}
+function refilter(){var f=document.getElementById('mnm-filter');if(f&&f.value)f.dispatchEvent(new Event('input'))}
+function jumpHash(scope){var id;try{id=decodeURIComponent(location.hash.slice(1))}catch(e){return}if(!id)return;var t=document.getElementById(id);
+  if(t&&!t.classList.contains('ux-lzid')&&(!scope||scope.contains(t)))t.scrollIntoView()}
+// ---- 1a) start-city routes on demand (class guides, Leveling): only the picked city, one level band at a time
+var CITY={ailvorith:"Ail'Vorith",'night-harbor':'Night Harbor',faelindral:'Faelindral',underdocks:'Underdocks'};
+function cityName(sl){var s=document.getElementById('mnm-city');if(s)for(var i=0;i<s.options.length;i++)if(slug(s.options[i].value)===sl)return s.options[i].value;return CITY[sl]||sl}
+function lzSet(el,kind,msg){var h=!kind?'':kind==='none'?'<p>'+msg+'</p>':'<p class="lz-status'+(kind==='err'?' lz-err':'')+'" role="status"'+(kind==='busy'?' aria-busy="true"':'')+'>'+msg+(kind==='err'?' <button type="button" class="ux-retry">Try again</button>':'')+'</p>';
+  if(el.innerHTML!==h)el.innerHTML=h}
+function fillRoute(el){var c=de.getAttribute('data-sc')||'',w=el.parentNode,k=el.getAttribute('data-band'),lab=k.replace('-','\u2013');
+  if(!c){lzSet(el);return}
+  if(w.querySelector('.sc-route[data-sc="'+c+'"]')){lzSet(el);return}
+  if((' '+el.getAttribute('data-cities')+' ').indexOf(' '+c+' ')<0){lzSet(el,'none','<span class="badge unc">unverified</span> No start-city route for '+esc(cityName(c))+' in levels '+lab+': no sourced data yet.');return}
+  var f='walk-r-'+k+'-'+c+'.js',key=k+'|'+c;if(el._busy===f)return;el._busy=f;
+  lzSet(el,'busy','Loading the '+esc(cityName(c))+' route for levels '+lab+'\u2026');
+  load(f).then(function(){el._busy=0;var h=(window.MNM_WTR||{})[key];if(!h)throw new Error('missing '+key);
+    var t=document.createElement('template');t.innerHTML=fixh(h);var b=t.content.querySelector('.sc-route[data-sc="'+c+'"]');if(!b)throw new Error('missing '+key);
+    if(!w.querySelector('.sc-route[data-sc="'+c+'"]'))w.insertBefore(b,el);fillRoute(el);refilter();copyIn(b);jumpHash(w)},
+   function(){el._busy=0;if((de.getAttribute('data-sc')||'')!==c){fillRoute(el);return}lzSet(el,'err','Could not load the '+esc(cityName(c))+' route for levels '+lab+' (offline?).')})}
+var lzs=[].slice.call(document.querySelectorAll('.sc-lz[data-band]')),want=[];
+if(lzs.length){
+  var wantIt=function(el){if(want.indexOf(el)<0)want.push(el);fillRoute(el)};
+  if(window.IntersectionObserver){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){io.unobserve(e.target);wantIt(e.target)}})},{rootMargin:'1200px 0px'});lzs.forEach(function(el){io.observe(el)})}
+  else lzs.forEach(wantIt);
+  if(window.MutationObserver)new MutationObserver(function(){want.forEach(fillRoute)}).observe(de,{attributes:true,attributeFilter:['data-sc']});
+  window.addEventListener('beforeprint',function(){lzs.forEach(wantIt)});
+  window.MNM_UX_ROUTES={fillAll:function(){lzs.forEach(wantIt)}};
+}
+// ---- 1b) class guides: inactive tabs render from assets/ct-<class>.js when opened (or when a #link points into them)
+function paneLoad(p){if(!p||!p.hasAttribute('data-lz'))return Promise.resolve();if(p._lz)return p._lz;
+  var f=p.getAttribute('data-lz'),key=f.replace(/^ct-|\.js$/g,''),tb=document.querySelector('.tab[data-tab="'+p.id+'"]'),nm=tb?tb.textContent.trim():'this tab',st=p.querySelector('.ux-lzp');
+  if(st){st.className='lz-status ux-lzp';st.setAttribute('aria-busy','true');st.textContent='Loading \u201c'+nm+'\u201d\u2026'}
+  return p._lz=load(f).then(function(){var d=(window.MNM_CT||{})[key],h=d&&d[p.id];if(h==null)throw new Error('missing '+p.id);
+    p.innerHTML=h;p.removeAttribute('data-lz');[].forEach.call(p.querySelectorAll('table.grid'),function(t){if(window.MNM_UX_TBL)window.MNM_UX_TBL(t)});refilter();copyIn(p);jumpHash(p)},
+   function(){p._lz=null;var s=p.querySelector('.ux-lzp');if(s){s.removeAttribute('aria-busy');s.className='lz-status lz-err ux-lzp';s.innerHTML='Could not load \u201c'+esc(nm)+'\u201d (offline?). <button type="button" class="ux-retry">Try again</button>'}})}
+var lzp=document.querySelectorAll('.tabpane[data-lz]');
+if(lzp.length){
+  var paneOf=function(b){return b&&document.getElementById(b.getAttribute('data-tab'))};
+  document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.tab[data-tab]');if(b)paneLoad(paneOf(b))},true);
+  ['pointerenter','focusin'].forEach(function(ev){document.addEventListener(ev,function(e){var b=e.target.closest&&e.target.closest('.tab[data-tab]');if(b){var p=paneOf(b);if(p&&p.hasAttribute('data-lz'))paneLoad(p)}},true)});
+  var hashPane=function(){var id;try{id=decodeURIComponent(location.hash.slice(1))}catch(e){return}var t=id&&document.getElementById(id);if(!t||!t.classList.contains('ux-lzid'))return;var p=t.closest('.tabpane');
+    if(p&&!p.classList.contains('on')){var b=document.querySelector('.tab[data-tab="'+p.id+'"]');if(b)b.click()}else paneLoad(p)};
+  window.addEventListener('hashchange',hashPane);hashPane();
+}
+document.addEventListener('click',function(e){var r=e.target.closest&&e.target.closest('.ux-retry');if(!r)return;var l=r.closest('.sc-lz');if(l){fillRoute(l);return}paneLoad(r.closest('.tabpane[data-lz]'))});
+// ---- 2) Items and Mobs databases: filters + sort remembered per page (localStorage mnm-db:<page>), mirrored in the URL,
+// toolbar with the count, active filters and Reset. Sorting reorders the page's data array in place, then re-runs its search.
+function dbPage(o){var els={};o.ctl.forEach(function(c){els[c[0]]=document.getElementById(c[1])});if(!o.ctl.every(function(c){return els[c[0]]})||!o.data)return;
+  var D=o.data,orig=D.slice(),qEl=els[o.ctl[0][0]],cnt=document.getElementById(o.cnt),K='mnm-db:'+here,P=o.ctl.map(function(c){return c[0]}).concat([o.sp]);
+  // sort control
+  var ss=document.createElement('select');ss.id=o.sp+'-sel';ss.setAttribute('aria-label','Sort results');ss.innerHTML=o.sorts.map(function(s){return '<option value="'+s[0]+'">'+esc(s[1])+'</option>'}).join('');
+  qEl.parentNode.appendChild(ss);els[o.sp]=ss;
+  function val(p){var e=els[p];return e.type==='checkbox'?(e.checked?'1':''):(e.value||'')}
+  function setv(p,v){var e=els[p];if(e.type==='checkbox')e.checked=v==='1';else if(e.tagName==='SELECT'){if([].some.call(e.options,function(x){return x.value===v}))e.value=v}else e.value=v}
+  function qp(n){var m=location.search.match(new RegExp('[?&]'+n+'=([^&]*)'));return m?decodeURIComponent(m[1].replace(/\+/g,' ')):null}
+  function sortData(){var k=ss.value,f=o.cmp[k],a=orig.slice();if(f)a.sort(f);for(var i=0;i<a.length;i++)D[i]=a[i]}
+  function rerun(){qEl.dispatchEvent(new Event('input',{bubbles:true}))}
+  // restore: ?params, else a #hash query (links from the Market and Mobs pages), else this browser
+  var st={},h='';try{h=decodeURIComponent(location.hash.slice(1))}catch(e){}
+  if(P.some(function(p){return qp(p)!==null}))P.forEach(function(p){var v=qp(p);if(v)st[p]=v});
+  else if(h)st[o.ctl[0][0]]=h;else{st=lsGet(K,{});if(!st||typeof st!=='object')st={}}
+  P.forEach(function(p){setv(p,st[p]||'')});
+  // toolbar
+  var bar=document.createElement('div');bar.className='ux-tbar ux-dbbar';bar.innerHTML='<span class="ux-tbar-f"></span><span class="ux-tbar-s"></span><button type="button" class="ux-tbar-r">Reset</button>';
+  if(cnt){cnt.parentNode.insertBefore(bar,cnt);bar.insertBefore(cnt,bar.firstChild);cnt.classList.add('ux-tbar-n');cnt.setAttribute('role','status');cnt.setAttribute('aria-live','polite')}
+  function label(p){var e=els[p];if(e.type==='checkbox'){var l=e.closest('label');return l?l.textContent.trim():p}if(e.tagName==='SELECT')return (e.selectedOptions[0]||{}).textContent||'';return '\u201c'+e.value.trim()+'\u201d'}
+  function sync(){var cur={},add=[];P.forEach(function(p){var v=val(p);if(p===o.ctl[0][0])v=v.trim();if(v){cur[p]=v;add.push(p+'='+encodeURIComponent(v))}});lsPut(K,cur);
+    if(history.replaceState){var keep=location.search.replace(/^\?/,'').split('&').filter(function(kv){return kv&&P.indexOf(kv.split('=')[0])<0});var s=keep.concat(add).join('&');
+      history.replaceState(history.state,'',location.pathname+(s?'?'+s:''))}
+    var fl=o.ctl.filter(function(c){return cur[c[0]]}).map(function(c){return label(c[0])});
+    bar.querySelector('.ux-tbar-f').textContent=fl.length?'Filtered: '+fl.join(', '):'';
+    bar.querySelector('.ux-tbar-s').textContent=cur[o.sp]?'Sorted by '+(ss.selectedOptions[0]||{}).textContent.replace(/^Sort: /,''):'';
+    var r=bar.querySelector('.ux-tbar-r');r.disabled=!Object.keys(cur).length;r.title='Clear the search, filters and sort'}
+  ss.addEventListener('change',function(){sortData();rerun()});
+  P.forEach(function(p){els[p].addEventListener('input',sync);els[p].addEventListener('change',sync)});
+  bar.querySelector('.ux-tbar-r').addEventListener('click',function(){P.forEach(function(p){setv(p,'')});sortData();rerun();sync();qEl.focus()});
+  // a #Item link followed while already on the page (same-document navigation)
+  window.addEventListener('hashchange',function(){var x='';try{x=decodeURIComponent(location.hash.slice(1))}catch(e){}if(!x)return;P.forEach(function(p){setv(p,'')});setv(o.ctl[0][0],x);sortData();rerun();sync()});
+  sortData();rerun();sync();
+  if(o.copy){var out=document.getElementById(o.out);var add=function(){copyNames(out,o.copy)};add();if(window.MutationObserver)new MutationObserver(add).observe(out,{childList:true})}
+}
+function byName(a,b){return String(a[0]).localeCompare(String(b[0]))}
+function lvl(i,dir){return function(a,b){var x=+a[i]||0,y=+b[i]||0;if(!x!==!y)return x?-1:1;return dir*(x-y)}}
+if(document.getElementById('idb-out'))dbPage({data:window.MNM_IDB,cnt:'idb-count',out:'idb-out',sp:'isort',copy:'.idb-it>div:first-child>a.ext',
+  ctl:[['iq','idb-q'],['is','idb-slot'],['ic','idb-cls'],['il','idb-lvl'],['isrc','idb-src']],
+  sorts:[['','Sort: wiki order'],['n','Sort: name A\u2013Z'],['l','Sort: level, low to high'],['L','Sort: level, high to low']],cmp:{n:byName,l:lvl(4,1),L:lvl(4,-1)}});
+if(document.getElementById('mob-out'))dbPage({data:window.MNM_MOBS,cnt:'mob-count',out:'mob-out',sp:'msort',copy:'tbody td:first-child',
+  ctl:[['mq','mob-q'],['mn','mob-named'],['ml','mob-lvl'],['md','mob-drop']],
+  sorts:[['','Sort: default order'],['n','Sort: name A\u2013Z'],['l','Sort: level, low to high'],['L','Sort: level, high to low'],['z','Sort: zone A\u2013Z']],
+  cmp:{n:byName,l:lvl(1,1),L:lvl(1,-1),z:function(a,b){return String(a[3]).localeCompare(String(b[3]))||byName(a,b)}}});
+// ---- 3) copy buttons (#4): game commands in <code>, item names in the Items database, mob names in the Mobs database
+function copyText(t){if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(t).catch(function(){return copyOld(t)});return copyOld(t)}
+function copyOld(t){return new Promise(function(ok,no){var a=document.createElement('textarea');a.value=t;a.setAttribute('readonly','');a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();
+    var r=false;try{r=document.execCommand('copy')}catch(e){}a.remove();r?ok():no(new Error('copy'))})}
+function copyBtn(t,what){var b=document.createElement('button');b.type='button';b.className='ux-copy';b.setAttribute('data-copy',t);b.setAttribute('aria-label','Copy '+what+': '+t);b.title='Copy \u201c'+t+'\u201d';
+  b.innerHTML='<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 11V3.5A1.5 1.5 0 0 1 4.5 2H11" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span class="ux-copy-l">Copy</span>';return b}
+document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.ux-copy');if(!b)return;e.preventDefault();var t=b.getAttribute('data-copy'),l=b.querySelector('.ux-copy-l');
+  copyText(t).then(function(){b.classList.add('ok');l.textContent='Copied';say('Copied: '+t)},function(){b.classList.add('bad');l.textContent='Press Ctrl+C';say('Could not copy automatically. Select the text and press Ctrl+C.')})
+  .then(function(){clearTimeout(b._t);b._t=setTimeout(function(){b.classList.remove('ok','bad');l.textContent='Copy'},1800)})});
+function copyIn(scope){[].forEach.call((scope||document).querySelectorAll('main.main code'),function(c){var t=c.textContent.trim();if(!/^\/[a-z]/i.test(t)||t.length>80||c.nextElementSibling&&c.nextElementSibling.classList.contains('ux-copy'))return;
+  c.parentNode.insertBefore(copyBtn(t,'command'),c.nextSibling)})}
+function copyNames(out,sel){[].forEach.call(out.querySelectorAll(sel),function(a){if(a.querySelector('.ux-copy')||a.parentNode.querySelector(':scope>.ux-copy'))return;var bb=a.querySelector(':scope>b'),t=(bb?bb.textContent:a.tagName==='TD'?(a.firstChild&&a.firstChild.nodeType===3?a.firstChild.textContent:''):a.textContent).trim();if(!t)return;
+  var b=copyBtn(t,'name');if(a.tagName==='TD')a.insertBefore(b,a.querySelector('br'));else a.parentNode.insertBefore(b,a.nextSibling)})}
+copyIn(document);
+// ---- 4) pinned favorites (#11): star on every page, list in the header and the quick-jump palette (localStorage mnm-favs)
+var KF='mnm-favs';function favs(){var f=lsGet(KF,[]);return Array.isArray(f)?f.filter(function(x){return x&&x.u}):[]}
+var h1=document.querySelector('main.main h1'),ftitle=h1?h1.textContent.replace(/\s+/g,' ').trim().slice(0,90):document.title;
+var star=null,fb=null,fpop=null;
+function isFav(){return favs().some(function(f){return f.u===here})}
+function favPaint(){var on=isFav(),n=favs().length;if(star){star.setAttribute('aria-pressed',on?'true':'false');star.innerHTML='<span aria-hidden="true">'+(on?'\u2605':'\u2606')+'</span><span class="ux-star-l">'+(on?'Pinned':'Pin')+'</span>';
+    star.title=on?'Unpin this page from your favorites':'Pin this page to your favorites (shown in the header \u2605 list and Ctrl+K)'}
+  if(fb){fb.hidden=!n;fb.querySelector('.ux-favn').textContent=n;fb.setAttribute('aria-label','Pinned pages ('+n+')')}
+  if(fpop&&!fpop.hidden)favList()}
+if(h1){star=document.createElement('button');star.type='button';star.className='ux-star';star.setAttribute('aria-label','Pin this page: '+ftitle);h1.appendChild(star);
+  star.addEventListener('click',function(){var f=favs(),on=f.some(function(x){return x.u===here});f=on?f.filter(function(x){return x.u!==here}):[{u:here,t:ftitle}].concat(f).slice(0,30);lsPut(KF,f);favPaint();say(on?'Unpinned '+ftitle:'Pinned '+ftitle+'. Find it under the star in the header or with Ctrl+K.')})}
+var topin=document.querySelector('.top .topin');
+function favList(){var f=favs();fpop.innerHTML='<p class="ux-favh">Pinned pages</p>'+(f.length?'<ul>'+f.map(function(x){return '<li><a href="'+esc(root+x.u)+'"'+(x.u===here?' aria-current="page"':'')+'>'+esc(x.t)+'</a></li>'}).join('')+'</ul>':'<p class="dim">Nothing pinned yet.</p>')+'<p class="dim ux-favt">Pin or unpin with the \u2606 next to a page title. Saved in this browser only.</p>'}
+function favClose(focus){if(!fpop||fpop.hidden)return;fpop.hidden=true;fb.setAttribute('aria-expanded','false');if(focus)fb.focus()}
+if(topin){fb=document.createElement('button');fb.type='button';fb.className='ux-favbtn';fb.setAttribute('aria-expanded','false');fb.setAttribute('aria-controls','ux-favpop');fb.title='Pinned pages';
+  fb.innerHTML='<span aria-hidden="true">\u2605</span><span class="ux-favn"></span>';
+  var pb=topin.querySelector('.ux-palbtn');if(pb&&pb.nextSibling)topin.insertBefore(fb,pb.nextSibling);else topin.appendChild(fb);
+  fpop=document.createElement('div');fpop.id='ux-favpop';fpop.className='ux-favpop';fpop.hidden=true;topin.appendChild(fpop);
+  fb.addEventListener('click',function(){if(!fpop.hidden){favClose();return}favList();fpop.hidden=false;fb.setAttribute('aria-expanded','true');var a=fpop.querySelector('a');if(a)a.focus()});
+  document.addEventListener('click',function(e){if(fpop.hidden||e.target.closest('.ux-favpop,.ux-favbtn'))return;favClose()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!fpop.hidden){favClose(true)}})}
+window.addEventListener('storage',function(e){if(e.key===KF)favPaint()});
+favPaint();
+// ---- 5) "What's new since your last visit" (#22): an in-page link to the changelog, never a browser notification.
+// mnm-lastvisit holds the day of your last visit; the visit before this one is kept for the browser session.
+var cl=[],cln={};(de.getAttribute('data-cl')||'').split(' ').forEach(function(x){var m=x.match(/^(\d{4}-\d\d-\d\d)(?::(\d+))?$/);if(m){cl.push(m[1]);cln[m[1]]=+(m[2]||1)}});
+(function(){var today=new Date(),d=today.getFullYear()+'-'+('0'+(today.getMonth()+1)).slice(-2)+'-'+('0'+today.getDate()).slice(-2),prev;
+  try{prev=sessionStorage.getItem('mnm-visit-prev');if(prev===null){prev=localStorage.getItem('mnm-lastvisit')||'';sessionStorage.setItem('mnm-visit-prev',prev)}localStorage.setItem('mnm-lastvisit',d)}catch(e){return}
+  if(!prev||!cl.length)return;var seen=lsGet('mnm-new-seen','')||'',since=seen>prev?seen:prev,n=cl.filter(function(x){return x>since}).reduce(function(t,x){return t+cln[x]},0);
+  var mo=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],nice=function(s){var p=s.split('-');return mo[+p[1]-1]+' '+(+p[2])};
+  if(/(^|\/)changelog\.html$/.test(here)){lsPut('mnm-new-seen',cl[0]);
+    [].forEach.call(document.querySelectorAll('main.main table.grid tbody tr'),function(tr){var c=tr.cells[0],m=c&&c.textContent.match(/^([A-Z][a-z]{2}) (\d{1,2}), (\d{4})$/);if(!m)return;
+      var iso=m[3]+'-'+('0'+(mo.indexOf(m[1])+1)).slice(-2)+'-'+('0'+m[2]).slice(-2);if(iso>prev){var s=document.createElement('span');s.className='ux-newtag';s.textContent='new';s.title='Added since your last visit ('+nice(prev)+')';c.appendChild(document.createTextNode(' '));c.appendChild(s)}});return}
+  if(!n)return;var cr=document.querySelector('.crumbs');if(!cr)return;
+  var b=document.createElement('span');b.className='ux-new';b.innerHTML='<a href="'+root+'changelog.html"><span aria-hidden="true">\u2726</span> '+n+' update'+(n>1?'s':'')+' since your last visit ('+nice(prev)+')</a><button type="button" class="ux-new-x" aria-label="Dismiss: '+n+' site updates since your last visit">\u2715</button>';
+  var v=cr.querySelector('.ver');cr.insertBefore(b,v||null);
+  b.querySelector('.ux-new-x').addEventListener('click',function(){lsPut('mnm-new-seen',cl[0]);b.remove()})})();
+})();
+// @@ux-pal-start
+// UX pass 3 quick-jump palette (#1, #19) + '?' shortcuts overlay (#5). Pass 4: built into assets/mod-ux-pal.js and loaded on
+// first use; reads shared state from window.MNM_UXC (set by mod-ux.js). Pinned favorites (mnm-favs) lead the empty state.
+(function(){var C=window.MNM_UXC;if(!C||window.MNM_UX_PALI)return;
+var root=C.root,esc=C.esc,recent=C.recent,here=C.here,JUMP=C.JUMP,GO=C.GO,href=C.href,S=C.S,lsGet=C.lsGet;
+var pal=null,inp,list,stat,act=-1,opts=[],opener=null,lastQ=null;
+function kind(it){if(it.e)return 'Wiki';if(/^item\b/i.test(it.s))return 'Items';if(/spells/i.test(it.s))return 'Spells';return 'Pages'}
+function build(){if(pal)return;
+  pal=document.createElement('dialog');pal.className='ux-pal';pal.setAttribute('aria-labelledby','ux-pal-h');
+  pal.innerHTML='<div class="ux-pal-hd"><h2 id="ux-pal-h" class="ux-vh">Quick jump</h2><span class="ux-pal-ico" aria-hidden="true">&#9906;</span>'+
+   '<input id="ux-pal-q" type="search" autocomplete="off" spellcheck="false" placeholder="Jump to a page, class, zone, item…" role="combobox" aria-expanded="true" aria-controls="ux-pal-list" aria-autocomplete="list" aria-label="Quick jump: type to search">'+
+   '<button type="button" class="ux-pal-x" aria-label="Close">&#10005;</button></div>'+
+   '<p class="ux-pal-st" id="ux-pal-st" role="status" aria-live="polite"></p><ul id="ux-pal-list" class="ux-pal-list" role="listbox" aria-label="Results"></ul>'+
+   '<p class="ux-pal-ft dim"><kbd>&uarr;</kbd><kbd>&darr;</kbd> move · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close · <kbd>?</kbd> all shortcuts</p>';
+  document.body.appendChild(pal);inp=pal.querySelector('input');list=pal.querySelector('ul');stat=pal.querySelector('.ux-pal-st');
+  inp.addEventListener('input',render);
+  inp.addEventListener('keydown',function(e){if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();mv(e.key==='ArrowDown'?1:-1)}
+    else if(e.key==='Home'&&e.ctrlKey){e.preventDefault();setAct(0)}else if(e.key==='End'&&e.ctrlKey){e.preventDefault();setAct(opts.length-1)}
+    else if(e.key==='Enter'){e.preventDefault();var o=opts[act>=0?act:0];if(o)openOpt(o)}
+    else if(e.key==='Escape'){e.preventDefault();close()}});
+  pal.addEventListener('keydown',function(e){if(e.key!=='Tab')return;var f=[inp,pal.querySelector('.ux-pal-x')];var i=f.indexOf(document.activeElement);e.preventDefault();f[(i+(e.shiftKey?-1:1)+f.length)%f.length].focus()});
+  pal.querySelector('.ux-pal-x').addEventListener('click',close);
+  pal.addEventListener('click',function(e){if(e.target===pal){close();return}var li=e.target.closest('[role=option]');if(li)openOpt(li)});
+  pal.addEventListener('close',function(){if(opener&&opener.focus)opener.focus({preventScroll:true});opener=null});
+  if(S())S().onUpdate(function(){if(pal.open)render(1)});
+}
+function setAct(i){act=Math.max(-1,Math.min(opts.length-1,i));opts.forEach(function(o,j){o.setAttribute('aria-selected',j===act?'true':'false');o.classList.toggle('on',j===act)});
+  if(act>=0){inp.setAttribute('aria-activedescendant',opts[act].id);opts[act].scrollIntoView({block:'nearest'})}else inp.removeAttribute('aria-activedescendant')}
+function mv(d){setAct(act<0?(d>0?0:opts.length-1):(act+d+opts.length)%opts.length)}
+function openOpt(o){var u=o.getAttribute('data-href');if(!u)return;if(o.getAttribute('data-ext')){window.open(u,'_blank','noopener');close();return}location.href=u;close()}
+function item(i,t,u,sub,ext){return '<li role="option" id="ux-pal-o'+i+'" aria-selected="false" data-href="'+esc(u)+'"'+(ext?' data-ext="1"':'')+'><span class="ux-pal-t">'+esc(t)+(ext?' <span aria-hidden="true">&#8599;</span>':'')+'</span>'+(sub?'<span class="ux-pal-s">'+esc(sub)+'</span>':'')+'</li>'}
+function group(n,h){return '<li role="presentation" class="ux-pal-g" aria-hidden="true">'+esc(n)+'</li>'+h}
+function render(keep){var t=inp.value.trim(),h=[],n=0,cur=act;
+  var fv=lsGet('mnm-favs',[]);if(!Array.isArray(fv))fv=[];
+  if(t.length<2){if(fv.length)h.push(group('Pinned',fv.slice(0,12).map(function(r){return item(n++,'\u2605 '+r.t,href(r.u),r.u.replace(/\.html$/,'').replace(/\/index$/,'/'))}).join('')));
+    var rc=recent.filter(function(r){return r.u!==here&&!fv.some(function(f){return f.u===r.u})}).slice(0,8);
+    if(rc.length)h.push(group('Recently viewed',rc.map(function(r){return item(n++,r.t,href(r.u),r.u.replace(/\.html$/,'').replace(/\/index$/,'/'))}).join('')));
+    h.push(group('Jump to',JUMP.map(function(j){return item(n++,j[0],href(j[1]),'')}).join('')));
+    stat.textContent=t.length?'Type at least 2 letters to search.':((fv.length?'Pinned pages, ':'')+(rc.length?'recently viewed pages and main sections.':'main sections.')).replace(/^./,function(c){return c.toUpperCase()})+(fv.length?'':' Tip: star a page (\u2606 next to its title) to pin it here.');
+  }else{var s=S(),lt=t.toLowerCase();
+    var fv2=fv.filter(function(r){return r.t.toLowerCase().indexOf(lt)>=0}).slice(0,4);
+    if(fv2.length)h.push(group('Pinned',fv2.map(function(r){return item(n++,'\u2605 '+r.t,href(r.u),r.u)}).join('')));
+    var rc2=recent.filter(function(r){return r.t.toLowerCase().indexOf(lt)>=0}).slice(0,3);
+    if(rc2.length)h.push(group('Recently viewed',rc2.map(function(r){return item(n++,r.t,href(r.u),r.u)}).join('')));
+    var jm=JUMP.filter(function(j){return j[0].toLowerCase().indexOf(lt)>=0});
+    if(!s){stat.textContent='Search is not available on this page.'}
+    else if(!s.ready()){if(s.failed()){stat.textContent='The search index could not load (offline?). Close and try again.';stat.classList.add('lz-err')}else{stat.textContent='Loading search index…';s.load()}
+      if(jm.length)h.push(group('Jump to',jm.map(function(j){return item(n++,j[0],href(j[1]),'')}).join('')))}
+    else{stat.classList.remove('lz-err');s.loadText();var seenU={},r=s.search(t,60).filter(function(it){var k=it.u+'|'+it.t;if(seenU[k]||seenU[it.u])return false;seenU[k]=seenU[it.u]=1;return true}).slice(0,40),g={},order=['Pages','Spells','Items','Wiki'];
+      r.forEach(function(it){(g[kind(it)]=g[kind(it)]||[]).push(it)});
+      order.forEach(function(k){if(g[k])h.push(group(k,g[k].slice(0,k==='Pages'?14:8).map(function(it){return item(n++,it.t,href(it.u,it.e),(it.fz?'close match · ':'')+it.s,it.e)}).join('')))});
+      stat.textContent=n?(n+' result'+(n>1?'s':'')+(s.full()?'':' (titles; full text still loading)')):'No matches for “'+t+'”'+(s.full()?'':' in titles yet; full text still loading…')}}
+  list.innerHTML=h.join('');opts=[].slice.call(list.querySelectorAll('[role=option]'));setAct(keep===1&&t===lastQ?Math.min(cur,opts.length-1):(t.length>=2&&opts.length?0:-1));lastQ=t}
+function open(from){build();if(pal.open){inp.focus();inp.select();return}opener=from||document.activeElement;var sq=document.getElementById('q');
+  inp.value=(sq&&sq.value&&document.activeElement===sq)?sq.value:'';if(sq)sq.blur();var r=document.getElementById('qres');if(r)r.hidden=true;
+  if(S())S().load();pal.showModal();render();inp.focus()}
+function close(){if(pal&&pal.open)pal.close()}
+
+var keys=null;
+function keysOpen(from){if(!keys){keys=document.createElement('dialog');keys.className='ux-keys';keys.setAttribute('aria-labelledby','ux-keys-h');
+  var row=function(k,d){return '<tr><th scope="row">'+k+'</th><td>'+d+'</td></tr>'};
+  keys.innerHTML='<div class="ux-sheet-hd"><h2 id="ux-keys-h">Keyboard shortcuts</h2><button type="button" class="ux-sheet-x" aria-label="Close">&#10005;</button></div><table class="ux-keys-t"><tbody>'+
+   row('<kbd>Ctrl</kbd> <kbd>K</kbd> or <kbd>/</kbd>','Quick jump: search pages, classes, zones, items; recently viewed')+row('<kbd>?</kbd>','Show this list')+row('<kbd>Esc</kbd>','Close a dialog, menu or search results')+
+   row('<kbd>&uarr;</kbd> <kbd>&darr;</kbd> <kbd>Enter</kbd>','Move through results and open one')+row('<kbd>Tab</kbd> then <kbd>Enter</kbd> on a table header','Sort that column (press again to reverse)')+
+   Object.keys(GO).map(function(k){var j=JUMP.filter(function(x){return x[1]===GO[k]})[0];return row('<kbd>g</kbd> <kbd>'+k+'</kbd>','Go to '+esc(j?j[0]:GO[k]))}).join('')+
+   row('<kbd>t</kbd>','Back to top')+'</tbody></table><p class="dim ux-keys-n">Shortcuts are ignored while you type in a box. On touch screens use the search button in the header.</p>';
+  document.body.appendChild(keys);var x=keys.querySelector('.ux-sheet-x');x.addEventListener('click',function(){keys.close()});
+  keys.addEventListener('click',function(e){if(e.target===keys)keys.close()});
+  keys.addEventListener('keydown',function(e){if(e.key==='Tab'){e.preventDefault();x.focus()}});
+  keys.addEventListener('close',function(){if(keys._op&&keys._op.focus)keys._op.focus({preventScroll:true})})}
+  if(keys.open)return;keys._op=from||document.activeElement;keys.showModal();keys.querySelector('.ux-sheet-x').focus()}
+
+window.MNM_UX_PALI={open:open,close:close,isOpen:function(){return !!(pal&&pal.open)},keys:keysOpen};
+})();
+// @@ux-pal-end

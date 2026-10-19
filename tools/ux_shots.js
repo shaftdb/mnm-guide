@@ -7,7 +7,9 @@ const srv=spawn('python3',['-m','http.server',String(PORT),'--bind','127.0.0.1']
 const chrome=spawn('google-chrome',['--headless=new','--no-sandbox','--disable-gpu','--hide-scrollbars','--remote-debugging-port='+(PORT+1000),'--user-data-dir=/tmp/ux-chrome-'+PORT,'about:blank'],{stdio:'ignore'});
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('data',x=>d+=x);r.on('end',()=>{try{res(JSON.parse(d))}catch(e){rej(e)}})}).on('error',rej))}
-const PAGES=[['home','index.html'],['class','classes/inquisitor.html'],['walkthrough','walkthrough.html'],['market','market.html']];
+const ALLP={home:'index.html',class:'classes/inquisitor.html',walkthrough:'walkthrough.html',market:'market.html',items:'items.html',mobs:'mobs.html'};
+// UX_PAGES=home,class,... picks pages (default: home,class,walkthrough,market); UX_SHOT_PAGES limits which get screenshots
+const PAGES=(process.env.UX_PAGES||'home,class,walkthrough,market').split(',').map(n=>[n,ALLP[n]]),SHOTP=process.env.UX_SHOT_PAGES?process.env.UX_SHOT_PAGES.split(','):null;
 const SIZES=(process.env.UX_SIZES||'480x900,1024x768,3440x1440').split(',').map(s=>s.split('x').map(Number));
 (async()=>{
  let tabs;for(let i=0;i<50;i++){try{tabs=await getJSON('http://127.0.0.1:'+(PORT+1000)+'/json');break}catch(e){await sleep(200)}}
@@ -28,6 +30,7 @@ const SIZES=(process.env.UX_SIZES||'480x900,1024x768,3440x1440').split(',').map(
      var small=0,tot=0;document.querySelectorAll('.top a,.top button,.top select,.top input,.rangebar a,.rangebar select,.rangebar button,.rangebar input').forEach(function(e){var r=e.getBoundingClientRect();if(r.width&&r.height&&(!e.checkVisibility||e.checkVisibility({visibilityProperty:true}))){tot++;if(r.height<44&&r.width<44||r.height<${w<600?44:24})small++}});
      return {ovf:document.documentElement.scrollWidth>innerWidth,main:mn?Math.round(mn.getBoundingClientRect().width):0,topH:top?Math.round(top.getBoundingClientRect().height):0,small:small,tot:tot}})()`);
    console.log(name,w,JSON.stringify(m));
+   if(SHOTP&&!SHOTP.includes(name))continue;
    const r=await send('Page.captureScreenshot',{format:'png'});
    fs.writeFileSync(path.join(OUT,`${PFX}-${TAG}-${name}-${w}.png`),Buffer.from(r.result.data,'base64'));
   }

@@ -85,6 +85,7 @@ def render_all():
 # 3) search: search-titles.js (titles/urls/sections, compact) loads first; search-text.js (the full text, same order)
 #    loads in the background after the first query. search-index.js is still written (unused fallback).
 # Any check that fails leaves that file complete, and the JS uses it as before.
+_UX_WALK = {}  # band -> full route HTML (all cities), filled by _ux_split_walk (pass 4 reuses it)
 _SC_BLOCK = re.compile(r'<div class="sc-route" data-sc="([a-z0-9-]+)">')
 
 def _ux_city_split(h):
@@ -120,9 +121,12 @@ def _ux_split_walk():
             f = 'walk-h-%s.js' % sl; lazy['schead'][sl] = f
             files[f] = 'window.MNM_WT.schead_c[%s]=%s;' % (_ux_dump(sl), _ux_dump(pre + b + suf))
         d['schead'] = ''
-    for f, t in files.items(): _ux_js(f, t)
+    # UX pass 4: route chunks write into window.MNM_WTR, which walk-data.js aliases as MNM_WT.route, so a chunk loaded before
+    # walk-data.js (class pages load their own start-city route chunks) is kept, and loading order never matters.
+    for f, t in files.items(): _ux_js(f, t.replace('window.MNM_WT.route[', '(window.MNM_WTR=window.MNM_WTR||{})[', 1))
+    _UX_WALK.update({k: h for k, h in d['route'].items()})
     d.update(route={}, schead_c={}, lazy=lazy)
-    _ux_js('walk-data.js', 'window.MNM_WT=%s;' % _ux_dump(d))
+    _ux_js('walk-data.js', 'window.MNM_WT=%s;window.MNM_WT.route=window.MNM_WTR=window.MNM_WTR||{};' % _ux_dump(d))
 
 def _u16(s): return len(s.encode('utf-16-le')) // 2
 _NH_NOTE = re.compile(r'<p class="sc-nhnote">.*?</p>', re.S)
@@ -166,3 +170,117 @@ _ux_prev_ra3 = render_all
 def render_all():
     _ux_prev_ra3()
     _ux_split_walk(); _ux_split_search()
+
+# ---------------------------------------------------------------- UX pass 4: class pages render on demand
+# 1) Start-city routes on class guides / Leveling: every page carried all four cities' routes for all eight bands (~700 KB
+#    of the 870 KB Inquisitor page), with CSS showing one city. Each band's block list is replaced by a small placeholder;
+#    mod-ux.js loads only the picked city's walk-r-<band>-<city>.js chunk (the same files the walkthrough uses) when the
+#    band nears the screen. Done only where the page HTML is byte-identical to the relinked walk route, else left as is.
+#    Without JavaScript nothing changes for the reader: the routes were already hidden until a start city was picked.
+# 2) Class guides: inactive tabs (not the open Quick reference tab and not Character creation, which mod-chargen wires up)
+#    move into assets/ct-<class>.js and render when the tab is opened (or a #link points into them). Every id in a moved
+#    tab stays as an empty placeholder, so deep links, the On this page sheet and Ctrl+K anchors still find their tab.
+# 3) data-cl on <html>: changelog rows per day ("2026-10-19:2 ..."), for the in-page "What's new since your last visit" badge.
+# 4) The palette + shortcuts overlay (between the @@ux-pal markers in mod-ux.js) move into assets/mod-ux-pal.js, loaded on
+#    first use; mod-ux.js keeps tiny stubs.
+import datetime as _ux_dt
+def _ux_cl_dates():
+    try: t = open(os.path.join(ROOT, 'content', 'changelog.md'), encoding='utf8').read()
+    except OSError: return ''
+    out = []
+    for m in re.finditer(r'^\| *([A-Z][a-z]{2} \d{1,2}, \d{4}) *\|', t, re.M):
+        try: out.append(_ux_dt.datetime.strptime(m.group(1), '%b %d, %Y').strftime('%Y-%m-%d'))
+        except ValueError: pass
+    cnt = {}
+    for d in out: cnt[d] = cnt.get(d, 0) + 1
+    return ' '.join('%s:%d' % (d, cnt[d]) for d in sorted(cnt, reverse=True)[:60])  # "day:rows", newest first
+_UX_CL = _ux_cl_dates()
+if _UX_CL and '<html lang="en" data-root="{root}">' in TEMPLATE:
+    TEMPLATE = TEMPLATE.replace('<html lang="en" data-root="{root}">', '<html lang="en" data-root="{root}" data-cl="%s">' % _UX_CL, 1)
+
+_UX_SCWRAP = re.compile(r'<div class="sc-wrap">')
+def _ux_div_end(h, i):
+    d = 0
+    for t in re.finditer(r'<div\b|</div>', h[i:]):
+        d += 1 if t.group(0) == '<div' else -1
+        if d == 0: return i + t.end()
+    return -1
+
+def _ux_lazy_routes(h, depth):
+    """Swap each start-city wrap that equals a relinked walk route for its sc-pick line + a placeholder. Returns (html, n)."""
+    if '<div class="sc-wrap">' not in h or not _UX_WALK: return h, 0
+    want = {}
+    for k, full in _UX_WALK.items():
+        sp = _ux_city_split(full)
+        if sp: want[relink(full, depth)] = (k, sp)
+    out, last, n = [], 0, 0
+    for m in _UX_SCWRAP.finditer(h):
+        if m.start() < last: continue
+        e = _ux_div_end(h, m.start())
+        if e < 0: continue
+        w = h[m.start():e]; hit = want.get(w)
+        if not hit: continue
+        k, (pre, blocks, suf) = hit; lo, hi = k.split('-')
+        ph = ('<div class="sc-lz" data-band="%s" data-cities="%s"><noscript><p class="dim">Start-city routes for levels %s–%s need JavaScript: '
+              'see the <a href="%swalkthrough.html">walkthrough</a>.</p></noscript></div>') % (k, ' '.join(blocks), lo, hi, '../' * depth)
+        out.append(h[last:m.start()]); out.append(relink(pre, depth) + ph + suf); last = e; n += 1
+    out.append(h[last:])
+    return ''.join(out), n
+
+_UX_PANE = re.compile(r'<div class="tabpane( on)?" id="(t\d+-[\w-]+)">')
+_UX_PANE_SKIP = re.compile(r'<script|<form|<input|<select|<button|<textarea|sortable|data-ts|cg-|class="rr|sc-wrap|mnm-|<dialog|onclick')
+def _ux_lazy_tabs(h, page_slug):
+    """Move inactive, static tab panes into assets/ct-<slug>.js. Returns (html, {pane id: html}) ."""
+    panes, out, last = {}, [], 0
+    for m in list(_UX_PANE.finditer(h)):
+        if m.group(1) or m.group(2).endswith('-cg'): continue
+        e = _ux_div_end(h, m.start())
+        if e < 0: continue
+        inner = h[m.end():e - 6]
+        if _UX_PANE_SKIP.search(inner) or len(inner) < 400: continue
+        ids = re.findall(r'\sid="([^"]+)"', inner)
+        if len(ids) != len(set(ids)): continue
+        f = 'ct-%s.js' % page_slug
+        ph = ('<div class="tabpane" id="%s" data-lz="%s"><p class="lz-status ux-lzp" role="status">This tab loads when you open it.</p>%s</div>'
+              % (m.group(2), f, ''.join('<span class="ux-lzid" id="%s"></span>' % i for i in ids)))
+        out.append(h[last:m.start()]); out.append(ph); last = e; panes[m.group(2)] = inner
+    out.append(h[last:])
+    return ''.join(out), panes
+
+def _ux_split_pal():
+    fp = os.path.join(OUT, 'assets', 'mod-ux.js')
+    s = open(fp, encoding='utf8').read(); a, b = '// @@ux-pal-start', '// @@ux-pal-end'
+    if s.count(a) != 1 or s.count(b) != 1 or s.index(a) > s.index(b): print('zzz_ux: palette not split (markers)'); return
+    i, j = s.index(a), s.index(b) + len(b)
+    _ux_js('mod-ux-pal.js', _ux_compact_js(s[i:j]))
+    _ux_js('mod-ux.js', _ux_compact_js(s[:i] + s[j:]))
+    fc = os.path.join(OUT, 'assets', 'mod-ux.css'); c = open(fc, encoding='utf8').read()
+    if '"/*' not in c and "'/*" not in c:
+        c = re.sub(r'/\*.*?\*/', '', c, flags=re.S); _ux_js('mod-ux.css', '\n'.join(l.strip() for l in c.split('\n') if l.strip()) + '\n')
+
+def _ux_compact_js(s):
+    """Drop whole-line // comments and indentation (line breaks kept, so the code itself is untouched). Source stays readable."""
+    return '\n'.join(l.strip() for l in s.split('\n') if l.strip() and not l.strip().startswith('//')) + '\n'
+
+def _ux_pass4():
+    nr = nt = 0; saved = 0
+    for d, _, fs in os.walk(OUT):
+        for f in fs:
+            if not f.endswith('.html'): continue
+            fp = os.path.join(d, f); rel = os.path.relpath(fp, OUT).replace(os.sep, '/'); depth = rel.count('/')
+            h0 = h = open(fp, encoding='utf8').read()
+            h, n = _ux_lazy_routes(h, depth); nr += n
+            if rel.startswith('classes/') and rel != 'classes/index.html':
+                h, panes = _ux_lazy_tabs(h, f[:-5])
+                if panes:
+                    _ux_js('ct-%s.js' % f[:-5], '(window.MNM_CT=window.MNM_CT||{})[%s]=%s;' % (_ux_dump(f[:-5]), _ux_dump(panes))); nt += len(panes)
+            if h != h0:
+                saved += len(h0.encode('utf8')) - len(h.encode('utf8'))
+                open(fp, 'w', encoding='utf8').write(h)
+    _ux_split_pal()
+    print('zzz_ux pass 4: %d route bands and %d class tabs load on demand, %d KB less HTML' % (nr, nt, saved // 1024))
+
+_ux_prev_ra4 = render_all
+def render_all():
+    _ux_prev_ra4()
+    _ux_pass4()
