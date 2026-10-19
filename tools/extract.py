@@ -10,8 +10,14 @@ RAW=os.path.join(ROOT,'raw'); DATA=os.path.join(ROOT,'data')
 WIKI='https://monstersandmemories.miraheze.org/wiki/'
 def wurl(t): return WIKI+t.replace(' ','_').replace("'",'%27')
 def rawpage(t):
-    fn=os.path.join(RAW,'wiki',re.sub(r'[^A-Za-z0-9_.-]+','_',t)+'.json')
-    return json.load(open(fn)) if os.path.exists(fn) else None
+    """Parse-API output for a page. raw/parse/ is its own directory now: tools/wikifetch.py writes a different format
+    to raw/wiki/<title>.json and silently replaced Rothold, Faelindral and Underdocks there."""
+    s=re.sub(r'[^A-Za-z0-9_.-]+','_',t)+'.json'
+    for fn in (os.path.join(RAW,'parse',s),os.path.join(RAW,'wiki',s)):
+        if os.path.exists(fn):
+            d=json.load(open(fn))
+            if isinstance(d.get('wikitext'),dict): return d
+    return None
 def catj(name): return json.load(open(os.path.join(RAW,'cat_'+name.replace(' ','_')+'.json')))
 
 # ---------- generic template parser (handles nesting) ----------
@@ -91,6 +97,28 @@ def item_from(title,rec):
     it['notes']=plain(ip.get('notes',''))[:400] or None
     return it
 
+PLACEHOLDERS={'Example NPC','Example Item','Example Quest','Raid Named'}
+def ml(v):
+    v=plain(v or '').strip()
+    return None if v in ('','-','?') else v
+def mob_from(title,rec,zones):
+    """One wiki mob page (Namedmobpage / Mobstatsbox, or an untemplated page in a '<Zone> NPCs' category)."""
+    wt=rec['wt']; tpl='Namedmobpage'; t=find_template(wt,'Namedmobpage')
+    if t is None: tpl='Mobstatsbox'; t=find_template(wt,'Mobstatsbox')
+    if t is None: tpl=None; t={}
+    cats=rec.get('cats',[])
+    zs=links(t.get('zone','')) or ([ml(t.get('zone'))] if ml(t.get('zone')) else [])
+    zs+=[c[:-5] for c in cats if c.endswith(' NPCs') and c[:-5] not in zs]
+    zl={k.lower():k for k in zones}
+    zs=[zl.get(x.lower(),x) for x in zs]
+    zs=list(dict.fromkeys(x for x in zs if x))
+    loot=links(t.get('known_loot','') or t.get('unique drops',''))
+    common=links(t.get('common_loot','') or t.get('drops',''))
+    return {'name':title,'url':wurl(title),'wiki_ts':rec['ts'][:10],'revid':rec.get('revid'),'template':tpl,'zones':zs,
+        'race':ml(t.get('race')),'class':ml(t.get('class')),'level':ml(t.get('level')),'location':ml(t.get('location')),
+        'desc':(ml(t.get('description')) or '')[:300] or None,'known_loot':loot,'common_loot':common,
+        'factions':ml(t.get('factions')),'named':'Named Mobs' in cats or bool(loot) and tpl=='Namedmobpage','cats':cats}
+
 def main():
     os.makedirs(DATA,exist_ok=True)
     cats=json.load(open(os.path.join(RAW,'wiki','_categories.json')))
@@ -125,14 +153,20 @@ def main():
                 if len(cells)==1 and re.search(r'\b1\.',cells[0]) and ('2.' in cells[0] or 'A.' in cells[0]):
                     zd.setdefault('legend',[]).append(re.sub(r'^.*?\[ edit \]\s*','',cells[0])); continue
                 if f.startswith('named npc'): mode='named';hdr=low;continue
+                if f.startswith('quest npc'): mode='qnpcs';hdr=low;continue
                 if (f.startswith('npcs') or f.startswith('common npc') or f in('npc','name')) and 'level' in low:
                     mode='npcs';hdr=low;area=cells[0].split(' - ',1)[1] if ' - ' in cells[0] else None;continue
                 if f=='quest name': mode='quests';hdr=low;continue
                 if f=='item name': mode='items';hdr=low;continue
                 if f=='location' and 'merchant' in low: mode='merch';hdr=low;continue
                 if mode is None: continue
+                cells=[c.strip() for c in cells]
                 rec=dict(zip(hdr,cells))
-                if mode in('named','npcs'):
+                if cells[0] in PLACEHOLDERS: continue
+                if mode=='qnpcs':
+                    zd.setdefault('quest_npcs',[]).append({'name':cells[0],'race':rec.get('race'),'class':rec.get('class'),'level':rec.get('level'),'location':rec.get('location'),'desc':rec.get('description')})
+                    npclevel.setdefault(cells[0].lower(),[]).append((z,rec.get('level'),False,rec.get('location')))
+                elif mode in('named','npcs'):
                     name=cells[0]
                     loot=rec.get('known loot') or rec.get('unique loot')
                     e={'name':name,'race':rec.get('race'),'class':rec.get('class'),'level':rec.get('level'),'location':rec.get('location') or (area if mode=='npcs' else None),'loot':loot,'desc':rec.get('description')}
@@ -147,6 +181,27 @@ def main():
                 elif mode=='merch':
                     zd.setdefault('merchants',[]).append({'location':cells[0],'merchant':cells[1] if len(cells)>1 else ''})
         zones[z]=zd
+    # ---------- mob pages (tools/wiki_refresh.py -> raw/cat_MobPages.json) ----------
+    mobs={}
+    mfn=os.path.join(RAW,'cat_MobPages.json')
+    if os.path.exists(mfn):
+        for t,rec in json.load(open(mfn)).items():
+            if t in PLACEHOLDERS: continue
+            mobs[t]=mob_from(t,rec,zones)
+        for m in mobs.values():
+            for z in m['zones']:
+                if z not in zones: continue
+                zd=zones[z]; rows=[e for k in ('named','npcs','quest_npcs') for e in zd.get(k,[]) if (e.get('name') or '').strip().lower()==m['name'].lower()]
+                for e in rows:   # fill blanks only; a zone-table value is never overwritten
+                    for k in ('level','location','race','class'):
+                        if not ml(e.get(k)) and m.get(k): e[k]=m[k]; e.setdefault('filled_from_mob_page',[]).append(k)
+                    e['page']=m['url']
+                    if m['known_loot'] and not ml(e.get('loot')): e['loot']=', '.join(m['known_loot'])
+                if not rows and (m['template'] or m['level']):
+                    e={'name':m['name'],'race':m['race'],'class':m['class'],'level':m['level'],'location':m['location'],'loot':', '.join(m['known_loot']+m['common_loot']) or None,'desc':m['desc'],'page':m['url'],'src':'mob page'}
+                    zd['named' if m['named'] else 'npcs'].append(e)
+                    npclevel.setdefault(m['name'].lower(),[]).append((z,m['level'],m['named'],m['location']))
+        json.dump(mobs,open(os.path.join(DATA,'mobs.json'),'w'),indent=1,ensure_ascii=False)
     json.dump(zones,open(os.path.join(DATA,'zones.json'),'w'),indent=1,ensure_ascii=False)
     # ---------- quests ----------
     qraw=catj('Quests'); quests={}
@@ -186,9 +241,15 @@ def main():
             sets[t]={'name':t,'url':wurl(t),'crafted':'Crafted Armor Sets' in rec.get('cats',[]) or cn=='Crafted Armor Sets','rows':rows,'wiki_ts':rec['ts'][:10]}
     json.dump(sets,open(os.path.join(DATA,'armor_sets.json'),'w'),indent=1,ensure_ascii=False)
     # ---------- items ----------
-    iraw=catj('All Race Equipment')
-    for extra in ['Bags & Containers']:
-        for k,v in catj(extra).items(): iraw.setdefault(k,v)
+    if os.path.exists(os.path.join(RAW,'cat_ItemPages.json')): iraw=catj('ItemPages')
+    else:
+        iraw=catj('All Race Equipment')
+        for extra in ['Bags & Containers']:
+            for k,v in catj(extra).items(): iraw.setdefault(k,v)
+    mobloot=collections.defaultdict(list)
+    for m in mobs.values():
+        for it in m['known_loot']+m['common_loot']:
+            for z in (m['zones'] or [None]): mobloot[it].append((z,m['name']))
     removed=set(catj('Removed Items'))
     items={}
     qrew=collections.defaultdict(list)
@@ -199,6 +260,9 @@ def main():
         it=item_from(t,rec)
         it['soldby']=sorted(set(it['soldby']+soldby.get(t,[])))
         it['quests']=sorted(set(it['quests']+qrew.get(t,[])))
+        have={(d['mob'] or '').lower() for d in it['drops']}
+        for z,mn in mobloot.get(t,[]):
+            if mn.lower() not in have: it['drops'].append({'zone':z,'mob':mn,'via':'mob page'}); have.add(mn.lower())
         # acquisition level estimate from drop mob levels
         lv=[]
         for d in it['drops']:

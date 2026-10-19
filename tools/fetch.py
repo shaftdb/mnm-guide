@@ -1,8 +1,8 @@
 import json,sys,urllib.request,urllib.parse,time,os
 API='https://monstersandmemories.miraheze.org/w/api.php'
-UA={'User-Agent':'Mozilla/5.0 (private personal guide build; contact via user)'}
+UA={'User-Agent':'mnm-quick-codex/1.1 (community guide; https://shaftdb.github.io/mnm-guide/)'}
 def api(**p):
-    p['format']='json'
+    p['format']='json'; p.setdefault('maxlag',5); time.sleep(0.5)
     u=API+'?'+urllib.parse.urlencode(p)
     for i in range(4):
         try:

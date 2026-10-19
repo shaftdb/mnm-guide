@@ -2,11 +2,16 @@
 """Cache wiki wikitext: python3 tools/wikifetch.py "Category:Quests" "Category:Tradeskills" ... -> raw/wiki/<title>.json"""
 import json, os, sys, time, urllib.request, urllib.parse
 API = 'https://monstersandmemories.miraheze.org/w/api.php'; OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'raw', 'wiki')
-H = {'User-Agent': 'mnm-quick-codex/1.0 (community guide)'}
+H = {'User-Agent': 'mnm-quick-codex/1.1 (community guide; https://shaftdb.github.io/mnm-guide/)'}
 def api(**k):
     k['format'] = 'json'; return json.load(urllib.request.urlopen(urllib.request.Request(API + '?' + urllib.parse.urlencode(k), headers=H), timeout=60))
 def members(cat):
-    return [m['title'] for m in api(action='query', list='categorymembers', cmtitle=cat, cmlimit=500)['query']['categorymembers']]
+    out, cont = [], {}
+    while True:   # follow cmcontinue: categories over 500 pages used to be cut off
+        d = api(action='query', list='categorymembers', cmtitle=cat, cmlimit=500, **cont)
+        out += [m['title'] for m in d['query']['categorymembers']]
+        if 'continue' not in d: return out
+        cont = {'cmcontinue': d['continue']['cmcontinue']}
 def fetch(titles):
     os.makedirs(OUT, exist_ok=True)
     for i in range(0, len(titles), 40):

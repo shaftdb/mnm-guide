@@ -1,0 +1,9 @@
+{
+ "_note": "Map deep links to https://www.mnmatlas.com/. Only entries with a cited source. mnmatlas.com/robots.txt disallows AI and dataset crawlers ('nothing here may be collected') and disallows /data/ for everyone, so no atlas data or coordinates were collected; the wiki /loc values have no documented conversion to atlas x/y, so no coordinates are guessed. Zone entries use only the map ids documented in the project README. Renderers: modules/maplinks.py.",
+ "checked": "2026-10-18",
+ "zones": {
+  "Night Harbor": {"url": "https://www.mnmatlas.com/night-harbor/", "source": "mnmatlas README (map address mnmatlas.com/night-harbor/)", "source_url": "https://github.com/ocombe/mnmatlas"},
+  "Underdocks": {"url": "https://www.mnmatlas.com/underdocks/", "source": "mnmatlas README (map address mnmatlas.com/underdocks/, ?level=lower or upper)", "source_url": "https://github.com/ocombe/mnmatlas"}
+ },
+ "camps": {}, "mobs": {}, "npcs": {}, "quest_givers": {}, "trainers": {}
+}

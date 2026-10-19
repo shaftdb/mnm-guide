@@ -1236,11 +1236,17 @@ def read_md_text(t):
                 k, v = l.split(':', 1); meta[k.strip()] = v.strip()
     return meta, t
 
+def _mpl(e):
+    return (' <a class="ext dim" target="_blank" rel="noopener" href="%s" title="Wiki mob page">wiki</a>' % esc(e['page'])) if e.get('page') else ''
+
 def zone_page(z, Z, X):
     ctx = {}
     facts = [('Wiki level', esc(Z['level'] or 'not stated')), ('Region', esc(X.get('region', 'UNCONFIRMED'))),
              ('Type', esc(X.get('type', '—'))), ('Monsters', esc(Z.get('monster_types') or '—')),
              ('Connects to', ', '.join(zlink(a) for a in Z['adjacent']) or '—'), ('Named listed', str(len(Z['named']))), ('Quests listed', str(len(Z['quests'])))]
+    _cl = [n for e in Z['npcs'] for n in [lvl_num(e.get('level'))] if n]; _nl = [n for e in Z['named'] for n in [lvl_num(e.get('level'))] + [int(x) for x in re.findall(r'\d+', str(e.get('level') or ''))[1:2]] if n]
+    _ch = [int(x) for e in Z['npcs'] for x in re.findall(r'\d+', str(e.get('level') or ''))]
+    if _cl: facts.insert(1, ('Mob levels (wiki tables)', 'camps %d–%d%s' % (min(_cl), max(_ch or _cl), ('; named %d–%d' % (min(_nl), max(_nl))) if _nl else '')))
     ctx['facts'] = '<div class="box facts"><h3>Quick Facts</h3><table>%s</table></div>' % ''.join('<tr><th>%s</th><td>%s</td></tr>' % (k, inline(v) if 'UNCONFIRMED' in v else v) for k, v in facts)
     toc = [('overview', 'Overview'), ('map', 'Map')]
     o = ['<p class="lead">%s</p>' % esc(Z.get('intro') or '')]
@@ -1253,13 +1259,17 @@ def zone_page(z, Z, X):
     if Z['named']:
         toc.append(('named', 'Named mobs'))
         o.append('<h2 id="named">Named mobs</h2><div class="tw"><table class="grid sortable filt-text"><thead><tr><th>Named</th><th>Lvl</th><th>Race / class</th><th>Where</th><th>Known loot (hover)</th></tr></thead><tbody>%s</tbody></table></div>' % ''.join(
-            '<tr><td><strong>%s</strong></td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (esc(e['name']), esc(e['level'] or '?'), esc(' / '.join(x for x in (e.get('race'), e.get('class')) if x and x != '-')), esc(e.get('location') or ''),
+            '<tr><td><strong>%s</strong></td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (esc(e['name']) + _mpl(e), esc(e['level'] or '?'), esc(' / '.join(x for x in (e.get('race'), e.get('class')) if x and x != '-')), esc(e.get('location') or ''),
             ', '.join(item_link(x.strip()) if x.strip() in ITEMS else esc(x.strip()) for x in (e.get('loot') or '').split(',') if x.strip() and x.strip() != '-')) for e in sorted(Z['named'], key=lambda e: lvl_num(e['level']) or 99)))
     if Z['npcs']:
         toc.append(('mobs', 'Mobs & NPCs'))
         rows = sorted(Z['npcs'], key=lambda e: (lvl_num(e['level']) is None, lvl_num(e['level']) or 0, e['name']))
         o.append('<h2 id="mobs">Mobs &amp; NPCs (camps by level)</h2><p class="dim">Rows with a level are huntable camps; rows without are usually town NPCs or not yet documented.</p><div class="tw"><table class="grid sortable filt-text"><thead><tr><th>Name</th><th>Lvl</th><th>Race</th><th>Class</th><th>Where</th><th>Notes</th></tr></thead><tbody>%s</tbody></table></div>' % ''.join(
-            '<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (esc(e['name']), esc(e['level'] or ''), esc(e.get('race') or ''), esc(e.get('class') or ''), esc(e.get('location') or ''), esc(' '.join(x for x in (e.get('desc'), e.get('loot')) if x and x != '-'))) for e in rows))
+            '<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (esc(e['name']) + _mpl(e), esc(e['level'] or ''), esc(e.get('race') or ''), esc(e.get('class') or ''), esc(e.get('location') or ''), esc(' '.join(x for x in (e.get('desc'), e.get('loot')) if x and x != '-'))) for e in rows))
+    if Z.get('quest_npcs'):
+        toc.append(('quest-npcs', 'Quest NPCs'))
+        o.append('<h2 id="quest-npcs">Quest NPCs</h2><div class="tw"><table class="grid filt-text"><thead><tr><th>Name</th><th>Lvl</th><th>Race / class</th><th>Where</th></tr></thead><tbody>%s</tbody></table></div>' % ''.join(
+            '<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (esc(e['name']), esc(e.get('level') if e.get('level') not in (None, '?', '-') else ''), esc(' / '.join(x for x in (e.get('race'), e.get('class')) if x and x != '-')), esc(e.get('location') or '')) for e in Z['quest_npcs']))
     if Z['quests']:
         toc.append(('quests', 'Quests'))
         o.append('<h2 id="quests">Quests</h2><div class="tw"><table class="grid"><thead><tr><th>Quest</th><th>Reward</th><th>Giver</th><th>Min lvl</th></tr></thead><tbody>%s</tbody></table></div>' % ''.join(
@@ -1281,6 +1291,7 @@ def zone_page(z, Z, X):
     ctx['toc'] = toc
     o.insert(0, '<span id="overview"></span>')
     src = ['Wiki: %s (rev %s)|%s' % (z, Z.get('revid'), Z['url']), 'Item data: individual wiki item pages (hover any item)|%sCategory:Items' % WIKI]
+    if any(e.get('page') for e in Z['named'] + Z['npcs']): src.append('Wiki mob pages: Category:%s NPCs|%sCategory:%s_NPCs' % (z, WIKI, z.replace(' ', '_')))
     src += X.get('sources', [])
     return ''.join(o), src, ctx
 

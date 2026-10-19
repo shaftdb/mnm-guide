@@ -1,2 +1,4 @@
 .idb-tools{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:6px 0}.idb-tools input[type=search]{flex:1 1 220px}
 .tag{font-size:.72rem;padding:0 6px;border-radius:9px;border:1px solid var(--line)}
+
+.tag.conf{background:#7a2e0e;color:#ffd9b8;border-color:#c2410c}
