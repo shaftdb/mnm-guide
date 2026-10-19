@@ -355,11 +355,17 @@ def _cg_walkdata():
             if hl or z in F.get('zones_lower', []): lower.append([fn, hl[:3]])
         zones[z] = {'u': zone_url(z), 'lo': lo, 'hi': hi, 'est': 0 if src.startswith('wiki zone') else 1, 'camps': camps, 'fr': raise_[:6], 'fl': lower[:6],
                     'dg': 1 if z in DUNGEON_ORDER else 0}
+    def _cg_trainers(city):
+        # wiki city_info trainers, plus the start-city route's sourced trainers (data/startcities) for classes city_info lacks
+        tr = dict(CG['city_info'][city]['trainers'])
+        for c, t in ((globals().get('SC') or {}).get(city, {}).get('trainers') or {}).items():
+            if c not in tr and t.get('npc'): tr[c] = [{'npc': t['npc'], 'where': t.get('where', '')}]
+        return tr
     cities = {}
     for city in CG['cities']:
         home = [fn for fn in FG if city.lower().replace("'", '') in fn.lower().replace("'", '')]
         cities[city] = {'dist': {k: v for k, v in _cg_dist(city).items() if k in ZONES}, 'home': home, 'faq': CG_CITY_FAQ.get(city, ''),
-                        'u': CG['city_info'][city]['url'], 'tr': CG['city_info'][city]['trainers']}
+                        'u': CG['city_info'][city]['url'], 'tr': _cg_trainers(city)}
     quests = []
     for n, Q in QUESTS.items():
         if Q.get('zone') not in ZONES: continue

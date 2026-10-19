@@ -45,14 +45,15 @@ def sc_quest(D, qid):
             if k == 'h': st.append('<li class="sc-qh"><b>%s</b></li>' % esc(v))
             elif k == 'xp': st.append('<li class="dim">Experience</li>')
             else: st.append('<li%s>%s%s</li>' % (' class="dim"' if k in ('info', 'fac', 'get') else '', {'get': 'Receive: ', 'fac': 'Faction: ', 'info': 'Note: '}.get(k, ''), esc(v)))
-        fac = [v for k, v in q['steps'] if k == 'fac']; got = [v for k, v in q['steps'] if k == 'get']
-        # city files may add sourced detail the wiki walkthrough lacks: where, prereq, turnin, mobs [{item, from}], notes [{label, text, src}]
+        fac = list(dict.fromkeys(v for k, v in q['steps'] if k == 'fac')); got = [v for k, v in q['steps'] if k == 'get']
+        # city files may add sourced detail the wiki walkthrough lacks: where, prereq, turnin, mobs [{item, from}], notes [{label, text, src}];
+        # giver (overrides, for a documented giver conflict), faction and rewards (used only when the walkthrough data has none)
         where = esc(q.get('zone') or 'no sourced data yet') + ((' · ' + esc(Q['where'])) if Q.get('where') else '')
-        rows = [('Giver', esc(q.get('giver') or 'no sourced data yet')), ('Where', where), ('Level', esc(q.get('min') or 'not listed')),
+        rows = [('Giver', esc(Q.get('giver') or q.get('giver') or 'no sourced data yet')), ('Where', where), ('Level', esc(q.get('min') or 'not listed')),
                 ('Classes', esc(', '.join(q['classes'])) if q['classes'] else 'any'), ('Needs first', esc(Q.get('prereq') or 'none listed')),
-                ('Faction', esc('; '.join(fac)) if fac else 'no sourced data yet'),
+                ('Faction', esc('; '.join(fac)) if fac else esc(Q.get('faction') or 'no sourced data yet')),
                 ('Turn in', esc(Q.get('turnin') or 'see the steps below (wiki walkthrough)')),
-                ('Rewards', esc(q.get('rewards') or '; '.join(got) or 'no sourced data yet'))]
+                ('Rewards', esc(q.get('rewards') or '; '.join(got) or Q.get('rewards') or 'no sourced data yet'))]
         mobs = ''.join('<li><b>%s</b>: %s</li>' % (esc(m['item']), esc(m['from'])) for m in Q.get('mobs', []))
         notes = ''.join('<p>%s %s %s</p>' % (_cg_badge(n['label']), esc(n['text']), _sc_srcs(D, n['src'])) for n in Q.get('notes', []))
         return ('<details class="sc-q" id="scq-%s-%s"><summary><b>%s</b> %s <span class="dim">lvl %s</span></summary><p class="sc-why">%s %s</p><table class="kv sc-kv">%s</table>'

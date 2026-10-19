@@ -690,6 +690,7 @@
     "farc",
     "qs"
    ],
+   "giver": "Captain Keyaryn Thornshade (the infobox says Commander Elydris Stormbough; see the trainer note)",
    "where": "Captain Keyaryn Thornshade, Sentinel's Terrace (see the trainer note on the giver conflict)",
    "mobs": [
     {
@@ -730,6 +731,7 @@
     "fbrd",
     "qs"
    ],
+   "rewards": "Ring of Introduction (part 1), Lambent Lute (part 2), Lute of the Charmed (part 3)",
    "where": "Pine Brightreed (read the Perfumed Letter you start with); later steps with Laenyth Windharp and Sylphrena Starfall in the Lambent Lantern",
    "mobs": [
     {
@@ -763,6 +765,9 @@
     "fbst",
     "qs"
    ],
+   "giver": "Captain Relgen Greenblade, then Aerin Mossfang",
+   "rewards": "Novice Claws of the Keeper (part 1), Spirit-Blessed Shawl (part 4); the zone page also lists Vengeful Claws of the Keeper",
+   "faction": "Ardent Keepers (+) and Fellstone Orcs (−) at most steps; Preservers (+) in part 4; Poachers of Calafrey (−) in part 5",
    "where": "Captain Relgen Greenblade at Ranger's Rest (hand him your Request for Aid), then Aerin Mossfang in the Quiet Den",
    "mobs": [
     {
@@ -803,6 +808,7 @@
     "fdru",
     "qs"
    ],
+   "rewards": "Novice Icon of the Gatekeeper, Scroll: Minor Frostbite and Aspirant Icon of the Gatekeeper (parts 1-2), Sap-Stained Gloves (part 3), Icon of the Gatekeeper (part 4); the Faelindral page also lists Scroll: Burning Embers and Fire Beetle Eye",
    "where": "High Gatekeeper Sylvarya Starveil, Sentinel's Gaze (upper tier)",
    "mobs": [
     {
@@ -843,6 +849,8 @@
     "ffig",
     "qs"
    ],
+   "rewards": "Tarnished Elven Blade and Novice Chain of the Wyrdguard (part 1), Striker's Chain of the Wyrdguard (part 2), Tempered Blade of the Fae-Bound (part 3)",
+   "faction": "Wyrdguard (+); Fellstone Orcs (−)",
    "where": "Captain Vaelric Ironbark, Sentinel's Gaze (hand in the Rolled Leafscroll signed by Commander Elydris Stormbough); Craftguard Vinebrow at the garrison forge",
    "mobs": [
     {
@@ -883,6 +891,7 @@
     "frng",
     "qs"
    ],
+   "faction": "Ardent Keepers (+); Fellstone Orcs (−)",
    "where": "Captain Relgen Greenblade, Ranger's Rest",
    "mobs": [
     {
@@ -916,6 +925,8 @@
     "frog",
     "qs"
    ],
+   "rewards": "Lambent Prospect Dagger (part 1), Lambent Prospect Blade (part 2), Mask of the Forest Walker (part 3), Lambent Stiletto (part 4)",
+   "faction": "Lambent Wanderers (+) at most steps; Preservers (−) once in part 1; Naelira's Court (−) in part 3; part 2d choices move Citizens of Faelindral and the fae courts",
    "where": "Elyndiir Nightshade, Lambent Lantern Inn (behind the bank)",
    "mobs": [
     {

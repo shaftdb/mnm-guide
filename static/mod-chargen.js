@@ -97,7 +97,9 @@ function walkHTML(c,race,city,k,opt){var code=W.codes[c],C=W.cities[city],R=W.ra
   // level 1 start
   var st=W.walk[c+'|'+city]||[];
   var tr=(C.tr||{})[c]||[];
-  var sq=W.quests.filter(function(q){return q[2]===city&&(q[3]==null||q[3]<=2)&&(q[4]==='ALL'||q[4]==='ANY'||q[4].split(' ').indexOf(code)>=0)&&/starter|class/i.test(q[0])});
+  // quest class field mixes codes (SHD) and names (Druid, Shadow Knight): match either
+  function qFor(q){return q[4]==='ALL'||q[4]==='ANY'||q[4].split(' ').indexOf(code)>=0||(' '+q[4]+' ').indexOf(' '+c+' ')>=0}
+  var sq=W.quests.filter(function(q){return q[2]===city&&(q[3]==null||q[3]<=2)&&qFor(q)&&/starter|class/i.test(q[0])});
   var s1=st.map(function(s){return '<li>'+badge(s.label)+' '+esc(s.text)+'</li>'});
   if(!st.length){
     s1.push('<li>'+(tr.length?badge('fact')+' Class trainer in '+esc(city)+': '+tr.map(function(t){return '<b>'+esc(t.npc)+'</b>'+(t.where?' ('+esc(t.where)+')':'')}).join(', '):badge('unverified')+' No '+esc(c)+' trainer listed on the wiki '+esc(city)+' page: no sourced data yet.')+'</li>');
@@ -112,7 +114,7 @@ function walkHTML(c,race,city,k,opt){var code=W.codes[c],C=W.cities[city],R=W.ra
     o.push('<h3>Nearby zones by wiki connections '+badge('strategy')+'</h3>'+(zs.length?'<ul class="tight">'+zs.map(function(z){var Z=W.zones[z];return '<li><a href="'+rel(Z.u)+'">'+esc(z)+'</a>'+(Z.dg?' (dungeon)':'')+' <span class="dim">lvl '+Z.lo+'–'+Z.hi+(Z.est?' (from mob levels)':'')+(Z.hi-Z.lo>=30?', wide range: check the camps below':'')+' · '+(dz(z)===0?'your start city':dz(z)+' zone hop'+(dz(z)>1?'s':'')+' away on the wiki connections')+'</span></li>'}).join('')+'</ul><p class="dim">Nearest zones whose wiki level range overlaps '+lo+'–'+hi+'. Move on when the next range’s zones start to overlap your level.</p>':'<p>'+badge('unverified')+' No zone with a wiki level range for '+lo+'–'+hi+' is connected to '+esc(city)+' in the zone data yet.</p>'));
     var camps=[];zs.forEach(function(z){W.zones[z].camps.forEach(function(m){var n=(String(m[1]).match(/\d+/g)||[]).map(Number);if(n.length&&n[0]<=hi&&n[n.length-1]>=lo)camps.push('<li><b>'+esc(m[0])+'</b> (lvl '+esc(m[1])+') · <a href="'+rel(W.zones[z].u)+'">'+esc(z)+'</a>'+(m[2]?' <span class="dim">loot: '+esc(m[2])+'</span>':'')+'</li>')})});
     o.push('<h3>Named camps '+badge('fact')+'</h3>'+(camps.length?'<ul class="tight">'+camps.slice(0,8).join('')+'</ul>':'<p class="dim">No named mobs with a wiki level in this range in those zones.</p>'));
-    var qs=W.quests.filter(function(q){return zs.indexOf(q[2])>=0&&q[3]!=null&&q[3]>=lo&&q[3]<=hi&&(q[4]==='ALL'||q[4]==='ANY'||q[4].split(' ').indexOf(code)>=0)});
+    var qs=W.quests.filter(function(q){return zs.indexOf(q[2])>=0&&q[3]!=null&&q[3]>=lo&&q[3]<=hi&&qFor(q)});
     o.push('<h3>Quests '+badge('fact')+'</h3>'+(qs.length?'<ul class="tight">'+qs.slice(0,10).map(function(q){return '<li><a class="ext" target="_blank" rel="noopener" href="'+esc(q[1])+'">'+esc(q[0])+'</a> <span class="dim">'+esc(q[2])+' · min lvl '+q[3]+(q[5]?' · '+esc(q[5]):'')+'</span></li>'}).join('')+'</ul>':'<p class="dim">No quests with a wiki minimum level in '+lo+'–'+hi+' in those zones for '+esc(c)+'.</p>'));
     var sp=(W.spells[c]||[]).filter(function(s){return s[1]>=lo&&s[1]<=hi});
     o.push('<h3>Spells and abilities to buy or train '+badge('fact')+'</h3>'+(sp.length?'<ul class="tight cg-sp">'+sp.map(function(s){return '<li>L'+s[1]+' <b>'+esc(s[0])+'</b> <span class="dim">'+esc(s[2])+'</span></li>'}).join('')+'</ul><p class="dim">Buy each one when you reach its level'+(tr.length?' (trainer: '+esc(tr[0].npc)+')':'')+'. "Vendor" spells come from your class vendor; others from the listed source.</p>':'<p class="dim">No '+esc(c)+' spells with a wiki level in this range.</p>'));
