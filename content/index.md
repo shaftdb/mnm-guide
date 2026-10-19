@@ -8,6 +8,9 @@ sources: Official class pages|https://monstersandmemories.com/class-fighter; Wik
 
 <div id="mnm-quickinfo" class="quickinfo" data-mnm-quick="full"></div>
 
+## Latest news
+{{gen:news 5}}
+
 ## Quick links
 - **Classes:** [All 18 classes](/classes/index.html) · [Shaman extended guide](/shaman/index.html)
 - **Gear:** [By level and class](/gear/index.html) · [Weapons](/gear/weapons.html) · [All-class jewelry](/gear/all-class.html) · [Crafted sets](/gear/crafted-sets.html)
