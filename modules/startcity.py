@@ -46,15 +46,22 @@ def sc_quest(D, qid):
             elif k == 'xp': st.append('<li class="dim">Experience</li>')
             else: st.append('<li%s>%s%s</li>' % (' class="dim"' if k in ('info', 'fac', 'get') else '', {'get': 'Receive: ', 'fac': 'Faction: ', 'info': 'Note: '}.get(k, ''), esc(v)))
         fac = [v for k, v in q['steps'] if k == 'fac']; got = [v for k, v in q['steps'] if k == 'get']
-        rows = [('Giver', esc(q.get('giver') or 'no sourced data yet')), ('Where', esc(q.get('zone') or 'no sourced data yet')), ('Level', esc(q.get('min') or 'not listed')),
-                ('Classes', esc(', '.join(q['classes'])) if q['classes'] else 'any'), ('Faction', esc('; '.join(fac)) if fac else 'no sourced data yet'),
+        # city files may add sourced detail the wiki walkthrough lacks: where, prereq, turnin, mobs [{item, from}], notes [{label, text, src}]
+        where = esc(q.get('zone') or 'no sourced data yet') + ((' · ' + esc(Q['where'])) if Q.get('where') else '')
+        rows = [('Giver', esc(q.get('giver') or 'no sourced data yet')), ('Where', where), ('Level', esc(q.get('min') or 'not listed')),
+                ('Classes', esc(', '.join(q['classes'])) if q['classes'] else 'any'), ('Needs first', esc(Q.get('prereq') or 'none listed')),
+                ('Faction', esc('; '.join(fac)) if fac else 'no sourced data yet'),
+                ('Turn in', esc(Q.get('turnin') or 'see the steps below (wiki walkthrough)')),
                 ('Rewards', esc(q.get('rewards') or '; '.join(got) or 'no sourced data yet'))]
-        return ('<details class="sc-q"><summary><b>%s</b> %s <span class="dim">lvl %s</span></summary><p class="sc-why">%s %s</p><table class="kv sc-kv">%s</table>'
-                '<ol class="tight sc-steps">%s</ol>%s<p class="sc-ql">%s %s · wiki walkthrough updated %s</p></details>') % (
-            esc(t), _sc_tag(Q.get('tag')), esc(q.get('min') or '?'), _cg_badge('STRATEGY'), esc(Q.get('why', '')),
-            ''.join('<tr><th>%s</th><td>%s</td></tr>' % r for r in rows), ''.join(st) or '<li>no sourced data yet</li>',
+        mobs = ''.join('<li><b>%s</b>: %s</li>' % (esc(m['item']), esc(m['from'])) for m in Q.get('mobs', []))
+        notes = ''.join('<p>%s %s %s</p>' % (_cg_badge(n['label']), esc(n['text']), _sc_srcs(D, n['src'])) for n in Q.get('notes', []))
+        return ('<details class="sc-q" id="scq-%s-%s"><summary><b>%s</b> %s <span class="dim">lvl %s</span></summary><p class="sc-why">%s %s</p><table class="kv sc-kv">%s</table>'
+                '%s<ol class="tight sc-steps">%s</ol>%s%s<p class="sc-ql">%s %s · wiki walkthrough updated %s</p></details>') % (
+            esc(D['slug']), esc(qid), esc(t), _sc_tag(Q.get('tag')), esc(q.get('min') or '?'), _cg_badge('STRATEGY'), esc(Q.get('why', '')),
+            ''.join('<tr><th>%s</th><td>%s</td></tr>' % r for r in rows), ('<h5>Mobs and items</h5><ul class="tight">%s</ul>' % mobs) if mobs else '',
+            ''.join(st) or '<li>no sourced data yet</li>',
             ('<p>%s The wiki marks this quest page as needing more info; missing steps: no sourced data yet.</p>' % _cg_badge('UNVERIFIED')) if q.get('needsinfo') else '',
-            _cg_badge('FACT'), _sc_qlinks(t), esc(q.get('ts', '')))
+            notes, _cg_badge('FACT'), _sc_qlinks(t), esc(q.get('ts', '')))
     R = Q.get('rewards', {})
     rows = [('Giver', Q['giver']), ('Where', Q['where']), ('Level', Q['level']), ('Classes', ', '.join(Q['classes']) if Q.get('classes') else 'any'),
             ('Needs first', Q.get('prereq') or 'none listed'), ('Faction', Q.get('faction') or 'no sourced data yet')]

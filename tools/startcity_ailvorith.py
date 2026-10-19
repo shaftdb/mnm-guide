@@ -3,7 +3,9 @@
 Every line carries a label (FACT = wiki/official page, STRATEGY = this Codex's suggestion, UNVERIFIED = community report or
 conflicting/missing data) and source keys. Researched 2026-10-18 from the community wikis, official patch notes, the official forum and Reddit.
 Re-run after editing: python3 tools/startcity_ailvorith.py"""
-import json, os
+import json, os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from startcity_common import DE_KOS, SRC_KOS, S_COMMON
 W = 'https://monstersandmemories.miraheze.org/wiki/'
 def w(t): return W + t.replace(' ', '_').replace("'", '%27')
 S = {
@@ -12,7 +14,23 @@ S = {
  'avsq2': ["monstersandmemories.wiki: Ail'Vorith Starter Quest (step list)", 'https://monstersandmemories.wiki/quests/ailvorith-starter-quest'],
  'avcq': ["Wiki: Ail'Vorith Class Quests", w("Ail'Vorith Class Quests")],
  'xal': ["Wiki: House Xal'tharn (Quest) (rev 82660, 2026-10-17)", w("House Xal'tharn (Quest)")],
- 'klavel': ["Wiki: Klavel Sul", w('Klavel Sul')],
+ 'klavel': ["Wiki: Klavel Sul (rev 82871, 2026-10-17)", w('Klavel Sul')],
+ 'klavel2': ['monstersandmemories.wiki: Klavel Sul', 'https://monstersandmemories.wiki/npcs/klavel-sul'],
+ 'cuirass': ['Wiki: Dull Iron Cuirass (item page created 2026-10-07)', w('Dull Iron Cuirass')],
+ 'pendant': ["Wiki: Xal'tharn Pendant (item page, last edited 2026-09-26)", w("Xal'tharn Pendant")],
+ 'xalh': ["Wiki edit history: House Xal'tharn (Quest)", 'https://monstersandmemories.miraheze.org/w/index.php?title=House_Xal%27tharn_(Quest)&action=history'],
+ 'avh': ["Wiki edit history: Ail'Vorith", 'https://monstersandmemories.miraheze.org/w/index.php?title=Ail%27Vorith&action=history'],
+ 'nurvolh': ['Wiki edit history: Nurvol Cereveth', 'https://monstersandmemories.miraheze.org/w/index.php?title=Nurvol_Cereveth&action=history'],
+ 'p291': ['Official patch notes 0.29.0.1 (2026-09-11)', 'https://account.monstersandmemories.com/community/patch_notes/45'],
+ 'p3021': ['Official patch notes 0.30.2.1 (2026-09-30)', 'https://account.monstersandmemories.com/community/patch_notes/52'],
+ 'p3023': ['Official patch notes 0.30.2.3', 'https://account.monstersandmemories.com/community/patch_notes/54'],
+ 'p3025': ['Official patch notes 0.30.2.5 (2026-10-07)', 'https://account.monstersandmemories.com/community/patch_notes/56'],
+ 'npg': ['Official New Player Guide', 'https://monstersandmemories.com/new-player-guide'],
+ 'f1533': ["Forum: The horrific Ail'Vorith Economy (2026-10-03)", 'https://forum.monstersandmemories.com/d/1533'],
+ 'f551': S_COMMON['f551'],
+ 'shoreb': ['Wiki: a shore beetle (15)', w('A shore beetle')], 'shelb': ['Wiki: a shelter bat (16)', w('A shelter bat')], 'shalb': ['Wiki: a shallows basilisk (17)', w('A shallows basilisk')],
+ 'morgak': ['Wiki: Morgak Foamscar (rev 83094, 2026-10-18)', w('Morgak Foamscar')],
+ 'mwgcs': ['monstersandmemories.wiki: Great Cavern Sea (player-tracked levels and coin)', 'https://monstersandmemories.wiki/zones/great-cavern-sea'],
  'nurvol': ["Wiki: Nurvol Cereveth", w('Nurvol Cereveth')],
  'miniel': ["Wiki: Miniel Ubast", w('Miniel Ubast')],
  'fungal': ["Wiki: Fungal Armor Quests", w('Fungal Armor Quests')],
@@ -67,14 +85,13 @@ faction = [
  it(U, "Forum (2026-10-11): you are KoS to the city before the House quest line. Finishing it gets you to Disdain, which lets you past the guards. Fungal armor turn-ins and killing outcasts raise you further, and 'it doesn't take long' to be able to bank and use vendors.", 'f2007'),
  it(F, "Citizens of Ail'Vorith goes up with the Fungal Armor Quests and by killing Deepgulp goblins. It goes down when you kill Deepcut bandits (Deepcut marksman, basher, miner and others, plus Jorlach the Fearless). The wiki lists the Underdocks as the zone where it can be lowered.", 'cav'),
  it(F, "Provost Xan'shorn: 'the Houses are not in alignment. Pledging with one will earn the scorn of others.' Which House hits which is not listed: no sourced data yet.", 'avsq2'),
- it(F, "Night Harbor: the wiki has no standing table for Deep Elves. Patch 0.30.2.0 (2026-09-25) says 'Night Harbor factions should now be easier to gain'.", 'p302'),
- it(U, "Night Harbor is effectively KoS for a Deep Elf. Players report seething or KoS with the Red Mantle and Steel Talon guards, Harbor guards, patrolmen and citizens. Agnostic deity did not stop the named guards. The guards at the Underdocks tunnel entrance and the Sojourners were fine.", 'f771', 'r1', 'f1647', races=['Deep Elf']),
- it(U, "Underdocks: several players report it is not KoS for Deep Elves. Patch 0.30.2.0 made the relevant Underdocks NPCs speak both Common and Deep Common (that part is FACT).", 'r1', 'p302', races=['Deep Elf']),
- it(U, "Getting out of KoS in Night Harbor is a long grind. Reports range from about 500 faction kills after the patch (hearsay) to 7-8 hours of wererats in Shaded Dunes to reach Disdain (level 18 cleric, 2026-10-04) and about 6 hours of wererats outside the Underdocks. Several players report the faction bar not moving at all (2026-10-03).", 'r1', 'f1514', 'f1616', races=['Deep Elf']),
- it(U, "Even with Night Harbor citizens fixed, the Bard and Rogue guilds are separate factions and stay KoS, and the North Bank's Steel Talon guards and bankers were still hostile for one player at Amicable citizens. Rats, beetles and bats in the Night Harbor graveyard reportedly raise Red Mantle quickly.", 'f1514', 'f1647', races=['Deep Elf']),
- it(U, "Faelindral: no sourced data yet for how Faelindral treats a Deep Elf.", races=['Deep Elf']),
+ it(U, "Underdocks: several players report it is not KoS for Deep Elves; a forum player says Agnostic Deep Elves are not KoS in either Ail'Vorith or the Underdocks, apart from the city guards. Patch 0.30.2.0 made the relevant Underdocks NPCs speak both Common and Deep Common (that part is FACT).", 'r1', 'f551', 'p302', races=['Deep Elf']),
+ it(U, "Faelindral: one forum player (2026-09-18) says 'Deep elves hated everywhere'. There is no Faelindral-specific test in the sources: no sourced data yet beyond that.", 'f551', races=['Deep Elf']),
+ it(U, "Other races in Ail'Vorith: a Deep Gnome taken to the Foreign Quarter altar found every NPC there KoS (forum, 2026-09-18). How Goblins or other surface races fare: no sourced data yet.", 'f551'),
  it(ST, "Treat Night Harbor as hostile. Use the Underdocks as your surface hub, and only start a Night Harbor faction grind when you have a group or a friend to buy spells and sell loot for you (what the Reddit and forum posters did). Do not kill Deepcut bandits for Underdocks or Night Harbor rep without knowing they cost you Citizens of Ail'Vorith (wiki faction page).", 'cav', 'r1', 'r2', races=['Deep Elf']),
 ]
+faction = faction[:5] + DE_KOS + faction[5:]
+for k in SRC_KOS: S.setdefault(k, S_COMMON[k])
 travel = [
  it(F, "The boat stops at docks in a cave under Ail'Vorith and runs to the Underdocks via the Great Cavern Sea and the Caves of Irem. Gate Captain Xaros stands at the last dock before leaving town.", 'av', 'ud'),
  it(F, "You can jump off the Underdocks-Ail'Vorith boat into the Great Cavern Sea, or follow the boat's path on foot and by swimming.", 'gcs'),
@@ -83,6 +100,8 @@ travel = [
  it(F, "Rothold (wiki level 30-45) is entered from the western edge of the Great Cavern Sea. Its teleporter NPC was disabled in 0.29.0.0.", 'rothold', 'p29'),
 ]
 money = [
+ it(F, "Spell scrolls: 0.29.0.1 made the Foreign Quarter spell vendors 'less greedy'. 0.30.2.0 added a Ranger spell vendor to the Obsidian Academy. From 0.30.2.1 every class pays the same total per 5-level range (4sp 5cp for all of levels 1-5), and 0.30.2.3 and 0.30.2.5 lowered prices again.", 'p291', 'p302', 'p3021', 'p3023', 'p3025'),
+ it(U, "Forum (2026-10-03): after the House quest you are Disdain in the upper city and still cannot shop. At Uneasy (about level 10 for that player) the upper-city vendors sell at 'normal' prices. Spells were still 'wacky expensive', and the city has no ingot molds and no hides. Beetle eyes from the cook were nerfed from 70cp to 9cp.", 'f1533'),
  it(F, "Player-tracked coin drops in Ail'Vorith: 3-60 copper per kill, average 9 copper (1,927 kills; most players hunt there at levels 3-18, peak 17).", 'avwiki2'),
  it(F, "House Varros Supplies (repeatable, level 1): Apprentice Esveth pays 25 copper plus XP and House Varros faction per full stack of 20 Bone Chips (decayed skeletons drop them).", 'varsup'),
  it(F, "Deepgulp goblins drop about 5-13 copper. Cook Deepbite (14-15) shares their loot table and can drop a Crude Gatorhide Cap.", 'deepbite'),
@@ -92,9 +111,10 @@ money = [
  it(ST, "Sell loot only once you can reach normal city vendors (after your House quest). Until then keep mats and vendor trash in your bags. The Foreign Quarter 'swindle' prices are a community report.", 'r2', 'f2007'),
 ]
 trainers = {
- 'Inquisitor': {'npc': 'Nurvol Cereveth', 'where': 'Military Outpost in the Foreign Quarter (zone page); Obsidian Academy in the Foreign Quarter (NPC page)', 'src': ['av', 'nurvol'], 'label': F,
-                'note': "The two wiki pages disagree on the building (UNVERIFIED). The wiki lists the Inquisitor spells as 'Vendor' but does not say who sells scrolls in Ail'Vorith: no sourced data yet. Buy each spell when you reach its level (list per band below)."},
- 'Monk': {'npc': 'Klavel Sul', 'where': 'Military Outpost in the Foreign Quarter (zone and NPC pages); the quest page says Obsidian Academy', 'src': ['av', 'klavel', 'xal'], 'label': F},
+ 'Inquisitor': {'npc': 'Nurvol Cereveth', 'where': 'Foreign Quarter, most likely the Military Outpost with the other melee trainers; check the Obsidian Academy if he is not there', 'src': ['av', 'nurvol', 'avh', 'nurvolh'], 'label': U,
+                'note': "UNVERIFIED. The same editor added both wiki pages on 2026-10-17. The zone page's trainer table (rev 82862, 23:18 UTC) says Military Outpost, but the NPC page (created 22:57 UTC, re-edited 23:30 UTC) still says Obsidian Academy. The zone page wins for now because it places him with Klavel Sul, the other Xal'tharn (Inquisitor/Monk) NPC, but it is not settled. Scrolls: patch 0.29.0.1 made 'Foreign Quarter spell vendors' less greedy, and the official guide says scrolls are sold near your class guild hall. The NPC who sells Inquisitor scrolls is not named in any source: no sourced data yet. Buy each spell when you reach its level (list per band below)."},
+ 'Monk': {'npc': 'Klavel Sul', 'where': 'Military Outpost, Foreign Quarter: the building on the left past the Foreign Quarter bridge and gate, back of the room with the melee trainers', 'src': ['av', 'klavel', 'klavel2', 'xal'], 'label': F,
+          'note': "Resolved: the NPC page (rev 82871, 2026-10-17) and the zone page both say Military Outpost, and the fan wiki says 'room with Melee Trainers'. The quest page's 'Obsidian Academy' dates from its first version (2026-09-23) and describes the same room (the building on the left, with the melee instructors), whose melee trainers the zone page lists in the Military Outpost."},
  'Archer': {'npc': 'Lurithos Kest', 'where': 'Military Outpost', 'src': ['av'], 'label': F},
  'Ranger': {'npc': "Laren Drin'dar", 'where': 'Military Outpost', 'src': ['av'], 'label': F},
  'Fighter': {'npc': 'Tharkan Inathar', 'where': 'Military Outpost', 'src': ['av'], 'label': F},
@@ -135,7 +155,7 @@ Q['avsq'] = {
  'src': ['avsq', 'avsq2'], 'label': F}
 Q['xal'] = {
  'name': "House Xal'tharn (Quest)", 'wiki': "House Xal'tharn (Quest)", 'helper': True, 'giver': 'Klavel Sul',
- 'where': 'Foreign Quarter: Military Outpost per the zone and NPC pages; the quest page says Obsidian Academy, back of the room with the melee instructors', 'level': 'Part 1: 8+, Part 2: 13+',
+ 'where': 'Foreign Quarter, Military Outpost: the building on the left past the bridge and gate, back of the room with the melee trainers (the quest page calls it the Obsidian Academy; see the Monk trainer note)', 'level': 'Part 1: 8+, Part 2: 13+',
  'classes': INQ_MNK, 'tag': 'Recommended', 'why': 'Your class House quest: chest armor at 8, city access, House Xal\'tharn faction and the Iron Render weapon.',
  'prereq': "Obsidian Shackle from the Ail'Vorith Starter Quest. Deep Common language.",
  'faction': "Part 1 grants city access (wiki). Part 2 turn-in: 'You gain faction with House Xal'tharn'. Other faction hits are marked as unknown on the wiki: no sourced data yet.",
@@ -155,7 +175,8 @@ Q['xal'] = {
  'turnin': "Part 1: Klavel Sul. Part 2: Miniel Ubast (Shol'tar, inside the city)",
  'rewards': {'xp': 'XP at both Part 1 turn-ins and at the Part 2 turn-in', 'item': 'Inquisitor: Dull Iron Cuirass (chest AC 9, STA +1, INT +1, HP +5) and Iron Render (1H slash 7/30, STR +2, STA +1, INT +1, HP +5, Mana +5). Monk: Simple Chestwrap and Tarnished Iron Bo.', 'coin': 'none listed', 'faction': "City access (Part 1); House Xal'tharn + (Part 2)"},
  'src': ['xal', 'klavel', 'miniel', 'sigil'], 'label': F,
- 'notes': [it(U, "The Ail'Vorith Class Quests page lists a Xal'tharn Pendant as the Inquisitor reward; the quest page itself gives the Dull Iron Cuirass. The monstersandmemories.wiki copy says the Klavel Sul entry is 'probably not accurate for Early Access'.", 'avcq', 'xal'),
+ 'notes': [it(F, "Reward conflict resolved, Cuirass wins. The quest page listed a Xal'tharn Pendant from its first version (2026-09-23, beta 0.30.0.0) until rev 78132 (2026-10-07, after the 0.30.2.1 release patch), when an editor replaced it with the Dull Iron Cuirass for Inquisitors. That editor created the Dull Iron Cuirass item page with full stats four minutes later. The Pendant item page was last touched 2026-09-26, and the Ail'Vorith Class Quests summary page that still says Pendant was never updated. The newer first-hand edit with an item page wins over the older summary.", 'xal', 'xalh', 'cuirass', 'pendant', 'avcq'),
+           it(U, "Whether Monks (or pre-release characters) still get the Pendant as well: no sourced data yet. No talk page exists for the quest.", 'xal', 'pendant'),
            it(ST, "Do Part 2 at about 15-17, not 13: the sigil exiles are 15-22 and Gullach is 16-17 (wiki levels). Bring a group or a healer.", 'av')]}
 Q['fungal'] = {
  'name': 'Fungal Armor Quests', 'wiki': 'Fungal Armor Quests', 'helper': True, 'giver': 'Leatherworker Vex', 'where': "Foreign Trader's Market, Foreign Quarter", 'level': '5',
@@ -183,8 +204,9 @@ Q['survey'] = {
  'where': "Great Cavern Sea, the outpost right outside Ail'Vorith (turn right as you enter the zone)", 'level': '16 (recommended 15)', 'classes': [], 'tag': 'Recommended',
  'why': 'Quick neck upgrade (AC 2, HP +10, Mana +10). All targets are visible from the quest giver.', 'prereq': 'None listed.', 'faction': "House Vael'xirith +",
  'steps': [{'text': "Hail Sereth and ask 'What watch line?', then say 'I will do a survey.'"}, {'text': 'Kill a shore beetle, a shelter bat and a shallows basilisk near the outpost for 4 Shore Beetle Samples, 3 Shelter Bat Wings and 2 Shallows Basilisk Scales.'}, {'text': 'Hand all of them in at once; a partial count is refused.'}],
- 'mobs': [{'item': '4 Shore Beetle Sample, 3 Shelter Bat Wing, 2 Shallows Basilisk Scale', 'from': 'a shore beetle, a shelter bat, a shallows basilisk (levels not on the wiki)'}],
- 'turnin': "Sereth Vael'xirith", 'rewards': {'xp': 'Experience', 'item': "Shore Surveyor's Charm", 'coin': 'none listed', 'faction': "House Vael'xirith +"}, 'src': ['survey', 'gcs'], 'label': F}
+ 'mobs': [{'item': '4 Shore Beetle Sample, 3 Shelter Bat Wing, 2 Shallows Basilisk Scale', 'from': 'a shore beetle (15), a shelter bat (16), a shallows basilisk (17), all visible from Sereth'}],
+ 'turnin': "Sereth Vael'xirith", 'rewards': {'xp': 'Experience', 'item': "Shore Surveyor's Charm", 'coin': 'none listed', 'faction': "House Vael'xirith +"}, 'src': ['survey', 'gcs', 'shoreb', 'shelb', 'shalb'], 'label': F,
+ 'notes': [it(F, "Mob levels come from the wiki mob pages, written on 2026-10-09 by the same editor who wrote the walkthrough. The quest's minimum is 16 and the zone page recommends 15, which matches 15-17 targets.", 'shoreb', 'shelb', 'shalb', 'survey')]}
 Q['gir'] = {
  'name': 'Goblin Island Records', 'wiki': 'Goblin Island Records', 'helper': False, 'giver': 'Halveth Velgarrith', 'where': "Great Cavern Sea outpost outside Ail'Vorith", 'level': '19 (recommended 20-25)',
  'classes': [], 'tag': 'Optional', 'why': 'Coin (5 silver) and water-breathing draughts for the sea, if you hunt goblin island anyway.', 'prereq': 'None listed. Not repeatable.', 'faction': 'House Halveth Velgarrith + (as written on the wiki)',
@@ -249,7 +271,8 @@ bands = [
    it(F, "At 13: Klavel Sul sends you to Miniel Ubast in the Shol'tar for Xal'tharn Part 2 (needs the city access from Part 1).", 'xal', quest='xal', classes=INQ_MNK),
    it(F, "Stolen Gems (min level 10, Archer/Ranger/Fighter): goblin camp gems for a class weapon.", 'avcq', quest='gems', classes=['Ranger', 'Archer', 'Fighter']),
    it(F, 'Blind Midden: 10-13 mobs on the top floor, named at 12 (Underboss Vekrizin, Cedrius the Cutter, Blacksmith Jerictus, Wikket Two-Wands, Reviver Vlarek, Mother Gummer). Basement named start at 15.', 'bm', quest='merit'),
-   it(F, 'Great Cavern Sea, Blacktide Orc Cove: a Blacktide hauler, hull hauler and lookout (11-14?), a cargo guard (15-17?), Morgak Foamscar (15-17?). The question marks are on the wiki.', 'gcs'),
+   it(U, "Great Cavern Sea, Blacktide Orc Cove: a Blacktide hauler, hull hauler and lookout (11-14?), a cargo guard (15-17?), Morgak Foamscar (15-17?). The question marks are the wiki's own; the mob pages have no levels (rev 83094, 2026-10-18), so this is still unresolved. Morgak's page adds one FACT: he dropped Blacktide Chain Leggings (AC 13, STR +2, STA +2).", 'gcs', 'morgak'),
+   it(F, 'Great Cavern Sea, player-tracked: hunting levels 16-24, most at 17; coin per kill 8cp-2sp 25cp, average 87cp (361 kills). This is the best measured range for the zone as a whole, not per camp.', 'mwgcs'),
    it(U, "Surface option: wererats outside the Underdocks (wiki 10-12) were used for Night Harbor faction (forum). Do not kill Deepcut bandits: they lower Citizens of Ail'Vorith (wiki).", 'f1616', 'ud', 'cav', races=['Deep Elf']),
  ]},
  {'lo': 16, 'hi': 20, 'title': 'Exile caves, Cavern Sea outpost quests', 'steps': [
@@ -285,7 +308,7 @@ bands = [
    it(U, 'Above about 45: no sourced Deep route yet (the wiki lists Vhaleth Hal\'kareth, level 60, in the Great Cavern Sea as a named mob, not a camp).', 'gcs'),
  ]},
 ]
-D = {'city': "Ail'Vorith", 'slug': 'ailvorith', 'status': 'sourced', 'updated': '2026-10-18', 'researched': '2026-10-18 21:30 America/New_York',
+D = {'city': "Ail'Vorith", 'slug': 'ailvorith', 'status': 'sourced', 'updated': '2026-10-18', 'researched': '2026-10-18 22:00 America/New_York',
      'generated_by': 'tools/startcity_ailvorith.py', 'sources': S, 'intro': intro, 'faction': faction, 'travel': travel, 'money': money,
      'trainers': trainers, 'quests': Q, 'bands': bands}
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'startcities', 'ailvorith.json')
