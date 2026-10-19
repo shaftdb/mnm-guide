@@ -143,3 +143,15 @@ Q_MID = {
  'hulg': {'auto': "Captain Hulg's Mug", 'classes': [], 'tag': 'Optional', 'why': 'XP and 5 silver while you work the quarry.', 'src': ['qs']},
  'left': {'auto': 'Left Behind', 'classes': [], 'tag': 'Recommended', 'why': "Fendris the Forsaken (30+) turns the named poachers' drops into armor and a weapon. The Keeper's Bight wiki lists Debtcarver, Leggings of Reckoning, Boots of Vengeful Resolve and Vest of Shattered Duty (from Poachers Tolan and Garrus).", 'src': ['qs', 'z-keepers-bight']},
 }
+
+CGR = json.load(open(os.path.join(OUT, '..', 'chargen', 'races.json'), encoding='utf8'))
+def who_starts(city):
+    """races and classes the wiki start-city table allows in city (from data/chargen/races.json)"""
+    races, classes = [], set()
+    for r, cl in CGR['combos'].items():
+        hit = [c for c, cities in cl.items() if city in cities]
+        if hit: races.append(r); classes.update(hit)
+    return races, sorted(classes)
+def auto(title, tag, why, src=('qs',), classes=None, **kw):
+    assert title in QS, 'not in quest helper data: ' + title
+    d = {'auto': title, 'classes': classes if classes is not None else QS[title]['classes'], 'tag': tag, 'why': why, 'src': list(src)}; d.update(kw); return d

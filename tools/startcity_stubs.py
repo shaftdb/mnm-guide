@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""Writes data/startcities/night-harbor.json (partial: the Night Harbor notes that used to sit in the band panels, plus its wiki
-starter quests), and stub files for Underdocks and Faelindral that say 'no sourced data yet'. Fill these in later branches."""
+"""Night Harbor now comes from tools/startcity_nh.py. This writes the remaining stub files for Underdocks and Faelindral that say 'no sourced data yet'. Fill these in later branches."""
 import json, os
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'startcities')
 W = 'https://monstersandmemories.miraheze.org/wiki/'
@@ -47,7 +46,7 @@ nh['bands'] = [
    it('FACT', 'Armor quest:', 'nh', quest='cinder'), it('FACT', 'Faction quest:', 'nh', quest='heads')]},
 ]
 os.makedirs(OUT, exist_ok=True)
-for d in (nh, stub('Underdocks', 'underdocks', 'Some neutral and evil race/faith/class combinations have the option of starting here (a port district far below Night Harbor).'),
+for d in (stub('Underdocks', 'underdocks', 'Some neutral and evil race/faith/class combinations have the option of starting here (a port district far below Night Harbor).'),
           stub('Faelindral', 'faelindral', 'Wood Elves and Halflings have the option of starting here.')):
     json.dump(d, open(os.path.join(OUT, d['slug'] + '.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=1)
     print(d['slug'], d['status'], len(d['quests']), 'quests')

@@ -1,53 +1,682 @@
 {
  "city": "Night Harbor",
  "slug": "night-harbor",
- "status": "partial",
+ "status": "sourced",
  "updated": "2026-10-18",
- "generated_by": "tools/startcity_stubs.py",
+ "researched": "2026-10-18 22:30 America/New_York",
+ "generated_by": "tools/startcity_nh.py",
  "sources": {
   "faq": [
    "Official Early Access FAQ (starting areas)",
    "https://monstersandmemories.com/early-access-faq"
   ],
-  "city": [
-   "Wiki: Night Harbor",
-   "https://monstersandmemories.miraheze.org/wiki/Night_Harbor"
+  "npg": [
+   "Official New Player Guide (scrolls are sold near your class guild hall)",
+   "https://monstersandmemories.com/new-player-guide"
   ],
-  "nh": [
-   "Wiki: Night Harbor",
-   "https://monstersandmemories.miraheze.org/wiki/Night_Harbor"
+  "start": [
+   "Wiki: Starting City by Race, Class, and Deity",
+   "https://monstersandmemories.miraheze.org/wiki/Starting_City_by_Race,_Class,_and_Deity"
   ],
-  "tomb": [
-   "Wiki: Tomb of the Last Wyrmsbane",
-   "https://monstersandmemories.miraheze.org/wiki/Tomb_of_the_Last_Wyrmsbane"
-  ],
-  "sd": [
-   "Wiki: Shaded Dunes",
-   "https://monstersandmemories.miraheze.org/wiki/Shaded_Dunes"
+  "hunt": [
+   "Wiki: Per-Level Hunting Guide (rev 73595, 2026-09-22; marked work in progress)",
+   "https://monstersandmemories.miraheze.org/wiki/Per-Level_Hunting_Guide"
   ],
   "qs": [
    "Wiki quest walkthroughs (quest helper)",
    "/quest-helper.html"
+  ],
+  "p29": [
+   "Official patch notes 0.29.0.0 (2026-09-10)",
+   "https://account.monstersandmemories.com/community/patch_notes/44"
+  ],
+  "p291": [
+   "Official patch notes 0.29.0.1 (2026-09-11)",
+   "https://account.monstersandmemories.com/community/patch_notes/45"
+  ],
+  "p300": [
+   "Official patch notes 0.30.0.0 (2026-09-19)",
+   "https://account.monstersandmemories.com/community/patch_notes/46"
+  ],
+  "p302": [
+   "Official patch notes 0.30.2.0 (2026-09-25)",
+   "https://account.monstersandmemories.com/community/patch_notes/51"
+  ],
+  "p3021": [
+   "Official patch notes 0.30.2.1 (2026-09-30)",
+   "https://account.monstersandmemories.com/community/patch_notes/52"
+  ],
+  "p3024": [
+   "Official patch notes 0.30.2.4 (2026-10-04)",
+   "https://account.monstersandmemories.com/community/patch_notes/55"
+  ],
+  "p3025": [
+   "Official patch notes 0.30.2.5 (2026-10-07)",
+   "https://account.monstersandmemories.com/community/patch_notes/56"
+  ],
+  "p3028": [
+   "Official patch notes 0.30.2.8 (2026-10-11)",
+   "https://account.monstersandmemories.com/community/patch_notes/59"
+  ],
+  "f551": [
+   "Forum: Necromancer v Elves? (race standing in Faelindral and Ail'Vorith, 2026-08-25 to 09-18)",
+   "https://forum.monstersandmemories.com/d/551-necromancer-v-elves"
+  ],
+  "f771": [
+   "Forum: Deep Elf to NH without KoS (2026-09-10/12)",
+   "https://forum.monstersandmemories.com/d/771-deep-elf-to-nh-without-kos"
+  ],
+  "f1514": [
+   "Forum: NH factions frozen for Deep elf (2026-10-03/04)",
+   "https://forum.monstersandmemories.com/d/1514-nh-factions-frozen-for-deep-elf"
+  ],
+  "f1616": [
+   "Forum: Deep Elf Non-KOS Night Harbor (2026-10-04)",
+   "https://forum.monstersandmemories.com/d/1616-deep-elf-non-kos-night-harbor"
+  ],
+  "f1647": [
+   "Forum: Faction Hostility in Night Harbor is broken",
+   "https://forum.monstersandmemories.com/d/1647-faction-hostility-in-night-harbor-is-broken"
+  ],
+  "r1": [
+   "Reddit: Dark Elves and Night Harbor (2026-09-24)",
+   "https://www.reddit.com/r/MonstersAndMemories/comments/1wpcpke/dark_elves_and_night_harbor/"
+  ],
+  "r2": [
+   "Reddit: Starting Ail'vorith as a new player (2026-09-28)",
+   "https://www.reddit.com/r/MonstersAndMemories/comments/1ws687w/starting_ailvorith_as_anew_player/"
+  ],
+  "cav": [
+   "Wiki faction: Citizens of Ail'Vorith",
+   "https://monstersandmemories.miraheze.org/wiki/Citizens_of_Ail%27Vorith"
+  ],
+  "deepcut": [
+   "Wiki faction: Deepcut Bandits",
+   "https://monstersandmemories.miraheze.org/wiki/Deepcut_Bandits"
+  ],
+  "cnh": [
+   "Wiki faction: Citizens of Night Harbor",
+   "https://monstersandmemories.miraheze.org/wiki/Citizens_of_Night_Harbor"
+  ],
+  "redm": [
+   "Wiki faction: Red Mantles",
+   "https://monstersandmemories.miraheze.org/wiki/Red_Mantles"
+  ],
+  "steel": [
+   "Wiki faction: Steel Talons",
+   "https://monstersandmemories.miraheze.org/wiki/Steel_Talons"
+  ],
+  "nhg": [
+   "Wiki faction: Night Harbor Garrison",
+   "https://monstersandmemories.miraheze.org/wiki/Night_Harbor_Garrison"
+  ],
+  "races": [
+   "Wiki: start-city table race notes (Deep Gnome standing)",
+   "https://monstersandmemories.miraheze.org/wiki/Starting_City_by_Race,_Class,_and_Deity"
+  ],
+  "mw-night-harbor": [
+   "monstersandmemories.wiki: Night Harbor (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/night-harbor"
+  ],
+  "mw-underdocks": [
+   "monstersandmemories.wiki: Underdocks (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/underdocks"
+  ],
+  "mw-evershade-weald": [
+   "monstersandmemories.wiki: Evershade Weald (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/evershade-weald"
+  ],
+  "mw-keepers-bight": [
+   "monstersandmemories.wiki: Keeper's Bight (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/keepers-bight"
+  ],
+  "mw-blacktide-bay": [
+   "monstersandmemories.wiki: Blacktide Bay (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/blacktide-bay"
+  ],
+  "mw-shaded-dunes": [
+   "monstersandmemories.wiki: Shaded Dunes (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/shaded-dunes"
+  ],
+  "mw-sungreet-strand": [
+   "monstersandmemories.wiki: Sungreet Strand (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/sungreet-strand"
+  ],
+  "mw-tel-ekir": [
+   "monstersandmemories.wiki: Tel Ekir (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/tel-ekir"
+  ],
+  "mw-tomb-of-the-last-wyrmsbane": [
+   "monstersandmemories.wiki: Tomb of the Last Wyrmsbane (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/tomb-of-the-last-wyrmsbane"
+  ],
+  "mw-ancient-crypt": [
+   "monstersandmemories.wiki: Ancient Crypt (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/ancient-crypt"
+  ],
+  "mw-caves-of-irem": [
+   "monstersandmemories.wiki: Caves of Irem (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/caves-of-irem"
+  ],
+  "mw-great-cavern-sea": [
+   "monstersandmemories.wiki: Great Cavern Sea (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/great-cavern-sea"
+  ],
+  "mw-fallen-pass": [
+   "monstersandmemories.wiki: Fallen Pass (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/fallen-pass"
+  ],
+  "mw-glass-flats": [
+   "monstersandmemories.wiki: Glass Flats (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/glass-flats"
+  ],
+  "mw-vale-of-zintar": [
+   "monstersandmemories.wiki: Vale of Zintar (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/vale-of-zintar"
+  ],
+  "mw-scarwood": [
+   "monstersandmemories.wiki: Scarwood (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/scarwood"
+  ],
+  "mw-shallow-shoals": [
+   "monstersandmemories.wiki: Shallow Shoals (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/shallow-shoals"
+  ],
+  "mw-grain-cellar": [
+   "monstersandmemories.wiki: Grain Cellar (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/grain-cellar"
+  ],
+  "mw-rothold": [
+   "monstersandmemories.wiki: Rothold (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/rothold"
+  ],
+  "mw-blind-midden": [
+   "monstersandmemories.wiki: Blind Midden (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/blind-midden"
+  ],
+  "z-night-harbor": [
+   "Wiki: Night Harbor",
+   "https://monstersandmemories.miraheze.org/wiki/Night_Harbor"
+  ],
+  "z-underdocks": [
+   "Wiki: Underdocks",
+   "https://monstersandmemories.miraheze.org/wiki/Underdocks"
+  ],
+  "z-faelindral": [
+   "Wiki: Faelindral",
+   "https://monstersandmemories.miraheze.org/wiki/Faelindral"
+  ],
+  "z-evershade-weald": [
+   "Wiki: Evershade Weald",
+   "https://monstersandmemories.miraheze.org/wiki/Evershade_Weald"
+  ],
+  "z-keepers-bight": [
+   "Wiki: Keeper's Bight",
+   "https://monstersandmemories.miraheze.org/wiki/Keeper%27s_Bight"
+  ],
+  "z-blacktide-bay": [
+   "Wiki: Blacktide Bay",
+   "https://monstersandmemories.miraheze.org/wiki/Blacktide_Bay"
+  ],
+  "z-shaded-dunes": [
+   "Wiki: Shaded Dunes",
+   "https://monstersandmemories.miraheze.org/wiki/Shaded_Dunes"
+  ],
+  "z-sungreet-strand": [
+   "Wiki: Sungreet Strand",
+   "https://monstersandmemories.miraheze.org/wiki/Sungreet_Strand"
+  ],
+  "z-tel-ekir": [
+   "Wiki: Tel Ekir",
+   "https://monstersandmemories.miraheze.org/wiki/Tel_Ekir"
+  ],
+  "z-tomb-of-the-last-wyrmsbane": [
+   "Wiki: Tomb of the Last Wyrmsbane",
+   "https://monstersandmemories.miraheze.org/wiki/Tomb_of_the_Last_Wyrmsbane"
+  ],
+  "z-night-harbor-sewers": [
+   "Wiki: Night Harbor Sewers",
+   "https://monstersandmemories.miraheze.org/wiki/Night_Harbor_Sewers"
+  ],
+  "z-infested-crypt": [
+   "Wiki: Infested Crypt",
+   "https://monstersandmemories.miraheze.org/wiki/Infested_Crypt"
+  ],
+  "z-ancient-crypt": [
+   "Wiki: Ancient Crypt",
+   "https://monstersandmemories.miraheze.org/wiki/Ancient_Crypt"
+  ],
+  "z-caves-of-irem": [
+   "Wiki: Caves of Irem",
+   "https://monstersandmemories.miraheze.org/wiki/Caves_of_Irem"
+  ],
+  "z-glinting-hollow": [
+   "Wiki: Glinting Hollow",
+   "https://monstersandmemories.miraheze.org/wiki/Glinting_Hollow"
+  ],
+  "z-scarwood": [
+   "Wiki: Scarwood",
+   "https://monstersandmemories.miraheze.org/wiki/Scarwood"
+  ],
+  "z-vale-of-zintar": [
+   "Wiki: Vale of Zintar",
+   "https://monstersandmemories.miraheze.org/wiki/Vale_of_Zintar"
+  ],
+  "z-fallen-pass": [
+   "Wiki: Fallen Pass",
+   "https://monstersandmemories.miraheze.org/wiki/Fallen_Pass"
+  ],
+  "z-shallow-shoals": [
+   "Wiki: Shallow Shoals",
+   "https://monstersandmemories.miraheze.org/wiki/Shallow_Shoals"
+  ],
+  "z-glass-flats": [
+   "Wiki: Glass Flats",
+   "https://monstersandmemories.miraheze.org/wiki/Glass_Flats"
+  ],
+  "z-grain-cellar": [
+   "Wiki: Grain Cellar",
+   "https://monstersandmemories.miraheze.org/wiki/Grain_Cellar"
+  ],
+  "z-sunken-resort": [
+   "Wiki: Sunken Resort",
+   "https://monstersandmemories.miraheze.org/wiki/Sunken_Resort"
+  ],
+  "z-great-cavern-sea": [
+   "Wiki: Great Cavern Sea",
+   "https://monstersandmemories.miraheze.org/wiki/Great_Cavern_Sea"
+  ],
+  "rkb": [
+   "Reddit: Levelling location near Evershade Weald level 13 (2026-08-10)",
+   "https://www.reddit.com/r/MonstersAndMemories/comments/1vkskp0/levelling_location_near_evershade_weald_level_13/"
+  ],
+  "nh": [
+   "Wiki: Night Harbor (rev 83168, 2026-10-18)",
+   "https://monstersandmemories.miraheze.org/wiki/Night_Harbor"
+  ],
+  "monme": [
+   "monme.no camps (Petrichor's database)",
+   "https://monme.no/camps"
+  ],
+  "pk": [
+   "Wiki faction: Penitent Knights of the Hospice",
+   "https://monstersandmemories.miraheze.org/wiki/Penitent_Knights_of_the_Hospice"
+  ],
+  "cw": [
+   "Wiki faction: City Watch of Night Harbor",
+   "https://monstersandmemories.miraheze.org/wiki/City_Watch_of_Night_Harbor"
+  ],
+  "bends": [
+   "Wiki faction: Residents of the Bends",
+   "https://monstersandmemories.miraheze.org/wiki/Residents_of_the_Bends"
+  ],
+  "dg": [
+   "Wiki: Deep Gnome (race page)",
+   "https://monstersandmemories.miraheze.org/wiki/Deep_Gnome"
+  ],
+  "sqarc": [
+   "Wiki: Archer Starter Quest (Night Harbor)",
+   "https://monstersandmemories.miraheze.org/wiki/Archer_Starter_Quest_(Night_Harbor)"
+  ],
+  "sqbst": [
+   "Wiki: Beastmaster Starter Quest (Night Harbor)",
+   "https://monstersandmemories.miraheze.org/wiki/Beastmaster_Starter_Quest_(Night_Harbor)"
+  ],
+  "sqftr": [
+   "Wiki: Fighter Starter Quest (Night Harbor)",
+   "https://monstersandmemories.miraheze.org/wiki/Fighter_Starter_Quest_(Night_Harbor)"
+  ],
+  "sqmnk": [
+   "Wiki: Monk Starter Quest (Night Harbor) (rev 80330)",
+   "https://monstersandmemories.miraheze.org/wiki/Monk_Starter_Quest_(Night_Harbor)"
+  ],
+  "sqnec": [
+   "Wiki: Necromancer Starter Quest (Night Harbor)",
+   "https://monstersandmemories.miraheze.org/wiki/Necromancer_Starter_Quest_(Night_Harbor)"
+  ],
+  "sqspb": [
+   "Wiki: Spellblade Starter Quest (Night Harbor) (rev 80800)",
+   "https://monstersandmemories.miraheze.org/wiki/Spellblade_Starter_Quest_(Night_Harbor)"
+  ],
+  "sqwiz": [
+   "Wiki: Wizard Starter Quest (Night Harbor) (rev 77199)",
+   "https://monstersandmemories.miraheze.org/wiki/Wizard_Starter_Quest_(Night_Harbor)"
+  ],
+  "sqinq": [
+   "Wiki: Inquisitor Starter Quest (Night Harbor) (rev 74623)",
+   "https://monstersandmemories.miraheze.org/wiki/Inquisitor_Starter_Quest_(Night_Harbor)"
+  ],
+  "sqenc": [
+   "Wiki: Enchanter Starter Quest (Night Harbor) (rev 80831)",
+   "https://monstersandmemories.miraheze.org/wiki/Enchanter_Starter_Quest_(Night_Harbor)"
+  ],
+  "sqpal": [
+   "Wiki: Paladin Starter Quest (Night Harbor)",
+   "https://monstersandmemories.miraheze.org/wiki/Paladin_Starter_Quest_(Night_Harbor)"
+  ],
+  "sqclr": [
+   "Wiki: Cleric Starter Quest (rev 79425)",
+   "https://monstersandmemories.miraheze.org/wiki/Cleric_Starter_Quest"
   ]
  },
  "intro": [
   {
    "label": "FACT",
-   "text": "Good and neutral race/faith/class combinations can start here.",
+   "text": "Night Harbor is the seat of the Langsdorfian League, a confederacy of guilds with a near monopoly on trade and transport. The wiki gives the zone as level 1-50, with Ashira, bats, goblins, jackals, rats, scarabs, skeletons and snakes.",
    "src": [
-    "faq"
+    "nh"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "The start-city table allows these races to start here: Dwarf, Gnome, Halfling, Human, Ogre, Wood Elf. Pick a combination with the Race, Class and Start boxes in the top bar.",
+   "src": [
+    "start"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Neighbouring zones: Shaded Dunes (west gate), Sungreet Strand (north gate), Tomb of the Last Wyrmsbane, the Night Harbor Sewers and the Underdocks (lift down).",
+   "src": [
+    "nh"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Player-tracked hunting in Night Harbor: levels 2-40, most at 17; coin per kill 1cp-6sp 69cp, average 1sp (5,242 kills).",
+   "src": [
+    "mw-night-harbor"
+   ]
+  },
+  {
+   "label": "STRATEGY",
+   "text": "Night Harbor has the most quests and camps of the four starts. A good first hour: your class starter quest, the free wooden weapon from the wise elder, scarab armor from the noob-yard scarabs, then the Tomb of the Last Wyrmsbane entrance at about 6-8.",
+   "src": [
+    "nh",
+    "hunt",
+    "qs"
+   ]
+  }
+ ],
+ "faction": [
+  {
+   "label": "FACT",
+   "text": "The Night Harbor faction pages (Citizens, Red Mantles, Steel Talons, Garrison, City Watch, Merchants, the Bends) all start with \"Not much is known\". Only the raise and lower lists below are filled in.",
+   "src": [
+    "cnh",
+    "redm",
+    "steel",
+    "nhg",
+    "cw"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Citizens of Night Harbor rise in 9 zones (Night Harbor, Shaded Dunes, Tel Ekir, Sungreet Strand, Fallen Pass, Glass Flats, Keeper's Bight, Vale of Zintar, Shallow Shoals) from Blacktide orcs, witchguard, Muggrah goblins, Dustrend orcs and others, plus the Laundry Day Quest. They drop when you kill Whiskey, Mayana or Jumthem.",
+   "src": [
+    "cnh"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Red Mantles rise from crypt beetles and scarabs (cracked, dusty, hardened, pristine), Dhajr Spitemaw in Shaded Dunes, Sangrel in Keeper's Bight, and the Wanted: Ayip & Yapala and Ashira Infiltrator Heads quests. Steel Talons and the Garrison rise from Ashira, bandits, smugglers and grave robbers in Shaded Dunes, Tel Ekir and Fallen Pass.",
+   "src": [
+    "redm",
+    "steel",
+    "nhg"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Ashira Infiltrator Heads: the walkthrough warns that killing Mayana and Jumthem too often costs a lot of Citizens of Night Harbor standing, and the quest itself lowers Seafarers Consortium.",
+   "src": [
+    "qs",
+    "cnh"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "The Bends: killing Sahir Muzalal or a smuggler lowers Residents of the Bends. Riverbend Gang Wars raises Bends Garrison and Cult of the Living City but lowers the Ten Hooks and Waterdogs gangs.",
+   "src": [
+    "bends",
+    "qs"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Penitent Knights of the Hospice (Clerics and Paladins, Wayfarer's Hospice): Bone Chips for Squire Ryland is the easy repeatable. At Amicable the hospice NPCs give 30-minute pet buffs.",
+   "src": [
+    "pk"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Deep Gnomes con Disdain at worst in Night Harbor and Evershade Weald, and are KoS to everyone in Ail'Vorith (race page note).",
+   "src": [
+    "dg"
+   ],
+   "races": [
+    "Deep Gnome"
    ]
   },
   {
    "label": "UNVERIFIED",
-   "text": "Partial route: class starter quests and the Night Harbor camps that were in the old band notes. A full curated Night Harbor route is not written yet: no sourced data yet for the other bands.",
+   "text": "How Night Harbor treats Goblins and other Underdocks races: no sourced data yet.",
    "src": []
+  },
+  {
+   "label": "FACT",
+   "text": "Night Harbor: the wiki has no standing table for Deep Elves. Patch 0.30.2.0 (2026-09-25) says 'Night Harbor factions should now be easier to gain'.",
+   "src": [
+    "p302"
+   ],
+   "races": [
+    "Deep Elf"
+   ]
+  },
+  {
+   "label": "UNVERIFIED",
+   "text": "Night Harbor is effectively KoS for a Deep Elf, whatever city you started in. Players report seething or KoS with the Red Mantle and Steel Talon guards, Harbor guards, patrolmen and citizens; an Agnostic deity did not stop the named guards. The guards at the Underdocks tunnel entrance and the Sojourners were fine.",
+   "src": [
+    "f771",
+    "r1",
+    "f1647",
+    "f551"
+   ],
+   "races": [
+    "Deep Elf"
+   ]
+  },
+  {
+   "label": "UNVERIFIED",
+   "text": "Getting out of KoS in Night Harbor is a long grind: from about 500 faction kills after the patch (hearsay) to 7-8 hours of wererats in Shaded Dunes to reach Disdain (2026-10-04) or about 6 hours of wererats outside the Underdocks. Several players report the faction bar not moving at all (2026-10-03). The Bard and Rogue guilds stayed KoS, and the North Bank guards and bankers stayed hostile for one player at Amicable citizens.",
+   "src": [
+    "r1",
+    "f1514",
+    "f1616",
+    "f1647"
+   ],
+   "races": [
+    "Deep Elf"
+   ]
+  },
+  {
+   "label": "UNVERIFIED",
+   "text": "A Reddit player (2026-09-28) says the Night Harbor faction has to be ground around that city (Ashira in Sungreet Strand and Tel Ekir), not in the Deep, and that entering Night Harbor from the Underdocks puts you in The Bends with no KoS guards right at the zone line.",
+   "src": [
+    "r2"
+   ],
+   "races": [
+    "Deep Elf"
+   ]
+  },
+  {
+   "label": "STRATEGY",
+   "text": "As a Deep Elf, treat Night Harbor as hostile until your own faction check (/con a guard) says otherwise. Use the Underdocks as your surface hub, and get a friend to buy Night Harbor spells or sell loot for you if you need the city early.",
+   "src": [
+    "r1",
+    "r2"
+   ],
+   "races": [
+    "Deep Elf"
+   ]
   }
  ],
- "faction": [],
- "travel": [],
- "money": [],
- "trainers": {},
+ "travel": [
+  {
+   "label": "FACT",
+   "text": "Gates: Shaded Dunes through the west gate, and Sungreet Strand to the north. Boat: Night Harbor to Keeper's Bight (Penshaw Village), 4 stops, including two Shallow Shoals docks (Player Island, Zaedin's Landing).",
+   "src": [
+    "nh"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "The Underdocks are below the city. The Deep (Caves of Irem, the boat to Ail'Vorith) is reached through the Underdocks.",
+   "src": [
+    "nh",
+    "z-underdocks"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Shaded Dunes connects to Tel Ekir, the Caves of Irem, the Ancient Crypt, the Infested Crypt and Fallen Pass. Sungreet Strand connects to Tel Ekir, Glass Flats and the Grain Cellar.",
+   "src": [
+    "z-shaded-dunes",
+    "z-sungreet-strand"
+   ]
+  }
+ ],
+ "money": [
+  {
+   "label": "FACT",
+   "text": "Player-tracked coin in Night Harbor averages 1sp a kill (1cp-6sp 69cp). Nearby: Shaded Dunes 25cp, Sungreet Strand 48cp, Tel Ekir 36cp, Tomb 18cp, Ancient Crypt 42cp.",
+   "src": [
+    "mw-night-harbor",
+    "mw-shaded-dunes",
+    "mw-sungreet-strand",
+    "mw-tel-ekir",
+    "mw-tomb-of-the-last-wyrmsbane",
+    "mw-ancient-crypt"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Free gear and supplies: the wise elder (stone building north of the West Bank) gives a wooden weapon; Pests at the Farm pays rations, water and torches; Cloth Scraps gives Tattered Cloth and a Pouch.",
+   "src": [
+    "qs"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Vendors and tradeskills are in the city: the tannery, Blackfeather Bazaar (pelts and hides, used armor, general goods, alchemy), smelting, blacksmithing, weaponsmithing and tailoring trainers.",
+   "src": [
+    "nh"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Vale of Zintar corrupted Ashira drops sell for 30s-1g (hunting guide, 26-30). Sungreet quarry cinder worker loot feeds the Cinder Beetle Armor Quests.",
+   "src": [
+    "hunt"
+   ]
+  }
+ ],
+ "trainers": {
+  "Beastmaster": {
+   "npc": "Leila Ghasem",
+   "where": "Seekers of the Lost Eye guild, Saltbreeze Park (Beastmaster Spell Merchant in the same guild)",
+   "src": [
+    "sqbst",
+    "nh"
+   ],
+   "label": "FACT",
+   "note": "Takes your starting note in the Beastmaster starter quest."
+  },
+  "Fighter": {
+   "npc": "Fedamius Steele III",
+   "where": "Steel Talons Martial Academy, south-west Night Harbor, on the wall above the courtyard",
+   "src": [
+    "sqftr"
+   ],
+   "label": "FACT",
+   "note": "Starter-quest NPC who sends you on to Lurinda and Elrind Steele. The wiki names no Fighter guild master or spell vendor: no sourced data yet."
+  },
+  "Monk": {
+   "npc": "Chahaya Tam",
+   "where": "School of the Fourfold Path, Twilight Harbor, south of Saltbreeze Park (look for floating elementals)",
+   "src": [
+    "sqmnk",
+    "nh"
+   ],
+   "label": "FACT",
+   "note": "Leads the order with Tenebrim Tam. A Monk Spell Merchant is listed in the city."
+  },
+  "Necromancer": {
+   "npc": "Marvion Hallows, then Sekhmet",
+   "where": "Concourse of Souls (library, then the morgue below), carved into the necropolis mountainside north of Sageside; Necromancer Spell Merchant on the second floor",
+   "src": [
+    "sqnec",
+    "nh"
+   ],
+   "label": "FACT"
+  },
+  "Spellblade": {
+   "npc": "Njau Hansou",
+   "where": "Spellbinders Spire training yard, Sageside (via the translocation devices under the wizard tower); Jaffar Jhaym takes your note first",
+   "src": [
+    "sqspb",
+    "nh"
+   ],
+   "label": "FACT",
+   "note": "A Spellblade Spell Merchant is listed in the city."
+  },
+  "Wizard": {
+   "npc": "Olvin Viscus",
+   "where": "Chartered Academy of Arcane Inquiry, the floating wizard tower in Sageside (north-east), via the translocation devices",
+   "src": [
+    "sqwiz"
+   ],
+   "label": "FACT",
+   "note": "Admissions officer for the Wizard starter quest. Which NPC sells Wizard scrolls: no sourced data yet."
+  },
+  "Inquisitor": {
+   "npc": "Petra Gyle",
+   "where": "Spellbinders Spire, Sageside; Jaffar Jhaym at the top of the Spire takes your note first",
+   "src": [
+    "sqinq"
+   ],
+   "label": "FACT",
+   "note": "Resolved: the quest table names Jaffar Jhaym and the quest page names Petra Gyle because both are right. Jaffar takes the Rune-Etched Note and says 'you will be under the tutelage of Petra Gyle'. Who sells Inquisitor scrolls in Night Harbor: no sourced data yet."
+  },
+  "Paladin": {
+   "npc": "Trey Fulton",
+   "where": "Wayfarer's Hospice, first floor (Travelers Ward, north of the West Gate); Thibald Burlond greets you first",
+   "src": [
+    "sqpal",
+    "nh"
+   ],
+   "label": "FACT"
+  },
+  "Cleric": {
+   "npc": "Dalinder Grammanoot",
+   "where": "Wayfarer's Hospice, ground floor near Thibald Burlond (Sojourner camp next to the West Bank)",
+   "src": [
+    "sqclr",
+    "nh"
+   ],
+   "label": "FACT"
+  },
+  "Enchanter": {
+   "npc": "Master Wincog",
+   "where": "Wincog's Curious Goods, on the long stairs between Sageside and Saltbreeze Park",
+   "src": [
+    "sqenc",
+    "nh"
+   ],
+   "label": "FACT"
+  }
+ },
  "quests": {
   "s-archer": {
    "auto": "Archer Starter Quest (Night Harbor)",
@@ -55,9 +684,10 @@
     "Archer"
    ],
    "tag": "Recommended",
-   "why": "Your class starter quest in Night Harbor.",
+   "why": "Your class starter quest: first armor or a class item, guild faction and your trainer.",
    "src": [
-    "qs"
+    "qs",
+    "nh"
    ]
   },
   "s-bard": {
@@ -66,9 +696,10 @@
     "Bard"
    ],
    "tag": "Recommended",
-   "why": "Your class starter quest in Night Harbor.",
+   "why": "Your class starter quest: first armor or a class item, guild faction and your trainer.",
    "src": [
-    "qs"
+    "qs",
+    "nh"
    ]
   },
   "s-beastmaster": {
@@ -77,9 +708,10 @@
     "Beastmaster"
    ],
    "tag": "Recommended",
-   "why": "Your class starter quest in Night Harbor.",
+   "why": "Your class starter quest: first armor or a class item, guild faction and your trainer.",
    "src": [
-    "qs"
+    "qs",
+    "nh"
    ]
   },
   "s-cleric": {
@@ -88,9 +720,10 @@
     "Cleric"
    ],
    "tag": "Recommended",
-   "why": "Your class starter quest in Night Harbor.",
+   "why": "Your class starter quest: first armor or a class item, guild faction and your trainer.",
    "src": [
-    "qs"
+    "qs",
+    "nh"
    ]
   },
   "s-druid": {
@@ -99,9 +732,10 @@
     "Druid"
    ],
    "tag": "Recommended",
-   "why": "Your class starter quest in Night Harbor.",
+   "why": "Your class starter quest: first armor or a class item, guild faction and your trainer.",
    "src": [
-    "qs"
+    "qs",
+    "nh"
    ]
   },
   "s-elementalist": {
@@ -110,9 +744,10 @@
     "Elementalist"
    ],
    "tag": "Recommended",
-   "why": "Your class starter quest in Night Harbor.",
+   "why": "Your class starter quest: first armor or a class item, guild faction and your trainer.",
    "src": [
-    "qs"
+    "qs",
+    "nh"
    ]
   },
   "s-enchanter": {
@@ -121,9 +756,10 @@
     "Enchanter"
    ],
    "tag": "Recommended",
-   "why": "Your class starter quest in Night Harbor.",
+   "why": "Your class starter quest: first armor or a class item, guild faction and your trainer.",
    "src": [
-    "qs"
+    "qs",
+    "nh"
    ]
   },
   "s-fighter": {
@@ -132,9 +768,10 @@
     "Fighter"
    ],
    "tag": "Recommended",
-   "why": "Your class starter quest in Night Harbor.",
+   "why": "Your class starter quest: first armor or a class item, guild faction and your trainer.",
    "src": [
-    "qs"
+    "qs",
+    "nh"
    ]
   },
   "s-inquisitor": {
@@ -143,9 +780,10 @@
     "Inquisitor"
    ],
    "tag": "Recommended",
-   "why": "Your class starter quest in Night Harbor.",
+   "why": "Your class starter quest: first armor or a class item, guild faction and your trainer.",
    "src": [
-    "qs"
+    "qs",
+    "nh"
    ]
   },
   "s-monk": {
@@ -154,9 +792,10 @@
     "Monk"
    ],
    "tag": "Recommended",
-   "why": "Your class starter quest in Night Harbor.",
+   "why": "Your class starter quest: first armor or a class item, guild faction and your trainer.",
    "src": [
-    "qs"
+    "qs",
+    "nh"
    ]
   },
   "s-necromancer": {
@@ -165,9 +804,10 @@
     "Necromancer"
    ],
    "tag": "Recommended",
-   "why": "Your class starter quest in Night Harbor.",
+   "why": "Your class starter quest: first armor or a class item, guild faction and your trainer.",
    "src": [
-    "qs"
+    "qs",
+    "nh"
    ]
   },
   "s-paladin": {
@@ -176,9 +816,10 @@
     "Paladin"
    ],
    "tag": "Recommended",
-   "why": "Your class starter quest in Night Harbor.",
+   "why": "Your class starter quest: first armor or a class item, guild faction and your trainer.",
    "src": [
-    "qs"
+    "qs",
+    "nh"
    ]
   },
   "s-ranger": {
@@ -187,9 +828,10 @@
     "Ranger"
    ],
    "tag": "Recommended",
-   "why": "Your class starter quest in Night Harbor.",
+   "why": "Your class starter quest: first armor or a class item, guild faction and your trainer.",
    "src": [
-    "qs"
+    "qs",
+    "nh"
    ]
   },
   "s-rogue": {
@@ -198,9 +840,10 @@
     "Rogue"
    ],
    "tag": "Recommended",
-   "why": "Your class starter quest in Night Harbor.",
+   "why": "Your class starter quest: first armor or a class item, guild faction and your trainer.",
    "src": [
-    "qs"
+    "qs",
+    "nh"
    ]
   },
   "s-shadow-knight": {
@@ -209,9 +852,10 @@
     "Shadow Knight"
    ],
    "tag": "Recommended",
-   "why": "Your class starter quest in Night Harbor.",
+   "why": "Your class starter quest: first armor or a class item, guild faction and your trainer.",
    "src": [
-    "qs"
+    "qs",
+    "nh"
    ]
   },
   "s-shaman": {
@@ -220,9 +864,10 @@
     "Shaman"
    ],
    "tag": "Recommended",
-   "why": "Your class starter quest in Night Harbor.",
+   "why": "Your class starter quest: first armor or a class item, guild faction and your trainer.",
    "src": [
-    "qs"
+    "qs",
+    "nh"
    ]
   },
   "s-spellblade": {
@@ -231,9 +876,10 @@
     "Spellblade"
    ],
    "tag": "Recommended",
-   "why": "Your class starter quest in Night Harbor.",
+   "why": "Your class starter quest: first armor or a class item, guild faction and your trainer.",
    "src": [
-    "qs"
+    "qs",
+    "nh"
    ]
   },
   "s-wizard": {
@@ -242,54 +888,258 @@
     "Wizard"
    ],
    "tag": "Recommended",
-   "why": "Your class starter quest in Night Harbor.",
+   "why": "Your class starter quest: first armor or a class item, guild faction and your trainer.",
+   "src": [
+    "qs",
+    "nh"
+   ]
+  },
+  "perilous": {
+   "auto": "Perilous to Leave by Oneself",
+   "classes": [],
+   "tag": "Recommended",
+   "why": "A free wooden weapon at level 1.",
    "src": [
     "qs"
-   ]
+   ],
+   "where": "large stone building just north of the West Bank"
   },
   "scarab": {
    "auto": "Scarab Armor Quests",
    "classes": [],
    "tag": "Recommended",
-   "why": "Starter armor set for any class.",
+   "why": "Five-piece starter armor set from noob-yard dunes scarabs (3).",
    "src": [
-    "nh"
+    "qs"
+   ],
+   "where": "rear of the Sojourner Camp",
+   "mobs": [
+    {
+     "item": "Scarab Carapace, Scarab Leg, Scarab Thorax Plate, Scarab Elytron Plate",
+     "from": "a dunes scarab (3), noob yards outside the north and west gates"
+    }
    ]
+  },
+  "cloth": {
+   "auto": "Cloth Scraps Quest",
+   "classes": [],
+   "tag": "Optional",
+   "why": "Tattered Cloth and a Pouch (bag) for 6 Cloth Scraps from Ashira or skeletons. Casters get the most out of it.",
+   "src": [
+    "qs"
+   ],
+   "where": "ruined building just outside the west gate"
+  },
+  "pests": {
+   "auto": "Pests at the Farm",
+   "classes": [],
+   "tag": "Optional",
+   "why": "Rations, water and torches from noob-yard drops (random reward).",
+   "src": [
+    "qs"
+   ],
+   "where": "farm north-east of the caster tower outside the North Gate"
   },
   "tails": {
    "auto": "Ashira Tails Quest",
    "classes": [],
    "tag": "Optional",
-   "why": "Tattered Rawhide armor from Old Rankle.",
+   "why": "Tattered Rawhide armor for Ashira Tails, which any Ashira can drop.",
    "src": [
-    "nh"
-   ]
+    "qs"
+   ],
+   "where": "Tannery, second floor of a building on the north wall"
+  },
+  "bracer": {
+   "auto": "Ashira Warrior Bracer Quest",
+   "classes": [],
+   "tag": "Optional",
+   "why": "Tattered Rawhide plus Steel Talons faction; the bracer is an uncommon drop.",
+   "src": [
+    "qs"
+   ],
+   "where": "Watch Captain Badawi roams the upper garrison; turn in to Quartermaster Obaid"
   },
   "ryland": {
    "auto": "Bone Chips for Squire Ryland",
    "classes": [],
    "tag": "Optional",
-   "why": "Repeatable Penitent Knights of the Hospice faction.",
+   "why": "Repeatable Penitent Knights faction (5 Bone Chips a turn-in). Worth it for Clerics and Paladins.",
    "src": [
-    "nh"
+    "qs"
+   ],
+   "where": "Wayfarer's Hospice near the Paladin trainers"
+  },
+  "laundry": {
+   "auto": "Laundry Day Quest",
+   "classes": [],
+   "tag": "Optional",
+   "why": "Crude silk shirts and Citizens of Night Harbor, City Watch, Smallfolk and Azure Veils faction.",
+   "src": [
+    "qs"
+   ]
+  },
+  "tamsah": {
+   "auto": "Little Tamsah, Big Appetite",
+   "classes": [],
+   "tag": "Optional",
+   "why": "XP and Seekers of the Lost Eye faction (the Shaman and Beastmaster guild).",
+   "src": [
+    "qs"
+   ]
+  },
+  "winged": {
+   "auto": "A Winged Terror",
+   "classes": [],
+   "tag": "Optional",
+   "why": "Kill the Night Terror (8), which spawns at night in the Necropolis yard, so come back at 8+.",
+   "src": [
+    "qs"
+   ],
+   "notes": [
+    {
+     "label": "UNVERIFIED",
+     "text": "The reward is listed two ways: the walkthrough says Necklace of Night, and the Night Harbor quest table says Mantle of Night and Tunic of Night. Not resolved.",
+     "src": [
+      "qs",
+      "nh"
+     ]
+    }
+   ]
+  },
+  "key": {
+   "auto": "Night Harbor Cemetery Key Quest",
+   "classes": [],
+   "tag": "Recommended",
+   "why": "The key opens the cemetery at night (skeletons 12-16 and named). Part 1 uses crypt rats and bats (10).",
+   "src": [
+    "qs"
+   ],
+   "where": "Gatekeeper Nusder at the Red Mantle Keep entrance to the cemetery"
+  },
+  "ayip": {
+   "auto": "Wanted: Ayip & Yapala",
+   "classes": [],
+   "tag": "Optional",
+   "why": "Red Mantles faction and The Impaler for two Tel Ekir named (13).",
+   "src": [
+    "qs"
+   ]
+  },
+  "gang": {
+   "auto": "Riverbend Gang Wars Quest",
+   "classes": [],
+   "tag": "Optional",
+   "why": "Bends Garrison faction, at the cost of the Ten Hooks and Waterdogs gangs.",
+   "src": [
+    "qs"
+   ]
+  },
+  "badge": {
+   "auto": "Platinum Badge of the Living City Quest",
+   "classes": [],
+   "tag": "Optional",
+   "why": "Heads of the Bends named (Cormac Renshaw ~17 and others). A group quest.",
+   "src": [
+    "qs"
    ]
   },
   "cinder": {
    "auto": "Cinder Beetle Armor Quests",
-   "classes": [],
+   "classes": [
+    "Archer",
+    "Bard",
+    "Beastmaster",
+    "Cleric",
+    "Druid",
+    "Fighter",
+    "Inquisitor",
+    "Monk",
+    "Paladin",
+    "Ranger",
+    "Rogue",
+    "Shadow Knight",
+    "Shaman",
+    "Spellblade"
+   ],
    "tag": "Recommended",
-   "why": "Next armor set (minimum level 14 on the Night Harbor page).",
+   "why": "The armor set after scarab. The Night Harbor page lists it at 14. Cinder workers (16-18) in the Sungreet quarry drop the parts (hunting guide).",
    "src": [
-    "nh"
-   ]
+    "qs"
+   ],
+   "where": "Hult Beetlewrangler, Sojourner Camp"
   },
   "heads": {
    "auto": "Ashira Infiltrator Heads",
    "classes": [],
    "tag": "Optional",
-   "why": "Repeatable Red Mantles faction (~15).",
+   "why": "Red Mantles faction, but it costs Citizens of Night Harbor if you over-kill Mayana and Jumthem.",
    "src": [
-    "nh"
+    "qs"
+   ],
+   "notes": [
+    {
+     "label": "FACT",
+     "text": "Starts after The Yowling.",
+     "src": [
+      "qs"
+     ]
+    }
+   ]
+  },
+  "chompers": {
+   "auto": "Chompers' Hide Tunic Quest",
+   "classes": [],
+   "tag": "Optional",
+   "why": "A tunic from Chompers (16), a crocodile that spawns randomly on the Shaded Dunes beach.",
+   "src": [
+    "qs"
+   ]
+  },
+  "aashir": {
+   "auto": "Escort Head Researcher Aashir",
+   "classes": [],
+   "tag": "Optional",
+   "why": "Aashir's Earring (15+, Shaded Dunes). An escort, so bring a group.",
+   "src": [
+    "qs"
+   ]
+  },
+  "bowl": {
+   "auto": "Hult's Beetle Bowl (Quest)",
+   "classes": [],
+   "tag": "Optional",
+   "why": "Hult's Beetle Bowl from the scarab armor NPC.",
+   "src": [
+    "qs"
+   ]
+  },
+  "viper": {
+   "auto": "Viper's Kick Recipe",
+   "classes": [],
+   "tag": "Optional",
+   "why": "Reward is the Viper's Kick recipe item plus XP. Only worth it if you are in Glass Flats anyway.",
+   "src": [
+    "qs"
+   ]
+  },
+  "hulg": {
+   "auto": "Captain Hulg's Mug",
+   "classes": [],
+   "tag": "Optional",
+   "why": "XP and 5 silver while you work the quarry.",
+   "src": [
+    "qs"
+   ]
+  },
+  "left": {
+   "auto": "Left Behind",
+   "classes": [],
+   "tag": "Recommended",
+   "why": "Fendris the Forsaken (30+) turns the named poachers' drops into armor and a weapon. The Keeper's Bight wiki lists Debtcarver, Leggings of Reckoning, Boots of Vengeful Resolve and Vest of Shattered Duty (from Poachers Tolan and Garrus).",
+   "src": [
+    "qs",
+    "z-keepers-bight"
    ]
   }
  },
@@ -297,7 +1147,7 @@
   {
    "lo": 1,
    "hi": 5,
-   "title": "Starter quests",
+   "title": "Class starter quest, noob yards, scarab armor",
    "steps": [
     {
      "label": "FACT",
@@ -507,73 +1357,563 @@
     },
     {
      "label": "FACT",
-     "text": "City armor quest:",
+     "text": "Free weapon:",
+     "src": [
+      "qs"
+     ],
+     "quest": "perilous"
+    },
+    {
+     "label": "FACT",
+     "text": "Noob yards outside the north and west gates (wiki levels): large rat, rotting skeleton, desert bat and jackal pup 1; spiderling, fire beetle and ashira scout 2; dunes scarab 3; jackal and curious jackal 4.",
      "src": [
       "nh"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "In town: Shaded Bloom Inn basement (beetles and rats, solo 1-3), Saltbreeze Park (bats at night), the Necropolis front yard (rats, bats, spiders, beetles, skeletons; the Night Terror, level 8, spawns at night) and the Garrison Boatyard rats.",
+     "src": [
+      "hunt"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Starter armor:",
+     "src": [
+      "qs"
      ],
      "quest": "scarab"
     },
     {
      "label": "FACT",
-     "text": "City quest:",
+     "text": "Crocodile hatchlings (non-hostile; Snar the egg collector is the named) by the shore outside the west gate and tucked away right of the north gate. Hunting guide: solo 4-6. monme.no: 3-7.",
      "src": [
-      "nh"
+      "hunt",
+      "monme"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Optional city quests:",
+     "src": [
+      "qs"
+     ],
+     "quest": "cloth"
+    },
+    {
+     "label": "FACT",
+     "text": "Optional:",
+     "src": [
+      "qs"
+     ],
+     "quest": "pests"
+    },
+    {
+     "label": "FACT",
+     "text": "Optional:",
+     "src": [
+      "qs"
      ],
      "quest": "tails"
     },
     {
      "label": "FACT",
-     "text": "Faction quest:",
+     "text": "Faction (Clerics and Paladins):",
      "src": [
-      "nh"
+      "pk"
      ],
-     "quest": "ryland"
+     "quest": "ryland",
+     "classes": [
+      "Cleric",
+      "Paladin"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Optional faction:",
+     "src": [
+      "qs"
+     ],
+     "quest": "laundry"
+    },
+    {
+     "label": "FACT",
+     "text": "Optional faction:",
+     "src": [
+      "qs"
+     ],
+     "quest": "tamsah"
     }
    ]
   },
   {
    "lo": 6,
    "hi": 10,
-   "title": "Outskirts",
+   "title": "Tomb of the Last Wyrmsbane, Shaded Dunes Ashira, smuggler beach",
    "steps": [
     {
      "label": "FACT",
-     "text": "Night Harbor outskirts, the Underdocks, Tomb of the Last Wyrmsbane (3-15) and early Shaded Dunes (moved from the old 6-10 band note).",
+     "text": "Tomb of the Last Wyrmsbane (wiki 3-15), next to Night Harbor: skeletal fighters 3-10, warriors 4-11, cavaliers 6-10. Named Timmon Bell and Jakob Geffrey (~8), Lieutenant Gregan Snyde and Ariblast the Wicked (10). Hunting guide: solo 8, group 4-14, good gear drops. Player-tracked: most at 13.",
      "src": [
-      "nh",
-      "tomb",
-      "sd"
+      "hunt",
+      "z-tomb-of-the-last-wyrmsbane",
+      "mw-tomb-of-the-last-wyrmsbane"
      ]
+    },
+    {
+     "label": "FACT",
+     "text": "Several class quests run through the Tomb: the Paladin starter (Engraved Coin upstairs), Wizard (4) and Necromancer and Shaman (8) steps.",
+     "src": [
+      "z-tomb-of-the-last-wyrmsbane"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Shaded Dunes: the Ashira camps near the Tel Ekir zone line (group 6-10), with the zone line handy if pulls go wrong. Dhajr Spitemaw (8+) is at the large Ashira camp and raises Red Mantles.",
+     "src": [
+      "hunt",
+      "z-shaded-dunes",
+      "redm"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Shaded Dunes smugglers and wererats beach party, the furthest camp west along the south coast (6-9), with Toma the Two-Faced (9+).",
+     "src": [
+      "monme",
+      "z-shaded-dunes"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Sungreet Strand (north gate): Ashira warriors 6-7, giant fire beetles 7-8, a hired thug 9-10 at Ameen Farm.",
+     "src": [
+      "z-sungreet-strand"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Night Harbor docks: goblin troublemakers (9) and squatters (10).",
+     "src": [
+      "nh"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Infested Crypt (wiki 8-16, off Shaded Dunes): crypt guardians, creepers and spiderlings 8-9, broodmistress 10-12.",
+     "src": [
+      "z-infested-crypt"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Optional:",
+     "src": [
+      "qs"
+     ],
+     "quest": "bracer"
+    },
+    {
+     "label": "FACT",
+     "text": "Night Terror (8):",
+     "src": [
+      "qs"
+     ],
+     "quest": "winged"
     }
    ]
   },
   {
    "lo": 11,
    "hi": 15,
-   "title": "City camps",
+   "title": "Crypt by day and night, Tel Ekir Ashira, docks goblins",
    "steps": [
     {
      "label": "FACT",
-     "text": "Night Harbor (wiki levels): diseased bats 10, cracked and diseased beetles 12-14, decrepit to cackling skeletons 12-15 (moved from the old 11-15 band note).",
+     "text": "Night Harbor docks goblins, west of the twilight harbor by the cranes: no faction hit, but social. Hunting guide: solo 13-15, group 8-12.",
+     "src": [
+      "hunt"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Night Harbor crypt by day: diseased bats and catacombs rats (10), dusty scarabs (11), cracked beetles (12), hardened scarabs (13), diseased beetles (14). Named: a sanguine bat 12, a pristine beetle 13, an old scarab 14, an ornate beetle 15. The beetles and scarabs raise Red Mantles.",
+     "src": [
+      "nh",
+      "redm"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Cemetery key (opens the crypt at night):",
+     "src": [
+      "qs"
+     ],
+     "quest": "key"
+    },
+    {
+     "label": "FACT",
+     "text": "Crypt by night (needs the key): skeletons 12-15 (decrepit, risen, stumbling, cackling) with named noble 13, bejeweled 14, majestic 15 and crowned 16; skeletal priests 18-19 and Malchiok the Priest 25-26. Hunting guide: solo 12?, group 10-14?.",
+     "src": [
+      "nh",
+      "hunt"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Tel Ekir, Ashira entrance: younglings 9-11, skinners 10-11, oracles and wanderers ~12-14, alphas ~14, and named Roa the Huntress 12, Ayip and Yapala 13, Hadhraman 17. The alpha camp is higher. Hunting guide: group 9-16. Player-tracked: most at 13.",
+     "src": [
+      "hunt",
+      "z-tel-ekir",
+      "mw-tel-ekir"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Tel Ekir named bounty:",
+     "src": [
+      "qs"
+     ],
+     "quest": "ayip"
+    },
+    {
+     "label": "FACT",
+     "text": "Sungreet Strand beach, past the Ashira camps: thugs, acolytes and skintakers (~11-14). Damage is high, so bring a tank and a healer. Hunting guide: solo 12?, group 8-12.",
+     "src": [
+      "hunt",
+      "z-sungreet-strand"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Infested Crypt, larger spiders 12-14 and a frenzied crypt guardian (~12). The crypt broodmother is 16.",
+     "src": [
+      "z-infested-crypt"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Next armor set:",
+     "src": [
+      "qs"
+     ],
+     "quest": "cinder"
+    },
+    {
+     "label": "FACT",
+     "text": "Optional, the Bends:",
+     "src": [
+      "qs"
+     ],
+     "quest": "gang"
+    },
+    {
+     "label": "FACT",
+     "text": "Optional faction:",
+     "src": [
+      "qs"
+     ],
+     "quest": "heads"
+    },
+    {
+     "label": "FACT",
+     "text": "Optional, Shaded Dunes:",
+     "src": [
+      "qs"
+     ],
+     "quest": "chompers"
+    }
+   ]
+  },
+  {
+   "lo": 16,
+   "hi": 20,
+   "title": "Fallen Pass pit, Glass Flats goblins, Sungreet quarry",
+   "steps": [
+    {
+     "label": "FACT",
+     "text": "Night Harbor: the hidden cultist cave (mad prophets, Shon Ibn Lail, Guardians Crepus and Noctus, 16-18) and the Bends named (Cormac Renshaw ~17).",
      "src": [
       "nh"
      ]
     },
     {
      "label": "FACT",
-     "text": "Armor quest:",
+     "text": "The Bends named bounty:",
      "src": [
-      "nh"
+      "qs"
      ],
-     "quest": "cinder"
+     "quest": "badge"
     },
     {
      "label": "FACT",
-     "text": "Faction quest:",
+     "text": "Escort (15+):",
      "src": [
-      "nh"
+      "qs"
      ],
-     "quest": "heads"
+     "quest": "aashir"
+    },
+    {
+     "label": "STRATEGY",
+     "text": "From Night Harbor: the start cities meet here. Shaded Dunes leads to Fallen Pass, and Sungreet Strand leads to Glass Flats, the quarry and the Grain Cellar.",
+     "src": [
+      "z-shaded-dunes",
+      "z-sungreet-strand"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Fallen Pass: the pit just inside the zone (don't go up the ramp). Dusty skeletons, about 16-19 per the guide, are easy single pulls, and anywhere along the wall is generally safe. Solo 17-20, group 15.",
+     "src": [
+      "hunt",
+      "z-fallen-pass"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Glass Flats: the goblin camp (turn left as you zone in from Sungreet Strand), with Baron Bigtent (20) as the named. Solo 18, group 16-20.",
+     "src": [
+      "hunt",
+      "z-glass-flats"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Sungreet Strand quarry: cinder workers (16-18). Their loot feeds the Cinder Beetle Armor quests. Solo 24, group 16-20. The Ashira camp by the Glass Flats zone line is solo 21+, group 18-23; the guide asks for a level check.",
+     "src": [
+      "hunt",
+      "z-sungreet-strand"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Ancient Crypt (wiki 12-22): the entrance, kitchen, commander, library and researcher skeleton camps. You need a tank and a healer. Solo 21?, group 13-18.",
+     "src": [
+      "hunt",
+      "z-ancient-crypt",
+      "mw-ancient-crypt"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Tel Ekir, Bloodynose goblin side: captains (16), voodooists and stabbers (~16-18), and General Overlord Bloodynose (20+). You need a tank and a healer. Solo 17+, group 10-15.",
+     "src": [
+      "hunt",
+      "z-tel-ekir"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Keeper's Bight: the deadwood spiders on the spider log (recluses 11-14, then the matriarch and Widow Vethra at 16). A Reddit player calls the log 'great til 20', with the Sangrels behind it.",
+     "src": [
+      "z-keepers-bight",
+      "rkb"
+     ]
+    }
+   ]
+  },
+  {
+   "lo": 21,
+   "hi": 25,
+   "title": "Fallen Pass ramp, Glass Flats beach, Sungreet quarry goblins",
+   "steps": [
+    {
+     "label": "FACT",
+     "text": "Fallen Pass pit: bone carver beetles (24) and Necroferius (25, a named beetle in the NW corner of the pit). Solo 27, group 20-25.",
+     "src": [
+      "hunt",
+      "z-fallen-pass"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Fallen Pass, up the ramp to the left: skeletons and ghouls (restless adepts 22-23). The ghoul adepts nuke for about 200 (blaze), so interrupt them. Solo 28, group 20-25.",
+     "src": [
+      "hunt",
+      "z-fallen-pass"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Glass Flats beach (straight ahead after you enter): Szuurian vipers (24-26) and beetles, single pulls, but watch for roaming named 30+. Solo 28, group 20-24.",
+     "src": [
+      "hunt",
+      "z-glass-flats"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Sungreet Strand quarry goblins: miners ~20-21, spellshooters ~20, and Taskmasters Gitch ~18 and Urka 19. Big pulls with casters, so it is dangerous, but there are several quests. Group 18-23.",
+     "src": [
+      "hunt",
+      "z-sungreet-strand"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Keeper's Bight: Blacktide orcs (23-25) and a Bloodchain overseer (25).",
+     "src": [
+      "z-keepers-bight"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Quest (20+) in Glass Flats:",
+     "src": [
+      "qs"
+     ],
+     "quest": "viper"
+    },
+    {
+     "label": "FACT",
+     "text": "Quest (20) in Sungreet Strand:",
+     "src": [
+      "qs"
+     ],
+     "quest": "hulg"
+    }
+   ]
+  },
+  {
+   "lo": 26,
+   "hi": 30,
+   "title": "Vale of Zintar Ashira, Scarwood bandits, Sungreet cellar",
+   "steps": [
+    {
+     "label": "FACT",
+     "text": "Vale of Zintar: the corrupted Ashira camp. Hug the right wall to the tents by a lake under the corrupted floating castle (Onis the Elder 27, Fernic the Cur 28, Seshena ~27+). Drops sell for 30s-1g. Solo 32, group 22-28.",
+     "src": [
+      "hunt",
+      "z-vale-of-zintar"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Vale of Zintar: the Dustrend orc camp by the Fallen Pass entrance in the north-west (foot soldiers ~27-30). Better XP than the Ashira, worse loot. Solo 32-35, group 26-30.",
+     "src": [
+      "hunt",
+      "z-vale-of-zintar"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Scarwood: the bandit island in the middle of the river (bandits 26; Garran and Thorne Grinholdt 28). There may not be enough mobs for a full group. Solo 27, group 22-27.",
+     "src": [
+      "hunt",
+      "z-scarwood"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Sungreet Strand: the secret cellar in the third farm building (double-click the wall) and the pirates in the fourth. Solo 26-32, group 22-28.",
+     "src": [
+      "hunt",
+      "z-sungreet-strand"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Blacktide Bay (wiki 10-30): Bloodchain Champion 23, Taskmaster Murkraal 28, Captain Kruush 29.",
+     "src": [
+      "z-blacktide-bay",
+      "mw-blacktide-bay"
+     ]
+    }
+   ]
+  },
+  {
+   "lo": 31,
+   "hi": 40,
+   "title": "Keeper's Bight poachers, Grain Cellar, Fallen Pass Plagueborn",
+   "steps": [
+    {
+     "label": "FACT",
+     "text": "Keeper's Bight poacher camps (poachers 28-30; Tolan >35). Named poachers drop a tunic, leggings, boots and a dagger, which go to the undead NPC in the bear cave (Left Behind). Solo ~32+, group 28-35.",
+     "src": [
+      "hunt",
+      "z-keepers-bight"
+     ],
+     "quest": "left"
+    },
+    {
+     "label": "FACT",
+     "text": "Grain Cellar (wiki 32-36, off Sungreet Strand): undead and cultists, full of casters. Group 29-35.",
+     "src": [
+      "hunt",
+      "z-grain-cellar"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Vale of Zintar tomb burrowers (~31-34; silver and gold devourers ~35+ are named). They are not KoS but will social, and they dig away and pop up elsewhere. Solo 32-35 / group 32-35, then 36-39 / 36-38 for the elder and ancient burrowers.",
+     "src": [
+      "hunt",
+      "z-vale-of-zintar"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Fallen Pass Plagueborn undead citizens (~34-37). The ramp down is on the far side of the cliffs. A restless parade comes down at night to fight them, and the constable patrols are higher level. Solo 36+, group 30-35. The Skri'Var rat camps NE past the stables have many named: solo 38-44, group 34-38.",
+     "src": [
+      "hunt",
+      "z-fallen-pass"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Shallow Shoals: the basilisk island across from the Zaedin's Landing boat dock (water basilisks ~36-38), good for mining iron and some gold. Solo 38+, group 30-35.",
+     "src": [
+      "hunt",
+      "z-shallow-shoals"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Scarwood: poachers 34-35, wisps 36-38, treants 38+, black drakes 40-41.",
+     "src": [
+      "z-scarwood"
+     ]
+    }
+   ]
+  },
+  {
+   "lo": 41,
+   "hi": 60,
+   "title": "Glass Flats cultists, Shoals Orc Fortress, Saman, Giant City",
+   "steps": [
+    {
+     "label": "FACT",
+     "text": "Glass Flats outer cultists: single mobs spread through the canyons, getting denser near the building. Solo 45-52, group 42-48. The south-west part is solo 48-52, group 45-50.",
+     "src": [
+      "hunt",
+      "z-glass-flats"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Shallow Shoals Orc Fortress (the Black Shoals Fortress, named ~45), a large island not too far from the Keeper's Bight docks. Solo 48+, group 41-48.",
+     "src": [
+      "hunt",
+      "z-shallow-shoals"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Glinting Hollow (wiki 38+, off Evershade Weald): named by floor, from Softpaws and Thornbark 41 on the 1st floor, through goblings ~42 and dryads ~44, to Gazer 47 on the 6th.",
+     "src": [
+      "z-glinting-hollow"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Endgame camps: Glass Flats undead tower (group 45-50, then 51-60); Fallen Pass elder drakes (~49-51, group 45-52); Lower Saman and the stables (group 51-60); Upper Saman (group 53-60); Vale of Zintar Giant City (group 55-60; most solo players cannot).",
+     "src": [
+      "hunt",
+      "z-glass-flats",
+      "z-fallen-pass",
+      "z-vale-of-zintar"
+     ]
     }
    ]
   }
