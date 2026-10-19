@@ -14,8 +14,10 @@
 <link rel="stylesheet" href="assets/mod-startcity.css">
 <link rel="stylesheet" href="assets/mod-tradesel.css">
 <link rel="stylesheet" href="assets/mod-nav.css">
+<link rel="stylesheet" href="assets/mod-ux.css">
 </head>
 <body class="sec-mobs">
+<a class="skip" href="#content">Skip to content</a>
 <header class="top">
   <div class="topin">
     <a class="logo" href="index.html"><span class="sig">&#x2735;</span> <span class="lt">M&amp;M Quick Codex</span><span class="ls">Monsters &amp; Memories · Early Access</span></a>
@@ -28,7 +30,7 @@
 <div class="crumbs"><a href="index.html">Home</a> › <span>Mob lookup</span><span class="ver">Content verified: 2026-10-18</span></div>
 <div class="wrap">
   <aside class="left"><div class="box nav"><h3>Classes</h3><ul><li><a href="classes/archer.html">Archer</a></li><li><a href="classes/bard.html">Bard</a></li><li><a href="classes/beastmaster.html">Beastmaster</a></li><li><a href="classes/cleric.html">Cleric</a></li><li><a href="classes/druid.html">Druid</a></li><li><a href="classes/elementalist.html">Elementalist</a></li><li><a href="classes/enchanter.html">Enchanter</a></li><li><a href="classes/fighter.html">Fighter</a></li><li><a href="classes/inquisitor.html">Inquisitor</a></li><li><a href="classes/monk.html">Monk</a></li><li><a href="classes/necromancer.html">Necromancer</a></li><li><a href="classes/paladin.html">Paladin</a></li><li><a href="classes/ranger.html">Ranger</a></li><li><a href="classes/rogue.html">Rogue</a></li><li><a href="classes/shadow-knight.html">Shadow Knight</a></li><li><a href="shaman/index.html">Shaman</a></li><li><a href="classes/spellblade.html">Spellblade</a></li><li><a href="classes/wizard.html">Wizard</a></li></ul></div><div class="box nav"><h3>Reference</h3><ul><li><a href="gear/index.html">Gear by level</a></li><li><a href="zones/index.html">Zones</a></li><li><a href="quests.html">Quests</a></li><li><a href="sources.html">Sources</a></li></ul></div></aside>
-  <main class="main"><h1>Mob lookup</h1><link rel="stylesheet" href="assets/mod-mobs.css"><p>Search mobs and NPCs from the community wiki zone tables <span class="badge fact">fact</span>: level, zone, whether it is a named, and known drops. Drops come from the wiki item pages and the named loot column, and link to the item in the item database. A blank drop list means the wiki records none <span class="badge unc">unverified</span>. Some rows are town NPCs rather than hunting targets.</p><div class="idb-tools"><input id="mob-q" type="search" placeholder="Mob, zone or item…" aria-label="Search mobs"><label><input type="checkbox" id="mob-named"> Named only</label><label><input type="checkbox" id="mob-lvl"> In my level range</label><label><input type="checkbox" id="mob-drop"> Has drops</label></div><p id="mob-count" class="dim"></p><div id="mob-out"></div><script>window.MNM_ITEMPAGE=true;</script><script src="assets/mobs-db.js"></script><script src="assets/mod-mobs.js"></script>
+  <main class="main" id="content" tabindex="-1"><h1>Mob lookup</h1><link rel="stylesheet" href="assets/mod-mobs.css"><p>Search mobs and NPCs from the community wiki zone tables <span class="badge fact">fact</span>: level, zone, whether it is a named, and known drops. Drops come from the wiki item pages and the named loot column, and link to the item in the item database. A blank drop list means the wiki records none <span class="badge unc">unverified</span>. Some rows are town NPCs rather than hunting targets.</p><div class="idb-tools"><input id="mob-q" type="search" placeholder="Mob, zone or item…" aria-label="Search mobs"><label><input type="checkbox" id="mob-named"> Named only</label><label><input type="checkbox" id="mob-lvl"> In my level range</label><label><input type="checkbox" id="mob-drop"> Has drops</label></div><p id="mob-count" class="dim"></p><div id="mob-out"></div><script>window.MNM_ITEMPAGE=true;</script><script src="assets/mobs-db.js"></script><script src="assets/mod-mobs.js"></script>
   <section class="sources"><h2 id="sources">Sources for this page</h2><ul><li><a class="ext" target="_blank" rel="noopener" href="https://monstersandmemories.miraheze.org/wiki/Zones">Wiki zone pages (NPC and named tables)</a></li><li><a class="ext" target="_blank" rel="noopener" href="https://monstersandmemories.miraheze.org/wiki/Category:Items">Wiki item pages (drop sources)</a></li></ul></section>
   </main>
   <aside class="right"><div class="box"><h3>Legend</h3><p><span class="badge unc">unconfirmed</span> / <span class="badge unc">unverified</span> not verified in a source<br><span class="badge fact">fact</span> from a cited source<br><span class="badge strat">strategy</span> a recommendation, not a game fact<br><span class="itm q-magic">Magic item</span> hover for wiki stats</p></div></aside>
@@ -48,5 +50,6 @@
 <script src="assets/mod-chargen.js"></script>
 <script src="assets/mod-startcity.js"></script>
 <script src="assets/mod-halloween.js"></script>
+<script src="assets/mod-ux.js"></script>
 </body>
 </html>

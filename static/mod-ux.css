@@ -1,0 +1,84 @@
+/* ===== UX pass 1: tokens, layout widths, touch targets, focus, contrast, reduced motion (loads last) ===== */
+:root{--sp1:4px;--sp2:8px;--sp3:12px;--sp4:16px;--sp5:24px;--r1:4px;--r2:6px;--r3:8px;
+  --fs-xs:.78rem;--fs-sm:.88rem;--fs-md:1rem;--tap:44px;--maxw:1500px;--prose:78ch;--hdr-h:120px;
+  --focus:#f0cf7f;--ctl-line:#8a7650}
+html.halloween{--focus:#7cf2b4;--ctl-line:#6f8f9f}
+html{scroll-padding-top:calc(var(--hdr-h) + 12px)}
+
+/* skip link + focus rings (keyboard only) */
+.skip{position:absolute;left:var(--sp2);top:-80px;z-index:100;background:var(--gold);color:#1b140b;padding:10px 16px;border-radius:var(--r2);font-weight:700}
+.skip:focus{top:var(--sp2);text-decoration:none}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline-offset:1px}
+.main:focus{outline:none}
+.tab:focus-visible,.ngb:focus-visible,.mainnav>a:focus-visible{outline-offset:-3px}
+
+/* form-control borders at least 3:1 against their background (WCAG 1.4.11), both themes */
+.pagefilter,.filterbar input[type=search],.sptools input,.sptools select{border-color:var(--ctl-line)}
+html.halloween .search input,html.halloween select,html.halloween .pagefilter,html.halloween input[type=search],html.halloween input[type=text],html.halloween input[type=number]{border-color:var(--ctl-line)}
+
+/* consistent card system: one radius/padding scale */
+.box,.card,.dcard,.camp,.qi-sec,.dhead,details.set,details.patch,figure.map{border-radius:var(--r2)}
+.dash,.hero,.quickinfo{border-radius:var(--r3)}
+.call{border-radius:var(--r1)}
+.cards,.camps,.dcards,.dashboard{gap:var(--sp3)}
+
+/* shared widths + sticky offsets follow the real header height (set by mod-ux.js) */
+.topin,.mainnav,.crumbs,.wrap,.rangebar-in{max-width:var(--maxw)}
+.left,.right{top:calc(var(--hdr-h) + 10px);max-height:calc(100vh - var(--hdr-h) - 20px)}
+.filterbar{top:var(--hdr-h)}
+
+/* comfortable line length for prose; tables, grids and tools keep the full width */
+.main>p,.main>ul,.main>ol,.main>blockquote,.main .lead,.tabpane>p,.tabpane>ul,.tabpane>ol,.main>.call,.tabpane>.call{max-width:var(--prose)}
+
+/* laptops/tablets ~1024: slightly slimmer side rail */
+@media (min-width:801px) and (max-width:1150px){.wrap{grid-template-columns:190px minmax(0,1fr)}}
+/* wide (2560x1080 LG, 1920+) and ultrawide (3440x1440): use the width, multi-column card grids */
+@media (min-width:1800px){
+  :root{--maxw:2000px}
+  .wrap{grid-template-columns:250px minmax(0,1fr) 300px;gap:24px}
+  .quickinfo{display:grid;grid-template-columns:repeat(auto-fill,minmax(480px,1fr));gap:var(--sp3);align-items:start}
+  .quickinfo>:not(.qi-sec){grid-column:1/-1}
+  .quickinfo>.qi-sec{margin:0}
+  .camps{grid-template-columns:repeat(auto-fill,minmax(360px,1fr))}
+}
+@media (min-width:2400px){
+  :root{--maxw:2400px}
+  body{font-size:16px}
+  .wrap{grid-template-columns:270px minmax(0,1fr) 330px}
+}
+
+/* phones and narrow side windows */
+.ux-setup{display:none}
+@media (max-width:800px){
+  html{scroll-padding-top:72px}
+  .top{position:relative}
+  /* 44px touch targets */
+  .burger,.ux-setup{min-width:var(--tap);min-height:var(--tap)}
+  .search input,.pagefilter,.rangebar select,.rangebar button,.range-qi,.filterbar select,.filterbar input,.sptools select,.sptools input,.tab,.hw-toggle{min-height:var(--tap)}
+  .range-qi{display:inline-flex;align-items:center}
+  .mainnav>a,.ngb,.ngm a{min-height:var(--tap);display:flex;align-items:center}
+  .left .box li a,.qres a{display:block;padding:10px 4px}
+  .tab{padding:6px 12px}
+  .logo{min-height:var(--tap);justify-content:center}
+  .ts-dd>summary{min-height:var(--tap);display:flex;align-items:center}
+  .ts-menu label{min-height:var(--tap);display:flex;align-items:center;gap:8px}
+  .ts-menu input[type=checkbox],.ts-menu input[type=radio]{width:20px;height:20px;flex:none}
+  .ts-btns button{min-height:var(--tap)}
+  /* compact sticky mini bar once the full header has scrolled away (body.ux-mini set by mod-ux.js) */
+  body.ux-mini .topin{position:fixed;top:0;left:0;right:0;z-index:40;max-width:none;flex-wrap:nowrap;padding:4px 6px;gap:6px;
+    background:linear-gradient(#211a10,#18130d);border-bottom:2px solid var(--gold);box-shadow:0 2px 10px #000a}
+  html.halloween body.ux-mini .topin{background:linear-gradient(#121a22,#0d131a)}
+  body.ux-mini .logo{padding-left:28px;min-height:var(--tap);justify-content:center}
+  body.ux-mini .logo .lt,body.ux-mini .logo .ls{display:none}
+  body.ux-mini .search{order:0;flex:1 1 auto;min-width:0}
+  body.ux-mini .ux-setup{display:inline-flex;align-items:center;justify-content:center;gap:4px;background:none;border:1px solid var(--gold);color:var(--gold2);border-radius:var(--r1);padding:0 8px;font:inherit;font-size:var(--fs-sm);cursor:pointer;white-space:nowrap}
+  body.ux-mini.navopen .mainnav{position:fixed;top:var(--mini-h,56px);left:0;right:0;z-index:39;max-height:calc(100vh - var(--mini-h,56px));overflow:auto;background:var(--panel);border-bottom:2px solid var(--gold)}
+}
+
+/* reduced motion: no animation/transition/hover lift */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .card:hover{transform:none}
+}
+@media print{.skip,.ux-setup{display:none}body.ux-mini .topin{position:static}}
