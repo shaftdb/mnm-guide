@@ -1,37 +1,1856 @@
 {
  "city": "Faelindral",
  "slug": "faelindral",
- "status": "stub",
+ "status": "sourced",
  "updated": "2026-10-18",
- "generated_by": "tools/startcity_stubs.py",
+ "researched": "2026-10-18 23:30 America/New_York",
+ "generated_by": "tools/startcity_faelindral.py",
  "sources": {
   "faq": [
    "Official Early Access FAQ (starting areas)",
    "https://monstersandmemories.com/early-access-faq"
   ],
-  "city": [
+  "npg": [
+   "Official New Player Guide (scrolls are sold near your class guild hall)",
+   "https://monstersandmemories.com/new-player-guide"
+  ],
+  "start": [
+   "Wiki: Starting City by Race, Class, and Deity",
+   "https://monstersandmemories.miraheze.org/wiki/Starting_City_by_Race,_Class,_and_Deity"
+  ],
+  "hunt": [
+   "Wiki: Per-Level Hunting Guide (rev 73595, 2026-09-22; marked work in progress)",
+   "https://monstersandmemories.miraheze.org/wiki/Per-Level_Hunting_Guide"
+  ],
+  "qs": [
+   "Wiki quest walkthroughs (quest helper)",
+   "/quest-helper.html"
+  ],
+  "p29": [
+   "Official patch notes 0.29.0.0 (2026-09-10)",
+   "https://account.monstersandmemories.com/community/patch_notes/44"
+  ],
+  "p291": [
+   "Official patch notes 0.29.0.1 (2026-09-11)",
+   "https://account.monstersandmemories.com/community/patch_notes/45"
+  ],
+  "p300": [
+   "Official patch notes 0.30.0.0 (2026-09-19)",
+   "https://account.monstersandmemories.com/community/patch_notes/46"
+  ],
+  "p302": [
+   "Official patch notes 0.30.2.0 (2026-09-25)",
+   "https://account.monstersandmemories.com/community/patch_notes/51"
+  ],
+  "p3021": [
+   "Official patch notes 0.30.2.1 (2026-09-30)",
+   "https://account.monstersandmemories.com/community/patch_notes/52"
+  ],
+  "p3024": [
+   "Official patch notes 0.30.2.4 (2026-10-04)",
+   "https://account.monstersandmemories.com/community/patch_notes/55"
+  ],
+  "p3025": [
+   "Official patch notes 0.30.2.5 (2026-10-07)",
+   "https://account.monstersandmemories.com/community/patch_notes/56"
+  ],
+  "p3028": [
+   "Official patch notes 0.30.2.8 (2026-10-11)",
+   "https://account.monstersandmemories.com/community/patch_notes/59"
+  ],
+  "f551": [
+   "Forum: Necromancer v Elves? (race standing in Faelindral and Ail'Vorith, 2026-08-25 to 09-18)",
+   "https://forum.monstersandmemories.com/d/551-necromancer-v-elves"
+  ],
+  "f771": [
+   "Forum: Deep Elf to NH without KoS (2026-09-10/12)",
+   "https://forum.monstersandmemories.com/d/771-deep-elf-to-nh-without-kos"
+  ],
+  "f1514": [
+   "Forum: NH factions frozen for Deep elf (2026-10-03/04)",
+   "https://forum.monstersandmemories.com/d/1514-nh-factions-frozen-for-deep-elf"
+  ],
+  "f1616": [
+   "Forum: Deep Elf Non-KOS Night Harbor (2026-10-04)",
+   "https://forum.monstersandmemories.com/d/1616-deep-elf-non-kos-night-harbor"
+  ],
+  "f1647": [
+   "Forum: Faction Hostility in Night Harbor is broken",
+   "https://forum.monstersandmemories.com/d/1647-faction-hostility-in-night-harbor-is-broken"
+  ],
+  "r1": [
+   "Reddit: Dark Elves and Night Harbor (2026-09-24)",
+   "https://www.reddit.com/r/MonstersAndMemories/comments/1wpcpke/dark_elves_and_night_harbor/"
+  ],
+  "r2": [
+   "Reddit: Starting Ail'vorith as a new player (2026-09-28)",
+   "https://www.reddit.com/r/MonstersAndMemories/comments/1ws687w/starting_ailvorith_as_anew_player/"
+  ],
+  "cav": [
+   "Wiki faction: Citizens of Ail'Vorith",
+   "https://monstersandmemories.miraheze.org/wiki/Citizens_of_Ail%27Vorith"
+  ],
+  "deepcut": [
+   "Wiki faction: Deepcut Bandits",
+   "https://monstersandmemories.miraheze.org/wiki/Deepcut_Bandits"
+  ],
+  "cnh": [
+   "Wiki faction: Citizens of Night Harbor",
+   "https://monstersandmemories.miraheze.org/wiki/Citizens_of_Night_Harbor"
+  ],
+  "redm": [
+   "Wiki faction: Red Mantles",
+   "https://monstersandmemories.miraheze.org/wiki/Red_Mantles"
+  ],
+  "steel": [
+   "Wiki faction: Steel Talons",
+   "https://monstersandmemories.miraheze.org/wiki/Steel_Talons"
+  ],
+  "nhg": [
+   "Wiki faction: Night Harbor Garrison",
+   "https://monstersandmemories.miraheze.org/wiki/Night_Harbor_Garrison"
+  ],
+  "races": [
+   "Wiki: start-city table race notes (Deep Gnome standing)",
+   "https://monstersandmemories.miraheze.org/wiki/Starting_City_by_Race,_Class,_and_Deity"
+  ],
+  "mw-night-harbor": [
+   "monstersandmemories.wiki: Night Harbor (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/night-harbor"
+  ],
+  "mw-underdocks": [
+   "monstersandmemories.wiki: Underdocks (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/underdocks"
+  ],
+  "mw-evershade-weald": [
+   "monstersandmemories.wiki: Evershade Weald (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/evershade-weald"
+  ],
+  "mw-keepers-bight": [
+   "monstersandmemories.wiki: Keeper's Bight (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/keepers-bight"
+  ],
+  "mw-blacktide-bay": [
+   "monstersandmemories.wiki: Blacktide Bay (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/blacktide-bay"
+  ],
+  "mw-shaded-dunes": [
+   "monstersandmemories.wiki: Shaded Dunes (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/shaded-dunes"
+  ],
+  "mw-sungreet-strand": [
+   "monstersandmemories.wiki: Sungreet Strand (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/sungreet-strand"
+  ],
+  "mw-tel-ekir": [
+   "monstersandmemories.wiki: Tel Ekir (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/tel-ekir"
+  ],
+  "mw-tomb-of-the-last-wyrmsbane": [
+   "monstersandmemories.wiki: Tomb of the Last Wyrmsbane (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/tomb-of-the-last-wyrmsbane"
+  ],
+  "mw-ancient-crypt": [
+   "monstersandmemories.wiki: Ancient Crypt (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/ancient-crypt"
+  ],
+  "mw-caves-of-irem": [
+   "monstersandmemories.wiki: Caves of Irem (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/caves-of-irem"
+  ],
+  "mw-great-cavern-sea": [
+   "monstersandmemories.wiki: Great Cavern Sea (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/great-cavern-sea"
+  ],
+  "mw-fallen-pass": [
+   "monstersandmemories.wiki: Fallen Pass (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/fallen-pass"
+  ],
+  "mw-glass-flats": [
+   "monstersandmemories.wiki: Glass Flats (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/glass-flats"
+  ],
+  "mw-vale-of-zintar": [
+   "monstersandmemories.wiki: Vale of Zintar (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/vale-of-zintar"
+  ],
+  "mw-scarwood": [
+   "monstersandmemories.wiki: Scarwood (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/scarwood"
+  ],
+  "mw-shallow-shoals": [
+   "monstersandmemories.wiki: Shallow Shoals (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/shallow-shoals"
+  ],
+  "mw-grain-cellar": [
+   "monstersandmemories.wiki: Grain Cellar (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/grain-cellar"
+  ],
+  "mw-rothold": [
+   "monstersandmemories.wiki: Rothold (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/rothold"
+  ],
+  "mw-blind-midden": [
+   "monstersandmemories.wiki: Blind Midden (player-tracked levels and coin)",
+   "https://monstersandmemories.wiki/zones/blind-midden"
+  ],
+  "z-night-harbor": [
+   "Wiki: Night Harbor",
+   "https://monstersandmemories.miraheze.org/wiki/Night_Harbor"
+  ],
+  "z-underdocks": [
+   "Wiki: Underdocks",
+   "https://monstersandmemories.miraheze.org/wiki/Underdocks"
+  ],
+  "z-faelindral": [
    "Wiki: Faelindral",
    "https://monstersandmemories.miraheze.org/wiki/Faelindral"
+  ],
+  "z-evershade-weald": [
+   "Wiki: Evershade Weald",
+   "https://monstersandmemories.miraheze.org/wiki/Evershade_Weald"
+  ],
+  "z-keepers-bight": [
+   "Wiki: Keeper's Bight",
+   "https://monstersandmemories.miraheze.org/wiki/Keeper%27s_Bight"
+  ],
+  "z-blacktide-bay": [
+   "Wiki: Blacktide Bay",
+   "https://monstersandmemories.miraheze.org/wiki/Blacktide_Bay"
+  ],
+  "z-shaded-dunes": [
+   "Wiki: Shaded Dunes",
+   "https://monstersandmemories.miraheze.org/wiki/Shaded_Dunes"
+  ],
+  "z-sungreet-strand": [
+   "Wiki: Sungreet Strand",
+   "https://monstersandmemories.miraheze.org/wiki/Sungreet_Strand"
+  ],
+  "z-tel-ekir": [
+   "Wiki: Tel Ekir",
+   "https://monstersandmemories.miraheze.org/wiki/Tel_Ekir"
+  ],
+  "z-tomb-of-the-last-wyrmsbane": [
+   "Wiki: Tomb of the Last Wyrmsbane",
+   "https://monstersandmemories.miraheze.org/wiki/Tomb_of_the_Last_Wyrmsbane"
+  ],
+  "z-night-harbor-sewers": [
+   "Wiki: Night Harbor Sewers",
+   "https://monstersandmemories.miraheze.org/wiki/Night_Harbor_Sewers"
+  ],
+  "z-infested-crypt": [
+   "Wiki: Infested Crypt",
+   "https://monstersandmemories.miraheze.org/wiki/Infested_Crypt"
+  ],
+  "z-ancient-crypt": [
+   "Wiki: Ancient Crypt",
+   "https://monstersandmemories.miraheze.org/wiki/Ancient_Crypt"
+  ],
+  "z-caves-of-irem": [
+   "Wiki: Caves of Irem",
+   "https://monstersandmemories.miraheze.org/wiki/Caves_of_Irem"
+  ],
+  "z-glinting-hollow": [
+   "Wiki: Glinting Hollow",
+   "https://monstersandmemories.miraheze.org/wiki/Glinting_Hollow"
+  ],
+  "z-scarwood": [
+   "Wiki: Scarwood",
+   "https://monstersandmemories.miraheze.org/wiki/Scarwood"
+  ],
+  "z-vale-of-zintar": [
+   "Wiki: Vale of Zintar",
+   "https://monstersandmemories.miraheze.org/wiki/Vale_of_Zintar"
+  ],
+  "z-fallen-pass": [
+   "Wiki: Fallen Pass",
+   "https://monstersandmemories.miraheze.org/wiki/Fallen_Pass"
+  ],
+  "z-shallow-shoals": [
+   "Wiki: Shallow Shoals",
+   "https://monstersandmemories.miraheze.org/wiki/Shallow_Shoals"
+  ],
+  "z-glass-flats": [
+   "Wiki: Glass Flats",
+   "https://monstersandmemories.miraheze.org/wiki/Glass_Flats"
+  ],
+  "z-grain-cellar": [
+   "Wiki: Grain Cellar",
+   "https://monstersandmemories.miraheze.org/wiki/Grain_Cellar"
+  ],
+  "z-sunken-resort": [
+   "Wiki: Sunken Resort",
+   "https://monstersandmemories.miraheze.org/wiki/Sunken_Resort"
+  ],
+  "z-great-cavern-sea": [
+   "Wiki: Great Cavern Sea",
+   "https://monstersandmemories.miraheze.org/wiki/Great_Cavern_Sea"
+  ],
+  "rkb": [
+   "Reddit: Levelling location near Evershade Weald level 13 (2026-08-10)",
+   "https://www.reddit.com/r/MonstersAndMemories/comments/1vkskp0/levelling_location_near_evershade_weald_level_13/"
+  ],
+  "fae": [
+   "Wiki: Faelindral (rev 83070, 2026-10-18)",
+   "https://monstersandmemories.miraheze.org/wiki/Faelindral"
+  ],
+  "ew": [
+   "Wiki: Evershade Weald (rev 83151, 2026-10-18)",
+   "https://monstersandmemories.miraheze.org/wiki/Evershade_Weald"
+  ],
+  "farc": [
+   "Wiki: Archer Starter Quest (Faelindral) (rev 75499)",
+   "https://monstersandmemories.miraheze.org/wiki/Archer_Starter_Quest_(Faelindral)"
+  ],
+  "fbrd": [
+   "Wiki: Bard Starter Quest (Faelindral) (rev 80008)",
+   "https://monstersandmemories.miraheze.org/wiki/Bard_Starter_Quest_(Faelindral)"
+  ],
+  "fbst": [
+   "Wiki: Beastmaster Starter Quest (Faelindral) (rev 82724, 2026-10-17)",
+   "https://monstersandmemories.miraheze.org/wiki/Beastmaster_Starter_Quest_(Faelindral)"
+  ],
+  "fdru": [
+   "Wiki: Druid Starter Quest (Faelindral) (rev 80229)",
+   "https://monstersandmemories.miraheze.org/wiki/Druid_Starter_Quest_(Faelindral)"
+  ],
+  "ffig": [
+   "Wiki: Fighter Starter Quest (Faelindral) (rev 82595, 2026-10-17)",
+   "https://monstersandmemories.miraheze.org/wiki/Fighter_Starter_Quest_(Faelindral)"
+  ],
+  "frng": [
+   "Wiki: Ranger Starter Quest (Faelindral) (rev 75338)",
+   "https://monstersandmemories.miraheze.org/wiki/Ranger_Starter_Quest_(Faelindral)"
+  ],
+  "frog": [
+   "Wiki: Rogue Starter Quest (Faelindral) (rev 53204)",
+   "https://monstersandmemories.miraheze.org/wiki/Rogue_Starter_Quest_(Faelindral)"
+  ],
+  "fshm": [
+   "Wiki: Shaman Starter Quest (Faelindral) (rev 79993)",
+   "https://monstersandmemories.miraheze.org/wiki/Shaman_Starter_Quest_(Faelindral)"
+  ],
+  "cfae": [
+   "Wiki faction: Citizens of Faelindral",
+   "https://monstersandmemories.miraheze.org/wiki/Citizens_of_Faelindral"
+  ],
+  "dfae": [
+   "Wiki faction: Defenders of Faelindral",
+   "https://monstersandmemories.miraheze.org/wiki/Defenders_of_Faelindral"
+  ],
+  "wyrd": [
+   "Wiki faction: Wyrdguard",
+   "https://monstersandmemories.miraheze.org/wiki/Wyrdguard"
+  ],
+  "csum": [
+   "Wiki faction: Court of Summer",
+   "https://monstersandmemories.miraheze.org/wiki/Court_of_Summer"
+  ],
+  "cwin": [
+   "Wiki faction: Court of Winter",
+   "https://monstersandmemories.miraheze.org/wiki/Court_of_Winter"
+  ],
+  "cspore": [
+   "Wiki faction: Circle of Spores",
+   "https://monstersandmemories.miraheze.org/wiki/Circle_of_Spores"
+  ],
+  "fell": [
+   "Wiki faction: Fellstone Orcs",
+   "https://monstersandmemories.miraheze.org/wiki/Fellstone_Orcs"
+  ],
+  "mwfae": [
+   "monstersandmemories.wiki: Faelindral (zone summary)",
+   "https://monstersandmemories.wiki/zones/faelindral"
   ]
  },
  "intro": [
   {
    "label": "FACT",
-   "text": "Wood Elves and Halflings have the option of starting here.",
+   "text": "Faelindral is the Wood Elf (Faelewyn) home city, built in the trees above Evershade Weald. Only Wood Elves and Halflings can start here, and both can also start in Night Harbor.",
    "src": [
-    "faq"
+    "fae",
+    "faq",
+    "start"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Classes that can start here: Archer, Bard, Beastmaster, Druid, Fighter, Ranger, Rogue, Shaman. Halflings can be Clerics or Paladins, but those two classes cannot start in Faelindral.",
+   "src": [
+    "fae",
+    "start"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "You arrive at the top of the Traveler's Lift (the Newbie Lift). Ring the bell (double-click it) to call the lift, and double-click it again to send it. The city's areas include the Willows Whisper stage, the Traders Terrace, Sentinel's Terrace and Sentinel's Gaze (the garrison), Ranger's Rest (on Keeper's Terrace, past the inn toward the kennels), the Quiet Den kennel, the Balanced Branch (Shaman guild), the Lambent Lantern (inn and Bard guild, behind the bank), the Heartwood Archives above the bank, and the Well of Order (herbalism and first aid).",
+   "src": [
+    "farc",
+    "ffig",
+    "fbst",
+    "fshm",
+    "frog",
+    "fdru",
+    "fae"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Player-tracked hunting in Evershade Weald: levels 3-30, most at 22; 1cp-4sp 98cp, average 18cp (2,886 kills).",
+   "src": [
+    "mw-evershade-weald"
+   ]
+  },
+  {
+   "label": "STRATEGY",
+   "text": "Faelindral has plenty of early content: do your class starter (every class has one, with gear at level 1 and more at about 3-4 and 8), the Green Drakeling armor, and the city quests that need newbie-yard drops. Then move to the Fellstone orcs, wolves and spiders, and from about 11 to the Calafreyan ruins, Blacktide Bay or the Keeper's Bight spider log.",
+   "src": [
+    "fae",
+    "ew",
+    "hunt"
+   ]
+  }
+ ],
+ "faction": [
+  {
+   "label": "FACT",
+   "text": "Citizens of Faelindral and Defenders of Faelindral both rise when you kill Fellstone orcs (warriors, shamans, scouts, Scout Grimgaze) and Mezzatrian spiders (broodlings, scions, Mezzatrian Boneweaver). Killing a summer pixie lowers Citizens. Quests: Mierra's Famed Cupcakes (Citizens), A Sweet Treat (Defenders), Decipher the Unintelligible Writings and the Green Drakeling armor (both).",
+   "src": [
+    "cfae",
+    "dfae",
+    "qs"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Guild factions: the Wyrdguard rise from the Fighter and Archer starters and Culling the Fellstone. The Ardent Keepers rise from the Ranger and Beastmaster starters, Culling the Fellstone, Diseased Wolf Pelts and Poacher's Knives. The Preservers rise from the Shaman starter and Bone Chips for Moon Dances; the Rogue starter lowers them once. The Lambent Wanderers rise from the Rogue starter.",
+   "src": [
+    "wyrd",
+    "qs",
+    "fshm",
+    "frog"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Fae courts: killing dawn pixies, trixie pixies, prowling or snarling wolves, Softpaws, treants or summer pixies lowers the Court of Summer (dawn and trixie pixies raise the Court of Winter). Six Eyes Too Many raises Summer and lowers Winter. In the Rogue starter (part 2d), killing Lilika Thinsticks lowers Citizens of Faelindral and the Court of Summer, and raises the Court of Winter.",
+   "src": [
+    "csum",
+    "cwin",
+    "qs",
+    "frog"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Circle of Spores (the Sporehaven Karst myconids): raised by killing beguiled wolves, beguiled bluecaps, beguiled water elementals and fossergrim watchers, and lowered by killing docile bluecaps. Mushroom Menace raises it and lowers Naelira's Court. The myconids are aggressive at night (Shaman starter).",
+   "src": [
+    "cspore",
+    "qs",
+    "fshm"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Fellstone Orcs: every starter step and orc kill lowers them, and the wiki knows of nothing that raises them. Poachers of Calafrey drop with the Beastmaster starter (part 5) and Poacher's Knives; monstersandmemories.wiki lists the poachers as hostile to the city.",
+   "src": [
+    "fell",
+    "fbst",
+    "qs",
+    "mwfae"
    ]
   },
   {
    "label": "UNVERIFIED",
-   "text": "No curated early route for Faelindral yet: no sourced data yet. The zone and camp lists below the route box are for every start city.",
-   "src": []
+   "text": "Visitors: a Deep Gnome Necromancer, Agnostic or not, was fine in Faelindral straight away, including the bank and merchants (everyone \"uneasy\"; the upper platforms were not tried). One player thinks Goblins start at Disdain and are fine after killing a couple of orcs there, and that some races are KoS until they kill a few orcs (forum, 2026-09-14 to 09-18). Class alone does not get you attacked.",
+   "src": [
+    "f551"
+   ]
+  },
+  {
+   "label": "UNVERIFIED",
+   "text": "Deep Elves: one forum player (2026-09-18) says \"Deep elves hated everywhere\". There is no Faelindral-specific test in the sources: no sourced data yet beyond that.",
+   "src": [
+    "f551"
+   ],
+   "races": [
+    "Deep Elf"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Night Harbor: the wiki has no standing table for Deep Elves. Patch 0.30.2.0 (2026-09-25) says 'Night Harbor factions should now be easier to gain'.",
+   "src": [
+    "p302"
+   ],
+   "races": [
+    "Deep Elf"
+   ]
+  },
+  {
+   "label": "UNVERIFIED",
+   "text": "Night Harbor is effectively KoS for a Deep Elf, whatever city you started in. Players report seething or KoS with the Red Mantle and Steel Talon guards, Harbor guards, patrolmen and citizens; an Agnostic deity did not stop the named guards. The guards at the Underdocks tunnel entrance and the Sojourners were fine.",
+   "src": [
+    "f771",
+    "r1",
+    "f1647",
+    "f551"
+   ],
+   "races": [
+    "Deep Elf"
+   ]
+  },
+  {
+   "label": "UNVERIFIED",
+   "text": "Getting out of KoS in Night Harbor is a long grind: from about 500 faction kills after the patch (hearsay) to 7-8 hours of wererats in Shaded Dunes to reach Disdain (2026-10-04) or about 6 hours of wererats outside the Underdocks. Several players report the faction bar not moving at all (2026-10-03). The Bard and Rogue guilds stayed KoS, and the North Bank guards and bankers stayed hostile for one player at Amicable citizens.",
+   "src": [
+    "r1",
+    "f1514",
+    "f1616",
+    "f1647"
+   ],
+   "races": [
+    "Deep Elf"
+   ]
+  },
+  {
+   "label": "UNVERIFIED",
+   "text": "A Reddit player (2026-09-28) says the Night Harbor faction has to be ground around that city (Ashira in Sungreet Strand and Tel Ekir), not in the Deep, and that entering Night Harbor from the Underdocks puts you in The Bends with no KoS guards right at the zone line.",
+   "src": [
+    "r2"
+   ],
+   "races": [
+    "Deep Elf"
+   ]
+  },
+  {
+   "label": "STRATEGY",
+   "text": "As a Deep Elf, treat Night Harbor as hostile until your own faction check (/con a guard) says otherwise. Use the Underdocks as your surface hub, and get a friend to buy Night Harbor spells or sell loot for you if you need the city early.",
+   "src": [
+    "r1",
+    "r2"
+   ],
+   "races": [
+    "Deep Elf"
+   ]
   }
  ],
- "faction": [],
- "travel": [],
- "money": [],
- "trainers": {},
- "quests": {},
- "bands": []
+ "travel": [
+  {
+   "label": "FACT",
+   "text": "Faelindral connects to Evershade Weald by lifts and bridges: the Traveler's (Newbie) Lift, the Keeper's Lift (from Ranger's Rest), the Pixie Lift (down to the Druid's Circle, and the long northern lift into fae territory) and the Kennel Lift. The Temple Lift to the upper tiers does not work yet.",
+   "src": [
+    "fae",
+    "farc",
+    "fbrd",
+    "fshm"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Evershade Weald borders Keeper's Bight, Glinting Hollow and Blacktide Bay. The wiki also lists the Circle and the Ring of Evershade Weald as ways in and out.",
+   "src": [
+    "ew"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Keeper's Bight connects on to Scarwood, the Vale of Zintar and Shallow Shoals, which the shared route uses from about 26. The Druid starter (part 3) binds you and teleports you to the Sungreet Strand druid ring, then gives you the Gate scroll home.",
+   "src": [
+    "z-keepers-bight",
+    "fdru"
+   ]
+  },
+  {
+   "label": "UNVERIFIED",
+   "text": "The overland path from Evershade Weald to Night Harbor and the 16-25 camps (Fallen Pass, Glass Flats, the Sungreet quarry): no sourced data yet. The A Sweet Treat quest sends you to Night Harbor's Smallfolk District but does not say how to get there.",
+   "src": [
+    "qs"
+   ]
+  }
+ ],
+ "money": [
+  {
+   "label": "FACT",
+   "text": "Player-tracked hunting in Keeper's Bight: levels 17-34, most at 29; 11cp-5sp 10cp, average 1sp (4,394 kills).",
+   "src": [
+    "mw-keepers-bight"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Player-tracked hunting in Blacktide Bay: levels 12-31, most at 27; 11cp-3sp 64cp, average 2sp (2,172 kills).",
+   "src": [
+    "mw-blacktide-bay"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Repeatable coin quests: Decipher the Unintelligible Writings pays 25 copper per Unintelligible Writings (Fellstone scouts, 3-6), and Diseased Wolf Pelts pays 75 copper per pelt (rabid wolves, 4-5; the wiki does not say if this one repeats). Hale's Haul in Keeper's Bight pays 20 silver for five sunken crates.",
+   "src": [
+    "qs",
+    "ew"
+   ]
+  },
+  {
+   "label": "FACT",
+   "text": "Vendors: used weapon and armor dealers on the Traders Terrace (they buy as well as sell), and Merchant's Row for gear, bags and tradeskill supplies. Bone Chips for the Shaman starter and Moon Dances can often be bought from vendors.",
+   "src": [
+    "fae",
+    "qs"
+   ]
+  }
+ ],
+ "trainers": {
+  "Archer": {
+   "npc": "Captain Keyaryn Thornshade",
+   "where": "Sentinel's Terrace, above the Traders Terrace, in the centre of the giant trunk",
+   "src": [
+    "farc",
+    "fae"
+   ],
+   "label": "FACT",
+   "note": "The quest page's infobox names Commander Elydris Stormbough as the giver, but the walkthrough and the zone table both hand the leafscroll to Keyaryn Thornshade. The walkthrough wins because it is the hand-in step."
+  },
+  "Bard": {
+   "npc": "Pine Brightreed (starter); Sylphrena Starfall and Laenyth Windharp",
+   "where": "Lambent Lantern bard guild (Laenyth up the ramp across from the stage, Sylphrena upstairs). A composer above the Willows Whisper stage sells Bard songs",
+   "src": [
+    "fbrd",
+    "fshm",
+    "fae"
+   ],
+   "label": "FACT"
+  },
+  "Beastmaster": {
+   "npc": "Captain Relgen Greenblade, then Aerin Mossfang",
+   "where": "Ranger's Rest on Keeper's Terrace (past the inn toward the kennels), then the Quiet Den kennel. Aerin and Baewyn Mossfang train skills, and a Beastmaster Spell Merchant is in the Quiet Den",
+   "src": [
+    "fbst",
+    "fae"
+   ],
+   "label": "FACT"
+  },
+  "Druid": {
+   "npc": "High Gatekeeper Sylvarya Starveil",
+   "where": "Sentinel's Gaze, the garrison on Sentinel's Terrace (upper tier), one platform over from the Fae Lift",
+   "src": [
+    "fdru",
+    "fae"
+   ],
+   "label": "FACT",
+   "note": "No Druid spell vendor is named on the Faelindral page: no sourced data yet."
+  },
+  "Fighter": {
+   "npc": "Captain Vaelric Ironbark, then Craftguard Vinebrow",
+   "where": "Sentinel's Gaze garrison: behind the Willows Whisper stage, up to the Traders Terrace, then the central ramp. Vinebrow is at the garrison forge",
+   "src": [
+    "ffig"
+   ],
+   "label": "FACT",
+   "note": "No Fighter skill trainer is named separately: no sourced data yet."
+  },
+  "Ranger": {
+   "npc": "Captain Relgen Greenblade",
+   "where": "Ranger's Rest (Ardent Keepers), from the top of the Traveler's Lift. The Ranger Spell Merchant is with the Ardent Keepers",
+   "src": [
+    "frng",
+    "fae"
+   ],
+   "label": "FACT"
+  },
+  "Rogue": {
+   "npc": "Elyndiir Nightshade",
+   "where": "Lambent Lantern Inn, behind the bank; Myrielle Softglade is in the weapons and armor shop on the Traders Terrace",
+   "src": [
+    "frog"
+   ],
+   "label": "FACT",
+   "note": "No Rogue spell or ability vendor is named on the Faelindral page: no sourced data yet."
+  },
+  "Shaman": {
+   "npc": "Varilis Thornvine",
+   "where": "The Balanced Branch (Shaman guild), reached from the Ranger and Beastmaster platform. Moon Dances stands near the Shaman Spell Merchant there",
+   "src": [
+    "fshm",
+    "qs"
+   ],
+   "label": "FACT"
+  }
+ },
+ "quests": {
+  "s-archer": {
+   "auto": "Archer Starter Quest (Faelindral)",
+   "classes": [
+    "Archer"
+   ],
+   "tag": "Recommended",
+   "why": "Novice Scout Bracer at 1, Weald Scout Bracer at 4, then a level 8 elemental-samples step and Scout's Longbow of the Wyrdguard at 15+. Wyrdguard + and Fellstone Orcs − at every step.",
+   "src": [
+    "farc",
+    "qs"
+   ],
+   "where": "Captain Keyaryn Thornshade, Sentinel's Terrace (see the trainer note on the giver conflict)",
+   "mobs": [
+    {
+     "item": "Unintelligible Writings x6 (part 2)",
+     "from": "Fellstone scouts (3-6)"
+    },
+    {
+     "item": "Rune-Etched Bone x4 (part 3, level 4)",
+     "from": "old elven skeletons"
+    },
+    {
+     "item": "Docile Faefly (part 3, level 8)",
+     "from": "an annoyed faefly (8): /take sample by the Calafreyan ruins spire after 6pm game time; avoid 3-6am, when a twisted fae patrols"
+    },
+    {
+     "item": "Necrotic Ash, Letter of Correspondence, Dark Hood (part 4, 15+)",
+     "from": "Calafreyan humanoids with the Blessing of the Forest Spirits buff, and a dark-robed figure"
+    }
+   ],
+   "notes": [
+    {
+     "label": "FACT",
+     "text": "Part 1 is a courier run to four scouts (Gladebow, Amberward at the foot of the Keeper's Lift, Faeweald by the Pixie Lift, Stonebranch by the Traveler's Lift); the wiki says it is worth five yellow bars of XP at level 1.",
+     "src": [
+      "farc"
+     ]
+    }
+   ]
+  },
+  "s-bard": {
+   "auto": "Bard Starter Quest (Faelindral)",
+   "classes": [
+    "Bard"
+   ],
+   "tag": "Recommended",
+   "why": "Ring of Introduction at 1, the Lambent Lute at 4 and the Lute of the Charmed at 8.",
+   "src": [
+    "fbrd",
+    "qs"
+   ],
+   "where": "Pine Brightreed (read the Perfumed Letter you start with); later steps with Laenyth Windharp and Sylphrena Starfall in the Lambent Lantern",
+   "mobs": [
+    {
+     "item": "Pixie Glitter (part 2 ingredients)",
+     "from": "Six Eyes Too Many (6 Widow Eyes from black and elder widows)"
+    },
+    {
+     "item": "Bundle of Strong Silk (part 3e)",
+     "from": "a deadwood matriarch (16), the Keeper's Bight spider log"
+    }
+   ],
+   "notes": [
+    {
+     "label": "FACT",
+     "text": "Part 3 also involves Mistress Naelira, the naiad behind the waterfall deep in a cave.",
+     "src": [
+      "fbrd",
+      "ew"
+     ]
+    }
+   ]
+  },
+  "s-beastmaster": {
+   "auto": "Beastmaster Starter Quest (Faelindral)",
+   "classes": [
+    "Beastmaster"
+   ],
+   "tag": "Recommended",
+   "why": "Novice Claws of the Keeper (part 1) and Spirit-Blessed Shawl (part 4, level 4), then level 8 steps in Keeper's Bight. Ardent Keepers + throughout.",
+   "src": [
+    "fbst",
+    "qs"
+   ],
+   "where": "Captain Relgen Greenblade at Ranger's Rest (hand him your Request for Aid), then Aerin Mossfang in the Quiet Den",
+   "mobs": [
+    {
+     "item": "Diseased Wolf Pelt x4 (part 4)",
+     "from": "rabid wolves (4-5)"
+    },
+    {
+     "item": "Blighted Orc Head (part 4)",
+     "from": "Vorkuul Blighteye (7), who can spawn when you kill a Fellstone shaman"
+    },
+    {
+     "item": "3 Blood-Soaked Bear Claw, Poacher's Arrow, Fledgling Poacher's Bow (parts 5-6, level 8)",
+     "from": "Keeper's Bight; a fledgling poacher conned white at 12"
+    },
+    {
+     "item": "Full Hunt Satchel contents (part 1)",
+     "from": "no sourced data yet"
+    }
+   ],
+   "notes": [
+    {
+     "label": "FACT",
+     "text": "Eraeldor Lowmist (Shaman guild) cures rabies: target him and /say cleanse me.",
+     "src": [
+      "fbst"
+     ]
+    }
+   ]
+  },
+  "s-druid": {
+   "auto": "Druid Starter Quest (Faelindral)",
+   "classes": [
+    "Druid"
+   ],
+   "tag": "Recommended",
+   "why": "Novice, then Aspirant Icon of the Gatekeeper and Scroll: Minor Frostbite at 1, a Gate trip and Sap-Stained Gloves at 4, and the Icon of the Gatekeeper at 8.",
+   "src": [
+    "fdru",
+    "qs"
+   ],
+   "where": "High Gatekeeper Sylvarya Starveil, Sentinel's Gaze (upper tier)",
+   "mobs": [
+    {
+     "item": "Royal Jelly, Bat Wing, Bone Chips x2 each (part 2)",
+     "from": "wasp drones, black bats and rotting skeletons (1)"
+    },
+    {
+     "item": "Broken Shaman Idol x4 (part 3, level 4)",
+     "from": "Fellstone shamans (7+)"
+    },
+    {
+     "item": "Wasp Venom Sac, Widow Venom Sac (part 4, level 8)",
+     "from": "wasps and Mezzatrian broodlings (10-12, the platform across the broken bridge)"
+    },
+    {
+     "item": "Reekbog Focus (part 4)",
+     "from": "Muleda Murktoe (level 13 Druid) after you /pour solution at the moss circle"
+    }
+   ],
+   "notes": [
+    {
+     "label": "FACT",
+     "text": "Part 3 binds you and teleports you to the Sungreet Strand druid ring; Almina Weepingwind gives you the Gate scroll back.",
+     "src": [
+      "fdru"
+     ]
+    }
+   ]
+  },
+  "s-fighter": {
+   "auto": "Fighter Starter Quest (Faelindral)",
+   "classes": [
+    "Fighter"
+   ],
+   "tag": "Recommended",
+   "why": "Tarnished Elven Blade and Novice Chain of the Wyrdguard at 1, a Bronzed blade and Striker's Chain at 4, and Tempered Blade of the Fae-Bound from part 3 (level 8 may be needed, untested).",
+   "src": [
+    "ffig",
+    "qs"
+   ],
+   "where": "Captain Vaelric Ironbark, Sentinel's Gaze (hand in the Rolled Leafscroll signed by Commander Elydris Stormbough); Craftguard Vinebrow at the garrison forge",
+   "mobs": [
+    {
+     "item": "Shattered Skull x4 (part 1)",
+     "from": "rotting skeletons (1) near the starting lift, or buy them"
+    },
+    {
+     "item": "Fellstone Warrior's Belt x4 and Scout Leader's Head (part 2, level 4)",
+     "from": "Fellstone warriors (5-7) and Scout Leader Krindor (6, on the ridge past the Kennel Lift bridges)"
+    },
+    {
+     "item": "Orc Necromancer's Head (part 3)",
+     "from": "Taeresh Deathcharmer (13?, Orc Cave)"
+    },
+    {
+     "item": "Copper Bar x4, Cloth Scraps x2, Sylvine x6, Whispering Sage x2",
+     "from": "tradeskill materials (sources not listed)"
+    }
+   ],
+   "notes": [
+    {
+     "label": "UNVERIFIED",
+     "text": "The quest-helper walkthrough below is from an older revision (2026-05-26); the wiki page was rewritten on 2026-10-17 (rev 82595), and the summary above follows the new page.",
+     "src": [
+      "ffig"
+     ]
+    }
+   ]
+  },
+  "s-ranger": {
+   "auto": "Ranger Starter Quest (Faelindral)",
+   "classes": [
+    "Ranger"
+   ],
+   "tag": "Recommended",
+   "why": "Initiate Keepers Cloak at 1, Verdant Waistguard at 3, and Reach of the Ardent Keeper at 8.",
+   "src": [
+    "frng",
+    "qs"
+   ],
+   "where": "Captain Relgen Greenblade, Ranger's Rest",
+   "mobs": [
+    {
+     "item": "Unintelligible Report (part 4, level 8; one is enough)",
+     "from": "Fellstone trackers (8-10)"
+    },
+    {
+     "item": "Part 4 boss",
+     "from": "a mob that cons red to a level 8 Ranger (estimated 11), immune to snare; the wiki does not name it"
+    }
+   ],
+   "notes": [
+    {
+     "label": "FACT",
+     "text": "Researcher Fairgrove translates the report (Partially Translated Report, also the reward from Decipher the Unintelligible Writings).",
+     "src": [
+      "frng",
+      "qs"
+     ]
+    }
+   ]
+  },
+  "s-rogue": {
+   "auto": "Rogue Starter Quest (Faelindral)",
+   "classes": [
+    "Rogue"
+   ],
+   "tag": "Recommended",
+   "why": "Lambent Prospect Dagger at 1, Lambent Prospect Blade and Mask of the Forest Walker at 4, and Lambent Stiletto at 10+.",
+   "src": [
+    "frog",
+    "qs"
+   ],
+   "where": "Elyndiir Nightshade, Lambent Lantern Inn (behind the bank)",
+   "mobs": [
+    {
+     "item": "Alpha Wolf Fang (part 3, level 4)",
+     "from": "a beguiled alpha wolf (8-10), a rare spawn from beguiled wolves in the west wolf den; rare drop"
+    },
+    {
+     "item": "Copy of a Merchant's Ledger (part 4, 10+)",
+     "from": "/open trunk by the sleeping emissary at the Keeper's Bight inn at night (gone at 6am)"
+    },
+    {
+     "item": "Part 4c",
+     "from": "the emissary (15) and two higher-level guards, walking from the Keeper's Bight treehouse to the Evershade Weald zone line around 7am"
+    }
+   ],
+   "notes": [
+    {
+     "label": "FACT",
+     "text": "Part 2d: killing Lilika Thinsticks costs Citizens of Faelindral and Court of Summer faction.",
+     "src": [
+      "frog"
+     ]
+    }
+   ]
+  },
+  "s-shaman": {
+   "auto": "Shaman Starter Quest (Faelindral)",
+   "classes": [
+    "Shaman"
+   ],
+   "tag": "Recommended",
+   "why": "Novice, then Apprentice Hoop of the Listener at 1, Spirit-Blessed Headdress at 4, and level 8 steps toward the Robes of the Listener.",
+   "src": [
+    "fshm",
+    "qs"
+   ],
+   "where": "Varilis Thornvine, the Balanced Branch (read the Folded Leafscroll you start with)",
+   "mobs": [
+    {
+     "item": "Bone Chips x4, Shattered Skull x2",
+     "from": "rotting skeletons (1), newbie area"
+    },
+    {
+     "item": "Strange Toadstool",
+     "from": "a mischievous faerie (2): /throw dust at the wolf den entrance; beware the high-level beguiled wolves"
+    },
+    {
+     "item": "Green Drakeling Scale x5, Wasp Worker Wax x5 (level 4)",
+     "from": "green drakelings (4-5) and wasp workers"
+    },
+    {
+     "item": "Selstie Kelp x2, Fine Wood x4, Bight Serpent Skin x4 (part 5, level 8)",
+     "from": "Keeper's Bight (bight asps ~8-9; wood from lumberjacking), or the tanner"
+    }
+   ],
+   "notes": [
+    {
+     "label": "FACT",
+     "text": "Sporeweaver Underveil is in the Spore Caves (Sporehaven Karst); the myconids are aggressive at night, so bring invisibility if you go then.",
+     "src": [
+      "fshm"
+     ]
+    }
+   ]
+  },
+  "cupcakes": {
+   "auto": "Mierra's Famed Cupcakes",
+   "classes": [],
+   "tag": "Recommended",
+   "why": "Four Jelly Cupcakes and Citizens of Faelindral for 4 Royal Jelly. One cupcake starts A Sweet Treat.",
+   "src": [
+    "qs",
+    "fae",
+    "cfae"
+   ],
+   "where": "Mierra Willowshade, in the building next to the inn by the Newbie Lift",
+   "mobs": [
+    {
+     "item": "Royal Jelly x4",
+     "from": "wasp drones (1) or wasp workers (Wasp Ruins, solo 3+)"
+    }
+   ]
+  },
+  "bones": {
+   "auto": "Bone Chips for Moon Dances",
+   "classes": [],
+   "tag": "Optional",
+   "why": "Tattered Cloth plus Preservers faction for 5 Bone Chips.",
+   "src": [
+    "qs",
+    "fae"
+   ],
+   "where": "Moon Dances, near the Shaman Spell Merchant in the Balanced Branch",
+   "mobs": [
+    {
+     "item": "Bone Chips x5",
+     "from": "rotting skeletons (1) and other skeletons, or vendors"
+    }
+   ]
+  },
+  "cull": {
+   "auto": "Culling the Fellstone",
+   "classes": [],
+   "tag": "Recommended",
+   "why": "Tattered Rawhide plus Wyrdguard and Ardent Keepers faction for one Left Orc Ear.",
+   "src": [
+    "qs",
+    "fae"
+   ],
+   "where": "Wyrdguard Oakenpine, across the bridge from the tanner building",
+   "mobs": [
+    {
+     "item": "Left Orc Ear",
+     "from": "Fellstone warriors (5-7), necromancers (5-7), guards and trackers"
+    }
+   ]
+  },
+  "decipher": {
+   "auto": "Decipher the Unintelligible Writings",
+   "classes": [],
+   "tag": "Recommended",
+   "why": "Repeatable 25 copper per Unintelligible Writings plus Defenders and Citizens of Faelindral faction. The Partially Translated Report is used in the Ranger starter.",
+   "src": [
+    "qs",
+    "ew"
+   ],
+   "where": "Researcher Fairgrove, Heartwood Archives (the ramp just outside the bank, round the other side of the tree)",
+   "mobs": [
+    {
+     "item": "Unintelligible Writings (one at a time)",
+     "from": "Fellstone scouts (3-6), the Scout Camp"
+    }
+   ]
+  },
+  "pelts": {
+   "auto": "Diseased Wolf Pelts for Baewyn Mossfang",
+   "classes": [],
+   "tag": "Optional",
+   "why": "75 copper plus Ardent Keepers faction per Diseased Wolf Pelt.",
+   "src": [
+    "qs"
+   ],
+   "where": "Baewyn Mossfang, the Beastmaster guild (Quiet Den)",
+   "mobs": [
+    {
+     "item": "Diseased Wolf Pelt",
+     "from": "rabid wolves (4-5)"
+    }
+   ]
+  },
+  "drake": {
+   "auto": "Green Drakeling Scale Armor Quests",
+   "classes": [],
+   "tag": "Recommended",
+   "why": "Four-piece starter armor (coat, cloak, pants, boots) plus Defenders and Citizens of Faelindral faction.",
+   "src": [
+    "qs",
+    "fae"
+   ],
+   "where": "Takalea Scaletender, the tannery",
+   "mobs": [
+    {
+     "item": "Green Drakeling Scale, Wing, Hide (coat 6/2/4, cloak 3/2/1, pants 4/2/2, boots 2/1/1)",
+     "from": "green drakelings (4-5)"
+    },
+    {
+     "item": "Green Drakeling Poison Duct (coat and pants)",
+     "from": "Kyros Emeraldscale (8), across the river west of the Newbie Lift bridge"
+    }
+   ]
+  },
+  "sixeyes": {
+   "auto": "Six Eyes Too Many",
+   "classes": [],
+   "tag": "Optional",
+   "why": "Pixie Glitter (used in the Bard starter) for 6 Widow Eyes. Court of Summer + and Court of Winter −.",
+   "src": [
+    "qs",
+    "ew"
+   ],
+   "where": "Polietta Two-tone, up on the hill near the fae guardians (daytime only)",
+   "mobs": [
+    {
+     "item": "Widow Eye x6",
+     "from": "black widows (4-5) and elder widows (7-8)"
+    }
+   ]
+  },
+  "sweet": {
+   "auto": "A Sweet Treat",
+   "classes": [],
+   "tag": "Optional",
+   "why": "A long chain from Faelindral to Night Harbor: Defenders, Citizens and Smallfolk Alliance faction, 55 silver in total, and the Stein of Baker's Scorn. Starts with one Jelly Cupcake for Guard Pippi Pinecone.",
+   "src": [
+    "qs"
+   ],
+   "notes": [
+    {
+     "label": "UNVERIFIED",
+     "text": "The wiki marks this quest as needing more information.",
+     "src": [
+      "qs"
+     ]
+    }
+   ]
+  },
+  "menace": {
+   "auto": "Mushroom Menace",
+   "classes": [],
+   "tag": "Optional",
+   "why": "Staff of Spores plus Circle of Spores faction (Naelira's Court −). The wiki gives the minimum level as 5 or lower, but the mobs are up to about 12.",
+   "src": [
+    "qs",
+    "ew",
+    "cspore"
+   ],
+   "where": "Sporeweaver Underveil, Sporehaven Karst (the mushroom cave near Faelindral)",
+   "mobs": [
+    {
+     "item": "Prismatic Gills",
+     "from": "a beguiled bluecap (~13-15), at night"
+    },
+    {
+     "item": "Enchanted Water x4",
+     "from": "a beguiled water elemental in the naiad cave upstream"
+    }
+   ]
+  },
+  "hale": {
+   "auto": "Hale's Haul",
+   "classes": [],
+   "tag": "Optional",
+   "why": "20 silver plus Langsdorfian League, Red Mantles and Village of Penshaw faction for five sunken crates. Great bight sharks (20-30, aggressive) patrol the bay.",
+   "src": [
+    "qs",
+    "z-keepers-bight"
+   ],
+   "where": "Captain Hale, the last ship on the Keeper's Bight docks"
+  },
+  "thurston": {
+   "auto": "Growing Threat of the Sangrel Fist",
+   "classes": [],
+   "tag": "Optional",
+   "why": "Sigil of Inquiry and a longer storyline, plus Red Mantles, Village of Penshaw and Ardent Keepers faction (Sangrel Fist −). 15+.",
+   "src": [
+    "qs",
+    "z-keepers-bight"
+   ],
+   "where": "Reeve Thurston Winter, centre of Penshaw Village (Keeper's Bight)",
+   "mobs": [
+    {
+     "item": "Sangrel Fist Wraps x4",
+     "from": "Sangrel strikers and related mobs"
+    }
+   ]
+  },
+  "knives": {
+   "auto": "Poacher's Knives",
+   "classes": [
+    "Archer",
+    "Bard",
+    "Beastmaster",
+    "Cleric",
+    "Druid",
+    "Fighter",
+    "Inquisitor",
+    "Monk",
+    "Paladin",
+    "Ranger",
+    "Rogue",
+    "Shadow Knight",
+    "Shaman",
+    "Spellblade"
+   ],
+   "tag": "Recommended",
+   "why": "High Keeper's Vambrace plus Ardent Keepers and Village of Penshaw faction (Poachers of Calafrey −) for 4 Poacher's Skinners.",
+   "src": [
+    "qs",
+    "z-keepers-bight"
+   ],
+   "where": "Ranger Rylin, the large treehouse in Keeper's Bight",
+   "mobs": [
+    {
+     "item": "Poacher's Skinner x4",
+     "from": "poachers (28-30), poacher camps"
+    }
+   ]
+  },
+  "ghkey": {
+   "auto": "Glinting Hollow Key Quest",
+   "classes": [],
+   "tag": "Optional",
+   "why": "The Glinting Hollow key (Glowing Fae Scale). 35+.",
+   "src": [
+    "qs",
+    "ew"
+   ],
+   "where": "Scout Brightleaf, stealthed outside the Glinting Hollow zone line, uphill from the druid ring",
+   "mobs": [
+    {
+     "item": "Warped Scale",
+     "from": "a warped fae (32), spawns at 2am game time by the druid mushroom circle"
+    },
+    {
+     "item": "Twisted Scale",
+     "from": "a twisted fae, spawns at 3am game time up the ramp by the ruins near the Keeper's Bight zone line"
+    }
+   ]
+  },
+  "viper": {
+   "auto": "Viper's Kick Recipe",
+   "classes": [],
+   "tag": "Optional",
+   "why": "Reward is the Viper's Kick recipe item plus XP. Only worth it if you are in Glass Flats anyway.",
+   "src": [
+    "qs"
+   ]
+  },
+  "hulg": {
+   "auto": "Captain Hulg's Mug",
+   "classes": [],
+   "tag": "Optional",
+   "why": "XP and 5 silver while you work the quarry.",
+   "src": [
+    "qs"
+   ]
+  },
+  "left": {
+   "auto": "Left Behind",
+   "classes": [],
+   "tag": "Recommended",
+   "why": "Fendris the Forsaken (30+) turns the named poachers' drops into armor and a weapon. The Keeper's Bight wiki lists Debtcarver, Leggings of Reckoning, Boots of Vengeful Resolve and Vest of Shattered Duty (from Poachers Tolan and Garrus).",
+   "src": [
+    "qs",
+    "z-keepers-bight"
+   ]
+  }
+ },
+ "bands": [
+  {
+   "lo": 1,
+   "hi": 5,
+   "title": "Class starter, newbie yard below the Traveler's Lift",
+   "steps": [
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-archer",
+     "classes": [
+      "Archer"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-bard",
+     "classes": [
+      "Bard"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-beastmaster",
+     "classes": [
+      "Beastmaster"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-druid",
+     "classes": [
+      "Druid"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-fighter",
+     "classes": [
+      "Fighter"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-ranger",
+     "classes": [
+      "Ranger"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-rogue",
+     "classes": [
+      "Rogue"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Class starter quest:",
+     "src": [
+      "qs"
+     ],
+     "quest": "s-shaman",
+     "classes": [
+      "Shaman"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Trainer",
+     "src": [
+      "fae"
+     ],
+     "trainer": true
+    },
+    {
+     "label": "FACT",
+     "text": "Newbie area at the foot of the Traveler's Lift (wiki levels): black bats, black wolf pups, rotting skeletons and wasp drones 1; large black bats and black widow hatchlings 2-3; dryad fawns 2-3; shrub bats ~3-4; skeletons, black widows, green drakelings and rabid wolves 4-5; dawn and solstice pixies 5.",
+     "src": [
+      "ew"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Wasp Ruins, west along the main walkways: wasp workers, neutral but social (solo 3+, group 1-6). The named Wasp Hive Protector is 3-4.",
+     "src": [
+      "hunt",
+      "ew"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Fellstone Scout Camp, near a fork in the main paths (spiders mean you are on the right path): 3 scouts, a roamer and one inside a tree, scouts 3-6 (solo 3+, group 1-6). They drop Unintelligible Writings; Scout Grimgaze (4-5) is the named.",
+     "src": [
+      "hunt",
+      "ew"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Starter armor:",
+     "src": [
+      "qs"
+     ],
+     "quest": "drake"
+    },
+    {
+     "label": "FACT",
+     "text": "City quests from newbie drops:",
+     "src": [
+      "qs"
+     ],
+     "quest": "cupcakes"
+    },
+    {
+     "label": "FACT",
+     "text": "Optional:",
+     "src": [
+      "qs"
+     ],
+     "quest": "bones"
+    },
+    {
+     "label": "FACT",
+     "text": "Repeatable coin:",
+     "src": [
+      "qs"
+     ],
+     "quest": "decipher"
+    },
+    {
+     "label": "FACT",
+     "text": "Faction and Tattered Rawhide:",
+     "src": [
+      "qs"
+     ],
+     "quest": "cull"
+    },
+    {
+     "label": "FACT",
+     "text": "Optional:",
+     "src": [
+      "qs"
+     ],
+     "quest": "pelts"
+    }
+   ]
+  },
+  {
+   "lo": 6,
+   "hi": 10,
+   "title": "Fellstone orcs, wolf den, widows",
+   "steps": [
+    {
+     "label": "FACT",
+     "text": "Fellstone orcs: warriors and necromancers 5-7, Fellstone shamans 7+, guards 8+, trackers 8-10, ragecallers 9+, defilers 10+. Named: Scout Leader Krindor (6, on the ridge past the Kennel Lift bridges) and Vorkuul Blighteye (7).",
+     "src": [
+      "ew",
+      "fbst"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Wolves, west along the hillside path near the Druid Ring (solo 9, group 6-10; a good leather source): beguiled wolves ~7-8, a beguiled alpha wolf (8-10, named), and Rotmuzzle (9) with rabid wolves and skeletons.",
+     "src": [
+      "hunt",
+      "ew"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Spiders: elder widows and widow matrons 7-8; Mezzatrian Boneweaver (7-9, a Necromancer spider).",
+     "src": [
+      "ew"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Named: Kyros Emeraldscale (8, across the river west of the Newbie Lift bridge; drops the Poison Duct for the drakeling coat and pants). Fossergrim watchers 9-11, Meluli Dawnglow 8-12?.",
+     "src": [
+      "ew"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Keeper's Bight edge (by Evershade Weald): bight asps ~8-9, forest whelps 10-11, black bears 10-12.",
+     "src": [
+      "z-keepers-bight"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Optional:",
+     "src": [
+      "qs"
+     ],
+     "quest": "sixeyes"
+    },
+    {
+     "label": "FACT",
+     "text": "Optional (long, travels to Night Harbor):",
+     "src": [
+      "qs"
+     ],
+     "quest": "sweet"
+    }
+   ]
+  },
+  {
+   "lo": 11,
+   "hi": 15,
+   "title": "Calafreyan ruins, Mezzatrian spiders, Sporehaven, Blacktide Bay",
+   "steps": [
+    {
+     "label": "FACT",
+     "text": "Calafreyan ruins (south of Scout Amberward, over two bridges): Calafreyan soldiers and archers 11-13, an Elven Field Sergeant ~12, a fallen elven champion ~13.",
+     "src": [
+      "ew",
+      "farc"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Mezzatrian broodlings and scions (10-12) on the platform across the broken bridge (across the fallen log, up the ramp, behind the waterfall, follow the bridges). A River Elemental (11-12) is in the pond by the Newbie Lift.",
+     "src": [
+      "ew",
+      "fdru"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Sporehaven Karst myconids (~13-15), aggressive at night. Taeresh Deathcharmer (13?) is in the Orc Cave.",
+     "src": [
+      "ew",
+      "fshm"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Optional:",
+     "src": [
+      "qs"
+     ],
+     "quest": "menace"
+    },
+    {
+     "label": "FACT",
+     "text": "Blacktide Bay (wiki 10-30): gloom widows 9-11, undead gnomish engineers, surveyors and architects 11-13, a net weaver 12, Gurowl the Beast, a Fellstone ritualist and Frimbus Darplefen 14, Commander Rursk 15.",
+     "src": [
+      "z-blacktide-bay",
+      "mw-blacktide-bay"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Keeper's Bight spider log: deadwood recluses 11-14. A Reddit player levelling at 13 near Evershade Weald was pointed there.",
+     "src": [
+      "z-keepers-bight",
+      "rkb"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Keeper's Bight docks:",
+     "src": [
+      "qs"
+     ],
+     "quest": "hale"
+    }
+   ]
+  },
+  {
+   "lo": 16,
+   "hi": 20,
+   "title": "Keeper's Bight spider log and Sangrels, then the shared route",
+   "steps": [
+    {
+     "label": "FACT",
+     "text": "Keeper's Bight: the deadwood matriarch and Widow Vethra (16) on the spider log; Timberfang (20-25?) on the lower cliffs. Blacktide Bay: Prince Mali'Tik (18).",
+     "src": [
+      "z-keepers-bight",
+      "z-blacktide-bay"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Penshaw Village, Keeper's Bight:",
+     "src": [
+      "qs"
+     ],
+     "quest": "thurston"
+    },
+    {
+     "label": "STRATEGY",
+     "text": "From Faelindral (Evershade Weald, then Keeper's Bight or the Night Harbor side): the start cities meet here. Shaded Dunes leads to Fallen Pass, and Sungreet Strand leads to Glass Flats, the quarry and the Grain Cellar.",
+     "src": [
+      "z-shaded-dunes",
+      "z-sungreet-strand"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Fallen Pass: the pit just inside the zone (don't go up the ramp). Dusty skeletons, about 16-19 per the guide, are easy single pulls, and anywhere along the wall is generally safe. Solo 17-20, group 15.",
+     "src": [
+      "hunt",
+      "z-fallen-pass"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Glass Flats: the goblin camp (turn left as you zone in from Sungreet Strand), with Baron Bigtent (20) as the named. Solo 18, group 16-20.",
+     "src": [
+      "hunt",
+      "z-glass-flats"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Sungreet Strand quarry: cinder workers (16-18). Their loot feeds the Cinder Beetle Armor quests. Solo 24, group 16-20. The Ashira camp by the Glass Flats zone line is solo 21+, group 18-23; the guide asks for a level check.",
+     "src": [
+      "hunt",
+      "z-sungreet-strand"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Ancient Crypt (wiki 12-22): the entrance, kitchen, commander, library and researcher skeleton camps. You need a tank and a healer. Solo 21?, group 13-18.",
+     "src": [
+      "hunt",
+      "z-ancient-crypt",
+      "mw-ancient-crypt"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Tel Ekir, Bloodynose goblin side: captains (16), voodooists and stabbers (~16-18), and General Overlord Bloodynose (20+). You need a tank and a healer. Solo 17+, group 10-15.",
+     "src": [
+      "hunt",
+      "z-tel-ekir"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Keeper's Bight: the deadwood spiders on the spider log (recluses 11-14, then the matriarch and Widow Vethra at 16). A Reddit player calls the log 'great til 20', with the Sangrels behind it.",
+     "src": [
+      "z-keepers-bight",
+      "rkb"
+     ]
+    }
+   ]
+  },
+  {
+   "lo": 21,
+   "hi": 25,
+   "title": "Fallen Pass ramp, Glass Flats beach, Sungreet quarry goblins",
+   "steps": [
+    {
+     "label": "FACT",
+     "text": "Fallen Pass pit: bone carver beetles (24) and Necroferius (25, a named beetle in the NW corner of the pit). Solo 27, group 20-25.",
+     "src": [
+      "hunt",
+      "z-fallen-pass"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Fallen Pass, up the ramp to the left: skeletons and ghouls (restless adepts 22-23). The ghoul adepts nuke for about 200 (blaze), so interrupt them. Solo 28, group 20-25.",
+     "src": [
+      "hunt",
+      "z-fallen-pass"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Glass Flats beach (straight ahead after you enter): Szuurian vipers (24-26) and beetles, single pulls, but watch for roaming named 30+. Solo 28, group 20-24.",
+     "src": [
+      "hunt",
+      "z-glass-flats"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Sungreet Strand quarry goblins: miners ~20-21, spellshooters ~20, and Taskmasters Gitch ~18 and Urka 19. Big pulls with casters, so it is dangerous, but there are several quests. Group 18-23.",
+     "src": [
+      "hunt",
+      "z-sungreet-strand"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Keeper's Bight: Blacktide orcs (23-25) and a Bloodchain overseer (25).",
+     "src": [
+      "z-keepers-bight"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Quest (20+) in Glass Flats:",
+     "src": [
+      "qs"
+     ],
+     "quest": "viper"
+    },
+    {
+     "label": "FACT",
+     "text": "Quest (20) in Sungreet Strand:",
+     "src": [
+      "qs"
+     ],
+     "quest": "hulg"
+    }
+   ]
+  },
+  {
+   "lo": 26,
+   "hi": 30,
+   "title": "Vale of Zintar Ashira, Scarwood bandits, Sungreet cellar",
+   "steps": [
+    {
+     "label": "FACT",
+     "text": "Vale of Zintar: the corrupted Ashira camp. Hug the right wall to the tents by a lake under the corrupted floating castle (Onis the Elder 27, Fernic the Cur 28, Seshena ~27+). Drops sell for 30s-1g. Solo 32, group 22-28.",
+     "src": [
+      "hunt",
+      "z-vale-of-zintar"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Vale of Zintar: the Dustrend orc camp by the Fallen Pass entrance in the north-west (foot soldiers ~27-30). Better XP than the Ashira, worse loot. Solo 32-35, group 26-30.",
+     "src": [
+      "hunt",
+      "z-vale-of-zintar"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Scarwood: the bandit island in the middle of the river (bandits 26; Garran and Thorne Grinholdt 28). There may not be enough mobs for a full group. Solo 27, group 22-27.",
+     "src": [
+      "hunt",
+      "z-scarwood"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Sungreet Strand: the secret cellar in the third farm building (double-click the wall) and the pirates in the fourth. Solo 26-32, group 22-28.",
+     "src": [
+      "hunt",
+      "z-sungreet-strand"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Blacktide Bay (wiki 10-30): Bloodchain Champion 23, Taskmaster Murkraal 28, Captain Kruush 29.",
+     "src": [
+      "z-blacktide-bay",
+      "mw-blacktide-bay"
+     ]
+    }
+   ]
+  },
+  {
+   "lo": 31,
+   "hi": 40,
+   "title": "Keeper's Bight poachers, Grain Cellar, Fallen Pass Plagueborn",
+   "steps": [
+    {
+     "label": "FACT",
+     "text": "Keeper's Bight poacher camps (poachers 28-30; Tolan >35). Named poachers drop a tunic, leggings, boots and a dagger, which go to the undead NPC in the bear cave (Left Behind). Solo ~32+, group 28-35.",
+     "src": [
+      "hunt",
+      "z-keepers-bight"
+     ],
+     "quest": "left"
+    },
+    {
+     "label": "FACT",
+     "text": "Keeper's Bight poacher camps:",
+     "src": [
+      "qs"
+     ],
+     "quest": "knives"
+    },
+    {
+     "label": "FACT",
+     "text": "Grain Cellar (wiki 32-36, off Sungreet Strand): undead and cultists, full of casters. Group 29-35.",
+     "src": [
+      "hunt",
+      "z-grain-cellar"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Vale of Zintar tomb burrowers (~31-34; silver and gold devourers ~35+ are named). They are not KoS but will social, and they dig away and pop up elsewhere. Solo 32-35 / group 32-35, then 36-39 / 36-38 for the elder and ancient burrowers.",
+     "src": [
+      "hunt",
+      "z-vale-of-zintar"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Fallen Pass Plagueborn undead citizens (~34-37). The ramp down is on the far side of the cliffs. A restless parade comes down at night to fight them, and the constable patrols are higher level. Solo 36+, group 30-35. The Skri'Var rat camps NE past the stables have many named: solo 38-44, group 34-38.",
+     "src": [
+      "hunt",
+      "z-fallen-pass"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Shallow Shoals: the basilisk island across from the Zaedin's Landing boat dock (water basilisks ~36-38), good for mining iron and some gold. Solo 38+, group 30-35.",
+     "src": [
+      "hunt",
+      "z-shallow-shoals"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Scarwood: poachers 34-35, wisps 36-38, treants 38+, black drakes 40-41.",
+     "src": [
+      "z-scarwood"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Evershade Weald fae: a warped fae (32) and the fae guardians, spellweavers and wanderers (~36). Glinting Hollow key at 35+:",
+     "src": [
+      "ew"
+     ],
+     "quest": "ghkey"
+    }
+   ]
+  },
+  {
+   "lo": 41,
+   "hi": 60,
+   "title": "Glass Flats cultists, Shoals Orc Fortress, Saman, Giant City",
+   "steps": [
+    {
+     "label": "FACT",
+     "text": "Glass Flats outer cultists: single mobs spread through the canyons, getting denser near the building. Solo 45-52, group 42-48. The south-west part is solo 48-52, group 45-50.",
+     "src": [
+      "hunt",
+      "z-glass-flats"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Shallow Shoals Orc Fortress (the Black Shoals Fortress, named ~45), a large island not too far from the Keeper's Bight docks. Solo 48+, group 41-48.",
+     "src": [
+      "hunt",
+      "z-shallow-shoals"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Glinting Hollow (wiki 38+, off Evershade Weald): named by floor, from Softpaws and Thornbark 41 on the 1st floor, through goblings ~42 and dryads ~44, to Gazer 47 on the 6th.",
+     "src": [
+      "z-glinting-hollow"
+     ]
+    },
+    {
+     "label": "FACT",
+     "text": "Endgame camps: Glass Flats undead tower (group 45-50, then 51-60); Fallen Pass elder drakes (~49-51, group 45-52); Lower Saman and the stables (group 51-60); Upper Saman (group 53-60); Vale of Zintar Giant City (group 55-60; most solo players cannot).",
+     "src": [
+      "hunt",
+      "z-glass-flats",
+      "z-fallen-pass",
+      "z-vale-of-zintar"
+     ]
+    }
+   ]
+  }
+ ]
 }
