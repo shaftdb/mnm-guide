@@ -270,7 +270,7 @@ function dbPage(o){var els={};o.ctl.forEach(function(c){els[c[0]]=document.getEl
   // a #Item link followed while already on the page (same-document navigation)
   window.addEventListener('hashchange',function(){var x='';try{x=decodeURIComponent(location.hash.slice(1))}catch(e){}if(!x)return;P.forEach(function(p){setv(p,'')});setv(o.ctl[0][0],x);sortData();rerun();sync()});
   sortData();rerun();sync();
-  if(o.copy){var out=document.getElementById(o.out);var add=function(){copyNames(out,o.copy)};add();if(window.MutationObserver)new MutationObserver(add).observe(out,{childList:true})}
+  if(o.copy){var out=document.getElementById(o.out);var add=function(){copyNames(out,o.copy)};add();if(window.MutationObserver)new MutationObserver(add).observe(out,{childList:true});out.addEventListener('ux-db-more',add)}
 }
 function byName(a,b){return String(a[0]).localeCompare(String(b[0]))}
 function lvl(i,dir){return function(a,b){var x=+a[i]||0,y=+b[i]||0;if(!x!==!y)return x?-1:1;return dir*(x-y)}}
@@ -347,9 +347,10 @@ function load(f){return window.MNM_LOAD?window.MNM_LOAD(f):Promise.reject(new Er
 // ---- 1) tooltips: spell names in "Spells and abilities to buy" lists, mob names in Camps lists (walkthrough + class pages).
 // Data: spell-tips.js / mob-tips.js (same fields as the Spells page and the Mobs database), loaded on the first tooltip.
 // Mouse: hover. Keyboard: Tab to the name (it is focusable). Touch: tap the name; tap it again or anywhere else to close. Esc closes.
-var SEL='.cg-sp li>b,.tt-mob,[data-sp],[data-mob]',KIND={s:{f:'spell-tips.js',v:'MNM_STIPS',n:'spell'},m:{f:'mob-tips.js',v:'MNM_MTIPS',n:'mob'}};
+// UX pass 7: item names (.tt-item / [data-item], e.g. the Mobs database drop lists) use the item tooltip pieces via site.js MNM_ITIP.
+var SEL='.cg-sp li>b,.tt-mob,[data-sp],[data-mob],.tt-item,[data-item]',KIND={s:{f:'spell-tips.js',v:'MNM_STIPS',n:'spell'},m:{f:'mob-tips.js',v:'MNM_MTIPS',n:'mob'},i:{n:'item'}};
 var tt=null,cur=null,pinned=false,hoverT=0,ttn=0;
-function kindOf(el){return el.matches('.tt-mob,[data-mob]')?'m':'s'}
+function kindOf(el){return el.matches('.tt-item,[data-item]')?'i':el.matches('.tt-mob,[data-mob]')?'m':'s'}
 function deco(){[].forEach.call(document.querySelectorAll(SEL),function(el){if(el.hasAttribute('data-tt'))return;el.setAttribute('data-tt',kindOf(el));
   el.classList.add('ux-tt-t');if(!el.hasAttribute('tabindex'))el.tabIndex=0;el.id=el.id||('ux-tt-t'+(++ttn))})}
 var decoQ=0;function decoSoon(){if(decoQ)return;decoQ=1;requestAnimationFrame(function(){decoQ=0;deco()})}
@@ -370,7 +371,14 @@ function mobHTML(name,list){var r=list[0],named=list.some(function(x){return x[4
   if(r[5])h+='<p class="ux-tt-m">'+esc(r[5])+'</p>';
   h+=r[8]?'<p>Known loot (wiki): '+r[7].map(esc).join(', ')+(r[8]>r[7].length?' +'+(r[8]-r[7].length)+' more':'')+'</p>':'<p class="ux-tt-d">No wiki loot listed.</p>';
   return h+'<p class="ux-tt-d">As in the <a href="'+esc((de.getAttribute('data-root')||'')+'mobs.html')+'#'+encodeURIComponent(r[0])+'">Mobs database</a>.</p>'}
-function fill(el){var k=el.getAttribute('data-tt')||kindOf(el),K=KIND[k],D=window[K.v],name=(el.getAttribute(k==='s'?'data-sp':'data-mob')||el.textContent).replace(/\s+/g,' ').trim();
+function itemHTML(d){return '<p class="ux-tt-h">'+esc(d[0])+(d[1]?' <span class="tag">'+esc(d[1])+'</span>':'')+'</p><p class="ux-tt-m">'+['Slot: '+esc(d[2]||'?'),d[5]?'Weight '+esc(d[5]):''].filter(Boolean).join(' \u00b7 ')+'</p>'+
+  '<p>'+esc(d[3]||'No stats listed on wiki')+'</p><p class="ux-tt-d">Class: '+esc(d[4])+'</p>'+((d[6]||[]).length?'<ul class="ux-tt-z">'+d[6].map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>':'')+
+  '<p class="ux-tt-d">Wiki page edited '+esc(d[7]||'?')+' \u00b7 same data as the item tooltips elsewhere on the site.</p>'}
+function fillItem(el){var name=(el.getAttribute('data-item')||el.textContent).replace(/\s+/g,' ').trim(),I=window.MNM_ITEMS,none='<p class="ux-tt-h">'+esc(name)+'</p><p class="ux-tt-d">No more item details on this site yet.</p>';
+  if(I&&I[name]){box().innerHTML=itemHTML(I[name]);return}if(!window.MNM_ITIP){box().innerHTML=none;return}
+  box().innerHTML='<p class="lz-status" aria-busy="true">Loading item details\u2026</p>';
+  window.MNM_ITIP(name).then(function(d){if(cur!==el)return;tt.innerHTML=d?itemHTML(d):none;place(el)},function(){if(cur===el)tt.innerHTML='<p class="lz-status lz-err">Item details could not load (offline?).</p>'})}
+function fill(el){var k=el.getAttribute('data-tt')||kindOf(el);if(k==='i'){fillItem(el);return}var K=KIND[k],D=window[K.v],name=(el.getAttribute(k==='s'?'data-sp':'data-mob')||el.textContent).replace(/\s+/g,' ').trim();
   if(!D){box().innerHTML='<p class="lz-status" aria-busy="true">Loading '+K.n+' details\u2026</p>';
     load(K.f).then(function(){if(cur===el)fill(el)},function(){if(cur===el)tt.innerHTML='<p class="lz-status lz-err">'+(K.n==='spell'?'Spell':'Mob')+' details could not load (offline?).</p>'});return}
   var list=D[name.toLowerCase()];box().innerHTML=list&&list.length?(k==='s'?spellHTML(name,list,el):mobHTML(name,list)):'<p class="ux-tt-h">'+esc(name)+'</p><p class="ux-tt-d">No more '+K.n+' details on this site yet.</p>'}
@@ -378,7 +386,7 @@ function place(el){var r=el.getBoundingClientRect(),w=Math.min(340,innerWidth-16
   var tw=tt.offsetWidth,th=tt.offsetHeight,x=Math.max(8,Math.min(r.left,innerWidth-tw-8)),y=r.bottom+6;
   if(y+th>innerHeight-8&&r.top-th-6>=8)y=r.top-th-6;tt.style.left=Math.round(x)+'px';tt.style.top=Math.round(Math.max(8,y))+'px'}
 function show(el,pin){clearTimeout(hoverT);if(cur&&cur!==el)cur.removeAttribute('aria-describedby');cur=el;pinned=!!pin;box();fill(el);tt.hidden=false;el.setAttribute('aria-describedby','ux-tt');place(el);
-  if(!window[KIND[el.getAttribute('data-tt')||'s'].v])load(KIND[el.getAttribute('data-tt')||'s'].f).then(function(){if(cur===el&&!tt.hidden)place(el)},function(){})}
+  var K0=KIND[el.getAttribute('data-tt')||'s'];if(K0.f&&!window[K0.v])load(K0.f).then(function(){if(cur===el&&!tt.hidden)place(el)},function(){})}
 function hide(){clearTimeout(hoverT);if(!tt||tt.hidden)return;tt.hidden=true;pinned=false;if(cur)cur.removeAttribute('aria-describedby');cur=null}
 window.MNM_UX_TT={show:show,hide:hide,scan:deco};
 document.addEventListener('pointerover',function(e){if(e.pointerType!=='mouse')return;var el=e.target.closest&&e.target.closest('.ux-tt-t');if(!el||(pinned&&cur===el))return;clearTimeout(hoverT);hoverT=setTimeout(function(){show(el)},120)});
@@ -386,10 +394,10 @@ document.addEventListener('pointerout',function(e){if(e.pointerType!=='mouse'||p
   clearTimeout(hoverT);hoverT=setTimeout(hide,150)});
 document.addEventListener('focusin',function(e){var el=e.target.closest&&e.target.closest('.ux-tt-t');if(el&&el===e.target)show(el)});
 document.addEventListener('focusout',function(e){var el=e.target.closest&&e.target.closest('.ux-tt-t');if(el&&!pinned&&!(e.relatedTarget&&tt&&tt.contains(e.relatedTarget)))hide()});
-document.addEventListener('click',function(e){var el=e.target.closest&&e.target.closest('.ux-tt-t');if(el){if(cur===el&&pinned&&!tt.hidden)hide();else show(el,true);return}
+document.addEventListener('click',function(e){var el=e.target.closest&&e.target.closest('.ux-tt-t');if(el&&el.tagName==='A'){hide();return}if(el){if(cur===el&&pinned&&!tt.hidden)hide();else show(el,true);return}
   if(tt&&!tt.hidden&&!tt.contains(e.target))hide()});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&tt&&!tt.hidden){var c=cur;hide();if(c&&document.activeElement!==c&&c.focus)c.focus({preventScroll:true});e.stopPropagation()}
-  else if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('ux-tt-t')){e.preventDefault();show(e.target,true)}},true);
+  else if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('ux-tt-t')&&e.target.tagName!=='A'){e.preventDefault();show(e.target,true)}},true);
 window.addEventListener('scroll',function(){if(tt&&!tt.hidden&&cur){var r=cur.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)hide();else place(cur)}},{passive:true});
 window.addEventListener('resize',function(){if(tt&&!tt.hidden&&cur)place(cur)});
 // ---- 2) CSV export (#21): window.MNM_UX_CSV(name, header, rows) downloads <name>-<date>.csv (UTF-8 with BOM for Excel).
@@ -441,10 +449,38 @@ window.MNM_UX_THEME=setTheme;
 var de=document.documentElement,main=document.querySelector('main.main');if(!main)return;
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 var marked=0;
-// Spells page: every row already shows the level, class and description, so the names are not extra Tab stops (tabindex -1);
-// hover or tap shows the tooltip, which adds the other classes that get the same spell.
+// Spells page (UX pass 7, replaces the pass 6 tabindex -1): the table is ONE Tab stop with a roving tabindex, so its 1,600
+// rows are not 3,200 Tab presses (name + class link each). Tab lands on the current spell name (the first visible row to begin
+// with) and its tooltip opens on focus; Up/Down move to the previous/next visible row, PageUp/PageDown by 10, Home/End to the
+// first/last; Right/Left switch between the spell name and the row's class link; Tab leaves the table. Esc closes the tooltip
+// and focus stays on the name; Enter/Space pins it. Rows hidden by "Only my class", "Only my level range" or "Filter this page"
+// are skipped, and sorting keeps working (DOM order). Screen readers still read every row and link in browse mode.
+var spT=main.querySelector('table.spelllook'),spCur=null;
 [].forEach.call(main.querySelectorAll('table.spelllook tbody td:first-child>strong'),function(b){var tr=b.closest('tr');
-  b.setAttribute('data-sp',b.textContent.trim());if(tr&&tr.getAttribute('data-cls'))b.setAttribute('data-class',tr.getAttribute('data-cls'));b.setAttribute('tabindex','-1');marked++});
+  b.setAttribute('data-sp',b.textContent.trim());if(tr&&tr.getAttribute('data-cls'))b.setAttribute('data-class',tr.getAttribute('data-cls'));
+  b.setAttribute('tabindex','-1');b.setAttribute('role','button');b.classList.add('ux-spn');marked++;
+  var a=tr&&tr.cells[2]&&tr.cells[2].querySelector('a');if(a){a.setAttribute('tabindex','-1');a.classList.add('ux-spc')}});
+if(spT&&marked){
+  var hint=document.createElement('span');hint.id='ux-sphint';hint.className='ux-sphint dim';
+  hint.innerHTML='Keyboard: <kbd>Tab</kbd> into the table for a spell\u2019s details, <kbd>\u2191</kbd> <kbd>\u2193</kbd> next spell, <kbd>\u2192</kbd> class link, <kbd>Esc</kbd> closes.';
+  var spTools=main.querySelector('.sptools');if(spTools){spTools.appendChild(document.createTextNode(' '));spTools.appendChild(hint)}else spT.parentNode.insertBefore(hint,spT);
+  spT.setAttribute('aria-describedby','ux-sphint');
+  var spCell=function(tr,col){return col?tr.querySelector('a.ux-spc'):tr.querySelector('strong.ux-spn')};
+  var spVis=function(el){var tr=el&&el.closest('tr');return !!(tr&&spT.contains(tr)&&tr.getClientRects().length)};
+  var spRows=function(){return [].filter.call(spT.tBodies[0].rows,function(tr){return tr.getClientRects().length&&spCell(tr,0)})};
+  var spSet=function(el,focus){if(spCur&&spCur!==el)spCur.setAttribute('tabindex','-1');spCur=el;el.setAttribute('tabindex','0');if(focus)el.focus()};
+  var spFix=function(){if(spCur&&spVis(spCur))return;var l=spRows();if(l[0])spSet(spCell(l[0],0));else if(spCur){spCur.setAttribute('tabindex','-1');spCur=null}};
+  spFix();
+  spT.addEventListener('focusin',function(e){var el=e.target.closest&&e.target.closest('strong.ux-spn,a.ux-spc');if(el&&el!==spCur)spSet(el)});
+  spT.addEventListener('keydown',function(e){var el=e.target.closest&&e.target.closest('strong.ux-spn,a.ux-spc');if(!el||e.altKey||e.ctrlKey||e.metaKey||e.shiftKey)return;
+    var col=el.classList.contains('ux-spc')?1:0,tr=el.closest('tr');
+    if(e.key==='ArrowRight'||e.key==='ArrowLeft'){var t=spCell(tr,e.key==='ArrowRight'?1:0);if(t&&t!==el){e.preventDefault();spSet(t,true)}return}
+    var mv={ArrowDown:1,ArrowUp:-1,PageDown:10,PageUp:-10,Home:-1e9,End:1e9}[e.key];if(!mv)return;e.preventDefault();
+    var l=spRows(),i=l.indexOf(tr);if(!l.length)return;var r=l[Math.max(0,Math.min(l.length-1,(i<0?0:i)+mv))];spSet(spCell(r,col)||spCell(r,0),true)});
+  var spQ=0,spSoon=function(){clearTimeout(spQ);spQ=setTimeout(spFix,60)};
+  ['input','change'].forEach(function(t){document.addEventListener(t,spSoon,true)});
+  if(spT.tHead){spT.tHead.addEventListener('click',spSoon);spT.tHead.addEventListener('keydown',spSoon)}
+}
 // zone / dungeon pages: first column of the camp tables under "Named mobs" and "Mobs & NPCs"
 [].forEach.call(main.querySelectorAll('h2#named,h2#mobs'),function(h){var t=null;for(var n=h.nextElementSibling;n&&n.tagName!=='H2';n=n.nextElementSibling){t=n.matches('table')?n:n.querySelector('table');if(t)break}
   if(!t||!t.tBodies[0])return;[].forEach.call(t.tBodies[0].rows,function(tr){var c=tr.cells[0];if(!c)return;var host=c.querySelector(':scope>strong')||c,tn=host.firstChild;
@@ -538,7 +574,7 @@ function keysOpen(from){if(!keys){keys=document.createElement('dialog');keys.cla
    row('<kbd>Ctrl</kbd> <kbd>K</kbd> or <kbd>/</kbd>','Quick jump: search pages, classes, zones, items; recently viewed')+row('<kbd>?</kbd>','Show this list')+row('<kbd>Esc</kbd>','Close a dialog, menu or search results')+
    row('<kbd>&uarr;</kbd> <kbd>&darr;</kbd> <kbd>Enter</kbd>','Move through results and open one')+row('<kbd>Tab</kbd> then <kbd>Enter</kbd> on a table header','Sort that column (press again to reverse)')+
    Object.keys(GO).map(function(k){var j=JUMP.filter(function(x){return x[1]===GO[k]})[0];return row('<kbd>g</kbd> <kbd>'+k+'</kbd>','Go to '+esc(j?j[0]:GO[k]))}).join('')+
-   row('<kbd>t</kbd>','Back to top')+'</tbody></table><p class="dim ux-keys-n">Shortcuts are ignored while you type in a box. On touch screens use the search button in the header.</p>';
+   row('<kbd>&uarr;</kbd> <kbd>&darr;</kbd> on a spell name','Spells page: previous / next spell (its details open on focus)')+row('<kbd>t</kbd>','Back to top')+'</tbody></table><p class="dim ux-keys-n">Shortcuts are ignored while you type in a box. On touch screens use the search button in the header.</p>';
   document.body.appendChild(keys);var x=keys.querySelector('.ux-sheet-x');x.addEventListener('click',function(){keys.close()});
   keys.addEventListener('click',function(e){if(e.target===keys)keys.close()});
   keys.addEventListener('keydown',function(e){if(e.key==='Tab'){e.preventDefault();x.focus()}});

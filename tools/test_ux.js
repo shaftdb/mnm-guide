@@ -172,7 +172,7 @@ function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('
  ok(!(await ev('document.querySelector(".ux-otp").checkVisibility()'))&&!(await ev('document.querySelector(".ux-mysetup").checkVisibility()'))&&await ev('document.getElementById("mnm-class").checkVisibility()'),'1024: no phone-only controls; full picker bar and side TOC as before');
 
  // =============================== UX pass 3
- const key=async(k,mods=0,code)=>{const vk={'k':75,'/':191,'?':191,'Escape':27,'ArrowDown':40,'ArrowUp':38,'Enter':13,'Tab':9,'g':71,'i':73,'t':84,'p':80}[k]||0;
+ const key=async(k,mods=0,code)=>{const vk={'k':75,'/':191,'?':191,'Escape':27,'ArrowDown':40,'ArrowUp':38,'Enter':13,'Tab':9,'ArrowRight':39,'ArrowLeft':37,'End':35,'Home':36,'PageDown':34,'PageUp':33,'g':71,'i':73,'t':84,'p':80}[k]||0;
   const p={key:k,code:code||(k.length===1?'Key'+k.toUpperCase():k),windowsVirtualKeyCode:vk,modifiers:mods};
   await send('Input.dispatchKeyEvent',Object.assign({type:'keyDown',text:(k.length===1&&!(mods&2))?k:undefined},p));await send('Input.dispatchKeyEvent',Object.assign({type:'keyUp'},p));await sleep(120)};
  await size(1024,768);
@@ -627,7 +627,7 @@ function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('
  ok(st6.l>=0&&st6.r<=480&&!st6.ovf&&new RegExp('Level '+sp6.lv.trim()).test(st6.txt),'Spells tooltip fits 480 and matches the row (Level '+sp6.lv.trim()+', Inquisitor): '+st6.txt.slice(0,90));
  await shot('ux6-after-spells-tooltip-480.png');
  await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:20,y:880}]});await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await send('Emulation.setTouchEmulationEnabled',{enabled:false});
- ok(await ev('document.querySelector("table.spelllook [data-sp]").tabIndex===-1'),'spell names are not extra Tab stops (the row already shows the same details)');
+ ok(await ev('document.querySelectorAll("table.spelllook tbody [tabindex=\\"0\\"]").length===1'),'spell names: one roving Tab stop for the whole table (pass 7; pass 6 had none)');
  await go('zones/great-cavern-sea.html');
  const z6=await ev('({n:document.querySelectorAll("#named ~ .tw .tt-mob.ux-tt-t").length,all:document.querySelectorAll(".tt-mob.ux-tt-t").length,clean:[].every.call(document.querySelectorAll(".tt-mob"),function(s){return s.textContent===s.getAttribute("data-mob")&&!/wiki/.test(s.textContent)})})');
  ok(z6.all>=20&&z6.clean,'zone camp tables: '+z6.all+' mob names have tooltips (wiki links left out of the name)');
@@ -697,7 +697,129 @@ function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('
    if(await ev('document.documentElement.scrollWidth>innerWidth'))ok(false,'pass 6: '+u+' overflows @'+w+' ('+th+')')}}}
  ok(true,'pass 6: no horizontal overflow at 480/1024/2560/3440 (items, mobs, spells, walkthrough, hotbar, zone) in Dark, Light and High contrast');
  await ev('localStorage.removeItem("mnm-theme")');
- await go("classes/inquisitor.html?class=Inquisitor&race=Deep+Elf&city=Ail%27Vorith");await ev('MNM_UX_ROUTES.fillAll()');await waitFor('!document.querySelector(".sc-lz .lz-status")',15000);
+ // =============================== UX pass 7
+// 0) Spells page: names reachable with Tab (one roving stop), tooltip on focus, arrows move, Esc closes and keeps focus
+await size(1024,768);await go('index.html');await ev('localStorage.removeItem("mnm-tbl:spells.html");localStorage.setItem("mnm-class","Inquisitor")');await go('spells.html');
+const AE='(function(){var a=document.activeElement;return {tag:a.tagName,cls:a.className,t:a.textContent.trim(),tr:a.closest("tbody tr")?[].indexOf.call(a.closest("tbody").rows,a.closest("tbody tr")):-1,tt:(function(){var t=document.getElementById("ux-tt");return t&&!t.hidden?t.textContent:""})(),db:a.getAttribute("aria-describedby")}})()';
+const stops=await ev('({body:document.querySelectorAll("table.spelllook tbody [tabindex=\\"0\\"], table.spelllook tbody a:not([tabindex=\\"-1\\"])").length,names:document.querySelectorAll("table.spelllook strong.ux-spn").length,role:document.querySelector("table.spelllook strong.ux-spn").getAttribute("role"),desc:(document.getElementById(document.querySelector("table.spelllook").getAttribute("aria-describedby"))||{}).textContent||""})');
+ok(stops.body===1&&stops.names>1500&&stops.role==='button'&&/Tab/.test(stops.desc),'Spells: '+stops.names+' names + class links share ONE Tab stop (roving tabindex); names are buttons; table described by "'+stops.desc+'"');
+await ev('document.getElementById("sp-band").focus()');let tabs7=0,a7;for(;tabs7<12;tabs7++){await tab();a7=await ev(AE);if(a7.tag==='STRONG')break}
+ok(a7.tag==='STRONG'&&a7.tr===0&&tabs7<=7,'Tab from the filters reaches the first spell name after the '+tabs7+' sortable headers ("'+a7.t+'")');
+ok(await waitFor('(function(){var t=document.getElementById("ux-tt");return t&&!t.hidden&&/Level/.test(t.textContent)})()')&&/ux-tt/.test((await ev(AE)).db||''),'…its tooltip opens on focus and is linked with aria-describedby ('+(await ev(AE)).tt.slice(0,60)+')');
+await key('ArrowDown');await sleep(150);const d7=await ev(AE);
+ok(d7.tag==='STRONG'&&d7.tr===1&&d7.tt.indexOf(d7.t)>=0,'ArrowDown moves to the next spell and its tooltip ("'+d7.t+'")');
+await key('End');const e7=await ev(AE);await key('Home');const h7=await ev(AE);await key('PageDown');const pd7=await ev(AE);
+ok(e7.tr===stops.names-1&&h7.tr===0&&pd7.tr===10,'End / Home / PageDown jump to the last, first and 10th row');
+await key('ArrowRight');const r7=await ev(AE),r7h=await ev('document.activeElement.getAttribute("href")');await key('ArrowDown');const rd7=await ev(AE);await key('ArrowLeft');const l7=await ev(AE);
+ok(r7.tag==='A'&&/classes\//.test(r7h)&&rd7.tag==='A'&&rd7.tr===11&&l7.tag==='STRONG'&&l7.tr===11,'ArrowRight reaches the row\'s class link, Down keeps the column, ArrowLeft returns to the name'+JSON.stringify([r7.tag,r7.tr,rd7.tag,rd7.tr,l7.tag,l7.tr]));
+await shot('ux7-after-spells-focus-1024.png');
+await key('Escape');const x7=await ev(AE);ok(!x7.tt&&x7.tag==='STRONG'&&x7.tr===11,'Esc closes the tooltip and focus stays on the spell name');
+await tab();const o7=await ev(AE);ok(o7.tr<0&&o7.tag!=='STRONG','Tab leaves the table in one press (now on '+o7.tag+' '+o7.cls.slice(0,30)+')');
+await tab(true);const b7=await ev(AE);ok(b7.tag==='STRONG'&&b7.tr===11,'Shift+Tab comes back to the same spell');
+await ev('(function(){var m=document.getElementById("sp-mine");m.checked=true;m.dispatchEvent(new Event("change",{bubbles:true}))})()');await sleep(250);
+const f7=await ev('(function(){var z=document.querySelectorAll("table.spelllook tbody [tabindex=\\"0\\"]");return {n:z.length,vis:z[0]&&z[0].closest("tr").getClientRects().length>0,cls:z[0]&&z[0].closest("tr").getAttribute("data-cls")}})()');
+ok(f7.n===1&&f7.vis&&f7.cls==='Inquisitor','"Only my class" hides the focused row: the Tab stop moves to the first visible (Inquisitor) row');
+await ev('document.querySelector("table.spelllook strong.ux-spn[tabindex=\\"0\\"]").focus()');await key('ArrowDown');
+ok(await ev('document.activeElement.closest("tr").getAttribute("data-cls")==="Inquisitor"'),'ArrowDown skips hidden rows');
+await ev('(function(){var m=document.getElementById("sp-mine");m.checked=false;m.dispatchEvent(new Event("change",{bubbles:true}))})()');await key('Escape');
+await ev('document.querySelector("table.spelllook thead th:nth-child(1)").click()');await sleep(200);
+ok(await ev('document.querySelectorAll("table.spelllook tbody [tabindex=\\"0\\"]").length===1'),'sorting keeps one Tab stop');
+await ev('document.querySelector("table.spelllook thead th:nth-child(2)").click()');await ev('localStorage.removeItem("mnm-tbl:spells.html")');
+// 1) item tooltips in 32 pieces (hash of the name); fallback to the complete item-tips.js
+{const vm=require('vm'),ctx={window:{}};for(let i=0;i<32;i++)vm.runInNewContext(fs.readFileSync(path.join(DOCS,'assets','itip-'+i+'.js'),'utf8'),ctx);
+ const all={window:{}};vm.runInNewContext(fs.readFileSync(path.join(DOCS,'assets','item-tips.js'),'utf8'),all);
+ const A=ctx.window.MNM_ITEMS,B=all.window.MNM_ITEMS,ka=Object.keys(A),mx=Math.max(...Array.from({length:32},(_,i)=>sz('itip-'+i+'.js')));
+ const h=n=>{let x=0;for(let i=0;i<n.length;i++)x=(x*31+n.charCodeAt(i))>>>0;return x%32};
+ const placed=Array.from({length:32},(_,i)=>{const c={window:{}};vm.runInNewContext(fs.readFileSync(path.join(DOCS,'assets','itip-'+i+'.js'),'utf8'),c);return Object.keys(c.window.MNM_ITEMS).every(n=>h(n)===i)}).every(Boolean);
+ ok(ka.length===Object.keys(B).length&&ka.length>5000&&ka.every(k=>JSON.stringify(A[k])===JSON.stringify(B[k]))&&placed,'item tips: '+ka.length+' items in 32 pieces (largest '+mx+' KB, was one '+sz('item-tips.js')+' KB file), each in the piece its name hashes to, same rows as the complete item-tips.js');}
+await size(1024,768);reqs=[];await go('classes/inquisitor.html');await waitFor('!!document.querySelector(".itm[data-i]")',10000);
+const itq=await ev('(function(){var a=document.querySelector(".itm[data-i]");a.scrollIntoView({block:"center",behavior:"instant"});var r=a.getBoundingClientRect();a.dispatchEvent(new MouseEvent("mouseover",{bubbles:true,clientX:r.left+5,clientY:r.top+5}));return a.getAttribute("data-i")})()');
+ok(await waitFor('(function(){var t=document.getElementById("tip");return !t.hidden&&/Slot:/.test(t.textContent)})()')&&reqs.filter(r=>/^itip-/.test(r)).length===1&&!reqs.includes('item-tips.js'),'hovering "'+itq+'" loads one piece ('+reqs.filter(r=>/^itip-/.test(r)).join()+'), not item-tips.js');
+await send('Network.setBlockedURLs',{urls:['*itip-*']});reqs=[];await go('classes/inquisitor.html');await waitFor('!!document.querySelector(".itm[data-i]")',10000);
+await ev('(function(){var a=document.querySelector(".itm[data-i]");var r=a.getBoundingClientRect();a.dispatchEvent(new MouseEvent("mouseover",{bubbles:true,clientX:r.left+5,clientY:r.top+5}))})()');
+ok(await waitFor('(function(){var t=document.getElementById("tip");return !t.hidden&&/Slot:/.test(t.textContent)})()')&&reqs.includes('item-tips.js'),'pieces missing: the tooltip falls back to the complete item-tips.js');
+await send('Network.setBlockedURLs',{urls:[]});
+// 2) search-text.js packed: decodes to exactly the old text array; snippets still work
+{const vm=require('vm'),c={window:{}},o={window:{}};vm.runInNewContext(fs.readFileSync(path.join(DOCS,'assets','search-text.js'),'utf8'),c);vm.runInNewContext(fs.readFileSync(path.join(DOCS,'assets','search-index.js'),'utf8'),o);
+ const X=c.window.MNM_STEXT,I=o.window.MNM_INDEX;ok(Array.isArray(X)&&X.length===I.length&&X.every((x,i)=>x===(I[i].x||'')),'search-text.js ('+sz('search-text.js')+' KB) decodes to the same '+X.length+' texts as the full index (byte for byte)');}
+reqs=[];await go('index.html');await ev('(function(){var q=document.getElementById("q");q.focus();q.value="glass flats";q.dispatchEvent(new Event("input",{bubbles:true}))})()');
+ok(await waitFor('window.MNM_SEARCH.full()&&!!document.querySelector("#qres mark")',15000)&&reqs.includes('search-text.js'),'search snippets with <mark> still show once the packed text loads ('+(await ev('(document.querySelector("#qres mark")||{}).textContent||""'))+')');
+await ev('document.getElementById("q").blur();document.getElementById("qres").hidden=true');
+// 3) hotbar: class spell lists per class; blocked file -> Try again; #hb= link for another class
+await ev("localStorage.setItem('mnm-class','Inquisitor');localStorage.removeItem('mnm-hotbar')");reqs=[];await go('hotbar.html');await waitFor('!!document.querySelector(".hb-pi")&&!document.getElementById("hb-app").inert',10000);
+const hbr=reqs.filter(r=>/^hb-c-/.test(r));
+ok(hbr.join()==='hb-c-inquisitor.js'&&!reqs.includes('hotbar-items.js')&&await ev('document.querySelectorAll(".hb-pi").length')>10,'hotbar: first load = hotbar-data.js ('+sz('hotbar-data.js')+' KB) + '+hbr.join()+' ('+sz('hb-c-inquisitor.js')+' KB); item picker data not loaded');
+reqs=[];await ev('(function(){var s=document.getElementById("mnm-class");s.value="Cleric";s.dispatchEvent(new Event("change",{bubbles:true}))})()');
+ok(await waitFor('!!(MNM_HB_API.state().cls.Cleric)&&!document.getElementById("hb-app").inert',10000)&&reqs.filter(r=>/^hb-c-/.test(r)).join()==='hb-c-cleric.js'&&await ev('MNM_HB_API.state().cls.Cleric.L.solo.ab.filter(Boolean).length')>=4,'switching to Cleric loads hb-c-cleric.js and suggests real Cleric spells');
+await ev("localStorage.setItem('mnm-class','Druid')");await send('Network.setBlockedURLs',{urls:['*hb-c-druid.js']});await go('hotbar.html');
+ok(await waitFor('/could not load/.test((document.querySelector(".hb-lz")||{}).textContent||"")&&!!document.querySelector(".hb-lz-retry")',8000)&&await ev('document.getElementById("hb-app").inert'),'blocked class file: "'+(await ev('(document.querySelector(".hb-lz")||{}).textContent||""')).slice(0,60)+'" + Try again; planner inert meanwhile');
+await send('Network.setBlockedURLs',{urls:[]});await ev('document.querySelector(".hb-lz-retry").click()');
+ok(await waitFor('!document.querySelector(".hb-lz")&&!document.getElementById("hb-app").inert&&!!MNM_HB_API.state().cls.Druid',8000),'Try again loads Druid and the planner works');
+const code7=await evp('(function(){var s=MNM_HB_API.state().cls.Druid;return MNM_HB_API.encode({v:1,c:"Monk",cur:"solo",L:{solo:s.L.solo},g:{},b:0,l:null})})()');
+await ev("localStorage.setItem('mnm-class','Inquisitor')");await go('index.html');reqs=[];await go('hotbar.html#hb='+code7);
+ok(await waitFor('document.getElementById("mnm-class").value==="Monk"&&!!MNM_HB_API.state().cls.Monk&&!document.getElementById("hb-app").inert',10000)&&reqs.includes('hb-c-monk.js'),'#hb= link for another class (Monk) loads that class file and applies ('+reqs.filter(r=>/^hb-c-/.test(r)).join()+')');
+await ev("localStorage.removeItem('mnm-hotbar');localStorage.setItem('mnm-class','Inquisitor')");
+// 4) Show more on Items / Mobs
+await ev('localStorage.removeItem("mnm-db:items.html");localStorage.removeItem("mnm-db:mobs.html");localStorage.removeItem("mnm-cmp")');
+await go('items.html');await waitFor(DBOK);
+ok(await ev('(function(){var m=document.querySelector(".ux-more");return !m.hidden&&/^Show 150 more$/.test(m.querySelector("button").textContent)&&/150 of \\d+ shown/.test(m.textContent)})()'),'Items: "'+await ev('document.querySelector(".ux-more").textContent')+'" under the first 150');
+await ev('document.querySelector(".ux-more-b").focus();document.querySelector(".ux-more-b").click()');await sleep(200);
+const sm=await ev('({n:document.querySelectorAll("#idb-out .idb-it").length,c:document.getElementById("idb-count").textContent,copy:!!document.querySelectorAll("#idb-out .idb-it")[200].querySelector(".ux-copy"),cmp:!!document.querySelectorAll("#idb-out .idb-it")[200].querySelector(".ux-cmp-b"),f:document.activeElement.className})');
+ok(sm.n===300&&/showing 300/.test(sm.c)&&sm.copy&&sm.cmp&&sm.f==='ux-more-b','Show more adds 150 rows ('+sm.c+'), with Copy and Compare; focus stays on the button');
+await ev('document.querySelectorAll("#idb-out .idb-it")[260].scrollIntoView({block:"center",behavior:"instant"})');
+ok(await waitFor('!document.querySelectorAll("#idb-out .idb-it")[260].classList.contains("ux-dbp")'),'the added rows fill from the pieces as they scroll into view');
+await ev('scrollTo(0,0)');await shot('ux7-after-showmore-items-1024.png');
+await go('mobs.html');await waitFor(DBOK);await ev('document.querySelector(".ux-more-b").click()');await sleep(200);
+const sm2=await ev('({n:document.querySelectorAll("#mob-out tbody tr").length,c:document.getElementById("mob-count").textContent,b:document.querySelector(".ux-more-b").textContent,copy:!!document.querySelectorAll("#mob-out tbody tr")[300].querySelector(".ux-copy")})');
+ok(sm2.n===400&&/showing 400/.test(sm2.c)&&sm2.b==='Show 200 more'&&sm2.copy,'Mobs: Show more adds 200 rows to the table ('+sm2.c+')');
+await ev('document.querySelectorAll("#mob-out tbody tr")[200].scrollIntoView({block:"start",behavior:"instant"});scrollBy(0,-200)');await waitFor('!document.querySelectorAll("#mob-out tbody tr")[200].classList.contains("ux-dbp")');
+await shot('ux7-after-showmore-1024.png');
+await go('mobs.html?mq=wolf');await waitFor(DBOK,15000);ok(await ev('document.querySelector(".ux-more").hidden'),'no Show more when every match is listed');
+// 6) item tooltips in the Mobs drop lists
+reqs=[];await go('mobs.html#'+encodeURIComponent('Foreman Vikkit'));await waitFor(DBOK,15000);await waitFor('!!document.querySelector("#mob-out a.tt-item.ux-tt-t")',15000);
+const mi=await ev('(function(){var a=document.querySelector("#mob-out a.tt-item");a.focus();return a.textContent})()');
+ok(await waitFor('(function(){var t=document.getElementById("ux-tt");return t&&!t.hidden&&/Slot:/.test(t.textContent)&&t.textContent.indexOf('+JSON.stringify(mi)+')>=0})()')&&reqs.some(r=>/^itip-/.test(r))&&!reqs.includes('item-tips.js'),'Mobs drop list: focusing "'+mi+'" shows its item tooltip (one itip piece)');
+await key('Escape');ok(await ev('document.getElementById("ux-tt").hidden&&document.activeElement.classList.contains("tt-item")'),'Esc closes it, focus stays on the link');
+ok(await ev('/items\\.html#/.test(document.querySelector("#mob-out a.tt-item").getAttribute("href"))'),'the drop link still goes to the Items database');
+// 7) compare two items (#8)
+await size(480,900);await ev('localStorage.removeItem("mnm-cmp")');await go('items.html?iq=helm');await waitFor(DBOK,15000);
+const cn=await ev('[].slice.call(document.querySelectorAll("#idb-out .ux-cmp-b"),0,2).map(function(b){return b.getAttribute("data-cmp")})');
+await ev('document.querySelectorAll("#idb-out .ux-cmp-b")[0].click()');
+ok(await ev('(function(){var b=document.querySelector(".ux-cmpbar");return !b.hidden&&/Pick one more/.test(b.textContent)&&document.querySelectorAll("#idb-out .ux-cmp-b")[0].getAttribute("aria-pressed")==="true"})()'),'Compare on one item: pressed button + "Pick one more item" bar');
+await ev('document.querySelectorAll("#idb-out .ux-cmp-b")[1].focus();document.querySelectorAll("#idb-out .ux-cmp-b")[1].click()');
+ok(await waitFor('(function(){var d=document.querySelector("dialog.ux-cmpdlg");return d&&d.open&&!!d.querySelector(".ux-cmp-t")})()',10000),'second pick opens the side-by-side dialog');
+const ct=await ev('(function(){var d=document.querySelector("dialog.ux-cmpdlg"),t=d.querySelector(".ux-cmp-t"),h=[].map.call(t.tHead.rows[0].cells,function(c){return c.textContent});return {h:h,rows:[].map.call(t.tBodies[0].rows,function(r){return r.cells[0].textContent}),f:document.activeElement.closest("dialog")===d,ovf:document.documentElement.scrollWidth>innerWidth,w:Math.round(d.getBoundingClientRect().width),tw:Math.round(t.getBoundingClientRect().width),slot:t.tBodies[0].rows[0].cells[1].textContent}})()');
+ok(ct.h[1]===cn[0]&&ct.h[2]===cn[1]&&ct.rows.some(r=>/^Slot/.test(r))&&ct.rows.some(r=>/^Stat: /.test(r))&&ct.rows.some(r=>/^Sources/.test(r))&&ct.f&&!ct.ovf&&ct.tw<=ct.w,'compare table: '+cn.join(' vs ')+'; rows '+ct.rows.map(r=>r.replace(/ \(differs\)/,'')).slice(0,6).join(', ')+'…; fits 480 ('+ct.tw+'/'+ct.w+'px); focus in the dialog');
+const cv7=await ev('(function(){var r=MNM_IDB.filter(function(d){return d[0]==='+JSON.stringify(cn[0])+'})[0],c=MNM_IDBC[Math.floor(r[1]/100)][r[1]%100];var t=document.querySelector(".ux-cmp-t");var st=[].filter.call(t.tBodies[0].rows,function(x){return /^Stat: /.test(x.cells[0].textContent)}).map(function(x){return x.cells[1].textContent}).filter(function(x){return x!=="\\u2014"});return {stats:c[5],cells:st,slot:c[2]||"no slot",shown:t.tBodies[0].rows[0].cells[1].textContent}})()');
+ok(cv7.slot===cv7.shown&&cv7.cells.every(x=>cv7.stats.indexOf(x)>=0)&&cv7.cells.join(', ')===cv7.stats.split(/,\s*/).filter(Boolean).join(', '),'values are the listed site data, unchanged (slot "'+cv7.shown+'", stats "'+cv7.stats+'")');
+ok(/cmp=/.test(await ev('location.search')),'the comparison is in the link ('+decodeURIComponent(await ev('location.search')).slice(0,80)+')');
+await shot('ux7-after-compare-480.png');
+await key('Escape');ok(await ev('!document.querySelector("dialog.ux-cmpdlg").open&&document.activeElement.classList.contains("ux-cmp-b")'),'Esc closes the dialog and returns focus to the Compare button');
+const share=await ev('location.href');await go(share.replace(/^.*?\/items\.html/,'items.html'));
+ok(await waitFor('(function(){var d=document.querySelector("dialog.ux-cmpdlg");return d&&d.open&&!!d.querySelector(".ux-cmp-t")})()',10000),'opening the shared link shows the same comparison');
+await key('Escape');await ev('document.querySelectorAll("#idb-out .ux-cmp-b")[2]&&document.querySelectorAll("#idb-out .ux-cmp-b")[2].click()');
+const c3=await ev('MNM_UX_CMP.picks()');ok(c3.length===2&&c3[0]===cn[1],'a third pick replaces the oldest ('+c3.join(' vs ')+')');await key('Escape');
+await ev('document.querySelector(".ux-cmp-clr").click()');ok(await ev('document.querySelector(".ux-cmpbar").hidden&&MNM_UX_CMP.picks().length===0&&!/cmp=/.test(location.search)'),'Clear empties the comparison and the link');
+// contrast of the new controls (Spells hint, Show more, compare bar + dialog, hotbar loading line) in all six theme x Irem combos
+const SC=s=>CSCAN.replace('document.body.querySelectorAll(\'*\')','document.querySelectorAll(\''+s+'\')');
+for(const stt of ['dark-hw','dark','light-hw','light','contrast-hw','contrast']){const [th,hw]=stt.split('-');const bad=[];
+ await ev(`localStorage.setItem('mnm-theme','${th}');localStorage.setItem('mnm-halloween','${hw?'on':'off'}');localStorage.setItem('mnm-cmp','[]')`);
+ const scan=async(lab,sel)=>{const r=await ev(SC(sel));r.fails.forEach(f=>bad.push(lab+' T '+f.r+' '+f.el));r.cfails.forEach(f=>bad.push(lab+' C '+f.r+' '+f.el))};
+ await size(1024,768);await go('spells.html');await scan('spells hint','.sptools, .sptools *');
+ await go('items.html?iq=helm');await waitFor(DBOK,15000);await scan('show more','.ux-more, .ux-more *');
+ await ev('document.querySelectorAll("#idb-out .ux-cmp-b")[0].click()');await scan('compare bar','.ux-cmpbar, .ux-cmpbar *, .ux-cmp-b');
+ await ev('document.querySelectorAll("#idb-out .ux-cmp-b")[1].click()');await waitFor('!!document.querySelector(".ux-cmp-t")');await scan('compare dialog','dialog.ux-cmpdlg, dialog.ux-cmpdlg *');
+ for(const [w,h] of [[480,900],[1024,768],[2560,1080],[3440,1440]]){await size(w,h);await sleep(80);if(await ev('document.documentElement.scrollWidth>innerWidth'))bad.push('compare overflows @'+w)}
+ await key('Escape');await ev('document.querySelector(".ux-cmp-clr").click()');
+ ok(bad.length===0,'pass 7 controls ['+stt+']: Spells hint, Show more, compare bar and dialog pass 4.5:1 text / 3:1 controls, no overflow 480-3440'+(bad.length?' — '+bad.slice(0,4).join(' | '):''));
+}
+await ev('localStorage.removeItem("mnm-theme");localStorage.removeItem("mnm-halloween");localStorage.removeItem("mnm-cmp")');await size(1024,768);
+for(const th of ['dark','light','contrast']){await ev(`localStorage.setItem('mnm-theme','${th}')`);
+ for(const [w,h] of [[480,900],[1024,768],[2560,1080],[3440,1440]]){await size(w,h);for(const u of ['spells.html','hotbar.html','items.html','mobs.html']){await go(u);
+  if(await ev('document.documentElement.scrollWidth>innerWidth'))ok(false,'pass 7: '+u+' overflows @'+w+' ('+th+')')}}}
+ok(true,'pass 7: spells, hotbar, items, mobs checked for overflow at 480/1024/2560/3440 in Dark, Light and High contrast');
+await ev('localStorage.removeItem("mnm-theme")');await size(1024,768);
+await go("classes/inquisitor.html?class=Inquisitor&race=Deep+Elf&city=Ail%27Vorith");await ev('MNM_UX_ROUTES.fillAll()');await waitFor('!document.querySelector(".sc-lz .lz-status")',15000);
  ok(await ev('[].every.call(document.querySelectorAll(".sc-route"),function(e){return !e.checkVisibility()||e.getAttribute("data-sc")==="ailvorith"})&&document.querySelectorAll(".sc-route[data-sc=ailvorith]").length>0'),'classes/inquisitor.html: Deep Elf Inquisitor in Ail\'Vorith shows Ail\'Vorith routes only');
  ok(await ev('true')&&!/serviceWorker|Notification|PushManager/.test(fs.readFileSync(path.join(DOCS,'assets','mod-ux.js'),'utf8')),'still no notifications, push or service worker');
  ok(errs.length===0,'no JS exceptions'+(errs.length?': '+errs.slice(0,2).join(' | '):''));

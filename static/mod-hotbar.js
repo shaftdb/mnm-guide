@@ -148,7 +148,23 @@ function renderPalette(){PAL=palItems();var lv=level();var mob=narrow();
       '<span class="hb-ic">'+abbr(en.n)+'</span><span class="hb-pn">'+e(en.n)+'</span><span class="hb-pm">'+(x.lv?'L'+x.lv:'')+(x.cost&&!isNaN(+x.cost)?' · '+e(x.cost)+'m':x.cost==='Innate'?' · innate':'')+(x.note?' · '+e(x.note):'')+'</span></button>'}).join('')||'<p class="dim">Nothing matches.</p>'}
 function lvlNote(){var b=band(),l=level();$('hb-level').min=b[0];$('hb-level').max=b[1];$('hb-level').value=l;
   $('hb-lvlnote').textContent='Levels '+b[0]+'–'+b[1]+' from the top bar; abilities above level '+l+' are locked. Change Levels in the top bar for other ranges.'}
-function render(){renderLayouts();lvlNote();renderBars();renderPalette();if(!$('hb-sheet').hidden)renderSheet();
+// UX pass 7: hotbar-data.js holds every class except the spell lists; each class's list loads on demand (H.lazy.cls[class] ->
+// assets/hb-c-<class>.js) before the planner renders that class. While it loads the planner is inert and says so; if it cannot
+// load, a Try again button shows. Without the split (no H.lazy) everything is in hotbar-data.js and nothing changes.
+var hbSt=null,hbWant=null,booted=false;
+function classReady(c){var k=H.classes[c];return !k||!H.lazy||Array.isArray(k.spells)}
+function needClass(c){if(classReady(c))return Promise.resolve();var f=H.lazy.cls&&H.lazy.cls[c];if(!f)return Promise.reject(new Error('no chunk'));
+  return (window.MNM_LOAD?window.MNM_LOAD(f):loadScript('assets/'+f)).then(function(){if(!classReady(c))throw new Error('missing '+f)})}
+function render(){var c=cls();
+  if(classReady(c)){if(hbSt){hbSt.remove();hbSt=null}if(app.inert){app.inert=false;app.removeAttribute('aria-busy')}render0();
+    if(!booted){booted=true;if(S.prefs.sheet)setSheet(true);if(/[?&]focus=1/.test(location.search))setFocus(true);fromHash()}return}
+  if(hbWant===c)return;hbWant=c;
+  if(!hbSt){hbSt=document.createElement('p');hbSt.className='lz-status hb-lz';hbSt.setAttribute('role','status');app.parentNode.insertBefore(hbSt,app)}
+  hbSt.classList.remove('lz-err');hbSt.textContent='Loading the '+c+' spells and abilities\u2026';app.inert=true;app.setAttribute('aria-busy','true');
+  needClass(c).then(function(){hbWant=null;render()},function(){hbWant=null;hbSt.classList.add('lz-err');
+    hbSt.innerHTML=e(c)+' spells and abilities could not load (offline?). <button type="button" class="hb-lz-retry">Try again</button>';
+    hbSt.querySelector('button').addEventListener('click',function(){render()})})}
+function render0(){renderLayouts();lvlNote();renderBars();renderPalette();if(!$('hb-sheet').hidden)renderSheet();
   $('hb-pages').value=pages();$('hb-strict').checked=!!S.prefs.strict;$('hb-future').checked=!!S.prefs.future;app.style.setProperty('--hb-sz',(+S.prefs.size||48)+'px');$('hb-size').value=S.prefs.size||48;
   $('hb-keys').setAttribute('aria-pressed',keysMode?'true':'false');app.classList.toggle('hb-armed',!!armed);
   if(armed){var st=document.querySelectorAll('.hb-slot');st.forEach(function(b){b.classList.toggle('nofit',!fits(b.getAttribute('data-s').split(':')[0],armed.e))})}}
@@ -323,7 +339,5 @@ document.addEventListener('mnm-chargen',onPick);
 function fromHash(){var hm=location.hash.match(/hb=([A-Za-z0-9_-]+)/);if(!hm)return;
   decode(hm[1]).then(function(d){applyShared(d);msg('Loaded the shared '+d.c+' layouts from the link. Undo reverts to yours.');if(history.replaceState)history.replaceState(null,'',location.pathname+location.search)}).catch(function(){msg('The link\'s hotbar code could not be read.',true)})}
 window.addEventListener('hashchange',fromHash);
-render();if(S.prefs.sheet)setSheet(true);
-if(/[?&]focus=1/.test(location.search))setFocus(true);
-fromHash();
+render();  // UX pass 7: render() also runs the one-time boot steps (sheet, ?focus=1, #hb= link) once the class data is in
 })();

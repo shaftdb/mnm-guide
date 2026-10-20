@@ -7,7 +7,7 @@ const srv=spawn('python3',['-m','http.server',String(PORT),'--bind','127.0.0.1']
 const chrome=spawn('google-chrome',['--headless=new','--no-sandbox','--disable-gpu','--hide-scrollbars','--remote-debugging-port='+(PORT+1000),'--user-data-dir=/tmp/ux-chrome-'+PORT,'about:blank'],{stdio:'ignore'});
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('data',x=>d+=x);r.on('end',()=>{try{res(JSON.parse(d))}catch(e){rej(e)}})}).on('error',rej))}
-const ALLP={home:'index.html',class:'classes/inquisitor.html',walkthrough:'walkthrough.html',market:'market.html',items:'items.html',mobs:'mobs.html',shaman:'shaman/index.html','shaman-leveling':'shaman/leveling.html'};
+const ALLP={home:'index.html',class:'classes/inquisitor.html',walkthrough:'walkthrough.html',market:'market.html',items:'items.html',mobs:'mobs.html',shaman:'shaman/index.html','shaman-leveling':'shaman/leveling.html',spells:'spells.html',hotbar:'hotbar.html'};
 // UX_PAGES=home,class,... picks pages (default: home,class,walkthrough,market); UX_SHOT_PAGES limits which get screenshots
 const PAGES=(process.env.UX_PAGES||'home,class,walkthrough,market').split(',').map(n=>[n,ALLP[n]]),SHOTP=process.env.UX_SHOT_PAGES?process.env.UX_SHOT_PAGES.split(','):null;
 const SIZES=(process.env.UX_SIZES||'480x900,1024x768,3440x1440').split(',').map(s=>s.split('x').map(Number));

@@ -59,7 +59,7 @@ keys.innerHTML='<div class="ux-sheet-hd"><h2 id="ux-keys-h">Keyboard shortcuts</
 row('<kbd>Ctrl</kbd> <kbd>K</kbd> or <kbd>/</kbd>','Quick jump: search pages, classes, zones, items; recently viewed')+row('<kbd>?</kbd>','Show this list')+row('<kbd>Esc</kbd>','Close a dialog, menu or search results')+
 row('<kbd>&uarr;</kbd> <kbd>&darr;</kbd> <kbd>Enter</kbd>','Move through results and open one')+row('<kbd>Tab</kbd> then <kbd>Enter</kbd> on a table header','Sort that column (press again to reverse)')+
 Object.keys(GO).map(function(k){var j=JUMP.filter(function(x){return x[1]===GO[k]})[0];return row('<kbd>g</kbd> <kbd>'+k+'</kbd>','Go to '+esc(j?j[0]:GO[k]))}).join('')+
-row('<kbd>t</kbd>','Back to top')+'</tbody></table><p class="dim ux-keys-n">Shortcuts are ignored while you type in a box. On touch screens use the search button in the header.</p>';
+row('<kbd>&uarr;</kbd> <kbd>&darr;</kbd> on a spell name','Spells page: previous / next spell (its details open on focus)')+row('<kbd>t</kbd>','Back to top')+'</tbody></table><p class="dim ux-keys-n">Shortcuts are ignored while you type in a box. On touch screens use the search button in the header.</p>';
 document.body.appendChild(keys);var x=keys.querySelector('.ux-sheet-x');x.addEventListener('click',function(){keys.close()});
 keys.addEventListener('click',function(e){if(e.target===keys)keys.close()});
 keys.addEventListener('keydown',function(e){if(e.key==='Tab'){e.preventDefault();x.focus()}});

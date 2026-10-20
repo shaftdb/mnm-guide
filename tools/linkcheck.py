@@ -46,7 +46,7 @@ def _walk(v, src):
     elif isinstance(v, list): [_walk(x, src) for x in v]
     elif isinstance(v, str) and re.fullmatch(r'[\w.-]+\.js', v): lazy.add((v, src))
 import json
-for f in ('quick-data.js', 'trade-data.js', 'walk-data.js'):
+for f in ('quick-data.js', 'trade-data.js', 'walk-data.js', 'hotbar-data.js'):
     fp = os.path.join(A, f)
     if not os.path.exists(fp): continue
     t = open(fp, encoding='utf-8').read(); i = t.find('"lazy":')
@@ -65,6 +65,8 @@ for idx, pfx in (('idb-index.js', 'idb-c-'), ('mdb-index.js', 'mdb-c-')):
     if not m: bad.append((idx, 'chunks', 'no piece count')); continue
     lazy.update(('%s%d.js' % (pfx, i), idx) for i in range(int(m.group(1))))
     if os.path.exists(os.path.join(A, '%s%d.js' % (pfx, int(m.group(1))))): bad.append((idx, '%s%s.js' % (pfx, m.group(1)), 'stale piece beyond the count'))
+# UX pass 7: item tooltip pieces (site.js hashes the item name into itip-0..31.js) and hotbar class files (hotbar-data.js lazy.cls)
+lazy.update(('itip-%d.js' % i, 'site.js (item tooltips)') for i in range(32))
 for f, src in sorted(lazy):
     n += 1
     if not os.path.exists(os.path.join(A, f)): bad.append((src, f, 'lazy asset missing'))

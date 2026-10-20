@@ -595,3 +595,111 @@ def render_all():
     sz = lambda f: os.path.getsize(os.path.join(OUT, 'assets', f)) // 1024 if os.path.exists(os.path.join(OUT, 'assets', f)) else -1
     print('zzz_ux pass 6: items in %d chunks (index %d KB, text %d KB), mobs in %d chunks (index %d KB, text %d KB)' % (
         ni, sz('idb-index.js'), sz('idb-text.js'), nm, sz('mdb-index.js'), sz('mdb-text.js')))
+
+# ---------------------------------------------------------------- UX pass 7: smaller on-demand data
+# 1) Item tooltips: item-tips.js (one 627 KB file, used items only) becomes 32 pieces itip-<n>.js, picked by a hash of the item
+#    name (static/site.js MNM_ITIP uses the same hash), so the first hover loads ~1/32 of it. The pieces cover every item in the
+#    site's item data, built with the same fields and code as build.py's item-tips.js (checked identical for every item that
+#    file had), so the Mobs drop lists can show item tooltips too. item-tips.js stays as the complete fallback (sorted now, so
+#    the build no longer reorders it from run to run).
+# 2) search-text.js: same strings, smaller file. Sentences that repeat across entries are stored once, and frequent words are
+#    replaced by private-use characters; the file decodes itself into window.MNM_STEXT when it loads, so site.js and the search
+#    snippets see exactly the old array. The build decodes it again in Python and compares; any difference keeps the plain file.
+# 3) Hotbar: hotbar-data.js keeps everything except each class's spell list, which moves to hb-c-<class>.js (mod-hotbar.js loads
+#    the one it needs). The item picker data (hotbar-items.js) already loaded only when the character sheet opens.
+_UX_ITN = 32
+def _ux_ih(n):
+    h, b = 0, n.encode('utf-16-le')
+    for i in range(0, len(b), 2): h = (h * 31 + b[i] + (b[i + 1] << 8)) & 0xFFFFFFFF
+    return h % _UX_ITN
+
+def _ux_tip_of(n):
+    """the same row build.py writes into item-tips.js"""
+    it = ITEMS[n]
+    flags = ' '.join(x for x in ('MAGIC' if it.get('magic') else '', 'LORE' if it.get('lore') else '', 'NO DROP' if it.get('nodrop') else '') if x)
+    acq = [re.sub('<[^>]+>', '', d) for _, _, d in acquisitions(it)][:4]
+    return [it['name'], flags, ', '.join(slots_of(it)), stat_str(it), classes_short(it).replace('<span class="badge unc">', '').replace('</span>', ''), it.get('weight') or '', acq, it.get('wiki_ts')]
+
+def _ux_split_itips():
+    fp = os.path.join(OUT, 'assets', 'item-tips.js')
+    if not os.path.exists(fp): return 0, 0
+    s = open(fp, encoding='utf8').read().strip()
+    if not s.startswith('window.MNM_ITEMS='): print('zzz_ux: item-tips.js not split (format)'); return 0, 0
+    T = json.loads(s[len('window.MNM_ITEMS='):].rstrip(';')); tips = {}
+    try:
+        for n in ITEMS: tips[n] = _ux_tip_of(n)
+        tips = json.loads(_ux_dump(tips))
+    except Exception as ex:
+        print('zzz_ux: item tips for all items skipped (%s); pieces hold the used items only' % ex); tips = {}
+    if any(tips.get(n) != v for n, v in T.items()):
+        print('zzz_ux: rebuilt item tips differ from item-tips.js; pieces hold the used items only'); tips = {}
+    if not tips: tips = T
+    keys = sorted(tips); parts = [{} for _ in range(_UX_ITN)]
+    for n in keys: parts[_ux_ih(n)][n] = tips[n]
+    for i, p in enumerate(parts):
+        _ux_js('itip-%d.js' % i, 'Object.assign(window.MNM_ITEMS=window.MNM_ITEMS||{},%s);' % _ux_dump(p))
+    _ux_js('item-tips.js', 'window.MNM_ITEMS=%s;window.MNM_ITEMS_ALL=1;' % _ux_dump({n: tips[n] for n in keys}))
+    return len(T), len(tips)
+
+_UX_SP = re.compile(r'(?<=[.!?:;)])\s+(?=\S)')
+_UX_WD = re.compile(r"[A-Za-z][A-Za-z']{3,}")
+_UX_STEXT_DEC = ('(function(Z){var W=Z.w,S=Z.s,rs=/[\\u{F0000}-\\u{FFFFD}]/gu,rw=/[\\uE000-\\uF8FF]/g;'
+                 'function d(t){return t.replace(rs,function(c){return S[c.codePointAt(0)-0xF0000]}).replace(rw,function(c){return W[c.charCodeAt(0)-0xE000]})}'
+                 'window.MNM_STEXT=Z.x.map(d)})(%s);')
+def _ux_pack_stext():
+    fp = os.path.join(OUT, 'assets', 'search-text.js')
+    if not os.path.exists(fp): return None
+    s = open(fp, encoding='utf8').read().strip()
+    if not s.startswith('window.MNM_STEXT='): print('zzz_ux: search-text.js not packed (format)'); return None
+    x = json.loads(s[len('window.MNM_STEXT='):].rstrip(';'))
+    if not all(isinstance(t, str) for t in x) or any(re.search('[\ue000-\uf8ff\U000F0000-\U000FFFFD]', t) for t in x):
+        print('zzz_ux: search-text.js not packed (private-use characters in the text)'); return None
+    cnt = {}
+    for t in sorted(set(x)):
+        for p in _UX_SP.split(t):
+            if len(p) >= 24: cnt[p] = cnt.get(p, 0) + 1
+    segs = [p for p, c in sorted(cnt.items(), key=lambda kv: (-len(kv[0].encode()) * (kv[1] - 1), kv[0])) if c > 1][:60000]
+    si = {p: i for i, p in enumerate(segs)}
+    def enc(t):
+        parts, seps = _UX_SP.split(t), _UX_SP.findall(t)
+        o = chr(0xF0000 + si[parts[0]]) if parts[0] in si else parts[0]
+        for sep, p in zip(seps, parts[1:]): o += sep + (chr(0xF0000 + si[p]) if p in si else p)
+        return o
+    e1 = [enc(t) for t in x]; wc = {}
+    for t in e1 + segs:
+        for w in _UX_WD.findall(t): wc[w] = wc.get(w, 0) + 1
+    cand = sorted(((c * (len(w) - 3) - len(w) - 3, w) for w, c in wc.items() if c >= 2), key=lambda g: (-g[0], g[1]))
+    words = [w for g, w in cand[:6400] if g > 0]; wi = {w: chr(0xE000 + i) for i, w in enumerate(words)}
+    W = lambda t: _UX_WD.sub(lambda m: wi.get(m.group(0), m.group(0)), t)
+    e2, segs2 = [W(t) for t in e1], [W(p) for p in segs]
+    def dec(t):  # the same two steps as the decoder in the file
+        t = re.sub('[\U000F0000-\U000FFFFD]', lambda m: segs2[ord(m.group(0)) - 0xF0000], t)
+        return re.sub('[\ue000-\uf8ff]', lambda m: words[ord(m.group(0)) - 0xE000], t)
+    if [dec(t) for t in e2] != x: print('zzz_ux: search-text.js not packed (decode check failed)'); return None
+    old = os.path.getsize(fp)
+    _ux_js('search-text.js', _UX_STEXT_DEC % _ux_dump({'w': words, 's': segs2, 'x': e2}))
+    return old // 1024, os.path.getsize(fp) // 1024
+
+def _ux_split_hotbar():
+    fp = os.path.join(OUT, 'assets', 'hotbar-data.js')
+    if not os.path.exists(fp): return 0
+    s = open(fp, encoding='utf8').read().strip()
+    if not s.startswith('window.MNM_HB='): print('zzz_ux: hotbar-data.js not split (format)'); return 0
+    H = json.loads(s[len('window.MNM_HB='):].rstrip(';'))
+    if not isinstance(H.get('classes'), dict) or not all(isinstance(c.get('spells'), list) for c in H['classes'].values()) or 'lazy' in H:
+        print('zzz_ux: hotbar-data.js not split (classes)'); return 0
+    dj = lambda v: _ux_dump(v).replace('</', '<\\/'); lazy = {'cls': {}}
+    for c, C in H['classes'].items():
+        f = 'hb-c-%s.js' % slug(c); lazy['cls'][c] = f
+        _ux_js(f, 'window.MNM_HB.classes[%s].spells=%s;' % (dj(c), dj(C['spells'])))
+        del C['spells']
+    H['lazy'] = lazy
+    _ux_js('hotbar-data.js', 'window.MNM_HB=%s;' % dj(H))
+    return len(lazy['cls'])
+
+_ux_prev_ra7 = render_all
+def render_all():
+    _ux_prev_ra7()
+    ni, na = _ux_split_itips(); ps = _ux_pack_stext(); nh = _ux_split_hotbar()
+    print('zzz_ux pass 7: item tips %d -> %d items in %d pieces; search-text.js %s; hotbar spells in %d class files' % (
+        ni, na, _UX_ITN, '%d -> %d KB' % ps if ps else 'unchanged', nh))

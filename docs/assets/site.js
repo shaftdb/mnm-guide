@@ -47,10 +47,18 @@ document.addEventListener('keydown',function(e){if(e.key==='/'&&!e.ctrlKey&&!e.m
 var pq=(location.search.match(/[?&]q=([^&]*)/)||[])[1];if(pq){q.value=decodeURIComponent(pq.replace(/\+/g,' '));show()}}
 // ---------- item tooltips
 var tips=window.MNM_ITEMS||null,tip=document.getElementById('tip'),tipA=null,tipE=null;
-// item-tips.js is loaded on the first item hover (UX pass 2); the tooltip says so while it loads
-function needTips(){if(tips||!window.MNM_LOAD)return;MNM_LOAD('item-tips.js').then(function(){tips=window.MNM_ITEMS||{};if(tipA&&tipE)showTip(tipA,tipE)},function(){if(tipA){tip.innerHTML='<div class="lz-status lz-err">Item stats could not load (offline?)</div>';}})}
+// item-tips.js is loaded on the first item hover (UX pass 2); the tooltip says so while it loads.
+// UX pass 7: the tips are in 32 pieces (itip-<n>.js, n = hash of the item name, same hash as modules/zzz_ux.py), so a hover loads
+// only that piece; if the pieces are missing, the complete item-tips.js is used. window.MNM_ITIP(name) -> Promise of the tip or null.
+var ITN=32,itP={},itDone={};
+function ih(n){var h=0;for(var i=0;i<n.length;i++)h=(h*31+n.charCodeAt(i))>>>0;return h%ITN}
+function itAll(){return itP.all||(itP.all=MNM_LOAD('item-tips.js').then(function(){window.MNM_ITEMS_ALL=1},function(err){delete itP.all;throw err}))}
+window.MNM_ITIP=function(n){var I=window.MNM_ITEMS;if(I&&I[n])return Promise.resolve(I[n]);if(window.MNM_ITEMS_ALL||!window.MNM_LOAD)return Promise.resolve(null);
+  var c=ih(n),p=itP[c]||(itP[c]=MNM_LOAD('itip-'+c+'.js').catch(function(err){delete itP[c];return itAll()}));
+  return p.then(function(){itDone[c]=1;return (window.MNM_ITEMS||{})[n]||null})};
+function needTips(){if(!tipA||!window.MNM_LOAD)return;var a=tipA,n=a.getAttribute('data-i');window.MNM_ITIP(n).then(function(){tips=window.MNM_ITEMS||{};if(tipA===a&&tipE)showTip(a,tipE)},function(){if(tipA===a){tip.innerHTML='<div class="lz-status lz-err">Item stats could not load (offline?)</div>';}})}
 function place(e){var w=tip.offsetWidth,h=tip.offsetHeight,x=e.clientX+16,y=e.clientY+14;if(x+w>innerWidth-8)x=e.clientX-w-16;if(y+h>innerHeight-8)y=innerHeight-h-8;tip.style.left=x+'px';tip.style.top=y+'px'}
-function showTip(a,e){if(!tips&&!window.MNM_LOAD)tips={};if(!tips){tip.innerHTML='<div class="lz-status" aria-busy="true">Loading item stats…</div>';tip.hidden=false;place(e);needTips();return}var d=tips[a.getAttribute('data-i')];if(!d){tip.hidden=true;return}
+function showTip(a,e){if(!tips&&!window.MNM_LOAD)tips={};if(!tips||(!tips[a.getAttribute('data-i')]&&!window.MNM_ITEMS_ALL&&window.MNM_LOAD&&!itDone[ih(a.getAttribute('data-i'))])){tip.innerHTML='<div class="lz-status" aria-busy="true">Loading item stats…</div>';tip.hidden=false;place(e);needTips();return}var d=tips[a.getAttribute('data-i')];if(!d){tip.hidden=true;return}
 tip.innerHTML='<div class="tn">'+esc(d[0])+'</div>'+(d[1]?'<div class="tf">'+esc(d[1])+'</div>':'')+'<div>Slot: '+esc(d[2]||'?')+'</div><div class="ts">'+esc(d[3]||'No stats listed on wiki')+'</div><div class="tc">Class: '+esc(d[4])+'</div>'+(d[5]?'<div>Weight '+esc(d[5])+'</div>':'')+'<div class="ta">'+d[6].map(esc).join('<br>')+'<br>wiki page edited '+esc(d[7]||'?')+'</div>';tip.hidden=false;place(e)}
 document.addEventListener('mouseover',function(e){var a=e.target.closest('.itm[data-i]');if(!a)return;tipA=a;tipE={clientX:e.clientX,clientY:e.clientY};showTip(a,e)});
 document.addEventListener('mousemove',function(e){if(!tip.hidden){tipE={clientX:e.clientX,clientY:e.clientY};place(e)}});

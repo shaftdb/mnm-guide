@@ -9,6 +9,8 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 let fails=0,passes=0;function ok(c,m){if(c){passes++;console.log('PASS',m)}else{fails++;console.log('FAIL',m)}}
 function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('data',x=>d+=x);r.on('end',()=>{try{res(JSON.parse(d))}catch(e){rej(e)}})}).on('error',rej))}
 const HBD=(()=>{const s=fs.readFileSync(path.join(DOCS,'assets','hotbar-data.js'),'utf8');return JSON.parse(s.slice(s.indexOf('=')+1,s.lastIndexOf(';')))})();
+// UX pass 7: spell lists live in per-class files (hb-c-<class>.js); merge them back for the checks below
+if(HBD.lazy&&HBD.lazy.cls)for(const [c,f] of Object.entries(HBD.lazy.cls)){const t=fs.readFileSync(path.join(DOCS,'assets',f),'utf8');HBD.classes[c].spells=JSON.parse(t.slice(t.indexOf('=')+1,t.lastIndexOf(';')))}
 (async()=>{
  let tabs;for(let i=0;i<50;i++){try{tabs=await getJSON('http://127.0.0.1:'+(PORT+1000)+'/json');break}catch(e){await sleep(200)}}
  const t=tabs.find(x=>x.type==='page');const ws=new WebSocket(t.webSocketDebuggerUrl);await new Promise(r=>ws.onopen=r);

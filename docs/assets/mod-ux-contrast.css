@@ -318,7 +318,7 @@ html[data-theme="contrast"] dialog.ux-sheet a{border-bottom:1px solid var(--line
 @media (prefers-reduced-motion:reduce){html[data-theme="contrast"] .lz-status::before{border-right-color:var(--gold)}}
 html[data-theme="contrast"] .ux-palbtn{border:1px solid var(--gold);border-radius:var(--r1);color:var(--gold2)}
 html[data-theme="contrast"] .ux-palbtn:hover{background:rgba(74,58,22,0.12)}
-html[data-theme="contrast"] .ux-palbtn kbd,html[data-theme="contrast"] .ux-pal kbd,html[data-theme="contrast"] .ux-keys kbd{border:1px solid var(--line);background:#050403;color:var(--ink)}
+html[data-theme="contrast"] .ux-palbtn kbd,html[data-theme="contrast"] .ux-pal kbd,html[data-theme="contrast"] .ux-keys kbd,html[data-theme="contrast"] .ux-sphint kbd{border:1px solid var(--line);background:#050403;color:var(--ink)}
 html[data-theme="contrast"] dialog.ux-pal{border:1px solid var(--gold);border-radius:var(--r3);background:var(--panel);color:var(--ink);box-shadow:0 10px 40px #000d}
 html[data-theme="contrast"] dialog.ux-pal::backdrop,html[data-theme="contrast"] dialog.ux-keys::backdrop{background:rgba(0,0,0,0.6)}
 html[data-theme="contrast"].halloween dialog.ux-pal{box-shadow:0 10px 40px #000d,0 0 18px rgba(124,242,180,.25)}
@@ -387,6 +387,23 @@ html[data-theme="contrast"] #hb-size{border:1px solid var(--ctl-line);border-rad
 html[data-theme="contrast"] .ux-pband-b{border:1px solid var(--ctl-line);border-radius:var(--r1);color:var(--gold2)}
 html[data-theme="contrast"] .ux-pband-st{color:var(--dim)}
 @media print{html[data-theme="contrast"].ux-print-one .ux-ptitle{border-bottom:1px solid #b8b8b8}}
+html[data-theme="contrast"] .ux-more-b{border:1px solid var(--ctl-line);border-radius:var(--r1);color:var(--gold2)}
+html[data-theme="contrast"] .ux-more-b:hover{border-color:var(--gold)}
+html[data-theme="contrast"] .ux-cmp-b{border:1px solid var(--ctl-line);border-radius:var(--r1);color:var(--gold2)}
+html[data-theme="contrast"] .ux-cmp-b:hover{border-color:var(--gold)}
+html[data-theme="contrast"] .ux-cmp-b[aria-pressed=true]{border-color:var(--gold);background:rgba(95,66,12,0.14)}
+html[data-theme="contrast"] .ux-cmpbar{border:1px solid var(--line);border-radius:var(--r2,6px)}
+html[data-theme="contrast"] .ux-cmpbar-l{color:var(--gold2)}
+html[data-theme="contrast"] .ux-cmp-chip{border:1px solid var(--ctl-line);border-radius:var(--r1)}
+html[data-theme="contrast"] .ux-cmp-x,html[data-theme="contrast"] .ux-cmp-open,html[data-theme="contrast"] .ux-cmp-clr,html[data-theme="contrast"] .ux-cmp-swap{border:1px solid var(--ctl-line);border-radius:var(--r1);color:var(--gold2)}
+html[data-theme="contrast"] .ux-cmp-open{border-color:var(--gold)}
+html[data-theme="contrast"] dialog.ux-cmpdlg{border:1px solid var(--gold);border-radius:var(--r3);background:var(--panel);color:var(--ink);box-shadow:0 6px 28px #000c}
+html[data-theme="contrast"] dialog.ux-cmpdlg::backdrop{background:rgba(0,0,0,0.55)}
+@media (max-width:600px){html[data-theme="contrast"] dialog.ux-cmpdlg{border-radius:var(--r3) var(--r3) 0 0}}
+html[data-theme="contrast"] .ux-cmp-t th,html[data-theme="contrast"] .ux-cmp-t td{border-bottom:1px solid var(--line)}
+html[data-theme="contrast"] .ux-cmp-t thead th{color:var(--gold2)}
+html[data-theme="contrast"] .ux-cmp-t thead th:first-child,html[data-theme="contrast"] .ux-cmp-t tbody th{color:var(--gold2)}
+html[data-theme="contrast"] .ux-cmp-ne th::before,html[data-theme="contrast"] .ux-cmp-key{color:var(--gold)}
 html[data-theme="contrast"],html[data-theme="contrast"].halloween{color-scheme:dark;
   --bg:#000;--panel:#0a0805;--panel2:#16110a;--line:#c8ae78;--ink:#fff;--dim:#ece2cc;--gold:#ffc94a;--gold2:#ffd98a;--parch:#fff4da;
   --red:#ffa08c;--teal:#8ee6cf;--magic:#a8c8ff;--lore:#ffc46a;--unc:#8a3020;--strat:#1f4d33;--glow:#ffd98a;--crystal:#ffc94a;--ctl:#ffc94a;--ctl-line:#ffc94a;--focus:#fff;--h2bg:#2a1f0e}
