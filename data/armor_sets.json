@@ -3350,7 +3350,7 @@
     "race": "ALL",
     "class": "ALL",
     "ac": "5",
-    "stats": "SV Poison +4",
+    "stats": "SV Poison +1",
     "vendor price": "28c",
     "dropped": "No",
     "player made": "Yes"
@@ -3361,13 +3361,13 @@
     "race": "ALL",
     "class": "ALL",
     "ac": "2",
-    "stats": "SV Poison +4",
+    "stats": "SV Poison +2",
     "vendor price": "37c",
     "dropped": "No",
     "player made": "Yes"
    }
   ],
-  "wiki_ts": "2026-10-05"
+  "wiki_ts": "2026-10-17"
  },
  "Steel Weapons": {
   "name": "Steel Weapons",

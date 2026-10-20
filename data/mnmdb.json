@@ -2,10 +2,10 @@
  "source": {
   "name": "mnm-db.com",
   "url": "https://mnm-db.com/",
-  "fetched": null,
+  "fetched": "2026-10-20T15:19:40Z",
   "beta_generated": "2026-10-10T23:23:11.595Z",
   "ea_generated": "2026-10-10T23:23:11.495Z",
-  "wiki_mirror_generated": "2026-10-14T07:00:59.321Z"
+  "wiki_mirror_generated": "2026-10-20T07:00:43.415Z"
  },
  "mobs": {
   "a rotting skeleton": {
@@ -31230,75 +31230,14 @@
  },
  "vendors_extra": [
   {
-   "name": "A baker",
-   "zone": "Night Harbor",
-   "location": "Night market, at a window near the forge",
+   "name": "A used weapons dealer-Faelindral",
+   "zone": "Faelindral",
+   "location": "Trader's Terrace",
    "sells": [
-    "Halva",
-    "Harissa",
-    "Knafeh",
-    "Mountain Flatbread",
-    "Szuur's Famous Foods",
-    "Water Flask"
+    "Rusty Dagger",
+    "Rusty Mace",
+    "Rusty Shortsword"
    ],
-   "source": "https://mnm-db.com/vendors.json"
-  },
-  {
-   "name": "A bowyer",
-   "zone": "Night Harbor",
-   "location": "Shortfolk Area",
-   "sells": [
-    "Arrow",
-    "Bow",
-    "Hip Quiver",
-    "Large Back Quiver",
-    "Small Back Quiver",
-    "Throwing Dagger",
-    "Recipe: Pitch-Wrapped Arrow",
-    "Recipe: Net Arrow",
-    "Recipe: Smoke Bomb Arrow"
-   ],
-   "source": "https://mnm-db.com/vendors.json"
-  },
-  {
-   "name": "Cleric Reagents",
-   "zone": "Night Harbor",
-   "location": "Wayfarers Hospice in the Sojourners camp",
-   "sells": [
-    "Blessed Beeswax Candle",
-    "Prayer Beads",
-    "Spellbook",
-    "Vial of Anointing Oil"
-   ],
-   "source": "https://mnm-db.com/vendors.json"
-  },
-  {
-   "name": "Enchanting Supplies",
-   "zone": "Night Harbor",
-   "location": "Inside the Library, in Vaclav's room (requires Silver Key of Candor)",
-   "sells": [
-    "An Introduction to Enchanting",
-    "Disenchanting Cube",
-    "Tome of Enchantment"
-   ],
-   "source": "https://mnm-db.com/vendors.json"
-  },
-  {
-   "name": "Fishing Supplies",
-   "zone": "Night Harbor",
-   "location": "Twilight Harbor at the end of the 3rd pier from the west",
-   "sells": [
-    "An Introduction to Fishing",
-    "Fishing Pole",
-    "Grub"
-   ],
-   "source": "https://mnm-db.com/vendors.json"
-  },
-  {
-   "name": "Maheed the Butcher",
-   "zone": "Night Harbor",
-   "location": "Night Market",
-   "sells": [],
    "source": "https://mnm-db.com/vendors.json"
   }
  ],
@@ -31429,12 +31368,11 @@
   {
    "name": "Arcane Surge",
    "classes": {
-    "Enchanter": 28,
-    "Necromancer": 28
+    "Wizard": 32
    },
-   "skill": "Alteration",
-   "mana": "130",
-   "description": "Fill your target's mind with a mana surge, granting them 90 Mana at the cost of 130 Mana."
+   "skill": "Evo",
+   "mana": "90",
+   "description": "Overwhelm your target with a surge of arcane energy, dealing 231 (L32) to 270 (L44) Magic Damage and decreasing their Casting Speed by 25% for 4 seconds."
   },
   {
    "name": "Aria De Largo",
@@ -31453,6 +31391,24 @@
    "skill": "Singing",
    "mana": "Innate",
    "description": "Oppress nearby targets with an echoing aria, decreasing their Movement Speed by 20% and Attack Speed by 10% for 18 seconds."
+  },
+  {
+   "name": "Aspect of the Bear",
+   "classes": {
+    "Shaman": 40
+   },
+   "skill": "Alteration",
+   "mana": "100",
+   "description": "Shapeshift into a savage bear, increasing your Wisdom by 10(L40) to 13(L51) and Health Regeneration by 4 to 5, and granting you the ability to see invisible entities and magical effects when consideri"
+  },
+  {
+   "name": "Aspect of the Spirit Bear",
+   "classes": {
+    "Shaman": 52
+   },
+   "skill": "Alteration",
+   "mana": null,
+   "description": "Shapeshift into a savage bear, increasing your Wisdom by 13(L52) to 15(L60) and Health Regeneration by 5 to 6, and granting you the ability to see invisible entities and magical effects when consideri"
   },
   {
    "name": "Beleaguer the Elements",
@@ -31504,12 +31460,10 @@
   },
   {
    "name": "Barbed Arrow",
-   "classes": {
-    "Archer": 2
-   },
+   "classes": null,
    "skill": "Might",
    "mana": null,
-   "description": "Fire a barbed arrow at your target, dealing 50% Weapon Ratio Damage plus 2 Bleed Damage every 6s for 18s."
+   "description": "Fire a barbed arrow at your target, dealing xx% Weapon Ratio Damage plus x Bleed Damage every 6s for 18s"
   },
   {
    "name": "Bat Swarm Pet Tier 1",
@@ -31690,6 +31644,13 @@
    "skill": "Conjuration",
    "mana": "?",
    "description": "Smother your target with a billow of blight, dealing 115 Poison Damage and an additional 55 damage every 6 seconds for 30 seconds."
+  },
+  {
+   "name": "Birch Sap",
+   "classes": null,
+   "skill": null,
+   "mana": null,
+   "description": "Your Disease Resistance is increased by 2 for 30 minutes."
   },
   {
    "name": "Blanket of Fire",
@@ -31953,6 +31914,13 @@
    "skill": "Evocation",
    "mana": "0",
    "description": "Expose your target to the blazing sun, dealing 12 Fire Damage."
+  },
+  {
+   "name": "Blessing of the Forest Spirits'",
+   "classes": null,
+   "skill": null,
+   "mana": null,
+   "description": "You have a chance to greatly harm unnatural threats for 4 minutes."
   },
   {
    "name": "Blistering Sun",
@@ -32289,6 +32257,13 @@
    "description": "Entreat the wild, calling forth a bask of crocodiles to temporarily fight alongside you."
   },
   {
+   "name": "Crystal Shard",
+   "classes": null,
+   "skill": "Evocation",
+   "mana": "0",
+   "description": "Hit's your target with an ice blast dealing 113 damage."
+  },
+  {
    "name": "Cure Blindness",
    "classes": {
     "Cleric": 4,
@@ -32482,6 +32457,13 @@
    "description": "Wards your target from shock, increasing their Electricity Resistance by 15 for 30 minutes."
   },
   {
+   "name": "Elemental Blast",
+   "classes": null,
+   "skill": "??",
+   "mana": "??",
+   "description": "Blasts your target for Magic Damage. With an elemental companion summoned, it also deals damage in your companion's element and applies a matching bonus effect."
+  },
+  {
    "name": "Elemental Coregate",
    "classes": {
     "Elementalist": 20
@@ -32489,6 +32471,13 @@
    "skill": "Conjuration",
    "mana": null,
    "description": "Open an elemental coregate for a target group member, summoning them to your position."
+  },
+  {
+   "name": "Elemental Empowerment",
+   "classes": null,
+   "skill": "??",
+   "mana": "??",
+   "description": "Empowers your companion, increasing its Attack Speed, giving it part of your Intelligence, and healing it over time."
   },
   {
    "name": "Elemental Fire (Fire Elemental)",
@@ -32575,15 +32564,6 @@
    "skill": "Alteration",
    "mana": null,
    "description": "Transmutes one cobalt bar to enchanted cobalt bar."
-  },
-  {
-   "name": "Enchant Copper",
-   "classes": {
-    "Enchanter": 1
-   },
-   "skill": "Alteration",
-   "mana": "5",
-   "description": "Transmutes one copper bar and one enchanted powder to enchanted copper bar."
   },
   {
    "name": "Enchant Gold",
@@ -32858,16 +32838,6 @@
    "description": "Prevents you from receiving another immunity buff for 1 minute."
   },
   {
-   "name": "Exhaustion",
-   "classes": {
-    "Shaman": 1,
-    "Enchanter": 4
-   },
-   "skill": "Alteration",
-   "mana": "8",
-   "description": "Exhaust the body of your target, decreasing their Attack Speed by 10% for 1 minutes."
-  },
-  {
    "name": "Explode Mana",
    "classes": {
     "Enchanter": 32,
@@ -32999,11 +32969,11 @@
   {
    "name": "Frenzy",
    "classes": {
-    "Fighter": 10
+    "Fighter": 13
    },
    "skill": "Might",
    "mana": "Innate",
-   "description": "Evicerate your target with a frenzy of attacks, dealing 50% plus 1 (L1) to 25 (L60) Physical Damage each and increasing attack speed by 10% for 1 minute."
+   "description": "Eviscerate your target with a frenzy of attacks, dealing 80% Weapon Ratio Damage up to five times and increasing your Attack Speed by 10% for 1 minute."
   },
   {
    "name": "Frigid Echo",
@@ -33918,6 +33888,15 @@
    "description": "Blast your target with flame, dealing 125 Fire Damage."
   },
   {
+   "name": "Leser Resilience",
+   "classes": {
+    "Cleric": 1
+   },
+   "skill": "Abjuration",
+   "mana": "10",
+   "description": "Bestow lesser resilience upon your target, increasing their maximum Health by 10 (L1) to 20 (L8) for 1 hour."
+  },
+  {
    "name": "Lesser Wisdom",
    "classes": {
     "Enchanter": 16
@@ -34391,6 +34370,15 @@
    "description": "Forcefully smash nearby targets, stunning them for 2 seconds."
   },
   {
+   "name": "Omen of Susceptiblitiy",
+   "classes": {
+    "Shaman": 16
+   },
+   "skill": "Aleration",
+   "mana": "10",
+   "description": "Make your target more susceptible to harm, decreasing their Disease, Holy, and Magic Resistance by 1(L16) to 2(L23) for 5 minutes."
+  },
+  {
    "name": "Pack of the Predator",
    "classes": {
     "Beastmaster": 1
@@ -34669,7 +34657,7 @@
    },
    "skill": "Might",
    "mana": "Innate",
-   "description": "Rends your target for 100% (L1) to 200% (L60) Weapon Damage, and an additional 1 (L1) to 60 (L60) Physical Damage. Has a 20% chance to reset the cooldown of your Frenzy and Shield Slam abilities."
+   "description": "Savagely rend your target, dealing 125% Weapon Ratio Damage plus 1 (L1) to 10 (L10) Physical Damage, increasing your Threat against them by 25 (L1) to 50 (L10), and granting you a chance to reset the "
   },
   {
    "name": "Reprisal",
@@ -34697,6 +34685,13 @@
    "skill": "Alteration",
    "mana": null,
    "description": "Revitalize the form of an elemental pet, restoring 180 Health."
+  },
+  {
+   "name": "Ring of Water Breathing",
+   "classes": null,
+   "skill": "??",
+   "mana": "??",
+   "description": "Summons a temporary ring that grants Enduring Breath while worn."
   },
   {
    "name": "Rotwyrm Strike",
@@ -34915,7 +34910,7 @@
    "classes": null,
    "skill": null,
    "mana": null,
-   "description": "STR +5"
+   "description": "STR +11"
   },
   {
    "name": "Shield Bash",
@@ -34924,7 +34919,7 @@
    },
    "skill": "Might",
    "mana": "Innate",
-   "description": "Bashes your target with your Shield for 1 (L1) to 50 (L60) Physical Damage, and also increasing your threat with the target by 50 (L1) to 500 (L60). Rend has a 10% chance to reset the cooldown of this"
+   "description": "Fiercely bash your target with a shield, dealing damage based on your shield's Armor Class plus 1 (L10) to 5 (L20) Physical Damage, increasing your Threat against them by 50 (L10) to 100 (L20), interr"
   },
   {
    "name": "Shock",
@@ -34982,6 +34977,15 @@
    "description": "Smite your target with divine energy, dealing 250 Holy Damage."
   },
   {
+   "name": "Smite the Dead",
+   "classes": {
+    "Cleric": 4
+   },
+   "skill": "Evocation",
+   "mana": "15",
+   "description": "Smite a target undead with holy light, dealing 14 Holy Damage."
+  },
+  {
    "name": "Snake Swarm Pet Tier 1",
    "classes": {
     "Beastmaster": 1
@@ -35007,6 +35011,24 @@
    "skill": "Evocation",
    "mana": "5",
    "description": "Spark your target with flames, dealing 2 Fire Damage."
+  },
+  {
+   "name": "Spark of Eath",
+   "classes": {
+    "Druid": 12
+   },
+   "skill": "Alteration",
+   "mana": "21",
+   "description": "Gift your target a spark of earth, restoring 25 health."
+  },
+  {
+   "name": "Spectral Hoarfrost",
+   "classes": {
+    "Shaman": 48
+   },
+   "skill": "Evocation",
+   "mana": "150",
+   "description": "Rend your target with spiritual frost, dealing 294 Cold Damage."
   },
   {
    "name": "Speed of Predator",
@@ -35074,15 +35096,6 @@
    "description": "Envelop your group in healing spores, restoring 10 (L10) to 225 (L52) Health every 6 seconds for 24 seconds."
   },
   {
-   "name": "Stab",
-   "classes": {
-    "Rogue": 1
-   },
-   "skill": "Might",
-   "mana": "Innate",
-   "description": "Aggressively stab your target, dealing 100% Weapon Damage plus 1 (L1) to 30 (L60) Physical Damage. When behind your target, surprise them with a decisive strike, dealing 125% (L1) to 225% (L60) Weapon"
-  },
-  {
    "name": "Staggering Winds (Air Elemental)",
    "classes": null,
    "skill": null,
@@ -35121,8 +35134,8 @@
    "name": "Strafing Barrage",
    "classes": null,
    "skill": "Might",
-   "mana": null,
-   "description": "Barrage your target with arrows, dealing xxx% Weapon Ratio Damage four times. This ability can be used while moving. This ability is channeled."
+   "mana": "0",
+   "description": "Barrage your target with arrows, dealing xxx% Weapon Ratio Damage four times. This ability can be used while moving. This ability is channeled. This ability shares a cooldown with Splintering Shot and"
   },
   {
    "name": "Strike",
@@ -35176,11 +35189,11 @@
   {
    "name": "Hammer of the Divine",
    "classes": {
-    "Cleric": 48
+    "Cleric": 40
    },
    "skill": "Conjuration",
    "mana": "125",
-   "description": "Summon a Hammer of the Divine, granting you a chance to activate Holy Smite on melee hits while equipped."
+   "description": "Summon a Hammer of the Divine, granting you a chance to activate Sanctified Hammer on melee hits while equipped."
   },
   {
    "name": "Hammer of the Heavens",
@@ -35198,12 +35211,12 @@
    },
    "skill": "Conjuration",
    "mana": "30",
-   "description": "Summon a Hammer of the Pious, granting you a chance to activate Holy Smite on melee hits while equipped. Additionally, Fulfillment grants you a chance to smite your target a second time. Holy Smite: S"
+   "description": "Summon a Hammer of the Pious, granting you a chance to activate Holy Smite on melee hits while equipped."
   },
   {
    "name": "Hammer of the Righteous",
    "classes": {
-    "Cleric": 1
+    "Cleric": 4
    },
    "skill": "Conjuration",
    "mana": "10",
@@ -35212,11 +35225,11 @@
   {
    "name": "Hammer of the Virtuous",
    "classes": {
-    "Cleric": 32
+    "Cleric": 28
    },
    "skill": "Conjuration",
    "mana": "60",
-   "description": "Summon a Hammer of the Virtuous, granting you a chance to activate Holy Smite on melee hits while equipped. Additionally, Fulfillment grants you a chance to smite your target a second time. Holy Smite"
+   "description": "Summon a Hammer of the Virtuous, granting you a chance to activate Sanctified Hammer on melee hits while equipped."
   },
   {
    "name": "Summon Rusty Dagger",
@@ -35233,7 +35246,7 @@
     "Ranger": 36
    },
    "skill": "Conjuration",
-   "mana": null,
+   "mana": "10",
    "description": "Summon a handful of cureberries, removing one Disease and one Poison effect when consumed."
   },
   {
@@ -35669,6 +35682,15 @@
    "description": "Infuse your pet with unrelenting might, increasing their Attack Speed by 30% and Strength by 10 for 1 hour."
   },
   {
+   "name": "Unyielding Winter",
+   "classes": {
+    "Shaman": 40
+   },
+   "skill": "Evocation",
+   "mana": "125",
+   "description": "Rend your target with spiritual frost, dealing 230 Cold Damage."
+  },
+  {
    "name": "Upheave the Dead",
    "classes": {
     "Necromancer": 8,
@@ -35684,6 +35706,13 @@
    "skill": "Abjuration",
    "mana": "0",
    "description": "Leech the life force of your target, dealing 1 (L1) to 30 (L60) Corruption Damage and restoring your Health by the same amount."
+  },
+  {
+   "name": "Vine Water",
+   "classes": null,
+   "skill": null,
+   "mana": null,
+   "description": "Your Disease Resistance is increased by 4 for 30 minutes."
   },
   {
    "name": "Virulent Virus",
@@ -35817,6 +35846,13 @@
    "skill": "Might",
    "mana": null,
    "description": "Fire a whistling shot at your target, dealing 90% Weapon Damage plus 1 (L1) to 20 (L60) Physical Damage, and increasing Threat by 25 (L1) to 250 (L60). This ability requires a bow and arrows. This abi"
+  },
+  {
+   "name": "Wild Blackberries",
+   "classes": null,
+   "skill": null,
+   "mana": null,
+   "description": "Your Poison Resistance is increased by 2 for 30 minutes."
   },
   {
    "name": "Winged Swarm",

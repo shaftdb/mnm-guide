@@ -7,6 +7,9 @@ const chrome=spawn('google-chrome',['--headless=new','--no-sandbox','--disable-g
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 let fails=0,passes=0;function ok(c,m){if(c){passes++;console.log('PASS',m)}else{fails++;console.log('FAIL',m)}}
 function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('data',x=>d+=x);r.on('end',()=>{try{res(JSON.parse(d))}catch(e){rej(e)}})}).on('error',rej))}
+const SC=JSON.parse(fs.readFileSync(path.join(__dirname,'..','content','source_conflicts.json'),'utf8'));
+// conflict examples come from the current data (they change every refresh as the sources catch up)
+const MOBC=(SC.conflicts.find(c=>c.type==='mob')||{}).entity,ITEMC=(SC.conflicts.find(c=>c.type==='item')||{}).entity,NCONF=SC.conflicts.length+((SC.manual||[]).length);
 (async()=>{try{
  let tabs;for(let i=0;i<50;i++){try{tabs=await getJSON('http://127.0.0.1:'+(PORT+1000)+'/json');break}catch(e){await sleep(200)}}
  const t=tabs.find(x=>x.type==='page');const ws=new WebSocket(t.webSocketDebuggerUrl);await new Promise(r=>ws.onopen=r);
@@ -34,15 +37,15 @@ function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('
  const m=await ev(`({c:document.getElementById('mob-count').textContent,t:document.getElementById('mob-out').innerText})`);
  ok(parseInt(m.c)>=30,'Mobs DB: Great Cavern Sea search finds '+m.c);
  ok(/Foreman Vikkit/.test(m.t)&&/quest NPC/.test(m.t),'Mobs DB shows GCS named and quest NPC tags');
- await ev(`(function(){var q=document.getElementById('mob-q');q.value='a Fellstone Shaman';q.dispatchEvent(new Event('input'))})()`);await sleep(50);await settle();
+ await ev(`(function(){var q=document.getElementById('mob-q');q.value=${JSON.stringify(MOBC||'')};q.dispatchEvent(new Event('input'))})()`);await sleep(50);await settle();
  ok(await ev(`!!document.querySelector('#mob-out .tag.conf')`),'Mobs DB flags a wiki/mnm-db level conflict visibly');
  await ev(`(function(){var q=document.getElementById('mob-q');q.value='a rotting skeleton';q.dispatchEvent(new Event('input'))})()`);await sleep(50);await settle();
  ok(/Seen \(mnm-db/.test(await ev(`document.getElementById('mob-out').innerText`)),'Mobs DB shows mnm-db observed drops');
  await go('items.html#'+encodeURIComponent("Vikkit's Chain Cap"),'!!window.MNM_IDB&&'+DBOK);
  const it=await ev(`document.getElementById('idb-out').innerText`);ok(/Foreman Vikkit/.test(it)&&/Great Cavern Sea/.test(it),'Items DB: Vikkit\'s Chain Cap drops from Foreman Vikkit, Great Cavern Sea');
  await go('items.html?b#'+encodeURIComponent('Bone Chips'),'!!window.MNM_IDB&&'+DBOK);ok(await ev(`/mnm-db/.test(document.getElementById('idb-out').innerText)`),'Items DB shows mnm-db drop sources');
- await go('items.html?c#'+encodeURIComponent('Alpha Wolf Fang'),'!!window.MNM_IDB&&'+DBOK);ok(await ev(`!!document.querySelector('#idb-out .tag.conf')`),'Items DB flags a source conflict visibly');
- await go('source-conflicts.html');ok(await ev(`document.querySelectorAll('table tbody tr').length>=200`),'Source conflicts page lists the conflicts');
+ if(ITEMC){await go('items.html?c#'+encodeURIComponent(ITEMC),'!!window.MNM_IDB&&'+DBOK);ok(await ev(`!!document.querySelector('#idb-out .tag.conf')`),'Items DB flags a source conflict visibly ('+ITEMC+')');}else console.log('SKIP Items DB conflict flag: no item conflicts in this refresh');
+ await go('source-conflicts.html');ok(await ev(`document.querySelectorAll('table tbody tr').length>=${NCONF}`),'Source conflicts page lists all '+NCONF+' conflicts');
  const hb=fs.readFileSync(path.join(DOCS,'assets','hotbar-items.js'),'utf8');ok(hb.includes("Vikkit's Chain Cap"),'character sheet data (hotbar-items.js) includes new GCS gear');
  ok(errs.length===0,'no JS exceptions'+(errs.length?' '+errs[0]:''));
 }catch(e){fails++;console.log('FAIL exception',e.message)}

@@ -70,6 +70,13 @@ def _conflicts_page():
             t, {'mob': 'Mobs', 'item': 'Items', 'vendor': 'Vendors', 'spell': 'Spells'}[t], len(L), ''.join(
                 '<tr><td>%s</td><td>%s</td><td><a class="ext" target="_blank" rel="noopener" href="%s">%s</a></td><td><a class="ext" target="_blank" rel="noopener" href="%s">%s</a></td><td class="dim">%s</td></tr>' % (
                     esc(c['entity']), esc(c['field']), esc(c.get('wiki_url') or WIKI), esc(str(c['wiki'])), esc(c['mnmdb_source']), esc(str(c['mnmdb'])), esc(c.get('note') or '')) for c in L)))
+    MC = json.load(open(os.path.join(CONTENT, 'source_conflicts.json'), encoding='utf8')).get('manual', []) if os.path.exists(os.path.join(CONTENT, 'source_conflicts.json')) else []
+    if MC:
+        o.append('<h2 id="manual">Patch notes and wiki pages that disagree (%d)</h2><p>Hand-checked conflicts between official patch notes and the wiki, or between two wiki pages (content/source_conflicts_manual.json). Both values are shown and cited; the site text says which one it follows %s.</p>'
+                 '<div class="tw"><table class="grid sortable filt-text"><thead><tr><th>Type</th><th>Entry</th><th>Field</th><th>Source A</th><th>Source B</th><th>Note</th></tr></thead><tbody>%s</tbody></table></div>' % (
+            len(MC), '<span class="badge unc">unverified</span>', ''.join(
+                '<tr><td>%s</td><td>%s</td><td>%s</td><td>%s: <a class="ext" target="_blank" rel="noopener" href="%s">%s</a></td><td>%s: <a class="ext" target="_blank" rel="noopener" href="%s">%s</a></td><td class="dim">%s</td></tr>' % (
+                    esc(c['type']), esc(c['entity']), esc(c['field']), esc(c['a_label']), esc(c['a_url']), esc(str(c['a'])), esc(c['b_label']), esc(c['b_url']), esc(str(c['b'])), esc(c.get('note') or '')) for c in MC)))
     return ''.join(o)
 _m_prev_bc = build_content
 def build_content():

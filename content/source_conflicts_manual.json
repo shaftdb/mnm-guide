@@ -1,0 +1,96 @@
+{
+ "_note": "Hand-entered conflicts between official patch notes and the wiki, or between wiki pages. Never generated: tools/mnmdb_merge.py copies this list into content/source_conflicts.json under \"manual\". Both values are kept and cited; nothing is overwritten.",
+ "conflicts": [
+  {
+   "type": "patch-vs-wiki",
+   "entity": "Thunderous Vocalization (Bard)",
+   "field": "damage",
+   "a_label": "Patch 0.30.3.2 (Oct 19, 2026)",
+   "a": "base damage 38 → 42",
+   "a_url": "https://account.monstersandmemories.com/community/patch_notes/62",
+   "b_label": "Wiki Bard (rev 82002)",
+   "b": "\"dealing 60 Magic Damage, with 150% (L1) to 350% (L60) damage variance\"",
+   "b_url": "https://monstersandmemories.miraheze.org/wiki/Bard",
+   "note": "The two may describe different numbers (base vs listed); site shows both. UNVERIFIED which the tooltip shows in game.",
+   "added": "2026-10-20"
+  },
+  {
+   "type": "patch-vs-wiki",
+   "entity": "Unifying Anthem (Bard)",
+   "field": "availability",
+   "a_label": "Patch 0.30.3.2 (Oct 19, 2026)",
+   "a": "no longer sold by merchants",
+   "a_url": "https://account.monstersandmemories.com/community/patch_notes/62",
+   "b_label": "Wiki Bard (rev 82002)",
+   "b": "location Vendor; \"currently disabled (as of 3/11/2026)\"",
+   "b_url": "https://monstersandmemories.miraheze.org/wiki/Bard",
+   "note": "Site follows the patch: not sold.",
+   "added": "2026-10-20"
+  },
+  {
+   "type": "patch-vs-wiki",
+   "entity": "Disengagement (Archer)",
+   "field": "effect",
+   "a_label": "Patch 0.30.3.2 (Oct 19, 2026)",
+   "a": "dethreat in a point-blank area around the caster, no target needed, will not aggro non-aggressive NPCs",
+   "a_url": "https://account.monstersandmemories.com/community/patch_notes/62",
+   "b_label": "Wiki Archer (rev 81280)",
+   "b": "\"Launch yourself away from your target, decreasing your Threat against them by 150 (L1) to 1500 (L60)\"",
+   "b_url": "https://monstersandmemories.miraheze.org/wiki/Archer",
+   "note": "Site follows the patch for how it targets; the wiki threat numbers are kept (not in the note).",
+   "added": "2026-10-20"
+  },
+  {
+   "type": "patch-vs-wiki",
+   "entity": "Aura of Resistance (Inquisitor)",
+   "field": "threat",
+   "a_label": "Patch 0.30.3.2 (Oct 19, 2026)",
+   "a": "includes a 10% bonus to generated threat",
+   "a_url": "https://account.monstersandmemories.com/community/patch_notes/62",
+   "b_label": "Wiki Inquisitor (rev 76001)",
+   "b": "description lists spell damage reduction and resists only, no threat bonus",
+   "b_url": "https://monstersandmemories.miraheze.org/wiki/Inquisitor",
+   "note": "Wiki page predates the patch.",
+   "added": "2026-10-20"
+  },
+  {
+   "type": "patch-vs-wiki",
+   "entity": "Recuperate (Ranger)",
+   "field": "requirements",
+   "a_label": "Patch 0.30.3.2 (Oct 19, 2026)",
+   "a": "cannot be cast in combat; lost on entering combat; \"no longer any other limitations\"",
+   "a_url": "https://account.monstersandmemories.com/community/patch_notes/62",
+   "b_label": "Wiki Ranger (rev 83798)",
+   "b": "\"Can only be used while warmed by a campfire and out of combat\"",
+   "b_url": "https://monstersandmemories.miraheze.org/wiki/Ranger",
+   "note": "UNVERIFIED whether the campfire requirement still applies: the note calls it a rest \"around the campfire\" but also says there are no other limitations.",
+   "added": "2026-10-20"
+  },
+  {
+   "type": "patch-vs-wiki",
+   "entity": "Rich Tin Vein (Mining)",
+   "field": "skill-up range",
+   "a_label": "Patch 0.30.3.2 (Oct 19, 2026)",
+   "a": "Rich Tin nodes now skill Mining up to Iron",
+   "a_url": "https://account.monstersandmemories.com/community/patch_notes/62",
+   "b_label": "Wiki Skill Mining (rev 82986)",
+   "b": "Rich Tin Vein min 85, trivial 135 (Iron Vein min 150)",
+   "b_url": "https://monstersandmemories.miraheze.org/wiki/Skill_Mining",
+   "note": "New Rich Tin trivial not stated in the note: UNVERIFIED.",
+   "added": "2026-10-20"
+  },
+  {
+   "type": "wiki-vs-wiki",
+   "entity": "Night Harbor Enchanter guild master",
+   "field": "name",
+   "a_label": "Wiki Night Harbor (rev 83168) + Enchanter Starter Quest (rev 80831)",
+   "a": "Master Wincog",
+   "a_url": "https://monstersandmemories.miraheze.org/wiki/Night_Harbor",
+   "b_label": "Wiki Enchanter (rev 82930) + Master Khaila page (rev 40628)",
+   "b": "Master Khaila",
+   "b_url": "https://monstersandmemories.miraheze.org/wiki/Enchanter",
+   "note": "Already recorded in data/start_audit.json (Oct 18); listed here so all hand-checked conflicts are on one page. Both shown as UNVERIFIED.",
+   "added": "2026-10-20"
+  }
+ ]
+}

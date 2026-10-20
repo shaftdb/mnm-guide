@@ -2,21 +2,28 @@
  "Ail'vorith Exiles": {
   "name": "Ail'vorith Exiles",
   "url": "https://monstersandmemories.miraheze.org/wiki/Ail%27vorith_Exiles",
-  "revid": 75864,
+  "revid": 80235,
   "paras": [],
   "tables": [],
   "heads": [],
   "links": [
+   "A Deepgulp berserker",
    "A Deepgulp explorer",
+   "A Deepgulp hunter",
+   "A Deepgulp mystic",
    "A Deepgulp runt",
-   "Ail'Vorith"
+   "A Deepgulp shaman",
+   "A Deepgulp warrior",
+   "Ail'Vorith",
+   "Clan Deepgulp",
+   "Cook Deepbite"
   ],
   "implemented": true
  },
  "Ardent Keepers": {
   "name": "Ardent Keepers",
   "url": "https://monstersandmemories.miraheze.org/wiki/Ardent_Keepers",
-  "revid": 28328,
+  "revid": 81082,
   "paras": [
    "The Ardent Keepers are the beastmasters and rangers of Faelindral, sworn wardens of Evershade Weald's ancient forests and surrounding lands. ; Their oath is to preserve the natural order between the beasts of the Weald and Faelindral, as well as protect the land from encroachment. ; They have organized with the Wyrdguard to combat the Fellstone orc incursion."
   ],
@@ -45,7 +52,7 @@
       "Mobs you can kill to lower the faction"
      ],
      [
-      "{{#if: {} | {} |* none}}",
+      "{{#if: {} | {} | * A shady farmer }}",
       "{{#if: {} | {} |* none}}"
      ]
     ]
@@ -53,6 +60,7 @@
   ],
   "heads": [],
   "links": [
+   "A shady farmer",
    "Beastmaster Starter Quest (Faelindral)",
    "Culling the Fellstone",
    "Diseased Wolf Pelts for Baewyn Mossfang",
@@ -68,7 +76,7 @@
  "Azure Veils": {
   "name": "Azure Veils",
   "url": "https://monstersandmemories.miraheze.org/wiki/Azure_Veils",
-  "revid": 23604,
+  "revid": 82154,
   "paras": [],
   "tables": [],
   "heads": [],
@@ -94,7 +102,7 @@
  "Bends Garrison": {
   "name": "Bends Garrison",
   "url": "https://monstersandmemories.miraheze.org/wiki/Bends_Garrison",
-  "revid": 32930,
+  "revid": 80817,
   "paras": [],
   "tables": [],
   "heads": [],
@@ -105,6 +113,7 @@
    "Darius Brask",
    "Eamon Kassir",
    "Night Harbor",
+   "Riverbend Gang Wars Quest",
    "Sahir Muzalal",
    "Vikar Brask",
    "Cormac Brask"
@@ -304,7 +313,7 @@
  "Circle of Scarce Rains": {
   "name": "Circle of Scarce Rains",
   "url": "https://monstersandmemories.miraheze.org/wiki/Circle_of_Scarce_Rains",
-  "revid": 78743,
+  "revid": 82155,
   "paras": [],
   "tables": [],
   "heads": [],
@@ -503,11 +512,12 @@
  "Citizens of Gizmopolis": {
   "name": "Citizens of Gizmopolis",
   "url": "https://monstersandmemories.miraheze.org/wiki/Citizens_of_Gizmopolis",
-  "revid": 80018,
+  "revid": 80146,
   "paras": [],
   "tables": [],
   "heads": [],
   "links": [
+   "A deep gnome researcher",
    "A synthetic ooze",
    "Ail'Vorith"
   ],
@@ -963,6 +973,25 @@
   ],
   "implemented": true
  },
+ "Deep Sea Goblins": {
+  "name": "Deep Sea Goblins",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Deep_Sea_Goblins",
+  "revid": 83230,
+  "paras": [],
+  "tables": [],
+  "heads": [],
+  "links": [
+   "A goblin stone-sorter",
+   "Boss Gurrok",
+   "Foreman Vikkit",
+   "Great Cavern Sea",
+   "Skerrick",
+   "A goblin diver",
+   "A goblin shoreguard",
+   "A camp raider"
+  ],
+  "implemented": true
+ },
  "Deepcut Bandits": {
   "name": "Deepcut Bandits",
   "url": "https://monstersandmemories.miraheze.org/wiki/Deepcut_Bandits",
@@ -1088,6 +1117,20 @@
    "Quartermaster Boothroy",
    "Timmon Bell",
    "Tomb of the Last Wyrmsbane"
+  ],
+  "implemented": true
+ },
+ "Dragonkind": {
+  "name": "Dragonkind",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Dragonkind",
+  "revid": 82207,
+  "paras": [],
+  "tables": [],
+  "heads": [],
+  "links": [
+   "A chasm drake",
+   "Keeper's Bight",
+   "Vale of Zintar"
   ],
   "implemented": true
  },
@@ -1343,6 +1386,19 @@
   ],
   "implemented": true
  },
+ "House Unheard": {
+  "name": "House Unheard",
+  "url": "https://monstersandmemories.miraheze.org/wiki/House_Unheard",
+  "revid": 83229,
+  "paras": [],
+  "tables": [],
+  "heads": [],
+  "links": [
+   "Blind Midden",
+   "Crude Prison Shiv (Quest)"
+  ],
+  "implemented": true
+ },
  "House Vael'xirith": {
   "name": "House Vael'xirith",
   "url": "https://monstersandmemories.miraheze.org/wiki/House_Vael%27xirith",
@@ -1551,6 +1607,21 @@
    "A Mezzatrian broodling",
    "Evershade Weald",
    "Mezzatrian Boneweaver"
+  ],
+  "implemented": true
+ },
+ "Midden Underground Dregs": {
+  "name": "Midden Underground Dregs",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Midden_Underground_Dregs",
+  "revid": 83228,
+  "paras": [],
+  "tables": [],
+  "heads": [],
+  "links": [
+   "Ail'Vorith",
+   "Blind Midden",
+   "Clan Deepgulp",
+   "Midden Mark Menu (Quest)"
   ],
   "implemented": true
  },
@@ -1923,23 +1994,29 @@
  "Red Mantles": {
   "name": "Red Mantles",
   "url": "https://monstersandmemories.miraheze.org/wiki/Red_Mantles",
-  "revid": 76823,
+  "revid": 83142,
   "paras": [],
   "tables": [],
   "heads": [],
   "links": [
+   "A Sangrel arcanist",
+   "A Sangrel entangler",
+   "A Sangrel grappler",
+   "A Sangrel hunter",
+   "A Sangrel shadowblade",
+   "A Sangrel striker",
    "A cracked beetle",
    "A dusty scarab",
    "A hardened scarab",
    "A pristine beetle",
+   "A shady farmer",
    "Ashira Infiltrator Heads",
    "Dhajr Spitemaw",
    "Keeper's Bight",
    "Night Harbor",
    "Shaded Dunes",
-   "Wanted: Ayip & Yapala",
-   "Shady farmer",
-   "Sangrel"
+   "Thoren Blackwood",
+   "Wanted: Ayip & Yapala"
   ],
   "implemented": true
  },
@@ -1973,7 +2050,7 @@
  "Sangrel Fist": {
   "name": "Sangrel Fist",
   "url": "https://monstersandmemories.miraheze.org/wiki/Sangrel_Fist",
-  "revid": 41783,
+  "revid": 83121,
   "paras": [],
   "tables": [],
   "heads": [],
@@ -1984,7 +2061,9 @@
    "A Sangrel hunter",
    "A Sangrel shadowblade",
    "A Sangrel striker",
-   "Mirella Nighthorn"
+   "A shady farmer",
+   "Mirella Nighthorn",
+   "Thoren Blackwood"
   ],
   "implemented": true
  },
@@ -2023,7 +2102,7 @@
  "Seekers of the Lost Eye": {
   "name": "Seekers of the Lost Eye",
   "url": "https://monstersandmemories.miraheze.org/wiki/Seekers_of_the_Lost_Eye",
-  "revid": 78744,
+  "revid": 82153,
   "paras": [],
   "tables": [],
   "heads": [],
@@ -2034,12 +2113,12 @@
    "A skintaker ritualist",
    "A skintaker sneak",
    "Errol Shrewtender",
+   "Eskander Akhtar",
    "Ixelda Jackalfang",
    "Little Tamsah, Big Appetite",
    "Masoumeh Akhtar",
    "Shaman Starter Quest (Night Harbor)",
-   "Sungreet Strand",
-   "Eskander Akhtar"
+   "Sungreet Strand"
   ],
   "implemented": true
  },
@@ -2362,7 +2441,7 @@
  "Village of Penshaw": {
   "name": "Village of Penshaw",
   "url": "https://monstersandmemories.miraheze.org/wiki/Village_of_Penshaw",
-  "revid": 48741,
+  "revid": 81085,
   "paras": [],
   "tables": [],
   "heads": [],
@@ -2370,6 +2449,7 @@
    "A poacher bruiser",
    "A poacher herbalist",
    "A poacher pathfinder",
+   "A shady farmer",
    "Brukk Goldgut",
    "Keeper's Bight",
    "Left Behind",

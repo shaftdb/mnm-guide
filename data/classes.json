@@ -2,7 +2,7 @@
  "Archer": {
   "name": "Archer",
   "url": "https://monstersandmemories.miraheze.org/wiki/Archer",
-  "revid": 74182,
+  "revid": 81280,
   "description": "Archers are highly specialized ranged combatants, who devote themselves to mastering the use of the bow. These masters of wood and steel are able to utilize a broad arsenal of ranged attacks. Archers are capable of mortally sniping from afar, penetrating the strongest armor, debilitating moving enemies, and even imbue their arrows with elemental energies. Adventuring parties are smart to employ the specialized, but highly capable combatants. This is good, as all but the most highly skilled Archer may, at times, find it difficult to adventure alone. Archers typically wear leather armor and can wield all ranged weapons and most melee weaponry. All Archers start with the class specific trait of High Ground, which increases your damage dealt with a bow when above your target, approximate 5%. A ranged based damage class, possessing situational abilities.",
   "modifier": "+2 STR, +4 DEX, +2 AGI.",
   "bonus_advice": null,
@@ -46,7 +46,7 @@
    },
    {
     "spell name": "Skirmisher",
-    "spell description": "Adopt the role of a skirmisher, increasing your Movement Speed by 5%, reducing the cooldown of Strafing Barrage by 20%, and reducing the cast time of all abilities by 20%. This ability persists until cancelled.",
+    "spell description": "Adopt the role of a skirmisher, increasing your Movement Speed by 10%, reducing the cooldown of Strafing Barrage by 20%, and reducing the cast time of all abilities by 20%. This ability persists until cancelled.",
     "class": "Sub",
     "location": "Vendor",
     "mana": "Innate",
@@ -821,7 +821,7 @@
  "Bard": {
   "name": "Bard",
   "url": "https://monstersandmemories.miraheze.org/wiki/Bard",
-  "revid": 79747,
+  "revid": 82002,
   "description": "Bards are traveling musicians who learn to manifest song as a form of magic. Unlike the other great magic users of Eth-ur, who focus in a specific field, bardic magic is very diverse in its origins and capabilities. While a Bard’s song may not be as strong as certain magical spells, the experienced minstrel can bring to bear a solution for nearly any problem. Within an adventuring party a Bard is often sought out for their ability to enhance and inspire any allies. The time spent in taverns makes most Bards decent melee combatants, and quite capable of other roguish skills. When adventuring alone a clever Bard can find success in leveraging their wide range of skills and songs. Bards are capable of wielding nearly all weapons, instruments, and alcohol filled flagons, as well as wearing most types of armor.",
   "modifier": "+1 STR, +3 DEX, +4 CHA.",
   "bonus_advice": "Listed below is the recommended allocation of bonus points by race. Since Charisma is a Bard’s main attribute, you should focus on maximizing it whenever possible. Most of your songs' effectiveness are tied to it. The remaining points are flexible, dexterity is supposed to be tied to missed notes but it is unknown how large of an effect this has. Because bards are often pulling for a group many players will opt to put their remaining points into stamina instead so that they can survive long enough to get back within range of the healer should problems arise. * Note: Mana total for a bard is now tied to charisma instead of int or wis like other classes. Dwarf: +7 Charisma, 3 flex points Halfling: +7 Charisma, 3 flex points Human: +6 Charisma, 4 flex points Wood Elf: +7 Charisma, 3 flex points",
@@ -937,7 +937,7 @@
    },
    {
     "spell name": "Vellicosa's Fanfare",
-    "spell description": "Blast your target with an ominous fanfare, dealing 8 (L8) to 100 (L60) Magic Damage every 6 seconds for 18 seconds.",
+    "spell description": "Blast your target with an ominous fanfare, dealing 8 (L8) to 60 (L60) Magic Damage every 6 seconds for 18 seconds.",
     "class": "Brass",
     "location": "Vendor",
     "mana": "0",
@@ -1054,7 +1054,7 @@
    },
    {
     "spell name": "Vellicosa's Tantara",
-    "spell description": "Overwhelm your target with unnerving riffs, dealing 12 (L16) to 100 (L60) Magic Damage every 6 seconds for 18 seconds. This ability stacks with Vellicosa's Fanfare, and will deal an additional 2 (L16) to 20 (L60) damage when afflicted by both.",
+    "spell description": "Overwhelm your target with unnerving riffs, dealing 12 (L16) to 60 (L60) Magic Damage every 6 seconds for 18 seconds. This ability stacks with Vellicosa's Fanfare, and will deal an additional 2 (L16) to 12 (L60) damage when afflicted by both.",
     "class": "Brass",
     "location": "Vendor",
     "mana": "0",
@@ -4109,7 +4109,7 @@
  "Druid": {
   "name": "Druid",
   "url": "https://monstersandmemories.miraheze.org/wiki/Druid",
-  "revid": 80348,
+  "revid": 82130,
   "description": "Druids are protectors of the natural balance of Eth-ur. They are primarily spellcasters. Druids are adept healers, skillful augmenters, and competent wielders of nature’s destructive powers. Druidic magic on Eth-ur primarily employs elements from nature, but may harness astral powers as well. Offensively, these powers reflect nature’s most destructive elements. Situationally, the Druid truly shines: they may also erode a foe’s resistances to spells, provide various magical enhancements to allies, summon the aid of natural beings, and even harness their connection to other planes to facilitate teleportation. A Druid’s diverse capabilities allow them to fulfill many different roles amongst adventuring parties. And through clever use of their magic, they are often seen braving the wilds of Eth-ur alone. ; ; Long ago wood elven druids learned to see into the veins between the planes known as the wyrding. By traveling through druid rings or wyrd gates druids can move through the wyrding to teleport between locations1. ; ; Druids prefer to wear leather armor while wielding blunt weaponry or specialized blades, such as sickles and scimitars. ; ; 1: https://youtu.be/YOnTUusgDnE?t=2844",
   "modifier": "+2 AGI, +4 WIS, +2 CHA.",
   "bonus_advice": "Listed below is the recommended allocation of bonus points by race. Since Wisdom is a Druid’s main attribute, you should focus on maximizing it whenever possible. Wisdom is directly tied to your healing spells effectiveness and total mana. After that, prioritize Charisma. It helps with the Druid's charm line of spells, along with a few other spell lines. Finally, put a point into Dexterity if you have any left. It affects hit rate across the board and increases your proc chance. Goblin: +1 Dexterity, +6 Wisdom, and +3 Charisma Halfling: +3 Dexterity, +3 Wisdom, and +4 Charisma Human: +2 Dexterity, +7 Wisdom, and +1 Charisma Wood Elf: +1 Dexterity, +7 Wisdom, and +2 Charisma",
@@ -4325,7 +4325,7 @@
    {
     "spell name": "Summon Drink",
     "spell description": "Summon 1 (L8) to 4 (L13) flasks of water, providing you with sustenance.",
-    "class": "con",
+    "class": "Con",
     "location": "Vendor",
     "mana": "10",
     "level": 8,
@@ -4334,7 +4334,7 @@
    {
     "spell name": "Summon Food",
     "spell description": "Summon 1 (L8) to 4 (L13) slices of bread, providing you with sustenance.",
-    "class": "con",
+    "class": "Con",
     "location": "Vendor",
     "mana": "10",
     "level": 8,
@@ -4342,8 +4342,8 @@
    },
    {
     "spell name": "Swarm of Mites",
-    "spell description": "SEngulf your target in a swarm of mites dealing 6 Poison Damage every 6 seconds for 1 minute.",
-    "class": "con",
+    "spell description": "Engulf your target in a swarm of mites dealing 6 Poison Damage every 6 seconds for 1 minute.",
+    "class": "Con",
     "location": "Vendor",
     "mana": "8",
     "level": 8,
@@ -5667,7 +5667,7 @@
  "Elementalist": {
   "name": "Elementalist",
   "url": "https://monstersandmemories.miraheze.org/wiki/Elementalist",
-  "revid": 79525,
+  "revid": 82823,
   "description": "Elementalists are dedicated magic users who devote themselves to the study and mastery of elemental forces both on Eth-ur, and throughout the greater planes. An Elementalist is rarely without an elemental companion, and much of their magical ability is devoted to empowering or otherwise utilizing these companions in different ways. That being said, an Elementalist’s magic is very capable raining chaos and maelstrom upon their enemies directly. As a result of their interest and study of the elemental planes, Elementalists have learned the ability to conjure various useful, though sometimes strange, items with a myriad of different uses. Within adventuring parties it is most often the role of an Elementalist and their elemental companions to bring as much harm to the group’s foes as possible. Though, with the aid of their elemental allies, an Elementalist never truly adventures alone. ; ; Elementalists may wear cloth armor and have limited access to melee weaponry, often preferring staves, wands, and daggers. ; ; *Water pet is a Wizard, has a mana regen aura (Fount of Mana; since Beta 0.29 this stacks with Primary Mana Regeneration buffs), cast a nuke on target, tied lowest HP *Fire pet is a Wizard, has a damage shield + spell haste aura, cast a nuke on target, tied lowest HP *Air pet is a Monk, aura granting a chance to strike your target twice on melee and ranged attacks, cast stun on target, Monk Round Kick, medium HP, highest DPS *Earth pet is a Fighter, has HP Buff aura, cast root on target, provoke, highest HP *Since Beta 0.29, all four pet types are unlocked by level 12, and summons gain a new rank every 16 levels; each rank summons a pet matching your level. Note that every summoning costs reagents specifically Crushed Malachite sold by the Elemental quartermaster",
   "modifier": "+4 STA, +4 INT.",
   "bonus_advice": "Below is the recommended allocation of bonus points by race. Since Intelligence is a Elementalist’s main attribute, you should focus on maximizing it whenever possible. Your spell damage and mana total is directly tied to it. After that, prioritize Stamina. It gives you extra HP and a bit of stun resistance. Finally, put a point or two into Dexterity. It affects hit rate across the board and increases your proc chance. Dwarf: +2 Stamina, +1 Dexterity, and +7 Intelligence Gnome: +3 Stamina, +2 Dexterity, and +5 Intelligence Human: +2 Stamina, +1 Dexterity, and +7 Intelligence Ogre: +1 Stamina, +1 Dexterity, and +8 Intelligence",
@@ -7117,13 +7117,14 @@
    }
   ],
   "class_quests": [
-   "Elementalist Starter Quest (Night Harbor)"
+   "Elementalist Starter Quest (Night Harbor)",
+   "Underdocks Starter Quest"
   ]
  },
  "Enchanter": {
   "name": "Enchanter",
   "url": "https://monstersandmemories.miraheze.org/wiki/Enchanter",
-  "revid": 81186,
+  "revid": 82930,
   "description": "Enchanters are subtle spellcasters who focus their study on magic which affects the mind and manipulates the ephemeral. Above all else, the Enchanter specializes in control and subterfuge. An Enchanter’s spellbook is diverse and situational. It is here, in those unique situations that the application of their magics is most powerful. Their greatest strength in battle is their ability to assault the minds of their foes causing them harm, incapacitating them momentarily, or turning them against their allies. Enchanters are also capable of imbuing their allies' weapons with magical effects, causing them to inflict greater harm with their blows. An Enchanter is most at home when adventuring with others, and their role within adventuring parties is primarily that of one who controls the battlefield. When adventuring alone an Enchanter may encounter some difficulty, but clever application of their unique magic may ease that burden. ; ; Enchanters typically wear cloth armor and tend to wield staves, wands, and daggers.",
   "modifier": "+4 INT, + 4 CHA.",
   "bonus_advice": "Below is the recommended allocation of bonus points by race. Since Intelligence is a Enchanter’s main attribute, you should focus on maximizing it whenever possible. Your spell damage and mana total is directly tied to it. Very close behind it is Charisma. As an Enchanter you are the best crowd controller in the game, and both your Charm and Mesmerize line of skills rely on this stat. Dwarf: +5 Intelligence and +5 Charisma Gnome: +5 Intelligence and +5 Charisma Goblin: +5 Intelligence and +5 Charisma Human: +7 Intelligence and +3 Charisma",
@@ -7132,7 +7133,7 @@
    {
     "spell name": "Enchant Copper Bar",
     "spell description": "Enchants a Copper Bar , transmuting it into an Enchanted Copper Bar . Requires Enchanted Powder .",
-    "class": "Alt",
+    "class": "Con",
     "location": "Vendor",
     "mana": "5",
     "level": 1,
@@ -7159,7 +7160,7 @@
    {
     "spell name": "Mesmerize",
     "spell description": "Mesmerizes your target, putting them to Sleep for 30 seconds. There is a very small chance that the enemy target will forget about your aggression. This effect is removed by melee or spell damage.",
-    "class": "Con",
+    "class": "Alt",
     "location": "Vendor",
     "mana": "15",
     "level": 1,
@@ -7567,6 +7568,15 @@
     "class": "Alt",
     "location": "Vendor",
     "mana": "20",
+    "level": 16,
+    "section": "Level 16"
+   },
+   {
+    "spell name": "Exhaustion",
+    "spell description": "Exhaust the body of your target, decreasing their Attack Speed by 20% for 1 minute.",
+    "class": "Alt",
+    "location": "Vendor",
+    "mana": "",
     "level": 16,
     "section": "Level 16"
    },
@@ -8598,7 +8608,7 @@
  "Fighter": {
   "name": "Fighter",
   "url": "https://monstersandmemories.miraheze.org/wiki/Fighter",
-  "revid": 80191,
+  "revid": 83274,
   "description": "Fighters are those who strive to become masters of the multitude of arms and armor that one may find through their travels. They excel at being at the heart of combat, taking blows for their allies and striking back in kind. Fighters are found in nearly every culture one may encounter while travelling across the continent of Aêthoril. A unifying link between all Fighters is the courage to stand toe-to-toe with even the greatest monsters of Eth-ur. As such, their commanding presence in battle can control the flow of the chaos by directing attention onto themselves. Most often a Fighter’s equipment is chosen based on what situations they may find themselves in, meaning that veteran Fighters often aim to have a diverse arsenal at their disposal. However, in terms of weaponry, many Fighters prefer to enter combat with a weapon in each hand, should the situation allow. While adventuring a Fighter should find themselves most comfortable when in the company of others. The world of Eth-ur is a dangerous place, and skill in battle alone can only get you so far when adventuring by yourself. Besides, without a group of companions in tow, who will carry their ale? ; ; Fighters may wear all armor types and are capable of wielding all weapons.",
   "modifier": "+4 STR, +3 STA, +1 AGI.",
   "bonus_advice": null,
@@ -8616,7 +8626,16 @@
    {
     "spell name": "Rend I",
     "spell description": "Savagely rend your target, dealing 125% Weapon Ratio Damage plus 1 (L1) to 10 (L10) Physical Damage, increasing your Threat against them by 25 (L1) to 50 (L10), and granting you a chance to reset the cooldown of your Cleave, Feint, Frenzy and Shield Bash abilities.",
-    "class": "Mig",
+    "class": "Mit",
+    "location": "Vendor",
+    "mana": "Innate",
+    "level": 1,
+    "section": "Level 1"
+   },
+   {
+    "spell name": "Taunt",
+    "spell description": "Taunt your target, drawing their attention to you.",
+    "class": "Mit",
     "location": "Vendor",
     "mana": "Innate",
     "level": 1,
@@ -8641,6 +8660,15 @@
     "section": "Level 3"
    },
    {
+    "spell name": "Kick",
+    "spell description": "will follow asap.",
+    "class": "Mit",
+    "location": "Vendor",
+    "mana": "Innate",
+    "level": 3,
+    "section": "Level 3"
+   },
+   {
     "spell name": "Defensive Stance",
     "spell description": "Shift into an defensive stance, increasing your Defense by 5 and reducing Physical Damage recieved by 10%. Additionally, if you take damage while in this stance, you have a chance to gain Vengeance.",
     "class": "Val",
@@ -8652,7 +8680,7 @@
    {
     "spell name": "Unnerving Shout",
     "spell description": "Debilitate nearby targets with an unnerving shout, reducing their Physical Damage dealt by 5% for 30 seconds.",
-    "class": "",
+    "class": "Mar",
     "location": "Vendor",
     "mana": "Innate",
     "level": 5,
@@ -8661,7 +8689,7 @@
    {
     "spell name": "Armor Break",
     "spell description": "Break the armor of your target, decreasing their Armor Class by 1 (L1) to 26 (L60) for 30 seconds. This ability stacks up to three times.",
-    "class": "",
+    "class": "Mit",
     "location": "Vendor",
     "mana": "Innate",
     "level": 6,
@@ -8679,7 +8707,7 @@
    {
     "spell name": "Clobber",
     "spell description": "Brutally clobber your target, stunning them for 6 seconds.",
-    "class": "",
+    "class": "Mit",
     "location": "Vendor",
     "mana": "Innate",
     "level": 8,
@@ -8697,7 +8725,7 @@
    {
     "spell name": "Challenging Arrow I",
     "spell description": "Fire an arrow of challenge at your taret, dealing 100% Weapon Ratio Damage plus 1 (L9) to 10 (L29) Physical Damage, and increasing your Threat against them by 30 (L9) to 100 (L29).",
-    "class": "Mig",
+    "class": "Mit",
     "location": "Vendor",
     "mana": "Innate",
     "level": 9,
@@ -8706,7 +8734,7 @@
    {
     "spell name": "Rend II",
     "spell description": "Savagely rend your target, dealing 130% Weapon Ratio Damage plus 10 (L10) to 15 (L20) Physical Damage, increasing your Threat against them by 50 (L10) to 75 (L20), and granting you a chance to reset the cooldown of your Cleave, Feint, Frenzy and Shield Bash abilities.",
-    "class": "Mig",
+    "class": "Mit",
     "location": "Vendor",
     "mana": "Innate",
     "level": 10,
@@ -8715,7 +8743,7 @@
    {
     "spell name": "Shield Bash I",
     "spell description": "Fiercely bash your target with a shield, dealing damage based on your shield's Armor Class plus 1 (L10) to 5 (L20) Physical Damage, increasing your Threat against them by 50 (L10) to 100 (L20), interrupting their casting, and preventing them from casting spells from the same school of magic for 4 seconds. This ability requires a shield.",
-    "class": "",
+    "class": "Mit",
     "location": "Vendor",
     "mana": "Innate",
     "level": 10,
@@ -8723,8 +8751,8 @@
    },
    {
     "spell name": "Cross Cut",
-    "spell description": "Cut through your target with dual weapons, dealing 70% Weapon Ratio Damage plus 5 (L1) to 10 (L21) Physical Damage per equipped weapon. This ability requires dual-wilded weapons. This ability shares a cooldown with other Might abilities.",
-    "class": "Mig",
+    "spell description": "Cut through your target with dual weapons, dealing 70% Weapon Ratio Damage plus 5 (L1) to 10 (L21) Physical Damage per equipped weapon. This ability requires dual-wielded weapons. This ability shares a cooldown with other Might abilities.",
+    "class": "Mit",
     "location": "Vendor",
     "mana": "Innate",
     "level": 11,
@@ -8814,7 +8842,7 @@
    {
     "spell name": "Rend III",
     "spell description": "Savagely rend your target, dealing 135% Weapon Ratio Damage plus 15 (L20) to 20 (L30) Physical Damage, increasing your Threat against them by 75 (L20) to 100 (L30), and granting you a chance to reset the cooldown of your Cleave, Feint, Frenzy and Shield Bash abilities.",
-    "class": "Mig",
+    "class": "Mit",
     "location": "Vendor",
     "mana": "Innate",
     "level": 20,
@@ -8823,7 +8851,7 @@
    {
     "spell name": "Shield Bash II",
     "spell description": "Fiercely bash your target with a shield, dealing damage based on your shield's Armor Class plus xx (Lxx) to xx (Lxx) Physical Damage, increasing your Threat against them by xxx (Lxx) to xxx (Lxx), interrupting their casting, and preventing them from casting spells from the same school of magic for 4 seconds. This ability requires a shield.",
-    "class": "",
+    "class": "Mit",
     "location": "Vendor",
     "mana": "Innate",
     "level": 20,
@@ -8831,8 +8859,8 @@
    },
    {
     "spell name": "Cross Cut II",
-    "spell description": "Cut through your target with dual weapons, dealing xx% Weapon Ratio Damage plus xx (Lxx) to xx (Lxx) Physical Damage per equipped weapon. This ability requires dual-wilded weapons. This ability shares a cooldown with other Might abilities.",
-    "class": "Mig",
+    "spell description": "Cut through your target with dual weapons, dealing xx% Weapon Ratio Damage plus xx (Lxx) to xx (Lxx) Physical Damage per equipped weapon. This ability requires dual-wielded weapons. This ability shares a cooldown with other Might abilities.",
+    "class": "Mit",
     "location": "Vendor",
     "mana": "Innate",
     "level": 21,
@@ -8895,7 +8923,7 @@
    {
     "spell name": "Challenging Arrow II",
     "spell description": "Fire an arrow of challenge at your taret, dealing xxx% Weapon Ratio Damage plus xx (Lxx) to xx (Lxx) Physical Damage, and increasing your Threat against them by xxx (Lxx) to xxx (Lxx).",
-    "class": "Mig",
+    "class": "Mit",
     "location": "Vendor",
     "mana": "Innate",
     "level": 29,
@@ -8904,7 +8932,7 @@
    {
     "spell name": "Rend IV",
     "spell description": "Savagely rend your target, dealing 140% Weapon Ratio Damage plus 20 (L30) to 25 (L40) Physical Damage, increasing your Threat against them by 100 (L30) to 150 (L40), and granting you a chance to reset the cooldown of your Cleave, Feint, Frenzy and Shield Bash abilities.",
-    "class": "Mig",
+    "class": "Mit",
     "location": "Vendor",
     "mana": "Innate",
     "level": 30,
@@ -8913,7 +8941,7 @@
    {
     "spell name": "Shield Bash III",
     "spell description": "Fiercely bash your target with a shield, dealing damage based on your shield's Armor Class plus xx (Lxx) to xx (Lxx) Physical Damage, increasing your Threat against them by xxx (Lxx) to xxx (Lxx), interrupting their casting, and preventing them from casting spells from the same school of magic for 4 seconds. This ability requires a shield.",
-    "class": "",
+    "class": "Mit",
     "location": "Vendor",
     "mana": "Innate",
     "level": 30,
@@ -8921,8 +8949,8 @@
    },
    {
     "spell name": "Cross Cut III",
-    "spell description": "Cut through your target with dual weapons, dealing 80% Weapon Ratio Damage plus 15 (L31) to 20 (L41) Physical Damage per equipped weapon. This ability requires dual-wilded weapons. This ability shares a cooldown with other Might abilities.",
-    "class": "Mig",
+    "spell description": "Cut through your target with dual weapons, dealing 80% Weapon Ratio Damage plus 15 (L31) to 20 (L41) Physical Damage per equipped weapon. This ability requires dual-wielded weapons. This ability shares a cooldown with other Might abilities.",
+    "class": "Mit",
     "location": "Vendor",
     "mana": "Innate",
     "level": 31,
@@ -8976,7 +9004,7 @@
    {
     "spell name": "Rend V",
     "spell description": "Savagely rend your target, dealing xxx% Weapon Ratio Damage plus xx (Lxx) to xx (Lxx) Physical Damage, increasing your Threat against them by xxx (Lxx) to xxx (Lxx), and granting you a chance to reset the cooldown of your Cleave, Feint, Frenzy and Shield Bash abilities.",
-    "class": "Mig",
+    "class": "Mit",
     "location": "Vendor",
     "mana": "Innate",
     "level": 40,
@@ -8985,7 +9013,7 @@
    {
     "spell name": "Shield Bash IV",
     "spell description": "Fiercely bash your target with a shield, dealing damage based on your shield's Armor Class plus xx (Lxx) to xx (Lxx) Physical Damage, increasing your Threat against them by xxx (Lxx) to xxx (Lxx), interrupting their casting, and preventing them from casting spells from the same school of magic for 4 seconds. This ability requires a shield.",
-    "class": "",
+    "class": "Mit",
     "location": "Vendor",
     "mana": "Innate",
     "level": 40,
@@ -8993,8 +9021,8 @@
    },
    {
     "spell name": "Cross Cut IV",
-    "spell description": "Cut through your target with dual weapons, dealing xx% Weapon Ratio Damage plus xx (Lxx) to xx (Lxx) Physical Damage per equipped weapon. This ability requires dual-wilded weapons. This ability shares a cooldown with other Might abilities.",
-    "class": "Mig",
+    "spell description": "Cut through your target with dual weapons, dealing xx% Weapon Ratio Damage plus xx (Lxx) to xx (Lxx) Physical Damage per equipped weapon. This ability requires dual-wielded weapons. This ability shares a cooldown with other Might abilities.",
+    "class": "Mit",
     "location": "Vendor",
     "mana": "Innate",
     "level": 41,
@@ -9048,7 +9076,7 @@
    {
     "spell name": "Challenging Arrow III",
     "spell description": "Fire an arrow of challenge at your taret, dealing 120% Weapon Ratio Damage plus 20 (L49) to 30 (L60) Physical Damage, and increasing your Threat against them by 250 (L49) to 400 (L60).",
-    "class": "Mig",
+    "class": "Mit",
     "location": "Vendor",
     "mana": "Innate",
     "level": 49,
@@ -9057,7 +9085,7 @@
    {
     "spell name": "Rend VI",
     "spell description": "Savagely rend your target, dealing 160% Weapon Ratio Damage plus 30 (L50) to 35 (L60) Physical Damage, increasing your Threat against them by 200 (L50) to 300 (L60), and granting you a chance to reset the cooldown of your Cleave, Feint, Frenzy and Shield Bash abilities.",
-    "class": "Mig",
+    "class": "Mit",
     "location": "Vendor",
     "mana": "Innate",
     "level": 50,
@@ -9066,7 +9094,7 @@
    {
     "spell name": "Shield Bash V",
     "spell description": "Fiercely bash your target with a shield, dealing damage based on your shield's Armor Class plus 25 (L50) to 30 (L60) Physical Damage, increasing your Threat against them by 425 (L50) to 500 (L60), interrupting their casting, and preventing them from casting spells from the same school of magic for 4 seconds. This ability requires a shield.",
-    "class": "",
+    "class": "Mit",
     "location": "Vendor",
     "mana": "Innate",
     "level": 50,
@@ -9074,8 +9102,8 @@
    },
    {
     "spell name": "Cross Cut V",
-    "spell description": "Cut through your target with dual weapons, dealing 100% Weapon Ratio Damage plus 25 (L51) to 30 (L60) Physical Damage per equipped weapon. This ability requires dual-wilded weapons. This ability shares a cooldown with other Might abilities.",
-    "class": "Mig",
+    "spell description": "Cut through your target with dual weapons, dealing 100% Weapon Ratio Damage plus 25 (L51) to 30 (L60) Physical Damage per equipped weapon. This ability requires dual-wielded weapons. This ability shares a cooldown with other Might abilities.",
+    "class": "Mit",
     "location": "Vendor",
     "mana": "Innate",
     "level": 51,
@@ -9175,6 +9203,17 @@
     "bonus": "10"
    },
    {
+    "race": "Halfling",
+    "str": "19",
+    "sta": "20",
+    "dex": "16",
+    "agi": "18",
+    "int": "14",
+    "wis": "20",
+    "cha": "15",
+    "bonus": "10"
+   },
+   {
     "race": "Human",
     "str": "20",
     "sta": "20",
@@ -9260,9 +9299,9 @@
     "level": "1",
     "trained": "No",
     "skill": "Block",
-    "cap at 50": "83",
+    "cap at 50": "??",
     "cap at 60": "??",
-    "max per level equation": "(Level x 5)/3 (rounded down)",
+    "max per level equation": "Level x 5",
     "group": "Combat Skills"
    },
    {
@@ -9289,7 +9328,7 @@
     "skill": "Hand to Hand",
     "cap at 50": "100",
     "cap at 60": "??",
-    "max per level equation": "??",
+    "max per level equation": "Level x 5",
     "group": "Combat Skills"
    },
    {
@@ -9298,7 +9337,7 @@
     "skill": "Offense",
     "cap at 50": "250",
     "cap at 60": "??",
-    "max per level equation": "??",
+    "max per level equation": "Level x 5",
     "group": "Combat Skills"
    },
    {
@@ -9332,7 +9371,7 @@
     "level": "55",
     "trained": "Yes",
     "skill": "Triple Attack",
-    "cap at 50": "??",
+    "cap at 50": "",
     "cap at 60": "??",
     "max per level equation": "??",
     "group": "Combat Skills"
@@ -9343,7 +9382,7 @@
     "skill": "Archery",
     "cap at 50": "150",
     "cap at 60": "??",
-    "max per level equation": "??",
+    "max per level equation": "Level x 4",
     "group": "Weapon Skills"
    },
    {
@@ -9379,7 +9418,7 @@
     "skill": "Throwing",
     "cap at 50": "??",
     "cap at 60": "??",
-    "max per level equation": "??",
+    "max per level equation": "Level x 4",
     "group": "Weapon Skills"
    },
    {
@@ -13244,7 +13283,7 @@
  "Ranger": {
   "name": "Ranger",
   "url": "https://monstersandmemories.miraheze.org/wiki/Ranger",
-  "revid": 78039,
+  "revid": 83798,
   "description": "Archetype: Wilderness Veteran ; Roles: Melee + Ranged DPS, Utility ; Races: Deep Elf, Dwarf, Goblin, Halfling, Human, Ogre, Wood Elf ; The Ranger is a chain-wearing martial class whose identity is rooted in the wild. Their skills have been honed by a lifetime spent living off the land, not by channeling nature as a magical force like the Druid. What seems like magic to others is accumulated fieldcraft: old wisdom, remembered paths, and skills refined through years of necessity. In combat, they move fluidly between bow and blade depending on what the situation demands, and are capable of holding the line in a pinch. Outside of combat, however, is where the Ranger's full value emerges. They’re masters of travel, moving themselves and their group across terrain with ease. Their affinity with the land runs deepest in outdoor zones, where they can track down what others would miss, move through dangerous territory unseen, and live off the land unabated. Between fights, practical knowledge replaces spells. Wounds are dressed, ailments treated, and downtime cut short through their fieldcraft. The Ranger's skills turn a simple camp into something more—the group recovers better, and the wilderness provides in ways it wouldn't for anyone else. ;",
   "modifier": "+1 STR, +3 DEX, +2 AGI, +2 WIS.",
   "bonus_advice": null,
@@ -13252,7 +13291,7 @@
   "spells": [
    {
     "spell name": "Opening Strike",
-    "spell description": "Deal 90% Weapon Ratio Damage plus 1 (L1) to 4 (L11) Physical Damage. Shares a cooldown with Leading Shot and resets the cooldown of swordplay and marksmanship abilities.",
+    "spell description": "Violently strike your target, dealing 90% Weapon Ratio Damage plus 1 (L1) to 4 (L11) Physical Damage. This ability shares a cooldown with Leading Shot. This ability resets the cooldown of your swordplay and marksmanship abilities.",
     "class": "Might",
     "location": "Vendor",
     "mana": "Innate",
@@ -13261,17 +13300,17 @@
    },
    {
     "spell name": "Polar Alignment: North",
-    "spell description": "Orient yourself North.",
-    "class": "",
+    "spell description": "Magically align yourself, orienting you toward the North Pole.",
+    "class": "Divination",
     "location": "Vendor",
-    "mana": "",
+    "mana": "5",
     "level": 1,
     "section": "Level 1"
    },
    {
     "spell name": "Throw",
     "spell description": "Throw a throwing weapon at your target. Requires a throwing weapon.",
-    "class": "Mar",
+    "class": "Martial",
     "location": "Vendor",
     "mana": "Innate",
     "level": 1,
@@ -13279,16 +13318,16 @@
    },
    {
     "spell name": "Warden Stance",
-    "spell description": "Increase Melee Damage dealt by 10%. Hamstring Slice reduces Armor Class by 2 (L3) to 25 (L60), and Rending Cut refreshes Barbed Shot on its target. Persists until removed.",
-    "class": "",
+    "spell description": "Shift into a warden stance, increasing your Melee Damage dealt by 10%. While in this stance, Hamstring Slice also decreases the Armor Class of its target by 2 (L3) to 25 (L60). While in this stance, Rending Cut also refreshes the duration of your Barbed Shot on its target. This ability persists until canceled.",
+    "class": "Martial",
     "location": "Vendor",
-    "mana": "",
+    "mana": "Innate",
     "level": 1,
     "section": "Level 1"
    },
    {
     "spell name": "Weak Healing Poultice",
-    "spell description": "Restore 2 Health and an additional 1 Health every 6 seconds for 18 seconds. Has a 10% chance to cure one Poison and one Disease effect.",
+    "spell description": "Press a healing poultice to your target's wounds, restoring 2 Health and an additional 1 Health every 6 seconds for 18 seconds. This spell has a 10% chance to cure one Poison and one Disease effect on its target.",
     "class": "Alteration",
     "location": "Vendor",
     "mana": "4",
@@ -13297,53 +13336,53 @@
    },
    {
     "spell name": "Finishing Blow",
-    "spell description": "Deal 140% Weapon Ratio Damage plus 10 (L2) to 19 (L12) Physical Damage. Shares a cooldown with other swordplay and marksmanship abilities.",
-    "class": "",
+    "spell description": "Strike your target with a finishing blow, dealing 140% Weapon Ratio Damage plus 10 (L2) to 19 (L12) Physical Damage. This ability shares a cooldown with your other swordplay and marksmanship abilities.",
+    "class": "Might",
     "location": "Vendor",
-    "mana": "",
+    "mana": "Innate",
     "level": 2,
     "section": "Level 2"
    },
    {
     "spell name": "Hamstring Slice",
-    "spell description": "Decrease target Movement Speed by 50% for 24 seconds. Survivor Stance adds an Attack Speed reduction; Warden Stance adds an Armor Class reduction. Diminishing returns in PvP. Shares a cooldown with other swordplay and marksmanship abilities.",
-    "class": "",
+    "spell description": "Slice at the hamstrings of your target, decreasing their Movement Speed by 50% for 24 seconds. While in Survivor Stance, this ability also slow the Attack Speed of its target. While in Warden Stance, this ability also decreases the Armor Class of its target. In PvP the snare lasts 12 seconds and has diminishing returns. This ability shares a cooldown with your other swordplay and marksmanship abilities.",
+    "class": "Martial",
     "location": "Vendor",
-    "mana": "",
+    "mana": "Innate",
     "level": 3,
     "section": "Level 3"
    },
    {
     "spell name": "Leading Shot",
-    "spell description": "Deal 90% Weapon Ratio Damage plus 2 (L4) to 5 (L14) Physical Damage. Requires a bow and arrows. Shares a cooldown with Opening Strike and resets the cooldown of swordplay and marksmanship abilities.",
-    "class": "",
+    "spell description": "Fire a leading shot at your target, dealing 90% Weapon Ratio Damage plus 2 (L4) to 5 (L14) Physical Damage. This ability requires a bow and arrows. This ability shares a cooldown with Opening Strike. This ability resets the cooldown of your swordplay and marksmanship abilities.",
+    "class": "Martial",
     "location": "Vendor",
-    "mana": "",
+    "mana": "Innate",
     "level": 4,
     "section": "Level 4"
    },
    {
     "spell name": "Lull Minor Beasts",
-    "spell description": "Reduce a target beast’s Aggro Radius for 2 minutes, with a very slight chance to end early. Limited to one target at a time, up to level 22.",
-    "class": "",
+    "spell description": "Lull a target beast, reducing their Aggro Radius for 2 minutes. This spell has a very slight chance to end early. This spell can only affect one target at a time. This spell is limited to targets up to level 22.",
+    "class": "Alteration",
     "location": "Vendor",
-    "mana": "",
+    "mana": "10",
     "level": 4,
     "section": "Level 4"
    },
    {
     "spell name": "Minor Healing Poultice",
-    "spell description": "Restore 7 Health and an additional 4 Health every 6 seconds for 18 seconds. Has a 20% chance to cure one Poison and one Disease effect.",
-    "class": "",
+    "spell description": "Press a healing poultice to your target's wounds, restoring 7 Health and an additional 4 Health every 6 seconds for 18 seconds. This spell has a 20% chance to cure one Poison and one Disease effect on its target.",
+    "class": "Alteration",
     "location": "Vendor",
-    "mana": "",
+    "mana": "17",
     "level": 4,
     "section": "Level 4"
    },
    {
     "spell name": "Kick",
-    "spell description": "Kick your target, interrupting their casting and locking them out of that school of magic for 2 seconds.",
-    "class": "Acr",
+    "spell description": "Swiftly kick your target, interrupting their casting and preventing them from casting spells from the same school of magic for 2 seconds.",
+    "class": "Acrobatics",
     "location": "Vendor",
     "mana": "Innate",
     "level": 5,
@@ -13351,53 +13390,53 @@
    },
    {
     "spell name": "Marksman Stance",
-    "spell description": "Increase Ranged Damage dealt by 10%. Maiming Shot decreases Movement Speed by 35% for 24 seconds, and Barbed Shot refreshes Rending Cut on its target. Persists until removed.",
-    "class": "",
+    "spell description": "Shift into marksman stance, increasing your Ranged Damage dealt by 10%. While in this stance, Maiming Shot also decreases the Movement Speed of its target by 35% for 24 seconds (12 seconds in PvP, with diminishing returns). While in this stance, Barbed Shot also refreshes the duration of your Rending Cut on its target. This ability persists until canceled.",
+    "class": "Martial",
     "location": "Vendor",
-    "mana": "",
+    "mana": "Innate",
     "level": 5,
     "section": "Level 5"
    },
    {
     "spell name": "Recuperate",
-    "spell description": "Party members around a warm campfire recover 2 (L5) to 100 (L60) Health and 5 (L5) to 125 (L60) Mana every 6 seconds for 2 minutes. Taking damage ends the effect. Each party member can benefit once every 17.5 minutes, regardless of caster. While recuperating, Damage dealt is reduced by 95%, Damage taken increases by 30%, and Healing done is reduced by 99%; Rangers can only use Healing Poultice spells. Cleric barriers take much longer to cast. Can be removed early.",
-    "class": "",
+    "spell description": "Gather your party around the campfire to recuperate, restoring 2 (L5) to 100 (L60) Health and 5 (L5) to 125 (L60) Mana every 6 seconds for 2 minutes. Can only be used while warmed by a campfire and out of combat. Each party member can only benefit from Recuperate once ever 17.5 minutes, no matter who casts it. Party members in combat don't receive it. Damage, drawing an enemy's attention or clicking it off ends it.",
+    "class": "Alteration",
     "location": "Vendor",
-    "mana": "",
+    "mana": "0",
     "level": 5,
     "section": "Level 5"
    },
    {
     "spell name": "Swift Shot",
-    "spell description": "Deal 100% Weapon Ratio Damage plus 1 (L6) to 11 (L16) Physical Damage. Requires a bow and arrows. Shares a cooldown with other swordplay and marksmanship abilities.",
-    "class": "",
+    "spell description": "Fire a swift shot at your target, dealing 100% Weapon Ratio Damage plus 1 (L6) to 11 (L16) Physical Damage. This ability requires a bow and arrows. This ability shares a cooldown with your other swordplay abilities and marksmanship abilities.",
+    "class": "Might",
     "location": "Vendor",
-    "mana": "",
+    "mana": "Innate",
     "level": 6,
     "section": "Level 6"
    },
    {
     "spell name": "Invisibility versus Beasts",
-    "spell description": "Render a target party member invisible to beasts for 10 minutes, with a moderate chance to end early.",
-    "class": "",
+    "spell description": "Shroud a target party member in a cloak of invisibility, rendering them unseen by beasts for 10 minutes. This spell has a moderate chance to end early.",
+    "class": "Divination",
     "location": "Vendor",
-    "mana": "",
+    "mana": "20",
     "level": 7,
     "section": "Level 7"
    },
    {
     "spell name": "Minor Mantle of the Hunter",
-    "spell description": "Increase your Armor Class by 10, Wisdom by 2, and Mana Regeneration by 1; grant a Damage Shield dealing 1 damage when hit and the ability to see magical effects when considering targets, for 1 hour.",
-    "class": "",
+    "spell description": "Don a hunter's mantle, increasing your Armor Class by 10, your Wisdom by 2 and your Mana Regeneration by 1, granting you a Damage Shield that deals 1 damage when hit, and granting you the ability to see magical effects when considering targets for 1 hour.",
+    "class": "Abjuration",
     "location": "Vendor",
-    "mana": "",
+    "mana": "15",
     "level": 8,
     "section": "Level 8"
    },
    {
     "spell name": "Shroud",
-    "spell description": "Render yourself unseen by the living for 10 minutes. Outdoors only, with a strong chance to end early.",
-    "class": "Div",
+    "spell description": "Camouflage yourself in nature's shroud, rendering you unseen by the living for 10 minutes. This spell can only be used outdoors. This spell has a strong chance to end early.",
+    "class": "Divination",
     "location": "Vendor",
     "mana": "0",
     "level": 8,
@@ -13405,8 +13444,8 @@
    },
    {
     "spell name": "Taunt",
-    "spell description": "Draw the attention of your target. Has additional effects in PvP and is moderately difficult to resist.",
-    "class": "Mar",
+    "spell description": "Taunt your target, drawing their attention. This ability has additional effects in PvP. This ability is moderately difficult to resist.",
+    "class": "Martial",
     "location": "Vendor",
     "mana": "Innate",
     "level": 8,
@@ -14537,7 +14576,7 @@
  "Rogue": {
   "name": "Rogue",
   "url": "https://monstersandmemories.miraheze.org/wiki/Rogue",
-  "revid": 81079,
+  "revid": 83971,
   "description": "Rogue’s are deft combatants who devote themselves to mastering the use of stealth, poisons, and all manner of tricks. All across the land of Aêthoril, wherever you find a shady back alley, a run down tavern, crowded marketplace, or gathering of distracted nobles… you'll also find Rogues. They are also known as skilled informants, thieves, and even assassins. Rogues bring a plethora of skills into combat. The use of poisons to harm or debilitate their foes. Or the use of a well placed strike may catch an opponent off guard, temporarily taking them out of the fight. In tough situations a skilled Rogue may quickly vanish from sight, allowing them a chance at a surprise attack or the option to leave the battle altogether. However, they are at their best when their foes are distracted by others, as to turn your back on a Rogue is to invite a pointed outcome. In adventuring parties a Rogue's role is that of melee combat, focusing on the destruction of their enemies. While adventuring alone they may find it hard to take down stronger enemies, but through stealth and the picking of pockets it’s feasible that they can at least afford a beer or two. ; ; Rogues prefer lighter armor, but can wield most melee weaponry. ; ; For assistance completing your rogue starter quest, see Rogue Initiation Quest, Rogue Starter Quest (Faelindral), or Rogue Starter Quest (Underdocks).",
   "modifier": "+4 DEX, +4 AGI.",
   "bonus_advice": null,
@@ -14562,7 +14601,7 @@
     "section": "Level 1"
    },
    {
-    "spell name": "Stab I",
+    "spell name": "Stab",
     "spell description": "Aggressively stab your target, dealing 100% Weapon Damage plus 1 (L1) to 5 (L10) Physical Damage. When behind your target, this ability becomes Backstab. Backstab: Surprise your target with a decisive strike, dealing 125% Weapon Ratio Damage plus 1 (L1) to 10 (L10) Physical Damage. Additionally, your Backstab gains a damage bonus when you have been concealed by Stealth for at least 3 seconds.",
     "class": "Mit",
     "location": "Autogranted",
@@ -14616,7 +14655,7 @@
     "section": "Level 5"
    },
    {
-    "spell name": "Slice I",
+    "spell name": "Slice",
     "spell description": "Deeply slice your target, dealing 100% Weapon Ratio Damage plus 3 Bleed Damage every 6 seconds for 22 seconds. This ability shares a cooldown with other Martial abilities. This ability stacks up to two times.",
     "class": "Mar",
     "location": "Vendor",
@@ -16246,7 +16285,7 @@
  "Shaman": {
   "name": "Shaman",
   "url": "https://monstersandmemories.miraheze.org/wiki/Shaman",
-  "revid": 80920,
+  "revid": 83132,
   "description": "Shamans are animistic spellcasters who study and commune with spirits, souls, and nature. For many cultures across Aêthoril, and Eth-ur more broadly, Shamans serve as spiritual leaders and moral guides. Within these cultures the Shaman often takes on the role of mediator between ancestor spirits and descendants, allowing communication between the two parties. The Shaman often walks along the edge of many realities. Shamans are powerful healers with access to many regenerative spells. They also have access to a wide range of spells which may enhance an ally’s combat prowess or debilitate and destroy their enemies. Experienced Shamans may summon beastial spirits to aid them in combat. Though most powerful when casting spells, they are also capable melee combatants when the need arises. Within an adventuring party a Shaman most often takes on a supporting role. When adventuring alone they may find some success through clever use of their abilities. ; ; Shamans may wear chain armor as well as wield blunt and piercing weaponry.",
   "modifier": "+1 STR, +2 STA, +1 DEX, +4 WIS.",
   "bonus_advice": "Listed below is the recommended allocation of bonus points by race. Since Wisdom is a Shaman’s main attribute, you should focus on maximizing it whenever possible. Wisdom is directly tied to your healing spells effectiveness and total mana. After that, prioritize Stamina. It gives you extra HP and a bit of stun resistance. Finally, put a point into Dexterity if you have any left. It affects hit rate across the board and increases your proc chance. Goblin: +4 Stamina and +6 Wisdom Human: +2 Stamina, +1 Dexterity, and +7 Wisdom Ogre: +2 Dexterity and +8 Wisdom Wood Elf: +3 Stamina and +7 Wisdom",
@@ -16869,7 +16908,7 @@
     "spell description": "Mend your target, restoring 296 Health.",
     "class": "Alt",
     "location": "Vendor",
-    "mana": "262",
+    "mana": "194",
     "level": 32,
     "section": "Level 32"
    },
@@ -16887,7 +16926,7 @@
     "spell description": "Afflict your target with lethargy, decreasing their Attack Speed by 30% for 1 minute.",
     "class": "Alt",
     "location": "Vendor",
-    "mana": "90",
+    "mana": "45",
     "level": 32,
     "section": "Level 32"
    },
@@ -16914,7 +16953,7 @@
     "spell description": "Perform a rite of haste on your target, increasing their Attack Speed by 30% (L32) to 35% (L47) for 35 minutes.",
     "class": "Alt",
     "location": "Vendor",
-    "mana": "180",
+    "mana": "90",
     "level": 32,
     "section": "Level 32"
    },
@@ -16965,7 +17004,7 @@
    },
    {
     "spell name": "Cleanse Disease",
-    "spell description": "Cleanse your target, removing two Disease effects.",
+    "spell description": "Cleanse your target, removing two Disease effects. 3-second cast; 20-meter range.",
     "class": "Alt",
     "location": "Vendor",
     "mana": "50",
@@ -16992,7 +17031,7 @@
    },
    {
     "spell name": "Hex of Enfeeblement",
-    "spell description": "Enfeeble your target, decreasing their Strength, Dexterity, and Agility by 8 for 3 minutes.",
+    "spell description": "Enfeeble your target, decreasing their Strength, Dexterity, and Agility by 8 for 3 minutes. 2-second cast; 30-meter range.",
     "class": "Alt",
     "location": "Vendor",
     "mana": "35",
@@ -17001,7 +17040,7 @@
    },
    {
     "spell name": "Hex of Susceptibility",
-    "spell description": "Make your target more susceptible to harm, decreasing their Disease, Holy, and Magic Resistance by 5(L36) to 6(L47) for 5 minutes. This spell cannot be resisted unless the target is immune to Magic effects.",
+    "spell description": "Make your target more susceptible to harm, decreasing their Disease, Holy, and Magic Resistance by 5 (L36) to 6 (L47) for 5 minutes. This spell cannot be resisted unless the target is immune to Magic effects. 1-second cast; 30-meter range.",
     "class": "Alt",
     "location": "Vendor",
     "mana": "40",

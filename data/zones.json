@@ -2,7 +2,7 @@
  "Ail'Vorith": {
   "name": "Ail'Vorith",
   "url": "https://monstersandmemories.miraheze.org/wiki/Ail%27Vorith",
-  "revid": 83271,
+  "revid": 83931,
   "level": "1 - 50",
   "monster_types": "Snakes, Goos, Shrooms, Skulls, Goblins, Beetles, Undead, Ghosts, Elementals, Deep Elves",
   "adjacent": [
@@ -185,6 +185,16 @@
     "page": "https://monstersandmemories.miraheze.org/wiki/Cook_Deepbite"
    },
    {
+    "name": "Chief Glowgut",
+    "race": "Goblin",
+    "class": "",
+    "level": "14",
+    "location": "Back/top of Deepgulp caves",
+    "loot": "Dismembering Hammer , Veil of Algae",
+    "desc": "",
+    "page": "https://monstersandmemories.miraheze.org/wiki/Chief_Glowgut"
+   },
+   {
     "name": "Bonescraper Zekkir",
     "race": "Deep Elf",
     "class": "",
@@ -268,17 +278,6 @@
     "loot": "Fire Elemental Stone",
     "desc": "red fire emblaze elemental",
     "page": "https://monstersandmemories.miraheze.org/wiki/An_enraged_elemental",
-    "src": "mob page"
-   },
-   {
-    "name": "Chief Glowgut",
-    "race": null,
-    "class": null,
-    "level": null,
-    "location": null,
-    "loot": "Dismembering Hammer, Deepgulp Chief Head",
-    "desc": null,
-    "page": "https://monstersandmemories.miraheze.org/wiki/Chief_Glowgut",
     "src": "mob page"
    }
   ],
@@ -1317,6 +1316,17 @@
     "desc": "Vaslir Kiannes is a Deep Elf Elementalist in Ail'Vorith who provides an alternate method of obtaining a Flask of Essairyl during House Varros (Quest).",
     "page": "https://monstersandmemories.miraheze.org/wiki/Vaslir_Kiannes",
     "src": "mob page"
+   },
+   {
+    "name": "Vaslir Vharkith",
+    "race": "Deep Elf",
+    "class": null,
+    "level": null,
+    "location": "Upper city, on the elevated ledges near Vaslir Maryn and Vaslir Kiannes",
+    "loot": null,
+    "desc": "A vaslir of House Varros who oversees apprentices and conducts research involving summoning and elemental magic.",
+    "page": "https://monstersandmemories.miraheze.org/wiki/Vaslir_Vharkith",
+    "src": "mob page"
    }
   ],
   "items": [
@@ -1794,7 +1804,7 @@
  "Blacktide Bay": {
   "name": "Blacktide Bay",
   "url": "https://monstersandmemories.miraheze.org/wiki/Blacktide_Bay",
-  "revid": 82798,
+  "revid": 83905,
   "level": "10 - 30",
   "monster_types": "Orcs, Undead, Ratmen, Bats, Spiders, Wolves",
   "adjacent": [
@@ -1828,7 +1838,7 @@
     "class": "-",
     "level": "11",
     "location": "In the spider and bat caves surrounded by stealthed spiders",
-    "loot": "Shadowweb Shoulders",
+    "loot": "Shadowweb Shoulders , Gloomguard , Widow's Silk",
     "desc": "Named Mob",
     "filled_from_mob_page": [
      "location"
@@ -2598,7 +2608,7 @@
  "Blind Midden": {
   "name": "Blind Midden",
   "url": "https://monstersandmemories.miraheze.org/wiki/Blind_Midden",
-  "revid": 83212,
+  "revid": 83902,
   "level": null,
   "monster_types": "Ghosts, Slime Cubes, Evil Eyes, Deep Elves",
   "adjacent": [
@@ -2618,18 +2628,25 @@
     "classes": "ALL"
    },
    {
-    "name": "Crude Prison Shiv (Quest)",
-    "reward": "10 copper",
+    "name": "Provisions for House Unheard",
+    "reward": "Reputation, conditionally 10 copper",
     "giver": "Kalessa Velgarrith",
     "min_level": "1",
     "classes": "ALL"
    },
    {
-    "name": "Midden Mark Menu (Quest)",
-    "reward": "Sewer Sludge x 8, Recipe: Prison Gruel , Recipe: Double-Bladed Retractable Prison Shiv , Sightless Seer's Stash , Pilfered Plans , Snitch-Stabber's Stash",
-    "giver": "Nibs Mudknuckle",
+    "name": "Revenge for Wembit",
+    "reward": "-",
+    "giver": "Blurgh the Blind",
     "min_level": "1",
     "classes": "ALL"
+   },
+   {
+    "name": "Midden Mark Menu (Quest)",
+    "reward": "Sewer Sludge x 8, Recipe: Prison Gruel , Recipe: Double-Bladed Retractable Prison Shiv , Recipe: Mudfish Wraps , Recipe: Morgurah's Mask of the Stifled Snitch , Recipe: Sewer Survival Salve , Recipe: Shale Weightstone",
+    "giver": "1",
+    "min_level": "ALL",
+    "classes": null
    },
    {
     "name": "The Curse of Blind Midden",
@@ -2666,7 +2683,7 @@
     "class": "-",
     "level": "7",
     "location": "Top floor",
-    "loot": "Flavic's Filleting Falchion (common), Gutter's Gloves (uncommon), Bracers of the Bottom-Feeder (rare)",
+    "loot": "Flavic's Filleting Falchion (common), Gutter's Gloves (uncommon), Bracer of the Bottom-Feeder (rare)",
     "desc": "Named Mob",
     "page": "https://monstersandmemories.miraheze.org/wiki/Flavic_the_Fisher"
    },
@@ -2706,7 +2723,7 @@
     "class": "-",
     "level": "12",
     "location": "Top floor, in the watery hallways where the gelmothers spawn",
-    "loot": "Acid-Washed Skinsuit",
+    "loot": "Acid-Washed Skinsuit , Membrane Mask",
     "desc": "Named Mob",
     "page": "https://monstersandmemories.miraheze.org/wiki/Mother_Gummer"
    },
@@ -2761,6 +2778,16 @@
     "page": "https://monstersandmemories.miraheze.org/wiki/Reviver_Vlarek"
    },
    {
+    "name": "Elixa the Experimentalist",
+    "race": "Deep Gnome",
+    "class": "-",
+    "level": "15",
+    "location": "Basement, main entrance. Straight forward, follow water to a room full of science equipment",
+    "loot": "Steadying Wristguards of the Experimentalist , Elixa's Sample Vial",
+    "desc": "Named Mob",
+    "page": "https://monstersandmemories.miraheze.org/wiki/Elixa_the_Experimentalist"
+   },
+   {
     "name": "Enthraller Gnorah",
     "race": "Deep Gnome",
     "class": "-",
@@ -2769,6 +2796,39 @@
     "loot": "Stolen Mask of the Enthralled , Genorah's Staff of Persuasion , Pendent of Pacification , Corpse of Enthraller Gnorah",
     "desc": "Named Mob",
     "page": "https://monstersandmemories.miraheze.org/wiki/Enthraller_Gnorah"
+   },
+   {
+    "name": "Gurm the Half-Woken",
+    "race": "Ogre",
+    "class": "-",
+    "level": "15",
+    "location": "Basement, main entrance. Take left entrance to upper levels towards Gnuttoc. First room up ramp",
+    "loot": "-",
+    "desc": "Named Mob",
+    "page": "https://monstersandmemories.miraheze.org/wiki/Gurm_the_Half-Woken"
+   },
+   {
+    "name": "Dakkin the Diabolical",
+    "race": "Deep Gnome",
+    "class": "-",
+    "level": "15?",
+    "location": "Basement, main entrance. Up ramp towards Gnuttoc in antechamber that merges the two paths",
+    "loot": "Diabolical Dealer's Mask (common), Dakkin's Links of Larceny",
+    "desc": "Named Mob",
+    "page": "https://monstersandmemories.miraheze.org/wiki/Dakkin_the_Diabolical"
+   },
+   {
+    "name": "Knuttoc Grobbins",
+    "race": "Deep Gnome",
+    "class": "-",
+    "level": "15",
+    "location": "Basement",
+    "loot": "Drops nothing as of 10/19/2026",
+    "desc": "Named Mob",
+    "filled_from_mob_page": [
+     "location"
+    ],
+    "page": "https://monstersandmemories.miraheze.org/wiki/Knuttoc_Grobbins"
    },
    {
     "name": "Flashfreeze Fraegra",
@@ -2791,54 +2851,11 @@
     "page": "https://monstersandmemories.miraheze.org/wiki/Biomass"
    },
    {
-    "name": "Knuttoc Grobbins",
+    "name": "Tormentor Tizzix",
     "race": "Deep Gnome",
     "class": "-",
     "level": "15",
-    "location": "Basement",
-    "loot": "Drops nothing as of 10/17/2026",
-    "desc": "Named Mob",
-    "filled_from_mob_page": [
-     "location"
-    ],
-    "page": "https://monstersandmemories.miraheze.org/wiki/Knuttoc_Grobbins"
-   },
-   {
-    "name": "Dakkin the Diabolical",
-    "race": "Deep Gnome",
-    "class": "-",
-    "level": "15?",
-    "location": "Basement, up ramp towards Gnuttoc in antechamber",
-    "loot": "Diabolical Dealer's Mask (common), Dakkin's Links of Larceny",
-    "desc": "Named Mob",
-    "page": "https://monstersandmemories.miraheze.org/wiki/Dakkin_the_Diabolical"
-   },
-   {
-    "name": "Gurm the Half-Woken",
-    "race": "Ogre",
-    "class": "-",
-    "level": "15",
-    "location": "-",
-    "loot": "-",
-    "desc": "Named Mob",
-    "page": "https://monstersandmemories.miraheze.org/wiki/Gurm_the_Half-Woken"
-   },
-   {
-    "name": "Elixa the Experimentalist",
-    "race": "Deep Gnome",
-    "class": "-",
-    "level": "15",
-    "location": "-",
-    "loot": "Steadying Wristguards of the Experimentalist , Elixa's Sample Vial",
-    "desc": "Named Mob",
-    "page": "https://monstersandmemories.miraheze.org/wiki/Elixa_the_Experimentalist"
-   },
-   {
-    "name": "Tizzix (name incomplete)",
-    "race": "-",
-    "class": "-",
-    "level": "-",
-    "location": "-",
+    "location": "Basement, torture room around corner from Biomass",
     "loot": "Tizzix's Tender Touch",
     "desc": "Named Mob"
    },
@@ -2926,6 +2943,19 @@
      "location"
     ],
     "page": "https://monstersandmemories.miraheze.org/wiki/King_Jekom_the_Ancient"
+   },
+   {
+    "name": "Davosin the Domineering",
+    "race": "???",
+    "class": "-",
+    "level": "25?",
+    "location": "Basement, deep down?",
+    "loot": "Cap of the Collective",
+    "desc": "Named Mob",
+    "filled_from_mob_page": [
+     "location"
+    ],
+    "page": "https://monstersandmemories.miraheze.org/wiki/Davosin_the_Domineering"
    }
   ],
   "npcs": [
@@ -3005,11 +3035,29 @@
     "level": "-",
     "location": "Top floor, secret area up ladder by Underboss Vekrizin and Cedrius the Cutter",
     "loot": "-",
-    "desc": "Quest NPC?",
+    "desc": "Quest NPC",
     "filled_from_mob_page": [
      "class"
     ],
     "page": "https://monstersandmemories.miraheze.org/wiki/Blurgh_the_Blind"
+   },
+   {
+    "name": "Wembit the Wandmaker",
+    "race": "-",
+    "class": "-",
+    "level": "7-15",
+    "location": "Give [[]] to Blurgh the Blind",
+    "loot": null,
+    "desc": "Named Mob"
+   },
+   {
+    "name": "Gizor the Squeezer",
+    "race": "-",
+    "class": "-",
+    "level": "7-15",
+    "location": "Give Broken Hoop of the Fortunate Forager to Blurgh the Blind",
+    "loot": null,
+    "desc": "Named Mob"
    },
    {
     "name": "Andrew the Framed",
@@ -3574,7 +3622,7 @@
  "Caves of Irem": {
   "name": "Caves of Irem",
   "url": "https://monstersandmemories.miraheze.org/wiki/Caves_of_Irem",
-  "revid": 82674,
+  "revid": 83334,
   "level": null,
   "monster_types": "Deep Beetles, Bats, Will-o-Wisps, Deep Skeletons",
   "adjacent": [
@@ -3753,6 +3801,16 @@
     "location": "-",
     "loot": "Hullbreaker's Rope Belt , Hullbreaker's Leger",
     "desc": "Named Mob"
+   },
+   {
+    "name": "Handfed Bors",
+    "race": "Giant",
+    "class": "-",
+    "level": "-",
+    "location": "Beach above bandits",
+    "loot": "-",
+    "desc": "Named Mob",
+    "page": "https://monstersandmemories.miraheze.org/wiki/Handfed_Bors"
    },
    {
     "name": "Vashkur Roostbound",
@@ -3978,10 +4036,19 @@
     "page": "https://monstersandmemories.miraheze.org/wiki/A_blind_river_crocodile"
    },
    {
+    "name": "a pale cavern caiman",
+    "race": "Crocodile",
+    "class": "-",
+    "level": "~10",
+    "location": "-",
+    "loot": "-",
+    "desc": "-"
+   },
+   {
     "name": "a silt-gray caiman",
     "race": "Crocodile",
     "class": "-",
-    "level": "-",
+    "level": "~12",
     "location": "-",
     "loot": "-",
     "desc": "-"
@@ -3990,8 +4057,8 @@
     "name": "a cutthroat",
     "race": "Humanoid",
     "class": "-",
-    "level": "-",
-    "location": "-",
+    "level": "11",
+    "location": "Bandit Camps",
     "loot": "-",
     "desc": "-",
     "page": "https://monstersandmemories.miraheze.org/wiki/A_cutthroat"
@@ -4557,7 +4624,8 @@
     "level": "~27",
     "location": "Pyramid Road",
     "loot": "-",
-    "desc": "-"
+    "desc": "-",
+    "page": "https://monstersandmemories.miraheze.org/wiki/A_dust_asp"
    },
    {
     "name": "a desert creeper",
@@ -4821,7 +4889,8 @@
     "level": "-",
     "location": "Pyramid Complex",
     "loot": "-",
-    "desc": "-"
+    "desc": "-",
+    "page": "https://monstersandmemories.miraheze.org/wiki/A_warded_shade"
    },
    {
     "name": "a rotting rat",
@@ -4889,7 +4958,8 @@
     "level": "-",
     "location": "Pyramid Complex",
     "loot": "-",
-    "desc": "-"
+    "desc": "-",
+    "page": "https://monstersandmemories.miraheze.org/wiki/A_bound_treant"
    },
    {
     "name": "a petrified treant",
@@ -4898,7 +4968,8 @@
     "level": "-",
     "location": "Pyramid Complex",
     "loot": "-",
-    "desc": "-"
+    "desc": "-",
+    "page": "https://monstersandmemories.miraheze.org/wiki/A_petrified_treant"
    },
    {
     "name": "a rotted heartwood",
@@ -5122,17 +5193,6 @@
     "loot": null,
     "desc": null,
     "page": "https://monstersandmemories.miraheze.org/wiki/Freshet_Keeper",
-    "src": "mob page"
-   },
-   {
-    "name": "Handfed Bors",
-    "race": null,
-    "class": null,
-    "level": null,
-    "location": null,
-    "loot": null,
-    "desc": null,
-    "page": "https://monstersandmemories.miraheze.org/wiki/Handfed_Bors",
     "src": "mob page"
    },
    {
@@ -6445,7 +6505,7 @@
  "Faelindral": {
   "name": "Faelindral",
   "url": "https://monstersandmemories.miraheze.org/wiki/Faelindral",
-  "revid": 83070,
+  "revid": 83861,
   "level": "1 - ?",
   "monster_types": "-",
   "adjacent": [
@@ -6453,48 +6513,6 @@
   ],
   "notable": [],
   "quests": [
-   {
-    "name": "Bone Chips for Moon Dances",
-    "reward": "Random cloth armor",
-    "giver": "Moon Dances",
-    "min_level": "1",
-    "classes": null
-   },
-   {
-    "name": "Becoming a Gatekeeper",
-    "reward": "Aspirant Icon of the Gatekeeper",
-    "giver": "Sylvarya Starveil",
-    "min_level": "1",
-    "classes": null
-   },
-   {
-    "name": "Green Drakeling Scale Armor Quests",
-    "reward": "Green Drakeling Scale Boots , Green Drakeling Scale Cloak , Green Drakeling Scale Pants , Green Drakeling Scale Coat",
-    "giver": "Takalea Scaletender",
-    "min_level": "1",
-    "classes": null
-   },
-   {
-    "name": "Culling the Fellstone",
-    "reward": "Tattered Rawhide",
-    "giver": "Wyrdguard Oakenpine",
-    "min_level": "1",
-    "classes": null
-   },
-   {
-    "name": "Decipher the Unintelligible Writings",
-    "reward": "Experience and 25 copper",
-    "giver": "Researcher Fairgrove",
-    "min_level": "1",
-    "classes": null
-   },
-   {
-    "name": "Mierra's Famed Cupcakes",
-    "reward": "Jelly Cupcake x4",
-    "giver": "Mierra Willowshade",
-    "min_level": "1",
-    "classes": null
-   },
    {
     "name": "Archer Starter Quest (Faelindral)",
     "reward": "",
@@ -6517,6 +6535,27 @@
     "classes": null
    },
    {
+    "name": "Bone Chips for Moon Dances",
+    "reward": "Random cloth armor",
+    "giver": "Moon Dances",
+    "min_level": "1",
+    "classes": null
+   },
+   {
+    "name": "Culling the Fellstone",
+    "reward": "Tattered Rawhide",
+    "giver": "Wyrdguard Oakenpine",
+    "min_level": "1",
+    "classes": null
+   },
+   {
+    "name": "Decipher the Unintelligible Writings",
+    "reward": "Experience and 25 copper",
+    "giver": "Researcher Fairgrove",
+    "min_level": "1",
+    "classes": null
+   },
+   {
     "name": "Druid Starter Quest (Faelindral)",
     "reward": "Scroll: Burning Embers , Fire Beetle Eye , Aspirant Icon of the Gatekeeper , Icon of the Gatekeeper",
     "giver": "Sylvarya Starveil",
@@ -6527,6 +6566,20 @@
     "name": "Fighter Starter Quest (Faelindral)",
     "reward": "Tarnished Elven Blade , Novice Chain of the Wyrdguard , Striker's Chain of the Wyrdguard",
     "giver": "Captain Vaelric Ironbark",
+    "min_level": "1",
+    "classes": null
+   },
+   {
+    "name": "Green Drakeling Scale Armor Quests",
+    "reward": "Green Drakeling Scale Boots , Green Drakeling Scale Cloak , Green Drakeling Scale Pants , Green Drakeling Scale Coat",
+    "giver": "Takalea Scaletender",
+    "min_level": "1",
+    "classes": null
+   },
+   {
+    "name": "Mierra's Famed Cupcakes",
+    "reward": "Jelly Cupcake x4",
+    "giver": "Mierra Willowshade",
     "min_level": "1",
     "classes": null
    },
@@ -6555,7 +6608,62 @@
   "named": [],
   "npcs": [
    {
-    "name": "A composer",
+    "name": "a bag vendor",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "Trader's Terrace",
+    "loot": "-",
+    "desc": "Sells bags.",
+    "page": "https://monstersandmemories.miraheze.org/wiki/A_bag_vendor"
+   },
+   {
+    "name": "a barkeep",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "Willows Whisper bar",
+    "loot": "-",
+    "desc": "Sells water & rations."
+   },
+   {
+    "name": "a bowyer",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "Outside Ranger's Rest",
+    "loot": "-",
+    "desc": "Sells Fletching supplies, along with Arrow ."
+   },
+   {
+    "name": "a brewer",
+    "race": "Halfling",
+    "class": "-",
+    "level": "-",
+    "location": "Under ramp to Trader's Terrace.",
+    "loot": "-",
+    "desc": "Brewing supplies, currently sells nothing."
+   },
+   {
+    "name": "a cloth armorer",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "Trader's Terrace",
+    "loot": "-",
+    "desc": "Sells cloth armor."
+   },
+   {
+    "name": "a cook",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "bBilding next to inn near Newbie Lift",
+    "loot": "-",
+    "desc": "Cooking supplies."
+   },
+   {
+    "name": "a composer",
     "race": "Wood Elf",
     "class": "-",
     "level": "-",
@@ -6575,51 +6683,114 @@
     "page": "https://monstersandmemories.miraheze.org/wiki/A_farmer"
    },
    {
+    "name": "a fermenter",
+    "race": "Halfling",
+    "class": "-",
+    "level": "-",
+    "location": "Under ramp to Trader's Terrace.",
+    "loot": "-",
+    "desc": "Fermenting supplies, currently sells nothing."
+   },
+   {
+    "name": "a fletcher",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "Outside Ranger's Rest.",
+    "loot": "-",
+    "desc": "Sells a Fletching Kit & Arrow ."
+   },
+   {
+    "name": "a jewelcrafter",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "In the tree trunk behind building up the ramp above Well of Order.",
+    "loot": "-",
+    "desc": "Jewelcrafting supplies."
+   },
+   {
+    "name": "a leatherworker",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "Outside Ranger's Rest.",
+    "loot": "-",
+    "desc": "Leatherworking supplies."
+   },
+   {
     "name": "a lumberjack",
     "race": "Wood Elf",
     "class": "-",
     "level": "-",
-    "location": "Down Kennel Lift",
+    "location": "Down Kennel Lift.",
     "loot": "-",
-    "desc": "Lumberjack supplies."
+    "desc": "Lumberjacking supplies."
    },
    {
     "name": "a mason",
     "race": "Wood Elf",
     "class": "-",
     "level": "-",
-    "location": "Down Kennel Lift",
+    "location": "Down Kennel Lift.",
     "loot": "-",
-    "desc": "Mason supplies, currently sells nothing.",
+    "desc": "Masonry supplies, currently sells nothing.",
     "page": "https://monstersandmemories.miraheze.org/wiki/A_mason"
+   },
+   {
+    "name": "a medic",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "Well of Order",
+    "loot": "-",
+    "desc": "Bandages"
    },
    {
     "name": "a miner",
     "race": "Wood Elf",
     "class": "-",
     "level": "-",
-    "location": "Down Kennel Lift",
+    "location": "Down Kennel Lift.",
     "loot": "-",
     "desc": "Mining supplies."
+   },
+   {
+    "name": "a poison maker",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "In Lambent Lantern. Go up the ramp from the bank.",
+    "loot": "-",
+    "desc": "Sells Poison Making patterns."
+   },
+   {
+    "name": "a ranger instructor",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "Rangers Rest",
+    "loot": "-",
+    "desc": "Ranger spell and ability scroll merchant."
+   },
+   {
+    "name": "a spymaster",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "In Lambent Lantern. I havGo up the ramp from the bank.",
+    "loot": "-",
+    "desc": "Sells Charcoal & Parchment ."
    },
    {
     "name": "a stonecutter",
     "race": "Wood Elf",
     "class": "-",
     "level": "-",
-    "location": "Down Kennel Lift",
+    "location": "Down Kennel Lift.",
     "loot": "-",
     "desc": "Stonecutting supplies, currently sells nothing.",
     "page": "https://monstersandmemories.miraheze.org/wiki/A_stonecutter"
-   },
-   {
-    "name": "an archaeologist",
-    "race": "Wood Elf",
-    "class": "-",
-    "level": "-",
-    "location": "Down Kennel Lift",
-    "loot": "-",
-    "desc": "Archaeology supplies, currently sells nothing."
    },
    {
     "name": "a used weapons dealer",
@@ -6641,14 +6812,50 @@
     "page": "https://monstersandmemories.miraheze.org/wiki/A_used_armor_dealer"
    },
    {
-    "name": "Adventure Gear",
+    "name": "an alchemist",
     "race": "Wood Elf",
     "class": "-",
     "level": "-",
-    "location": "Merchant's Row",
+    "location": "Well of Order.",
     "loot": "-",
-    "desc": "-",
-    "page": "https://monstersandmemories.miraheze.org/wiki/Adventure_Gear"
+    "desc": "Sells Alchemy supplies."
+   },
+   {
+    "name": "an archaeologist",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "Down Kennel Lift",
+    "loot": "-",
+    "desc": "Archaeology supplies, currently sells nothing."
+   },
+   {
+    "name": "an enchanter",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "In the tree trunk behind building up the ramp above Well of Order.",
+    "loot": "-",
+    "desc": "Sells Enchanting supplies."
+   },
+   {
+    "name": "an herbalist",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "Well of Order",
+    "loot": "-",
+    "desc": "Herbalism supplies."
+   },
+   {
+    "name": "an outfitter",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "Trader's Terrace",
+    "loot": "-",
+    "desc": "Sells various armor.",
+    "page": "https://monstersandmemories.miraheze.org/wiki/An_outfitter"
    },
    {
     "name": "Aerin Mossfang",
@@ -6658,6 +6865,16 @@
     "location": "Quiet Den Kennel",
     "loot": "-",
     "desc": "Beastmaster Skill Trainer"
+   },
+   {
+    "name": "Sylwine Brightspark",
+    "race": "Halfling",
+    "class": "-",
+    "level": "-",
+    "location": "Upper floor of Well of Order.",
+    "loot": "-",
+    "desc": "Alchemy trainer.",
+    "page": "https://monstersandmemories.miraheze.org/wiki/Sylwine_Brightspark"
    },
    {
     "name": "Animal Taming Supplies",
@@ -6679,15 +6896,6 @@
     "page": "https://monstersandmemories.miraheze.org/wiki/Archaeologist_Liryna"
    },
    {
-    "name": "Bags and Packs",
-    "race": "Wood Elf",
-    "class": "-",
-    "level": "-",
-    "location": "Merchant's Row",
-    "loot": "-",
-    "desc": "-"
-   },
-   {
     "name": "Baewyn Mossfang",
     "race": "Wood Elf",
     "class": "-",
@@ -6707,22 +6915,13 @@
     "desc": "-"
    },
    {
-    "name": "Blacksmithing Supplies",
-    "race": "Wood Elf",
+    "name": "Brewer Darden",
+    "race": "Halfling",
     "class": "-",
     "level": "-",
-    "location": "Merchant's Row",
+    "location": "Below the ramp up to Trader's Terrace.",
     "loot": "-",
-    "desc": "-"
-   },
-   {
-    "name": "Blacksmithing Trainer",
-    "race": "Wood Elf",
-    "class": "-",
-    "level": "-",
-    "location": "Merchant's Row",
-    "loot": "-",
-    "desc": "-"
+    "desc": "Brewing trainer, not implemented yet."
    },
    {
     "name": "Burch Windbreeze",
@@ -6743,32 +6942,58 @@
     "desc": "-"
    },
    {
-    "name": "Carpentry Trainer",
-    "race": "Wood Elf",
-    "class": "-",
-    "level": "-",
-    "location": "Merchant's Row",
-    "loot": "-",
-    "desc": "-"
-   },
-   {
-    "name": "Cloth Armor",
-    "race": "Wood Elf",
-    "class": "-",
-    "level": "-",
-    "location": "Merchant's Row",
-    "loot": "-",
-    "desc": "-"
-   },
-   {
-    "name": "Drogo the Grocer",
+    "name": "Carpenter Naddine",
     "race": "Halfling",
     "class": "-",
     "level": "-",
-    "location": "Newbie Lift",
+    "location": "Upper floor of Weapons Armor.",
     "loot": "-",
-    "desc": "-",
-    "page": "https://monstersandmemories.miraheze.org/wiki/Drogo_the_Grocer"
+    "desc": "Carpentry trainer."
+   },
+   {
+    "name": "Diplomat Cerinna",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "In the building up the ramp above Well of Order.",
+    "loot": "-",
+    "desc": "Diplomacy trainer, not implemented yet."
+   },
+   {
+    "name": "Disenchanter Gwendyl",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "In the tree trunk behind building up the ramp above Well of Order.",
+    "loot": "-",
+    "desc": "Disenchanting trainer."
+   },
+   {
+    "name": "Eladaer the Trapsmith",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "Near Sentinel's Gaze.",
+    "loot": "-",
+    "desc": "Tinkering supplies."
+   },
+   {
+    "name": "Enchanter Wyrel",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "In the tree trunk behind building up the ramp above Well of Order.",
+    "loot": "-",
+    "desc": "Enchanting trainer."
+   },
+   {
+    "name": "Faen the Blacksmith",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "Back of Weapons Armor",
+    "loot": "-",
+    "desc": "Blacksmithing trainer."
    },
    {
     "name": "Farmer Oweinn",
@@ -6781,32 +7006,68 @@
     "page": "https://monstersandmemories.miraheze.org/wiki/Farmer_Oweinn"
    },
    {
-    "name": "Fletching Supplies",
-    "race": "Wood Elf",
+    "name": "Fermenter Dorris",
+    "race": "Halfling",
     "class": "-",
     "level": "-",
-    "location": "Ardent Keepers",
+    "location": "Whispers Willow Bar",
     "loot": "-",
-    "desc": "-"
+    "desc": "Fermenting trainer, not implemented yet."
    },
    {
-    "name": "Fletching Trainer",
+    "name": "Flerri Dawntender the Tailor",
     "race": "Wood Elf",
     "class": "-",
     "level": "-",
-    "location": "Ardent Keepers",
+    "location": "Upper floor of Weapons Armor.",
     "loot": "-",
-    "desc": "-"
+    "desc": "Tailoring trainer."
+   },
+   {
+    "name": "Fletcher Merafyn",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "Outside of Ranger's Rest",
+    "loot": "-",
+    "desc": "Fletching trainer."
+   },
+   {
+    "name": "Haggler Mernon",
+    "race": "Halfling",
+    "class": "-",
+    "level": "-",
+    "location": "Wanders from Newbie Lift to Trader's Terrace.",
+    "loot": "-",
+    "desc": "Commerce trainer."
    },
    {
     "name": "Herbalist Llewcyn",
     "race": "Wood Elf",
     "class": "-",
     "level": "-",
-    "location": "-",
+    "location": "Outside Well of Order",
     "loot": "-",
     "desc": "Herbalism trainer.",
     "page": "https://monstersandmemories.miraheze.org/wiki/Herbalist_Llewcyn"
+   },
+   {
+    "name": "Leatherworker Nydd",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "Tanner",
+    "loot": "-",
+    "desc": "Leatherworking trainer."
+   },
+   {
+    "name": "Lilac Latespring",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "-",
+    "loot": "Druid guild (near Sentinel's Gaze)",
+    "desc": "Druid trainer."
    },
    {
     "name": "Listener Maplebloom",
@@ -6835,6 +7096,15 @@
     "loot": "-",
     "desc": "Lumberjacking trainer.",
     "page": "https://monstersandmemories.miraheze.org/wiki/Lumberjack_Qwelyn"
+   },
+   {
+    "name": "Llyra Luthielle",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "-",
+    "loot": "Next to Willows Whisper Stage",
+    "desc": "Sells instruments."
    },
    {
     "name": "Mason Rymfar",
@@ -6887,7 +7157,16 @@
     "race": "Wood Elf",
     "class": "-",
     "level": "-",
-    "location": "Merchant's Row",
+    "location": "Inside bottom floor of Weapons Armor.",
+    "loot": "-",
+    "desc": "-"
+   },
+   {
+    "name": "Pine Brightreed",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "Near Willows Whisper",
     "loot": "-",
     "desc": "-"
    },
@@ -6910,40 +7189,22 @@
     "desc": "Bard Starter Quest (Faelindral)"
    },
    {
-    "name": "Smelting Supplies",
+    "name": "Smelter Kaedyn",
     "race": "Wood Elf",
     "class": "-",
     "level": "-",
-    "location": "Merchant's Row",
+    "location": "Weapons Armor",
     "loot": "-",
-    "desc": "-"
+    "desc": "Smelting trainer."
    },
    {
-    "name": "Smelting Trainer",
+    "name": "Spymaster Vhys",
     "race": "Wood Elf",
     "class": "-",
     "level": "-",
-    "location": "Merchant's Row",
+    "location": "In Lambent Lantern. Go up the ramp from the bank.",
     "loot": "-",
-    "desc": "-"
-   },
-   {
-    "name": "Spinning Trainer",
-    "race": "Wood Elf",
-    "class": "-",
-    "level": "-",
-    "location": "Merchant's Row",
-    "loot": "-",
-    "desc": "-"
-   },
-   {
-    "name": "Spinning Supplies",
-    "race": "Wood Elf",
-    "class": "-",
-    "level": "-",
-    "location": "Merchant's Row",
-    "loot": "-",
-    "desc": "-"
+    "desc": "Spycraftg trainer, not implemented yet."
    },
    {
     "name": "Stonecutter Flinton",
@@ -6954,24 +7215,6 @@
     "loot": "-",
     "desc": "Stone Cutting trainer, not implemented yet.",
     "page": "https://monstersandmemories.miraheze.org/wiki/Stonecutter_Flinton"
-   },
-   {
-    "name": "Survival Supplies",
-    "race": "Wood Elf",
-    "class": "-",
-    "level": "-",
-    "location": "Ardent Keepers",
-    "loot": "-",
-    "desc": "-"
-   },
-   {
-    "name": "Survival Trainer",
-    "race": "Wood Elf",
-    "class": "-",
-    "level": "-",
-    "location": "Ardent Keepers",
-    "loot": "-",
-    "desc": "-"
    },
    {
     "name": "Sylvarya Starveil",
@@ -6996,26 +7239,35 @@
     "race": "Wood Elf",
     "class": "-",
     "level": "-",
-    "location": "-",
+    "location": "Well of Order",
     "loot": "-",
     "desc": "Alchemy trainer.",
     "page": "https://monstersandmemories.miraheze.org/wiki/Sylwine_Brightspark"
    },
    {
-    "name": "Tailoring Supplies",
+    "name": "Taegen the Tailor",
     "race": "Wood Elf",
     "class": "-",
     "level": "-",
-    "location": "Merchant's Row",
+    "location": "Upper floor of Weapons Armor.",
     "loot": "-",
-    "desc": "-"
+    "desc": "Tailoring patterns."
    },
    {
-    "name": "Tailoring Trainer",
+    "name": "Taeini Willowgrin",
     "race": "Wood Elf",
     "class": "-",
     "level": "-",
-    "location": "Merchant's Row",
+    "location": "Inside Weapons Armor.",
+    "loot": "-",
+    "desc": "Sells plate armor."
+   },
+   {
+    "name": "Taelin Goldstem",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "Outside Weapons Armor.",
     "loot": "-",
     "desc": "-"
    },
@@ -7026,35 +7278,71 @@
     "level": "-",
     "location": "Tanner Building",
     "loot": "-",
-    "desc": "-",
+    "desc": "Green Drakeling Scale Armor Quests",
     "page": "https://monstersandmemories.miraheze.org/wiki/Takalea_Scaletender"
    },
    {
-    "name": "Tracking Trainer",
+    "name": "Tanner Ashwyr",
     "race": "Wood Elf",
     "class": "-",
     "level": "-",
-    "location": "Ardent Keepers",
+    "location": "Tanner",
     "loot": "-",
-    "desc": "-"
+    "desc": "Tanning trainer."
    },
    {
-    "name": "Tracking Supplies",
+    "name": "Tinkerer Tailwind",
     "race": "Wood Elf",
     "class": "-",
     "level": "-",
-    "location": "Ardent Keepers",
+    "location": "Outside of Sentinel's Gaze.",
     "loot": "-",
-    "desc": "-"
+    "desc": "Tinkering trainer."
    },
    {
-    "name": "Woodworking Trainer",
+    "name": "Tracker Zerys",
     "race": "Wood Elf",
     "class": "-",
     "level": "-",
-    "location": "Merchant's Row",
+    "location": "Outside of Sentinel's Gaze.",
     "loot": "-",
-    "desc": "-"
+    "desc": "Tracking trainer."
+   },
+   {
+    "name": "Vaelyndir the Jewelcrafter",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "In the tree trunk behind building up the ramp above Well of Order.",
+    "loot": "-",
+    "desc": "Jewelcrafting trainer."
+   },
+   {
+    "name": "Vestele the Blacksmith",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "Weapons Armor",
+    "loot": "-",
+    "desc": "Blacksmithing patterns."
+   },
+   {
+    "name": "Weaponsmith Cyliis",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "Sentinel's Gaze",
+    "loot": "-",
+    "desc": "Blacksmithing trainer."
+   },
+   {
+    "name": "Woodworker Drynd",
+    "race": "Wood Elf",
+    "class": "-",
+    "level": "-",
+    "location": "Sentinel's Gaze",
+    "loot": "-",
+    "desc": "Woodworking trainer."
    },
    {
     "name": "Wyrdguard Mithrilvine",
@@ -10639,7 +10927,7 @@
  "Glass Flats": {
   "name": "Glass Flats",
   "url": "https://monstersandmemories.miraheze.org/wiki/Glass_Flats",
-  "revid": 78862,
+  "revid": 83876,
   "level": "20+",
   "monster_types": "- Basilisks, Salt Elemental, Skeletons, Goblins, Beetles, Cyotes, Vipers, Undead, Cultists, Bats",
   "adjacent": [
@@ -10949,8 +11237,8 @@
     "class": "Fighter, Cleric, Wizard",
     "level": "14 - 17",
     "location": "Night Harbor",
-    "loot": "Ornate Cultist Lamp, Broken Cultist Lamp, Shaded Dunes, Aashir's Journal, Aashir's Journal Page 4, Aashir's Journal Page 17, Aashir's Journal Page 37, Aashir's Journal Page 42, Aashir's Journal Page 70, Aashir's Journal Page 76, Corroded Bronze Mace",
-    "desc": "Inside the Hidden Cultist Cave near the ZL to SGS, For Shaded Dunes They hang out at the ZL to Ancient Crypt",
+    "loot": "Ornate Cultist Lamp, Broken Cultist Lamp, Shaded Dunes, Aashir's Journal, Aashir's Journal Page 4, Aashir's Journal Page 17, Aashir's Journal Page 37, Aashir's Journal Page 42, Aashir's Journal Page 70, Aashir's Journal Page 76, Spirit World Ch. 6, Corroded Bronze Mace",
+    "desc": "Inside the Hidden Cultist Cave near the ZL to SGS, For Shaded Dunes They hang out at the ZL to Ancient Crypt between 6PM to 6AM (in-game time)",
     "page": "https://monstersandmemories.miraheze.org/wiki/A_cultist",
     "src": "mob page"
    },
@@ -11155,12 +11443,22 @@
     "class": "Fighter",
     "level": "~35-40",
     "location": "Spread throughout the zone.",
-    "loot": "-",
+    "loot": "Lacquered Medallion , Bone Chips , Leather Scraps",
     "desc": "-",
     "filled_from_mob_page": [
      "location"
     ],
     "page": "https://monstersandmemories.miraheze.org/wiki/A_crystallized_skeleton"
+   },
+   {
+    "name": "a consumed one",
+    "race": "-",
+    "class": "-",
+    "level": "-",
+    "location": "-",
+    "loot": "Embossed Figurine , Rusty Iron Long Spear",
+    "desc": "-",
+    "page": "https://monstersandmemories.miraheze.org/wiki/A_consumed_one"
    },
    {
     "name": "a carrion beetle",
@@ -11876,17 +12174,6 @@
     "loot": null,
     "desc": null,
     "page": "https://monstersandmemories.miraheze.org/wiki/A_charred_tracker",
-    "src": "mob page"
-   },
-   {
-    "name": "A consumed one",
-    "race": null,
-    "class": null,
-    "level": null,
-    "location": null,
-    "loot": null,
-    "desc": null,
-    "page": "https://monstersandmemories.miraheze.org/wiki/A_consumed_one",
     "src": "mob page"
    },
    {
@@ -13133,11 +13420,14 @@
    {
     "name": "Skerrick",
     "race": "Goblin",
-    "class": "-",
+    "class": "Fighter",
     "level": "19-24?",
     "location": "Goblin island with bony architecture, atop the bones. From the ramp that requires jumping, turn right at the intersection",
     "loot": "Skerrick's Shell Earring , Goblin Diver's Leggings",
     "desc": "Named Mob",
+    "filled_from_mob_page": [
+     "class"
+    ],
     "page": "https://monstersandmemories.miraheze.org/wiki/Skerrick"
    },
    {
@@ -13159,6 +13449,17 @@
     "loot": "Brinehide's Girdle, Brinehide Leather Shoulderguards",
     "desc": null,
     "page": "https://monstersandmemories.miraheze.org/wiki/Old_Brinehide",
+    "src": "mob page"
+   },
+   {
+    "name": "A tidewall basilisk",
+    "race": "Basilisk",
+    "class": null,
+    "level": "30",
+    "location": "Southeast side of Basilisk Island.",
+    "loot": "Tidewall Basilisk Boots, Basilisk Scale Necklace",
+    "desc": null,
+    "page": "https://monstersandmemories.miraheze.org/wiki/A_tidewall_basilisk",
     "src": "mob page"
    }
   ],
@@ -13235,7 +13536,8 @@
     "level": "22-23",
     "location": "Goblin island with bony architecture",
     "loot": "-",
-    "desc": "Bundle of Copied Marks"
+    "desc": "Bundle of Copied Marks",
+    "page": "https://monstersandmemories.miraheze.org/wiki/A_goblin_stone-sorter"
    },
    {
     "name": "a recess basilisk",
@@ -13337,6 +13639,28 @@
     "loot": null,
     "desc": null,
     "page": "https://monstersandmemories.miraheze.org/wiki/Namrek_Voss",
+    "src": "mob page"
+   },
+   {
+    "name": "Quessith Velgarrith",
+    "race": "Deep Elf",
+    "class": null,
+    "level": null,
+    "location": "Above the Caves of Irem zoneline",
+    "loot": null,
+    "desc": "A Letter for Munir Halabi",
+    "page": "https://monstersandmemories.miraheze.org/wiki/Quessith_Velgarrith",
+    "src": "mob page"
+   },
+   {
+    "name": "Lorne Whitlock",
+    "race": "Human",
+    "class": null,
+    "level": null,
+    "location": null,
+    "loot": null,
+    "desc": null,
+    "page": "https://monstersandmemories.miraheze.org/wiki/Lorne_Whitlock",
     "src": "mob page"
    }
   ],
@@ -14560,11 +14884,12 @@
     "name": "a forest drakeling",
     "race": "Drake",
     "class": "-",
-    "level": "-",
+    "level": "16-18",
     "location": "Wanders Keeper's Bight just beyond the crossroads from Evershade Weald toward the poacher camps.",
     "loot": "-",
     "desc": "-",
     "filled_from_mob_page": [
+     "level",
      "location"
     ],
     "page": "https://monstersandmemories.miraheze.org/wiki/A_forest_drakeling"
@@ -16332,8 +16657,8 @@
     "class": "Fighter, Cleric, Wizard",
     "level": "14 - 17",
     "location": "Night Harbor",
-    "loot": "Ornate Cultist Lamp, Broken Cultist Lamp, Shaded Dunes, Aashir's Journal, Aashir's Journal Page 4, Aashir's Journal Page 17, Aashir's Journal Page 37, Aashir's Journal Page 42, Aashir's Journal Page 70, Aashir's Journal Page 76, Corroded Bronze Mace",
-    "desc": "Inside the Hidden Cultist Cave near the ZL to SGS, For Shaded Dunes They hang out at the ZL to Ancient Crypt",
+    "loot": "Ornate Cultist Lamp, Broken Cultist Lamp, Shaded Dunes, Aashir's Journal, Aashir's Journal Page 4, Aashir's Journal Page 17, Aashir's Journal Page 37, Aashir's Journal Page 42, Aashir's Journal Page 70, Aashir's Journal Page 76, Spirit World Ch. 6, Corroded Bronze Mace",
+    "desc": "Inside the Hidden Cultist Cave near the ZL to SGS, For Shaded Dunes They hang out at the ZL to Ancient Crypt between 6PM to 6AM (in-game time)",
     "page": "https://monstersandmemories.miraheze.org/wiki/A_cultist",
     "src": "mob page"
    },
@@ -21922,12 +22247,13 @@
  "Scarwood": {
   "name": "Scarwood",
   "url": "https://monstersandmemories.miraheze.org/wiki/Scarwood",
-  "revid": 80807,
+  "revid": 83824,
   "level": "24 - 50",
   "monster_types": "Bears, Snakes, Drakes, Wolves, Giants, Humanoids, Treants, Wisps",
   "adjacent": [
    "Keeper's Bight",
-   "Fields of the Lost"
+   "Fields of the Lost",
+   "Sunken Resort"
   ],
   "notable": [],
   "quests": [
@@ -22504,7 +22830,7 @@
     "class": "Fighter, Cleric, Wizard",
     "level": "14 - 17",
     "location": "Ancient Crypt Entrance",
-    "loot": "Ornate Cultist Lamp, Broken Cultist Lamp, Shaded Dunes, Aashir's Journal, Aashir's Journal Page 4, Aashir's Journal Page 17, Aashir's Journal Page 37, Aashir's Journal Page 42, Aashir's Journal Page 70, Aashir's Journal Page 76",
+    "loot": "Ornate Cultist Lamp, Broken Cultist Lamp, Shaded Dunes, Aashir's Journal, Aashir's Journal Page 4, Aashir's Journal Page 17, Aashir's Journal Page 37, Aashir's Journal Page 42, Aashir's Journal Page 70, Aashir's Journal Page 76, Spirit World Ch. 6",
     "desc": "Only at Night",
     "filled_from_mob_page": [
      "level"
@@ -24494,6 +24820,17 @@
     "src": "mob page"
    },
    {
+    "name": "A sand giant raider",
+    "race": "Human",
+    "class": null,
+    "level": "~45",
+    "location": "All along the coastline",
+    "loot": null,
+    "desc": null,
+    "page": "https://monstersandmemories.miraheze.org/wiki/A_sand_giant_raider",
+    "src": "mob page"
+   },
+   {
     "name": "A sand giant fakir",
     "race": "Giant",
     "class": null,
@@ -24957,11 +25294,14 @@
    {
     "name": "Best Appraiser Bibic",
     "race": "Goblin",
-    "class": "-",
+    "class": "Rogue",
     "level": "20+",
     "location": "Muggrah Mountain Camp",
     "loot": "Junk Appraiser's Satchel , Boots of Certainty , Korvixi Droplet , Monocle of Good Seeing",
     "desc": "Named Mob",
+    "filled_from_mob_page": [
+     "class"
+    ],
     "page": "https://monstersandmemories.miraheze.org/wiki/Best_Appraiser_Bibic"
    },
    {
@@ -25261,7 +25601,8 @@
     "level": "-",
     "location": "-",
     "loot": "-",
-    "desc": "-"
+    "desc": "-",
+    "page": "https://monstersandmemories.miraheze.org/wiki/A_dune_spiderling"
    },
    {
     "name": "a palm hunter",
@@ -26541,7 +26882,7 @@
  "Sunken Resort": {
   "name": "Sunken Resort",
   "url": "https://monstersandmemories.miraheze.org/wiki/Sunken_Resort",
-  "revid": 69219,
+  "revid": 83821,
   "level": "29-38 (exact range unknown)",
   "monster_types": "Undead,",
   "adjacent": [
@@ -26577,12 +26918,13 @@
    },
    {
     "name": "Vesryn the Unmoored",
-    "race": "Undead",
-    "class": "-",
-    "level": "-",
-    "location": "-",
-    "loot": null,
-    "desc": "Named Mob"
+    "race": "Ghost",
+    "class": "Monk",
+    "level": "35-36",
+    "location": "Entrance",
+    "loot": "Scoured Iron Chausses , Gnomish Fighting Mitts",
+    "desc": "Named Mob",
+    "page": "https://monstersandmemories.miraheze.org/wiki/Vesryn_the_Unmoored"
    },
    {
     "name": "Waterlord Lin'Xa",
@@ -30272,9 +30614,9 @@
     "race": "Human",
     "class": "Elementalist",
     "level": null,
-    "location": null,
+    "location": "Eastern Underdocks, accompanied by a Fire Elemental",
     "loot": null,
-    "desc": null,
+    "desc": "A human elementalist associated with the Descendian Order who is involved in retrieving a stolen package for House Varros.",
     "page": "https://monstersandmemories.miraheze.org/wiki/Freysia_Riftrend",
     "src": "mob page"
    },

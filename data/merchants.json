@@ -19,6 +19,17 @@
    "Hides"
   ]
  },
+ "A bag vendor": {
+  "name": "A bag vendor",
+  "url": "https://monstersandmemories.miraheze.org/wiki/A_bag_vendor",
+  "wiki_ts": "2026-10-20",
+  "zone": [
+   "Faelindral"
+  ],
+  "location": "Trader's Terrace. Left around the tree when coming up the ramp.",
+  "sells": [],
+  "buys": []
+ },
  "A baker (Night Market)": {
   "name": "A baker (Night Market)",
   "url": "https://monstersandmemories.miraheze.org/wiki/A_baker_(Night_Market)",
@@ -53,7 +64,7 @@
  "A barkeep": {
   "name": "A barkeep",
   "url": "https://monstersandmemories.miraheze.org/wiki/A_barkeep",
-  "wiki_ts": "2026-07-07",
+  "wiki_ts": "2026-10-20",
   "zone": [
    "Night Harbor"
   ],
@@ -70,6 +81,29 @@
    "Cooked meat",
    "Roots (Harvallen, Multhele)",
    "Snake eggs",
+   "Vegetables (Wild Carrots ...)"
+  ]
+ },
+ "A barkeep (Faelindral)": {
+  "name": "A barkeep (Faelindral)",
+  "url": "https://monstersandmemories.miraheze.org/wiki/A_barkeep_(Faelindral)",
+  "wiki_ts": "2026-10-20",
+  "zone": [
+   "Faelindral"
+  ],
+  "location": "Around back from Willows Whisper stage.",
+  "sells": [
+   "Birch Sap",
+   "Calafreyan Sap",
+   "Elven Wine",
+   "Ration",
+   "Water Flask",
+   "Weak Beer"
+  ],
+  "buys": [
+   "Charred fish",
+   "Cooked meat",
+   "Roots (Multhele)",
    "Vegetables (Wild Carrots ...)"
   ]
  },
@@ -107,6 +141,26 @@
    "Metal Scraps"
   ]
  },
+ "A bowyer (Faelindral)": {
+  "name": "A bowyer (Faelindral)",
+  "url": "https://monstersandmemories.miraheze.org/wiki/A_bowyer_(Faelindral)",
+  "wiki_ts": "2026-10-20",
+  "zone": [
+   "Faelindral"
+  ],
+  "location": "Outside Ranger's Rest.",
+  "sells": [
+   "Recipe: Pitch-Wrapped Arrow",
+   "Recipe: Net Arrow (x20)",
+   "Recipe: Smoke Bomb Arrow (x20)",
+   "Arrow",
+   "Bow",
+   "Fletching Kit",
+   "Hip Quiver",
+   "Large Back Quiver"
+  ],
+  "buys": []
+ },
  "A bowyer (Night Harbor)": {
   "name": "A bowyer (Night Harbor)",
   "url": "https://monstersandmemories.miraheze.org/wiki/A_bowyer_(Night_Harbor)",
@@ -138,6 +192,19 @@
   "location": "Night Market",
   "sells": [],
   "buys": []
+ },
+ "A brewer (Faelindral)": {
+  "name": "A brewer (Faelindral)",
+  "url": "https://monstersandmemories.miraheze.org/wiki/A_brewer_(Faelindral)",
+  "wiki_ts": "2026-10-20",
+  "zone": [
+   "Faelindral"
+  ],
+  "location": "Willow Whispers Bar. Under the ramp up to Trader's Terrace.",
+  "sells": [],
+  "buys": [
+   "Nothing"
+  ]
  },
  "A chain armorer": {
   "name": "A chain armorer",
@@ -194,6 +261,17 @@
    "Thread",
    "Cloth Scraps"
   ]
+ },
+ "A cloth armorer (Faelindral)": {
+  "name": "A cloth armorer (Faelindral)",
+  "url": "https://monstersandmemories.miraheze.org/wiki/A_cloth_armorer_(Faelindral)",
+  "wiki_ts": "2026-10-20",
+  "zone": [
+   "Faelindral"
+  ],
+  "location": "Trader's Terrace. Go left when coming up the ramp.",
+  "sells": [],
+  "buys": []
  },
  "A cobbler": {
   "name": "A cobbler",
@@ -264,6 +342,26 @@
    "Nothing!"
   ]
  },
+ "A cook (Faelindral)": {
+  "name": "A cook (Faelindral)",
+  "url": "https://monstersandmemories.miraheze.org/wiki/A_cook_(Faelindral)",
+  "wiki_ts": "2026-10-20",
+  "zone": [
+   "Faelindral"
+  ],
+  "location": "In the building next to the Inn near Newbie Lift.",
+  "sells": [
+   "Basil",
+   "Black Pepper",
+   "Cabbage",
+   "Sea Salt",
+   "Thyme"
+  ],
+  "buys": [
+   "Mob parts",
+   "Vegetables (Wild Carrots ...)"
+  ]
+ },
  "A cooking supplies vendor": {
   "name": "A cooking supplies vendor",
   "url": "https://monstersandmemories.miraheze.org/wiki/A_cooking_supplies_vendor",
@@ -289,6 +387,19 @@
    "Spellbook"
   ],
   "buys": []
+ },
+ "A farmer": {
+  "name": "A farmer",
+  "url": "https://monstersandmemories.miraheze.org/wiki/A_farmer",
+  "wiki_ts": "2026-10-11",
+  "zone": [
+   "Faelindral"
+  ],
+  "location": "Down the Kennel Lift",
+  "sells": [],
+  "buys": [
+   "Currently buys nothing."
+  ]
  },
  "A fisherman (Faelindral)": {
   "name": "A fisherman (Faelindral)",
@@ -515,6 +626,19 @@
    "Lumberjack Materials"
   ]
  },
+ "A mason": {
+  "name": "A mason",
+  "url": "https://monstersandmemories.miraheze.org/wiki/A_mason",
+  "wiki_ts": "2026-10-11",
+  "zone": [
+   "Faelindral"
+  ],
+  "location": "Down the Kennel Lift",
+  "sells": [],
+  "buys": [
+   "Currently buys nothing."
+  ]
+ },
  "A medic": {
   "name": "A medic",
   "url": "https://monstersandmemories.miraheze.org/wiki/A_medic",
@@ -689,6 +813,21 @@
   ],
   "buys": []
  },
+ "A ranger instructor": {
+  "name": "A ranger instructor",
+  "url": "https://monstersandmemories.miraheze.org/wiki/A_ranger_instructor",
+  "wiki_ts": "2026-10-19",
+  "zone": [
+   "Faelindral"
+  ],
+  "location": "Rangers Rest",
+  "sells": [
+   "Spellbook"
+  ],
+  "buys": [
+   "Multhele Root"
+  ]
+ },
  "A reagent vendor": {
   "name": "A reagent vendor",
   "url": "https://monstersandmemories.miraheze.org/wiki/A_reagent_vendor",
@@ -800,7 +939,7 @@
  "A reagent vendor (Wayfarers Hospice)": {
   "name": "A reagent vendor (Wayfarers Hospice)",
   "url": "https://monstersandmemories.miraheze.org/wiki/A_reagent_vendor_(Wayfarers_Hospice)",
-  "wiki_ts": "2026-10-06",
+  "wiki_ts": "2026-10-17",
   "zone": [
    "Night Harbor"
   ],
@@ -810,7 +949,7 @@
    "Prayer Beads",
    "Quill",
    "Spellbook",
-   "Tablet of the Elements",
+   "Lectionary of Light",
    "Vial of Anointing Oil"
   ],
   "buys": [
@@ -856,7 +995,7 @@
  "A shady peddler": {
   "name": "A shady peddler",
   "url": "https://monstersandmemories.miraheze.org/wiki/A_shady_peddler",
-  "wiki_ts": "2026-07-08",
+  "wiki_ts": "2026-10-12",
   "zone": [
    "Night Harbor"
   ],
@@ -870,7 +1009,11 @@
    "Volatile Rift Potion"
   ],
   "buys": [
-   "about anything at a reduced cost compared to regular merchants"
+   "About anything at a reduced cost compared to regular merchants.",
+   "linksto = A shady peddler",
+   "namespace = 0",
+   "ordermethod = title",
+   "mode = unordered"
   ]
  },
  "A shady trader": {
@@ -1042,6 +1185,19 @@
   "sells": [],
   "buys": []
  },
+ "A stonecutter": {
+  "name": "A stonecutter",
+  "url": "https://monstersandmemories.miraheze.org/wiki/A_stonecutter",
+  "wiki_ts": "2026-10-11",
+  "zone": [
+   "Faelindral"
+  ],
+  "location": "Down the Kennel Lift",
+  "sells": [],
+  "buys": [
+   "Currently buys nothing."
+  ]
+ },
  "A survivalist": {
   "name": "A survivalist",
   "url": "https://monstersandmemories.miraheze.org/wiki/A_survivalist",
@@ -1098,6 +1254,17 @@
    "Thread"
   ]
  },
+ "A used armor dealer": {
+  "name": "A used armor dealer",
+  "url": "https://monstersandmemories.miraheze.org/wiki/A_used_armor_dealer",
+  "wiki_ts": "2026-10-11",
+  "zone": [
+   "Faelindral"
+  ],
+  "location": "Trader's Terrace",
+  "sells": [],
+  "buys": []
+ },
  "A used weapons dealer": {
   "name": "A used weapons dealer",
   "url": "https://monstersandmemories.miraheze.org/wiki/A_used_weapons_dealer",
@@ -1107,6 +1274,23 @@
    "Shallow Shoals"
   ],
   "location": "Night Market, Shortfolk area",
+  "sells": [
+   "Rusty Dagger",
+   "Rusty Mace",
+   "Rusty Shortsword"
+  ],
+  "buys": [
+   "All Weapons"
+  ]
+ },
+ "A used weapons dealer (Faelindral)": {
+  "name": "A used weapons dealer (Faelindral)",
+  "url": "https://monstersandmemories.miraheze.org/wiki/A_used_weapons_dealer_(Faelindral)",
+  "wiki_ts": "2026-10-20",
+  "zone": [
+   "Faelindral"
+  ],
+  "location": "Trader's Terrace",
   "sells": [
    "Rusty Dagger",
    "Rusty Mace",
@@ -1256,19 +1440,6 @@
   ],
   "buys": []
  },
- "Amarah Ith'vayen": {
-  "name": "Amarah Ith'vayen",
-  "url": "https://monstersandmemories.miraheze.org/wiki/Amarah_Ith%27vayen",
-  "wiki_ts": "2026-09-26",
-  "zone": [
-   "Ail'Vorith"
-  ],
-  "location": "Located in the Obsidian Academy. (Building straight ahead from bridge leading into Foreign Quarter)",
-  "sells": [],
-  "buys": [
-   "None"
-  ]
- },
  "An alchemist": {
   "name": "An alchemist",
   "url": "https://monstersandmemories.miraheze.org/wiki/An_alchemist",
@@ -1295,6 +1466,19 @@
    "Limestone",
    "Sealants",
    "Spectral Dust"
+  ]
+ },
+ "An archaeologist (Faelindral)": {
+  "name": "An archaeologist (Faelindral)",
+  "url": "https://monstersandmemories.miraheze.org/wiki/An_archaeologist_(Faelindral)",
+  "wiki_ts": "2026-10-20",
+  "zone": [
+   "Faelindral"
+  ],
+  "location": "Down the Kennel Lift",
+  "sells": [],
+  "buys": [
+   "Currently buys nothing."
   ]
  },
  "An elemental quartermaster": {
@@ -1501,6 +1685,17 @@
   "buys": [
    "unknown"
   ]
+ },
+ "Barkeep Lyrsa": {
+  "name": "Barkeep Lyrsa",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Barkeep_Lyrsa",
+  "wiki_ts": "2026-10-17",
+  "zone": [
+   "Underdocks"
+  ],
+  "location": "Inn behind pirate's tavern.",
+  "sells": [],
+  "buys": []
  },
  "Barkeep Zahra": {
   "name": "Barkeep Zahra",
@@ -1758,6 +1953,30 @@
   ],
   "buys": []
  },
+ "Bowyer Nulvessa": {
+  "name": "Bowyer Nulvessa",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Bowyer_Nulvessa",
+  "wiki_ts": "2026-10-18",
+  "zone": [
+   "Ail'Vorith"
+  ],
+  "location": "Foreign Quarter",
+  "sells": [
+   "Recipe: Pitch-Wrapped Arrow (x20)",
+   "Recipe: Net Arrow (x20)",
+   "Recipe: Smoke Bomb Arrow (x20)",
+   "Arrow",
+   "Bow",
+   "Fletching Kit",
+   "Hip Quiver",
+   "Large Back Quiver",
+   "Small Back Quiver",
+   "Throwing Dagger"
+  ],
+  "buys": [
+   "unknown"
+  ]
+ },
  "Captain Eilionoir": {
   "name": "Captain Eilionoir",
   "url": "https://monstersandmemories.miraheze.org/wiki/Captain_Eilionoir",
@@ -1876,6 +2095,19 @@
   ],
   "buys": [
    "About anything but at a reduced cost compared to regular merchants"
+  ]
+ },
+ "Cook Vashuk": {
+  "name": "Cook Vashuk",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Cook_Vashuk",
+  "wiki_ts": "2026-10-17",
+  "zone": [
+   "Ail'Vorith"
+  ],
+  "location": "Foreign Quarter Inn (Kitchen/Cellar)",
+  "sells": [],
+  "buys": [
+   "unknown"
   ]
  },
  "Customs Inspector Bakari": {
@@ -2003,6 +2235,24 @@
   "sells": [],
   "buys": []
  },
+ "Feslan Godfrey": {
+  "name": "Feslan Godfrey",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Feslan_Godfrey",
+  "wiki_ts": "2026-10-17",
+  "zone": [
+   "Underdocks"
+  ],
+  "location": "Inn behind pirate's tavern.",
+  "sells": [
+   "Basil",
+   "Black Pepper",
+   "Sea Salt"
+  ],
+  "buys": [
+   "Cooking Supplies",
+   "Creature parts"
+  ]
+ },
  "Fisher Mardan": {
   "name": "Fisher Mardan",
   "url": "https://monstersandmemories.miraheze.org/wiki/Fisher_Mardan",
@@ -2016,6 +2266,20 @@
    "Grub"
   ],
   "buys": []
+ },
+ "Gorik Tundsen": {
+  "name": "Gorik Tundsen",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Gorik_Tundsen",
+  "wiki_ts": "2026-10-17",
+  "zone": [
+   "Underdocks"
+  ],
+  "location": "Inn behind pirate's tavern.",
+  "sells": [],
+  "buys": [
+   "Cooking Supplies",
+   "Creature parts"
+  ]
  },
  "Grakkesh": {
   "name": "Grakkesh",
@@ -2144,7 +2408,7 @@
  "Instructor Afzal": {
   "name": "Instructor Afzal",
   "url": "https://monstersandmemories.miraheze.org/wiki/Instructor_Afzal",
-  "wiki_ts": "2026-07-09",
+  "wiki_ts": "2026-10-16",
   "zone": [
    "Night Harbor"
   ],
@@ -2154,6 +2418,20 @@
    "Spellbook"
   ],
   "buys": []
+ },
+ "Ivar Copperpot": {
+  "name": "Ivar Copperpot",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Ivar_Copperpot",
+  "wiki_ts": "2026-10-17",
+  "zone": [
+   "Underdocks"
+  ],
+  "location": "The inn across from Citadel Exchange. Downstairs. The backroom behind the bar.",
+  "sells": [],
+  "buys": [
+   "Cooking Supplies",
+   "Creature parts"
+  ]
  },
  "Kalessa Velgarrith": {
   "name": "Kalessa Velgarrith",
@@ -2209,30 +2487,17 @@
    "Undead parts"
   ]
  },
- "Klavel Sul": {
-  "name": "Klavel Sul",
-  "url": "https://monstersandmemories.miraheze.org/wiki/Klavel_Sul",
-  "wiki_ts": "2026-09-26",
+ "Kulzzara": {
+  "name": "Kulzzara",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Kulzzara",
+  "wiki_ts": "2026-10-18",
   "zone": [
    "Ail'Vorith"
   ],
-  "location": "Located in room with Melee Trainers.",
+  "location": "Foreign Quarter Market",
   "sells": [],
   "buys": [
-   "None"
-  ]
- },
- "Laren Drin'dar": {
-  "name": "Laren Drin'dar",
-  "url": "https://monstersandmemories.miraheze.org/wiki/Laren_Drin%27dar",
-  "wiki_ts": "2026-09-26",
-  "zone": [
-   "Ail'Vorith"
-  ],
-  "location": "Located in room with Melee Trainers.",
-  "sells": [],
-  "buys": [
-   "None"
+   "unknown"
   ]
  },
  "Leatherworker Saif": {
@@ -2324,17 +2589,17 @@
  "Leatherworker Vex": {
   "name": "Leatherworker Vex",
   "url": "https://monstersandmemories.miraheze.org/wiki/Leatherworker_Vex",
-  "wiki_ts": "2026-09-26",
+  "wiki_ts": "2026-10-18",
   "zone": [
    "Ail'Vorith"
   ],
-  "location": "In the Foreign Trader's Market",
+  "location": "Foreign Trader's Market",
   "sells": [
    "Leatherworking Kit"
   ],
   "buys": [
-   "Tattered Rawhide Armor",
-   "Rawhide Scarps"
+   "Tattered Rawhide",
+   "Rawhide Scraps"
   ]
  },
  "Leatherworking Supplies": {
@@ -2449,7 +2714,7 @@
  "Melzorra": {
   "name": "Melzorra",
   "url": "https://monstersandmemories.miraheze.org/wiki/Melzorra",
-  "wiki_ts": "2026-09-14",
+  "wiki_ts": "2026-10-13",
   "zone": [
    "Ail'Vorith"
   ],
@@ -2467,8 +2732,37 @@
   "buys": [
    "Bags",
    "Bat Fur",
-   "Leatherworking Mats"
+   "Leatherworking Mats",
+   "Large Bat Fur",
+   "Wererat Pelt"
   ]
+ },
+ "Minel Ublast": {
+  "name": "Minel Ublast",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Minel_Ublast",
+  "wiki_ts": "2026-10-11",
+  "zone": [
+   "Ail'Vorith"
+  ],
+  "location": "By the inquisitor guards in the main city, up ramp on right",
+  "sells": [
+   "Leatherworking Kit"
+  ],
+  "buys": [
+   "Tattered Rawhide Armor",
+   "Rawhide Scarps"
+  ]
+ },
+ "Miniel Ubast": {
+  "name": "Miniel Ubast",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Miniel_Ubast",
+  "wiki_ts": "2026-10-11",
+  "zone": [
+   "Ail'Vorith"
+  ],
+  "location": "Enter main city. Turn right. Go up ramp. Immediately on the right is a prison guarded by Inquisitors. Go up one floor and through the door",
+  "sells": [],
+  "buys": []
  },
  "Mining Supplies": {
   "name": "Mining Supplies",
@@ -2523,17 +2817,6 @@
    "Monster Parts"
   ]
  },
- "Myal Vehear": {
-  "name": "Myal Vehear",
-  "url": "https://monstersandmemories.miraheze.org/wiki/Myal_Vehear",
-  "wiki_ts": "2026-10-05",
-  "zone": [
-   "Ail'Vorith"
-  ],
-  "location": "Located in the Obsidian Academy, 2nd floor. (Building straight ahead from bridge leading into Foreign Quarter)",
-  "sells": [],
-  "buys": []
- },
  "Nerida Thinblade": {
   "name": "Nerida Thinblade",
   "url": "https://monstersandmemories.miraheze.org/wiki/Nerida_Thinblade",
@@ -2581,7 +2864,7 @@
  "Nyxia Ak'kin": {
   "name": "Nyxia Ak'kin",
   "url": "https://monstersandmemories.miraheze.org/wiki/Nyxia_Ak%27kin",
-  "wiki_ts": "2026-10-10",
+  "wiki_ts": "2026-10-17",
   "zone": [
    "Ail'Vorith"
   ],
@@ -2591,7 +2874,9 @@
    "Water Flask"
   ],
   "buys": [
-   "Drinks, Deep Beetle Eye (79c), Food"
+   "Drinks",
+   "Deep Beetle Eye (79c)",
+   "Food"
   ]
  },
  "Otto Roth": {
@@ -2611,19 +2896,6 @@
   ],
   "buys": [
    "Water Flask"
-  ]
- },
- "Provost Xan'shorn": {
-  "name": "Provost Xan'shorn",
-  "url": "https://monstersandmemories.miraheze.org/wiki/Provost_Xan%27shorn",
-  "wiki_ts": "2026-09-14",
-  "zone": [
-   "Ail'Vorith"
-  ],
-  "location": "Paths around Foreign Quarters",
-  "sells": [],
-  "buys": [
-   "None"
   ]
  },
  "Quartermaster Obaid": {
@@ -2711,14 +2983,14 @@
  "Ruzzuna": {
   "name": "Ruzzuna",
   "url": "https://monstersandmemories.miraheze.org/wiki/Ruzzuna",
-  "wiki_ts": "2026-09-24",
+  "wiki_ts": "2026-10-18",
   "zone": [
    "Ail'Vorith"
   ],
   "location": "Foreign Trader's Market",
   "sells": [],
   "buys": [
-   "Cloth Armour"
+   "Cloth Armor"
   ]
  },
  "Sproggets Bedsprings": {
@@ -2998,19 +3270,6 @@
    "Various Armor Drops"
   ]
  },
- "Vaslir Naiyth": {
-  "name": "Vaslir Naiyth",
-  "url": "https://monstersandmemories.miraheze.org/wiki/Vaslir_Naiyth",
-  "wiki_ts": "2026-09-26",
-  "zone": [
-   "Ail'Vorith"
-  ],
-  "location": "Located in the Obsidian Academy first floor",
-  "sells": [],
-  "buys": [
-   "None"
-  ]
- },
  "Veldara Stillflask": {
   "name": "Veldara Stillflask",
   "url": "https://monstersandmemories.miraheze.org/wiki/Veldara_Stillflask",
@@ -3084,19 +3343,6 @@
   "sells": [],
   "buys": [
    "unknown"
-  ]
- },
- "Zalethra Drezzorith": {
-  "name": "Zalethra Drezzorith",
-  "url": "https://monstersandmemories.miraheze.org/wiki/Zalethra_Drezzorith",
-  "wiki_ts": "2026-10-10",
-  "zone": [
-   "Ail'Vorith"
-  ],
-  "location": "Located in the Obsidian Academy. (Building straight ahead from bridge leading into Foreign Quarter)",
-  "sells": [],
-  "buys": [
-   "None"
   ]
  },
  "Zalex Mortaine": {

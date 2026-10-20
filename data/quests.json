@@ -1,4 +1,22 @@
 {
+ "A Letter for Munir Halabi": {
+  "name": "A Letter for Munir Halabi",
+  "url": "https://monstersandmemories.miraheze.org/wiki/A_Letter_for_Munir_Halabi",
+  "wiki_ts": "2026-10-19",
+  "zone": "Great Cavern Sea",
+  "giver": "Quessith Velgarrith",
+  "min_level": "1",
+  "classes": "All",
+  "rewards": [],
+  "repeatable": false,
+  "cats": [
+   "All Class Quests",
+   "Great Cavern Sea Quests",
+   "Quests",
+   "Quests without Related Items",
+   "Quests without Rewards"
+  ]
+ },
  "A Sweet Treat": {
   "name": "A Sweet Treat",
   "url": "https://monstersandmemories.miraheze.org/wiki/A_Sweet_Treat",
@@ -38,7 +56,7 @@
  "Ail'Vorith Class Quests": {
   "name": "Ail'Vorith Class Quests",
   "url": "https://monstersandmemories.miraheze.org/wiki/Ail%27Vorith_Class_Quests",
-  "wiki_ts": "2026-10-10",
+  "wiki_ts": "2026-10-20",
   "zone": "Ail'Vorith",
   "giver": "Various",
   "min_level": "2",
@@ -56,7 +74,7 @@
  "Ail'Vorith Starter Quest": {
   "name": "Ail'Vorith Starter Quest",
   "url": "https://monstersandmemories.miraheze.org/wiki/Ail%27Vorith_Starter_Quest",
-  "wiki_ts": "2026-09-26",
+  "wiki_ts": "2026-10-17",
   "zone": "Ail'Vorith",
   "giver": "Toilmaster Verith",
   "min_level": "1",
@@ -136,7 +154,7 @@
  "Ashira Tails Quest": {
   "name": "Ashira Tails Quest",
   "url": "https://monstersandmemories.miraheze.org/wiki/Ashira_Tails_Quest",
-  "wiki_ts": "2026-10-01",
+  "wiki_ts": "2026-10-12",
   "zone": "Night Harbor",
   "giver": "Old Rankle",
   "min_level": "1",
@@ -155,9 +173,9 @@
  "Ashira Warrior Bracer Quest": {
   "name": "Ashira Warrior Bracer Quest",
   "url": "https://monstersandmemories.miraheze.org/wiki/Ashira_Warrior_Bracer_Quest",
-  "wiki_ts": "2026-10-01",
+  "wiki_ts": "2026-10-12",
   "zone": "Night Harbor",
-  "giver": "Quartermaster Obaid",
+  "giver": "Watch Captain Badawi",
   "min_level": "1",
   "classes": "All",
   "rewards": [
@@ -216,7 +234,7 @@
  "Beastmaster Starter Quest (Faelindral)": {
   "name": "Beastmaster Starter Quest (Faelindral)",
   "url": "https://monstersandmemories.miraheze.org/wiki/Beastmaster_Starter_Quest_(Faelindral)",
-  "wiki_ts": "2026-09-22",
+  "wiki_ts": "2026-10-17",
   "zone": "Faelindral",
   "giver": null,
   "min_level": "1",
@@ -294,7 +312,7 @@
  "Bones of the Ancestor": {
   "name": "Bones of the Ancestor",
   "url": "https://monstersandmemories.miraheze.org/wiki/Bones_of_the_Ancestor",
-  "wiki_ts": "2026-10-08",
+  "wiki_ts": "2026-10-11",
   "zone": "Sungreet Strand",
   "giver": "Bree Weatherstoll",
   "min_level": "1",
@@ -313,25 +331,25 @@
  "Burning Bones": {
   "name": "Burning Bones",
   "url": "https://monstersandmemories.miraheze.org/wiki/Burning_Bones",
-  "wiki_ts": "2026-10-07",
+  "wiki_ts": "2026-10-12",
   "zone": "Night Harbor",
   "giver": "Bones",
   "min_level": "16",
   "classes": "Necromancer",
-  "rewards": [],
+  "rewards": [
+   "Scroll: Burning Bones"
+  ],
   "repeatable": false,
   "cats": [
    "Necromancer Quests",
    "Night Harbor Quests",
-   "Quests",
-   "Quests without Related Items",
-   "Quests without Rewards"
+   "Quests"
   ]
  },
  "Burnt Out Lightstones": {
   "name": "Burnt Out Lightstones",
   "url": "https://monstersandmemories.miraheze.org/wiki/Burnt_Out_Lightstones",
-  "wiki_ts": "2025-10-05",
+  "wiki_ts": "2026-10-12",
   "zone": "Night Harbor",
   "giver": "Jabir Ilhamar",
   "min_level": "4",
@@ -341,8 +359,6 @@
   "cats": [
    "Night Harbor Quests",
    "Quests",
-   "Quests without Related Items",
-   "Quests without Rewards",
    "Wizard Quests"
   ]
  },
@@ -366,10 +382,10 @@
  "Chompers' Hide Tunic Quest": {
   "name": "Chompers' Hide Tunic Quest",
   "url": "https://monstersandmemories.miraheze.org/wiki/Chompers%27_Hide_Tunic_Quest",
-  "wiki_ts": "2026-10-07",
+  "wiki_ts": "2026-10-18",
   "zone": "Shaded Dunes",
   "giver": "Cheikho",
-  "min_level": "1",
+  "min_level": "16",
   "classes": "All",
   "rewards": [
    "Chompers Hide Tunic"
@@ -385,10 +401,10 @@
  "Cinder Beetle Armor Quests": {
   "name": "Cinder Beetle Armor Quests",
   "url": "https://monstersandmemories.miraheze.org/wiki/Cinder_Beetle_Armor_Quests",
-  "wiki_ts": "2026-10-07",
+  "wiki_ts": "2026-10-20",
   "zone": "Night Harbor",
   "giver": "Hult Beetlewrangler",
-  "min_level": "1",
+  "min_level": "14",
   "classes": "ARC BRD BST CLR DRU FTR INQ MNK PAL RNG ROG SHD SHM SPB",
   "rewards": [
    "Cinder Beetle Shield",
@@ -480,23 +496,6 @@
    "Quests"
   ]
  },
- "Crude Prison Shiv": {
-  "name": "Crude Prison Shiv",
-  "url": "https://monstersandmemories.miraheze.org/wiki/Crude_Prison_Shiv",
-  "wiki_ts": "2026-10-09",
-  "zone": "Blind Midden",
-  "giver": "Kalessa Velgarrith",
-  "min_level": null,
-  "classes": null,
-  "rewards": [],
-  "repeatable": false,
-  "cats": [
-   "Blind Midden Quests",
-   "Quests",
-   "Quests without Related Items",
-   "Quests without Related NPCs"
-  ]
- },
  "Crystals from the Deepcut miners": {
   "name": "Crystals from the Deepcut miners",
   "url": "https://monstersandmemories.miraheze.org/wiki/Crystals_from_the_Deepcut_miners",
@@ -556,7 +555,7 @@
  "Dealing with the Blacktide Orcs": {
   "name": "Dealing with the Blacktide Orcs",
   "url": "https://monstersandmemories.miraheze.org/wiki/Dealing_with_the_Blacktide_Orcs",
-  "wiki_ts": "2026-08-26",
+  "wiki_ts": "2026-10-11",
   "zone": "Shallow Shoals",
   "giver": "Captain Harkan Saafir",
   "min_level": "40",
@@ -568,8 +567,6 @@
   "cats": [
    "All Class Quests",
    "Quests",
-   "Quests without Related Items",
-   "Quests without Rewards",
    "Shallow Shoals Quests"
   ]
  },
@@ -628,7 +625,7 @@
  "Dispose of the Onyx Outlaws": {
   "name": "Dispose of the Onyx Outlaws",
   "url": "https://monstersandmemories.miraheze.org/wiki/Dispose_of_the_Onyx_Outlaws",
-  "wiki_ts": "2026-09-30",
+  "wiki_ts": "2026-10-18",
   "zone": "Sungreet Strand",
   "giver": "Foreman Stonehammer",
   "min_level": "1",
@@ -648,7 +645,7 @@
  "Druid Starter Quest (Faelindral)": {
   "name": "Druid Starter Quest (Faelindral)",
   "url": "https://monstersandmemories.miraheze.org/wiki/Druid_Starter_Quest_(Faelindral)",
-  "wiki_ts": "2026-10-01",
+  "wiki_ts": "2026-10-11",
   "zone": "Faelindral",
   "giver": "Sylvarya Starveil",
   "min_level": "1",
@@ -670,7 +667,7 @@
  "Druid Starter Quest (Night Harbor)": {
   "name": "Druid Starter Quest (Night Harbor)",
   "url": "https://monstersandmemories.miraheze.org/wiki/Druid_Starter_Quest_(Night_Harbor)",
-  "wiki_ts": "2026-10-06",
+  "wiki_ts": "2026-10-19",
   "zone": "Night Harbor",
   "giver": "Rolan Talmula",
   "min_level": "1",
@@ -691,7 +688,7 @@
  "Druid Starter Quest (Underdocks)": {
   "name": "Druid Starter Quest (Underdocks)",
   "url": "https://monstersandmemories.miraheze.org/wiki/Druid_Starter_Quest_(Underdocks)",
-  "wiki_ts": "2026-10-06",
+  "wiki_ts": "2026-10-16",
   "zone": "Underdocks",
   "giver": "-",
   "min_level": "1",
@@ -712,7 +709,7 @@
  "Elementalist Starter Quest (Night Harbor)": {
   "name": "Elementalist Starter Quest (Night Harbor)",
   "url": "https://monstersandmemories.miraheze.org/wiki/Elementalist_Starter_Quest_(Night_Harbor)",
-  "wiki_ts": "2026-08-29",
+  "wiki_ts": "2026-10-11",
   "zone": "Night Harbor",
   "giver": "Tenebrim Tam",
   "min_level": "1",
@@ -727,13 +724,14 @@
    "Night Harbor Quests",
    "Quests",
    "Quests without Related Items",
+   "Quests without Related NPCs",
    "Quests without Rewards"
   ]
  },
  "Enchanter Starter Quest (Night Harbor)": {
   "name": "Enchanter Starter Quest (Night Harbor)",
   "url": "https://monstersandmemories.miraheze.org/wiki/Enchanter_Starter_Quest_(Night_Harbor)",
-  "wiki_ts": "2026-10-10",
+  "wiki_ts": "2026-10-12",
   "zone": "Night Harbor",
   "giver": null,
   "min_level": "1",
@@ -746,7 +744,13 @@
   ],
   "repeatable": false,
   "cats": [
+   "All Race Equipment",
+   "Charisma Items",
+   "Enchanter Equipment",
    "Enchanter Quests",
+   "Finger",
+   "Intelligence Items",
+   "Neck",
    "Night Harbor Quests",
    "Quests",
    "Quests without Quest Givers",
@@ -795,7 +799,7 @@
  "Fighter Starter Quest (Faelindral)": {
   "name": "Fighter Starter Quest (Faelindral)",
   "url": "https://monstersandmemories.miraheze.org/wiki/Fighter_Starter_Quest_(Faelindral)",
-  "wiki_ts": "2026-05-26",
+  "wiki_ts": "2026-10-17",
   "zone": "Faelindral",
   "giver": "Commander Elydris Stormbough",
   "min_level": "1",
@@ -803,7 +807,8 @@
   "rewards": [
    "Tarnished Elven Blade",
    "Novice Chain of the Wyrdguard",
-   "Striker's Chain of the Wyrdguard"
+   "Striker's Chain of the Wyrdguard",
+   "Tempered Blade of the Fae-Bound"
   ],
   "repeatable": false,
   "cats": [
@@ -838,20 +843,17 @@
  "Find Delilah's Pet": {
   "name": "Find Delilah's Pet",
   "url": "https://monstersandmemories.miraheze.org/wiki/Find_Delilah%27s_Pet",
-  "wiki_ts": "2026-10-01",
+  "wiki_ts": "2026-10-15",
   "zone": "Underdocks",
   "giver": "Delilah",
   "min_level": "1",
   "classes": null,
   "rewards": [
-   "Citizens of Underdocks",
-   "Giant Turtle Shell Shield"
+   "Turtle Shell Shield"
   ],
   "repeatable": true,
   "cats": [
    "Quests",
-   "Quests without Related Items",
-   "Quests without Rewards",
    "Underdocks Quests"
   ]
  },
@@ -910,10 +912,10 @@
  "Fungal Armor Quests": {
   "name": "Fungal Armor Quests",
   "url": "https://monstersandmemories.miraheze.org/wiki/Fungal_Armor_Quests",
-  "wiki_ts": "2026-10-02",
+  "wiki_ts": "2026-10-17",
   "zone": "Ail'Vorith",
   "giver": "Leatherworker Vex",
-  "min_level": "1",
+  "min_level": "5",
   "classes": "ALL",
   "rewards": [
    "Fungal Coat",
@@ -950,7 +952,7 @@
  "Glinting Hollow Key Quest": {
   "name": "Glinting Hollow Key Quest",
   "url": "https://monstersandmemories.miraheze.org/wiki/Glinting_Hollow_Key_Quest",
-  "wiki_ts": "2026-09-27",
+  "wiki_ts": "2026-10-16",
   "zone": "Evershade Weald",
   "giver": "Scout Brightleaf",
   "min_level": "35+",
@@ -984,6 +986,23 @@
    "Underdocks Quests"
   ]
  },
+ "Goblin Island Records": {
+  "name": "Goblin Island Records",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Goblin_Island_Records",
+  "wiki_ts": "2026-10-16",
+  "zone": "Great Cavern Sea",
+  "giver": "Halveth Velgarrith",
+  "min_level": "19",
+  "classes": "All",
+  "rewards": [],
+  "repeatable": true,
+  "cats": [
+   "All Class Quests",
+   "Great Cavern Sea Quests",
+   "Quests",
+   "Quests without Related Items"
+  ]
+ },
  "Green Drakeling Scale Armor Quests": {
   "name": "Green Drakeling Scale Armor Quests",
   "url": "https://monstersandmemories.miraheze.org/wiki/Green_Drakeling_Scale_Armor_Quests",
@@ -1009,7 +1028,7 @@
  "Growing Threat of the Sangrel Fist": {
   "name": "Growing Threat of the Sangrel Fist",
   "url": "https://monstersandmemories.miraheze.org/wiki/Growing_Threat_of_the_Sangrel_Fist",
-  "wiki_ts": "2026-10-09",
+  "wiki_ts": "2026-10-13",
   "zone": "Keeper's Bight",
   "giver": "Reeve Thurston Winter",
   "min_level": "15+",
@@ -1065,29 +1084,49 @@
    "Quests without Related Items"
   ]
  },
+ "Handfed Bors' Runts": {
+  "name": "Handfed Bors' Runts",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Handfed_Bors%27_Runts",
+  "wiki_ts": "2026-10-16",
+  "zone": "Night Harbor",
+  "giver": "Gatekeeper Nusder",
+  "min_level": "> 16, < 46",
+  "classes": "All",
+  "rewards": [],
+  "repeatable": false,
+  "cats": [
+   "All Class Quests",
+   "Night Harbor Quests",
+   "Quests",
+   "Quests without Related Items"
+  ]
+ },
  "House Drezzorith (Quest)": {
   "name": "House Drezzorith (Quest)",
   "url": "https://monstersandmemories.miraheze.org/wiki/House_Drezzorith_(Quest)",
-  "wiki_ts": "2026-10-03",
+  "wiki_ts": "2026-10-11",
   "zone": "Ail'Vorith",
   "giver": "Zalethra Drezzorith",
   "min_level": "8+",
   "classes": "CLR PAL",
-  "rewards": [],
+  "rewards": [
+   "Lexicon of Mysteries",
+   "Intermediate Lexicon of Mysteries",
+   "Advanced Lexicon of Mysteries"
+  ],
   "repeatable": false,
   "cats": [
    "Ail'Vorith Quests",
    "Cleric Quests",
    "Paladin Quests",
    "Quests",
-   "Quests without Related Items",
-   "Quests without Rewards"
+   "Quests without Related Items"
   ]
  },
  "House Hal'kareth (Quest)": {
   "name": "House Hal'kareth (Quest)",
   "url": "https://monstersandmemories.miraheze.org/wiki/House_Hal%27kareth_(Quest)",
-  "wiki_ts": "2026-10-10",
+  "wiki_ts": "2026-10-20",
   "zone": "Ail'Vorith",
   "giver": "Myal Vehear",
   "min_level": "1",
@@ -1100,7 +1139,6 @@
    "Ail'Vorith Quests",
    "Quests",
    "Quests without Related Items",
-   "Quests without Related NPCs",
    "Spellblade Quests",
    "Wizard Quests"
   ]
@@ -1108,12 +1146,20 @@
  "House Ith'vayen (Quest)": {
   "name": "House Ith'vayen (Quest)",
   "url": "https://monstersandmemories.miraheze.org/wiki/House_Ith%27vayen_(Quest)",
-  "wiki_ts": "2026-10-05",
+  "wiki_ts": "2026-10-20",
   "zone": "Ail'Vorith",
   "giver": "Amarah Ith'vayen",
   "min_level": "1",
   "classes": "ENC ROG",
-  "rewards": [],
+  "rewards": [
+   "Cloth Belt of Runes",
+   "Fine Cloth Belt of Runes",
+   "Silk Belt of Runes",
+   "Leather Belt of Runes",
+   "Strengthened Leather Belt of Runes",
+   "House of Ith'vayen",
+   "Citizens of Ail'vorith"
+  ],
   "repeatable": false,
   "cats": [
    "Ail'Vorith Quests",
@@ -1128,10 +1174,10 @@
  "House Vael'xirith (Quest)": {
   "name": "House Vael'xirith (Quest)",
   "url": "https://monstersandmemories.miraheze.org/wiki/House_Vael%27xirith_(Quest)",
-  "wiki_ts": "2026-10-10",
+  "wiki_ts": "2026-10-20",
   "zone": "Ail'Vorith",
   "giver": "Laren Drin'dar",
-  "min_level": "8+",
+  "min_level": "1",
   "classes": "Archer Ranger",
   "rewards": [],
   "repeatable": false,
@@ -1147,7 +1193,7 @@
  "House Varros (Quest)": {
   "name": "House Varros (Quest)",
   "url": "https://monstersandmemories.miraheze.org/wiki/House_Varros_(Quest)",
-  "wiki_ts": "2026-10-10",
+  "wiki_ts": "2026-10-20",
   "zone": "Ail'Vorith",
   "giver": "Vaslir Naiyth",
   "min_level": "1",
@@ -1166,7 +1212,7 @@
  "House Varros Supplies": {
   "name": "House Varros Supplies",
   "url": "https://monstersandmemories.miraheze.org/wiki/House_Varros_Supplies",
-  "wiki_ts": "2026-10-11",
+  "wiki_ts": "2026-10-18",
   "zone": "Ail'Vorith",
   "giver": "Apprentice Esveth",
   "min_level": "1",
@@ -1183,19 +1229,20 @@
  "House Velgarrith (Quest)": {
   "name": "House Velgarrith (Quest)",
   "url": "https://monstersandmemories.miraheze.org/wiki/House_Velgarrith_(Quest)",
-  "wiki_ts": "2026-10-01",
+  "wiki_ts": "2026-10-20",
   "zone": "Ail'Vorith",
   "giver": "Xilonen Velgarrith",
   "min_level": "1",
-  "classes": "FTR SHD",
-  "rewards": [],
+  "classes": "SHD",
+  "rewards": [
+   "Frayed Cloak of House Velgarrith",
+   "House Velgarrith"
+  ],
   "repeatable": false,
   "cats": [
    "Ail'Vorith Quests",
-   "Fighter Quests",
    "Quests",
    "Quests without Related Items",
-   "Quests without Related NPCs",
    "Quests without Rewards",
    "Shadow Knight Quests"
   ]
@@ -1203,12 +1250,15 @@
  "House Xal'tharn (Quest)": {
   "name": "House Xal'tharn (Quest)",
   "url": "https://monstersandmemories.miraheze.org/wiki/House_Xal%27tharn_(Quest)",
-  "wiki_ts": "2026-10-08",
+  "wiki_ts": "2026-10-20",
   "zone": "Ail'Vorith",
   "giver": "Klavel Sul",
-  "min_level": "8+",
+  "min_level": "8",
   "classes": "INQ MNK",
-  "rewards": [],
+  "rewards": [
+   "Dull Iron Cuirass",
+   "Simple Chestwrap"
+  ],
   "repeatable": false,
   "cats": [
    "Ail'Vorith Quests",
@@ -1291,6 +1341,45 @@
    "Quests without Related Items",
    "Quests without Related NPCs",
    "Quests without Rewards"
+  ]
+ },
+ "Island Ruin Stones": {
+  "name": "Island Ruin Stones",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Island_Ruin_Stones",
+  "wiki_ts": "2026-10-15",
+  "zone": "Great Cavern Sea",
+  "giver": "Isrothen Vael'xirith",
+  "min_level": null,
+  "classes": "All",
+  "rewards": [],
+  "repeatable": false,
+  "cats": [
+   "All Class Quests",
+   "Great Cavern Sea Quests",
+   "Quests",
+   "Quests without Related Items",
+   "Quests without Rewards"
+  ]
+ },
+ "Joining the Red Mantles": {
+  "name": "Joining the Red Mantles",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Joining_the_Red_Mantles",
+  "wiki_ts": "2026-10-17",
+  "zone": "Night Harbor",
+  "giver": "Commander Otieno",
+  "min_level": "1",
+  "classes": null,
+  "rewards": [
+   "Red Mantle Sash",
+   "Emissaries Envoy Band",
+   "Attuned Pendant of Anchoring",
+   "Red Mantle Cloak"
+  ],
+  "repeatable": false,
+  "cats": [
+   "Night Harbor Quests",
+   "Quests",
+   "Quests without Related Items"
   ]
  },
  "Kill Tora'Galdo": {
@@ -1395,7 +1484,7 @@
  "Little Tamsah, Big Appetite": {
   "name": "Little Tamsah, Big Appetite",
   "url": "https://monstersandmemories.miraheze.org/wiki/Little_Tamsah,_Big_Appetite",
-  "wiki_ts": "2026-10-01",
+  "wiki_ts": "2026-10-19",
   "zone": "Night Harbor",
   "giver": "Old Mother Roshan",
   "min_level": "1",
@@ -1411,7 +1500,7 @@
  "Mark of Merit": {
   "name": "Mark of Merit",
   "url": "https://monstersandmemories.miraheze.org/wiki/Mark_of_Merit",
-  "wiki_ts": "2026-10-06",
+  "wiki_ts": "2026-10-20",
   "zone": "Blind Midden",
   "giver": "Receptionist Naleth'ra",
   "min_level": "1",
@@ -1423,8 +1512,36 @@
   "cats": [
    "All Class Quests",
    "Blind Midden Quests",
+   "Pages using Tabber parser tag",
    "Quests",
    "Quests without Related Items"
+  ]
+ },
+ "Midden Mark Menu (Quest)": {
+  "name": "Midden Mark Menu (Quest)",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Midden_Mark_Menu_(Quest)",
+  "wiki_ts": "2026-10-20",
+  "zone": "Blind Midden",
+  "giver": "Nibs Mudknuckle",
+  "min_level": "1",
+  "classes": "All",
+  "rewards": [
+   "Sewer Sludge",
+   "Recipe: Double-Bladed Retractable Prison Shiv",
+   "Recipe: Morgurah's Mask of the Stifled Snitch",
+   "Recipe: Mudfish Wraps",
+   "Recipe: Prison Gruel",
+   "Recipe: Shale Weightstone",
+   "Recipe: Sewer Survival Salve"
+  ],
+  "repeatable": true,
+  "cats": [
+   "All Class Quests",
+   "Blind Midden Quests",
+   "Pages using Tabber parser tag",
+   "Quests",
+   "Quests without Related Items",
+   "Quests without Related NPCs"
   ]
  },
  "Mierra's Famed Cupcakes": {
@@ -1471,10 +1588,26 @@
    "Underdocks Quests"
   ]
  },
+ "Missive For Wenna": {
+  "name": "Missive For Wenna",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Missive_For_Wenna",
+  "wiki_ts": "2026-10-19",
+  "zone": "Great Cavern Sea",
+  "giver": "Lorne Whitlock",
+  "min_level": null,
+  "classes": null,
+  "rewards": [],
+  "repeatable": false,
+  "cats": [
+   "Great Cavern Sea Quests",
+   "Quests",
+   "Quests without Rewards"
+  ]
+ },
  "Monk Starter Quest (Night Harbor)": {
   "name": "Monk Starter Quest (Night Harbor)",
   "url": "https://monstersandmemories.miraheze.org/wiki/Monk_Starter_Quest_(Night_Harbor)",
-  "wiki_ts": "2026-10-09",
+  "wiki_ts": "2026-10-12",
   "zone": "Night Harbor",
   "giver": "-",
   "min_level": "1",
@@ -1530,7 +1663,7 @@
  "Mushroom Menace": {
   "name": "Mushroom Menace",
   "url": "https://monstersandmemories.miraheze.org/wiki/Mushroom_Menace",
-  "wiki_ts": "2026-09-27",
+  "wiki_ts": "2026-10-19",
   "zone": "Evershade Weald",
   "giver": "Sporeweaver Underveil",
   "min_level": "<= 5 (mobs to kill much higher: yellow to L12)",
@@ -1591,7 +1724,7 @@
  "Necromancer Starter Quest (Underdocks)": {
   "name": "Necromancer Starter Quest (Underdocks)",
   "url": "https://monstersandmemories.miraheze.org/wiki/Necromancer_Starter_Quest_(Underdocks)",
-  "wiki_ts": "2026-10-09",
+  "wiki_ts": "2026-10-14",
   "zone": "Underdocks",
   "giver": "Soren Akedd",
   "min_level": "1",
@@ -1612,7 +1745,7 @@
  "Night Harbor Cemetery Key Quest": {
   "name": "Night Harbor Cemetery Key Quest",
   "url": "https://monstersandmemories.miraheze.org/wiki/Night_Harbor_Cemetery_Key_Quest",
-  "wiki_ts": "2026-10-01",
+  "wiki_ts": "2026-10-12",
   "zone": "Night Harbor",
   "giver": "Gatekeeper Nusder",
   "min_level": "1",
@@ -1720,7 +1853,7 @@
  "Platinum Badge of the Living City Quest": {
   "name": "Platinum Badge of the Living City Quest",
   "url": "https://monstersandmemories.miraheze.org/wiki/Platinum_Badge_of_the_Living_City_Quest",
-  "wiki_ts": "2026-10-10",
+  "wiki_ts": "2026-10-13",
   "zone": "Night Harbor",
   "giver": "Lieutenant Jarovik Holt",
   "min_level": "15",
@@ -1783,10 +1916,28 @@
    "Quests without Rewards"
   ]
  },
+ "Provisions for House Unheard": {
+  "name": "Provisions for House Unheard",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Provisions_for_House_Unheard",
+  "wiki_ts": "2026-10-19",
+  "zone": "Blind Midden",
+  "giver": "Kalessa Velgarrith",
+  "min_level": null,
+  "classes": null,
+  "rewards": [],
+  "repeatable": false,
+  "cats": [
+   "Blind Midden Quests",
+   "Pages using Tabber parser tag",
+   "Quests",
+   "Quests without Related Items",
+   "Quests without Related NPCs"
+  ]
+ },
  "Quarry Samples": {
   "name": "Quarry Samples",
   "url": "https://monstersandmemories.miraheze.org/wiki/Quarry_Samples",
-  "wiki_ts": "2026-09-30",
+  "wiki_ts": "2026-10-12",
   "zone": "Sungreet Strand",
   "giver": "Tust Brookturner",
   "min_level": "10",
@@ -1842,6 +1993,25 @@
    "Quests without Related Items",
    "Quests without Rewards",
    "Ranger Quests"
+  ]
+ },
+ "Revenge for Wembit": {
+  "name": "Revenge for Wembit",
+  "url": "https://monstersandmemories.miraheze.org/wiki/Revenge_for_Wembit",
+  "wiki_ts": "2026-10-19",
+  "zone": "Blind Midden",
+  "giver": "Blurgh the Blind",
+  "min_level": "1",
+  "classes": "All",
+  "rewards": [
+   ""
+  ],
+  "repeatable": false,
+  "cats": [
+   "All Class Quests",
+   "Blind Midden Quests",
+   "Quests",
+   "Quests without Related Items"
   ]
  },
  "Riverbend Gang Wars Quest": {
@@ -1910,12 +2080,16 @@
  "Rogue Starter Quest (Underdocks)": {
   "name": "Rogue Starter Quest (Underdocks)",
   "url": "https://monstersandmemories.miraheze.org/wiki/Rogue_Starter_Quest_(Underdocks)",
-  "wiki_ts": "2026-10-10",
+  "wiki_ts": "2026-10-19",
   "zone": "underdocks",
   "giver": null,
   "min_level": "0",
   "classes": "Rogue",
-  "rewards": [],
+  "rewards": [
+   "Prankster's Trousers",
+   "Sly Leather Jerkin",
+   "Dagger Of Rapidity"
+  ],
   "repeatable": false,
   "cats": [
    "Quests",
@@ -1923,7 +2097,6 @@
    "Quests without Quest Givers",
    "Quests without Related Items",
    "Quests without Related NPCs",
-   "Quests without Rewards",
    "Rogue Quests",
    "Underdocks Quests"
   ]
@@ -2101,7 +2274,7 @@
  "Spectral Armor Quest": {
   "name": "Spectral Armor Quest",
   "url": "https://monstersandmemories.miraheze.org/wiki/Spectral_Armor_Quest",
-  "wiki_ts": "2026-06-11",
+  "wiki_ts": "2026-10-19",
   "zone": "Night Harbor",
   "giver": "a master blacksmith",
   "min_level": "1",
@@ -2112,7 +2285,6 @@
    "All Class Quests",
    "Night Harbor Quests",
    "Quests",
-   "Quests without Related Items",
    "Quests without Related NPCs",
    "Quests without Rewards"
   ]
@@ -2120,7 +2292,7 @@
  "Spellblade Starter Quest (Night Harbor)": {
   "name": "Spellblade Starter Quest (Night Harbor)",
   "url": "https://monstersandmemories.miraheze.org/wiki/Spellblade_Starter_Quest_(Night_Harbor)",
-  "wiki_ts": "2026-06-25",
+  "wiki_ts": "2026-10-12",
   "zone": "Night Harbor",
   "giver": "Torn Note",
   "min_level": "1",
@@ -2132,7 +2304,6 @@
   "cats": [
    "Night Harbor Quests",
    "Quests",
-   "Quests without Related Items",
    "Quests without Rewards",
    "Spellblade Quests"
   ]
@@ -2140,18 +2311,18 @@
  "Stolen Gems": {
   "name": "Stolen Gems",
   "url": "https://monstersandmemories.miraheze.org/wiki/Stolen_Gems",
-  "wiki_ts": "2026-10-08",
+  "wiki_ts": "2026-10-15",
   "zone": "Ail'Vorith",
   "giver": "Glaeron Kes'tel",
-  "min_level": "10+",
-  "classes": "RNG FTR",
+  "min_level": "10",
+  "classes": "ARC, FTR, RNG",
   "rewards": [],
   "repeatable": false,
   "cats": [
    "Ail'Vorith Quests",
-   "Fighter Quests",
    "Pages with broken file links",
    "Quests",
+   "Quests with Invalid Classes",
    "Quests without Related Items",
    "Quests without Rewards",
    "Ranger Quests"
@@ -2176,28 +2347,28 @@
  "Syrsil's Stolen Package": {
   "name": "Syrsil's Stolen Package",
   "url": "https://monstersandmemories.miraheze.org/wiki/Syrsil%27s_Stolen_Package",
-  "wiki_ts": "2026-10-06",
+  "wiki_ts": "2026-10-20",
   "zone": "Underdocks",
   "giver": "Senior Apprentice Syrsil",
   "min_level": null,
   "classes": null,
-  "rewards": [],
+  "rewards": [
+   "Faction"
+  ],
   "repeatable": false,
   "cats": [
    "Quests",
-   "Quests without Related NPCs",
-   "Quests without Rewards",
    "Underdocks Quests"
   ]
  },
  "Thanetal's Samples": {
   "name": "Thanetal's Samples",
   "url": "https://monstersandmemories.miraheze.org/wiki/Thanetal%27s_Samples",
-  "wiki_ts": "2026-09-26",
+  "wiki_ts": "2026-10-13",
   "zone": "Ail'Vorith",
   "giver": "Thanetal",
-  "min_level": "?",
-  "classes": "All",
+  "min_level": "1",
+  "classes": "ALL",
   "rewards": [
    "Sample of Mind Control Substance"
   ],
@@ -2228,6 +2399,23 @@
    "Night Harbor Quests",
    "Quests",
    "Quests without Related Items"
+  ]
+ },
+ "The Curse of Blind Midden": {
+  "name": "The Curse of Blind Midden",
+  "url": "https://monstersandmemories.miraheze.org/wiki/The_Curse_of_Blind_Midden",
+  "wiki_ts": "2026-10-16",
+  "zone": "Blind Midden",
+  "giver": "Chaplain Cranely",
+  "min_level": "1",
+  "classes": null,
+  "rewards": [],
+  "repeatable": false,
+  "cats": [
+   "Blind Midden Quests",
+   "Quests",
+   "Quests without Related Items",
+   "Quests without Rewards"
   ]
  },
  "The Delvestone Mining Company Quarrel": {
@@ -2291,7 +2479,7 @@
  "The Yowling": {
   "name": "The Yowling",
   "url": "https://monstersandmemories.miraheze.org/wiki/The_Yowling",
-  "wiki_ts": "2026-10-10",
+  "wiki_ts": "2026-10-20",
   "zone": "Night Harbor",
   "giver": "an ashira shapeshifter",
   "min_level": "1",
@@ -2343,7 +2531,7 @@
  "Tig's Measuring Quest": {
   "name": "Tig's Measuring Quest",
   "url": "https://monstersandmemories.miraheze.org/wiki/Tig%27s_Measuring_Quest",
-  "wiki_ts": "2026-10-07",
+  "wiki_ts": "2026-10-13",
   "zone": "Sungreet Strand",
   "giver": "Tig Pebblebank",
   "min_level": "15",
@@ -2381,7 +2569,7 @@
  "Underdocks Starter Quest": {
   "name": "Underdocks Starter Quest",
   "url": "https://monstersandmemories.miraheze.org/wiki/Underdocks_Starter_Quest",
-  "wiki_ts": "2026-10-06",
+  "wiki_ts": "2026-10-16",
   "zone": "Underdocks",
   "giver": "Marshal Harding",
   "min_level": "1",
@@ -2394,7 +2582,7 @@
    "Hargrul's Tenderizer",
    "Ratkiller"
   ],
-  "repeatable": false,
+  "repeatable": true,
   "cats": [
    "Archer Quests",
    "Beastmaster Quests",
@@ -2450,7 +2638,7 @@
  "Wererat Fight Club": {
   "name": "Wererat Fight Club",
   "url": "https://monstersandmemories.miraheze.org/wiki/Wererat_Fight_Club",
-  "wiki_ts": "2026-10-07",
+  "wiki_ts": "2026-10-13",
   "zone": "Underdocks",
   "giver": "Draznax",
   "min_level": "4",
@@ -2532,9 +2720,9 @@
  "Wyrmsbane Armor Quest": {
   "name": "Wyrmsbane Armor Quest",
   "url": "https://monstersandmemories.miraheze.org/wiki/Wyrmsbane_Armor_Quest",
-  "wiki_ts": "2026-10-01",
-  "zone": "Night Harbor",
-  "giver": "Matheus Griswald",
+  "wiki_ts": "2026-10-12",
+  "zone": "Fallen Pass",
+  "giver": null,
   "min_level": "1",
   "classes": "All",
   "rewards": [
@@ -2546,11 +2734,12 @@
   "repeatable": false,
   "cats": [
    "All Class Quests",
-   "Night Harbor Quests",
+   "Fallen Pass Quests",
    "Quests",
+   "Quests without Quest Givers",
    "Quests without Related Items",
-   "Quests without Rewards",
-   "Removed Items"
+   "Quests without Related NPCs",
+   "Quests without Rewards"
   ]
  },
  "Category:All Class Quests": {
