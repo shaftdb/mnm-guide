@@ -403,6 +403,8 @@ html[data-theme="light"] .ux-cmp-t th,html[data-theme="light"] .ux-cmp-t td{bord
 html[data-theme="light"] .ux-cmp-t thead th{color:var(--gold2)}
 html[data-theme="light"] .ux-cmp-t thead th:first-child,html[data-theme="light"] .ux-cmp-t tbody th{color:var(--gold2)}
 html[data-theme="light"] .ux-cmp-ne th::before,html[data-theme="light"] .ux-cmp-key{color:var(--gold)}
+html[data-theme="light"] .ux-tt-cmp a.ux-cmp-go{border:1px solid var(--gold);border-radius:var(--r1);color:var(--gold2)}
+html[data-theme="light"] .ux-nojs{border:1px solid var(--gold);border-radius:var(--r2)}
 html[data-theme="light"],html[data-theme="light"].halloween{color-scheme:light;
   --bg:#f6efe1;--panel:#fffaf0;--panel2:#efe4cc;--line:#b9a27a;--ink:#21180e;--dim:#594832;--gold:#8a5a14;--gold2:#7a4606;--parch:#3a2912;
   --red:#a1301c;--teal:#2c6656;--magic:#2a52a8;--lore:#7f4a06;--unc:#9a4636;--strat:#3d6338;--glow:#5d6b22;--crystal:#7a5212;--ctl:#7a5f3a;--ctl-line:#7a5f3a;--focus:#6a3f00;--h2bg:#ead8b0}

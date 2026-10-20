@@ -1,4 +1,6 @@
-// Headless Chrome checks for UX passes 1-6 (pass 6 at the end: Items/Mobs databases in pieces with loading/error/Try again,
+// Headless Chrome checks for UX passes 1-8 (pass 8 near the end: Spells rows from per-class data with the no-JS page, hotbar clicky
+// list on demand, spell/mob tip pieces with an exact-match check, Compare from item tooltips and the Market page).
+// Earlier: UX passes 1-6 (pass 6 at the end: Items/Mobs databases in pieces with loading/error/Try again,
 // tooltips on Spells/zone camp tables/Items mob names, print one walkthrough band, hotbar dialog contrast, Irem x theme combos).
 // Pass 5 before it: lazy walk-data on class pages, Shaman routes on demand, spell/mob
 // tooltips, CSV export + print, Light/High contrast themes with 4.5:1 / 3:1 contrast scans. Pass 4 before it: on-demand class routes/tabs, Items/Mobs memory, lazy palette,
@@ -83,6 +85,8 @@ function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('
  await send('Emulation.setEmulatedMedia',{features:[]});
 
  // =============================== UX pass 2
+ // UX pass 8: spell/mob tips load as one piece (stip-<n>.js / mtip-<n>.js) or the full fallback file
+ const TIPR=k=>reqs.some(r=>(k==='s'?/^(spell-tips|stip-\d+)\.js/:/^(mob-tips|mtip-\d+)\.js/).test(r));
  const waitFor=async(expr,ms=8000)=>{for(let i=0;i<ms/50;i++){if(await ev(expr))return true;await sleep(50)}return false};
  const sz=f=>{try{return Math.round(require('fs').statSync(path.join(DOCS,'assets',f)).size/1024)}catch(e){return -1}};
  await size(1024,768);
@@ -456,10 +460,10 @@ function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('
  ok(await waitFor('/New character: Wood Elf Shaman · Faelindral/.test(document.querySelector(".cg-qwalk").textContent)'),'shaman/index.html (the Shaman class page) renders its quick walkthrough for Faelindral');
  // 3) spell + mob tooltips
  reqs=[];await go("walkthrough.html?class=Inquisitor&race=Deep+Elf&city=Ail%27Vorith");await waitFor('!!document.querySelector("#cg-walk .cg-sp li>b.ux-tt-t")',10000);
- ok(!reqs.includes('spell-tips.js')&&!reqs.includes('mob-tips.js'),'tooltip data not loaded up front');
+ ok(!TIPR('s')&&!TIPR('m'),'tooltip data not loaded up front');
  const sp=await ev('(function(){var b=document.querySelector("#cg-walk details[open] .cg-sp li>b.ux-tt-t")||document.querySelector("#cg-walk .cg-sp li>b.ux-tt-t");b.scrollIntoView({block:"center",behavior:"instant"});b.focus();return {t:b.textContent,ti:b.tabIndex}})()');
  ok(sp.ti===0,'spell names are keyboard-focusable ('+sp.t+')');
- ok(await waitFor('(function(){var t=document.getElementById("ux-tt");return t&&!t.hidden&&/Level \\d+/.test(t.textContent)&&/Inquisitor/.test(t.textContent)})()')&&reqs.includes('spell-tips.js'),'focus shows the spell tooltip (level, class, wiki text) after spell-tips.js ('+sz('spell-tips.js')+' KB) loads');
+ ok(await waitFor('(function(){var t=document.getElementById("ux-tt");return t&&!t.hidden&&/Level \\d+/.test(t.textContent)&&/Inquisitor/.test(t.textContent)})()')&&TIPR('s'),'focus shows the spell tooltip (level, class, wiki text) after spell-tips.js ('+sz('spell-tips.js')+' KB) loads');
  const tt1=await ev('(function(){var t=document.getElementById("ux-tt"),r=t.getBoundingClientRect(),a=document.activeElement;return {role:t.getAttribute("role"),db:a.getAttribute("aria-describedby"),l:r.left,r:r.right,b:r.bottom,txt:t.textContent.slice(0,120),ovf:document.documentElement.scrollWidth>innerWidth}})()');
  ok(tt1.role==='tooltip'&&tt1.db==='ux-tt','tooltip has role=tooltip and is linked with aria-describedby');
  ok(tt1.l>=0&&tt1.r<=480&&tt1.b<=900&&!tt1.ovf,'tooltip fits the 480px window ('+Math.round(tt1.l)+'–'+Math.round(tt1.r)+'px): '+tt1.txt);
@@ -479,7 +483,7 @@ function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('
  await size(1024,768);reqs=[];await go("walkthrough.html?class=Inquisitor&race=Deep+Elf&city=Ail%27Vorith");await waitFor('!!document.querySelector("#cg-walk .tt-mob.ux-tt-t")',10000);
  const mp=await ev('(function(){var b=[].find.call(document.querySelectorAll("#cg-walk .tt-mob.ux-tt-t"),function(e){return e.checkVisibility()});b.scrollIntoView({block:"center",behavior:"instant"});var r=b.getBoundingClientRect();return {x:r.left+4,y:r.top+r.height/2,t:b.textContent}})()');await sleep(200);
  await send('Input.dispatchMouseEvent',{type:'mouseMoved',x:mp.x,y:mp.y});
- ok(await waitFor('(function(){var t=document.getElementById("ux-tt");return t&&!t.hidden&&/Level/.test(t.textContent)})()')&&reqs.includes('mob-tips.js'),'hovering a camp mob ('+mp.t+') shows its tooltip after mob-tips.js ('+sz('mob-tips.js')+' KB) loads');
+ ok(await waitFor('(function(){var t=document.getElementById("ux-tt");return t&&!t.hidden&&/Level/.test(t.textContent)})()')&&TIPR('m'),'hovering a camp mob ('+mp.t+') shows its tooltip after mob-tips.js ('+sz('mob-tips.js')+' KB) loads');
  const mt=await ev('(function(){var t=(document.getElementById("ux-tt")||{}).textContent||"",d=(window.MNM_MTIPS||{})[document.activeElement&&0||([].find.call(document.querySelectorAll("#cg-walk .tt-mob.ux-tt-t"),function(e){return e.checkVisibility()})||{textContent:""}).textContent.trim().toLowerCase()];return {t:t.slice(0,140),ok:!d||t.indexOf(d[0][2])>=0}})()');
  ok(mt.ok&&mt.t.length>0,'mob tooltip shows the Mobs database zone/level ('+mt.t+')');
  await send('Input.dispatchMouseEvent',{type:'mouseMoved',x:5,y:700});ok(await waitFor('(document.getElementById("ux-tt")||{hidden:true}).hidden'),'moving the mouse away closes it');
@@ -618,7 +622,7 @@ function getJSON(u){return new Promise((res,rej)=>http.get(u,r=>{let d='';r.on('
  await go('mobs.html');await ev('document.querySelector(".ux-dbbar .ux-tbar-r").click()');
  // 3) tooltips: Spells page and zone camp tables
  reqs=[];await go('spells.html');
- ok(await ev('document.querySelectorAll("table.spelllook [data-sp].ux-tt-t").length')>1000&&!reqs.includes('spell-tips.js'),'Spells page: '+await ev('document.querySelectorAll("table.spelllook [data-sp].ux-tt-t").length')+' spell names have tooltips (data loads on first use)');
+ ok(await ev('document.querySelectorAll("table.spelllook [data-sp].ux-tt-t").length')>1000&&!TIPR('s'),'Spells page: '+await ev('document.querySelectorAll("table.spelllook [data-sp].ux-tt-t").length')+' spell names have tooltips (data loads on first use)');
  const sp6=await ev('(function(){var b=[].find.call(document.querySelectorAll("table.spelllook [data-sp]"),function(x){return x.closest("tr").getAttribute("data-cls")==="Inquisitor"});b.scrollIntoView({block:"center",behavior:"instant"});var r=b.getBoundingClientRect();return {x:r.left+4,y:r.top+r.height/2,t:b.textContent,lv:b.closest("tr").cells[1].textContent}})()');
  await send('Emulation.setTouchEmulationEnabled',{enabled:true});await sleep(150);
  await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:sp6.x,y:sp6.y}]});await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
@@ -710,8 +714,12 @@ await key('ArrowDown');await sleep(150);const d7=await ev(AE);
 ok(d7.tag==='STRONG'&&d7.tr===1&&d7.tt.indexOf(d7.t)>=0,'ArrowDown moves to the next spell and its tooltip ("'+d7.t+'")');
 await key('End');const e7=await ev(AE);await key('Home');const h7=await ev(AE);await key('PageDown');const pd7=await ev(AE);
 ok(e7.tr===stops.names-1&&h7.tr===0&&pd7.tr===10,'End / Home / PageDown jump to the last, first and 10th row');
-await key('ArrowRight');const r7=await ev(AE),r7h=await ev('document.activeElement.getAttribute("href")');await key('ArrowDown');const rd7=await ev(AE);await key('ArrowLeft');const l7=await ev(AE);
+await key('ArrowRight');if(await ev('document.activeElement.classList.contains("ux-spb")'))await key('ArrowRight');const r7=await ev(AE),r7h=await ev('document.activeElement.getAttribute("href")');await key('ArrowDown');const rd7=await ev(AE);await key('ArrowLeft');const l7=await ev(AE);
 ok(r7.tag==='A'&&/classes\//.test(r7h)&&rd7.tag==='A'&&rd7.tr===11&&l7.tag==='STRONG'&&l7.tr===11,'ArrowRight reaches the row\'s class link, Down keeps the column, ArrowLeft returns to the name'+JSON.stringify([r7.tag,r7.tr,rd7.tag,rd7.tr,l7.tag,l7.tr]));
+{const bi=await ev('(function(){var b=document.querySelector("table.spelllook tbody a.ux-spb");if(!b)return -1;var rs=[].filter.call(b.closest("tbody").rows,function(t){return t.getClientRects().length});var tr=b.closest("tr"),i=rs.indexOf(tr);if(i<0||!rs[i+1]||rs[i+1].querySelector("a.ux-spb"))return -2;b.focus();return i})()');
+ if(bi>=0){await key('ArrowDown');const bd=await ev('(function(){var a=document.activeElement;return a.classList.contains("ux-spc")&&/classes\\//.test(a.getAttribute("href"))})()');ok(bd,'pass 8: ArrowDown from a "changed" badge onto a row without one lands on the class link, not the name')}
+ else ok(true,'pass 8: badge column fallback (no badge row followed by a plain row in this view)')}
+await ev('(function(){var rs=[].filter.call(document.querySelector("table.spelllook").tBodies[0].rows,function(t){return t.getClientRects().length});rs[11].querySelector("strong.ux-spn").focus()})()');await sleep(200);
 await shot('ux7-after-spells-focus-1024.png');
 await key('Escape');const x7=await ev(AE);ok(!x7.tt&&x7.tag==='STRONG'&&x7.tr===11,'Esc closes the tooltip and focus stays on the spell name');
 await tab();const o7=await ev(AE);ok(o7.tr<0&&o7.tag!=='STRONG','Tab leaves the table in one press (now on '+o7.tag+' '+o7.cls.slice(0,30)+')');
@@ -818,6 +826,150 @@ for(const th of ['dark','light','contrast']){await ev(`localStorage.setItem('mnm
  for(const [w,h] of [[480,900],[1024,768],[2560,1080],[3440,1440]]){await size(w,h);for(const u of ['spells.html','hotbar.html','items.html','mobs.html']){await go(u);
   if(await ev('document.documentElement.scrollWidth>innerWidth'))ok(false,'pass 7: '+u+' overflows @'+w+' ('+th+')')}}}
 ok(true,'pass 7: spells, hotbar, items, mobs checked for overflow at 480/1024/2560/3440 in Dark, Light and High contrast');
+// =============================== UX pass 8
+const evp8=async e=>{const r=await send('Runtime.evaluate',{expression:e,returnByValue:true,awaitPromise:true});if(r.result.exceptionDetails)throw new Error(e.slice(0,200)+' '+JSON.stringify(r.result.exceptionDetails).slice(0,300));return r.result.result.value};
+await send('Emulation.setFocusEmulationEnabled',{enabled:true});
+// 1) Spells page rows from per-class data (sp-c-<class>.js + inline renderer; build checks it byte for byte)
+{const raw=fs.readFileSync(path.join(DOCS,'spells.html'),'utf8'),all=fs.readFileSync(path.join(DOCS,'spells-all.html'),'utf8');
+ const nTags=(raw.match(/<script src="assets\/sp-c-[a-z-]+\.js"><\/script>/g)||[]).length,emptyBody=/<table class="grid sortable spelllook">.*?<tbody><\/tbody>/.test(raw);
+ ok(nTags===18&&emptyBody&&/<noscript>[^]*?spells-all\.html/.test(raw)&&(all.match(/<tr data-cls=/g)||[]).length===1622,'Spells: page ships '+nTags+' per-class data files, an empty table body and a <noscript> link; spells-all.html has all 1622 rows ('+Math.round(raw.length/1024)+' KB vs '+Math.round(all.length/1024)+' KB)');
+ await size(1024,768);await go('index.html');await ev('localStorage.removeItem("mnm-tbl:spells.html");localStorage.setItem("mnm-class","Inquisitor");localStorage.setItem("mnm-range","11-15")');reqs=[];await go('spells.html');
+ const RW='(function(t){return [].map.call(t.tBodies[0].rows,function(r){return [r.getAttribute("data-cls"),r.getAttribute("data-lo"),r.getAttribute("data-hi")].concat([].map.call(r.cells,function(c){return c.textContent})).concat([].map.call(r.querySelectorAll("a"),function(a){return a.getAttribute("href")})).join("\\u0001")})})';
+ const eq=await evp8(`fetch('spells-all.html').then(function(r){return r.text()}).then(function(h){var d=new DOMParser().parseFromString(h,'text/html'),A=${RW}(d.querySelector('table.spelllook')),B=${RW}(document.querySelector('table.spelllook'));
+   var bad=-1;for(var i=0;i<Math.max(A.length,B.length);i++)if(A[i]!==B[i]){bad=i;break}return {n:B.length,bad:bad,a:bad<0?'':A[bad],b:bad<0?'':B[bad]}})`);
+ ok(eq.n===1622&&eq.bad<0,'Spells: the rendered rows match spells-all.html row for row (attributes, every cell, every link) — '+eq.n+' rows'+(eq.bad>=0?' FIRST DIFF '+eq.bad+' '+eq.a.slice(0,80)+' | '+eq.b.slice(0,80):''));
+ ok(reqs.filter(r=>/^sp-c-/.test(r)).length===18&&!reqs.includes('spells-all.html'),'Spells: the 18 class files load with the page (no full-table download)');
+ const bd=await ev('(function(){var b=document.querySelectorAll("table.spelllook tbody td:first-child a.badge");var r=[].find.call(document.querySelectorAll("table.spelllook tbody tr[data-cls=Inquisitor]"),function(x){return /Aura of Resistance/.test(x.cells[0].textContent)});return {n:b.length,ti:[].every.call(b,function(x){return x.getAttribute("tabindex")==="-1"}),inq:r?r.cells[0].textContent:""}})()');
+ ok(bd.n===50&&bd.ti&&/changed 0\.30\.3\.2/.test(bd.inq),'Spells: '+bd.n+' patch "changed" badges carried through (Inquisitor: "'+bd.inq+'"), not extra Tab stops');
+ ok(await ev('document.querySelectorAll("table.spelllook tbody [tabindex=\\"0\\"]").length===1&&document.querySelectorAll("table.spelllook strong.ux-spn").length===1622'),'Spells: still one roving Tab stop over 1622 names (pass 7)');
+ // Right/Left through name -> badge -> class link on a badged row
+ await ev('(function(){var r=[].find.call(document.querySelectorAll("table.spelllook tbody tr"),function(x){return x.querySelector("a.ux-spb")});r.querySelector("strong.ux-spn").focus()})()');
+ await key('ArrowRight');const k1=await ev('document.activeElement.className');await key('ArrowRight');const k2=await ev('document.activeElement.className');await key('ArrowLeft');await key('ArrowLeft');const k3=await ev('document.activeElement.className');
+ ok(/ux-spb/.test(k1)&&/ux-spc/.test(k2)&&/ux-spn/.test(k3),'Spells: ArrowRight goes name → changed badge → class link, ArrowLeft back ('+[k1,k2,k3].join(' / ')+')');
+ await key('Escape');
+ // filters, sort, URL params
+ await ev('(function(){var m=document.getElementById("sp-mine");m.checked=true;m.dispatchEvent(new Event("change",{bubbles:true}))})()');await sleep(300);
+ const fm=await ev('(function(){var v=[].filter.call(document.querySelectorAll("table.spelllook tbody tr"),function(r){return r.getClientRects().length});return {n:v.length,all:v.every(function(r){return r.getAttribute("data-cls")==="Inquisitor"}),u:location.search}})()');
+ ok(fm.n>20&&fm.all&&/sm=1/.test(fm.u),'Spells: "Only my class" shows the '+fm.n+' Inquisitor rows and goes into the URL ('+fm.u+')');
+ await ev('document.querySelectorAll("table.spelllook thead th")[1].click()');await sleep(200);await ev('document.querySelectorAll("table.spelllook thead th")[1].click()');await sleep(300);
+ const so=await ev('(function(){var v=[].filter.call(document.querySelectorAll("table.spelllook tbody tr"),function(r){return r.getClientRects().length}).map(function(r){return +r.getAttribute("data-lo")});return {f:v[0],l:v[v.length-1],u:location.search}})()');
+ ok(so.f>=so.l&&/sort=/.test(so.u),'Spells: sorting by level works on the rendered rows and is in the URL ('+so.f+' … '+so.l+', '+so.u+')');
+ const share=await ev('location.href');await go(share.replace(/^.*?\/spells\.html/,'spells.html'));
+ const fm2=await ev('(function(){var v=[].filter.call(document.querySelectorAll("table.spelllook tbody tr"),function(r){return r.getClientRects().length});return {n:v.length,m:document.getElementById("sp-mine").checked,f:+v[0].getAttribute("data-lo")}})()');
+ ok(fm2.m&&fm2.n===fm.n&&fm2.f===so.f,'Spells: the shared link restores the filter and sort ('+fm2.n+' rows, first level '+fm2.f+')');
+ await ev('localStorage.removeItem("mnm-tbl:spells.html")');await go('spells.html');
+ await ev('(function(){var f=document.getElementById("mnm-filter");if(f){f.value="aura of resistance";f.dispatchEvent(new Event("input",{bubbles:true}))}})()');await sleep(400);
+ const ff=await ev('[].filter.call(document.querySelectorAll("table.spelllook tbody tr"),function(r){return r.getClientRects().length}).map(function(r){return r.getAttribute("data-cls")+":"+r.cells[0].textContent})');
+ ok(ff.length>=1&&ff.every(x=>/aura of resistance/i.test(x)),'Spells: "Filter this page" finds rendered rows ('+ff.slice(0,3).join(', ')+')');
+ await ev('(function(){var f=document.getElementById("mnm-filter");if(f){f.value="";f.dispatchEvent(new Event("input",{bubbles:true}))}})()');
+ // tooltip on a rendered name still works
+ await ev('(function(){var b=[].find.call(document.querySelectorAll("table.spelllook strong.ux-spn"),function(x){return x.closest("tr").getAttribute("data-cls")==="Inquisitor"});b.focus()})()');
+ ok(await waitFor('(function(){var t=document.getElementById("ux-tt");return t&&!t.hidden&&/Level/.test(t.textContent)})()'),'Spells: tooltip opens on focus of a rendered name');await key('Escape');
+ // print: every row is in the DOM, the hint and tools are not printed
+ await send('Emulation.setEmulatedMedia',{media:'print'});
+ const pr=await ev('({rows:[].filter.call(document.querySelectorAll("table.spelllook tbody tr"),function(r){return r.getClientRects().length}).length,nav:!!(document.querySelector(".top")&&document.querySelector(".top").getClientRects().length)})');
+ await send('Emulation.setEmulatedMedia',{media:''});ok(pr.rows===1622&&!pr.nav,'Spells: print shows all '+pr.rows+' rows without the menus');
+ // a class file that cannot load: the others still render and the page says so with a link to the full table
+ await send('Network.setBlockedURLs',{urls:['*sp-c-bard.js']});await go('spells.html');
+ const ms=await ev('({n:document.querySelectorAll("table.spelllook tbody tr").length,bard:document.querySelectorAll("table.spelllook tbody tr[data-cls=Bard]").length,st:(document.querySelector("main .lz-err")||{}).textContent||"",a:!!document.querySelector("main .lz-err a[href=\\"spells-all.html\\"]")})');
+ await send('Network.setBlockedURLs',{urls:[]});
+ ok(ms.bard===0&&ms.n>1400&&/Bard/.test(ms.st)&&ms.a,'Spells: if one class file is offline the rest render ('+ms.n+' rows) and "'+ms.st.slice(0,70)+'…" links the full table');
+ // no JavaScript
+ await send('Emulation.setScriptExecutionDisabled',{value:true});await go('spells.html');
+ const nj=await ev('({rows:document.querySelectorAll("table.spelllook tbody tr").length,ns:(function(){var n=document.querySelector("noscript");return !!n})()})').catch(()=>null);
+ await shot('ux8-after-spells-nojs-1024.png');
+ await go('spells-all.html');const nj2=await ev('document.querySelectorAll("table.spelllook tbody tr").length').catch(()=>-1);
+ await send('Emulation.setScriptExecutionDisabled',{value:false});
+ ok(nj&&nj.rows===0&&nj2===1622,'Spells without JavaScript: the page shows the <noscript> link; spells-all.html has all '+nj2+' rows as plain HTML');
+}
+// 2) Hotbar: clicky item list on demand (hb-clicky.js), #hb= links with a clicky still work
+{await size(1024,768);await go('index.html');await ev('localStorage.removeItem("mnm-hotbar");localStorage.setItem("mnm-class","Inquisitor");localStorage.setItem("mnm-range","11-15")');reqs=[];await go('hotbar.html');
+ await waitFor('!document.getElementById("hb-app").inert',10000);
+ ok(!reqs.includes('hb-clicky.js')&&await ev('!window.MNM_HB.clicky&&window.MNM_HB.lazy.clicky==="hb-clicky.js"'),'Hotbar: the clicky item list ('+sz('hb-clicky.js')+' KB) is not loaded up front; hotbar-data.js is '+sz('hotbar-data.js')+' KB');
+ await ev('(function(){var k=document.getElementById("hb-kind");k.value="h";k.dispatchEvent(new Event("change",{bubbles:true}))})()');
+ ok(await waitFor('document.querySelectorAll("#hb-palette .hb-pi.k-c").length>0',10000)&&reqs.includes('hb-clicky.js'),'Hotbar: choosing "Hotbar: skills, traits, clickies, macros" loads it and lists '+await ev('document.querySelectorAll("#hb-palette .hb-pi.k-c").length')+' clicky items');
+ const ck=await ev('(function(){var b=document.querySelector("#hb-palette .hb-pi.k-c");return b.querySelector(".hb-pn").textContent})()');
+ const code=await evp8(`(function(){var S=MNM_HB_API.state(),o=S.cls.Inquisitor,L=o.L[o.cur];L.hb[0][0]={t:'c',n:${JSON.stringify(ck)}};return MNM_HB_API.encode({v:1,c:'Inquisitor',r:'',l:13,cur:o.cur,L:o.L,g:{},b:0,m:[],p:2})})()`);
+ await ev('localStorage.removeItem("mnm-hotbar")');await go('index.html');reqs=[];await go('hotbar.html#hb='+code);
+ ok(await waitFor('[].some.call(document.querySelectorAll(".hb-slot.k-c"),function(b){return !b.classList.contains("bad")})',10000)&&reqs.includes('hb-clicky.js'),'Hotbar: a #hb= link holding a clicky ('+ck+') loads the list first and the slot is valid');
+ await go('hotbar.html');ok(await waitFor('!document.getElementById("hb-app").inert&&[].some.call(document.querySelectorAll(".hb-slot.k-c"),function(b){return !b.classList.contains("bad")})',10000),'Hotbar: a saved layout with a clicky waits for the list on reload (no "not in this class list")');
+ await ev('localStorage.removeItem("mnm-hotbar")');
+}
+// 3) Spell and mob tips in pieces: exact match with the full files; one piece per tooltip; full-file fallback
+{await size(1024,768);await go('spells.html');
+ const ex=await evp8(`(function(){function get(f){return fetch('assets/'+f).then(function(r){return r.text()})}
+   function run(src,v){var w={};new Function('window',src)(w);return w[v]}
+   var P=[];for(var i=0;i<16;i++){P.push(get('stip-'+i+'.js'));P.push(get('mtip-'+i+'.js'))}
+   return Promise.all([get('spell-tips.js'),get('mob-tips.js')].concat(P)).then(function(a){var S=run(a[0],'MNM_STIPS'),M=run(a[1],'MNM_MTIPS'),s={},m={},wrong=0;
+     for(var i=0;i<16;i++){var ps=run(a[2+2*i],'MNM_STIPS'),pm=run(a[3+2*i],'MNM_MTIPS');Object.keys(ps).forEach(function(k){s[k]=ps[k];if(tph(k)!==i)wrong++});Object.keys(pm).forEach(function(k){m[k]=pm[k];if(tph(k)!==i)wrong++})}
+     function tph(n){var h=0;for(var j=0;j<n.length;j++)h=(h*31+n.charCodeAt(j))>>>0;return h%16}
+     function same(A,B){var ka=Object.keys(A).sort(),kb=Object.keys(B).sort();return ka.length===kb.length&&ka.every(function(k,j){return k===kb[j]&&JSON.stringify(A[k])===JSON.stringify(B[k])})}
+     return {s:same(S,s),m:same(M,m),ns:Object.keys(S).length,nm:Object.keys(M).length,wrong:wrong}})})()`);
+ ok(ex.s&&ex.m&&ex.wrong===0,'Tips: the 16 stip pieces add up exactly to spell-tips.js ('+ex.ns+' names) and the 16 mtip pieces to mob-tips.js ('+ex.nm+'), each name in the piece its hash picks');
+ await size(480,900);reqs=[];await go("walkthrough.html?class=Inquisitor&race=Deep+Elf&city=Ail%27Vorith");await waitFor('!!document.querySelector("#cg-walk .cg-sp li>b.ux-tt-t")',10000);
+ await ev('(function(){var b=document.querySelector("#cg-walk details[open] .cg-sp li>b.ux-tt-t")||document.querySelector("#cg-walk .cg-sp li>b.ux-tt-t");b.scrollIntoView({block:"center",behavior:"instant"});b.focus()})()');
+ ok(await waitFor('(function(){var t=document.getElementById("ux-tt");return t&&!t.hidden&&/Level \\d+/.test(t.textContent)})()')&&reqs.filter(r=>/^stip-\d+\.js/.test(r)).length===1&&!reqs.includes('spell-tips.js'),'Tips: a spell tooltip loads one piece ('+reqs.filter(r=>/^stip-/.test(r)).join(',')+', ~'+sz('stip-0.js')+' KB) instead of spell-tips.js ('+sz('spell-tips.js')+' KB)');
+ await key('Escape');await send('Network.setBlockedURLs',{urls:['*stip-*','*mtip-*']});reqs=[];await go("walkthrough.html?class=Inquisitor&race=Deep+Elf&city=Ail%27Vorith");await waitFor('!!document.querySelector("#cg-walk .cg-sp li>b.ux-tt-t")',10000);
+ await ev('(function(){var b=document.querySelector("#cg-walk details[open] .cg-sp li>b.ux-tt-t")||document.querySelector("#cg-walk .cg-sp li>b.ux-tt-t");b.scrollIntoView({block:"center",behavior:"instant"});b.focus()})()');
+ ok(await waitFor('(function(){var t=document.getElementById("ux-tt");return t&&!t.hidden&&/Level \\d+/.test(t.textContent)})()',10000)&&reqs.includes('spell-tips.js'),'Tips: if the pieces cannot load, the full spell-tips.js is used');
+ await send('Network.setBlockedURLs',{urls:[]});await key('Escape');
+}
+// 4) Compare from the item tooltip and the Market page (pass 7 dialog, ?cmp= links)
+{await size(480,900);await go('index.html');await ev('localStorage.setItem("mnm-cmp","[]")');await go('market.html');
+ await waitFor('document.querySelectorAll("#mkt-b .ux-cmp-m").length>0',8000);
+ const mk=await ev('(function(){var b=document.querySelectorAll("#mkt-b .ux-cmp-m"),l=document.querySelectorAll("#mkt-b td[data-l=Item]>a[href*=\\"items.html#\\"]");return {b:b.length,l:l.length,v:document.querySelectorAll("#mkt-vb .ux-cmp-m").length}})()');
+ ok(mk.b>0&&mk.b===mk.l,'Market: a Compare button on each of the '+mk.b+' price rows that link into the Items database (+'+mk.v+' vendor rows)');
+ const names=await ev('(function(){var seen=[],out=[];[].forEach.call(document.querySelectorAll("#mkt-b .ux-cmp-m,#mkt-vb .ux-cmp-m"),function(b){var n=b.getAttribute("data-cmp");if(seen.indexOf(n)<0){seen.push(n);out.push(n)}});return out.slice(0,2)})()');
+ await ev(`[].find.call(document.querySelectorAll(".ux-cmp-m"),function(b){return b.getAttribute("data-cmp")===${JSON.stringify(names[0])}}).click()`);
+ const b1=await ev('(function(){var b=document.querySelector(".ux-cmpbar-x8:not([hidden])");return b?b.textContent:""})()');
+ ok(/Pick one more/.test(b1)&&b1.indexOf(names[0])>=0,'Market: first pick shows the compare bar ("'+b1.slice(0,70)+'")');
+ await ev(`[].find.call(document.querySelectorAll(".ux-cmp-m"),function(b){return b.getAttribute("data-cmp")===${JSON.stringify(names[1])}}).click()`);
+ const go2=await ev('(function(){var a=document.querySelector(".ux-cmpbar-x8:not([hidden]) a.ux-cmp-open");return a?a.getAttribute("href"):""})()');
+ ok(/items\.html\?cmp=/.test(go2)&&decodeURIComponent(go2).indexOf(names[0]+'|'+names[1])>=0&&JSON.parse(await ev('localStorage.getItem("mnm-cmp")')).length===2,'Market: second pick gives "Compare side by side" → '+decodeURIComponent(go2));
+ const ov=await ev('document.documentElement.scrollWidth>innerWidth');ok(!ov,'Market at 480: no overflow with the Compare buttons and bar');
+ await ev('document.querySelector(".ux-cmpbar-x8:not([hidden])").scrollIntoView({block:"center",behavior:"instant"})');await sleep(200);await shot('ux8-after-compare-market-480.png');
+ await go(go2.replace(/^\.?\/?/,''));
+ ok(await waitFor('(function(){var d=document.querySelector("dialog.ux-cmpdlg");return d&&d.open&&!!d.querySelector(".ux-cmp-t")})()',15000),'Market → Items: the link opens pass 7\'s side-by-side dialog for '+names.join(' vs '));
+ const hd=await ev('[].map.call(document.querySelector(".ux-cmp-t").tHead.rows[0].cells,function(c){return c.textContent}).slice(1)');
+ ok(hd[0]===names[0]&&hd[1]===names[1],'…with the two Market picks as columns');
+ await key('Escape');await ev('document.querySelector(".ux-cmp-clr")&&document.querySelector(".ux-cmp-clr").click()');
+ // item tooltip (Mobs drop lists): pin, Tab into Compare, toggle
+ await size(1024,768);await go('index.html');await ev('localStorage.setItem("mnm-cmp","[]")');await go('mobs.html?mq=skeleton');await waitFor(DBOK,15000);
+ const ti=await ev('(function(){var a=document.querySelector("#mob-out .tt-item");if(!a)return null;a.scrollIntoView({block:"center",behavior:"instant"});a.focus();return a.getAttribute("data-item")})()');
+ if(ti){await waitFor('(function(){var t=document.getElementById("ux-tt");return t&&!t.hidden&&!!t.querySelector(".ux-cmp-tb")})()',10000);
+  const t0=await ev('(document.querySelector("#ux-tt .ux-tt-cmp")||{}).textContent||""');
+  await key('c');await sleep(250);
+  const t1=await ev('({p:JSON.parse(localStorage.getItem("mnm-cmp")||"[]"),b:(document.querySelector("#ux-tt .ux-cmp-tb")||{}).textContent,f:document.activeElement.getAttribute("data-item"),st:[].map.call(document.querySelectorAll("[role=status]"),function(x){return x.textContent}).join("|")})');
+  ok(/Compare/.test(t0)&&/press C/.test(t0)&&t1.p.length===1&&t1.p[0]===ti&&/Comparing/.test(t1.b)&&t1.f===ti&&/Added/.test(t1.st),'Item tooltip: focusing "'+ti+'" shows "'+t0+'"; C adds it ('+t1.b+'), focus stays on the name, announced');
+  const mp=await ev('(function(){var b=document.querySelector("#ux-tt .ux-cmp-tb"),r=b.getBoundingClientRect();return {x:r.left+r.width/2,y:r.top+r.height/2}})()');
+  await send('Input.dispatchMouseEvent',{type:'mouseMoved',x:mp.x,y:mp.y});await sleep(300);await send('Input.dispatchMouseEvent',{type:'mousePressed',x:mp.x,y:mp.y,button:'left',clickCount:1});await send('Input.dispatchMouseEvent',{type:'mouseReleased',x:mp.x,y:mp.y,button:'left',clickCount:1});await sleep(250);
+  ok((JSON.parse(await ev('localStorage.getItem("mnm-cmp")'))||[]).length===0,'Item tooltip: clicking its Compare button with the mouse toggles it off again');
+  await ev('document.querySelector("#mob-out .tt-item").focus()');await waitFor('!!document.querySelector("#ux-tt:not([hidden]) .ux-cmp-tb")',5000);await key('c');await sleep(200);await key('Escape');
+ }else ok(false,'Mobs page has a drop-list item to test the tooltip Compare');
+ await go('items.html?iq=helm');await waitFor(DBOK,15000);ok(await ev('MNM_UX_CMP.picks().length')===1,'Items page picks up the tooltip pick from mnm-cmp');
+ await ev('document.querySelector(".ux-cmp-clr")&&document.querySelector(".ux-cmp-clr").click()');
+}
+// contrast (6 theme x Irem combos) for the new controls; overflow 480-3440 in all themes
+{const SC8=s=>CSCAN.replace('document.body.querySelectorAll(\'*\')','document.querySelectorAll(\''+s+'\')');
+ for(const stt of ['dark-hw','dark','light-hw','light','contrast-hw','contrast']){const [th,hw]=stt.split('-');const bad=[];
+  await ev(`localStorage.setItem('mnm-theme','${th}');localStorage.setItem('mnm-halloween','${hw?'on':'off'}');localStorage.setItem('mnm-cmp','[]')`);
+  const scan=async(lab,sel)=>{const r=await ev(SC8(sel));r.fails.forEach(f=>bad.push(lab+' T '+f.r+' '+f.el));r.cfails.forEach(f=>bad.push(lab+' C '+f.r+' '+f.el))};
+  await size(1024,768);await go('spells.html');await scan('spell badges','table.spelllook tbody td:first-child a.badge');
+  await go('spells-all.html');await scan('spells-all note','.ux-spall, .ux-spall *');
+  await go('market.html');await waitFor('document.querySelectorAll("#mkt-b .ux-cmp-m").length>1',8000);
+  await ev('(function(){var b=document.querySelectorAll("#mkt-b .ux-cmp-m");b[0].click();var n=b[0].getAttribute("data-cmp");var c=[].find.call(document.querySelectorAll("#mkt-b .ux-cmp-m"),function(x){return x.getAttribute("data-cmp")!==n});c&&c.click()})()');
+  await scan('market compare','.ux-cmp-m, .ux-cmpbar-x8, .ux-cmpbar-x8 *');
+  await go('mobs.html?mq=skeleton');await waitFor(DBOK,15000);await ev('(function(){var a=document.querySelector("#mob-out .tt-item");a.scrollIntoView({block:"center",behavior:"instant"});a.click()})()');
+  await waitFor('!!document.querySelector("#ux-tt:not([hidden]) .ux-cmp-tb")',10000);await scan('tooltip compare','#ux-tt .ux-tt-cmp, #ux-tt .ux-tt-cmp *');
+  ok(bad.length===0,'pass 8 controls ['+stt+']: changed badges, spells-all note, Market compare buttons + bar, tooltip Compare pass 4.5:1 text / 3:1 controls'+(bad.length?' — '+bad.slice(0,4).join(' | '):''));
+ }
+ await ev('localStorage.removeItem("mnm-halloween");localStorage.setItem("mnm-cmp","[]")');
+ for(const th of ['dark','light','contrast']){await ev(`localStorage.setItem('mnm-theme','${th}')`);
+  for(const [w,h] of [[480,900],[1024,768],[2560,1080],[3440,1440]]){await size(w,h);for(const u of ['spells.html','spells-all.html','hotbar.html','market.html']){await go(u);
+   if(await ev('document.documentElement.scrollWidth>innerWidth'))ok(false,'pass 8: '+u+' overflows @'+w+' ('+th+')')}}}
+ ok(true,'pass 8: spells, spells-all, hotbar, market checked for overflow at 480/1024/2560/3440 in Dark, Light and High contrast');
+ await ev('localStorage.removeItem("mnm-theme")');
+}
 await ev('localStorage.removeItem("mnm-theme")');await size(1024,768);
 await go("classes/inquisitor.html?class=Inquisitor&race=Deep+Elf&city=Ail%27Vorith");await ev('MNM_UX_ROUTES.fillAll()');await waitFor('!document.querySelector(".sc-lz .lz-status")',15000);
  ok(await ev('[].every.call(document.querySelectorAll(".sc-route"),function(e){return !e.checkVisibility()||e.getAttribute("data-sc")==="ailvorith"})&&document.querySelectorAll(".sc-route[data-sc=ailvorith]").length>0'),'classes/inquisitor.html: Deep Elf Inquisitor in Ail\'Vorith shows Ail\'Vorith routes only');

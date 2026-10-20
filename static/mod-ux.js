@@ -373,20 +373,29 @@ function mobHTML(name,list){var r=list[0],named=list.some(function(x){return x[4
   return h+'<p class="ux-tt-d">As in the <a href="'+esc((de.getAttribute('data-root')||'')+'mobs.html')+'#'+encodeURIComponent(r[0])+'">Mobs database</a>.</p>'}
 function itemHTML(d){return '<p class="ux-tt-h">'+esc(d[0])+(d[1]?' <span class="tag">'+esc(d[1])+'</span>':'')+'</p><p class="ux-tt-m">'+['Slot: '+esc(d[2]||'?'),d[5]?'Weight '+esc(d[5]):''].filter(Boolean).join(' \u00b7 ')+'</p>'+
   '<p>'+esc(d[3]||'No stats listed on wiki')+'</p><p class="ux-tt-d">Class: '+esc(d[4])+'</p>'+((d[6]||[]).length?'<ul class="ux-tt-z">'+d[6].map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>':'')+
-  '<p class="ux-tt-d">Wiki page edited '+esc(d[7]||'?')+' \u00b7 same data as the item tooltips elsewhere on the site.</p>'}
+  '<p class="ux-tt-d">Wiki page edited '+esc(d[7]||'?')+' \u00b7 same data as the item tooltips elsewhere on the site.</p>'+(window.MNM_UX_CMPX?MNM_UX_CMPX.tip(d[0]):'')}
 function fillItem(el){var name=(el.getAttribute('data-item')||el.textContent).replace(/\s+/g,' ').trim(),I=window.MNM_ITEMS,none='<p class="ux-tt-h">'+esc(name)+'</p><p class="ux-tt-d">No more item details on this site yet.</p>';
   if(I&&I[name]){box().innerHTML=itemHTML(I[name]);return}if(!window.MNM_ITIP){box().innerHTML=none;return}
   box().innerHTML='<p class="lz-status" aria-busy="true">Loading item details\u2026</p>';
   window.MNM_ITIP(name).then(function(d){if(cur!==el)return;tt.innerHTML=d?itemHTML(d):none;place(el)},function(){if(cur===el)tt.innerHTML='<p class="lz-status lz-err">Item details could not load (offline?).</p>'})}
+// UX pass 8: spell and mob tips come in 16 pieces each (stip-<n>.js / mtip-<n>.js, n = the item-tip hash of the lower-case name,
+// as in modules/zzz_ux.py), so the first tooltip loads ~1/16 of the data. If a piece is missing, the complete file is used.
+var TPN=16;function tph(n){var h=0;for(var i=0;i<n.length;i++)h=(h*31+n.charCodeAt(i))>>>0;return h%TPN}
+KIND.s.p='stip-';KIND.m.p='mtip-';KIND.s.got={};KIND.m.got={};KIND.s.q={};KIND.m.q={};
+function tipHave(K,key){return !!window[K.v]&&(K.all||(/^[\x00-\x7f]*$/.test(key)&&K.got[tph(key)]))}
+function tipAll(K){return K.q.all||(K.q.all=load(K.f).then(function(){K.all=1},function(x){delete K.q.all;throw x}))}
+function tipGet(K,key){if(tipHave(K,key))return Promise.resolve();if(!/^[\x00-\x7f]*$/.test(key))return tipAll(K);var c=tph(key);
+  return K.q[c]||(K.q[c]=load(K.p+c+'.js').then(function(){K.got[c]=1},function(){delete K.q[c];return tipAll(K)}))}
+window.MNM_UX_TIPGET=function(k,name){var K=KIND[k],key=String(name).replace(/\s+/g,' ').trim().toLowerCase();return tipGet(K,key).then(function(){return (window[K.v]||{})[key]||null})};
 function fill(el){var k=el.getAttribute('data-tt')||kindOf(el);if(k==='i'){fillItem(el);return}var K=KIND[k],D=window[K.v],name=(el.getAttribute(k==='s'?'data-sp':'data-mob')||el.textContent).replace(/\s+/g,' ').trim();
-  if(!D){box().innerHTML='<p class="lz-status" aria-busy="true">Loading '+K.n+' details\u2026</p>';
-    load(K.f).then(function(){if(cur===el)fill(el)},function(){if(cur===el)tt.innerHTML='<p class="lz-status lz-err">'+(K.n==='spell'?'Spell':'Mob')+' details could not load (offline?).</p>'});return}
+  if(!tipHave(K,name.toLowerCase())){box().innerHTML='<p class="lz-status" aria-busy="true">Loading '+K.n+' details\u2026</p>';
+    tipGet(K,name.toLowerCase()).then(function(){if(cur===el){fill(el);if(!tt.hidden)place(el)}},function(){if(cur===el)tt.innerHTML='<p class="lz-status lz-err">'+(K.n==='spell'?'Spell':'Mob')+' details could not load (offline?).</p>'});return}
   var list=D[name.toLowerCase()];box().innerHTML=list&&list.length?(k==='s'?spellHTML(name,list,el):mobHTML(name,list)):'<p class="ux-tt-h">'+esc(name)+'</p><p class="ux-tt-d">No more '+K.n+' details on this site yet.</p>'}
 function place(el){var r=el.getBoundingClientRect(),w=Math.min(340,innerWidth-16);tt.style.maxWidth=w+'px';tt.style.left='0px';tt.style.top='0px';
   var tw=tt.offsetWidth,th=tt.offsetHeight,x=Math.max(8,Math.min(r.left,innerWidth-tw-8)),y=r.bottom+6;
   if(y+th>innerHeight-8&&r.top-th-6>=8)y=r.top-th-6;tt.style.left=Math.round(x)+'px';tt.style.top=Math.round(Math.max(8,y))+'px'}
 function show(el,pin){clearTimeout(hoverT);if(cur&&cur!==el)cur.removeAttribute('aria-describedby');cur=el;pinned=!!pin;box();fill(el);tt.hidden=false;el.setAttribute('aria-describedby','ux-tt');place(el);
-  var K0=KIND[el.getAttribute('data-tt')||'s'];if(K0.f&&!window[K0.v])load(K0.f).then(function(){if(cur===el&&!tt.hidden)place(el)},function(){})}
+}
 function hide(){clearTimeout(hoverT);if(!tt||tt.hidden)return;tt.hidden=true;pinned=false;if(cur)cur.removeAttribute('aria-describedby');cur=null}
 window.MNM_UX_TT={show:show,hide:hide,scan:deco};
 document.addEventListener('pointerover',function(e){if(e.pointerType!=='mouse')return;var el=e.target.closest&&e.target.closest('.ux-tt-t');if(!el||(pinned&&cur===el))return;clearTimeout(hoverT);hoverT=setTimeout(function(){show(el)},120)});
@@ -396,6 +405,10 @@ document.addEventListener('focusin',function(e){var el=e.target.closest&&e.targe
 document.addEventListener('focusout',function(e){var el=e.target.closest&&e.target.closest('.ux-tt-t');if(el&&!pinned&&!(e.relatedTarget&&tt&&tt.contains(e.relatedTarget)))hide()});
 document.addEventListener('click',function(e){var el=e.target.closest&&e.target.closest('.ux-tt-t');if(el&&el.tagName==='A'){hide();return}if(el){if(cur===el&&pinned&&!tt.hidden)hide();else show(el,true);return}
   if(tt&&!tt.hidden&&!tt.contains(e.target))hide()});
+// UX pass 8: while an item name has keyboard focus and its tooltip shows a Compare button, the C key presses it
+document.addEventListener('keydown',function(e){if((e.key!=='c'&&e.key!=='C')||e.altKey||e.ctrlKey||e.metaKey||!tt||tt.hidden||!cur||document.activeElement!==cur)return;
+  var b=tt.querySelector('.ux-cmp-tb');if(!b)return;e.preventDefault();e.stopPropagation();b.click()},true);
+window.MNM_UX_TT.refresh=function(){if(cur&&tt&&!tt.hidden){fill(cur);place(cur)}};
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&tt&&!tt.hidden){var c=cur;hide();if(c&&document.activeElement!==c&&c.focus)c.focus({preventScroll:true});e.stopPropagation()}
   else if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('ux-tt-t')&&e.target.tagName!=='A'){e.preventDefault();show(e.target,true)}},true);
 window.addEventListener('scroll',function(){if(tt&&!tt.hidden&&cur){var r=cur.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)hide();else place(cur)}},{passive:true});
@@ -459,24 +472,27 @@ var spT=main.querySelector('table.spelllook'),spCur=null;
 [].forEach.call(main.querySelectorAll('table.spelllook tbody td:first-child>strong'),function(b){var tr=b.closest('tr');
   b.setAttribute('data-sp',b.textContent.trim());if(tr&&tr.getAttribute('data-cls'))b.setAttribute('data-class',tr.getAttribute('data-cls'));
   b.setAttribute('tabindex','-1');b.setAttribute('role','button');b.classList.add('ux-spn');marked++;
-  var a=tr&&tr.cells[2]&&tr.cells[2].querySelector('a');if(a){a.setAttribute('tabindex','-1');a.classList.add('ux-spc')}});
+  var a=tr&&tr.cells[2]&&tr.cells[2].querySelector('a');if(a){a.setAttribute('tabindex','-1');a.classList.add('ux-spc')}
+  var bg=b.parentNode.querySelector('a.badge');if(bg){bg.setAttribute('tabindex','-1');bg.classList.add('ux-spb')}});
 if(spT&&marked){
   var hint=document.createElement('span');hint.id='ux-sphint';hint.className='ux-sphint dim';
   hint.innerHTML='Keyboard: <kbd>Tab</kbd> into the table for a spell\u2019s details, <kbd>\u2191</kbd> <kbd>\u2193</kbd> next spell, <kbd>\u2192</kbd> class link, <kbd>Esc</kbd> closes.';
   var spTools=main.querySelector('.sptools');if(spTools){spTools.appendChild(document.createTextNode(' '));spTools.appendChild(hint)}else spT.parentNode.insertBefore(hint,spT);
   spT.setAttribute('aria-describedby','ux-sphint');
-  var spCell=function(tr,col){return col?tr.querySelector('a.ux-spc'):tr.querySelector('strong.ux-spn')};
+  // UX pass 8: a patch 'changed' badge link sits between the name and the class link (Right/Left reach it; col 1 = badge, 2 = class)
+  var spCell=function(tr,col){return col===2?tr.querySelector('a.ux-spc'):col===1?tr.querySelector('a.ux-spb'):tr.querySelector('strong.ux-spn')};
+  var spColOf=function(el){return el.classList.contains('ux-spc')?2:el.classList.contains('ux-spb')?1:0};
   var spVis=function(el){var tr=el&&el.closest('tr');return !!(tr&&spT.contains(tr)&&tr.getClientRects().length)};
   var spRows=function(){return [].filter.call(spT.tBodies[0].rows,function(tr){return tr.getClientRects().length&&spCell(tr,0)})};
   var spSet=function(el,focus){if(spCur&&spCur!==el)spCur.setAttribute('tabindex','-1');spCur=el;el.setAttribute('tabindex','0');if(focus)el.focus()};
   var spFix=function(){if(spCur&&spVis(spCur))return;var l=spRows();if(l[0])spSet(spCell(l[0],0));else if(spCur){spCur.setAttribute('tabindex','-1');spCur=null}};
   spFix();
-  spT.addEventListener('focusin',function(e){var el=e.target.closest&&e.target.closest('strong.ux-spn,a.ux-spc');if(el&&el!==spCur)spSet(el)});
-  spT.addEventListener('keydown',function(e){var el=e.target.closest&&e.target.closest('strong.ux-spn,a.ux-spc');if(!el||e.altKey||e.ctrlKey||e.metaKey||e.shiftKey)return;
-    var col=el.classList.contains('ux-spc')?1:0,tr=el.closest('tr');
-    if(e.key==='ArrowRight'||e.key==='ArrowLeft'){var t=spCell(tr,e.key==='ArrowRight'?1:0);if(t&&t!==el){e.preventDefault();spSet(t,true)}return}
+  spT.addEventListener('focusin',function(e){var el=e.target.closest&&e.target.closest('strong.ux-spn,a.ux-spc,a.ux-spb');if(el&&el!==spCur)spSet(el)});
+  spT.addEventListener('keydown',function(e){var el=e.target.closest&&e.target.closest('strong.ux-spn,a.ux-spc,a.ux-spb');if(!el||e.altKey||e.ctrlKey||e.metaKey||e.shiftKey)return;
+    var col=spColOf(el),tr=el.closest('tr');
+    if(e.key==='ArrowRight'||e.key==='ArrowLeft'){var d=e.key==='ArrowRight'?1:-1,t=null;for(var cc=col+d;cc>=0&&cc<=2&&!t;cc+=d)t=spCell(tr,cc);if(t&&t!==el){e.preventDefault();spSet(t,true)}return}
     var mv={ArrowDown:1,ArrowUp:-1,PageDown:10,PageUp:-10,Home:-1e9,End:1e9}[e.key];if(!mv)return;e.preventDefault();
-    var l=spRows(),i=l.indexOf(tr);if(!l.length)return;var r=l[Math.max(0,Math.min(l.length-1,(i<0?0:i)+mv))];spSet(spCell(r,col)||spCell(r,0),true)});
+    var l=spRows(),i=l.indexOf(tr);if(!l.length)return;var r=l[Math.max(0,Math.min(l.length-1,(i<0?0:i)+mv))];spSet(spCell(r,col)||(col?spCell(r,3-col):null)||spCell(r,0),true)});
   var spQ=0,spSoon=function(){clearTimeout(spQ);spQ=setTimeout(spFix,60)};
   ['input','change'].forEach(function(t){document.addEventListener(t,spSoon,true)});
   if(spT.tHead){spT.tHead.addEventListener('click',spSoon);spT.tHead.addEventListener('keydown',spSoon)}
@@ -508,6 +524,43 @@ cw.addEventListener('click',function(e){var btn=e.target.closest&&e.target.close
     de.classList.add('ux-print-one');setTimeout(function(){window.print()},50)})()});
 // a normal Ctrl+P after a one-band printout prints the whole page again
 document.addEventListener('keydown',function(e){if((e.ctrlKey||e.metaKey)&&(e.key==='p'||e.key==='P'))cleanup()});
+})();
+// ---------------------------------------------------------------- UX pass 8: start a comparison from item tooltips and the Market page
+// Same picks as the Items page compare (pass 7): localStorage mnm-cmp, at most two names, a third replaces the oldest. Outside the
+// Items page, "Compare side by side" is a link to items.html?cmp=<a>|<b>, which opens pass 7's dialog there. Names come from the
+// site's item data (the tooltip's item, or the Market row's link into the Items database); nothing new is computed.
+(function(){var de=document.documentElement,root=de.getAttribute('data-root')||'',CK='mnm-cmp',bars=[],live=null;
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function get(){if(window.MNM_UX_CMP)return MNM_UX_CMP.picks();var p;try{p=JSON.parse(localStorage.getItem(CK)||'[]')}catch(x){p=[]}
+  return Array.isArray(p)?p.filter(function(n,i){return typeof n==='string'&&n&&p.indexOf(n)===i}).slice(-2):[]}
+function put(p){try{localStorage.setItem(CK,JSON.stringify(p))}catch(x){}}
+function say(t){if(!live){live=document.createElement('p');live.className='ux-vh';live.setAttribute('role','status');document.body.appendChild(live)}live.textContent='';setTimeout(function(){live.textContent=t},30)}
+function url(p){return root+'items.html?cmp='+encodeURIComponent(p.join('|'))}
+function toggle(n){if(window.MNM_UX_CMP){MNM_UX_CMP.toggle(n);paint();return}var p=get(),i=p.indexOf(n),m;
+  if(i>=0){p.splice(i,1);m='Removed '+n+' from the comparison.'}else{p.push(n);m='Added '+n+' to the comparison.';if(p.length>2)m+=' It replaces '+p.shift()+'.';if(p.length===2)m+=' Compare side by side is ready.'}
+  put(p);paint();say(m)}
+function btn(n,on,x){return '<button type="button" class="ux-cmp-b'+(x||'')+'" data-cmp="'+esc(n)+'" aria-pressed="'+(on?'true':'false')+'">'+(on?'\u2713 Comparing':'Compare')+'</button>'}
+function tip(n){var p=get(),on=p.indexOf(n)>=0;
+  var kb=document.activeElement&&document.activeElement.matches&&document.activeElement.matches('.ux-tt-t:focus-visible')?' <span class="ux-tt-d">or press <kbd>C</kbd></span>':'';
+  return '<p class="ux-tt-cmp">'+btn(n,on,' ux-cmp-tb')+kb+(window.MNM_UX_CMP?'':p.length===2?' <a class="ux-cmp-go" href="'+esc(url(p))+'">Compare side by side</a>':' <span class="ux-tt-d">'+p.length+' of 2 picked</span>')+'</p>'}
+function barHTML(p){if(!p.length)return '';return '<span class="ux-cmpbar-l">Compare:</span> '+p.map(function(n){return '<span class="ux-cmp-chip">'+esc(n)+'<button type="button" class="ux-cmp-x" data-cmp="'+esc(n)+'" aria-label="Remove '+esc(n)+' from the comparison">\u2715</button></span>'}).join(' ')+
+  (p.length===2?' <a class="ux-cmp-open ux-cmp-go" href="'+esc(url(p))+'">Compare side by side</a>':' <span class="dim">Pick one more item.</span>')+' <button type="button" class="ux-cmp-clr">Clear</button>'}
+function paint(){var p=get();bars.forEach(function(b){b.hidden=!p.length;b.innerHTML=barHTML(p)});
+  [].forEach.call(document.querySelectorAll('.ux-cmp-m'),function(b){var on=p.indexOf(b.getAttribute('data-cmp'))>=0;b.setAttribute('aria-pressed',on?'true':'false');b.textContent=on?'\u2713 Comparing':'Compare'});
+  if(window.MNM_UX_TT&&MNM_UX_TT.refresh)MNM_UX_TT.refresh()}
+window.MNM_UX_CMPX={picks:get,toggle:toggle,url:url,tip:tip};
+document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.ux-cmp-tb,.ux-cmp-m');if(b){e.preventDefault();toggle(b.getAttribute('data-cmp'));return}
+  var x=e.target.closest&&e.target.closest('.ux-cmpbar-x8 .ux-cmp-x');if(x){toggle(x.getAttribute('data-cmp'));var bar=x.closest('.ux-cmpbar'),f=bar&&bar.querySelector('button');if(f)f.focus();return}
+  var c=e.target.closest&&e.target.closest('.ux-cmpbar-x8 .ux-cmp-clr');if(c){var bb=c.closest('.ux-cmpbar');put([]);paint();say('Comparison cleared.');var t=bb&&bb.parentNode.querySelector('.ux-cmp-m');if(t)t.focus()}});
+window.addEventListener('storage',function(e){if(e.key===CK)paint()});
+// Market page: a Compare button on each row whose item links into the Items database, and a compare bar above both tables
+var mb=document.getElementById('mkt-b');if(!mb)return;
+function deco(){[].forEach.call(document.querySelectorAll('#mkt-b td[data-l="Item"]>a[href*="items.html#"],#mkt-vb td[data-l="Item"]>a[href*="items.html#"]'),function(a){
+  var td=a.parentNode;if(td.querySelector('.ux-cmp-m'))return;var n;try{n=decodeURIComponent(a.getAttribute('href').split('#')[1]||'')}catch(x){return}if(!n)return;
+  var at=a.nextElementSibling&&a.nextElementSibling.matches('a.ext')?a.nextElementSibling:a,p=get();at.insertAdjacentHTML('afterend',' '+btn(n,p.indexOf(n)>=0,' ux-cmp-m'))})}
+['mkt-t','mkt-v'].forEach(function(id){var t=document.getElementById(id);if(!t)return;var host=t.closest('.tw')||t,bar=document.createElement('div');
+  bar.className='ux-cmpbar ux-cmpbar-x8';bar.setAttribute('role','region');bar.setAttribute('aria-label','Item comparison');bar.hidden=true;host.parentNode.insertBefore(bar,host);bars.push(bar)});
+deco();paint();if(window.MutationObserver)['mkt-b','mkt-vb'].forEach(function(id){var t=document.getElementById(id);if(t)new MutationObserver(deco).observe(t,{childList:true})});
 })();
 // @@ux-pal-start
 // UX pass 3 quick-jump palette (#1, #19) + '?' shortcuts overlay (#5). Pass 4: built into assets/mod-ux-pal.js and loaded on

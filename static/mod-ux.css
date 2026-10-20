@@ -338,3 +338,14 @@ dialog.ux-cmpdlg::backdrop{background:rgba(0,0,0,.55)}
 .ux-cmp-ne th::before,.ux-cmp-key{content:"\2260";color:var(--gold);font-weight:700;margin-right:4px}
 .ux-cmp-n{margin:.8em 0 0;font-size:var(--fs-sm)}
 @media print{.ux-cmp-b,.ux-cmpbar{display:none!important}}
+
+/* ===== UX pass 8: compare from item tooltips + Market ===== */
+.ux-tt-cmp{margin:.5em 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.ux-tt-cmp .ux-cmp-b{margin-left:0}
+a.ux-cmp-open,a.ux-cmp-go{display:inline-flex;align-items:center;text-decoration:none}
+a.ux-cmp-go:hover{text-decoration:underline}
+.ux-tt-cmp a.ux-cmp-go{min-height:24px;padding:0 8px;border:1px solid var(--gold);border-radius:var(--r1);color:var(--gold2);font-size:var(--fs-xs)}
+@media (max-width:800px){.ux-tt-cmp a.ux-cmp-go{min-height:36px}}
+#mkt-t .ux-cmp-m,#mkt-v .ux-cmp-m{margin-left:4px}
+@media print{.ux-tt-cmp,.ux-cmp-m{display:none!important}}
+.ux-nojs{margin:.6em 0;padding:8px 12px;border:1px solid var(--gold);border-radius:var(--r2)}

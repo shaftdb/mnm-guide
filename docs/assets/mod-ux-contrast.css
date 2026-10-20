@@ -404,6 +404,8 @@ html[data-theme="contrast"] .ux-cmp-t th,html[data-theme="contrast"] .ux-cmp-t t
 html[data-theme="contrast"] .ux-cmp-t thead th{color:var(--gold2)}
 html[data-theme="contrast"] .ux-cmp-t thead th:first-child,html[data-theme="contrast"] .ux-cmp-t tbody th{color:var(--gold2)}
 html[data-theme="contrast"] .ux-cmp-ne th::before,html[data-theme="contrast"] .ux-cmp-key{color:var(--gold)}
+html[data-theme="contrast"] .ux-tt-cmp a.ux-cmp-go{border:1px solid var(--gold);border-radius:var(--r1);color:var(--gold2)}
+html[data-theme="contrast"] .ux-nojs{border:1px solid var(--gold);border-radius:var(--r2)}
 html[data-theme="contrast"],html[data-theme="contrast"].halloween{color-scheme:dark;
   --bg:#000;--panel:#0a0805;--panel2:#16110a;--line:#c8ae78;--ink:#fff;--dim:#ece2cc;--gold:#ffc94a;--gold2:#ffd98a;--parch:#fff4da;
   --red:#ffa08c;--teal:#8ee6cf;--magic:#a8c8ff;--lore:#ffc46a;--unc:#8a3020;--strat:#1f4d33;--glow:#ffd98a;--crystal:#ffc94a;--ctl:#ffc94a;--ctl-line:#ffc94a;--focus:#fff;--h2bg:#2a1f0e}

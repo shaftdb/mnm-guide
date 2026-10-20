@@ -703,3 +703,137 @@ def render_all():
     ni, na = _ux_split_itips(); ps = _ux_pack_stext(); nh = _ux_split_hotbar()
     print('zzz_ux pass 7: item tips %d -> %d items in %d pieces; search-text.js %s; hotbar spells in %d class files' % (
         ni, na, _UX_ITN, '%d -> %d KB' % ps if ps else 'unchanged', nh))
+
+# ---------------------------------------------------------------- UX pass 8
+# 1) Spells page rows from per-class data. spells.html carried ~1,600 rows of table markup (564 KB). The rows now come from
+#    assets/sp-c-<class>.js (one file per class: name, level, description, mana, source and the patch 'changed' badge),
+#    loaded as ordinary blocking <script> tags just before the table, and an inline script right after the table writes the
+#    rows in the original order (a class-index string). So the rows are in the DOM before site.js / mod-ux.js /
+#    mod-chargen.js run, exactly as before: sorting, "Filter this page", Only my class / level range, URL params, the pass 7
+#    roving Tab stop and the tooltips see the same table. The build runs that same inline renderer in node on the written
+#    data and compares its output byte for byte with the table the build made (plus the badges); any difference, a missing
+#    node, or an unexpected row format keeps the old page. Without JavaScript the page points to spells-all.html, the full
+#    table as plain HTML (also the print-without-JS copy); with JavaScript the page prints the rows it has.
+#    The 'changed' badges (patch_spell_badge, as on the class pages) now show on the Spells page too, after the name.
+_UX_SPR = (r'window.MNM_SPR=function(D,K,O){var e=function(s){return String(s).replace(/[&<>"\x27]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",' "'\"'" r':"&quot;","\x27":"&#x27;"}[c]})},'
+           r'n={},h=[],miss=[];for(var i=0;i<O.length;i++){var k=O.charCodeAt(i)-65,c=K[k],C=D[c];if(!C){if(miss.indexOf(c)<0)miss.push(c);continue}var j=n[k]||0,r=C.r[j];n[k]=j+1;'
+           r'h.push("<tr data-cls=\""+e(c)+"\" data-lo=\""+r[1]+"\" data-hi=\""+r[1]+"\"><td><strong>"+e(r[0])+"</strong>"+(r[5]||"")+"</td><td>"+(r[1]===0?"?":r[1])+"</td><td><a href=\""+C.u+(C.h?"#lvl-"+r[1]:"")+"\">"+e(c)+"</a></td><td>"+e(r[2])+"</td><td>"+e(r[3])+"</td><td>"+e(r[4])+"</td></tr>")}'
+           r'return{h:h.join(""),miss:miss}};')
+_UX_SPRUN = ('(function(){var t=document.querySelector("table.spelllook"),b=t&&t.tBodies[0];if(!b||!window.MNM_SPR)return;var R=MNM_SPR(window.MNM_SPC||{},%s,"%s");b.innerHTML=R.h;'
+             'if(R.miss.length){var p=document.createElement("p");p.className="lz-status lz-err";p.setAttribute("role","status");'
+             'p.innerHTML="The spells for "+R.miss.join(", ")+" could not load (offline?). <a href=\\"\\">Reload</a> or open the <a href=\\"spells-all.html\\">full spell table</a>.";t.parentNode.parentNode.insertBefore(p,t.parentNode)}})();')
+_UX_SPROW = re.compile(r'<tr data-cls="([^"]*)" data-lo="([^"]*)" data-hi="([^"]*)"><td><strong>(.*?)</strong></td><td>(.*?)</td><td><a href="([^"]*)">(.*?)</a></td><td>(.*?)</td><td>(.*?)</td><td>(.*?)</td></tr>')
+def _ux_spells_rows():
+    fp = os.path.join(OUT, 'spells.html')
+    if not os.path.exists(fp): return None
+    h = open(fp, encoding='utf8').read()
+    t0 = '<table class="grid sortable spelllook">'
+    if h.count(t0) != 1: print('zzz_ux: spells rows not split (table)'); return None
+    a = h.index('<tbody>', h.index(t0)) + 7; b = h.index('</tbody>', a); body = h[a:b]
+    ms = list(_UX_SPROW.finditer(body))
+    if not ms or ''.join(m.group(0) for m in ms) != body: print('zzz_ux: spells rows not split (row format)'); return None
+    K, D, order, badged = [], {}, [], []
+    for m in ms:
+        c, lo, hi, nm, lv, u, c2, de, mana, loc = m.groups()
+        if lo != hi or not re.fullmatch(r'0|[1-9]\d*', lo) or lv != (lo if lo != '0' else '?') or html.unescape(c2) != html.unescape(c): print('zzz_ux: spells rows not split (row %s)' % nm); return None
+        cn = html.unescape(c)
+        if cn not in D:
+            if len(K) >= 26: print('zzz_ux: spells rows not split (classes)'); return None
+            base, hs = u.split('#')[0], '#' in u
+            D[cn] = {'u': base, 'h': 1 if hs else 0, 'r': []}; K.append(cn)
+        C = D[cn]
+        if u != C['u'] + ('#lvl-' + lo if C['h'] else ''): print('zzz_ux: spells rows not split (link %s)' % u); return None
+        nmu = html.unescape(nm); bd = ''
+        try: bd = patch_spell_badge(cn, nmu)
+        except NameError: bd = ''
+        row = [nmu, int(lo), html.unescape(de), html.unescape(mana), html.unescape(loc)]
+        if bd: row.append(bd)
+        C['r'].append(row); order.append(chr(65 + K.index(cn)))
+        g = m.group(0); i = g.index('</strong>') + 9
+        badged.append(g[:i] + bd + g[i:])
+    want = ''.join(badged); O = ''.join(order)
+    files = {}
+    for cn in K:
+        files[cn] = 'sp-c-%s.js' % slug(cn)
+    dj = lambda v: _ux_dump(v).replace('</', '<\\/')
+    datajs = {cn: '(window.MNM_SPC=window.MNM_SPC||{})[%s]=%s;' % (dj(cn), dj(D[cn])) for cn in K}
+    # build-time check: run the exact inline renderer in node on the exact file contents
+    import subprocess, tempfile
+    chk = 'var window={};' + ''.join(datajs[cn] for cn in K) + _UX_SPR + 'process.stdout.write(JSON.stringify(window.MNM_SPR(window.MNM_SPC,%s,%s)));' % (dj(K), dj(O))
+    try:
+        with tempfile.NamedTemporaryFile('w', suffix='.js', delete=False, encoding='utf8') as f: f.write(chk); tf = f.name
+        res = json.loads(subprocess.run(['node', tf], capture_output=True, timeout=60, check=True).stdout.decode('utf8'))
+        os.unlink(tf)
+    except Exception as ex: print('zzz_ux: spells rows not split (node check: %s)' % ex); return None
+    if res.get('miss') or res.get('h') != want: print('zzz_ux: spells rows not split (renderer output differs)'); return None
+    # spells-all.html: the full table as plain HTML (no JavaScript needed), with the badges
+    full = h[:a] + want + h[b:]
+    note = '<p class="dim ux-spall">The full spell table as plain HTML, for browsers without JavaScript and for printing. The <a href="spells.html">Spell lookup</a> page has the same rows and loads faster.</p>'
+    full = full.replace('<h1>Spell lookup</h1>', '<h1>Spell lookup</h1>' + note, 1).replace('</head>', '<meta name="robots" content="noindex">\n</head>', 1)
+    for cn in K: _ux_js(files[cn], datajs[cn])
+    tags = ''.join('<script src="assets/%s"></script>' % files[cn] for cn in K)
+    ns = '<noscript><p class="ux-nojs">JavaScript is off, so this table stays empty. <a href="spells-all.html">Open the full spell table</a> (plain HTML, same rows, also for printing).</p></noscript>'
+    tw = h.rfind('<div class="tw">', 0, a)
+    page = h[:tw] + ns + tags + h[tw:a] + h[b:]
+    j = page.index('</table></div>', tw) + len('</table></div>')
+    page = page[:j] + '<script>' + _UX_SPR + _UX_SPRUN % (dj(K), O) + '</script>' + page[j:]
+    open(os.path.join(OUT, 'spells-all.html'), 'w', encoding='utf8').write(full)
+    open(fp, 'w', encoding='utf8').write(page)
+    return len(ms), len(h) // 1024, len(page) // 1024, sum(len(v.encode()) for v in datajs.values()) // 1024, sum(1 for x in badged if 'badge fact' in x)
+
+# 2) Hotbar: after pass 7's per-class spell lists, the largest part left in hotbar-data.js was the clicky item list (85 KB of 123 KB).
+#    It moves to assets/hb-clicky.js (H.lazy.clicky); mod-hotbar.js loads it before rendering a class whose layouts or gear need
+#    it, and otherwise when the palette first shows clicky items (Hotbar items filter, a search, equipped gear).
+def _ux_split_clicky():
+    fp = os.path.join(OUT, 'assets', 'hotbar-data.js')
+    if not os.path.exists(fp): return 0
+    s = open(fp, encoding='utf8').read().strip()
+    if not s.startswith('window.MNM_HB='): print('zzz_ux: hotbar clicky not split (format)'); return 0
+    H = json.loads(s[len('window.MNM_HB='):].rstrip(';'))
+    if not isinstance(H.get('clicky'), list) or not isinstance(H.get('lazy'), dict) or 'clicky' in H['lazy']:
+        print('zzz_ux: hotbar clicky not split (shape)'); return 0
+    dj = lambda v: _ux_dump(v).replace('</', '<\\/')
+    ck = H.pop('clicky'); H['lazy']['clicky'] = 'hb-clicky.js'
+    _ux_js('hb-clicky.js', 'window.MNM_HB.clicky=%s;' % dj(ck))
+    _ux_js('hotbar-data.js', 'window.MNM_HB=%s;' % dj(H))
+    # exact: the two files together give back the old object
+    H2 = json.loads(open(fp, encoding='utf8').read()[len('window.MNM_HB='):].rstrip(';'))
+    c2 = json.loads(open(os.path.join(OUT, 'assets', 'hb-clicky.js'), encoding='utf8').read()[len('window.MNM_HB.clicky='):].rstrip(';'))
+    H2['clicky'] = c2; del H2['lazy']['clicky']
+    old = json.loads(s[len('window.MNM_HB='):].rstrip(';'))
+    if H2 != old:
+        open(fp, 'w', encoding='utf8').write(s); os.remove(os.path.join(OUT, 'assets', 'hb-clicky.js')); print('zzz_ux: hotbar clicky not split (check)'); return 0
+    return len(ck)
+
+# 3) Spell and mob tooltips in pieces: spell-tips.js (344 KB) and mob-tips.js (440 KB) become 16 pieces each, stip-<n>.js and
+#    mtip-<n>.js, picked by the item-tip hash (_ux_ih) of the lower-case name; mod-ux.js loads one piece per new name. The full
+#    files stay as the fallback. Done only when every name is ASCII (so JS toLowerCase and the hash agree) and the pieces add
+#    back up to exactly the full file.
+_UX_TPN = 16
+def _ux_h32(n):  # the same 32-bit hash as _ux_ih / mod-ux.js tph, before the modulo
+    h, b = 0, n.encode('utf-16-le')
+    for i in range(0, len(b), 2): h = (h * 31 + b[i] + (b[i + 1] << 8)) & 0xFFFFFFFF
+    return h
+def _ux_split_tips(f, var, pre):
+    fp = os.path.join(OUT, 'assets', f)
+    if not os.path.exists(fp): return 0
+    s = open(fp, encoding='utf8').read().strip(); head = 'window.%s=' % var
+    if not s.startswith(head): print('zzz_ux: %s not split (format)' % f); return 0
+    D = json.loads(s[len(head):].rstrip(';'))
+    if not all(k.isascii() and k == k.lower() and k == ' '.join(k.split()) for k in D): print('zzz_ux: %s not split (names)' % f); return 0
+    parts = [{} for _ in range(_UX_TPN)]
+    for k in sorted(D): parts[_ux_h32(k) % _UX_TPN][k] = D[k]
+    back = {}
+    for p in parts: back.update(json.loads(_ux_dump(p)))
+    if back != D: print('zzz_ux: %s not split (check)' % f); return 0
+    for i, p in enumerate(parts):
+        _ux_js('%s%d.js' % (pre, i), 'Object.assign(window.%s=window.%s||{},%s);' % (var, var, _ux_dump(p)))
+    return len(D)
+
+_ux_prev_ra8 = render_all
+def render_all():
+    _ux_prev_ra8()
+    sr = _ux_spells_rows(); nc = _ux_split_clicky(); ns, nm = _ux_split_tips('spell-tips.js', 'MNM_STIPS', 'stip-'), _ux_split_tips('mob-tips.js', 'MNM_MTIPS', 'mtip-')
+    print('zzz_ux pass 8: spells rows %s; hotbar clicky items %s' % ('%d rows, page %d -> %d KB + %d KB class data, %d changed badges' % sr if sr else 'unchanged',
+          'in hb-clicky.js (%d)' % nc if nc else 'unchanged'))
+    print('zzz_ux pass 8: tooltip pieces: %d spell names in %d stip files, %d mob names in %d mtip files' % (ns, _UX_TPN if ns else 0, nm, _UX_TPN if nm else 0))

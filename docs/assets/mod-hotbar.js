@@ -48,7 +48,7 @@ function tpicks(){var r=race();return (C().tpick||[]).map(function(p){return p[1
 function rcode(){var r=H.races[race()];return r?r.code:''}
 function spellOf(n){var sp=C().spells;for(var i=0;i<sp.length;i++)if(sp[i][0]===n)return sp[i];return null}
 function traitOf(n){for(var i=0;i<H.traits.length;i++)if(H.traits[i][0]===n)return H.traits[i];return null}
-function clickyOf(n){for(var i=0;i<H.clicky.length;i++)if(H.clicky[i][0]===n)return H.clicky[i];return null}
+function clickyOf(n){if(!H.clicky)return null;for(var i=0;i<H.clicky.length;i++)if(H.clicky[i][0]===n)return H.clicky[i];return null}
 function isAuraEntry(en){return en&&(en.t==='a'||(en.t==='t'&&(en.n==='Hide'||en.n==='Sneak'))||((en.t==='s'||en.t==='i')&&(en.n==='Hide'||en.n==='Sneak')))}
 function fits(bar,en){if(!en)return true;if(!S.prefs.strict)return true;
   if(bar==='au')return isAuraEntry(en);
@@ -137,7 +137,9 @@ function palItems(){var c=C(),lv=level(),rc=rcode(),q=$('hb-q').value.trim().toL
     var racial=t[4]==='Racial Combat Abilities';if(racial&&!rc)return;out.push({en:{t:'t',n:t[0]},lv:0,grp:(t[0]==='Hide'||t[0]==='Sneak')?'a':'h',txt:t[0]+' '+t[3]+' trait',note:racial?'your racial':(tpicks().indexOf(t[0])>=0?'Codex trait pick':'if you took this trait')})});
   S.macros.forEach(function(m){out.push({en:{t:'m',n:m.n,c:m.c},lv:0,grp:'h',txt:m.n+' '+m.c+' macro',note:'macro'})});
   var gear=Object.keys(CS().gear).map(function(k){return CS().gear[k]});
-  H.clicky.forEach(function(ci){var mine=(' '+ci[1]+' ').indexOf(' '+c.code+' ')>=0;if(!mine)return;var eq=gear.indexOf(ci[0])>=0;if(!eq&&kd!=='h'&&!q)return;out.push({en:{t:'c',n:ci[0]},lv:0,grp:'h',txt:ci[0]+' '+ci[3]+' clicky item',note:eq?'equipped clicky':'clicky item'})});
+  // UX pass 8: the clicky item list (H.lazy.clicky) loads when the palette first needs it (Hotbar items, a search, equipped gear)
+  if(!clickyReady()&&(kd==='h'||q||gear.length))needClicky().then(function(){renderPalette()},function(){msg('Clicky items could not load (offline?). Change the filter to try again.',true)});
+  (H.clicky||[]).forEach(function(ci){var mine=(' '+ci[1]+' ').indexOf(' '+c.code+' ')>=0;if(!mine)return;var eq=gear.indexOf(ci[0])>=0;if(!eq&&kd!=='h'&&!q)return;out.push({en:{t:'c',n:ci[0]},lv:0,grp:'h',txt:ci[0]+' '+ci[3]+' clicky item',note:eq?'equipped clicky':'clicky item'})});
   return out.filter(function(x){if(kd&&x.grp!==kd)return false;if(!fut&&x.lock)return false;if(q&&x.txt.toLowerCase().indexOf(q)<0)return false;return true})}
 var PAL=[];
 function renderPalette(){PAL=palItems();var lv=level();var mob=narrow();
@@ -152,9 +154,17 @@ function lvlNote(){var b=band(),l=level();$('hb-level').min=b[0];$('hb-level').m
 // assets/hb-c-<class>.js) before the planner renders that class. While it loads the planner is inert and says so; if it cannot
 // load, a Try again button shows. Without the split (no H.lazy) everything is in hotbar-data.js and nothing changes.
 var hbSt=null,hbWant=null,booted=false;
-function classReady(c){var k=H.classes[c];return !k||!H.lazy||Array.isArray(k.spells)}
-function needClass(c){if(classReady(c))return Promise.resolve();var f=H.lazy.cls&&H.lazy.cls[c];if(!f)return Promise.reject(new Error('no chunk'));
-  return (window.MNM_LOAD?window.MNM_LOAD(f):loadScript('assets/'+f)).then(function(){if(!classReady(c))throw new Error('missing '+f)})}
+// UX pass 8: the clicky item list moved out too (H.lazy.clicky -> assets/hb-clicky.js). A class whose saved layouts hold a clicky
+// item, or that has gear equipped, waits for it like its spell list; otherwise it loads only when the palette needs it.
+function clickyReady(){return !H.lazy||!H.lazy.clicky||Array.isArray(H.clicky)}
+var ckP=null;function needClicky(){if(clickyReady())return Promise.resolve();var f=H.lazy.clicky;
+  if(!ckP)ckP=(window.MNM_LOAD?window.MNM_LOAD(f):loadScript('assets/'+f)).then(function(){if(!clickyReady())throw new Error('missing '+f)}).catch(function(x){ckP=null;throw x});return ckP}
+function wantsClicky(c){var o=S.cls[c];if(!o)return false;if(o.gear&&Object.keys(o.gear).length)return true;return JSON.stringify(o.L||{}).indexOf('"t":"c"')>=0}
+function spellsReady(c){var k=H.classes[c];return !k||!H.lazy||!H.lazy.cls||Array.isArray(k.spells)}
+function classReady(c){return spellsReady(c)&&(clickyReady()||!wantsClicky(c))}
+function needSpells(c){if(spellsReady(c))return Promise.resolve();var f=H.lazy.cls&&H.lazy.cls[c];if(!f)return Promise.reject(new Error('no chunk'));
+  return (window.MNM_LOAD?window.MNM_LOAD(f):loadScript('assets/'+f)).then(function(){if(!spellsReady(c))throw new Error('missing '+f)})}
+function needClass(c){if(classReady(c))return Promise.resolve();return Promise.all([needSpells(c),wantsClicky(c)?needClicky():0])}
 function render(){var c=cls();
   if(classReady(c)){if(hbSt){hbSt.remove();hbSt=null}if(app.inert){app.inert=false;app.removeAttribute('aria-busy')}render0();
     if(!booted){booted=true;if(S.prefs.sheet)setSheet(true);if(/[?&]focus=1/.test(location.search))setFocus(true);fromHash()}return}
