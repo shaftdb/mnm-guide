@@ -18,6 +18,12 @@ for _o in CG_AUDIT.get('overrides', []):
     _cell = CG['combos'].setdefault(_o['race'], {}).setdefault(_o['class'], {})
     if _o['city'] not in _cell: _cell[_o['city']] = list(_o.get('deities') or [])
     CG_NOTES['%s|%s|%s' % (_o['class'], _o['race'], _o['city'])] = [_o.get('label') or 'UNVERIFIED', _o.get('note') or '']
+# Combos an official patch note says are announced but not live yet (e.g. Deep Gnome Bard "coming soon", 0.30.3.2): removed from the
+# pickers and rankings even if the wiki start table lists them, and shown as "not yet available" with the patch link.
+CG_NYA = {}
+for _o in CG_AUDIT.get('not_yet_available', []):
+    CG['combos'].get(_o['race'], {}).pop(_o['class'], None)
+    CG_NYA.setdefault(_o['class'], []).append(_o)
 CG_LARGE = CG['large']
 CG_FAQ = 'https://monstersandmemories.com/early-access-faq'
 CG_CITY_FAQ = {  # official Early Access FAQ wording (FACT)
@@ -300,9 +306,12 @@ def race_rank_html(c, top=3):
     o.append('<ol class="gb-rank rr-list">%s</ol>' % ''.join(_rr_row(c, x) for x in rows[:top]))
     if len(rows) > top:
         o.append('<details class="gb-more rr-more"><summary>Show all %d</summary><ol class="gb-rank rr-list" start="%d">%s</ol></details>' % (len(rows), top + 1, ''.join(_rr_row(c, x) for x in rows[top:])))
+    for _o in CG_NYA.get(c, []):
+        o.append('<p class="dim cg-nya">%s <b>%s %s: not yet available</b> (%s). %s <a href="%s">Patch note</a></p>' % (_cg_badge(_o.get('label') or 'FACT'),
+            esc(_o['race']), esc(c), esc(_o.get('status') or 'coming soon'), esc(_o.get('note') or ''), esc(_o['source'])))
     pl = D.get('planned_races') or {}
     off = [r for r in _cg_official_races(c) if r not in CG_BY_CLASS.get(c, {})]
-    names = sorted(set(pl) | set(off))
+    names = sorted((set(pl) | set(off)) - {_o['race'] for _o in CG_NYA.get(c, [])})
     if names:
         o.append('<p class="dim">%s Not ranked (not playable in Early Access, no wiki start-city row%s): %s.</p>' % (_cg_badge('UNVERIFIED'),
             '; starting stats and racials not on the wiki' if any(not _rr_racials(CG['races'].get(n, {})) for n in names) else '', esc(', '.join(names))))

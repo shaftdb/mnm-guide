@@ -1,0 +1,229 @@
+{
+ "_note": "Per-class changes from official patch notes, verified against the note text. Rendered in Class at a glance and next to matching spell names. Wiki spell data (data/classes.json) is not edited; where it disagrees, see content/source_conflicts.json (manual).",
+ "Archer": [
+  {
+   "patch": "0.30.3.2",
+   "date": "Oct 19, 2026",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/62",
+   "label": "FACT",
+   "text": "Trap skill schematics now have a required level, so you can't buy one before you can use the ability.",
+   "spells": []
+  },
+  {
+   "patch": "0.30.3.2",
+   "date": "Oct 19, 2026",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/62",
+   "label": "FACT",
+   "text": "Sniper's Blind no longer shares a cooldown with racial Hide abilities; a message now tells you when you've been in it long enough for the Piercing Strike ambush bonus (applies reliably after 3 s hidden).",
+   "spells": [
+    "Sniper's Blind"
+   ]
+  },
+  {
+   "patch": "0.30.3.2",
+   "date": "Oct 19, 2026",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/62",
+   "label": "FACT",
+   "text": "Disengagement now applies its dethreat in a point-blank area around you, needs no target, and won't aggro non-aggressive NPCs.",
+   "spells": [
+    "Disengagement"
+   ]
+  },
+  {
+   "patch": "0.30.3.2",
+   "date": "Oct 19, 2026",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/62",
+   "label": "FACT",
+   "text": "Channeled abilities such as Strafing Barrage now start their cooldown when channeling starts.",
+   "spells": [
+    "Strafing Barrage"
+   ]
+  }
+ ],
+ "Bard": [
+  {
+   "patch": "0.30.3.2",
+   "date": "Oct 19, 2026",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/62",
+   "label": "FACT",
+   "text": "Thunderous Vocalization base damage 38 → 42 (it was set to the previous tier's value; a fuller review is planned).",
+   "spells": [
+    "Thunderous Vocalization"
+   ]
+  },
+  {
+   "patch": "0.30.3.2",
+   "date": "Oct 19, 2026",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/62",
+   "label": "FACT",
+   "text": "Unifying Anthem is no longer sold by merchants (\"for now, anyway\").",
+   "spells": [
+    "Unifying Anthem"
+   ]
+  },
+  {
+   "patch": "0.30.3.2",
+   "date": "Oct 19, 2026",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/62",
+   "label": "FACT",
+   "text": "Deep Gnome Bard is coming soon (internal testing): not yet available.",
+   "spells": []
+  }
+ ],
+ "Beastmaster": [
+  {
+   "patch": "0.30.3.2",
+   "date": "Oct 19, 2026",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/62",
+   "label": "FACT",
+   "text": "New Beastmasters now start with Revive Companion and Call Companion scrolls.",
+   "spells": [
+    "Revive Companion",
+    "Call Companion"
+   ]
+  },
+  {
+   "patch": "0.30.3.2",
+   "date": "Oct 19, 2026",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/62",
+   "label": "FACT",
+   "text": "Uninterruptible abilities such as Chop are no longer interrupted by taking hits (only stuns or kicks/bashes during the wind-up).",
+   "spells": [
+    "Chop"
+   ]
+  }
+ ],
+ "Cleric": [
+  {
+   "patch": "0.30.3.2",
+   "date": "Oct 19, 2026",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/62",
+   "label": "FACT",
+   "text": "HP buff spells (Resilience, Resolution, Hymn of Resilience/Resolution): the top-up heal now equals the max HP buff exactly (500 at level 60) and no longer scales with Wisdom; refreshing on a recently buffed player refreshes the duration but skips the free heal.",
+   "spells": [
+    "Resilience",
+    "Resolution",
+    "Hymn of Resilience",
+    "Hymn of Resolution"
+   ]
+  },
+  {
+   "patch": "0.30.3.2",
+   "date": "Oct 19, 2026",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/62",
+   "label": "FACT",
+   "text": "Blessing of Devotion spells: the heal on cast no longer scales with Wisdom and matches the max HP increase; other effects unchanged.",
+   "spells": [
+    "Blessing of Devotion"
+   ]
+  }
+ ],
+ "Inquisitor": [
+  {
+   "patch": "0.30.3.2",
+   "date": "Oct 19, 2026",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/62",
+   "label": "FACT",
+   "text": "Aura of Resistance now includes a 10% bonus to generated threat (like other tanks' defensive stance/aura).",
+   "spells": [
+    "Aura of Resistance"
+   ]
+  }
+ ],
+ "Monk": [
+  {
+   "patch": "0.30.3.2",
+   "date": "Oct 19, 2026",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/62",
+   "label": "FACT",
+   "text": "Slow Breathing is no longer incorrectly flagged as outdoor-only.",
+   "spells": [
+    "Slow Breathing"
+   ]
+  }
+ ],
+ "Ranger": [
+  {
+   "patch": "0.30.3.2",
+   "date": "Oct 19, 2026",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/62",
+   "label": "FACT",
+   "text": "Recuperate is out-of-combat only: it can't be cast in combat, party members in combat don't get it, and anyone who enters combat loses it. It has no other limits now.",
+   "spells": [
+    "Recuperate"
+   ]
+  }
+ ],
+ "Rogue": [
+  {
+   "patch": "0.30.3.2",
+   "date": "Oct 19, 2026",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/62",
+   "label": "FACT",
+   "text": "Class trainers now train Lockpicking up to 10 skill.",
+   "spells": []
+  },
+  {
+   "patch": "0.30.3.2",
+   "date": "Oct 19, 2026",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/62",
+   "label": "FACT",
+   "text": "Poisonous Spider Venom Sac can now be used in Poison Making.",
+   "spells": []
+  },
+  {
+   "patch": "0.30.3.2",
+   "date": "Oct 19, 2026",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/62",
+   "label": "FACT",
+   "text": "A message now tells you when you've been in Stealth long enough for the backstab ambush bonus.",
+   "spells": []
+  },
+  {
+   "patch": "0.30.4.0",
+   "date": "Oct 20, 2026",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/63",
+   "label": "FACT",
+   "text": "Sap no longer causes unintended threat.",
+   "spells": [
+    "Sap"
+   ]
+  }
+ ],
+ "Shadow Knight": [
+  {
+   "patch": "0.30.3.2",
+   "date": "Oct 19, 2026",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/62",
+   "label": "FACT",
+   "text": "Lord of Shadows now grants HP and its description lists the right stats; Shadow Strike now extends the Shadows line correctly; recasting the Palpitation DoT line now resets it instead of extending it.",
+   "spells": [
+    "Lord of Shadows",
+    "Shadow Strike",
+    "Palpitation"
+   ]
+  },
+  {
+   "patch": "0.30.3.2",
+   "date": "Oct 19, 2026",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/62",
+   "label": "FACT",
+   "text": "Uninterruptible abilities such as Reave are no longer interrupted by taking hits.",
+   "spells": [
+    "Reave"
+   ]
+  }
+ ],
+ "Wizard": [
+  {
+   "patch": "0.30.4.0",
+   "date": "Oct 20, 2026",
+   "url": "https://account.monstersandmemories.com/community/patch_notes/63",
+   "label": "FACT",
+   "text": "Wizard Glyphs (the Glyph: spells) no longer cause unintended threat.",
+   "spells": [
+    "Glyph:"
+   ]
+  }
+ ]
+}

@@ -236,5 +236,15 @@
    "label": "UNVERIFIED",
    "note": "Not on the wiki start table (rev 74855). Added because the official Enchanter page, the wiki Human page and the wiki Enchanter page all list Human Enchanter; Night Harbor inferred from the Enchanter guild and starter quest there. Deities not sourced."
   }
+ ],
+ "not_yet_available": [
+  {
+   "race": "Deep Gnome",
+   "class": "Bard",
+   "label": "FACT",
+   "status": "coming soon (not yet available)",
+   "note": "Patch 0.30.3.2 (Oct 19, 2026) notices: \"Deep Gnome Bard is coming soon, we are currently testing it internally.\" Not selectable in the pickers or ranked until a later patch makes it live.",
+   "source": "https://account.monstersandmemories.com/community/patch_notes/62"
+  }
  ]
 }

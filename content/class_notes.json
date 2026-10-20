@@ -113,7 +113,7 @@
   "weapons": "Swords + bows (deep dive: Swordplay & Marksmanship)",
   "stat": "UNCONFIRMED",
   "family": "chain",
-  "solo": "Recuperate is for between fights; 0.30.2.3 added restrictions while it is active.",
+  "solo": "Recuperate is for between fights; since 0.30.3.2 (Oct 19) it can't be cast in combat and drops when you enter combat.",
   "group": "Damage, Wound Care, campfire downtime reduction (deep dive)."
  },
  "Rogue": {

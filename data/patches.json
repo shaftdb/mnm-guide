@@ -1,5 +1,356 @@
 [
  {
+  "n": 63,
+  "title": "0.30.4.0 - Module 1 Patch 14",
+  "date": "October 20, 2026",
+  "url": "https://account.monstersandmemories.com/community/patch_notes/63",
+  "sections": [
+   {
+    "h": "UI",
+    "items": [
+     "The new guild views are now active"
+    ]
+   },
+   {
+    "h": "Combat",
+    "items": [
+     "Fixed abilities Sap and Wizard Glyphs causing unintended threat"
+    ]
+   },
+   {
+    "h": "Bug Fixes",
+    "items": [
+     "Fixed unnecessary character and NPC reloads while moving through an area, addressing dropped targets and resets to pet ability and buff displays.",
+     "Fixed corpses replaying their death animations when nearby characters refreshed.",
+     "Fixed pet ownership information failing to update correctly after charm or ownership changes.",
+     "Fixed nearby players showing outdated AFK, Do Not Disturb, Looking for Group, anonymity, PvP, Hardcore, Self Found, or Forced Solo status.",
+     "Fixed an issue that could prevent your character from finishing loading into a zone.",
+     "Fixed appearance changes sometimes failing to display, particularly when several changes happened in quick succession.",
+     "Fixed some refreshes losing custom appearances or showing characters with incorrect visibility.",
+     "Fixed NPCs sometimes continuing past their stopping point.",
+     "Fixed delayed movement updates causing characters to move backward, resume moving after stopping, or appear in an outdated position.",
+     "Fixed characters briefly showing an incorrect posture while walking.",
+     "Fixed distant character animations sometimes failing to update in busy areas."
+    ]
+   }
+  ]
+ },
+ {
+  "n": 62,
+  "title": "0.30.3.2 - Module 1 Patch 13",
+  "date": "October 19, 2026",
+  "url": "https://account.monstersandmemories.com/community/patch_notes/62",
+  "sections": [
+   {
+    "h": "Notices",
+    "items": [
+     "Deep Gnome Bard is coming soon, we are currently testing it internally.",
+     "We will be restoring all missing crates in houses, inn rooms, and stalls. The fix last time was temporary. We have a permanant fix for it this time.",
+     "This patch includes heavy optimizations on the server side. We have done as much testing as possible on them. If we find that there are bugs or regressions, we may revert this patch temporarily. This will require you to redownload the client to move back to 0.30.2.6.",
+     "We will also be doing the refunds for any scrolls you were overcharged for during the first week of Early Access. You will find that coin in your bank when you log in again."
+    ]
+   },
+   {
+    "h": "Classes",
+    "items": [
+     "Set required level on Schematics for learnable trap skills, to help prevent purchasing them before you are able to use the granted ability.",
+     "You'll now receive a message when you've been in Sniper's Blind long enough to receive an ambush bonus on Piercing Strike.",
+     "Fixed a timing issue with the ambush bonus on Piercing Strike — this should now apply reliably after the 3s of being hidden.",
+     "Sniper's Blind no longer shares a cooldown with racial Hide abilities.",
+     "Disengagement now applies the dethreat in a pbe around the caster, and will not aggro non-aggressive NPCs. You no longer need a target to use Disenagement.",
+     "Thunderous Vocalization has had a token base damage bump (from 38 to 42) as it was set to the previous tier value. These damage values will receive a more thorough review in the future.",
+     "Unifying Anthem is no longer sold by merchants. This ability had a price set to discourage use until issues could be resolved with it, but now is just no longer sold (for now, anyway).",
+     "New Beastmasters will now start with scrolls of Revive Companion and Call Companion.",
+     "Cleric HP buff spells (Resilience, Resolution, Hymn of Resilience/Resolution) increase the max health of your target, and also provide a small heal to top them up when their max HP goes up from the buff.",
+     "This is not intended to be a healing spell, but the heal was providing more value than expected.",
+     "Heals from these spells now heal for exactly the amount of the max HP buff (500 points at level 60) and the heal portion no longer scales with Wisdom.",
+     "Additionally, if you refresh this buff on a player who's recently received it, it will refresh the max HP bonus duration as expected, but the free heal will not be applied if they've recently got one from this buff.",
+     "These also increase your target's maximum HP when applied, and courteously heal them back up for the amount their max HP went up.",
+     "This initial heal on cast no longer scales with Wisdom and now matches the HP buff exactly. So if the Blessing spell increases max HP by 100, it also heals the target for 100 when cast.",
+     "Any other effects on this spell are unchanged and work as they did before.",
+     "Aura of Resistance now includes a 10% bonus to generated threat (comparable to the defensive stance/aura of other tanks).",
+     "Slow Breathing is no longer incorrectly flagged as outdoor-only.",
+     "Recuperate limitations have changed to provide a better play experience.",
+     "Recuperate is meant to be an out-of-combat rest around the campfire for you and your group.",
+     "Rangers cannot cast Recuperate while in combat, and party members will not receive the Recuperate buff if they are in combat when the spell is cast.",
+     "Anyone with a Recuperate buff active will lose it if they enter combat. This could be from taking an aggressive action against an NPC, helping a player in combat with a buff or heal, or having an NPC run up and attack you.",
+     "There are no longer any other limitations on Recuperate, and you do not need to remember to remove the buff yourself if you get into combat.",
+     "You'll now receive a message when you've been in Stealth long enough to get an ambush bonus on your backstab.",
+     "Class trainers will now allow you to train Lockpicking (up to 10 skill).",
+     "Poisonous Spider Venom Sac can now be used in Poison Making.",
+     "Fixed Lord of Shadows buff description text to properly notate affected stats.",
+     "Fixed Shadow Strike not properly extending the duration of the Shadows line.",
+     "Lord of Shadows buff now properly grants HP.",
+     "Recasting the Palpitation DoT line will now overwrite and reset the DoT instead of extending it."
+    ]
+   },
+   {
+    "h": "General gameplay",
+    "items": [
+     "Fixed abilities marked as uninterruptible (such as Reave [SHD] or Chop [BST]) being interrupted by taking hits in combat. These abilities should only be interrupted if stunned or kicked/bashed during the wind-up.",
+     "Channeled abilities will now set cooldowns when the channeling starts, not when each tick of the ability is performed. This addresses an ability not being usable right when the visual cooldown appears to have elapsed. This affected abilities such as Strafing Barrage [ARC].",
+     "Fixed the end-of-cast animation sometimes interrupting a channeling animation.",
+     "Fixed increasing a buff's remaining duration and reducing its duration past expiration.",
+     "Replacing a stacked buff with a stronger version no longer triggers the replaced buff's cast-on-expiry effects or an extra tick from the overwritten buff.",
+     "Threat-reducing abilities can reduce existing threat without generating new aggro.",
+     "Corrected vertical limits for social aggro.",
+     "Fixed area-effect range and target-selection issues, duplicate target application, and cone line-of-sight filtering.",
+     "Fixed archery weapons with missing ammunition settings defaulting incorrectly; these weapons now use arrows.",
+     "NPCs attacked by a guard no longer provide experience, loot, coins, or pickpocket rewards for the remainder of that spawn's lifetime.",
+     "Hardcore titles change with certain level ranges.",
+     "Buffs will no longer gain a bonus tick when being overwritten."
+    ]
+   },
+   {
+    "h": "PvP gameplay and balance",
+    "items": [
+     "Fixed /who bugs and exploits.",
+     "Also made it so /who once again no longer shows current zone player count.",
+     "The reason for this adjustment: after some further playing and testing, we are finding even allowing player counts on /who to still cause behavior not beneficial to a healthy and engaging PvP environment.",
+     "Adjusted various CC PvP durations.",
+     "Adjusted various PvP FFA volumes, added some new ones."
+    ]
+   },
+   {
+    "h": "NPC loot",
+    "items": [
+     "New cash loot items have been added broadly to common creatures, so more of them provide good value when you kill them.",
+     "Creatures only carry body parts which can be sold to merchants, but now have better coverage across levels and creature types. More creatures should give valuable item drops than did previously.",
+     "Humanoids have a mix of coins and cash loot, as they have in the past. However, cash loot coverage is on more humanoids now and should provide more consistent value."
+    ]
+   },
+   {
+    "h": "Itemization",
+    "items": [
+     "Snitch-Seeking Shaft Shooter now works correctly as a bow.",
+     "Armor, Weapon, and Shield item weights have been updated across the game — items from early game sources will generally be lighter than before, while items from later game sources can be heavier.",
+     "Armor Weight Reduction buffs reduce the carried weight of equipped cloth, leather, chain, and plate armor. They do not reduce the weight of weapons, shields, accessories, or armor carried in bags."
+    ]
+   },
+   {
+    "h": "Tradeskills and harvesting",
+    "items": [
+     "Rich Tin nodes will now skill Mining up to Iron.",
+     "Rich nodes now give the appropriate amount of harvests.",
+     "Overly rare herbs have had many new spawn points added.",
+     "Removed the per-level cap on Woodworking. It now caps at 300 for any level, similar to other crafting skills.",
+     "Added Leatherworking Canvas to Scraps conversion recipe.",
+     "Leatherworking Straps are now crafted using Canvases.",
+     "Reduced tanning canvas yield from 6 to 4.",
+     "On failure, most recipes now return either the purchased merchant-bought components, or a portion of the material inputs.",
+     "Minor reduction in lower skill crafting recipes.",
+     "Harvesting exploit fix — check inventory space first before allowing harvest.",
+     "Added visual effects for wood harvesting, mining, and herbalism.",
+     "Harvest nodes remain visible long enough for the finishing harvesting effect to play.",
+     "Reduced oversized tree colliders that made harvest nodes unreachable in East Scarwood, and removed a duplicate collider in the fae cave.",
+     "Improved recipe failure messages when required components are missing.",
+     "Fixed zero-skill recipes sorting to the bottom of merchant listings.",
+     "Replaced a broken loom and fixed the Smoking Cauldron."
+    ]
+   },
+   {
+    "h": "Merchants and commerce",
+    "items": [
+     "Closed a Commerce skill-farming exploit. Sale-based Commerce skill attempts remain limited to skill below 25 and now require a sale price of at least 10 copper per item and a buy-back price at least 25 percent higher, rounded up.",
+     "Camping no longer resets a character's active haggle tracking.",
+     "Merchants no longer restock items that are not permitted for resale.",
+     "Improved merchant-window loading and stock updates."
+    ]
+   },
+   {
+    "h": "Inventory, banking and pets",
+    "items": [
+     "Shift+right clicking items should swap them with the appropriate slot, again.",
+     "Fixed ghost items and stale initial contents when opening banks in different regions.",
+     "Improved bank opening and prevented duplicate open requests from showing stale contents.",
+     "Fixed invalid hotbar entries and unknown innate abilities preventing characters from loading.",
+     "Fixed errors when requesting friend and player lists.",
+     "Fixed an issue when applying bonded-pet stat overrides.",
+     "Dead permanent pets no longer prevent cleanup of other corpses which was causing a zone-wide issue.",
+     "Prevented accidental item placement into NPC corpses which was causing weapons, off-hand items, and ranged slot items to seemingly poof.",
+     "Corrected pet hunger checks."
+    ]
+   },
+   {
+    "h": "UI",
+    "items": [
+     "Buffs now will show with green text when you are buffed or red text when you are de-buffed beyond your base stats + equipment.",
+     "The mini stats has been normalized in size to be a bit bigger by default; you might want to update the scale of this window if you used them previously.",
+     "Fixed the buffs bar randomly switching to a horizontal layout.",
+     "Fixed buff timers occasionally displaying extremely long durations.",
+     "Guild view now displays notes made for each member. You can right click to add a note for yourself or other guild members as long as you have permissions. Each rank has default permissions according to their default role.",
+     "Manage Tab — Guild leaders can now configure permissions for each rank, as well as rename each rank.",
+     "Guild member lists now support up to 500 members per page.",
+     "Tracking now supports searching and sorting! You can sort by name or PC/NPC.",
+     "New setting to always show current target, even if all nameplates are turned off.",
+     "Tab targeting now offers Nearest and Front Arc priority modes. Front Arc takes both character facing and camera facing into account.",
+     "Nametag selection areas now face the camera correctly.",
+     "In an effort to make it easier to find your party members in busy cities or active zones, we've changed the color of the names over their heads while grouped.",
+     "Updated the name bars of party members to pink while you are grouped with them.",
+     "This also includes pets of party members.",
+     "While solo, if you have a pet then its name will appear as pink to you.",
+     "Additionally, party members, pets, and your pet have an increased visibility distance so you can be farther away and still see their names.",
+     "Various chat window fixes.",
+     "Tell windows now save their positions.",
+     "Tell windows now have an option under chat settings for the maximum amount of tabs.",
+     "Tells beyond the maximum will populate a new button in the grip bar (upper right). Click this button to show a list of tells you have not read yet.",
+     "Fixed the Inner and Outer Shadow sliders in chat settings not doing anything.",
+     "The DM window close button no longer overlaps the scroll arrow.",
+     "Chat tab borders now follow the selected theme.",
+     "Emotes and cross-zone chat respect the ignore list.",
+     "Fixed window contents shifting when you relog.",
+     "Grip bar thickness is now uniform across chat tabs.",
+     "Fixed an issue with the hotbar overlapping the ability bar.",
+     "The frame, grip bar and resize handles now follow the shape of the icons.",
+     "New default width when using Reset UI.",
+     "New option in the ability bar context menu: Flip Hotkey Numbers.",
+     "Hotbar and ability-bar buttons pulse when pressed.",
+     "Major update for Mini Inventory (default Ctrl+I hotkey).",
+     "The mini inventory now includes primary, secondary, ranged, and ammo slots — similar to the character sheet view. Click the arrow to pop it in and out.",
+     "A close button has been added.",
+     "Expanding or collapsing the Persona tab in the character sheet will now save the state if it was collapsed and continue to be collapsed until you expand it again. The same is applied to the new mini inventory feature.",
+     "Fixed character-sheet faith images.",
+     "Description windows (inspecting abilities, items, spells, etc.) are now re-sizeable vertically.",
+     "Recipe scrolls will now show in the description that you already have learned it, when you inspect it from the vendor.",
+     "The skills panel has been slightly reworked and now performs a lot smoother while still looking familiar. Your theme applied will no longer change the borders on every single skill listed here and only apply to the border of the primary window instead of each individual skill.",
+     "Quotes should appear around journal entries now, for what the NPC says.",
+     "Ledger updates and fixes.",
+     "Fixed the macro editor displaying a blank window while editing.",
+     "Enter can no longer be used to accept a prompt."
+    ]
+   },
+   {
+    "h": "Character creation",
+    "items": [
+     "Fixed an issue with not understanding your own race language initially.",
+     "Color presets for Goblins have been fixed, so all spikes sync their colors.",
+     "Character creation should now remember feature selections, even if you swap to another race or sex.",
+     "Character creation will now be more clear on the error message for what is missing in your selections and highlight the button to draw your attention.",
+     "Re-selecting the same race or class no longer resets assigned stats.",
+     "Removed the NPC-only red-eye option from human character creation.",
+     "Faith terminology is used more consistently."
+    ]
+   },
+   {
+    "h": "Housing",
+    "items": [
+     "The Property Management panel now shows furniture count and inventory slots (owners and co-owners).",
+     "The Property Management panel now shows a breakdown of upkeep modifiers.",
+     "The upkeep text in the Property Management panel is now scrollable.",
+     "Fixed the upkeep increase for owning multiple properties not being applied.",
+     "Accounts can own up to four properties total, with one house, one inn room, one market stall, and one guild house if you are the guild leader across the account. The house limit per zone is now one. Property acquisition and upkeep deposits enforce the new ownership limits.",
+     "Housing rejects placement of items that are not furniture.",
+     "Furniture interactions require you to be in the same house as the furniture.",
+     "Fixed furniture visibility issues in housing.",
+     "Improved placement of campfires and other placeable objects so they sit on the ground correctly."
+    ]
+   },
+   {
+    "h": "Quests",
+    "items": [
+     "Updated Ith'vayen quest logic in Ail'Vorith for MUD placement.",
+     "Added Marshal for Drezzorith quest line.",
+     "Updated Turtle Shell reward — removed magic item status; it cannot be disenchanted.",
+     "Renamed the previous Turtle Shell shield and left its stats unchanged for those who have earned it already.",
+     "Added Turtle Shell Shield as the updated quest reward, with revised stats.",
+     "Corrected quest rewards specified in copper so they award copper rather than silver."
+    ]
+   },
+   {
+    "h": "Environment",
+    "items": [
+     "Several new merchants and crafting stations have been added in Underdocks and Ail'Vorith.",
+     "Blind Midden should no longer have areas appearing underwater.",
+     "Tel Ekir should no longer have areas appearing underwater.",
+     "Added additional vendors and flavor NPCs to the city.",
+     "Removed a dock guard at the inner harbor (was too close to the docking wharf).",
+     "Adjusted some faction effects.",
+     "Fixed herbalism vendor inventory.",
+     "Updated terrain, materials, lighting, doors, runes, signage, props, and building interiors, and corrected holes in the world.",
+     "Added Foreign Quarter building and guard-building props and lights, and aligned props around NPCs with their nearby MUD actions.",
+     "Improved cavern-floor footsteps and shoreline water sound placement, and added a glowing rune above the Ail'vorith zoneline in GCS.",
+     "Adjusted the Ail'vorith login background colors.",
+     "Doors have been added to indicate future player housing. Please petition if you log into a locked room.",
+     "Added additional loot to snakes and rats in Underdocks.",
+     "Some Myconid loot can now be sold.",
+     "A couple more vendors will accept critter parts.",
+     "Added additional signage.",
+     "Implemented Bard starter quests.",
+     "New vendors added.",
+     "Added an Underdocks login background.",
+     "Added props to the bard guild, Underwatch headquarters, citadel, Stevran Understock's shop, and quest areas.",
+     "Corrected prop placement, lift offsets, and NPC navigation.",
+     "Fixed lifts and other moving objects turning too slowly when viewed from a distance, and added boat-bell audio.",
+     "Underdocks lifts now move a lot faster.",
+     "The one Underdocks lift that was 360 no scope rotating on the way up has been fixed.",
+     "Doors have been added to indicate future player housing. Please petition if you log into a locked room.",
+     "**Wyrmsbane Tomb:** Additional environmental bug fixes.",
+     "**Blind Midden:** Continued environment work and corrected the offering-box appearance.",
+     "**Shaded Dunes:** Fixed environmental issues, rock-material tearing, distant brick facades, and angular sand mounds; improved NPC navigation and visibility.",
+     "**Shallow Shoals:** Fixed rock and hammock collision, provided access onto Smugglers Isle, and improved scenery around Temple Island, Seafarer's Outpost, and the giant-island structure.",
+     "**Keepers Bight:** Fixed floating props, attached dock lanterns, landscaped docks, matched textures near lifts, and improved NPC navigation.",
+     "**Night Harbor:** Additional environment fixes and reduced edge-highlight brightness on the caravel boat.",
+     "**Tel Ekir:** Corrected water behavior that flooded rooms and fixed river water.",
+     "**Scarwood:** Improved scenery visibility.",
+     "Corrected local water-volume behavior around oceans and improved distant scenery and lighting.",
+     "The Deep boat path has been modified to allow you time to disembark before hitting Ail'vorith.",
+     "Fixed zoneline exit position when zoning out from Grain Cellar to Sungreet Strand",
+     "Fixed Glinting Hollow potions not working as intended",
+     "Glinting Hollow access quest \"evil race\" side enabled",
+     "Ashira Faction quest \"evil race\" side enabled"
+    ]
+   },
+   {
+    "h": "Character art and animation",
+    "items": [
+     "Adjusted Female Ogre weapon bones so hilts no longer clip through hands.",
+     "Fixed clipping issues on Halfling foot hair.",
+     "Adjusted Goblin male ears to be more symmetrical.",
+     "Updated several item appearances to fix mismatches and animation issues.",
+     "Combat animation system reworked for better flow and feedback.",
+     "Missing climbing animation fixed.",
+     "Various missing Wood Elf and Deep Elf animations added.",
+     "Corrected Deep Gnome female combat animations.",
+     "Improved dual-wield attack animation selection.",
+     "Improved fae shield positioning.",
+     "Gnomes float slightly higher while swimming.",
+     "Refined Wood Elf male and female faces, skin, body, hand, and clothing textures.",
+     "Refined Deep Elf faces and male/female body textures.",
+     "Polished Dwarf male faces, female Goblin faces, male Gnome eye placement, and several Halfling faces.",
+     "Corrected Deep Gnome glowing texture details and Halfling skirt weighting that caused clothing clipping."
+    ]
+   },
+   {
+    "h": "Visual effects and audio",
+    "items": [
+     "The Merchants, Bankers, and Trainers NPCs in The Deep zones now have their own dedicated music themes.",
+     "Added bard song effects for movement, mana regeneration, and health regeneration.",
+     "Added portal destination ambience and reduced portal distortion.",
+     "Fixed a missing Divine Hand effect texture, updated poison and darkness effects, and corrected missing or misplaced effects.",
+     "Updated a gothic scepter texture, a layered mushroom icon, and interface border art.",
+     "Revised music files and looping points to reduce looping artifacts.",
+     "New Pitter Patter Rain SFX when player is Indoor.",
+     "Taking fall damage SFX.",
+     "Increased the volume of the level up sound."
+    ]
+   },
+   {
+    "h": "Loading stability and performance",
+    "items": [
+     "Zone restarts can preserve your session without a full zone loading screen, with a warning before the restart.",
+     "Improved recovery when reconnecting during a zone restart and preserved spawn-camp state during the transition.",
+     "Fixed loading-screen image cycling and a flicker when returning to the login screen.",
+     "Improved memory cleanup when leaving a zone and fixed issues loading zones with missing scenery references.",
+     "Fixed moving-object relationships being lost during a zone reload.",
+     "Reduced repeated work in movement, nearby-entity visibility, combat effects, NPC behavior, and active tradeskill actions.",
+     "Spread merchant maintenance and other periodic server work across updates to reduce simultaneous workload spikes.",
+     "Improved NPC spawn scheduling so large spawn areas can continue filling without waiting for repeated checks of already full spawners.",
+     "Improved character saving, item saving, and cleanup of removed entities."
+    ]
+   }
+  ]
+ },
+ {
   "n": 61,
   "title": "0.30.2.9 - Module 1 Patch 12",
   "date": "October 15, 2026",

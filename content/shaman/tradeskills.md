@@ -40,9 +40,13 @@ Wiki vein chart (min skill → trivial). Focus on copper/limestone now; tin/silv
 |---|---|---|---|
 | Copper / Rich Copper | 1 → 50 / 65 | Night Harbor (West/North Gate), Shaded Dunes, Evershade Weald, Keeper's Bight | Primary loop. Wiki tip: West Gate + Shaded Dunes cliffs for early skill-ups |
 | Limestone / Rich Limestone | 35 → 75 / 90 | Fallen Pass (cliffs), Shaded Dunes (cliffs toward Tel Ekir), Sungreet Strand (canyon), Scarwood | Feeds Tanning (guild). Rich confirmed minable at 45 |
-| Tin / Rich Tin | 75 → 125 / 135 | Sungreet Strand, Vale of Zintar, Scarwood | Needed for **Bronze** (Copper Bar + Tin Bar) |
+| Tin / Rich Tin | 75 → 125 / 135 | Sungreet Strand, Vale of Zintar, Scarwood | Needed for **Bronze** (Copper Bar + Tin Bar). **Patch 0.30.3.2 (Oct 19):** Rich Tin now skills Mining **up to Iron** ([patch note](https://account.monstersandmemories.com/community/patch_notes/62)); the wiki chart still says Rich Tin trivial 135 (conflict flagged). Rich Tin can bridge the 135 → 150 gap before Iron veins, exact new trivial UNVERIFIED |
 | Silver / Rich Silver | 100 → 150 / 160 | Sungreet Strand, Vale of Zintar, Scarwood | JC / precious; minable from ~107 per wiki note |
 | Iron / Rich Iron | 150 → 200 / 215 | Fallen Pass (19–44), Glass Flats (20+), Shallow Shoals | Later; zone levels match mid-20s+ |
+
+:::note Patch 0.30.3.2 gathering changes (Oct 19, 2026)
+FACT ([patch note](https://account.monstersandmemories.com/community/patch_notes/62)): Rich Tin nodes now skill Mining up to Iron. Rich nodes now give the appropriate amount of harvests. Overly rare herbs got many new spawn points. Harvesting now checks your inventory space first, so clear bag space before a mining or lumberjacking loop. Wood, mining and herb harvests have new visual effects, and oversized tree colliders in East Scarwood that made nodes unreachable were reduced.
+:::
 
 Trainer: Miner Falmud, Sojourner's Camp (Night Harbor). Tool: Mining Pick. Vendor next to Falmud buys excess ore/stone/gems.
 

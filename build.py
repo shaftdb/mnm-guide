@@ -25,6 +25,17 @@ FACTIONS = J('factions'); TRADES = J('tradeskills')
 
 ZEXTRA = json.load(open(os.path.join(CONTENT, 'zones_extra.json'), encoding='utf8'))
 CLASS_NOTES = json.load(open(os.path.join(CONTENT, 'class_notes.json'), encoding='utf8'))
+PATCH_CLASS = json.load(open(os.path.join(CONTENT, 'patch_class_changes.json'), encoding='utf8'))  # per-class patch-note changes (FACT, cited)
+def patch_class_html(cls):
+    L = PATCH_CLASS.get(cls) or []
+    if not L: return ''
+    return '<div class="qi-sec"><h3>Recent patch changes <span class="badge fact">fact</span></h3><ul class="tight">%s</ul><p class="src">Official patch notes; the wiki spell data below may not reflect these yet.</p></div>' % ''.join(
+        '<li><b>%s (%s):</b> %s <a class="ext" target="_blank" rel="noopener" href="%s">patch note</a></li>' % (esc(x['patch']), esc(x['date']), esc(x['text']), esc(x['url'])) for x in L)
+def patch_spell_badge(cls, nm):
+    for x in PATCH_CLASS.get(cls) or []:
+        if any(k in nm for k in x.get('spells', [])):
+            return ' <a class="badge fact" href="%s" title="%s">changed %s</a>' % (esc(x['url']), esc(x['text']), esc(x['patch']))
+    return ''
 
 def esc(s): return html.escape(str(s if s is not None else ''), quote=True)
 def slug(s): return re.sub(r'[^a-z0-9]+', '-', str(s).lower().replace("'", '')).strip('-')
@@ -660,7 +671,7 @@ def class_glance(cls):
         h += '<details><summary>Bonus-point advice (wiki)</summary><p>%s</p></details>' % esc(C['bonus_advice'])
     if rec and len(rec) != len(races):
         h += '<p class="dim"><span class="badge strat">strategy</span> Race picks this guide suggests: %s (large races left out).</p>' % esc(', '.join(rec))
-    return h + '</div>'
+    return h + '</div>' + patch_class_html(cls)
 
 def class_spells_band(cls, lo, hi):
     C = CLASSES[cls]; li = []
@@ -671,7 +682,7 @@ def class_spells_band(cls, lo, hi):
             d = (s.get('spell description') or s.get('description') or '').strip()
             if len(d) > 110: d = d[:107].rsplit(' ', 1)[0] + '…'
             loc = s.get('location') or ''
-            li.append('<li><b>L%s %s</b>%s%s</li>' % (lv, esc(nm), (' <span class="dim">(%s)</span>' % esc(loc)) if loc else '', (' — ' + esc(d)) if d else ''))
+            li.append('<li><b>L%s %s</b>%s%s%s</li>' % (lv, esc(nm), patch_spell_badge(cls, nm), (' <span class="dim">(%s)</span>' % esc(loc)) if loc else '', (' — ' + esc(d)) if d else ''))
     body = '<ul class="tight">%s</ul>' % ''.join(li) if li else '<p class="dim"><span class="badge unc">unverified</span> The wiki lists no %s spells/abilities for levels %d–%d.</p>' % (esc(cls), lo, hi)
     return '<div class="qi-sec"><h3>Spells &amp; abilities %d–%d <span class="badge fact">fact</span></h3>%s<p class="src">Wiki <a class="ext" target="_blank" rel="noopener" href="%s">%s</a> rev %s. Wiki levels can lag patches.</p></div>' % (lo, hi, body, C['url'], esc(cls), esc(C.get('revid')))
 
